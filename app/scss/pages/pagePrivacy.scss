@@ -1,0 +1,115 @@
+.pagePrivacy {
+  padding-bottom: 120px;
+  color: #262626;
+
+  &-title.page-title {
+    line-height: 69px;
+    color: #262626;
+  }
+
+  &-content {
+    padding-top: 60px;
+    padding-left: 228px;
+
+    &-block {
+      max-width: 865px;
+
+      &:not(:last-child) {
+        margin-bottom: 60px;
+      }
+
+      &:first-child {
+        .block-title {
+          margin-bottom: 40px;
+        }
+      }
+
+      .block-title {
+        margin-bottom: 30px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 32px;
+      }
+
+      .block-content {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 22px;
+
+        &-download {
+          margin-bottom: 40px;
+          line-height: 37px;
+
+          &-links {
+            margin-bottom: 2px;
+
+            &-item {
+              position: relative;
+              padding-left: 26px;
+
+              &::before {
+                position: absolute;
+                content: "";
+                display: block;
+                width: 18px;
+                height: 18px;
+                background-image: url(../images/download-item-mark.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                left: 0;
+                top: 8px;
+              }
+            }
+          }
+        }
+
+        &-list {
+          margin-bottom: 30px;
+
+          &-caption {
+            margin-bottom: 20px;
+          }
+
+          &-items {
+            max-width: 710px;
+            line-height: 19px;
+
+            &-item {
+              position: relative;
+              padding-left: 32px;
+
+              &:not(:last-child) {
+                margin-bottom: 20px;
+              }
+
+              &::before {
+                position: absolute;
+                content: "";
+                display: block;
+                width: 20px;
+                height: 2px;
+                background-image: url(../images/list-item-mark.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                left: 0;
+                top: 9px;
+              }
+            }
+          }
+        }
+
+        .download-link {
+          color: #6C6C6C;
+        }
+
+        .browser-link {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
