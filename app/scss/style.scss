@@ -7,3 +7,10 @@
 @import "components/import";
 @import "pages/import";
 
+
+.page{
+  margin-left: 80px;
+  width: calc(100% - 80px);
+  border-left: 1px solid #E5E5E5;
+  min-height: 300px;  //потом убрать
+}

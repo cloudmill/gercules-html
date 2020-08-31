@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("../images/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 1.8em 9.6em;
+    background-size: 11.2em 20.6em;
 }
 
 .no-svg .svg-icon:before {
@@ -17,8 +17,17 @@
 
 
 
-  .svg-icon.svg-expand:before {
+  .svg-icon.svg-cm_logo:before {
       background-position: 0em 0em;
+      width: 11.2em;
+      height: 2.4em;
+  }
+
+
+
+
+  .svg-icon.svg-expand:before {
+      background-position: 0em -2.4em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -26,8 +35,17 @@
 
 
 
+  .svg-icon.svg-fb:before {
+      background-position: 0em -4em;
+      width: 1em;
+      height: 2em;
+  }
+
+
+
+
   .svg-icon.svg-flag:before {
-      background-position: 0em -1.6em;
+      background-position: 0em -6em;
       width: 1.2em;
       height: 1.6em;
   }
@@ -35,8 +53,17 @@
 
 
 
+  .svg-icon.svg-inst:before {
+      background-position: 0em -7.6em;
+      width: 1.5em;
+      height: 1.5em;
+  }
+
+
+
+
   .svg-icon.svg-mail:before {
-      background-position: 0em -3.2em;
+      background-position: 0em -9.1em;
       width: 1.8em;
       height: 1.4em;
   }
@@ -45,7 +72,7 @@
 
 
   .svg-icon.svg-map-pin:before {
-      background-position: 0em -4.6em;
+      background-position: 0em -10.5em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -53,8 +80,17 @@
 
 
 
+  .svg-icon.svg-map-pin-big:before {
+      background-position: 0em -12.1em;
+      width: 1.7em;
+      height: 2.1em;
+  }
+
+
+
+
   .svg-icon.svg-person:before {
-      background-position: 0em -6.2em;
+      background-position: 0em -14.2em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -63,9 +99,27 @@
 
 
   .svg-icon.svg-search:before {
-      background-position: 0em -7.8em;
+      background-position: 0em -15.8em;
       width: 1.8em;
       height: 1.8em;
+  }
+
+
+
+
+  .svg-icon.svg-time:before {
+      background-position: 0em -17.6em;
+      width: 1.8em;
+      height: 1.8em;
+  }
+
+
+
+
+  .svg-icon.svg-vk:before {
+      background-position: 0em -19.4em;
+      width: 2.2em;
+      height: 1.2em;
   }
 
 

@@ -1,2 +1,65 @@
+mixin footerMenu(json)
+  each item,key in json
+    if(item.list)
+      .footer-menu_item
+        .footer-menu_title #{item.name}
+        .footer-menu_links
+          each link in item.list
+            a(href="") #{link.name}
+    else
+
+      a.footer-menu_item
+        .footer-menu_title Контакты
+      a.footer-menu_item
+        .footer-menu_title #{item.name}
+      a.footer-menu_item
+        .footer-menu_title Адреса магазинов
+
 .footer
-  
+  .footer-menu
+    +footerMenu(getData('menu-items'))
+  .footer-block
+    .footer-block_col
+      span Завод «Геркулес-Сибирь» - производство сухих строительных
+        br
+        | клеёв и затирок, штукатурок и шпатлевок, смесей 
+        br
+        |для выравнивания полов, а также пропиток и грунтовок.
+      .footer-social
+        a(href="")
+          +icon('fb','svg')
+        a(href="")
+          +icon('vk','svg')
+        a(href="")
+          +icon('inst','svg')
+    .footer-block_col
+      .footer-block_contact
+        +icon('map-pin-big','svg')
+        span 630025, г. Новосибирск, ул. Электровозная, д. 1
+      .footer-block_contact
+        +icon('time','svg')
+        span 08:30 – 17:30
+      .footer-block_contact
+        +icon('mail','svg')
+        span
+          a(href="mailto:info@gerkules.ru") info@gerkules.ru
+    .footer-block_col
+      .footer-phone
+        .footer-phone_title Телефон завода в Новосибирске
+        a(href="tel:8 383 338 31 32").footer-phone_link 8 383 338 31 32
+        .footer-phone_type Многоканальный
+      .footer-phone
+        .footer-phone_title Отдел качества
+        a(href="tel:+7 913 208 39 45").footer-phone_link +7 913 208 39 45
+    .footer-block_col
+      .footer-phone
+        .footer-phone_title По вопросам применения продукции
+        a(href="tel:8 383 338 31 32").footer-phone_link 8 383 338 31 32
+        .footer-phone_type Звоните с 6:00 до 16:00 МСК
+      .footer-phone
+        .footer-phone_title Клиентский сервис
+        a(href="tel:+7 913 225 55 85").footer-phone_link +7 913 225 55 85
+  .footer-copyright
+    span © 2019 Gerkules. Все права защищены.
+    a(href="cloudmill.ru") Сделано в
+      +icon('cm_logo','svg')
