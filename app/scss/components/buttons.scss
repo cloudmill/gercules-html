@@ -1,0 +1,23 @@
+.main-link {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: right;
+  color: #e41d2c;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e41d2c;
+  &:after {
+    content: "";
+    display: block;
+    margin-left: 14px;
+    background-image: url(../images/str_long-right.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 24px;
+    height: 13px;
+  }
+}

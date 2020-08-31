@@ -1,0 +1,22 @@
+extends ../layouts/default.pug
+
+block variables
+ -var pageTitle='Ошибка 404 - страница не найдена'
+
+block content
+  .content
+    +breadcrumbs(['404'])
+    .page404
+      .page404-content
+        .page-title Запрашиваемая 
+          br 
+          |страница не найдена.
+        .page404-quest Куда теперь?
+        .page404-links
+          +link('./','Главная')
+          +link('./catalog.html','Каталог')
+          +link('./contacts.html','Контакты')
+      .page404-img
+        img(src="images/404.svg", alt="")
+
+        

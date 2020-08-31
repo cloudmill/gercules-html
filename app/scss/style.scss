@@ -7,10 +7,20 @@
 @import "components/import";
 @import "pages/import";
 
-
-.page{
+.page {
   margin-left: 80px;
   width: calc(100% - 80px);
-  border-left: 1px solid #E5E5E5;
-  min-height: 300px;  //потом убрать
+  border-left: 1px solid #e5e5e5;
+  min-height: 300px; //потом убрать
+  &-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 64px;
+    color: #000000;
+  }
+  .content{
+    padding: 0 60px;
+    padding-top: 60px;
+  }
 }

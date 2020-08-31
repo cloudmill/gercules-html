@@ -1,0 +1,32 @@
+.page404 {
+  padding-bottom: 400px;
+  position: relative;
+  
+  &-content {
+    max-width: 700px;
+  }
+  &-quest {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 160%;
+    color: #bcbcbc;
+    margin-top: 60px;
+  }
+  &-links {
+    margin-top: 30px;
+    a {
+      margin-right: 40px;
+    }
+  }
+  &-img {
+    position: absolute;
+    right: 60px;
+    top: 0;
+    img{
+      position: relative;
+      z-index: 2;
+    }
+    
+  }
+}
