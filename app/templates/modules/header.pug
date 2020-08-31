@@ -1,1 +1,45 @@
+mixin headerMenu(json)
+  each item in json
+    if(item.list)
+      .header-menu_item 
+        | #{item.name}
+        .header-menu_item_dropdown
+          each link in item.list
+            a(href="") #{link.name}
+    else
+      a.header-menu_item 
+        | #{item.name}
+
 .header
+  a.header-logo
+    img(src="images/logo.svg" alt="")
+  .header-col
+    .header-row
+      .header-col
+        a.header-phone(href="tel:8 800 250 30 10") 8 800 250 30 10
+        .header-loc
+          select(name='location')#location
+            option(value="0") Санкт-Петербург
+            option(value="1") Москва
+        a.header-link 
+          +icon('map-pin','svg')
+          |Где купить
+        a.header-link 
+          +icon('flag','svg')
+          |Акции
+      .header-col
+        a.header-link 
+          +icon('expand','svg')
+          |Калькулятор для ремонта
+        a.header-link 
+          +icon('mail','svg')
+          |Консультация и сервис
+    .header-row
+      .header-menu
+        +headerMenu(getData('menu-items'))
+      a.header-search
+        +icon('search','svg')
+      a.header-lk
+        +icon('person','svg')
+
+

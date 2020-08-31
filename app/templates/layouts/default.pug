@@ -11,7 +11,8 @@ html(lang="ru")
     body
         .wrapper
             include ../modules/header
-            block content
+            .page
+                block content
             include ../modules/footer
         script(src='js/scripts.min.js')
         block scripts
