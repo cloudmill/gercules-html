@@ -1,0 +1,40 @@
+extends ../layouts/left-nav
+
+block variables
+  -var pageTitle='Академия геркулес'
+
+block nav
+  .nav-item
+    a(href="#").link Партнерам
+  .nav-item
+    a(href="#").link Программа лояльности
+  .nav-item.active
+    a(href="#").link Академия «Геркулес»
+
+block tab
+  +breadcrumbs(["Партнерам", "Академия «‎Геркулес»‎"])
+
+  .content
+    .top
+      .top-title Академия «‎Геркулес»‎
+      .top-contact
+        .top-contact-caption Клиентский сервис
+        .top-contact-phone
+          a(href="tel: 8 913 001 75 01") +7 913 001-75-01
+    .calendar
+      .calendar-control
+      .calendar-block
+        .calendar-block-week
+          .calendar-block-week-item пн
+          .calendar-block-week-item вт
+          .calendar-block-week-item ср
+          .calendar-block-week-item чт
+          .calendar-block-week-item пт
+          .calendar-block-week-item сб
+          .calendar-block-week-item вс
+        .calendar-block-month
+          .calendar-block-month-row
+          .calendar-block-month-row
+          .calendar-block-month-row
+          .calendar-block-month-row
+          .calendar-block-month-row

@@ -12,6 +12,8 @@
   width: calc(100% - 80px);
   border-left: 1px solid #e5e5e5;
   min-height: 300px; //потом убрать
+  overflow: hidden; // для фоновых полос page404
+
   &-title {
     font-family: $font-third;
     font-style: normal;
@@ -20,9 +22,56 @@
     line-height: 64px;
     color: #000000;
   }
-  .content{
+
+  .content {
     padding: 0 60px;
     padding-top: 60px;
   }
-  overflow: hidden; // для фоновых полос page404
+
+  //new
+  .container {
+    display: flex;
+
+    .nav {
+      padding-top: 36px;
+      padding-left: 56px;
+      width: 287px;
+      border-right: 1px solid #E5E5E5;
+
+      &-item {
+        position: relative;
+
+        .link {
+          font-size: 14px;
+          line-height: 56px;
+          color: #6C6C6C;
+        }
+
+        &.active {
+          .link {
+            color: #262626;
+          }
+
+          &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 4px;
+            height: 32.5px;
+            top: 12px;
+            left: -56px;
+            background-image: url(../images/nav-item-mark.svg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+
+    .tab {
+      padding: 57px 80px 120px 39px;
+      flex-grow: 1;
+    }
+  }
 }
