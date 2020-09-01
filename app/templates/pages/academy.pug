@@ -1,40 +1,35 @@
-extends ../layouts/left-nav
+extends ../layouts/default
 
 block variables
   -var pageTitle='Академия геркулес'
 
-block nav
-  .nav-item
-    a(href="#").link Партнерам
-  .nav-item
-    a(href="#").link Программа лояльности
-  .nav-item.active
-    a(href="#").link Академия «Геркулес»
-
-block tab
-  +breadcrumbs(["Партнерам", "Академия «‎Геркулес»‎"])
-
-  .content
-    .top
-      .top-title Академия «‎Геркулес»‎
-      .top-contact
-        .top-contact-caption Клиентский сервис
-        .top-contact-phone
-          a(href="tel: 8 913 001 75 01") +7 913 001-75-01
-    .calendar
-      .calendar-control
-      .calendar-block
-        .calendar-block-week
-          .calendar-block-week-item пн
-          .calendar-block-week-item вт
-          .calendar-block-week-item ср
-          .calendar-block-week-item чт
-          .calendar-block-week-item пт
-          .calendar-block-week-item сб
-          .calendar-block-week-item вс
-        .calendar-block-month
-          .calendar-block-month-row
-          .calendar-block-month-row
-          .calendar-block-month-row
-          .calendar-block-month-row
-          .calendar-block-month-row
+block content
+  .content-row
+    .sidebar-menu
+      a(href="") Партнерам
+      a(href="") Программа лояльности
+      a(href="").active Академия «‎Геркулес»‎
+    .content
+      +breadcrumbs(["Партнерам", "Академия «‎Геркулес»‎"])
+      .academy
+        .academy-top
+          .page-title Академия «‎Геркулес»‎
+          .academy-top-contact
+            span Клиентский сервис
+            a(href="tel: 8 913 001 75 01") +7 913 001-75-01
+        .academy-calendar
+          .academy-calendar-control
+          table
+            thead
+              tr
+                td пн
+                td вт
+                td ср
+                td чт
+                td пт
+                td сб
+                td вс
+            tbody
+              tr
+                each item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+                  td #{item}

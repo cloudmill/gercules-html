@@ -1,3 +1,63 @@
-.academy{
-  
+.academy {
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &-contact {
+      min-width: 288px;
+      padding: 24px 0px 16px 56px;
+      border: 1px solid #e5e5e5;
+      background-color: white;
+      span {
+        padding-left: 2px;
+        font-family: $font-third;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 24px;
+      }
+      a {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 36px;
+      }
+    }
+  }
+  &-calendar {
+    margin-top: 30px;
+    table {
+      margin-top: 60px;
+      display: block;
+      thead {
+        display: block;
+        tr {
+          background-color: #fbfbfb;
+          min-height: 64px;
+          display: flex;
+          td {
+            display: block;
+            align-self: stretch;
+            flex-basis: calc(100% / 7);
+            text-transform: uppercase;
+            @include display-flex-center;
+            border: 1px solid $color-calendar-border;
+            &:not(:last-child) {
+              border-right: none;
+            }
+          }
+        }
+      }
+      tbody {
+        display: block;
+        tr {
+          display: flex;
+          td {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
 }
