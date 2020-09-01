@@ -1,11 +1,13 @@
 .page404 {
   padding-bottom: 400px;
   position: relative;
-  
   &-content {
+    position: relative; // контент
+    z-index: 10; // над фоном
     max-width: 700px;
   }
   &-quest {
+    font-family: $font-third;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -21,12 +23,36 @@
   }
   &-img {
     position: absolute;
+    z-index: 5;
     right: 60px;
     top: 0;
-    img{
+    img {
       position: relative;
-      z-index: 2;
+      z-index: 10;
     }
-    
+    &-lines { // фоновые полосы
+      position: absolute;
+      z-index: 5; // под фоновой картинкой
+      top: -63.43px;
+      right: -183.25px;
+      .line {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1777px;
+        height: 1px;
+        border-top: 1px dashed #D6D6D6;
+        transform-origin: right center;
+        transform: rotate(-29.72deg);
+
+        &:nth-child(2) {
+          top: 154px;
+        }
+
+        &:nth-child(3) {
+          top: 322.43px;
+        }
+      }
+    }
   }
 }
