@@ -1,0 +1,21 @@
+extends ../layouts/default.pug
+
+block variables
+  -var pageTitle='Личный кабинет'
+
+block content
+  .content
+    +breadcrumbs(['Личный кабинет'])
+    .pageLk
+      .pageLk-content
+        .page-title Личный кабинет
+        .pageLk-date
+          | Дата запуска личного кабинета: 
+          span.red 01.01.2021
+        .pageLk-info
+          | Личный кабинет разработан для удобства закупки нашей продукции. В личном кабинете вы сможете отслеживать ваш статус партнера, получить скидки и особые условия сотрудничества.
+        .pageLk-phone
+          | По вопросам запуска звонить по телефону 
+          a(href="tel:8 800 250 30 10").phone-link 8 800 250 30 10
+      .pageLk-img
+        img(src="images/lk.png", alt="")
