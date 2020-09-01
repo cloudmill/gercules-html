@@ -1,0 +1,16 @@
+extends ../layouts/default.pug
+
+block variables
+  -var pageTitle='Академия «‎Геркулес»‎'
+
+block content
+  .content-row
+    .sidebar-menu
+      a(href="") Партнерам
+      a(href="") Программа лояльности
+      a(href="").active Академия «‎Геркулес»‎
+    .content
+      +breadcrumbs(['Личный кабинет'])
+      .academy
+        .page-title Академия «‎Геркулес»‎
+

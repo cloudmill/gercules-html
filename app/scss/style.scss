@@ -23,6 +23,11 @@
   .content{
     padding: 0 60px;
     padding-top: 60px;
+    height: 100%;
+    &-row{
+      display: flex;
+      height: 100%;
+    }
   }
   overflow: hidden; // для фоновых полос page404
 }

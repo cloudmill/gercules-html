@@ -47,3 +47,9 @@ div {
   
     perspective: $perspective;
   }
+@mixin background-icon($url) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
