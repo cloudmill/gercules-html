@@ -1,0 +1,38 @@
+.sidebar {
+  &-menu {
+    width: 287px;
+    padding-top: 40px;
+    border-right: 1px solid #e5e5e5;
+    height: 100%;
+    a {
+      display: flex;
+      align-items: center;
+      height: 33px;
+      margin: 10px 0;
+      padding-left: 55px;
+      position: relative;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 400%;
+      color: #6c6c6c;
+      &::before {
+        opacity: 0;
+        content: "";
+        @include background-icon("../images/rect.svg");
+        width: 4px;
+        height: 33px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      &.active {
+        color: #262626;
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
