@@ -12,13 +12,25 @@ block content
     .content
       +breadcrumbs(["Партнерам", "Академия «‎Геркулес»‎"])
       .academy
-        .academy-top
-          .page-title Академия «‎Геркулес»‎
-          .academy-top-contact
+        .top
+          h1.page-title Академия «‎Геркулес»‎
+          p
             span Клиентский сервис
             a(href="tel: 8 913 001 75 01") +7 913 001-75-01
-        .academy-calendar
-          .academy-calendar-control
+        .calendar
+          .control
+            .month
+              button.prev
+              span Сентябрь 2020
+              button.next
+            .loc
+              .caption События в:
+              select(name="location")#location
+                option(value="0") Санкт-Петербург
+                option(value="1") Москва
+            label.events Онлайн обучение и вебинары
+              input(type="checkbox", checked="checked")
+              span
           table
             thead
               tr
@@ -30,6 +42,74 @@ block content
                 td сб
                 td вс
             tbody
-              tr
-                each item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
-                  td #{item}
+              -
+                const events = {
+                  "17": 5,
+                  "26": 2
+                }
+              - for (let week = 0; week < 5; week++)
+                tr
+                  - for (let day = 0; day < 7; day++)
+                    -
+                      let curDay = (week * 7 + day);
+                      let isCurMonth = curDay < 31;
+                      curDay = curDay % 31 + 1;
+                    if events[curDay]
+                      if isCurMonth
+                        td.event #{curDay}
+                          span События:
+                          span #{events[curDay]}
+                    else
+                      td(class = isCurMonth ? "" : "other-month") #{curDay}
+        .week
+          h2 События на этой неделе
+          .events
+            .event-card
+              a(href="#") Семинары по работе с сухими смесями «Геркулес»
+              span #семинар
+              .event-time 14:00
+              .event-date
+                span 5
+                span сен
+            .event-card
+              a(href="#") Семинары по работе с сухими смесями «Геркулес»
+              span #семинар
+              .event-time 14:00
+              .event-date
+                span 5
+                span сен
+        .trainers
+          .top
+            h2 Наши тренера
+            .control
+              button.prev
+              button.next
+          .slides
+            .swiper-wrapper
+              .swiper-slide
+                .slide
+                  img(src="../images/academy-trainer-1.png", alt="")
+                  p 
+                    | Специалист по DIY
+                  h3 
+                    | Боленков Андрей Викторович
+                  p
+                    | Американский актёр и продюсер. Лауреат премии «Золотой глобус» за 1995 год — за роль второго плана в ленте «Двенадцать обезьян»
+              .swiper-slide
+                .slide
+                  img(src="../images/academy-trainer-2.png", alt="")
+                  p 
+                    | Технический специалист
+                  h3 
+                    | Заеленец Наталья Васильевна
+                  p
+                    | Четыре раза был номинирован на премию «Оскар» за лучшую мужскую роль в фильмах «Авиатор», «Кровавый алмаз», «Волк с Уолл-стрит» и «Выживший», а также за лучшую мужскую роль второго плана в фильме «Что гложет Гилберта Грэйпа»
+              .swiper-slide
+                .slide
+                  img(src="../images/academy-trainer-3.png", alt="")
+                  p 
+                    | Директор по продажам DIY
+                  h3 
+                    | Жукова Ирина Александровна
+                  p
+                    | Американский кинорежиссёр, сценарист, актёр, кинопродюсер и кинооператор. Один из наиболее ярких представителей постмодернизма в кинематографе

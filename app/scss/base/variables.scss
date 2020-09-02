@@ -24,15 +24,15 @@ $breakpoints: (
 // ##########
 // Цвета
 // ##########
-$color-basic:black; // Основной цвет текста (применяется к body)
-$color-basic-second: #262626; // Второй основной черный цвет
+$color-basic: #262626; // Основной черный цвет текста
+$color-basic-second:black; // Дополнительный черный цвет текста
 $background-additional: #f6f5f3;
 $color-placeholder: #777; // Основной цвет для placeholder
 $color-input: black; // Основной цвет input, select и textarea
 $color-main: #2252d8; // Основной фирменный цвет
 $color-border: #ccc; // Основной цвет границ таблиц, секций
+$color-border-second: #E5E5E5; // Дополнительный цвет границ
 $color-red: #E41D2C; // Основной красный цвет
-$color-calendar-border: #E5E5E5; //Цвет границ календаря
 
 // ##########
 // Transitions
@@ -44,4 +44,4 @@ $ease-main: .2s ease;
 // ##########
 $font-main: 'Arimo'; // Основной шрифт сайта
 $font-second: Times New Roman, sans-serif; // Дополнительный шрифт
-$font-third: 'Nexa Replica Ru'; // Дополнительный шрифт
+$font-third: 'Nexa Replica Ru'; // Основной шрифт заголовков

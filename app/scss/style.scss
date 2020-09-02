@@ -1,5 +1,6 @@
 @import "../../node_modules/swiper/swiper.scss";
 @import "../../node_modules/fancybox/dist/scss/jquery.fancybox";
+@import "../../node_modules/select2/dist/css/select2";
 @import "../../node_modules/normalize.css/normalize";
 @import "base/import";
 @import "mixins/import";
@@ -16,17 +17,20 @@
 
   &-title {
     font-family: $font-third;
+    color: $color-basic;
     font-style: normal;
     font-weight: bold;
     font-size: 48px;
-    line-height: 64px;
-    color: #000000;
+    line-height: 69px;
   }
 
   .content {
+    min-width: 0;
     padding: 0 60px;
     padding-top: 60px;
     height: 100%;
+    flex-grow: 1; // когда content во flex-контейнере
+
     &-row{
       display: flex;
       height: 100%;
@@ -79,4 +83,10 @@
       flex-grow: 1;
     }
   }
+}
+
+// выпадающее меню select2
+.select2-dropdown {
+  border-radius: 0;
+  border-color: $color-border-second;
 }
