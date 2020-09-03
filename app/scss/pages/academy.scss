@@ -98,7 +98,7 @@
             min-width: 289px;
 
             &--open {
-              .select2-selection__arrow {
+              .select2-selection__arrow::before {
                 transform: rotate(180deg);
               }
             }
@@ -117,14 +117,26 @@
             }
 
             &__arrow {
+              position: absolute;
               top: 0;
               right: 0;
               width: 80px;
               height: 70px;
               border: 1px solid $color-border-second;
-              background-image: url(../images/calendar-select-arrow.svg);
-              background-repeat: no-repeat;
-              background-position: center;      
+
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-image: url(../images/calendar-select-arrow.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                transition: $ease-main transform;
+              }
 
               b {
                 display: none;
@@ -132,33 +144,6 @@
             }
           }
         }
-
-        /*
-        select {
-          padding-left: 37px;
-          padding-right: 125px;
-          min-height: 70px;
-          border: 1px solid $color-border-second;
-          appearance: none;
-        }
-        */
-
-        /*
-        &::after {
-          content: "";
-          position: absolute;
-          display: block;
-          width: 80px;
-          height: 70px;
-          border: 1px solid $color-border-second;
-          right: 0;
-          top: 0;
-          background-image: url(../images/calendar-select-arrow.svg);
-          background-repeat: no-repeat;
-          background-position: center;
-          pointer-events: none;
-        }
-        */
       }
 
       label {
@@ -280,7 +265,7 @@
       margin-top: 40px;
       display: flex;
 
-      .event-card {
+      a {
         position: relative;
         flex-basis: 50%;
         height: 283px;
@@ -290,8 +275,7 @@
         border: 1px solid $color-border-second;
         padding: 56px 48px 60px 160px;
 
-        a {
-          display: block;
+        h3 {
           font-size: 20px;
           font-family: $font-third;
           font-weight: bold;

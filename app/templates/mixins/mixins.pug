@@ -4,11 +4,18 @@ mixin icon(iconName, type = 'png')
   else
     i(class='svg-icon '+'svg-'+iconName)
 
-mixin breadcrumbs(ar)
+mixin breadcrumbs(path)
   .breadcrumbs
-    span Главная
-    each item in ar
-      a #{item}
+    if path.length
+      a(href="#") Главная
+    else
+      i Главная
+    - const curPage = path.pop()
+    each page in path
+      .link
+        a(href="#")=page
+    if curPage
+      span=curPage
 
 mixin link(href,text)
   a.main-link(href=href) #{text}

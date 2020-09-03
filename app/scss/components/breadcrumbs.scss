@@ -2,24 +2,35 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 25px;
-  span {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  white-space: nowrap;
+
+  i {
     font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 14px;
     color: #6c6c6c;
   }
+
   a {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 14px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-    &::before{
+    color: $color-basic;
+  }
+
+  span {
+    color: #6c6c6c;
+
+    &::before {
       content: '—';
-      color: #6c6c6c;
+      margin: 0 5px;
+    }
+  }
+
+  .link {
+    color: $color-basic;
+
+    &::before {
+      content: '—';
       margin: 0 5px;
     }
   }

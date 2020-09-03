@@ -1,0 +1,57 @@
+// выпадающее меню select2
+.select2 {
+  &-container {
+    min-width: 289px;
+
+    &--open {
+      .select2-selection__arrow::before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &-selection {
+    height: 70px;
+    border-radius: 0;
+    border-color: $color-border-second;
+
+    &__rendered {
+      line-height: 70px;
+
+      padding-left: 37px;
+      padding-right: 80px;
+    }
+
+    &__arrow {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 70px;
+      border: 1px solid $color-border-second;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: url(../images/calendar-select-arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: $ease-main transform;
+      }
+
+      b {
+        display: none;
+      }
+    }
+  }
+
+  &-dropdown {
+    border-radius: 0;
+    border-color: $color-border-second;
+  }
+}
