@@ -6,19 +6,15 @@ block variables
 
 block content
   .content-row
-    .sidebar-menu
-      .links
+    .sidebar
+      .sidebar-menu
         a(href="") Партнерам
         a(href="") Программа лояльности
         a(href="").active Академия «‎Геркулес»‎
-      .contact
-        p Клиентский сервис
-        a(href="tel: 8 913 001 75 01") +7 913 001-75-01
+      +client_service_card
     .content
       +breadcrumbs(["Партнерам", "Академия «‎Геркулес»", "Семинары по работе с сухими смесями «Геркулес»"])
       .academyEvent
         h1.page-title
           | Семинары по работе с сухими смесями «‎Геркулес»
-        .tags
-          span #вебинар
-          span #обучение
+        +hash_tags(["вебинар", "обучение"], "academy-event")

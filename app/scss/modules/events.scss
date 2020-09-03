@@ -1,0 +1,215 @@
+.events {
+  &-control {
+    font-size: 15px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+
+    .control-date {
+      margin-right: 50px;
+      display: flex;
+      height: 70px;
+      padding-top: 19px;
+      align-items: flex-start;
+
+      .date-prev,
+      .date-next {
+        position: relative;
+        top: -1px;
+        width: 57px;
+        height: 33px;
+        background-image: url(../images/calendar-btn-prev.svg);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: contain;
+        padding-right: 41px;
+      }
+
+      .date-next {
+        transform: rotate(180deg);
+      }
+
+      span {
+        font-family: $font-third;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 40px;
+        font-style: normal;
+        white-space: nowrap;
+      }
+    }
+
+    .control-location {
+      margin-right: 50px;
+      display: flex;
+      align-items: center;
+
+      span {
+        white-space: nowrap;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &-calendar {
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    td {
+      border: 1px solid $color-border-second;
+      font-size: 20px;
+      line-height: 23px;
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    thead {
+      background-color: #FBFBFB;
+      text-align: center;
+
+      tr {
+        height: 64px;
+      }
+
+      td {
+        vertical-align: middle;
+        text-transform: uppercase;
+      }
+    }
+
+    tbody {
+      background-color: white;
+      text-align: left;
+
+      tr {
+        height: 120px;
+      }
+
+      td {
+        padding-left: 20px;
+        padding-bottom: 16px;
+        vertical-align: bottom;
+
+        &.calendar-event {
+          position: relative;
+          background-color: $color-red;
+          color: white;
+          cursor: pointer;
+    
+          span {
+            position: absolute;
+            font-style: normal;
+          }
+    
+          span:first-child {
+            top: 18px;
+            right: 16px;
+            font-size: 15px;
+            line-height: 17px;
+            font-weight: normal;
+          }
+    
+          span:last-child {
+            right: 17px;
+            bottom: -1px;
+            font-family: $font-third;
+            font-weight: bold;
+            font-size: 48px;
+            line-height: 69px;
+          }
+        }
+
+        &.calendar-disabled {
+          color: #ABABAB;
+        }
+      }
+    }
+  }
+
+  &-week {
+    display: flex;
+  }
+
+  &-card {
+    border: 1px solid $color-border-second;
+    height: 282px;
+    position: relative;
+    padding: 56px 48px 60px 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h3 {
+      font-family: $font-third;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 160%;
+    }
+
+    &-date {
+      position: absolute;
+      left: 40px;
+      top: 56px;
+
+      span {
+        color: $color-red;
+        font-style: normal;
+        font-weight: bold;
+        font-family: $font-third;
+
+        &:first-child {
+          font-size: 28px;
+          line-height: 45px;
+          margin-right: 5px;
+        }
+
+        &:last-child {
+          text-transform: uppercase;
+          font-size: 16px;
+          line-height: 30px;
+        }
+      }
+    }
+
+    &-time {
+      color: $color-red;
+      font-style: normal;
+      font-weight: bold;
+      font-family: $font-third;
+      position: absolute;
+      bottom: 36px;
+      right: 39px;
+      font-size: 28px;
+      line-height: 45px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 60px;
+      position: absolute;
+      left: -1px;
+      bottom: 34px;
+      background-image: url(../images/events-card-mark.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 13px;
+      position: absolute;
+      left: 40px;
+      bottom: 57.5px;
+      background-image: url(../images/events-card-arrow.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+}

@@ -1,442 +1,63 @@
 .academy {
   margin-top: 35px;
   padding-bottom: 120px;
-  color: $color-basic;
 
   h2 {
+    margin-top: 100px;
     font-family: $font-third;
     font-size: 28px;
     line-height: 40px;
     font-weight: bold;
+
+    &:last-of-type {
+      margin-top: 110px;
+    }
   }
 
-  .top {
+  &-top {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 
-    p {
-      min-width: 288px;
-      padding-top: 24px;
-      padding-left: 56px;
-      padding-bottom: 16px;
-      border: 1px solid $color-border-second;
-      background-color: white;
-
-      span {
-        display: block;
-        padding-left: 2px;
-        font-family: $font-third;
-        font-weight: bold;
-        font-size: 15px;
-        line-height: 24px;
-      }
-
-      a {
-        display: block;
-        font-size: 18px;
-        line-height: 36px;
-      }
+    .client-service-card {
+      width: 288px;
+      padding: 24px 0 16px 56px;
     }
   }
 
-  .calendar {
-    .control {
-      font-size: 15px;
-      line-height: 17px;
+  .events {
+    &-control {
       margin-top: 30px;
-      display: flex;
-      align-items: center;
-
-      .month {
-        display: flex;
-        height: 70px;
-        padding-top: 19px;
-        align-items: flex-start;
-        margin-right: 50px;
-
-        .prev,
-        .next {
-          position: relative;
-          top: -1px;
-          width: 57px;
-          height: 33px;
-          background-image: url(../images/calendar-btn-prev.svg);
-          background-repeat: no-repeat;
-          background-position: left center;
-          background-size: contain;
-          padding-right: 41px;
-        }
-
-        .next {
-          transform: rotate(180deg);
-        }
-
-        span {
-          font-family: $font-third;
-          font-weight: bold;
-          font-size: 28px;
-          line-height: 40px;
-          vertical-align: baseline;
-          white-space: nowrap;
-        }
-      }
-
-      .loc {
-        position: relative;
-        display: flex;
-        align-items: center;
-        margin-right: 50px;
-
-        .caption {
-          white-space: nowrap;
-          margin-right: 20px;
-        }
-
-        .select2 {
-          &-container {
-            min-width: 289px;
-
-            &--open {
-              .select2-selection__arrow::before {
-                transform: rotate(180deg);
-              }
-            }
-          }
-
-          &-selection {
-            height: 70px;
-            border-radius: 0;
-            border-color: $color-border-second;
-
-            &__rendered {
-              line-height: 70px;
-
-              padding-left: 37px;
-              padding-right: 80px;
-            }
-
-            &__arrow {
-              position: absolute;
-              top: 0;
-              right: 0;
-              width: 80px;
-              height: 70px;
-              border: 1px solid $color-border-second;
-
-              &::before {
-                content: "";
-                display: block;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background-image: url(../images/calendar-select-arrow.svg);
-                background-repeat: no-repeat;
-                background-position: center;
-                transition: $ease-main transform;
-              }
-
-              b {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-
-      label {
-        position: relative;
-        display: block;
-        padding-left: 30px;
-
-        input {
-          position: absolute;
-          visibility: hidden;
-
-          &:checked~span::after {
-            background-color: $color-red;
-          }
-        }
-
-        span {
-          position: absolute;
-          left: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          display: block;
-          width: 20px;
-          height: 20px;
-          background-color: white;
-          border: 1px solid #EBEBEB;
-
-          &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 8px;
-            height: 8px;
-            transition: $ease-main background-color;
-          }
-        }
-      }
     }
 
-    table {
-      font-size: 20px;
-      line-height: 23px;
+    &-calendar {
       margin-top: 60px;
       width: 100%;
-      border-spacing: 0;
-      border-collapse: collapse;
-
-      td {
-        border: 1px solid $color-border-second;
-      }
-
-      thead {
-        background-color: #FBFBFB;
-        text-align: center;
-
-        tr {
-          height: 64px;
-        }
-
-        td {
-          vertical-align: middle;
-          text-transform: uppercase;
-        }
-      }
-
-      tbody {
-        background-color: white;
-        text-align: left;
-
-        tr {
-          height: 120px;
-        }
-
-        td {
-          padding-left: 20px;
-          padding-bottom: 16px;
-          vertical-align: bottom;
-
-          &.event {
-            position: relative;
-            background-color: $color-red;
-            color: white;
-            cursor: pointer;
-
-            span:first-child {
-              position: absolute;
-              top: 18px;
-              right: 16px;
-              font-size: 15px;
-              line-height: 17px;
-            }
-
-            span:last-child {
-              position: absolute;
-              right: 17px;
-              bottom: -1px;
-              font-family: $font-third;
-              font-weight: bold;
-              font-size: 48px;
-              line-height: 69px;
-            }
-          }
-
-          &.other-month {
-            color: #ABABAB;
-          }
-        }
-      }
     }
-  }
 
-  .week {
-    margin-top: 100px;
-
-    .events {
+    &-week {
       margin-top: 40px;
-      display: flex;
+    }
 
-      a {
-        position: relative;
-        flex-basis: 50%;
-        height: 283px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        border: 1px solid $color-border-second;
-        padding: 56px 48px 60px 160px;
+    &-card {
+      flex-basis: 50%;
 
-        h3 {
-          font-size: 20px;
-          font-family: $font-third;
-          font-weight: bold;
-          line-height: 32px;
-        }
-
-        span {
-          font-size: 15px;
-          line-height: 22px;
-          color: $color-red;
-        }
-
-        &:not(:last-of-type) {
-          border-right: none;
-        }
-
-        .event-time {
-          position: absolute;
-          bottom: 36px;
-          right: 39px;
-          font-size: 28px;
-          font-family: $font-third;
-          font-weight: bold;
-          line-height: 45px;
-          color: $color-red;
-        }
-
-        .event-date {
-          position: absolute;
-          left: 40px;
-          top: 56px;
-          text-transform: uppercase;
-
-          span {
-            font-family: $font-third;
-            font-weight: bold;
-            color: $color-red;
-            vertical-align: top;
-
-            &:first-child {
-              font-size: 28px;
-              line-height: 45px;
-              margin-right: 5px;
-            }
-
-            &:last-child {
-              font-size: 16px;
-              line-height: 30px;
-            }
-          }
-        }
-
-        &::before {
-          content: "";
-          display: block;
-          width: 4px;
-          height: 60px;
-          position: absolute;
-          left: -1px;
-          bottom: 34px;
-          background-image: url(../images/academy-event-card-mark.svg);
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-        }
-
-        &::after {
-          content: "";
-          display: block;
-          width: 24px;
-          height: 13px;
-          position: absolute;
-          left: 40px;
-          bottom: 57.5px;
-          background-image: url(../images/academy-event-card-arrow.svg);
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-        }
+      &:not(:last-child) {
+        border-right: none;
       }
     }
   }
 
   .trainers {
-    margin-top: 100px;
-
-    .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .control {
-        position: relative;
-        width: 166px;
-        height: 58px;
-        background-image: url(../images/academy-trainers-control-separator.svg);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: white;
-        display: flex;
-        justify-content: space-between;
-
-        &::before,
-        &::after {
-          position: absolute;
-          content: "";
-          display: block;
-          width: 11px;
-          height: 22px;
-          top: 18px;
-          right: 33px;
-          background-image: url(../images/academy-trainers-control-arrow.svg);
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
-          pointer-events: none;
-        }
-
-        &::before {
-          right: auto;
-          left: 33px;
-          transform: rotate(180deg);
-        }
-
-        .prev,
-        .next {
-          flex-basis: 45%;
-        }
-      }
+    &-slider {
+      position: relative;
+      margin-top: 50px;
     }
 
-    .slides {
-      margin-top: 40px;
-      overflow: hidden;
-
-      .slide {
-        font-size: 15px;
-        line-height: 19px;
-        max-width: 320px;
-
-        img {
-          display: block;
-          max-width: 100%;
-        }
-
-        p {
-          margin-top: 27px;
-
-          &:first-of-type {
-            margin-top: 30px;
-            line-height: 30px;
-          }
-        }
-
-        h3 {
-          font-weight: bold;
-          line-height: 40px;
-          font-size: 18px;
-        }
-      }
+    &-control {
+      position: absolute;
+      right: 0;
+      bottom: calc(100% + 40px);
     }
   }
 }

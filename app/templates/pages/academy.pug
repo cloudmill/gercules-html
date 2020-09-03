@@ -5,108 +5,20 @@ block variables
 
 block content
   .content-row
-    .sidebar-menu
-      .links
+    .sidebar
+      .sidebar-menu
         a(href="") Партнерам
         a(href="") Программа лояльности
         a(href="").active Академия «‎Геркулес»‎
     .content
       +breadcrumbs(["Партнерам", "Академия «‎Геркулес»‎"])
       .academy
-        .top
+        .academy-top
           h1.page-title Академия «‎Геркулес»‎
-          p
-            span Клиентский сервис
-            a(href="tel: 8 913 001 75 01") +7 913 001-75-01
-        .calendar
-          .control
-            .month
-              button.prev
-              span Сентябрь 2020
-              button.next
-            .loc
-              .caption События в:
-              +field_select('location',[[0,'Санкт-Петербург'],[1,'Москва']])
-            +field_checkbox('learning','Онлайн обучение и вебинары',true)
-          table
-            thead
-              tr
-                td пн
-                td вт
-                td ср
-                td чт
-                td пт
-                td сб
-                td вс
-            tbody
-              -
-                const events = {
-                  "17": 5,
-                  "26": 2
-                }
-              - for (let week = 0; week < 5; week++)
-                tr
-                  - for (let day = 0; day < 7; day++)
-                    -
-                      let curDay = (week * 7 + day);
-                      let isCurMonth = curDay < 31;
-                      curDay = curDay % 31 + 1;
-                    if events[curDay]
-                      if isCurMonth
-                        td.event #{curDay}
-                          span События:
-                          span #{events[curDay]}
-                    else
-                      td(class = isCurMonth ? "" : "other-month") #{curDay}
-        .week
-          h2 События на этой неделе
-          .events
-            a(href="#")
-              h3 Семинары по работе с сухими смесями «Геркулес»
-              span #семинар
-              .event-time 14:00
-              .event-date
-                span 5
-                span сен
-            a(href="#")
-              h3 Семинары по работе с сухими смесями «Геркулес»
-              span #семинар
-              .event-time 14:00
-              .event-date
-                span 5
-                span сен
-        .trainers
-          .top
-            h2 Наши тренера
-            .control
-              button.prev
-              button.next
-          .slides
-            .swiper-wrapper
-              .swiper-slide
-                .slide
-                  img(src="../images/academy-trainer-1.png", alt="")
-                  p 
-                    | Специалист по DIY
-                  h3 
-                    | Боленков Андрей Викторович
-                  p
-                    | Американский актёр и продюсер. Лауреат премии «Золотой глобус» за 1995 год — за роль второго плана в ленте «Двенадцать обезьян»
-              .swiper-slide
-                .slide
-                  img(src="../images/academy-trainer-2.png", alt="")
-                  p 
-                    | Технический специалист
-                  h3 
-                    | Заеленец Наталья Васильевна
-                  p
-                    | Четыре раза был номинирован на премию «Оскар» за лучшую мужскую роль в фильмах «Авиатор», «Кровавый алмаз», «Волк с Уолл-стрит» и «Выживший», а также за лучшую мужскую роль второго плана в фильме «Что гложет Гилберта Грэйпа»
-              .swiper-slide
-                .slide
-                  img(src="../images/academy-trainer-3.png", alt="")
-                  p 
-                    | Директор по продажам DIY
-                  h3 
-                    | Жукова Ирина Александровна
-                  p
-                    | Американский кинорежиссёр, сценарист, актёр, кинопродюсер и кинооператор. Один из наиболее ярких представителей постмодернизма в кинематографе
+          +client_service_card
+        include ../modules/events/control
+        include ../modules/events/calendar
+        h2 События на этой неделе
+        include ../modules/events/week
+        h2 Наши тренера
+        include ../modules/trainers/slider

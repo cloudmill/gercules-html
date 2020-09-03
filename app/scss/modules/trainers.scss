@@ -1,0 +1,105 @@
+.trainers {
+  &-slider {
+    .slides {
+      margin-top: 40px;
+      overflow: hidden;
+
+      .slide {
+        font-size: 15px;
+        line-height: 19px;
+        max-width: 320px;
+
+        img {
+          display: block;
+          max-width: 100%;
+        }
+
+        p {
+          margin-top: 27px;
+
+          &:first-of-type {
+            margin-top: 30px;
+            line-height: 30px;
+          }
+        }
+
+        h3 {
+          font-weight: bold;
+          line-height: 40px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  &-control {
+    display: flex;
+    justify-content: space-between;
+    width: 166px;
+    height: 58px;
+    background-image: url(../images/academy-trainers-control-separator.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: white;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 11px;
+      height: 22px;
+      top: 18px;
+      right: 33px;
+      background-image: url(../images/trainers-control-arrow.svg);
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
+
+    &::before {
+      right: auto;
+      left: 33px;
+      transform: rotate(180deg);
+    }
+
+    &-prev,
+    &-next {
+      flex-basis: 45%;
+    }
+  }
+
+  &-swiper {
+    width: 100%;
+  }
+
+  &-slide {
+    max-width: 320px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 19px;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    p {
+      margin-top: 30px;
+
+      &:first-of-type {
+        line-height: 30px;
+      }
+    }
+
+    h3 {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+}

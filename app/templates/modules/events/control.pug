@@ -1,0 +1,9 @@
+.events-control
+  .control-date
+    button.date-prev
+    span Сентябрь 2020
+    button.date-next
+  .control-location
+    span События в:
+    +field_select('location',[[0,'Санкт-Петербург'],[1,'Москва']])
+  +field_checkbox('learning','Онлайн обучение и вебинары',true)

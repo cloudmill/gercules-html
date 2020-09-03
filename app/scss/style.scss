@@ -11,9 +11,9 @@
 .page {
   margin-left: 80px;
   width: calc(100% - 80px);
-  border-left: 1px solid #e5e5e5;
+  border-left: 1px solid $color-border-second;
   min-height: 300px; //потом убрать
-  overflow: hidden; // для фоновых полос page404
+  overflow: hidden;
 
   &-title {
     font-family: $font-third;
@@ -27,17 +27,14 @@
   .content {
     padding: 0 60px;
     padding-top: 60px;
-    height: 100%;
 
     &-row{
       display: flex;
       height: 100%;
-    }
-  }
 
-  .content-row {
-    .content {
-      width: calc(100% - 287px);
+      .content {
+        width: calc(100% - 287px);
+      }
     }
   }
 }
