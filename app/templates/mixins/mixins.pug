@@ -27,8 +27,9 @@ mixin field_select(name,options,id = name)
         option(value=`${item[0]}`) #{item[1]}
 mixin field_checkbox(name,label,checked)
   .field.field-checkbox
-    label #{label}
-      if(checked)
-        input(type="checkbox", name=`${name}` checked)
-      else 
-         input(type="checkbox", name=`${name}`)
+    if(checked)
+      input(type="checkbox", name=`${name}` id=`${name}` checked)
+    else 
+      input(type="checkbox", name=`${name}` id=`${name}`)
+    label(for=`${name}`) #{label}
+
