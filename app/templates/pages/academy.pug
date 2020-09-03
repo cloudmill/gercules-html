@@ -25,9 +25,8 @@ block content
               button.next
             .loc
               .caption События в:
-              select(name="location")#location
-                option(value="0") Санкт-Петербург
-                option(value="1") Москва
+              +field_select('location',[[0,'Санкт-Петербург'],[1,'Москва']])
+            +field_checkbox('learning','Онлайн обучение и вебинары',true)
             label.events Онлайн обучение и вебинары
               input(type="checkbox", checked="checked")
               span
