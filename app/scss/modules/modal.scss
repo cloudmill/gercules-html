@@ -1,0 +1,78 @@
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: 10000;
+  @include fadeOutEase;
+  &.active {
+    @include fadeInEase;
+  }
+  &-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  &-bg {
+    position: absolute;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  &-close {
+    position: absolute;
+    right: 10px;
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    top: 0;
+    z-index: 3;
+    cursor: pointer;
+    &:hover{
+      &::after{
+        transform: translate(-50%, -50%) rotate(-135deg);
+      }
+      &::before{
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+    &:after,
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 23px;
+      background-color: black;
+      height: 1px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+  &-item {
+    position: relative;
+    &-wrapper {
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding-right: 10px;
+      background-color: transparent;
+      @include customScrollBar(7px, 3px, #e41d2c, #ffffff);
+    }
+    &-content {
+      background-color: white;
+    }
+  }
+}

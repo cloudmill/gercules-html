@@ -1,29 +1,21 @@
 import $ from "jquery";
-import Swiper from "swiper";
-import select2 from "select2";
+window.$ = $;
 
 //Tools
-import Listener from './tools/listener';
+import Listener from "./tools/listener";
+
+//managers
+import Managers_sliders from "./components/manager_sliders";
+import Manager_forms from "./components/manager_forms";
+import Manager_modals from "./components/manager_modals";
 
 export default class App {
   constructor() {
     window.globalListener = new Listener();
 
-    const trainersSlider = new Swiper(".trainers .slides", {
-      loop: true,
-      slidesPerView: 3,
-      spaceBetween: 50,
-      allowTouchMove: false,
-      speed: 500,
+    this.sliders = new Managers_sliders();
+    this.forms = new Manager_forms();
+    this.modals = new Manager_modals();
 
-      navigation: {
-        nextEl: '.trainers .next',
-        prevEl: '.trainers .prev',
-      },
-    });
-
-    $(".calendar #location").select2({
-      minimumResultsForSearch: -1
-    });
   }
-};
+}
