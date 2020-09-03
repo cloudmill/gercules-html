@@ -4,7 +4,7 @@ mixin icon(iconName, type = 'png')
   else
     i(class='svg-icon '+'svg-'+iconName)
 
-mixin breadcrumbs(path)
+mixin breadcrumbs(path = [])
   .breadcrumbs
     if path.length
       a(href="#") Главная

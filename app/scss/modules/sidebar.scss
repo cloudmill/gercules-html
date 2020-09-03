@@ -1,36 +1,79 @@
 .sidebar {
   &-menu {
     min-width: 287px;
-    padding-top: 40px;
+    padding-top: 35px;
     border-right: 1px solid #e5e5e5;
-    a {
-      display: flex;
-      align-items: center;
-      height: 33px;
-      margin: 10px 0;
-      padding-left: 55px;
-      position: relative;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 400%;
-      color: #6c6c6c;
-      &::before {
-        opacity: 0;
-        content: "";
-        @include background-icon("../images/rect.svg");
-        width: 4px;
-        height: 33px;
+
+    $link-height: 24px;
+    $link-block-height: 56px;
+    $link-margin: ($link-block-height - $link-height) / 2;
+    .links {
+      a {
         display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
-      &.active {
-        color: #262626;
-        &::before {
-          opacity: 1;
+        height: $link-height;
+        margin: ($link-margin * 2) 0;
+        padding-left: 55px;
+        position: relative;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: $link-height;
+        color: #6c6c6c;
+
+        &:first-of-type {
+          margin-top: $link-margin;
         }
+
+        &:last-of-type {
+          margin-bottom: $link-margin;
+        }
+
+        &::before {
+          opacity: 0;
+          content: "";
+          @include background-icon("../images/rect.svg");
+          width: 4px;
+          height: 33px;
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &.active {
+          color: #262626;
+
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .contact {
+      margin-top: 35px + $link-margin;
+      border-top: 1px solid $color-border-second;
+      border-bottom: 1px solid $color-border-second;
+      padding-top: 50px;
+      padding-left: 55px;
+      padding-bottom: 43px;
+      color: $color-basic;
+
+      p {
+        font-family: $font-third;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 24px;
+      }
+
+      a {
+        display: block;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 36px;
       }
     }
   }

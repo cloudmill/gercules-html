@@ -10,15 +10,15 @@
 
   i {
     font-style: normal;
-    color: #6c6c6c;
-  }
-
-  a {
     color: $color-basic;
   }
 
-  span {
+  a {
     color: #6c6c6c;
+  }
+
+  span {
+    color: $color-basic;
 
     &::before {
       content: '—';
@@ -27,7 +27,7 @@
   }
 
   .link {
-    color: $color-basic;
+    color: #6c6c6c;
 
     &::before {
       content: '—';
