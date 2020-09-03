@@ -1,3 +1,4 @@
+import $ from "jquery";
 import "select2";
 import Validator from "./forms/validator";
 import Form from "./forms/form";

@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 export default class Form {
   constructor(el) {
     this.form = el;

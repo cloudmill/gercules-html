@@ -1,0 +1,56 @@
+@mixin fadeOutEase{
+  opacity: 0;
+  pointer-events: none;
+}
+@mixin fadeInEase {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+@mixin customScrollBar($w, $h, $colorBut, $colotBackground) {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: $w !important;
+    height: $h !important;
+    -webkit-appearance: none !important;
+    -webkit-overflow-scrolling: touch;
+    &:horizontal {
+      height: $h !important;
+    }
+    &:vertical {
+      width: $w !important;
+    }
+  }
+  &::-webkit-scrollbar-track-piece {
+    background: $colotBackground !important;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $colorBut !important;
+    &:window-inactive {
+      background: $colorBut  !important; 
+    }
+  }
+  &::-webkit-scrollbar-button {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+  &::-webkit-resizer {
+    background-color: transparent;
+  }
+}
+@mixin scrollBox($hor: null) {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  @include customScrollBar(0, 0, transparent, transparent);
+  @if ($hor != null){
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+}

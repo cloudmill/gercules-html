@@ -1,3 +1,4 @@
+import $ from "jquery";
 import Swiper from "swiper";
 
 export default class Managers_sliders {

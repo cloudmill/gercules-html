@@ -1,3 +1,4 @@
+import $ from "jquery";
 import Modal from "./modals/modal";
 
 export default class Manager_modals {
