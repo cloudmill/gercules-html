@@ -10,7 +10,7 @@ export default class Managers_sliders {
     this.trainerSlider();
   }
   trainerSlider() {
-    this.sliders["trainers"] = new Swiper(".trainers .slides", {
+    this.sliders["trainers"] = new Swiper(".trainers-swiper", {
       loop: true,
       slidesPerView: 3,
       spaceBetween: 50,
@@ -18,8 +18,8 @@ export default class Managers_sliders {
       speed: 500,
 
       navigation: {
-        nextEl: ".trainers .next",
-        prevEl: ".trainers .prev",
+        nextEl: ".trainers-control-prev",
+        prevEl: ".trainers-control-next",
       },
     });
   }
