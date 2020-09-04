@@ -42,63 +42,65 @@
       }
     }
   }
+}
 
-  &-select {
-    .select2 {
-      &-container {
-        min-width: 289px;
-        height: 70px;
+.select2-container {
+  min-width: 412px; // длина select2
 
-        &--open {
-          .select2-selection__arrow::before {
-            transform: rotate(180deg);
-          }
-        }
+  .select2-selection {
+    height: 70px; // высота select2
+    border: 1px solid $color-border-second; // граница select2
+    border-radius: 0;
+
+    .select2-selection__rendered {
+      padding-left: 45px; // текст select2
+      padding-right: 125px;
+      line-height: 70px;
+    }
+
+    .select2-selection__arrow {
+      position: absolute; // стрелка select2
+      top: 0;
+      right: 0;
+      border: 1px solid $color-border-second;
+      height: 100%;
+      width: 80px;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: url(../images/select-arrow.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        transition: $ease-main transform;
       }
 
-      &-selection {
-        height: 100%;
-        border-radius: 0;
-        border-color: $color-border-second;
+      b {
+        display: none; // стрелка select2 по-умолчанию
+      }
+    }
 
-        &__rendered {
-          height: 100%;
-          line-height: 70px !important;
-          padding-left: 37px !important;
-          padding-right: 80px !important;
-        }
+    .select2-selection__placeholder {
+      color: #6C6C6C; // placeholder select2
+    }
+  }
+}
 
-        &__arrow {
-          top: 0 !important;
-          right: 0 !important;
-          width: 80px !important;
-          height: 70px !important;
-          border: 1px solid $color-border-second;
-
-          &::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-image: url(../images/calendar-select-arrow.svg);
-            background-repeat: no-repeat;
-            background-position: center;
-            transition: $ease-main transform;
-          }
-
-          b {
-            display: none;
-          }
-        }
+.select2-container--open {
+  .select2-selection { // открытый select2
+    .select2-selection__arrow {
+      &::before {
+        transform: rotate(180deg);
       }
     }
   }
 }
 
 .select2-dropdown {
-  border-radius: 0 !important;
-  border-color: $color-border-second !important;
+  border-color: $color-border-second; // выпадающий список select2
+  border-radius: 0;
 }

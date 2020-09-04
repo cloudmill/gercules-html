@@ -14,4 +14,20 @@
       }
     }
   }
+
+  &.academy-event {
+    height: 23px;
+
+    span {
+      color: $color-red;
+      font-size: 15px;
+      line-height: 22px;
+      font-style: normal;
+      font-weight: normal;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
 }

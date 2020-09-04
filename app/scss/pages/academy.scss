@@ -28,6 +28,17 @@
   .events {
     &-control {
       margin-top: 30px;
+
+      .select2-container {
+        min-width: 289px;
+
+        .select2-selection {
+          .select2-selection__rendered {
+            padding-left: 37px;
+            padding-right: 117px;
+          }
+        }
+      }
     }
 
     &-calendar {

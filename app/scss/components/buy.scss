@@ -1,0 +1,97 @@
+.buy {
+  &-region-saler {
+    position: relative;
+    padding: 9px 45px 2px 45px;
+    cursor: pointer;
+
+    .help-mark {
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      right: 14px;
+      top: 11px;
+
+      &::before,
+      &::after {
+        transition: $ease-main opacity;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      &::before {
+        background-image: url(../images/question-mark-16x16.svg);
+      }
+
+      &::after {
+        opacity: 0;
+        background-image: url(../images/question-mark-active-16x16.svg);
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 60px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url(../images/mark-red-4x60.svg);
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    h3 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 24px;
+      font-family: $font-third;
+      white-space: nowrap;
+    }
+
+    p {
+      margin-top: 5px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 30px;
+      color: #6C6C6C;
+      white-space: nowrap;
+    }
+  }
+
+  &-saler-help {
+    padding-top: 28px;
+    padding-left: 41px;
+    width: 285px;
+    height: 166px;
+    background-image: url(../images/buy-saler-help.svg);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    span {
+      display: block;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 200%;
+
+      &:last-child {
+        line-height: 300%;
+        color: $color-red;
+      }
+    }
+  }
+}

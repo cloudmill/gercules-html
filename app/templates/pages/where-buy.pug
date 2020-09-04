@@ -1,0 +1,23 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Где купить"
+
+block content
+  .content
+    +breadcrumbs(["Где купить"])
+    .where-buy
+      h1.page-title Где купить
+      .where-buy-location
+        +field_select("region", [[0, "Хабаровская область"], [1, "Воронежская область"]], "Выберите регион")
+        +field_select("city", [[0, "Хабаровск"], [1, "Воронеж"]], "Выберите город")
+        .buy-region-saler
+          h3 Бернгард Андрей Сергеевич
+          p региональный представитель
+          span.help-mark
+          .buy-saler-help
+            span +7 (383) 338-31-32 вн. 119
+            span +7 (913) 789-01-14
+            span berngard.as@gerkules.ru
+
+

@@ -3,7 +3,7 @@ import "select2";
 import Validator from "./forms/validator";
 import Form from "./forms/form";
 
-window.validator= new Validator();
+window.validator = new Validator();
 
 export default class Manager_forms {
   constructor() {
@@ -19,10 +19,17 @@ export default class Manager_forms {
   }
 
   initSelect2() {
-    $(".field-select select").each((key, select) => {
-      $(select).select2({
-        minimumResultsForSearch: -1,
-      });
+    $("#region, #city, #location").each((key, select) => {
+      if ($(select).data("select-placeholder")) {
+        $(select).select2({
+          minimumResultsForSearch: -1,
+          placeholder: $(select).data("select-placeholder")
+        })
+      } else {
+        $(select).select2({
+          minimumResultsForSearch: -1,
+        })
+      }
     });
   }
 
