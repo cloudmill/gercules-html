@@ -22,15 +22,16 @@ mixin link(href,text)
 
 mixin field_select(name,options,placeholder = "",id = name)
   .field.field-select
-    if placeholder
-      select(name=name id=id data-select-placeholder=placeholder)
-        option
-        each item in options
-          option(value=`${item[0]}`) #{item[1]}
-    else
-      select(name=name id=id)
-        each item in options
-          option(value=`${item[0]}`) #{item[1]}
+      if placeholder
+        select(name=name id=id data-select-placeholder=placeholder)
+          option
+          each item in options
+            option(value=`${item[0]}`) #{item[1]}
+      else
+        select(name=name id=id)
+          each item in options
+            option(value=`${item[0]}`) #{item[1]}
+
 mixin field_checkbox(name,label,checked)
   .field.field-checkbox
     if(checked)

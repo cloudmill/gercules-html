@@ -8,6 +8,8 @@ import Listener from "./tools/listener";
 import Managers_sliders from "./components/manager_sliders";
 import Manager_forms from "./components/manager_forms";
 import Manager_modals from "./components/manager_modals";
+import Manager_styles from "./components/manager_styles";
+
 
 export default class App {
   constructor() {
@@ -16,6 +18,7 @@ export default class App {
     this.sliders = new Managers_sliders();
     this.forms = new Manager_forms();
     this.modals = new Manager_modals();
+    this.styles = new Manager_styles();
 
     // $(".markets-item").click(function () {
     //   if ($(this).hasClass("open")) {

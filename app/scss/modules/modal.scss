@@ -38,16 +38,16 @@
     top: 0;
     z-index: 3;
     cursor: pointer;
-    &:hover{
-      &::after{
-        transform: translate(-50%, -50%) rotate(-135deg);
+    &:hover {
+      &:after {
+        transform: translate(-50%, -50%) rotate(-225deg);
       }
-      &::before{
-        transform: translate(-50%, -50%) rotate(-45deg);
+      &:before {
+        transform: translate(-50%, -50%) rotate(-135deg);
       }
     }
     &:after,
-    &::before {
+    &:before {
       content: "";
       display: block;
       position: absolute;
@@ -57,22 +57,42 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%) rotate(45deg);
+      transition: all $ease-main;
     }
     &:after {
       transform: translate(-50%, -50%) rotate(-45deg);
     }
   }
+  &-eventsList {
+    margin-top: 50px;
+  }
+  &-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 160%;
+    color: #262626;
+  }
   &-item {
     position: relative;
+    @include fadeOutEase;
+    &.active {
+      @include fadeInEase;
+    }
     &-wrapper {
-      overflow-x: hidden;
-      overflow-y: auto;
+      max-height: 100vh;
+      position: relative;
       padding-right: 10px;
       background-color: transparent;
       @include customScrollBar(7px, 3px, #e41d2c, #ffffff);
     }
     &-content {
       background-color: white;
+      padding: 50px;
+      min-height: 100vh;
+    }
+    &-left {
+      max-width: 45%;
     }
   }
 }

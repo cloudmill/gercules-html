@@ -1,7 +1,9 @@
 import $ from "jquery";
 import "select2";
+
 import Validator from "./forms/validator";
 import Form from "./forms/form";
+import Calendar from "./forms/calendar";
 
 window.validator = new Validator();
 
@@ -16,14 +18,15 @@ export default class Manager_forms {
 
     //this.init_form_modal();
     //this.init_form_subscribe();
+    this.init_form_calendar();
   }
 
   initSelect2() {
-    $("#region, #city, #location").each((key, select) => {
-      if ($(select).data("select-placeholder")) {
+    $(".field-select select").each((key, select) => {
+      if ($(select).attr("data-select-placeholder")) {
         $(select).select2({
           minimumResultsForSearch: -1,
-          placeholder: $(select).data("select-placeholder")
+          placeholder: $(select).attr("data-select-placeholder")
         })
       } else {
         $(select).select2({
@@ -31,6 +34,10 @@ export default class Manager_forms {
         })
       }
     });
+  }
+
+  init_form_calendar(){
+    let calendar = new Calendar();
   }
 
   init_form_modal() {

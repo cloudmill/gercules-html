@@ -1,8 +1,15 @@
 .modal
   .modal-bg
   .modal-content
-    .modal-item#events
-      .modal-close(data-modal-close)
+    .modal-item.modal-item-left#events
       .modal-item-wrapper
+        .modal-close(data-modal-close)
         .modal-item-content
+          .modal-title События 17 сентября 2020 
+            br
+            |в Санкт-Петербурге
+          .modal-eventsList
+            include ../modules/events/items
+            include ../modules/events/items 
+        
           
