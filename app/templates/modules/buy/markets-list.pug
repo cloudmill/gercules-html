@@ -1,0 +1,15 @@
+mixin markets-item(name, open = "", link = "technonikol.ru")
+  div(class = open ? "open" : "").markets-item
+    .market-front
+      .market-name=name
+      .market-link=link
+    .market-dropdown
+
+.buy-markets-list
+  //- .markets-scroll
+  //-   span
+  .markets-wrapper
+    +markets-item("Леруа Мерлен")
+    +markets-item("ТЦ Глобус")
+    +markets-item("Технониколь")
+    +markets-item("ТЦ Глобус")

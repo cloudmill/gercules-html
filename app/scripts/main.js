@@ -17,5 +17,16 @@ export default class App {
     this.forms = new Manager_forms();
     this.modals = new Manager_modals();
 
+    // $(".markets-item").click(function () {
+    //   if ($(this).hasClass("open")) {
+    //     $(".markets-item.open .market-dropdown").slideUp();
+    //     $(this).removeClass("open");
+    //   } else {
+    //     $(".markets-item.open .market-dropdown").slideUp();
+    //     $(".markets-item.open").removeClass("open");
+    //     $(this).addClass("open");
+    //     $(".markets-item.open .market-dropdown").slideDown();
+    //   }
+    // });
   }
 }

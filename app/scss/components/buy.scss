@@ -1,10 +1,10 @@
 .buy {
-  &-region-saler {
+  &-saler-card {
     position: relative;
     padding: 9px 45px 2px 45px;
     cursor: pointer;
 
-    .help-mark {
+    .saler-help-mark {
       width: 16px;
       height: 16px;
       position: absolute;
@@ -81,7 +81,7 @@
     background-position: center center;
     background-repeat: no-repeat;
 
-    span {
+    a {
       display: block;
       font-style: normal;
       font-weight: normal;
@@ -91,6 +91,287 @@
       &:last-child {
         line-height: 300%;
         color: $color-red;
+      }
+    }
+  }
+
+  &-markets-type {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: $color-border-second;
+      position: absolute;
+      bottom: 0;
+      left: -200%;
+      width: 500%;
+    }
+
+    [data-markets-type] {
+      transition: $ease-main color;
+      position: relative;
+      height: 51px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 30px;
+      white-space: nowrap;
+      padding-bottom: 21px;
+
+      &::before {
+        transition: $ease-main opacity;
+        opacity: 0;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-image: url(../images/tab-red-rect-35x4.svg);
+        background-position: center bottom;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+
+      &.active {
+        color: $color-red;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &-markets-map {
+    position: absolute;
+    background-image: url(../images/map.png);
+    background-position: left top;
+    background-size: auto 100%;
+
+    .markets-map-pin {
+      position: absolute;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  // лист магазинов
+  &-markets-list {
+
+    // оформление подложки
+    position: relative;
+    background-color: white;
+    filter: drop-shadow(0px 14px 54px rgba(0, 0, 0, 0.15));
+
+    // красная полоса сверху
+    &::before {
+      z-index: 10; // полоса перекрывает карточки
+      content: "";
+      display: block;
+      height: 3px;
+      position: absolute;
+      top: 1px;
+      left: 0;
+      right: 0;
+      background-color: $color-red;
+    }
+
+    .markets {
+
+      // скролл панель
+      &-scroll {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -5px;
+        width: 5px;
+        background-color: white;
+
+        // ползунок
+        span {
+          position: absolute;
+          display: block;
+          width: 5px;
+          height: 78px;
+          background-color: $color-red;
+          left: 0;
+          top: 67px;
+        }
+      }
+
+      &-wrapper {
+        max-height: 520px;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        @include customScrollBar(5px, 520px, $color-red, white);
+      }
+
+      // элемент (карточка + дроп)
+      &-item {
+        .market {
+
+          // карточка
+          &-front {
+            z-index: 5;
+            position: relative;
+            height: 130px;
+            width: 412px;
+            padding: 44px 45px 32px 58px;
+            background-color: $color-list-market;
+            cursor: pointer;
+            border: 1px solid $color-border-second;
+
+            &:hover {
+              background-color: $color-list-market-hover;
+            }
+
+            &::before {
+              transition: $ease-main transform;
+              content: "";
+              display: block;
+              width: 10px;
+              height: 5px;
+              position: absolute;
+              top: 49px;
+              right: 28px;
+              background-image: url(../images/market-card-arrow.svg);
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center center;
+            }
+          }
+
+          //эл-ты карточки
+          &-name {
+            font-family: $font-third;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 24px;
+          }
+
+          &-link {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 30px;
+            color: $color-gray;
+          }
+
+          // дроп
+          &-dropdown {
+            display: none;
+            height: 100px;
+            border-top: 1px solid $color-border-second;
+          }
+        }
+
+        &:not(:last-child) {
+          .market-front {
+            border-bottom: none;
+          }
+        }
+
+        // открытая карточка
+        &.open {
+          .market-dropdown {
+            display: block;
+          }
+
+          .market-front {
+            background-color: $color-list-market-hover;
+
+            &::before {
+              transform: rotate(180deg);
+            }
+          }
+
+          &:last-child {
+            .market-front {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-market-not-found {
+    position: relative;
+    left: -61px;
+    display: flex;
+    max-width: 1440px;
+    min-width: 1070px;
+    height: 370px;
+    padding: 80px 180px 80px 60px;
+    background-image: url(../images/market-not-found.svg);
+    background-position: right center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+
+    h2 {
+      font-family: $font-third;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 40px;
+      flex-basis: 430px;
+      margin-right: 85px;
+    }
+
+    div {
+      position: relative;
+    }
+
+    p {
+      margin-top: 10px;
+      max-width: 540px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 22px;
+    }
+
+    a {
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 328px;
+      height: 70px;
+      background-image: url(../images/market-not-found-button.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+      color: white;
+      line-height: 70px;
+      text-align: center;
+
+      &::after {
+        margin-left: 15px;
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 13px;
+        background-image: url(../images/market-not-found-button-arrow.svg);
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
       }
     }
   }

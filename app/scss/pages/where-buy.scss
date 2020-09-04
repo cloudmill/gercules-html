@@ -1,4 +1,6 @@
 .where-buy {
+  padding-bottom: 120px;
+
   &-location {
     margin-top: 30px;
     padding-right: 411px;
@@ -12,7 +14,7 @@
       margin-right: 30px;
     }
 
-    .buy-region-saler {
+    .buy-saler-card {
       position: absolute;
       right: 60px;
       top: 30px;
@@ -20,9 +22,10 @@
       &:hover {
         .buy-saler-help {
           opacity: 1;
+          pointer-events: all;
         }
 
-        .help-mark {
+        .saler-help-mark {
           &::before {
             opacity: 0;
           }
@@ -34,6 +37,7 @@
       }
 
       .buy-saler-help {
+        cursor: default;
         pointer-events: none;
         opacity: 0;
         transition: $ease-main opacity;
@@ -42,5 +46,54 @@
         right: 22px;
       }
     }
+  }
+
+  .buy-markets-type {
+    margin-top: 40px;
+  }
+
+  &-markets {
+    position: relative;
+    margin-top: 40px;
+    height: 650px;
+
+    .buy-markets-map {
+      z-index: 5; // absolute по-умолчанию
+      left: -60px;
+      width: calc(100% + (60px * 2));
+      height: 100%;
+
+      .markets-map-pin {
+        top: 206px;
+        left: 785px;
+        width: 36px;
+        height: 40px;
+        background-image: url(../images/map-pin.svg);
+
+        &.pin-amount {
+          top: 148px;
+          left: 982px;
+          width: 50px;
+          height: 50px;
+          background-image: url(../images/map-pin-amount.svg);
+        }
+      }
+    }
+
+    .buy-markets-list { // лист магазинов
+      position: absolute;
+      z-index: 10;
+      top: 70px;
+
+      .markets-wrapper {
+        max-height: 520px;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+    }
+  }
+
+  .buy-market-not-found {
+    margin-top: 90px;
   }
 }
