@@ -159,4 +159,16 @@ button {
 .icon,.svg-icon{
   display: inline-block;
 }
-@include sprites($spritesheet-sprites)
+@include sprites($spritesheet-sprites);
+
+html {
+  &.closeScroll {
+    overflow: hidden;
+    &.no-touch{
+      .wrapper {
+        width: calc(100% - var(--scrollBar-width));
+        margin-right: var(--scrollBar-width);
+      }
+    }
+  }
+}

@@ -24,13 +24,13 @@ export default class Manager_modals {
       that.openModal(id);
     });
     $("[data-modal-close]").click(() => {
-      this.closeAll();
+      this.close();
     });
     $("body").mouseup((e) => {
       if (this.state == "open") {
         var container = $(".modal-item > *");
         if (container.has(e.target).length === 0) {
-          this.closeAll();
+          this.close();
         }
       }
     });
@@ -54,7 +54,7 @@ export default class Manager_modals {
       });
     }
   }
-  closeAll() {
+  close() {
     let i = 0;
     for (let key in this.modals) {
       let item = this.modals[key];

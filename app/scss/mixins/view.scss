@@ -1,6 +1,7 @@
 @mixin fadeOutEase{
   opacity: 0;
   pointer-events: none;
+  transition: $ease-main;
 }
 @mixin fadeInEase {
   opacity: 1;
@@ -9,7 +10,7 @@
 
 
 @mixin customScrollBar($w, $h, $colorBut, $colotBackground) {
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   &::-webkit-scrollbar {
     width: $w !important;
