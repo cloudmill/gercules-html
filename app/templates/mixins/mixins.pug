@@ -40,6 +40,19 @@ mixin field_checkbox(name,label,checked)
       input(type="checkbox", name=`${name}` id=`${name}`)
     label(for=`${name}`) #{label}
 
+mixin fieldBase(id, name, label, placeholder)
+  .field.field-base
+    label(for=id)
+      input(type="text" name=name id=id data-required='1' placeholder=placeholder)
+      .field-inf
+        span.name #{label}
+        span.errorText пожалуйста, заполните поле корректно
+
+mixin fieldSubmit(id, name, text)
+  .field.field-submit
+    button(type="submit" name=name id=id)
+      span #{text}
+
 mixin client_service_card
   .client-service-card
     span Клиентский сервис

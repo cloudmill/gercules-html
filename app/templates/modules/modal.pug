@@ -10,6 +10,40 @@
             |в Санкт-Петербурге
           .modal-eventsList
             include ../modules/events/items
-            include ../modules/events/items 
-        
-          
+            include ../modules/events/items
+    .modal-item.modal-item-fill#market
+      .modal-item-wrapper
+        .modal-close(data-modal-close)
+        .modal-item-content
+          h1 Сообщить о магазине
+          form(action="#")
+            h2 Адрес магазина
+            .form-row
+              .form-col
+                +fieldBase("marketFullName", "marketFullName", "Юридическое название*", "ООО Смеси+")
+                +fieldBase("marketName", "marketName", "Название магазина*", "ООО Смеси+")
+                +fieldBase("marketStreet", "marketStreet", "Улица", "пр. Луначарского")
+              .form-col
+                +fieldBase("marketRegion", "marketRegion", "Регион*", "Северо-Запад")
+                +fieldBase("marketCity", "marketCity", "Город*", "Омск")
+                +fieldBase("marketBuilding", "marketBuilding", "Дом", "19")
+            h2 Контактное лицо
+            .form-row
+              .form-col
+                +fieldBase("personName", "personName", "Имя*", "Алексей")
+                +fieldBase("personSurname", "personSurname", "Фамилия*", "Биланин")
+                +fieldBase("personPhone", "personPhone", "Номер телефона*", "+7 (___) ___-__-__")
+                +fieldBase("personSite", "personSite", "Адрес сайта", "yandex.ru")
+              .form-col
+                +fieldBase("personEmail", "personEmail", "Email", "ksh@loudmill.ru")
+                +fieldBase("personPosition", "personPosition", "Должность*", "Директор")
+                label(for="personStatus").select
+                  .field-inf
+                    span.name Статус
+                    span.errorText пожалуйста, заполните поле корректно
+                  +field_select("personStatus", [[0, "Дистрибьютер"], [1, "Дистрибьютер"]], "Дистрибьютер", "personStatus")
+            .form-row
+              .form-col
+                +field_checkbox("agreement", "«Я выражаю согласие на обработку ПДн в соответствии с Политикой конфиденциальности»")
+              .form-col
+                +fieldSubmit("submit", "submit", "Сообщить о магазине")
