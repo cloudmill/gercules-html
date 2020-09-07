@@ -1,24 +1,25 @@
 .calendar-data-events
   input(type="hidden" name="" data-year='2020' data-day='17' data-month='9' data-count='5' )
   input(type="hidden" name="" data-year='2020' data-day='26' data-month='9' data-count='2' )
-table.events-calendar
-  thead
+.events-calendar
+  table.events-calendar-head
+    - const week = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"]
     tr
-      - const week = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"]
       each day in week
         td=day
-  tbody
-    - const events = { "17": 5, "26": 2 }
-    - for (let week = 0; week < 5; week++)
-      tr
-        - for (let day = 0; day < 7; day++)
-          -
-            let curDay = (week * 7 + day);
-            let isCurMonth = curDay < 31;
-            curDay = (curDay % 31) + 1;
-          if events[curDay] && isCurMonth
-            td.calendar-event.js-modal(href="#events") #{curDay}
-              span События:
-              span #{events[curDay]}
-          else
-            td(class = isCurMonth ? "" : "calendar-disabled") #{curDay}
+  .events-calendar-slider
+    table
+      - const events = { "17": 5, "26": 2 }
+      - for (let week = 0; week < 5; week++)
+        tr
+          - for (let day = 0; day < 7; day++)
+            -
+              let curDay = (week * 7 + day);
+              let isCurMonth = curDay < 31;
+              curDay = (curDay % 31) + 1;
+            if events[curDay] && isCurMonth
+              td.calendar-event.js-modal(href="#events") #{curDay}
+                span События:
+                span #{events[curDay]}
+            else
+              td(class = isCurMonth ? "" : "calendar-disabled") #{curDay}

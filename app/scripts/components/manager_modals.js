@@ -18,7 +18,7 @@ export default class Manager_modals {
         this.count++;
       });
 
-    $(".js-modal").click(function (e) {
+    $(document).on("click", ".js-modal", function (e) {
       e.preventDefault();
       let id = $(this).attr("href").replace("#", "");
       that.openModal(id);

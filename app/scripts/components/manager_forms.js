@@ -3,7 +3,7 @@ import "select2";
 
 import Validator from "./forms/validator";
 import Form from "./forms/form";
-import Calendar from "./forms/calendar";
+import CalendarSlider from "./forms/calendar";
 
 window.validator = new Validator();
 
@@ -37,7 +37,8 @@ export default class Manager_forms {
   }
 
   init_form_calendar(){
-    let calendar = new Calendar();
+    let calendar = new CalendarSlider();
+    console.log(calendar.calendar)
   }
 
   init_form_modal() {

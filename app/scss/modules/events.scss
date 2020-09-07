@@ -52,55 +52,68 @@
   }
 
   &-calendar {
-    border-spacing: 0;
-    border-collapse: collapse;
-
-    td {
+    @mixin calendar_table_style {
       border: 1px solid $color-border-second;
       font-size: 20px;
       line-height: 23px;
       font-style: normal;
       font-weight: normal;
     }
-
-    thead {
-      background-color: #FBFBFB;
-      text-align: center;
-
+    &-head {
+      background-color: #fbfbfb !important;
       tr {
-        height: 64px;
+        height: 64px !important;
       }
-
       td {
         vertical-align: middle;
         text-transform: uppercase;
+        @include calendar_table_style();
       }
     }
-
-    tbody {
+    &-slider{
+      overflow: hidden;
+      margin-top: -1px;
+      table{
+        visibility: hidden;
+        tbody{
+          width: 100%;
+        }
+        &.active{
+          visibility: visible;
+          position: relative;
+        }
+        &.prev,&.next{
+          position: absolute;
+        }
+      }
+      
+    }
+    table {
       background-color: white;
       text-align: left;
-
+      width: 100%;
+      border-spacing: 0;
+      border-collapse: collapse;
       tr {
         height: 120px;
       }
-
       td {
+        width: calc(100% / 7);
         padding-left: 20px;
         padding-bottom: 16px;
         vertical-align: bottom;
-
+        @include calendar_table_style();
         &.calendar-event {
           position: relative;
           background-color: $color-red;
           color: white;
           cursor: pointer;
-    
+
           span {
             position: absolute;
             font-style: normal;
           }
-    
+
           span:first-child {
             top: 18px;
             right: 16px;
@@ -108,7 +121,7 @@
             line-height: 17px;
             font-weight: normal;
           }
-    
+
           span:last-child {
             right: 17px;
             bottom: -1px;
@@ -120,7 +133,7 @@
         }
 
         &.calendar-disabled {
-          color: #ABABAB;
+          color: #ababab;
         }
       }
     }
