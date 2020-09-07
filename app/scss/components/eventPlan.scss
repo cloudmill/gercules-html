@@ -1,0 +1,51 @@
+.eventPlan {
+  h2 {
+    font: normal bold 28px/40px $font-main;
+    color: $color-basic;
+  }
+
+  &-day {
+    padding-top: 20px;
+    border-top: 1px solid $color-border-second;
+
+    h3 {
+      font: normal bold 20px/32px $font-main;
+      color: $color-basic;
+    }
+  }
+
+  &-points {
+    padding-top: 27px;
+    padding-left: 248px;
+  }
+
+  &-point {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 25px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-border-second;
+      margin-bottom: 25px;
+    }
+
+    .pointDate {
+      flex-basis: 288px;
+    }
+
+    .pointDate,
+    .pointTitle {
+      align-self: stretch;
+      font: normal normal 15px/22px $font-main;
+      color: $color-basic;
+    }
+
+    .pointTime {
+      flex-grow: 1;
+      align-self: stretch;
+      font: normal bold 15px/22px $font-third;
+      color: $color-basic;
+      text-align: right;
+    }
+  }
+}

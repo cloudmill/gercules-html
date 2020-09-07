@@ -58,7 +58,16 @@ mixin client_service_card
     span Клиентский сервис
     a(href="tel: 8 913 001 75 01") +7 913 001-75-01
 
-mixin hash_tags(tags, theme = "")
-  div(class = "hash-tags" + (theme ? " " + theme : ""))
+
+//- MODULE: hashTags
+//- tags -> [[text, href], ...]
+mixin hashTags(tags)
+  .hashTags
     each tag in tags
-      span="#" + tag
+      a(href=tag[1])="#" + tag[0]
+
+//- красная ссылка в виде параллелограмма
+mixin parallelogramLink(text, href)
+  .parallelogramLink
+    a(href=href)
+      span #{text}

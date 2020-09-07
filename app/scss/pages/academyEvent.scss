@@ -1,7 +1,51 @@
 .academyEvent {
+  padding-bottom: 120px;
+
   h1 {
     margin-top: 35px;
-    margin-bottom: 20px;
     max-width: 905px;
+  }
+
+  .hashTags {
+    margin-top: 19px;
+  }
+
+  .eventInfoPanel {
+    margin-top: 18px;
+  }
+
+  &-aboutEvent {
+    margin-top: 80px;
+
+    h2 {
+      font: normal bold 28px/40px $font-third;
+      color: $color-basic;
+      white-space: nowrap;
+    }
+
+    .aboutRow {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      p {
+        max-width: 641px;
+        font: normal normal 15px/22px $font-main;
+        color: $color-basic;
+      }
+
+      .parallelogramLink {
+        margin-left: 60px;
+      }
+    }
+  }
+
+  .eventPlan {
+    margin-top: 60px;
+  }
+
+  .eventSpeaker {
+    margin-top: 80px;
   }
 }

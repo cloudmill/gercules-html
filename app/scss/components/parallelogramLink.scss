@@ -1,0 +1,39 @@
+.parallelogramLink {
+  $linkHeight: 70px; // высота
+  $linkLRPadding: 50px; // боковой padding
+  width: 339px; // длина
+  height: $linkHeight;
+
+  a {
+    display: block;
+    height: 100%;
+    padding: 0 $linkLRPadding;
+    text-align: center;
+    white-space: nowrap;
+    background-image: url(../images/market-not-found-button.svg);
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    span {
+      display: inline-block;
+      font: normal bold 18px/21px $font-main;
+      color: white;
+      line-height: $linkHeight;
+      vertical-align: middle;
+    }
+
+    &::after {
+      vertical-align: middle;
+      margin-left: 20px;
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 13px;
+      background-image: url(../images/arrow-white-24x13.svg);
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}

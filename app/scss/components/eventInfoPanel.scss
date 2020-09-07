@@ -1,0 +1,83 @@
+.eventInfoPanel {
+  display: flex;
+  min-height: 110px;
+  border: 1px solid $color-border-second;
+
+  .eventDate,
+  .eventTime,
+  .eventAddress {
+    position: relative;
+    align-self: stretch;
+    padding: 32px 25px;
+    overflow: hidden;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 25px;
+      content: "";
+      display: block;
+      width: 4px;
+      height: 60px;
+      background-image: url(../images/events-card-mark.svg);
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    &:not(:first-child) {
+      border-left: 1px solid $color-border-second;
+    }
+  }
+
+  .eventDate {
+    flex-basis: 248px;
+
+    div {
+      position: absolute;
+      left: 25px;
+      top: 32px;
+      white-space: nowrap;
+
+      p {
+        display: inline-block;
+        vertical-align: top;
+
+        &:first-child {
+          font: normal bold 48px/69px $font-third;
+          color: $color-red;
+        }
+
+        &:last-child {
+          margin-left: 9px;
+
+          span {
+            display: block;
+            font: normal normal 18px/23px $font-main;
+            color: $color-basic;
+          }
+        }
+      }
+    }
+  }
+
+  .eventTime {
+    flex-basis: 288px;
+
+    p {
+      position: absolute;
+      top: 32px;
+      left: 25px;
+      font: normal bold 48px/69px $font-third;
+      color: $color-red;
+    }
+  }
+
+  .eventAddress {
+    p {
+      max-width: 454px;
+      font: normal normal 18px/23px $font-main;
+      color: $color-basic;
+    }
+  }
+}

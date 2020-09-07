@@ -1,33 +1,15 @@
-.hash-tags {
-  &.events-card-tags {
-    height: 17px;
+// MODULE: hashTags
+.hashTags {
+  display: flex;
+  flex-wrap: wrap;
 
-    span {
-      color: $color-red;
-      font-size: 15px;
-      line-height: 22px;
-      font-style: normal;
-      font-weight: normal;
+  a {
+    display: inline-block;
+    font: normal normal 15px/22px $font-main;
+    color: $color-red;
 
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
-    }
-  }
-
-  &.academy-event {
-    height: 23px;
-
-    span {
-      color: $color-red;
-      font-size: 15px;
-      line-height: 22px;
-      font-style: normal;
-      font-weight: normal;
-
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
+    &:not(:last-child) {
+      margin-right: 20px;
     }
   }
 }

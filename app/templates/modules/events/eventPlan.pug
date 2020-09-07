@@ -1,0 +1,36 @@
+-
+  const eventPlan = [
+    {
+      title: "Первый день",
+      date: "10.01.2019",
+      points: [
+        [ "Сбор в аудитории", "13:10" ],
+        [ "Доклад №1. Зачем покупать бергауф, если есть Геркулсе", "13:10" ],
+        [ "Доклад №2. Зачем покупать бергауф, если есть Геркулсе", "13:10" ],
+        [ "Обед", "14:10" ],
+        [ "Ответы на вопросы", "16:30" ],
+        [ "Прощание", "17:40" ]
+      ]
+    },
+    {
+      title: "Второй день",
+      date: "10.01.2019",
+      points: [
+        [ "Начало", "13:10" ],
+        [ "Окончание", "16:10" ]
+      ]
+    }
+  ];
+
+.eventPlan
+  h2 План мероприятия
+  each day in eventPlan
+    .eventPlan-day
+      h3=day.title
+      .eventPlan-points
+        each point in day.points
+          .eventPlan-point
+            .pointDate=day.date
+            .pointTitle=point[0]
+            .pointTime=point[1]
+
