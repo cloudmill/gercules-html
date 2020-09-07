@@ -1,70 +1,39 @@
-import $ from "jquery";
-class Builder {
-  constructor() {
-    this.currentDay = 0;
-  }
-  createCell(day, event) {
-    let html = "";
-    if (this.currentDay % 7 == 0) {
-      html += "<tr>";
-    }
-    if (event > 0) {
-      html += `<td class="calendar-event js-modal" href="#events">${day}<span>События:</span><span>${event}</span></td>`;
-    } else if (event == -1) {
-      html += `<td>${day}</td>`;
-    } else {
-      html += `<td>${day}</td>`;
-    }
-    if (this.currentDay % 7 == 6) {
-      html += "</tr>";
-    }
-    this.currentDay++;
-    return html;
-  }
-}
-export default class Calendar {
+import Builder from "./calendar/builder";
+class Calendar {
   constructor() {
     this.dataEvents = [];
+    this.months = [
+      "Январь",
+      "Февраль",
+      "Март",
+      "Апрель",
+      "Май",
+      "Июнь",
+      "Июль",
+      "Август",
+      "Сентябрь",
+      "Октябрь",
+      "Ноябрь",
+      "Декабрь",
+    ];
     this.init();
   }
   init() {
-    this.builder = new Builder();
-    let date = new Date();
-    this.currentYear = date.getFullYear();
-    this.currentMonth = date.getMonth()+1;
-    this.currentDay = date.getDay();
-    this.setConst();
     this.setDataEvents();
-    this.build();
+    this.builder = new Builder(this.dataEvents);
   }
-  build() {
-    let start_day = this.getWeekDay(this.currentYear, this.currentMonth, 1);
-    let countDays = this.getCount();
-    let last_day = this.getWeekDay(
-      this.currentYear,
-      this.currentMonth,
-      countDays
-    );
-    let table = "";
-    if (start_day != 0) {
-      let countDays_prev = this.getCount(this.currentMonth + 1);
-      for (let i = countDays_prev - start_day; i <= countDays_prev; i++) {
-        table += this.builder.createCell(i + 1, -1);
-      }
-    }
-
-    for (let i = 0; i <= countDays; i++) {
-      let event = this.getEvent(i + 1);
-      table += this.builder.createCell(i + 1, event);
-    }
-
-    if (last_day != 6) {
-      for (let i = last_day + 1; i < 6; i++) {
-        table += this.builder.createCell(i - last_day, -1);
-      }
-    }
-    $(".events-calendar tbody").html(table);
+  update() {
+    this.dataEvents = [];
+    this.setDataEvents();
+    this.builder.update(this.dataEvents);
   }
+  build(year, monthId) {
+    return `<table data-month=${monthId}>${this.builder.drawMonth(
+      monthId,
+      year
+    )}</table>`;
+  }
+
   setDataEvents() {
     $(".calendar-data-events input").each((key, item) => {
       this.dataEvents.push({
@@ -75,31 +44,105 @@ export default class Calendar {
       });
     });
   }
-  getWeekDay(year, month, day) {
-    let d = new Date(year, month, day - 1).getDay() - 1;
-    return d == -1 ? 6 : d;
+}
+
+export default class CalendarSlider {
+  constructor() {
+    this.maxSlides = 5;
+    this.deph = (this.maxSlides - 1) / 2;
+    this.calendar = new Calendar();
+    let date = new Date();
+    this.currentYear = date.getFullYear();
+    this.currentMonthId = date.getMonth();
+
+    this.events();
+    this.init();
   }
-  getEvent(day) {
-    let count = 0;
-    this.dataEvents.forEach((el) => {
-      if (
-        el.day == day &&
-        el.year == this.currentYear &&
-        el.month == this.currentMonth + 1
-      ) {
-        count = el.count;
-      }
+  init() {
+    this.sliderContent = "";
+    this.eachForMonthSlider((year, monthid) => {
+      this.sliderContent += this.calendar.build(year, monthid);
     });
-    return count;
+    $(".events-calendar-slider").html(this.sliderContent);
+    this.update();
   }
-  setConst() {
-    this.months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  preDraw(type) {
+    if (type < 0) {
+      let month1 = this.currentMonthId + this.deph + 1;
+      month1 = this.correctMonth(month1);
+      $(document).find(`table[data-month="${month1}"]`).remove();
+
+      let month2 = this.currentMonthId - this.deph;
+      let _year = this.currentYear + (month2 < 0 ? -1 : month2 > 11 ? 1 : 0);
+      month2 = this.correctMonth(month2); 
+      let table = this.calendar.build(_year, month2);
+      $(".events-calendar-slider").prepend(table)
+    }
+    if (type > 0) {
+      let month1 = this.currentMonthId - this.deph - 1;
+      month1 = this.correctMonth(month1);
+      $(document).find(`table[data-month="${month1}"]`).remove();
+
+      let month2 = this.currentMonthId + this.deph;
+      let _year = this.currentYear + (month2 < 0 ? -1 : month2 > 11 ? 1 : 0);
+      month2 = this.correctMonth(month2);
+      let table = this.calendar.build(_year, month2);
+      $(".events-calendar-slider").append(table)
+    }
   }
-  getCount(id) {
-    let _id = id != undefined ? id : this.currentMonth;
-    if (_id > 11) _id = _id % 11;
-    let countDays = this.months[_id];
-    if (this.currentMonth == 1) countDays += this.currentYear / 4 == 0 ? 1 : 0;
-    return countDays;
+  setClasses() {
+    this.eachForMonthSlider((year, monthid, d) => {
+      let slide = $(document).find(`table[data-month="${monthid}"]`);
+      slide.removeClass("prev").removeClass("next").removeClass("active");
+      if (d < 0) slide.addClass("prev");
+      if (d > 0) slide.addClass("next");
+      if (d == 0) slide.addClass("active");
+    });
+  }
+  events() {
+    $(".events-control .date-prev").click(() => {
+      this.prev();
+    });
+    $(".events-control .date-next").click(() => {
+      this.next();
+    });
+  }
+  next() {
+    this.currentMonthId++;
+    if (this.currentMonthId > 11) {
+      this.currentYear++;
+      this.currentMonthId = 0;
+    }
+    this.update(1);
+  }
+  prev() {
+    this.currentMonthId--;
+    if (this.currentMonthId < 0) {
+      this.currentYear--;
+      this.currentMonthId = 11;
+    }
+    this.update(-1);
+  }
+  update(type) {
+    this.preDraw(type);
+    this.setClasses();
+    $(".control-date span").html(
+      `${this.months[this.currentMonthId]} ${this.currentYear}`
+    );
+  }
+  updateDate() {
+    this.calendar.update();
+  }
+  eachForMonthSlider(handler) {
+    let deph = this.deph;
+    for (let month = -deph; month <= deph; month++) {
+      let _month = this.currentMonthId + month;
+      let _year = this.currentYear + (_month < 0 ? -1 : _month > 11 ? 1 : 0);
+      _month = this.correctMonth(_month);
+      handler(_year, _month, month);
+    }
+  }
+  correctMonth(_month) {
+    return _month < 0 ? 12 - _month : _month > 11 ? _month - 12 : _month;
   }
 }

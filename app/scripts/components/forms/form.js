@@ -39,7 +39,7 @@ export default class Form {
   }
 
   getData() {
-    let ar = [];
+    let ar = {};
     this.form.find("input,textarea").each((key, item) => {
       let name = $(item).attr("name") || $(item).attr("id");
       ar[name] = $(item).val();
