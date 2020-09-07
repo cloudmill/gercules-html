@@ -74,7 +74,7 @@ export default class CalendarSlider {
 
       let month2 = this.currentMonthId - this.deph;
       let _year = this.currentYear + (month2 < 0 ? -1 : month2 > 11 ? 1 : 0);
-      month2 = this.correctMonth(month2);
+      month2 = this.correctMonth(month2); 
       let table = this.calendar.build(_year, month2);
       $(".events-calendar-slider").prepend(table)
     }
