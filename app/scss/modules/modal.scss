@@ -7,9 +7,11 @@
   overflow: hidden;
   z-index: 10000;
   @include fadeOutEase;
+
   &.active {
     @include fadeInEase;
   }
+
   &-content {
     position: absolute;
     width: 100%;
@@ -17,6 +19,7 @@
     left: 0;
     top: 0;
   }
+
   &-bg {
     position: absolute;
     z-index: -1;
@@ -26,6 +29,7 @@
     left: 0;
     top: 0;
   }
+
   &-close {
     position: absolute;
     right: 10px;
@@ -38,14 +42,17 @@
     top: 0;
     z-index: 3;
     cursor: pointer;
+
     &:hover {
       &:after {
         transform: translate(-50%, -50%) rotate(-225deg);
       }
+
       &:before {
         transform: translate(-50%, -50%) rotate(-135deg);
       }
     }
+
     &:after,
     &:before {
       content: "";
@@ -59,13 +66,16 @@
       transform: translate(-50%, -50%) rotate(45deg);
       transition: all $ease-main;
     }
+
     &:after {
       transform: translate(-50%, -50%) rotate(-45deg);
     }
   }
+
   &-eventsList {
     margin-top: 50px;
   }
+
   &-title {
     font-style: normal;
     font-weight: bold;
@@ -73,26 +83,236 @@
     line-height: 160%;
     color: #262626;
   }
+
   &-item {
     position: relative;
     @include fadeOutEase;
+
     &.active {
       @include fadeInEase;
     }
+
     &-wrapper {
       max-height: 100vh;
       position: relative;
       padding-right: 10px;
       background-color: transparent;
-      @include customScrollBar(7px, 3px, #e41d2c, #ffffff);
+      overflow-y: auto;
+      overflow-x: hidden;
     }
+
     &-content {
       background-color: white;
       padding: 50px;
       min-height: 100vh;
     }
+
     &-left {
       max-width: 45%;
+
+      .modal {
+        &-item {
+          &-wrapper {
+            @include customScrollBar(7px, 3px, #e41d2c, #ffffff);
+          }
+        }
+      }
+    }
+
+    &-fill {
+      .modal {
+        &-item {
+          &-wrapper {
+            max-height: auto;
+            background-color: white;
+            padding-right: 0;
+            padding-left: 80px;
+          }
+
+          &-content {
+            border-left: 1px solid $color-border-second;
+            padding: 80px 80px 135px 60px;
+
+            h1 {
+              font: normal bold 28px/40px $font-third;
+            }
+
+            h2 {
+              font: normal bold 20px/32px $font-third;
+
+              &:last-of-type {
+                margin-top: 80px;
+              }
+            }
+
+            form {
+              margin-top: 80px;
+              padding-left: 270px;
+            }
+
+            .form-row {
+              margin-top: 37px;
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+
+              .form-col {
+                flex-basis: 50%;
+
+                &:first-child {
+                  margin-right: 40px;
+                }
+
+                .select {
+                  position: relative;
+                  margin-top: 30px;
+                  display: block;
+                  width: 100%;
+                  height: 93px;
+                  padding-top: 33px;
+
+                  .field-inf {
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    font: normal normal 14px/16px $font-main;
+                    color: $color-basic;
+
+                    .errorText {
+                      opacity: 0;
+                    }
+                  }
+
+                  .field {
+                    margin-top: 0;
+                  }
+                }
+              }
+
+              &:last-of-type {
+                margin-top: 30px;
+                align-items: center;
+                justify-content: space-between;
+
+                .form-col {
+                  flex-basis: auto;
+                }
+              }
+            }
+
+            .field {
+              &:not(:first-child) {
+                margin-top: 30px;
+              }
+
+              &-base {
+                label {
+                  width: 100%;
+                  height: 93px;
+                  padding-top: 33px;
+
+                  input {
+                    width: 100%;
+                    height: 60px;
+                    padding: 0 25px;
+                  }
+
+                  .field-inf {
+                    top: 0;
+                    left: 0;
+                  }
+                }
+              }
+
+              &-select {
+                .select2-container {
+                  min-width: 100%;
+
+                  .select2-selection {
+                    height: 60px;
+
+                    .select2-selection__rendered {
+                      padding-left: 25px;
+                      padding-right: 85px;
+                      line-height: 60px;
+                    }
+
+                    .select2-selection__arrow {
+                      width: 60px;
+                    }
+
+                    .select2-selection__placeholder {
+                      color: $color-placeholder;
+                    }
+                  }
+                }
+              }
+
+              &-submit {
+                button {
+                  display: block;
+                  width: 376px;
+                  height: 70px;
+                  padding: 23px 60px 26px 60px;
+                  text-align: center;
+                  white-space: nowrap;
+                  background-image: url(../images/market-not-found-button.svg);
+                  background-position: center;
+                  background-size: 100% 100%;
+                  background-repeat: no-repeat;
+
+                  span {
+                    display: inline-block;
+                    font: normal bold 18px/21px $font-main;
+                    color: white;
+                    vertical-align: middle;
+                  }
+
+                  &::after {
+                    vertical-align: middle;
+                    content: "";
+                    margin-left: 19px;
+                    display: inline-block;
+                    width: 24px;
+                    height: 13px;
+                    background-image: url(../images/market-not-found-button-arrow.svg);
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                  }
+                }
+              }
+
+              &-checkbox {
+                max-width: 353px;
+
+                label {
+                  font: normal normal 12px/18px $font-main;
+                  color: $color-basic;
+
+                  &::before {
+                    top: 0;
+                    transform: none;
+                  }
+
+                  &::after {
+                    top: 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &-close {
+          top: 70px;
+          right: 80px;
+          width: 64px;
+          height: 64px;
+          background-color: white;
+          border: 1px solid $color-border-second;
+        }
+      }
     }
   }
 }
