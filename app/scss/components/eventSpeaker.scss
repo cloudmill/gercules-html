@@ -1,0 +1,135 @@
+.eventSpeaker {
+  h2 {
+    font: normal bold 28px/40px $font-main;
+    color: $color-basic;
+  }
+
+  &-row {
+    position: relative;
+    margin-top: 40px;
+    height: 406px;
+    display: flex;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1006px;
+      height: 366px;
+      position: absolute;
+      z-index: -1;
+      bottom: 0;
+      left: 106px;
+      background-image: url(../images/gray-rect-1006x366.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
+  &-photo,
+  &-info {
+    align-self: stretch;
+  }
+
+  &-photo {
+    flex-basis: 320px;
+    flex-shrink: 0;
+    overflow: hidden;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  &-info {
+    margin-left: 60px;
+    flex-grow: 1;
+    padding-top: 100px;
+    padding-bottom: 60px;
+
+    h3 {
+      font: normal bold 20px/32px $font-third;
+      color: $color-basic;
+    }
+
+    h4 {
+      margin-top: 5px;
+      font: normal normal 15px/30px $font-main;
+      color: $color-basic;
+    }
+  }
+
+  .info {
+    &-row {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 580px;
+    }
+
+    &-col {
+      align-self: stretch;
+
+      &:first-child {
+        margin-right: 60px;
+      }
+
+      &:last-child {
+        width: 240px;
+        flex-grow: 1;
+        padding-top: 10px;
+        font: normal normal 15px/19px $font-main;
+        color: $color-basic;
+      }
+    }
+  }
+
+  &-phone,
+  &-email {
+    position: relative;
+    height: 39px;
+    display: flex;
+    align-items: center;
+
+    a {
+      display: block;
+      padding-left: 47px;
+      font: normal normal 18px/20px $font-main;
+      color: $color-basic;
+      white-space: nowrap;
+    }
+  }
+
+  &-email a {
+    font-size: 15px;
+    color: $color-red;
+  }
+
+  &-phone::before,
+  &-email::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    pointer-events: none;
+  }
+
+  &-phone::before {
+    width: 12px;
+    height: 18px;
+    top: 10.5px;
+    left: 2.5px;
+    background-image: url(../images/phone-icon-red-12x18.svg);
+  }
+
+  &-email::before {
+    width: 17px;
+    height: 14px;
+    top: 12.5px;
+    left: 0;
+    background-image: url(../images/email-icon-red-17x14.svg);
+  }
+}

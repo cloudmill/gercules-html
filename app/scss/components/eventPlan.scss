@@ -40,8 +40,14 @@
       color: $color-basic;
     }
 
-    .pointTime {
+    .pointTitle {
+      flex-basis: 528px;
       flex-grow: 1;
+    }
+
+    .pointTime {
+      flex-basis: 100px;
+      flex-shrink: 0;
       align-self: stretch;
       font: normal bold 15px/22px $font-third;
       color: $color-basic;
