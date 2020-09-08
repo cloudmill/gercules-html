@@ -25,11 +25,10 @@ export default class Manager_modals {
     });
     $("[data-modal-close]").click(() => {
       this.close();
-
     });
-    $("body").mouseup((e) => {
+    $("body").mousedown((e) => {
       if (this.state == "open") {
-        var container = $(document).find(".modal-item > *, .select2-container");
+        var container = $(document).find(".modal-item, .select2-container");
         if (container.has(e.target).length === 0) {
           this.close();
         }
