@@ -85,7 +85,11 @@
   }
 
   &-item {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     @include fadeOutEase;
 
     &.active {
@@ -189,14 +193,9 @@
                 }
               }
 
-              &:last-of-type {
+              &:last-child {
                 margin-top: 30px;
                 align-items: center;
-                justify-content: space-between;
-
-                .form-col {
-                  flex-basis: auto;
-                }
               }
             }
 
@@ -249,38 +248,8 @@
               }
 
               &-submit {
-                button {
-                  display: block;
-                  width: 376px;
-                  height: 70px;
-                  padding: 23px 60px 26px 60px;
-                  text-align: center;
-                  white-space: nowrap;
-                  background-image: url(../images/market-not-found-button.svg);
-                  background-position: center;
-                  background-size: 100% 100%;
-                  background-repeat: no-repeat;
-
-                  span {
-                    display: inline-block;
-                    font: normal bold 18px/21px $font-main;
-                    color: white;
-                    vertical-align: middle;
-                  }
-
-                  &::after {
-                    vertical-align: middle;
-                    content: "";
-                    margin-left: 19px;
-                    display: inline-block;
-                    width: 24px;
-                    height: 13px;
-                    background-image: url(../images/market-not-found-button-arrow.svg);
-                    background-position: center;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                  }
-                }
+                margin-left: auto;
+                max-width: 376px;
               }
 
               &-checkbox {
@@ -289,15 +258,6 @@
                 label {
                   font: normal normal 12px/18px $font-main;
                   color: $color-basic;
-
-                  &::before {
-                    top: 0;
-                    transform: none;
-                  }
-
-                  &::after {
-                    top: 10px;
-                  }
                 }
               }
             }

@@ -32,18 +32,18 @@ mixin field_select(name,options,placeholder = "",id = name)
           each item in options
             option(value=`${item[0]}`) #{item[1]}
 
-mixin field_checkbox(name,label,checked)
+mixin field_checkbox(name, label, checked)
   .field.field-checkbox
-    if(checked)
-      input(type="checkbox", name=`${name}` id=`${name}` checked)
+    if (checked)
+      input(type="checkbox" name=`${name}` id=`${name}` checked)
     else 
-      input(type="checkbox", name=`${name}` id=`${name}`)
+      input(type="checkbox" name=`${name}` id=`${name}`)
     label(for=`${name}`) #{label}
 
 mixin fieldBase(id, name, label, placeholder)
   .field.field-base
     label(for=id)
-      input(type="text" name=name id=id placeholder=placeholder)
+      input(type="text" name=name data-required id=id placeholder=placeholder)
       .field-inf
         span.name #{label}
         span.errorText пожалуйста, заполните поле корректно

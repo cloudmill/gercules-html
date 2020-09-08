@@ -25,6 +25,7 @@ export default class Manager_modals {
     });
     $("[data-modal-close]").click(() => {
       this.close();
+
     });
     $("body").mouseup((e) => {
       if (this.state == "open") {

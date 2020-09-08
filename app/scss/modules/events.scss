@@ -6,6 +6,7 @@
     align-items: center;
 
     .control-date {
+      min-width: 386px;
       margin-right: 50px;
       display: flex;
       min-width: 365px;
@@ -16,15 +17,14 @@
 
       .date-prev,
       .date-next {
-        position: relative;
-        top: -1px;
-        width: 57px;
+        flex-grow: 1;
+        margin-top: -1px;
+        width: 16px;
         height: 33px;
         background-image: url(../images/calendar-btn-prev.svg);
         background-repeat: no-repeat;
         background-position: left center;
         background-size: contain;
-        padding-right: 41px;
       }
 
       .date-next {
@@ -49,6 +49,16 @@
       .loc-caption {
         white-space: nowrap;
         margin-right: 20px;
+      }
+    }
+
+    .field-checkbox {
+      label {
+        &::before,
+        &::after {
+          top: 50%;
+          transform: translateY(-50%);
+        }
       }
     }
   }
