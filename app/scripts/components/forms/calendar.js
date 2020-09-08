@@ -98,6 +98,7 @@ export default class CalendarSlider {
       if (d > 0) slide.addClass("next");
       if (d == 0) slide.addClass("active");
     });
+    $('.events-calendar-slider').height($(document).find(`table.active[data-month]`).height());
   }
   events() {
     $(".events-control .date-prev").click(() => {
@@ -127,7 +128,7 @@ export default class CalendarSlider {
     this.preDraw(type);
     this.setClasses();
     $(".control-date span").html(
-      `${this.months[this.currentMonthId]} ${this.currentYear}`
+      `${this.calendar.months[this.currentMonthId]} ${this.currentYear}`
     );
   }
   updateDate() {
@@ -143,6 +144,6 @@ export default class CalendarSlider {
     }
   }
   correctMonth(_month) {
-    return _month < 0 ? 12 - _month : _month > 11 ? _month - 12 : _month;
+    return _month < 0 ? _month + 12 : _month > 11 ? _month - 12 : _month;
   }
 }

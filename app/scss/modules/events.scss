@@ -8,9 +8,11 @@
     .control-date {
       margin-right: 50px;
       display: flex;
+      min-width: 365px;
       height: 70px;
       padding-top: 19px;
       align-items: flex-start;
+      justify-content: space-between;
 
       .date-prev,
       .date-next {
@@ -72,18 +74,25 @@
     }
     &-slider{
       overflow: hidden;
+      position: relative;
       margin-top: -1px;
       table{
-        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(0);;
         tbody{
           width: 100%; 
         }
         &.active{
-          visibility: visible;
           position: relative;
         }
-        &.prev,&.next{
-          position: absolute;
+        &.prev{
+          transform: translateY(-100%);
+        }
+        &.next{
+          top: 100%;
         }
       }
       
