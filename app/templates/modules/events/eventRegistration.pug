@@ -1,0 +1,18 @@
+.eventRegistration
+  h2 Принять участие
+  form(action="#")
+    .eventRegistration-row
+      .eventRegistration-col
+        +fieldBase("name", "name", "Имя", "Алексей")
+        +fieldBase("surname", "surname", "Фамилия", "Биланин")
+        +fieldBase("phone", "phone", "Номер телефона*", "+7 (___) ___-__-__")
+      .eventRegistration-col
+        +fieldBase("city", "city", "Город*", "Омск")
+        +fieldBase("companyName", "companyName", "Название компании", "ООО ГК ПЛЮС")
+        +fieldBase("email", "email", "Email", "ksh@loudmill.ru")
+    +fieldArea("comment", "comment", "Комментарий", "Хочу записаться", [30, 10])
+    .eventRegistration-row
+      .eventRegistration-col
+        +field_checkbox("agreement", "«Я выражаю согласие на обработку ПДн в соответствии с Политикой конфиденциальности»")
+      .eventRegistration-col
+        +fieldSubmit("submit", "submit", "Записаться")

@@ -43,7 +43,15 @@ mixin field_checkbox(name,label,checked)
 mixin fieldBase(id, name, label, placeholder)
   .field.field-base
     label(for=id)
-      input(type="text" name=name id=id data-required='1' placeholder=placeholder)
+      input(type="text" name=name id=id placeholder=placeholder)
+      .field-inf
+        span.name #{label}
+        span.errorText пожалуйста, заполните поле корректно
+
+mixin fieldArea(id, name, label, placeholder, size = [30, 10])
+  .field.field-area
+    label(for=id)
+      textarea(name=name id=id placeholder=placeholder cols=size[0] rows=size[1])
       .field-inf
         span.name #{label}
         span.errorText пожалуйста, заполните поле корректно
