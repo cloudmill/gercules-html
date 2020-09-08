@@ -1,4 +1,4 @@
-export default class Builder {
+class Builder {
   constructor(dataEvents) {
     this.dataEvents = dataEvents;
     this.currentDay = 0;
@@ -76,3 +76,4 @@ export default class Builder {
     return count;
   }
 }
+exports.Builder = Builder;

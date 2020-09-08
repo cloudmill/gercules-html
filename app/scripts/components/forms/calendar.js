@@ -1,4 +1,5 @@
-import Builder from "./calendar/builder";
+let {Builder} = require('./calendar/builder');
+
 class Calendar {
   constructor() {
     this.dataEvents = [];

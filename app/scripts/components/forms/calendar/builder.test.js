@@ -1,4 +1,5 @@
-let Builder = require('./builder');
+let {Builder} = require('./builder');
+
 
 let builder = new Builder({});
 test('getCountsDays', () => {

@@ -28,7 +28,7 @@ export default class Manager_modals {
     });
     $("body").mouseup((e) => {
       if (this.state == "open") {
-        var container = $(".modal-item > *");
+        var container = $(document).find(".modal-item > *, .select2-container");
         if (container.has(e.target).length === 0) {
           this.close();
         }

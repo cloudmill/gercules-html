@@ -16,6 +16,7 @@ let gulp = require("gulp"),
   webpackConfig = require("./webpack.config.js"),
   errorHandler = require("gulp-error-handle"),
   gutil = require("gulp-util"),
+  jest = require("gulp-jest").default,
 
   browserSyns = require("browser-sync"),
   concat = require("gulp-concat"),
@@ -112,6 +113,15 @@ gulp.task("js", function (callback) {
     .pipe(gulp.dest(_.dist.js));
 
   callback();
+});
+gulp.task('jest', function () {
+  process.env.NODE_ENV = 'test';
+  return gulp.src('./app/scripts').pipe(jest({
+    "preprocessorIgnorePatterns": [
+      "<rootDir>/dist/", "<rootDir>/node_modules/"
+    ],
+    "automock": false
+  }));
 });
 
 /////Работа с картинками
