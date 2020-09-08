@@ -1,5 +1,5 @@
 .modal
-  .modal-bg
+  .modal-bg(data-modal-close)
   .modal-content
     .modal-item.modal-item-left#events
       .modal-item-wrapper
@@ -44,6 +44,6 @@
                   +field_select("personStatus", [[0, "Дистрибьютер"], [1, "Дистрибьютер"]], "Дистрибьютер", "personStatus")
             .form-row
               .form-col
-                +field_checkbox("agreement", "«Я выражаю согласие на обработку ПДн в соответствии с Политикой конфиденциальности»")
+                +field_checkbox("agreement", "«Я выражаю согласие на обработку ПДн в соответствии с Политикой конфиденциальности»", "checked")
               .form-col
                 +fieldSubmit("submit", "submit", "Сообщить о магазине")
