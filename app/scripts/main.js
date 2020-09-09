@@ -14,6 +14,7 @@ import Manager_maps from "./components/manager_maps";
 
 const CONFIG = {
   path: './',
+  debug: true,
 }
 window.CONFIG = CONFIG;
 export default class App {

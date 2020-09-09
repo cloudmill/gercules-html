@@ -59,7 +59,7 @@ class Builder {
   getCountsDays(monthId, year) {
     let months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     if (monthId > 11) monthId = monthId % 11;
-    if (monthId < 0) monthId = 11
+    if (monthId < 0) monthId = 11;
     let countDays = months[monthId];
     if (monthId == 1) countDays += year % 4 == 0 ? 1 : 0;
     return countDays;

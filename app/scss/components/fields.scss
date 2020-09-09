@@ -4,7 +4,7 @@
       position: absolute;
       visibility: hidden;
 
-      &:checked+label::after {
+      &:checked + label::after {
         background-color: $color-red;
       }
     }
@@ -14,7 +14,11 @@
       position: relative;
       display: block;
       padding-left: 30px;
-
+      &.error {
+        &::before {
+          background-color: $color-red;
+        }
+      }
       &:before {
         content: "";
         position: absolute;
@@ -23,6 +27,7 @@
         display: block;
         width: 20px;
         height: 20px;
+        transition: all 0.3s;
         background-color: white;
         border: 1px solid #ebebeb;
       }
@@ -45,7 +50,11 @@
     label {
       position: relative;
       display: block;
-
+      &.error {
+        input {
+          border-color: $color-red;
+        }
+      }
       input {
         display: block;
         border: 1px solid $color-border-second;
@@ -169,14 +178,13 @@
     }
 
     .select2-selection__placeholder {
-      color: #6C6C6C; // placeholder select2
+      color: #6c6c6c; // placeholder select2
     }
   }
 }
 
 .select2-container--open {
   .select2-selection {
-
     // открытый select2
     .select2-selection__arrow {
       &::before {
