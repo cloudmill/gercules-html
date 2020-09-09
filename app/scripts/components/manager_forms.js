@@ -3,7 +3,8 @@ import "select2";
 
 import Validator from "./forms/validator";
 import Form from "./forms/form";
-import CalendarSlider from "./forms/calendar";
+
+let { CalendarSlider } = require("./forms/calendarSlider");
 
 window.validator = new Validator();
 
@@ -26,19 +27,26 @@ export default class Manager_forms {
       if ($(select).attr("data-select-placeholder")) {
         $(select).select2({
           minimumResultsForSearch: -1,
-          placeholder: $(select).attr("data-select-placeholder")
-        })
+          placeholder: $(select).attr("data-select-placeholder"),
+        });
       } else {
         $(select).select2({
           minimumResultsForSearch: -1,
-        })
+        });
       }
     });
   }
 
-  init_form_calendar(){
+  init_form_calendar() {
     let calendar = new CalendarSlider();
-    console.log(calendar.calendar)
+    $(".events-control select").change((e) => {
+      let select = e.target;
+      calendar.updateDate();
+    });
+    $(".events-control input").change((e) => {
+      let checkbox = e.target;
+      calendar.updateDate();
+    });
   }
 
   init_form_modal() {
