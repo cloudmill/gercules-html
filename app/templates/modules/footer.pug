@@ -5,12 +5,11 @@ mixin footerMenu(json)
         .footer-menu_title #{item.name}
         .footer-menu_links
           each link in item.list
-            a(href="") #{link.name}
+            a(href=`${link.link}`) #{link.name}
     else
-
       a.footer-menu_item
         .footer-menu_title Контакты
-      a.footer-menu_item
+      a.footer-menu_item(href=`${item.link}`)
         .footer-menu_title #{item.name}
       a.footer-menu_item
         .footer-menu_title Адреса магазинов

@@ -10,12 +10,12 @@ export default class Form {
     this.form.submit((e) => {
       e.preventDefault();
       if (validator.checkFormRight(this.form)) {
-        if (window.Config.debug) {
+        if (window.CONFIG.debug) {
           console.log("form valid");
         }
         this.mess();
       } else {
-        if (window.Config.debug) {
+        if (window.CONFIG.debug) {
           console.error("form invalid");
         }
       }

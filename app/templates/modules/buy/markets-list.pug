@@ -1,5 +1,5 @@
-mixin markets-item(name, open = "", link = "technonikol.ru")
-  div(class = open ? "open" : "").markets-item
+mixin markets-item(name,id, open = "", link = "technonikol.ru")
+  div(class = open ? "open" : "" data-id=id).markets-item
     .market-front
       .market-name=name
       .market-link=link
@@ -9,7 +9,7 @@ mixin markets-item(name, open = "", link = "technonikol.ru")
   //- .markets-scroll
   //-   span
   .markets-wrapper
-    +markets-item("Леруа Мерлен")
-    +markets-item("ТЦ Глобус")
-    +markets-item("Технониколь")
-    +markets-item("ТЦ Глобус")
+    +markets-item("Леруа Мерлен",'0')
+    +markets-item("ТЦ Глобус",'1')
+    +markets-item("Технониколь",'2')
+    +markets-item("ТЦ Глобус",'3')

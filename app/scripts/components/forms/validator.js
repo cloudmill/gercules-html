@@ -16,7 +16,7 @@ export default class Validator {
   }
   error(input) {
     input.closest("label").addClass("error");
-    if (window.Config.debug) {
+    if (window.CONFIG.debug) {
       console.error("field " + input.attr("name") + " invalid");
     }
   }
@@ -27,7 +27,7 @@ export default class Validator {
   }
   success(input) {
     input.parent("label").removeClass("error");
-    if (window.Config.debug) {
+    if (window.CONFIG.debug) {
       console.log("field " + input.attr("name") + " valid");
     }
   }
