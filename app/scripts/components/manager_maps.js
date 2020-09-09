@@ -1,4 +1,10 @@
 import $ from "jquery";
+class Map {
+  constructor() {
+    this.init();
+  }
+  init() {}
+}
 export default class Manager_maps {
   constructor() {
     this.init();
@@ -9,7 +15,7 @@ export default class Manager_maps {
         this.contactsMap();
       } else if ($(".whereBuy-map").length > 0) {
         this.whereBuyMap();
-        this.whereBuyMapAjaxLogic();
+        //this.whereBuyMapAjaxLogic();
       } else {
         this.modalMap();
       }
@@ -19,7 +25,7 @@ export default class Manager_maps {
     var myMap = this.createMap([55.751574, 37.573856]);
     this.setPlaceMark(myMap, "contacts");
 
-    this.setOptionsMap(myMap, { geo: false});
+    this.setOptionsMap(myMap, { geo: false });
   }
   whereBuyMap() {
     var myMap = this.createMap([55.751574, 37.573856]);
@@ -48,9 +54,31 @@ export default class Manager_maps {
       }
     );
   }
+  createClusterer() {
+    var clusterIcons = [
+        {
+          href: CONFIG.path + "images/map-pin-cluster.svg",
+          size: [50, 50],
+          offset: [-25, -25],
+        },
+        {
+          href: CONFIG.path + "images/map-pin-cluster.svg",
+          size: [50, 50],
+          offset: [-25, -25],
+        },
+      ],
+      MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+        '<div style="color: #FFFFFF; font-weight: bold;">{{ properties.geoObjects.length }}</div>'
+      );
+    return new ymaps.Clusterer({
+      clusterIcons: clusterIcons,
+      clusterIconContentLayout: MyIconContentLayout,
+    });
+  }
   setPlaceMark(myMap, type) {
     let i = 0;
     let that = this;
+    var clusterer = this.createClusterer();
     $(".map-data input").each(function () {
       let dataCords = $(this).attr("data-cords");
       let coords = dataCords.replace(" ", "").split(",");
@@ -58,31 +86,33 @@ export default class Manager_maps {
       let dataContent = $(this).attr("data-content");
       let ballonContent = {};
       let iconSettings = {
-        iconImageSize: [67, 107],
-        iconImageOffset: [-33, -107],
+        iconImageSize: [37, 40],
+        iconImageOffset: [-18, -40],
       };
-      if (type == "whereBuy") {
-        ballonContent = {
-          balloonContentHeader:
-            "<span class='placemark-name' >" + dataName + "</span>",
-          balloonContentBody:
-            "<span class='placemark-content' >" + dataContent + "</span>",
-        };
-        iconSettings = {
-          iconImageSize: [29, 45],
-          iconImageOffset: [-14, -45],
-        };
-      }
+      // if (type == "whereBuy") {
+      //   ballonContent = {
+      //     balloonContentHeader:
+      //       "<span class='placemark-name' >" + dataName + "</span>",
+      //     balloonContentBody:
+      //       "<span class='placemark-content' >" + dataContent + "</span>",
+      //   };
+      //   iconSettings = {
+      //     iconImageSize: [37, 40],
+      //     iconImageOffset: [-18, -40],
+      //   };
+      // }
       let myPlacemark = new ymaps.Placemark(coords, ballonContent, {
         iconLayout: "default#image",
-        iconImageHref: "/local/templates/main/images/mapicon.png",
+        iconImageHref: CONFIG.path + "images/map-pin.svg",
         ...iconSettings,
       });
       myPlacemark.id = i;
-      that.linkedWithPointForWhereBuy(myMap, myPlacemark);
+      if (type == "whereBuy")
+        that.linkedWithPointForWhereBuy(myMap, myPlacemark);
+      clusterer.add(myPlacemark);
       i++;
-      myMap.geoObjects.add(myPlacemark);
     });
+    myMap.geoObjects.add(clusterer);
   }
   setGeoLocation(myMap) {
     let geo = ymaps.geolocation;
@@ -139,8 +169,8 @@ export default class Manager_maps {
     });
   }
   linkedWithPointForWhereBuy(myMap, placeMark) {
-    let pointTarget = $(".whereBuy-map-item[data-id=" + placeMark.id + "]");
-
+    let pointTarget = $(".markets-item[data-id=" + placeMark.id + "]");
+    console.log(pointTarget);
     pointTarget.click(() => {
       placeMark.events.fire("click", {
         coordPosition: placeMark.geometry.getCoordinates(),
@@ -154,7 +184,7 @@ export default class Manager_maps {
       //Активация элелмента в списке и проктутка до него
       //var tempScrollbar = Scrollbar.get($(".whereBuy-map-item").eq(0)[0]);
 
-      $(".whereBuy-map-item").removeClass("active");
+      $(".markets-item").removeClass("active");
       pointTarget.addClass("active");
     });
   }
@@ -179,58 +209,58 @@ export default class Manager_maps {
     if (opts.geo) this.setGeoLocation(myMap);
     this.setSearchControls(myMap);
   }
-  removeMap(){
-    $('#map *').remove();
+  removeMap() {
+    $("#map *").remove();
   }
-  whereBuyMapAjaxLogic() {
-    let that = this;
-    let success =  (data) => {
-      $(".whereBuy-map").find(".whereBuy-map-list").remove();
-      let shopEl = $(data).find(".whereBuy-map-list");
-      $(".whereBuy-map-content").append(shopEl);
+  // whereBuyMapAjaxLogic() {
+  //   let that = this;
+  //   let success = (data) => {
+  //     $(".whereBuy-map").find(".whereBuy-map-list").remove();
+  //     let shopEl = $(data).find(".whereBuy-map-list");
+  //     $(".whereBuy-map-content").append(shopEl);
 
-      let inpEl = $(data).find(".map-data").find("input");
-      $(".map-data").find("input").remove();
-      $(".map-data").append(inpEl);
-      that.removeMap();
-      that.whereBuyMap();
-    };
-    $(".whereBuy-filter-type-item").on("change", function () {
-      let saleType = $(this).attr("for");
-      $.ajax({
-        type: "POST",
-        url: "http://krass.hellem.ru/whereBuy/",
-        dataType: "html",
-        data: {
-          ajax_sale_type: true,
-          sale_type_id: saleType,
-        },
-        success: function (data) {
-          $("#region").find("option").remove();
-          let el = $(data).find("#region").find("option");
-          $("#region").append(el);
+  //     let inpEl = $(data).find(".map-data").find("input");
+  //     $(".map-data").find("input").remove();
+  //     $(".map-data").append(inpEl);
+  //     that.removeMap();
+  //     that.whereBuyMap();
+  //   };
+  //   $(".whereBuy-filter-type-item").on("change", function () {
+  //     let saleType = $(this).attr("for");
+  //     $.ajax({
+  //       type: "POST",
+  //       url: "http://krass.hellem.ru/whereBuy/",
+  //       dataType: "html",
+  //       data: {
+  //         ajax_sale_type: true,
+  //         sale_type_id: saleType,
+  //       },
+  //       success: function (data) {
+  //         $("#region").find("option").remove();
+  //         let el = $(data).find("#region").find("option");
+  //         $("#region").append(el);
 
-          success(data);
-        },
-      });
-    });
+  //         success(data);
+  //       },
+  //     });
+  //   });
 
-    $("#region").on("change", function () {
-      let selectCity = $(this).val();
-      $.ajax({
-        type: "POST",
-        url: "http://krass.hellem.ru/whereBuy/",
-        dataType: "html",
-        data: {
-          ajax_city_select: true,
-          cityId: selectCity,
-        },
-        success: function (data) {
-          success(data);
-        },
-      });
-    });
-  }
+  //   $("#region").on("change", function () {
+  //     let selectCity = $(this).val();
+  //     $.ajax({
+  //       type: "POST",
+  //       url: "http://krass.hellem.ru/whereBuy/",
+  //       dataType: "html",
+  //       data: {
+  //         ajax_city_select: true,
+  //         cityId: selectCity,
+  //       },
+  //       success: function (data) {
+  //         success(data);
+  //       },
+  //     });
+  //   });
+  // }
 
   search(str) {
     window.searchControl.search(str);
