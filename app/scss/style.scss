@@ -37,4 +37,16 @@
       }
     }
   }
+
+  // новая верстка "Фасадные Системы"
+
+  // page-row
+  &-row {
+    display: flex;
+  }
+
+  // page-col
+  &-col {
+    align-self: stretch;
+  }
 }

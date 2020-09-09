@@ -19,5 +19,26 @@ export default class App {
     this.forms = new Manager_forms();
     this.modals = new Manager_modals();
     this.styles = new Manager_styles();
+
+    sidemenu();
   }
+}
+
+function sidemenu() {
+  const duration = 500;
+
+  $(".sidemenu-list").click(function (e) {
+    if (!$(this).hasClass("active")) {
+      if ($(this).hasClass("open")) {
+        console.log("OPEN");
+        $(this).removeClass("open");
+        $(this).find(".sidemenu-dropdown").slideUp({ duration: duration });
+      } else {
+        $(".sidemenu-list.open").find(".sidemenu-dropdown").slideUp({ duration: duration });
+        $(".sidemenu-list.open").removeClass("open");
+        $(this).addClass("open");
+        $(this).find(".sidemenu-dropdown").slideDown({ duration: duration });
+      }
+    }
+  });
 }
