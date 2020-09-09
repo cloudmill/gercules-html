@@ -1,0 +1,100 @@
+.fsContacts {
+  margin-top: 120px;
+
+  h2 {
+    font: normal bold 28px/40px $font-third;
+    color: $color-basic;
+  }
+
+  &-list {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &-item {
+    width: 344px;
+    margin-bottom: 40px;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+
+  &-photo {
+    margin-top: 60px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  h3 {
+    margin-top: 40px;
+    font: normal bold 18px/29px $font-main;
+    color: $color-basic;
+  }
+
+  p {
+    font: normal normal 16px/29px $font-main;
+    color: $color-basic;
+  }
+
+  $link-block-height: 38.5px;
+  $link-height: 20px;
+
+  &-phone,
+  &-email {
+    position: relative;
+    padding: (($link-block-height - $link-height) / 2) 0;
+
+    a {
+      display: block;
+      padding-left: 47px;
+      word-break: break-all;
+    }
+
+    &::before {
+      pointer-events: none;
+      content: "";
+      display: block;
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-phone {
+    margin-top: 23px;
+
+    a {
+      font: normal normal 18px $font-main;
+      line-height: $link-height;
+      color: $color-basic;
+    }
+
+    &::before {
+      background-image: url(../images/phone-icon-red-12x18.svg);
+    }
+  }
+
+  &-email {
+    a {
+      font: normal normal 15px $font-main;
+      line-height: $link-height;
+      color: $color-red;
+    }
+
+    &::before {
+      background-image: url(../images/email-icon-red-17x14.svg);
+    }
+  }
+}

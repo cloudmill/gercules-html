@@ -48,5 +48,18 @@
   // page-col
   &-col {
     align-self: stretch;
+
+    &:last-child {
+      flex-grow: 1;
+    }
+
+    .content {
+      padding: 60px 80px 120px 40px;
+      height: 100%;
+
+      .page-title {
+        margin-top: 35px;
+      }
+    }
   }
 }
