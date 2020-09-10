@@ -35,8 +35,13 @@
         color: $color-basic;
       }
 
-      .parallelogramLink {
+      .main-link_rect {
+        max-width: 339px;
         margin-left: 60px;
+
+        i {
+          margin-left: 20px;
+        }
       }
     }
   }

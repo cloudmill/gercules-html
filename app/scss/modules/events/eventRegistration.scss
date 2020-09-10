@@ -19,7 +19,7 @@
 
       .eventRegistration-col{
         &:last-child {
-          .field-submit {
+          .main-link_rect {
             margin-left: auto;
           }
         }
@@ -114,6 +114,14 @@
       max-width: 353px;
       font: normal normal 12px/18px $font-main;
       color: $color-basic;
+    }
+  }
+
+  .main-link_rect {
+    max-width: 339px;
+
+    i {
+      margin-left: 20px;
     }
   }
 }

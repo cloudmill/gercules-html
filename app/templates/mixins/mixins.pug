@@ -18,7 +18,7 @@ mixin breadcrumbs(path = [])
       span=curPage
 
 mixin link(href,text)
-  a.main-link(href=href) #{text}  
+  a.main-link(href=href) #{text}
 
 mixin field_select(name,options,placeholder = "",id = name)
   .field.field-select
@@ -77,5 +77,5 @@ mixin parallelogramLink(text, href)
       span #{text}
 
 mixin linkRect
-  .linkRect
-    block 
+  .main-link_rect
+    block

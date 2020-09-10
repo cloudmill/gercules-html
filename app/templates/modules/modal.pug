@@ -46,4 +46,7 @@
               .form-col
                 +field_checkbox("agreement", "«Я выражаю согласие на обработку ПДн в соответствии с Политикой конфиденциальности»", "checked")
               .form-col
-                +fieldSubmit("submit", "submit", "Сообщить о магазине")
+                +linkRect
+                  button(id="submit", name="submit")
+                  span Сообщить о магазине
+                  +icon("link-white-arrow", "svg")

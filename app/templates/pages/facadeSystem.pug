@@ -5,9 +5,10 @@ block variables
 
 block content
   .content-row
-    include ./fs/sidebar.pug
+    include fs/sidebar
     .content
       +breadcrumbs(["Фасадные системы‎"])
-      h1.page-title Фасадные системы
-      include ./fs/objects
-      include ../modules/fs/contacts
+      .facadeSystem
+        h1.page-title Фасадные системы
+        include fs/objects
+        include fs/contacts

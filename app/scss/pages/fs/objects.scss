@@ -1,4 +1,5 @@
 .fs-objects {
+  margin-top: 120px;
   position: relative;
 
   h2 {
@@ -13,38 +14,11 @@
     top: 0;
     height: 30px;
     width: 155px;
-    border-bottom: 1px solid $color-red;
-
-    a {
-      display: flex;
-      width: 100%;
-      height: 100%;
-
-      span {
-        font: normal bold 18px/21px $font-main;
-        color: $color-red;
-      }
-    }
-
-    &::before {
-      position: absolute;
-      content: "";
-      display: block;
-      width: 24.41px;
-      height: 13.41px;
-      right: 0;
-      bottom: 11.59px;
-      background-image: url(../images/red-arrow-24x13.svg);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      background-position: center;
-    }
   }
 
   &_control {
     position: absolute;
     z-index: 100;
-    // top: 128px;
     top: 50%;
     transform: translateY(-50%);
     right: -80px;

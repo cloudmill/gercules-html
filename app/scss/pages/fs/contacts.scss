@@ -1,4 +1,4 @@
-.fsContacts {
+.fs-contacts {
   margin-top: 120px;
 
 
@@ -7,7 +7,7 @@
     color: $color-basic;
   }
 
-  &-list {
+  &_list {
     margin: -20px;
     margin-top: 40px;
     display: flex;
@@ -15,12 +15,12 @@
     flex-wrap: wrap;
   }
 
-  &-item {
+  &_item {
     width: 344px;
     margin: 20px;
   }
 
-  &-photo {
+  &_photo {
     overflow: hidden;
 
     img {
@@ -43,8 +43,8 @@
   $link-block-height: 38.5px;
   $link-height: 20px;
 
-  &-phone,
-  &-email {
+  &_phone,
+  &_email {
     position: relative;
     padding: (($link-block-height - $link-height) / 2) 0;
 
@@ -70,7 +70,7 @@
     }
   }
 
-  &-phone {
+  &_phone {
     margin-top: 23px;
 
     a {
@@ -84,7 +84,7 @@
     }
   }
 
-  &-email {
+  &_email {
     a {
       font: normal normal 15px $font-main;
       line-height: $link-height;

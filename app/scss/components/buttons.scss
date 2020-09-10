@@ -9,6 +9,7 @@
   align-items: center;
   padding-bottom: 10px;
   border-bottom: 1px solid #e41d2c;
+
   &:after {
     content: "";
     display: block;
@@ -19,5 +20,44 @@
     background-size: contain;
     width: 24px;
     height: 13px;
+  }
+
+  &_rect {
+    $skewPadding: 25px;
+    $padding: 10px;
+    $angle: 20deg;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    padding: 0 ($skewPadding + $padding);
+
+    * {
+      position: relative;
+      pointer-events: none;
+    }
+
+    a,
+    button {
+      position: absolute;
+      display: block;
+      width: calc(100% - #{$skewPadding});
+      height: 100%;
+      transform: skewX(-$angle);
+      background-color: $color-red;
+      pointer-events: all;
+    }
+
+    span {
+      display: block;
+      white-space: nowrap;
+      color: white;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+    }
   }
 }

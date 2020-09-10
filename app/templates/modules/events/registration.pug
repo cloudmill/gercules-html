@@ -15,4 +15,7 @@
       .eventRegistration-col
         +field_checkbox("agreement", "«Я выражаю согласие на обработку ПДн в соответствии с Политикой конфиденциальности»", "checked")
       .eventRegistration-col
-        +fieldSubmit("submit", "submit", "Записаться")
+        +linkRect
+          button(id="submit", name="submit")
+          span Записаться
+          +icon("link-white-arrow", "svg")
