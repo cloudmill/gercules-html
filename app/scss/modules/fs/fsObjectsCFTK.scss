@@ -44,7 +44,6 @@
   &-control {
     position: absolute;
     z-index: 100;
-    // top: 128px;
     top: 50%;
     transform: translateY(-50%);
     right: -80px;
@@ -142,10 +141,9 @@
       z-index: 90;
       bottom: 0;
       right: 0;
-      background-image: url(../images/red-triangle-26x80.svg);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      background-position: center;
+      background-color: $color-red;
+      transform: skewX(-18deg);
+      transform-origin: left bottom;
     }
   }
 

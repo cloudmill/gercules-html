@@ -152,7 +152,6 @@
     }
   }
 
-  // лист магазинов
   &-markets-list {
 
     // оформление подложки
@@ -368,7 +367,7 @@
   }
 }
 .whereBuy{
-  &-map{
+  &-map {
     position: absolute;
     background-image: url(../images/map.png);
     background-position: left top;
