@@ -11,11 +11,10 @@ import Manager_modals from "./components/manager_modals";
 import Manager_styles from "./components/manager_styles";
 import Manager_maps from "./components/manager_maps";
 
-
 const CONFIG = {
-  path: './',
+  path: "./",
   debug: true,
-}
+};
 window.CONFIG = CONFIG;
 export default class App {
   constructor() {
@@ -33,18 +32,25 @@ export default class App {
 
 function sidemenu() {
   const duration = 500;
+  let list = ".sidebar-menu_dropdown-list";
+  let dropdown = ".sidebar-menu_dropdown";
+  $(dropdown + ".open " + list).slideDown({
+    duration: 0,
+  });
+  $(".sidebar-menu_dropdown span").click((e) => {
+    let item = $(e.target).closest(dropdown);
 
-  $(".sidemenu-list").click(function (e) {
-    if (!$(this).hasClass("active")) {
-      if ($(this).hasClass("open")) {
-        console.log("OPEN");
-        $(this).removeClass("open");
-        $(this).find(".sidemenu-dropdown").slideUp({ duration: duration });
+    if (!item.is(".active")) {
+      if (item.is(".open")) {
+        item.removeClass("open");
+        item.find(list).slideUp({ duration: duration });
       } else {
-        $(".sidemenu-list.open").find(".sidemenu-dropdown").slideUp({ duration: duration });
-        $(".sidemenu-list.open").removeClass("open");
-        $(this).addClass("open");
-        $(this).find(".sidemenu-dropdown").slideDown({ duration: duration });
+        $(dropdown + ".open:not(.active) " + list).slideUp({
+          duration: duration,
+        });
+        $(dropdown + ".open").removeClass("open");
+        item.addClass("open");
+        item.find(list).slideDown({ duration: duration });
       }
     }
   });

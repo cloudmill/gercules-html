@@ -1,29 +1,20 @@
 .sidebar {
   padding: 35px 0;
   min-width: 287px;
+  width: 287px;
   border-right: 1px solid $color-border-second;
 
   &-menu {
-    $link-height: 24px;
-    $link-block-height: 56px;
-    $link-margin: $link-block-height - $link-height;
-    padding: ($link-margin / 2) 0;
-
-    a {
-      display: block;
-      height: $link-height;
-      padding-left: 55px;
+    @mixin sidebar_link_wrapper {
       position: relative;
       font-style: normal;
       font-weight: normal;
       font-size: 14px;
-      line-height: $link-height;
+      line-height: 100%;
       color: #6c6c6c;
-
       &:not(:last-child) {
-        margin-bottom: $link-margin;
+        margin-bottom: 30px;
       }
-
       &::before {
         opacity: 0;
         content: "";
@@ -33,15 +24,78 @@
         display: block;
         position: absolute;
         left: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 0;
       }
-
       &.active {
         color: #262626;
-
         &::before {
           opacity: 1;
+        }
+      }
+      &:hover {
+        color: #262626;
+      }
+    }
+    @mixin sidebar_link {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-left: 55px;
+      cursor: pointer;
+      height: 33px;
+      transition: color $ease-main;
+    }
+    & > a {
+      @include sidebar_link_wrapper();
+      @include sidebar_link();
+    }
+    &_dropdown {
+      @include sidebar_link_wrapper();
+      &.open,
+      &.active {
+        span::after {
+          transform: rotate(180deg);
+          filter: grayscale(0);
+        }
+      }
+      span {
+        @include sidebar_link();
+        margin-bottom: 15px;
+        &::after {
+          content: "";
+          display: block;
+          width: 6px;
+          height: 3px;
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          background-image: url(../images/dropdown-str-red.svg);
+          filter: grayscale(1);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          background-position: center;
+          transition: all $ease-main;
+        }
+      }
+      &-list {
+        display: none;
+        padding-left: 55px;
+        a {
+          display: block;
+          margin-bottom: 0;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 250%;
+          color: #262626;
+          transition: color $ease-main;
+          &:hover {
+            color: #e41d2c;
+          }
+          &.active {
+            color: #e41d2c;
+          }
         }
       }
     }
@@ -53,173 +107,5 @@
     padding: 50px 0 43px 55px;
     border-left: none;
     border-right: none;
-  }
-}
-
-// новая верстка для "Фасадные Системы"
-
-.sidemenu {
-  // пункт меню
-  $item-height: 56px;
-  $item-link-height: 20px;
-  $item-padding-l: 56px;
-  $item-padding-r: 20px;
-  // пункт подменю
-  $subitem-height: 30px;
-  $subitem-link-height: 15px;
-
-  width: 288px;
-  height: 100%;
-  padding: 40px 0;
-  border-right: 1px solid $color-border-second;
-
-  &-item {
-    position: relative;
-    padding-left: $item-padding-l;
-    padding-right: $item-padding-r;
-
-    &.active {
-      .sidemenu-title {
-        a,
-        span {
-          color: $color-basic;
-        }
-
-        a {
-          pointer-events: none;
-        }
-
-        span {
-          cursor: default;
-        }
-
-        &::before {
-          opacity: 1;
-        }
-
-        &::after {
-          transform: rotate(180deg);
-        }
-      }
-
-      .sidemenu-dropdown {
-        display: block;
-      }
-
-      .sidemenu-subitem {
-        a {
-          color: $color-basic;
-        }
-
-        &.active {
-          a {
-            color: $color-red;
-            pointer-events: none;
-          }
-        }
-      }
-    }
-
-    &.sidemenu-list {
-      .sidemenu-title {
-        &::after {
-          opacity: 1;
-        }
-      }
-    }
-
-    &:hover {
-      &.sidemenu-list {
-        .sidemenu-title {
-          span {
-            color: $color-basic;
-          }
-        }
-      }
-    }
-
-    &.open {
-      .sidemenu-title {
-        &::after {
-          transform: rotate(180deg);
-        }
-      }
-    }
-  }
-
-  &-title {
-    position: relative;
-    padding: (($item-height - $item-link-height) / 2) 0;
-    padding-right: 16px;
-
-    a,
-    span {
-      display: block;
-      font: normal normal 14px $font-main;
-      line-height: $item-link-height;
-      color: $color-gray;
-    }
-
-    a {
-      &:hover {
-        color: $color-basic;
-      }
-    }
-
-    span {
-      cursor: pointer;
-    }
-
-    &::before {
-      opacity: 0;
-      content: "";
-      display: block;
-      width: 4px;
-      height: 32.5px;
-      position: absolute;
-      left: -$item-padding-l;
-      top: 50%;
-      transform: translateY(-50%);
-      background-image: url(../images/red-rect-4x32.5.svg);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      background-position: center;
-    }
-
-    &::after {
-      opacity: 0;
-      content: "";
-      display: block;
-      width: 6px;
-      height: 3px;
-      position: absolute;
-      right: 20px - $item-padding-r;
-      top: 50%;
-      transform: translateY(-50%);
-      background-image: url(../images/black-arrow-6x3.svg);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      background-position: center;
-      transition: $ease-main transform;
-    }
-  }
-
-  &-dropdown {
-    display: none;
-  }
-
-  &-subitem {
-    padding: (($subitem-height - $subitem-link-height) / 2) 0;
-
-    a {
-      display: block;
-      font: normal normal 12px $font-main;
-      line-height: $subitem-link-height;
-      color: $color-gray;
-
-      &:hover {
-        color: $color-basic;
-      }
-    }
   }
 }

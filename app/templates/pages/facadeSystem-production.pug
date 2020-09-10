@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Продукция СФТК";
+
+block content
+  .content-row
+    include ./fs/sidebar.pug
+    .content
+      +breadcrumbs(['Фасадные системы',"Продукция СФТК‎"])
+      h1.page-title Продукция СФТК

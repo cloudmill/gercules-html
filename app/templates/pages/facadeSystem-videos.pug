@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Видео об СФТК";
+
+block content
+  .content-row
+    include ./fs/sidebar.pug
+    .content
+      +breadcrumbs(['Фасадные системы',"Видео об СФТК"])
+      h1.page-title Видео об СФТК

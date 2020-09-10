@@ -1,0 +1,13 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Фасадные системы";
+
+block content
+  .content-row
+    include ./fs/sidebar.pug
+    .content
+      +breadcrumbs(["Фасадные системы‎"])
+      h1.page-title Фасадные системы
+      include ./fs/objects
+      include ../modules/fs/contacts

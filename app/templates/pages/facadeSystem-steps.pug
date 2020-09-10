@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Этапы монтажа";
+
+block content
+  .content-row
+    include ./fs/sidebar.pug
+    .content
+      +breadcrumbs(['Фасадные системы',"Этапы монтажа"])
+      h1.page-title Этапы монтажа

@@ -8,10 +8,10 @@ export default class Managers_sliders {
   }
   init() {
     this.trainerSlider();
-    this.fsObjectsCFTKSlider();
+    this.fs_objects();
   }
-  fsObjectsCFTKSlider() {
-    this.sliders["fsObjectsCFTK"] = new Swiper(".fsObjectsCFTK-objects .swiper-container", {
+  fs_objects() {
+    this.sliders["fs_objects"] = new Swiper(".fs-objects_objects .swiper-container", {
       loop: true,
       slidesPerView: 1,
       spaceBetween: 50,
@@ -20,8 +20,8 @@ export default class Managers_sliders {
       speed: 500,
 
       navigation: {
-        nextEl: ".fsObjectsCFTK-next",
-        prevEl: ".fsObjectsCFTK-prev",
+        nextEl: ".fs-objects_next",
+        prevEl: ".fs-objects_prev",
       },
     });
   }
