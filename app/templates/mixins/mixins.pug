@@ -1,3 +1,5 @@
+include ./fields
+
 mixin icon(iconName, type = 'png')
   if(type == 'png')
     i(class='icon '+'icon-'+iconName)
@@ -20,47 +22,6 @@ mixin breadcrumbs(path = [])
 mixin link(href,text)
   a.main-link(href=href) #{text}
 
-mixin field_select(name,options,placeholder = "",id = name)
-  .field.field-select
-      if placeholder
-        select(name=name id=id data-select-placeholder=placeholder)
-          option
-          each item in options
-            option(value=`${item[0]}`) #{item[1]}
-      else
-        select(name=name id=id)
-          each item in options
-            option(value=`${item[0]}`) #{item[1]}
-
-mixin field_checkbox(name, label, checked)
-  .field.field-checkbox
-    if (checked)
-      input(type="checkbox" name=`${name}` id=`${name}` checked)
-    else 
-      input(type="checkbox" name=`${name}` id=`${name}`)
-    label(for=`${name}`) #{label}
-
-mixin fieldBase(id, name, label, placeholder)
-  .field.field-base
-    label(for=id)
-      input(type="text" name=name data-required id=id placeholder=placeholder)
-      .field-inf
-        span.name #{label}
-        span.errorText пожалуйста, заполните поле корректно
-
-mixin fieldArea(id, name, label, placeholder, size = [30, 10])
-  .field.field-area
-    label(for=id)
-      textarea(name=name id=id placeholder=placeholder cols=size[0] rows=size[1])
-      .field-inf
-        span.name #{label}
-        span.errorText пожалуйста, заполните поле корректно
-
-mixin fieldSubmit(id, name, text)
-  .field.field-submit
-    button(type="submit" name=name id=id)
-      span #{text}
-
 mixin client_service_card
   .client-service-card
     span Клиентский сервис
@@ -70,11 +31,6 @@ mixin hashTags(tags)
   .hashTags
     each tag in tags
       a(href=tag[1])="#" + tag[0]
-
-mixin parallelogramLink(text, href)
-  .parallelogramLink
-    a(href=href)
-      span #{text}
 
 mixin linkRect
   .main-link_rect

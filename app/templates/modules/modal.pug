@@ -20,23 +20,23 @@
             h2 Адрес магазина
             .form-row
               .form-col
-                +fieldBase("marketFullName", "marketFullName", "Юридическое название*", "ООО Смеси+")
-                +fieldBase("marketName", "marketName", "Название магазина*", "ООО Смеси+")
-                +fieldBase("marketStreet", "marketStreet", "Улица", "пр. Луначарского")
+                +field_base("marketFullName", "marketFullName", "Юридическое название*", "ООО Смеси+")
+                +field_base("marketName", "marketName", "Название магазина*", "ООО Смеси+")
+                +field_base("marketStreet", "marketStreet", "Улица", "пр. Луначарского")
               .form-col
-                +fieldBase("marketRegion", "marketRegion", "Регион*", "Северо-Запад")
-                +fieldBase("marketCity", "marketCity", "Город*", "Омск")
-                +fieldBase("marketBuilding", "marketBuilding", "Дом", "19")
+                +field_base("marketRegion", "marketRegion", "Регион*", "Северо-Запад")
+                +field_base("marketCity", "marketCity", "Город*", "Омск")
+                +field_base("marketBuilding", "marketBuilding", "Дом", "19")
             h2 Контактное лицо
             .form-row
               .form-col
-                +fieldBase("personName", "personName", "Имя*", "Алексей")
-                +fieldBase("personSurname", "personSurname", "Фамилия*", "Биланин")
-                +fieldBase("personPhone", "personPhone", "Номер телефона*", "+7 (___) ___-__-__")
-                +fieldBase("personSite", "personSite", "Адрес сайта", "yandex.ru")
+                +field_base("personName", "personName", "Имя*", "Алексей")
+                +field_base("personSurname", "personSurname", "Фамилия*", "Биланин")
+                +field_base("personPhone", "personPhone", "Номер телефона*", "+7 (___) ___-__-__")
+                +field_base("personSite", "personSite", "Адрес сайта", "yandex.ru")
               .form-col
-                +fieldBase("personEmail", "personEmail", "Email", "ksh@loudmill.ru")
-                +fieldBase("personPosition", "personPosition", "Должность*", "Директор")
+                +field_base("personEmail", "personEmail", "Email", "ksh@loudmill.ru")
+                +field_base("personPosition", "personPosition", "Должность*", "Директор")
                 label(for="personStatus").select
                   .field-inf
                     span.name Статус
