@@ -1,0 +1,35 @@
+mixin field_select(name,options,placeholder = "",id = name)
+  .field.field-select
+      if placeholder
+        select(name=name id=id data-select-placeholder=placeholder)
+          option
+          each item in options
+            option(value=`${item[0]}`) #{item[1]}
+      else
+        select(name=name id=id)
+          each item in options
+            option(value=`${item[0]}`) #{item[1]}
+
+mixin field_checkbox(name, label, checked)
+  .field.field-checkbox
+    if (checked)
+      input(type="checkbox" name=`${name}` id=`${name}` checked)
+    else 
+      input(type="checkbox" name=`${name}` id=`${name}`)
+    label(for=`${name}`) #{label}
+
+mixin field_base(id, name, label, placeholder)
+  .field.field-base
+    label(for=id)
+      input(type="text" name=name data-required id=id placeholder=placeholder)
+      .field-inf
+        span.name #{label}
+        span.errorText пожалуйста, заполните поле корректно
+
+mixin field_area(id, name, label, placeholder, size = [30, 10])
+  .field.field-area
+    label(for=id)
+      textarea(name=name id=id placeholder=placeholder cols=size[0] rows=size[1])
+      .field-inf
+        span.name #{label}
+        span.errorText пожалуйста, заполните поле корректно
