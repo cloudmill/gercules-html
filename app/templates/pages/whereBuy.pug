@@ -11,9 +11,9 @@ block content
       .whereBuy-location
         +field_select("region", [[0, "Хабаровская область"], [1, "Воронежская область"]], "Выберите регион")
         +field_select("city", [[0, "Хабаровск"], [1, "Воронеж"]], "Выберите город")
-        include ../modules/buy/saler-card
-      include ../modules/buy/markets-type
+        include whereBuy/salerCard
+      include whereBuy/marketsType
       .whereBuy-markets
-        include ../modules/buy/whereBuy-map
-        include ../modules/buy/markets-list
-      include ../modules/buy/market-not-found
+        include whereBuy/whereBuyMap
+        include whereBuy/marketsList
+      include whereBuy/marketNotFound

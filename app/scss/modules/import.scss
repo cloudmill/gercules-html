@@ -1,6 +1,7 @@
 @import "header";
 @import "footer";
 @import "sidebar";
-@import "events";
-@import "trainers";
+@import "trainers/import";
 @import "modal";
+@import "events/import";
+@import "fs/import";

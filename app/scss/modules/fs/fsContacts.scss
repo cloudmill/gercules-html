@@ -1,13 +1,15 @@
 .fsContacts {
   margin-top: 120px;
 
+
   h2 {
     font: normal bold 28px/40px $font-third;
     color: $color-basic;
   }
 
   &-list {
-    margin-top: 60px;
+    margin: -20px;
+    margin-top: 40px;
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -15,11 +17,7 @@
 
   &-item {
     width: 344px;
-    margin-bottom: 40px;
-
-    &:not(:last-child) {
-      margin-right: 40px;
-    }
+    margin: 20px;
   }
 
   &-photo {
