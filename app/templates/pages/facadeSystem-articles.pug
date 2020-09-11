@@ -9,3 +9,27 @@ block content
     .content.facadeSystem
       +breadcrumbs(['Фасадные системы',"Статьи о СФТК"])
       h1.page-title Статьи о СФТК
+      .fs-list
+        each item in [1,2,3,4,1,2]
+          if(item % 2 == 1)
+            .fs-list_item
+              a.fs-list_item-img(href="")
+                img(src=`./images/article-preview-${item}.jpg`, alt="")
+              .fs-list_item-date 22 октября 2019
+              a.fs-list_item-name(href="") Новая формула GE-29: глубже, равномернее, крепче!
+              .fs-list_item-text С 20 марта 2018 мы начали выпуск нового продукта: «Грунтовка укрепляющая глубокого проникновения GE-29». Мы улучшили формулу и обновили упаковку!
+              .fs-list_item-tags
+                +hashTags([["жизнькомпании", "#"],["новости", "#"]])
+          else
+            .fs-list_item
+              a.fs-list_item-img(href="")
+                img(src=`./images/article-preview-${item}.jpg`, alt="")
+              .fs-list_item-date 22 октября 2019
+              a.fs-list_item-name(href="") Новинка! Грунтовка GE-39K для структурных штукатурок и фасадов
+              .fs-list_item-text С 20 марта 2018 мы начали выпуск нового продукта: «Грунтовка укрепляющая глубокого проникновения GE-29». Мы улучшили формулу и обновили упаковку!
+              .fs-list_item-tags
+                +hashTags([["жизнькомпании", "#"],["новости", "#"]])
+      .fs-list_showmore
+        a(href="") Показать еще
+          span 52
+      include fs/contacts
