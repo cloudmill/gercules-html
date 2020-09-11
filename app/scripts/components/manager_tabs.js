@@ -3,7 +3,21 @@ export default class Manager_tabs {
     this.init();
   }
   init() {
+    this.tabsInit();
     this.sidebarInit();
+  }
+  tabsInit() {
+    $(".tabs-menu_item").click((e) => {
+      let item = $(e.target);
+      if (!item.is(".active")) {
+        let menu = item.closest('.tabs-menu')
+        let tabs = menu.parent().find('.tabs-item');
+        menu.find('.tabs-menu_item').removeClass('active')
+        tabs.removeClass('active')
+        item.addClass('active')
+        tabs.eq(item.index()).addClass('active')
+      }
+    });
   }
   sidebarInit() {
     const duration = 500;
