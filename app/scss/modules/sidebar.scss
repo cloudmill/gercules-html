@@ -18,11 +18,12 @@
       &::before {
         opacity: 0;
         content: "";
-        @include background-icon("../images/rect.svg");
         width: 4px;
         height: 33px;
         display: block;
         position: absolute;
+        border-left: 4px solid red;
+        border-top: 2px solid transparent;
         left: 0;
         top: 0;
       }

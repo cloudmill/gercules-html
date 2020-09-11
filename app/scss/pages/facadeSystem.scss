@@ -3,36 +3,26 @@
     &_row {
       margin-top: 30px;
       margin-bottom: 120px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-
+      display: grid;
+      grid-template-columns: 1fr 288px;
+      grid-column-gap: 100px;
       &.margin60 {
         margin-top: 60px;
       }
     }
-
     &_col {
       align-self: stretch;
-
       &:first-child {
-        flex-grow: 1;
-
         p {
           font-size: 18px;
           line-height: 27px;
         }
       }
-
       &:last-child {
-        margin-left: 100px;
-        max-width: 288px;
-
         p {
           font-size: 15px;
           line-height: 22px;
         }
-
         .redRect {
           margin-bottom: 120px;
         }
@@ -75,16 +65,25 @@
     }
   }
 }
-
-.facadeSystem {
-  h2 {
-    font-family: $font-third;
-    font-weight: bold;
-    font-size: 28px;
-    line-height: 144%;
-
-    &:nth-of-type(1) {
-      margin-top: 60px;
+.page{
+  .facadeSystem {
+    &.content{
+      padding-left: 45px;
+      padding-right: 45px;
+    }
+    .breadcrumbs{
+      padding-bottom: 10px;
+    }
+    h2 {
+      font-family: $font-third;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 144%;
+  
+      &:nth-of-type(1) {
+        margin-top: 60px;
+      }
     }
   }
 }
+

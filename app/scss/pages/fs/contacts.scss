@@ -8,16 +8,13 @@
   }
 
   &_list {
-    margin: -20px;
     margin-top: 40px;
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 40px;
   }
 
   &_item {
-    width: 344px;
-    margin: 20px;
   }
 
   &_photo {

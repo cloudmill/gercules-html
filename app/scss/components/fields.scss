@@ -98,42 +98,6 @@
       }
     }
   }
-
-  &-submit {
-    max-width: 339px;
-
-    button {
-      display: block;
-      width: 100%;
-      padding: 0 45px;
-      height: 70px;
-      background-image: url(../images/market-not-found-button.svg);
-      background-size: 100% 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      white-space: nowrap;
-
-      span {
-        vertical-align: middle;
-        font: normal bold 18px/21px $font-main;
-        color: white;
-        white-space: nowrap;
-      }
-
-      &::after {
-        margin-left: 20px;
-        content: "";
-        display: inline-block;
-        vertical-align: middle;
-        width: 24px;
-        height: 13px;
-        background-image: url(../images/arrow-white-24x13.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-      }
-    }
-  }
 }
 
 .select2-container {

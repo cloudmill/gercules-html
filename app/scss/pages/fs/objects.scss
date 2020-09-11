@@ -198,10 +198,8 @@
           top: 50%;
           transform: translateY(-50%);
           left: 0;
-          background-image: url(../images/red-rect-20x2.svg);
-          background-repeat: no-repeat;
-          background-size: 100% 100%;
-          background-position: center;
+          border-top: 2px solid #E41D2C;
+          border-right: 1px solid transparent;
         }
       }
     }
