@@ -132,7 +132,7 @@
         line-height: 29px;
         border-bottom: 1px solid $color-border-second;
         border-right: 1px solid $color-border-second;
-
+        transition: background-color $ease-main,border-color $ease-main,color $ease-main;
         &:hover {
           background-color: $color-red;
           border-color: $color-red;

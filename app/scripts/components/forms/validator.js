@@ -15,8 +15,7 @@ export default class Validator {
 
   error(input) {
     this.getLabel(input).addClass("error");
-    if (window.CONFIG.debug)
-      write.warn(`field ${input.attr("name")} invalid`)
+    if (window.CONFIG.debug) write.warn(`field ${input.attr("name")} invalid`);
   }
 
   success(input) {
@@ -55,10 +54,12 @@ export default class Validator {
     }
   }
   checkForm(form) {
+    if (window.CONFIG.debug) write.br();
     let fields = form.find(".field");
     fields.each((k, item) => {
       this.checkInput($(item).find("input"));
     });
+    if (window.CONFIG.debug) write.br();
     if (form.find(".field label.error").length == 0) {
       return true;
     } else {

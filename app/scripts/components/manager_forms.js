@@ -1,5 +1,6 @@
 import $ from "jquery";
 import "select2";
+import Inputmask from "inputmask";
 
 import Validator from "./forms/validator";
 import Form from "./forms/form";
@@ -15,13 +16,17 @@ export default class Manager_forms {
 
   init() {
     this.initSelect2();
+    this.initPhones();
     VALIDATOR.init();
 
     this.init_form_questionSFTK();
     this.init_form_market();
     this.init_form_calendar();
   }
-
+  initPhones() {
+    var im = new Inputmask("+7 (999) 999-99-99");
+    im.mask('input[name*="phone"],input[name*="Phone"]');
+  }
   initSelect2() {
     $(".field-select select").each((key, select) => {
       if ($(select).attr("data-select-placeholder")) {
@@ -51,14 +56,10 @@ export default class Manager_forms {
 
   init_form_questionSFTK() {
     let form = new Form($("#questionSFTK form"));
-    form.onsuccess = function () {
-      
-    };
+    form.onsuccess = function () {};
   }
   init_form_market() {
     let form = new Form($("#market form"));
-    form.onsuccess = function () {
-      
-    };
+    form.onsuccess = function () {};
   }
 }
