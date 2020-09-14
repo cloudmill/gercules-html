@@ -6,6 +6,7 @@ export default class Log {
       warn: "color: #a59524;",
       error: "color: #E41D2C;",
       good: "color: #19BB4F;",
+      br: 'font-size: 20px; color: "#000; ',
     };
   }
   getStyle(type, style) {
@@ -22,5 +23,8 @@ export default class Log {
   }
   good(text, style) {
     console.log("%c" + text, this.getStyle("good", style));
+  }
+  br(style) {
+    console.log("%c" + "===============", this.getStyle("br", style));
   }
 }

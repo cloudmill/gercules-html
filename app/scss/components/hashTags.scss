@@ -7,7 +7,11 @@
     display: inline-block;
     font: normal normal 15px/22px $font-main;
     color: $color-red;
-
+    border-bottom: 1px solid transparent;
+    transition: border-color $ease-main;
+    &:hover{
+      border-color: $color-red;
+    }
     &:not(:last-child) {
       margin-right: 20px;
     }

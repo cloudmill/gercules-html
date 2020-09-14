@@ -9,7 +9,11 @@
   align-items: center;
   padding-bottom: 10px;
   border-bottom: 1px solid #e41d2c;
-
+  &:hover {
+    &:after {
+      transform: translateX(8px);
+    }
+  }
   &:after {
     content: "";
     display: block;
@@ -18,6 +22,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    transition: transform $ease-main;
     width: 24px;
     height: 13px;
   }
@@ -33,23 +38,46 @@
     width: 100%;
     height: 70px;
     padding: 0 ($skewPadding + $padding);
-
     * {
       position: relative;
       pointer-events: none;
     }
-
     a,
     button {
       position: absolute;
       display: block;
-      width: calc(100% - #{$skewPadding});
+      width: calc(100% - #{$skewPadding} * 2);
       height: 100%;
       transform: skewX(-$angle);
       background-color: $color-red;
       pointer-events: all;
+      &::before,
+      &:after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 5px;
+        position: absolute;
+        top: 0;
+        background-color: inherit;
+        transition: transform $ease-main;
+        @include performance();
+      }
+      &:after {
+        left: 0;
+      }
+      &::before {
+        right: 0;
+      }
+      &:hover {
+        &:after {
+          transform: translateX(-10px);
+        }
+        &::before {
+          transform: translateX(10px);
+        }
+      }
     }
-
     span {
       display: block;
       white-space: nowrap;
