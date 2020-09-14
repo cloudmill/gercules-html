@@ -9,15 +9,11 @@ export default class Form {
   init() {
     this.form.submit((e) => {
       e.preventDefault();
-      if (validator.checkFormRight(this.form)) {
-        if (window.CONFIG.debug) {
-          console.log("form valid");
-        }
+      if (window.VALIDATOR.checkForm(this.form)) {
+        if (window.CONFIG.debug) write.good("form valid");
         this.mess();
       } else {
-        if (window.CONFIG.debug) {
-          console.error("form invalid");
-        }
+        if (window.CONFIG.debug) write.warn("form invalid");
       }
     });
   }
@@ -28,7 +24,7 @@ export default class Form {
       dataType: "html",
       data: this.getData(),
       success: (data) => {
-        console.log(data);
+        if (window.CONFIG.debug) write.log(data);
         this.onsuccess(data);
         this.clear();
       },

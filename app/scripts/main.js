@@ -3,6 +3,7 @@ window.$ = $;
 
 //Tools
 import Listener from "./tools/listener";
+import Log from "./tools/log";
 
 //managers
 import Managers_sliders from "./components/manager_sliders";
@@ -20,6 +21,7 @@ window.CONFIG = CONFIG;
 export default class App {
   constructor() {
     window.globalListener = new Listener();
+    window.write = new Log();
 
     this.sliders = new Managers_sliders();
     this.forms = new Manager_forms();

@@ -1,6 +1,6 @@
-.eventRegistration
+.eventRegistration#questionSFTK
   h2 Задать вопрос о СФТК
-  form(action="#")
+  form(action="")
     .eventRegistration-row
       .eventRegistration-col
         +field_base("name", "name", "Имя*", "Алексей")
@@ -13,7 +13,11 @@
     +field_area("comment", "comment", "Комментарий", "Хочу записаться", [30, 10])
     .eventRegistration-row
       .eventRegistration-col
-        +field_checkbox("agreement", "«Я выражаю согласие на обработку ПДн в соответствии с Политикой конфиденциальности»", "checked")
+        +field_checkbox()
+          input#pp_quest(type="checkbox", name="pp" checked data-required)
+          label(for="pp_quest") «Я выражаю согласие на обработку ПДн в соответствии с 
+            a(href="") Политикой конфиденциальности
+            |»
       .eventRegistration-col
         +linkRect
           button(id="submit", name="submit")

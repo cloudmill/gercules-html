@@ -1,75 +1,77 @@
 import $ from "jquery";
-
 export default class Validator {
   constructor() {
-    this.init()
+    this.init();
   }
   init() {
     let inputs = $(".field").find("input,textarea");
-    let that = this;
-    inputs.keyup(function () {
-      that.checkInputForRight($(this));
+    inputs.keyup((e) => {
+      this.checkInput($(e.target));
     });
-    inputs.change(function () {
-      that.checkInputForRight($(this));
+    inputs.change((e) => {
+      this.checkInput($(e.target));
     });
   }
+
   error(input) {
-    input.closest("label").addClass("error");
-    if (window.CONFIG.debug) {
-      console.error("field " + input.attr("name") + " invalid");
-    }
+    this.getLabel(input).addClass("error");
+    if (window.CONFIG.debug)
+      write.warn(`field ${input.attr("name")} invalid`)
   }
-  validMail(mail) {
-    var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
-    var valid = re.test(mail);
-    return valid;
-  }
+
   success(input) {
-    input.parent("label").removeClass("error");
-    if (window.CONFIG.debug) {
-      console.log("field " + input.attr("name") + " valid");
-    }
+    this.getLabel(input).removeClass("error");
+    if (window.CONFIG.debug) write.good(`field ${input.attr("name")} valid`);
   }
-  checkInputForRight(input) {
+  checkInput(input) {
     let type = input.attr("type");
-    if (input.attr("data-required")) {
-      if (type == "text") {
-        if (input.val() == "") {
-          input.removeClass("fill");
-        } else {
-          input.addClass("fill");
+    let name = input.attr("name");
+    if (input.is("[data-required]")) {
+      switch (type) {
+        case "text": {
+          let val = input.val();
+          if (val == "") {
+            input.removeClass("fill");
+            this.error(input);
+          } else {
+            input.addClass("fill");
+            if (name.indexOf("mail") != -1 && !this.validMail(val)) {
+              this.error(input);
+            } else {
+              this.success(input);
+            }
+          }
+          break;
         }
-        let name = input.attr("name");
-        let val = input.val();
-        if (val == "") {
-          this.error(input);
-        } else {
-          if (name.indexOf("mail") != -1 && !this.validMail(val)) {
+        case "checkbox": {
+          if (!input.eq(0)[0].checked) {
             this.error(input);
           } else {
             this.success(input);
           }
-        }
-      } else if (type == "checkbox") {
-        if (!input.eq(0)[0].checked) {
-          this.error(input);
-        } else {
-          this.success(input);
+          break;
         }
       }
     }
   }
-  checkFormRight(form) {
-    let that = this;
+  checkForm(form) {
     let fields = form.find(".field");
-    fields.each(function () {
-      that.checkInputForRight($(this).find("input"));
+    fields.each((k, item) => {
+      this.checkInput($(item).find("input"));
     });
     if (form.find(".field label.error").length == 0) {
       return true;
     } else {
       return false;
     }
+  }
+  getLabel(input) {
+    if (input.closest("label").length > 0) return input.closest("label");
+    else return input.closest(".field").find("label");
+  }
+  validMail(mail) {
+    var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+    var valid = re.test(mail);
+    return valid;
   }
 }
