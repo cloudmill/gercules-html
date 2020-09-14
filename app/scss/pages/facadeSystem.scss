@@ -4,7 +4,7 @@
       margin-top: 30px;
       margin-bottom: 120px;
       display: grid;
-      grid-template-columns: 724px 288px;
+      grid-template-columns: 1fr 288px;
       grid-column-gap: 100px;
 
       &.margin60 {
@@ -16,8 +16,6 @@
       align-self: stretch;
 
       &:first-child {
-        max-width: 715px;
-
         p {
           font-size: 18px;
           line-height: 27px;
@@ -49,11 +47,17 @@
 
       img {
         position: absolute;
+        z-index: -1;
         display: block;
         width: 667px;
         height: 532px;
-        left: 465px;
+        right: -20px;
         top: -215px;
+
+        @media (max-width: 1600px) {
+          left: 465px;
+          right: auto;
+        }
       }
 
       ul {
@@ -90,8 +94,6 @@
       position: relative;
       left: -40px;
       width: calc(100% + 40px);
-      max-width: 1154px;
-
 
       &-line {
         display: flex;
@@ -138,6 +140,7 @@
 
     &_guarantee {
       position: relative;
+      margin: 0 auto;
       margin-top: 180px;
 
       h3 {
@@ -193,6 +196,10 @@
         background-size: 100% 100%;
         background-position: center;
       }
+
+      @media (min-width: 1600px) {
+        left: calc((100% - 1112px) / 3);
+      }
     }
 
     &_row2 {
@@ -202,17 +209,23 @@
         min-width: 288px;
         margin-right: 100px;
       }
+
+      .fs-gallery {
+        flex-grow: 1;
+      }
     }
   }
 
   &-gallery {
-    height: 310px;
     display: flex;
-    align-items: flex-start;
+    height: 100%;
+    min-height: 310px;
 
     &_photo {
-      min-width: 228px;
-      height: 100%;
+      flex-grow: 1;
+      align-self: stretch;
+      flex-basis: 228px;
+      min-height: 100%;
 
       &:not(:last-child) {
         margin-right: 20px;
@@ -223,6 +236,7 @@
 
         &::before {
           position: absolute;
+          z-index: 100;
           right: 0;
           bottom: 0;
           content: "";
@@ -235,6 +249,18 @@
       img {
         display: block;
         width: 100%;
+        min-width: 228px;
+      }
+
+      @media (max-width: 1600px) {
+        position: relative;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
     }
   }
@@ -280,7 +306,6 @@
 
   .eventRegistration {
     margin-top: 120px;
-    max-width: 1111px;
 
     .main-link_rect {
       max-width: 250px;
