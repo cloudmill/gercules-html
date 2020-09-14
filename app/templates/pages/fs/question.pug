@@ -1,0 +1,21 @@
+.eventRegistration
+  h2 Задать вопрос о СФТК
+  form(action="#")
+    .eventRegistration-row
+      .eventRegistration-col
+        +field_base("name", "name", "Имя*", "Алексей")
+        +field_base("surname", "surname", "Фамилия*", "Биланин")
+        +field_base("phone", "phone", "Номер телефона*", "+7 (___) ___-__-__")
+      .eventRegistration-col
+        +field_base("email", "email", "Email", "ksh@loudmill.ru")
+        +field_base("companyName", "companyName", "Название компании", "ООО ГК ПЛЮС")
+        +field_base("city", "city", "Город*", "Омск")
+    +field_area("comment", "comment", "Комментарий", "Хочу записаться", [30, 10])
+    .eventRegistration-row
+      .eventRegistration-col
+        +field_checkbox("agreement", "«Я выражаю согласие на обработку ПДн в соответствии с Политикой конфиденциальности»", "checked")
+      .eventRegistration-col
+        +linkRect
+          button(id="submit", name="submit")
+          span Отправить
+          +icon("link-white-arrow", "svg")
