@@ -2,6 +2,7 @@
 
 module.exports = {
   mode: 'development',
+  //mode: 'production',
   cache: true,
   output: {
     filename: "scripts.min.js",

@@ -16,7 +16,7 @@
         .modal-close(data-modal-close)
         .modal-item-content
           h1 Сообщить о магазине
-          form(action="#")
+          form(action="")
             h2 Адрес магазина
             .form-row
               .form-col
@@ -44,7 +44,11 @@
                   +field_select("personStatus", [[0, "Дистрибьютер"], [1, "Дистрибьютер"]], "Дистрибьютер", "personStatus")
             .form-row
               .form-col
-                +field_checkbox("agreement", "«Я выражаю согласие на обработку ПДн в соответствии с Политикой конфиденциальности»", "checked")
+                +field_checkbox()
+                  input#pp_modal(type="checkbox", name="pp" checked data-required)
+                  label(for="pp_modal") «Я выражаю согласие на обработку ПДн в соответствии с 
+                    a(href="") Политикой конфиденциальности
+                    |»
               .form-col
                 +linkRect
                   button(id="submit", name="submit")

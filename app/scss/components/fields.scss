@@ -16,7 +16,7 @@
       padding-left: 30px;
       &.error {
         &::before {
-          background-color: $color-red;
+          border-color: $color-red;
         }
       }
       &:before {
