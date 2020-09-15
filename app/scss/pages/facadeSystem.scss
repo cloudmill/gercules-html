@@ -132,7 +132,8 @@
         line-height: 29px;
         border-bottom: 1px solid $color-border-second;
         border-right: 1px solid $color-border-second;
-        transition: background-color $ease-main, border-color $ease-main, color $ease-main;
+        transition: background-color $ease-main, border-color $ease-main,
+          color $ease-main;
 
         &:hover {
           background-color: $color-red;
@@ -180,11 +181,11 @@
         content: "гарантия";
         position: absolute;
         top: 50px;
-        left: 160px;
+        right: -60px;
         font-family: $font-fourth;
         font-size: 310px;
         line-height: 338px;
-        color: #F4F4F4;
+        color: #f4f4f4;
       }
 
       &::after {
@@ -194,15 +195,11 @@
         width: 370px;
         height: 500px;
         top: -57px;
-        left: 536px;
+        right: 230px;
         background-image: url(../images/guarantee-image.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-position: center;
-      }
-
-      @media (min-width: 1600px) {
-        left: calc((100% - 1112px) / 3);
       }
     }
 
@@ -286,31 +283,31 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-
+        counter-reset: num;
         @media (max-width: 1400px) {
           justify-content: flex-start;
           flex-wrap: wrap;
         }
       }
-
       li {
         margin: 23px;
+        counter-increment: num;
         position: relative;
         padding-top: 37px;
         padding-left: 60px;
         font-size: 15px;
         line-height: 150%;
-      }
-
-      span {
-        position: absolute;
-        top: 0;
-        left: 0;
-        font-family: $font-third;
-        font-weight: bold;
-        font-size: 30px;
-        line-height: 48px;
-        color: $color-border-second;
+        &::before {
+          content: "0" counter(num);
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-family: $font-third;
+          font-weight: bold;
+          font-size: 30px;
+          line-height: 48px;
+          color: $color-border-second;
+        }
       }
     }
 
@@ -649,7 +646,7 @@
       padding: 40px 187px;
       display: flex;
       justify-content: center;
-      background-color: #F3F3F3;
+      background-color: #f3f3f3;
       overflow: hidden;
 
       img {
@@ -707,8 +704,8 @@
 
       &-photo {
         width: 100%;
-        background-color: #F4F4F4;
-        
+        background-color: #f4f4f4;
+
         img {
           mix-blend-mode: darken;
         }
@@ -716,7 +713,7 @@
         &.detail-4 {
           padding: 4.59363957597% 2.82685512367% 9.5406360424% 2.47349823322%;
         }
-        
+
         &.detail-6 {
           padding: 2.82685512367% 12.0141342756% 2.12014134276% 11.6607773852%;
         }
@@ -741,13 +738,91 @@
       }
     }
   }
+  &-blockSkew {
+    display: flex;
+    background: #f4f4f4;
+    margin: 0 -45px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 60px;
+    &_img {
+      width: 50%;
+      overflow: hidden;
+      position: relative;
+      padding-top: 50%;
+      backface-visibility: hidden;
+      img {
+        min-width: 100%;
+        display: block;
+        min-height: 100%;
+        left: 50%;
+        backface-visibility: hidden;
+        top: 0;
+        transform: translateX(-50%);
+        position: absolute;
+        z-index: 1;
+      }
+    }
+    &_content {
+      width: 50%;
+      padding: 80px 0;
+      padding-right: 80px;
+      position: relative;
+      z-index: 2;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        backface-visibility: hidden;
+        height: 130%;
+        background: #f4f4f4;
+        z-index: 2;
+        width: 100%;
+        left: 0;
+        z-index: -1;
+        top: 0;
+        transform-origin: left top;
+        transform: rotate(15deg);
+      }
+      h3 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 160%;
+        color: #262626;
+        margin-bottom: 40px;
+      }
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+        li {
+          position: relative;
+          padding-left: 30px;
+          font-size: 15px;
+          line-height: 22px;
+          &::before {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            content: "";
+            display: block;
+            width: 20px;
+            border-top: 2px solid $color-red;
+            border-right: 2px solid transparent;
+          }
+        }
+      }
+    }
+  }
 }
 
 .page {
   .facadeSystem {
     &.content {
-      padding-left: 40px;
-      padding-right: 80px;
+      padding-left: 45px;
+      padding-right: 45px;
+      overflow: hidden;
     }
 
     .breadcrumbs {

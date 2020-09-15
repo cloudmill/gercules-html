@@ -46,7 +46,7 @@
     button {
       position: absolute;
       display: block;
-      width: calc(100% - #{$skewPadding});
+      width: calc(100% - #{$skewPadding} * 2);
       height: 100%;
       transform: skewX(-$angle);
       background-color: $color-red;

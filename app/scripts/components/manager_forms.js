@@ -19,7 +19,7 @@ export default class Manager_forms {
     this.initPhones();
     VALIDATOR.init();
 
-    this.init_form_questionSFTK();
+    this.init_form_questionBigForm();
     this.init_form_market();
     this.init_form_calendar();
   }
@@ -54,8 +54,8 @@ export default class Manager_forms {
     });
   }
 
-  init_form_questionSFTK() {
-    let form = new Form($("#questionSFTK form"));
+  init_form_questionBigForm() {
+    let form = new Form($("#questionBigForm form"));
     form.onsuccess = function () {};
   }
   init_form_market() {

@@ -1,0 +1,30 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Тестовое нанесение";
+
+block content
+  .content-row
+    include ./fs/sidebar.pug
+    .content.facadeSystem
+      +breadcrumbs(['Фасадные системы',"Тестовое нанесение"])
+      h1.page-title Тестовое нанесение
+      .fs-about_top
+        ol
+          li Низкие затраты на поддержание СФТК
+          li Теплоизоляционный слой
+          li Выдающуюся вандалоустойчивость
+          li Неизменно востребованный на протяжении сотен лет вид отделки зданий, не подверженный веяниям моды
+        h2 Инструкции по тестовому нанесению
+      .fs-list
+        each item in [1,2,3,4,1,2,3,4]
+          .fs-list_item
+            a.fs-list_item-video(href="")
+              img(src=`./images/video-preview-${item}.jpg`, alt="")
+              .play
+            a.fs-list_item-name(href="") Как приминять клеевую армирующую смесь Геркулес GM-185
+      include fs/showmore
+
+      - var questionTitle = 'Задать вопрос о тестовом наполнении'
+      include fs/question
+      include fs/contacts

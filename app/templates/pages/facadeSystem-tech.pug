@@ -16,12 +16,32 @@ block content
         .tabs-menu_item Технические характеристики линейки продукции СФТК
       .tabs-list
         .tabs-item.active
-          h2 Альбом технических решений
+          .docs
+            h2 Альбом технических решений
+            a.docs-download_all(href="" download) Скачать всю группу
+            .docs-list
+              include ../modules/docs/items.pug
+              include ../modules/docs/items.pug
         .tabs-item
-          h2 Руководство по технологии монтажа
+          .docs
+            h2 Руководство по технологии монтажа
+            a.docs-download_all(href="" download) Скачать всю группу
+            .docs-list
+              include ../modules/docs/items.pug
+              include ../modules/docs/items.pug
         .tabs-item
-          h2 Рекомендации по эксплуатации СФТК
+          .docs
+            h2 Рекомендации по эксплуатации СФТК
+            a.docs-download_all(href="" download) Скачать всю группу
+            .docs-list
+              include ../modules/docs/items.pug
+              include ../modules/docs/items.pug
         .tabs-item
-          h2 Технические характеристики линейки продукции СФТК
+          .docs
+            h2 Технические характеристики линейки продукции СФТК
+            a.docs-download_all(href="" download) Скачать всю группу
+            .docs-list
+              include ../modules/docs/items.pug
+              include ../modules/docs/items.pug
       include fs/showmore
       include fs/contacts

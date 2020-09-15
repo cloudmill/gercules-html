@@ -1,0 +1,29 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Услуга шеф-монтажа";
+
+block content
+  .content-row
+    include ./fs/sidebar.pug
+    .content.facadeSystem
+      +breadcrumbs(['Фасадные системы',"Услуга шеф-монтажа"])
+      h1.page-title Услуга шеф-монтажа
+      .fs-blockSkew
+        .fs-blockSkew_img
+          img(src="images/fs-service.jpg", alt="")
+        .fs-blockSkew_content
+          h3 Шеф-монтажные работы включают
+            br
+            | в себя огромный спектр
+          ul
+            li Общий технологический контроль при поставке и установке
+            li Налаживание и регулировка работы оборудования при первом запуске
+            li Наблюдение за состоянием товара при транспортировке
+            li Предварительный осмотр и диагностирование
+            li Профессиональное консультирование при выборе и покупке технического оборудования
+      include ./fs/guarantee.pug
+
+      - var questionTitle = 'Задать вопрос об услуге шеф-монтаж'
+      include fs/question
+      include fs/contacts
