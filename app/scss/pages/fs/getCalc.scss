@@ -1,0 +1,56 @@
+.fs-getCalc {
+  &_row {
+    display: flex;
+    justify-content: space-between;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+
+    &:last-child {
+      align-items: center;
+      margin-top: 50px;
+    }
+  }
+
+  .field {
+    flex-basis: calc(50% - 20px);
+
+    &-base {
+      padding-top: 33px;
+
+      input {
+        padding-left: 25px;
+        padding-right: 25px;
+        width: 100%;
+        height: 60px;
+      }
+
+      .field-inf {
+        top: -33px;
+      }
+    }
+
+    &-checkbox {
+      max-width: 350px;
+
+      label {
+        font-size: 12px;
+        line-height: 150%;
+      }
+    }
+
+    &:first-child {
+      margin-right: 40px;
+    }
+  }
+
+  .main-link_rect {
+    max-width: calc(50% - 20px);
+    width: 250px;
+
+    i {
+      margin-left: 20px;
+    }
+  }
+}
