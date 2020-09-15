@@ -2,6 +2,7 @@ node_modules
 dist
 cache
 dist/**
+.DS_Store
 *.log
 .idea
 app/**/dist
