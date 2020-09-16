@@ -11,38 +11,70 @@ export default class Managers_sliders {
     this.fs_objects();
     this.fs_products();
     this.fs_steps();
+    this.fs_bigSlider();
   }
   fs_steps() {
-    this.sliders["fs_steps"] = new Swiper(".fs-steps_middle .swiper-container", {
-      loop: true,
-      slidesPerView: 1,
-      spaceBetween: 40,
-      slidesPerGroup: 1,
-      allowTouchMove: false,
-      speed: 500,
-      autoHeight: true,
-
-      navigation: {
-        nextEl: ".fs-steps_control-next",
-        prevEl: ".fs-steps_control-prev",
-      },
-    });
+    this.sliders["fs_steps"] = [];
+    $('.fs-steps_middle .swiper-container').each((key,item)=>{
+      this.sliders["fs_steps"][key] = new Swiper(item, {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 40,
+        slidesPerGroup: 1,
+        allowTouchMove: false,
+        speed: 500,
+        autoHeight: true,
+        navigation: {
+          nextEl: $(item).parent().find('.fs-steps_control-next'),
+          prevEl: $(item).parent().find('.fs-steps_control-prev'),
+        },
+      });
+    })
   }
   fs_products() {
-    this.sliders["fs_products"] = new Swiper(".fs-production_showcase .swiper-container", {
-      loop: true,
-      slidesPerView: 3,
-      spaceBetween: 40,
-      slidesPerGroup: 3,
-      allowTouchMove: false,
-      speed: 500,
-      autoHeight: true,
-
-      navigation: {
-        nextEl: ".tabs-item.active .fs-objects_next",
-        prevEl: ".tabs-item.active .fs-objects_prev",
-      },
-    });
+    this.sliders["fs_products"] = [];
+    $('.fs-production_showcase .swiper-container').each((key,item)=>{
+      this.sliders["fs_products"][key] = new Swiper(item, {
+        loop: true,
+        slidesPerView: 3,
+        spaceBetween: 40,
+        slidesPerGroup: 3,
+        allowTouchMove: false,
+        speed: 500,
+        autoHeight: true,
+        navigation: {
+          nextEl: $(item).parent().find('.fs-objects_next'),
+          prevEl: $(item).parent().find('.fs-objects_prev'),
+        },
+      });
+    })
+  }
+  fs_bigSlider() {
+    this.sliders["fs_bigSlider"] = [];
+    $('.fs-bigSlider .swiper-container.fs-bigSlider_main').each((key,item)=>{
+      this.sliders["fs_bigSlider"][key] = new Swiper(item, {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 40,
+        slidesPerGroup: 1,
+        allowTouchMove: false,
+        speed: 500,
+        autoHeight: true,
+        thumbs: {
+          swiper: {
+            el: $(item).closest('.fs-bigSlider').find('.swiper-container.fs-bigSlider_preview'),
+            slidesPerView: 6,
+            spaceBetween: 10,
+            allowTouchMove: false,
+          },
+        },
+        navigation: {
+          nextEl: $(item).closest('.fs-bigSlider').find('.fs-bigSlider_next'),
+          prevEl: $(item).closest('.fs-bigSlider').find('.fs-bigSlider_prev'),
+        },
+      });
+    })
+    
   }
   fs_objects() {
     this.sliders["fs_objects"] = new Swiper(".fs-objects_objects .swiper-container", {

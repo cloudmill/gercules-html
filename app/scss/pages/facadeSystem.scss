@@ -700,6 +700,23 @@
           bottom: 2px;
         }
       }
+
+      &-add {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 150%;
+        color: #262626;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100% !important;
+        flex-basis: 100% !important;
+
+        i {
+          margin-right: 10px;
+        }
+      }
     }
   }
 
@@ -754,6 +771,35 @@
     &_showcase {
       margin-top: 120px;
 
+      h2 {
+        &.mar-bot {
+          margin-bottom: 60px;
+        }
+      }
+
+      .fs-objects {
+        &_control {
+          width: 80px;
+        }
+
+        &_prev,
+        &_next {
+          &::before {
+            right: 30px;
+          }
+        }
+      }
+
+      .swiper {
+        &-container {
+          overflow: hidden;
+        }
+
+        &-slide {
+          height: 100%;
+        }
+      }
+
       .tabs {
         &-menu {
           margin-bottom: 0px;
@@ -777,29 +823,6 @@
 
         &-item {
           position: relative;
-
-          .fs-objects {
-            &_control {
-              width: 80px;
-            }
-
-            &_prev,
-            &_next {
-              &::before {
-                right: 30px;
-              }
-            }
-          }
-
-          .swiper {
-            &-container {
-              overflow: hidden;
-            }
-
-            &-slide {
-              height: 100%;
-            }
-          }
         }
       }
     }
@@ -1161,6 +1184,235 @@
           color: $color-red;
         }
       }
+    }
+  }
+
+  &-discription {
+    margin-top: 40px;
+
+    >h3 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 160%;
+      color: #262626;
+      margin-top: 60px;
+      margin-bottom: 30px;
+    }
+
+    &_box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 40px;
+      grid-column-gap: 70px;
+
+      >* {
+        position: relative;
+        font-size: 15px;
+        line-height: 22px;
+      }
+
+      li {
+        padding-left: 30px;
+
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 10px;
+          content: "";
+          display: block;
+          width: 20px;
+          border-top: 2px solid $color-red;
+          border-right: 2px solid transparent;
+        }
+      }
+    }
+  }
+
+  &-compareTable {
+    margin-top: 120px;
+
+    table {
+      border-spacing: 0;
+      margin-top: 60px;
+
+      thead {
+        th {
+          border-bottom: 2px solid #e41d2c;
+          font-style: normal;
+          font-weight: bold;
+          padding-bottom: 30px;
+          text-align: left;
+          font-size: 13px;
+          line-height: 15px;
+          color: #262626;
+
+          &:not(:last-child) {
+            padding-right: 30px;
+          }
+
+          &:first-child {
+            padding-right: 60px;
+          }
+        }
+      }
+
+      tbody {
+        th {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 150%;
+          text-align: left;
+          color: #262626;
+          padding: 30px 0;
+          border-bottom: 1px solid #e5e5e5;
+
+          &:not(:last-child) {
+            padding-right: 30px;
+          }
+
+          &:first-child {
+            padding-right: 60px;
+          }
+        }
+      }
+    }
+  }
+
+  &-mech_videos {
+    margin-top: 120px;
+  }
+
+  &-bigSlider {
+    padding-bottom: 70px;
+    position: relative;
+    margin-bottom: 120px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    &_preview {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      .swiper {
+        &-slide {
+          position: relative;
+          width: 60px !important;
+          overflow: hidden;
+
+          &.swiper-slide-thumb-active {
+            &:after {
+              opacity: 1;
+            }
+          }
+
+          &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 15px;
+            position: absolute;
+            bottom: 0;
+            z-index: 2;
+            left: 0;
+            opacity: 0;
+            transition: opacity $ease-main;
+            background: #e41d2c;
+          }
+
+          img {
+            position: absolute;
+            max-width: none;
+            height: 100%;
+            width: auto;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+          }
+
+          &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            padding-top: 100%;
+          }
+        }
+      }
+    }
+
+    &_main {
+      margin-top: 30px;
+    }
+
+    &-num {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 160%;
+      color: #e5e5e5;
+    }
+
+    &_controls {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        width: 60px;
+        border-top: 1px solid #e5e5e5;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 16.22px;
+          height: 33.25px;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          background-image: url(../images/trainers-control-arrow.svg);
+          background-position: center;
+          pointer-events: none;
+        }
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 200%;
+        position: absolute;
+        background-color: #e5e5e5;
+        left: 50%;
+        top: 50%;
+        transform-origin: center;
+        transform: translate(-50%, -50%) rotate(18deg);
+      }
+    }
+
+    &_prev {
+      margin-right: 20px;
+      transform-origin: center;
+      transform: rotate(180deg);
     }
   }
 }
