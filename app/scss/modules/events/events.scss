@@ -17,14 +17,24 @@
 
       .date-prev,
       .date-next {
+        position: relative;
         flex-grow: 1;
         margin-top: -1px;
         width: 16px;
         height: 33px;
-        background-image: url(../images/calendar-btn-prev.svg);
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-size: contain;
+
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 5px;
+          content: "";
+          display: block;
+          width: 24px;
+          height: 24px;
+          border-bottom: 2px solid $color-red;
+          border-left: 2px solid $color-red;
+          transform: translateY(-50%) rotate(45deg);
+        }
       }
 
       .date-next {
