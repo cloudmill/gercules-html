@@ -1,7 +1,7 @@
 .fs-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 60px -45px;
+  margin: 60px -40px;
   margin-right: -80px;
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
@@ -100,8 +100,8 @@
       margin-top: 25px;
     }
     &-tags {
-      margin: 0 -45px;
-      padding: 0 45px;
+      margin: 0 -40px;
+      padding: 0 40px;
       margin-top: 20px;
       min-height: 60px;
       display: flex;
@@ -131,7 +131,7 @@
   }
   &_showmore {
     height: 90px;
-    margin: 0 -45px;
+    margin: 0 -40px;
     margin-right: -80px;
     border-top: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
