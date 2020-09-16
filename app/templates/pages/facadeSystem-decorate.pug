@@ -1,0 +1,48 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Декоративные возможности СФТК";
+
+mixin slider_decorate(num)
+  .fs-bigSlider.slider-decorate
+    .fs-bigSlider_name
+      block
+    .fs-bigSlider_bottom
+      .fs-bigSlider_num 0#{num}
+      .swiper-container.fs-bigSlider_preview
+        .swiper-wrapper
+          each slide in [0,1,2,3,4,5]
+            .swiper-slide
+              -var _slide = (slide+num)%7 + (slide+num > 6 ? 1:0)
+              img(src=`images/big-decorate-${_slide}.jpg`, alt="")
+      .fs-bigSlider_controls
+        button.fs-bigSlider_prev
+        button.fs-bigSlider_next
+    .swiper-container.fs-bigSlider_main
+      .swiper-wrapper
+        each slide in [0,1,2,3,4,5]
+          .swiper-slide
+            -var _slide = (slide+num)%7 + (slide+num > 6 ? 1:0)
+            img(src=`images/big-decorate-${_slide}.jpg`, alt="")
+
+block content
+  .content-row
+    include ./fs/sidebar.pug
+    .content.facadeSystem
+      +breadcrumbs(['Фасадные системы',"Декоративные возможности СФТК"])
+      h1.page-title Декоративные возможности СФТК
+      +slider_decorate(1)
+        h2 Отделка плоскости фасада любой геометрической формы
+      +slider_decorate(2)
+        h2 Возможность использовать декоративные элементы из пенополистирола
+      +slider_decorate(3)
+        h2 Возможность использовать разную фактуру декоративных штукатурок
+      +slider_decorate(4)
+        h2 Возможность нанесения различными методами и в различных направлениях
+      +slider_decorate(5)
+        h2 Широкий выбор цветов (более 10 000 красок)
+      +slider_decorate(6)
+        h2 Возможность окрашивать фасад геометрически неправильными формами
+
+
+      include fs/contacts

@@ -45,7 +45,8 @@ export default class Managers_sliders {
         thumbs: {
           swiper: {
             el: $(item).closest('.fs-bigSlider').find('.swiper-container.fs-bigSlider_preview'),
-            slidesPerView: 6,
+            slidesPerView: 4,
+            slidesPerGroup: 4,
             spaceBetween: 10,
             allowTouchMove: false,
           },

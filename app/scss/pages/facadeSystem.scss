@@ -765,6 +765,7 @@
 
     &_showcase {
       margin-top: 120px;
+      position: relative;
       h2 {
         &.mar-bot {
           margin-bottom: 60px;
@@ -1061,6 +1062,64 @@
       max-width: 100%;
       max-height: 100%;
     }
+    &.slider-decorate {
+      .fs-bigSlider {
+        &_preview {
+          left: auto;
+          transform: none;
+          position: relative;
+          margin-left: 150px;
+          margin-right: 40px;
+        }
+        &_name {
+          position: absolute;
+          z-index: 10;
+          bottom: 60px;
+          left: 0;
+          background-color: white;
+          padding-top: 50px;
+          padding-right: 50px;
+          &::before{
+            content: '';
+            width: 100%;
+            z-index: -1;
+            height: 100%;
+            right: 0;
+            top: 0;
+            display: block;
+            position: absolute;
+            transform-origin: bottom right;
+            transform: skewX(-25deg);
+            background-color: white;
+          }
+          h2 {
+            max-width: 360px;
+            font-style: normal;
+            margin: 0 !important; 
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 160%;
+            color: #262626;
+          }
+        }
+        &_num{
+          left: auto;
+          position: relative;
+        }
+        &_controls{
+          position: relative;
+        }
+      }
+    }
+    &_bottom{
+      display: flex;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      justify-content: flex-end;
+      align-items: center;
+    }
     &_preview {
       position: absolute;
       bottom: 0;
@@ -1070,6 +1129,7 @@
         &-slide {
           position: relative;
           width: 60px !important;
+          cursor: pointer;
           overflow: hidden;
           &.swiper-slide-thumb-active {
             &:after {
@@ -1107,10 +1167,10 @@
         }
       }
     }
-    &_main{
+    &_main {
       margin-top: 30px;
     }
-    &-num {
+    &_num {
       position: absolute;
       left: 0;
       bottom: 0;
@@ -1139,15 +1199,13 @@
           content: "";
           display: block;
           position: absolute;
-          width: 16.22px;
-          height: 33.25px;
+          width: 16px;
+          height: 16px;
+          border-top: 2px solid #000;
+          border-right: 2px solid #000;
           left: 50%;
           top: 50%;
-          transform: translate(-50%, -50%);
-          background-repeat: no-repeat;
-          background-size: 100% 100%;
-          background-image: url(../images/trainers-control-arrow.svg);
-          background-position: center;
+          transform: translate(-50%, -50%) rotate(45deg);
           pointer-events: none;
         }
       }
