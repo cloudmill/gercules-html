@@ -1343,10 +1343,10 @@
           left: auto;
           position: relative;
         }
+      }
 
-        &_controls {
-          position: relative;
-        }
+      .sliderControls {
+        position: relative;
       }
     }
 
@@ -1417,15 +1417,22 @@
       margin-top: 30px;
     }
 
-    &-num {
+    &_num {
       position: absolute;
       left: 0;
-      bottom: 0;
+      bottom: -17px;
+      font-family: $font-third;
       font-style: normal;
       font-weight: bold;
       font-size: 30px;
       line-height: 160%;
-      color: #e5e5e5;
+      color: $color-border-second;
+    }
+
+    .sliderControls {
+      position: absolute;
+      right: 0;
+      bottom: 0;
     }
   }
 }
