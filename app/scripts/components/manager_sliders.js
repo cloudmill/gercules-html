@@ -10,6 +10,23 @@ export default class Managers_sliders {
     this.trainerSlider();
     this.fs_objects();
     this.fs_products();
+    this.fs_steps();
+  }
+  fs_steps() {
+    this.sliders["fs_steps"] = new Swiper(".fs-steps_middle .swiper-container", {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 40,
+      slidesPerGroup: 1,
+      allowTouchMove: false,
+      speed: 500,
+      autoHeight: true,
+
+      navigation: {
+        nextEl: ".fs-steps_control-next",
+        prevEl: ".fs-steps_control-prev",
+      },
+    });
   }
   fs_products() {
     this.sliders["fs_products"] = new Swiper(".fs-production_showcase .swiper-container", {
