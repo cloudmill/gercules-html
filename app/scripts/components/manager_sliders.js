@@ -10,7 +10,26 @@ export default class Managers_sliders {
     this.trainerSlider();
     this.fs_objects();
     this.fs_products();
+    this.fs_steps();
     this.fs_bigSlider();
+  }
+  fs_steps() {
+    this.sliders["fs_steps"] = [];
+    $('.fs-steps_middle .swiper-container').each((key,item)=>{
+      this.sliders["fs_steps"][key] = new Swiper(item, {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 40,
+        slidesPerGroup: 1,
+        allowTouchMove: false,
+        speed: 500,
+        autoHeight: true,
+        navigation: {
+          nextEl: $(item).parent().find('.fs-steps_control-next'),
+          prevEl: $(item).parent().find('.fs-steps_control-prev'),
+        },
+      });
+    })
   }
   fs_products() {
     this.sliders["fs_products"] = [];
@@ -29,7 +48,6 @@ export default class Managers_sliders {
         },
       });
     })
-    
   }
   fs_bigSlider() {
     this.sliders["fs_bigSlider"] = [];
