@@ -775,11 +775,9 @@
 
     &_showcase {
       margin-top: 120px;
-
       .tabs {
         &-menu {
           margin-bottom: 0px;
-
           &:before {
             left: -40px;
             width: calc(100% + 120px);
@@ -982,7 +980,7 @@
   .facadeSystem {
     &.content {
       padding-left: 45px;
-      padding-right: 45px;
+      padding-right: 80px;
       overflow: hidden;
     }
 
@@ -1019,7 +1017,6 @@
 
   .eventRegistration {
     margin-top: 120px;
-
     .main-link_rect {
       max-width: 250px;
     }

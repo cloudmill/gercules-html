@@ -1,25 +1,23 @@
 .eventRegistration#questionBigForm
   h2 #{questionTitle}
   form(action="")
-    .eventRegistration-row
-      .eventRegistration-col
-        +field_base("name", "name", "Имя*", "Алексей")
-        +field_base("surname", "surname", "Фамилия*", "Биланин")
-        +field_base("phone", "phone", "Номер телефона*", "+7 (___) ___-__-__")
-      .eventRegistration-col
-        +field_base("email", "email", "Email", "ksh@loudmill.ru")
-        +field_base("companyName", "companyName", "Название компании", "ООО ГК ПЛЮС")
-        +field_base("city", "city", "Город*", "Омск")
+    .field-row
+      +field_base("name", "name", "Имя*", "Алексей")
+      +field_base("surname", "surname", "Фамилия*", "Биланин")
+    .field-row
+      +field_base("email", "email", "Email", "ksh@loudmill.ru")
+      +field_base("phone", "phone", "Номер телефона*", "+7 (___) ___-__-__")
+    .field-row
+      +field_base("companyName", "companyName", "Название компании", "ООО ГК ПЛЮС")
+      +field_base("city", "city", "Город*", "Омск")
     +field_area("comment", "comment", "Комментарий", "Хочу записаться", [30, 10])
-    .eventRegistration-row
-      .eventRegistration-col
-        +field_checkbox()
-          input#pp_quest(type="checkbox" name="pp" checked data-required)
-          label(for="pp_quest") «Я выражаю согласие на обработку ПДн в соответствии с 
-            a(href="") Политикой конфиденциальности
-            |»
-      .eventRegistration-col
-        +linkRect
-          button(id="submit" name="submit")
-          span Отправить
-          +icon("link-white-arrow", "svg")
+    .field-row
+      +field_checkbox()
+        input#pp_quest(type="checkbox" name="pp" checked data-required)
+        label(for="pp_quest") «Я выражаю согласие на обработку ПДн в соответствии с 
+          a(href="") Политикой конфиденциальности
+          |»
+      +linkRect
+        button(id="submit" name="submit")
+        span Отправить
+        +icon("link-white-arrow", "svg")
