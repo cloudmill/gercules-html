@@ -20,6 +20,7 @@ export default class Manager_forms {
     VALIDATOR.init();
 
     this.init_form_questionBigForm();
+    this.init_form_registrationEventForm();
     this.init_form_market();
     this.init_form_calendar();
   }
@@ -56,6 +57,10 @@ export default class Manager_forms {
 
   init_form_questionBigForm() {
     let form = new Form($("#questionBigForm form"));
+    form.onsuccess = function () {};
+  }
+  init_form_registrationEventForm() {
+    let form = new Form($("#registrationEventForm form"));
     form.onsuccess = function () {};
   }
   init_form_market() {

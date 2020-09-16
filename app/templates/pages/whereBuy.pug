@@ -9,8 +9,9 @@ block content
     .whereBuy
       h1.page-title Где купить
       .whereBuy-location
-        +field_select("region", [[0, "Хабаровская область"], [1, "Воронежская область"]], "Выберите регион")
-        +field_select("city", [[0, "Хабаровск"], [1, "Воронеж"]], "Выберите город")
+        .field-row
+          +field_select("region", [[0, "Хабаровская область"], [1, "Воронежская область"]], "Выберите регион")
+          +field_select("city", [[0, "Хабаровск"], [1, "Воронеж"]], "Выберите город")
         include whereBuy/salerCard
       include whereBuy/marketsType
       .whereBuy-markets

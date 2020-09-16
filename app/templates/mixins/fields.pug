@@ -1,5 +1,6 @@
 mixin field_select(name,options,placeholder = "",id = name)
   .field.field-select
+    block
     if placeholder
       select(name=name id=id data-select-placeholder=placeholder)
         option

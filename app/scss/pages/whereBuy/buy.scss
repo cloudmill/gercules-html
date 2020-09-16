@@ -74,11 +74,20 @@
     padding-left: 41px;
     width: 285px;
     height: 166px;
-    background-image: url(../images/buy-saler-help.svg);
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-
+    position: relative;
+    z-index: 2;
+    &::before {
+      content: "";
+      display: block;
+      background-color: #f8f8f8;
+      height: 100%;
+      width: 150%;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 5%;
+      transform: skewX(-15deg);
+    }
     a {
       display: block;
       font-style: normal;
@@ -299,11 +308,20 @@
     min-width: 1070px;
     height: 370px;
     padding: 80px 180px 80px 60px;
-    background-image: url(../images/market-not-found.svg);
-    background-position: right center;
-    background-size: auto 100%;
     background-repeat: no-repeat;
-
+    z-index: 2;
+    &::before {
+      content: "";
+      display: block;
+      background-color: #f8f8f8;
+      height: 100%;
+      width: 150%;
+      position: absolute;
+      z-index: -1;
+      right: 5%;
+      transform: skewX(-15deg);
+      top: 0;
+    }
     h2 {
       font-family: $font-third;
       font-style: normal;

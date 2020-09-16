@@ -18,39 +18,39 @@
           h1 Сообщить о магазине
           form(action="")
             h2 Адрес магазина
-            .form-row
-              .form-col
-                +field_base("marketFullName", "marketFullName", "Юридическое название*", "ООО Смеси+")
-                +field_base("marketName", "marketName", "Название магазина*", "ООО Смеси+")
-                +field_base("marketStreet", "marketStreet", "Улица", "пр. Луначарского")
-              .form-col
-                +field_base("marketRegion", "marketRegion", "Регион*", "Северо-Запад")
-                +field_base("marketCity", "marketCity", "Город*", "Омск")
-                +field_base("marketBuilding", "marketBuilding", "Дом", "19")
+            .field-row
+              +field_base("marketFullName", "marketFullName", "Юридическое название*", "ООО Смеси+")
+              +field_base("marketName", "marketName", "Название магазина*", "ООО Смеси+")
+            .field-row
+              +field_base("marketRegion", "marketRegion", "Регион*", "Северо-Запад")
+              +field_base("marketCity", "marketCity", "Город*", "Омск")
+            .field-row
+              +field_base("marketStreet", "marketStreet", "Улица", "пр. Луначарского")
+              +field_base("marketBuilding", "marketBuilding", "Дом", "19")
             h2 Контактное лицо
-            .form-row
-              .form-col
-                +field_base("personName", "personName", "Имя*", "Алексей")
-                +field_base("personSurname", "personSurname", "Фамилия*", "Биланин")
-                +field_base("personPhone", "personPhone", "Номер телефона*", "+7 (___) ___-__-__")
-                +field_base("personSite", "personSite", "Адрес сайта", "yandex.ru")
-              .form-col
-                +field_base("personEmail", "personEmail", "Email", "ksh@loudmill.ru")
-                +field_base("personPosition", "personPosition", "Должность*", "Директор")
+            .field-row
+              +field_base("personName", "personName", "Имя*", "Алексей")
+              +field_base("personSurname", "personSurname", "Фамилия*", "Биланин")
+            .field-row
+              +field_base("personPhone", "personPhone", "Номер телефона*", "+7 (___) ___-__-__")
+              +field_base("personEmail", "personEmail", "Email", "ksh@loudmill.ru")
+            .field-row
+              +field_base("personPosition", "personPosition", "Должность*", "Директор")
+              +field_select("personStatus", [[0, "Дистрибьютер"], [1, "Дистрибьютер"]], "Дистрибьютер", "personStatus")
                 label(for="personStatus").select
                   .field-inf
                     span.name Статус
                     span.errorText пожалуйста, заполните поле корректно
-                  +field_select("personStatus", [[0, "Дистрибьютер"], [1, "Дистрибьютер"]], "Дистрибьютер", "personStatus")
-            .form-row
-              .form-col
-                +field_checkbox()
-                  input#pp_modal(type="checkbox", name="pp" checked data-required)
-                  label(for="pp_modal") «Я выражаю согласие на обработку ПДн в соответствии с 
-                    a(href="") Политикой конфиденциальности
-                    |»
-              .form-col
-                +linkRect
-                  button(id="submit", name="submit")
-                  span Сообщить о магазине
-                  +icon("link-white-arrow", "svg")
+                
+            .field-row
+              +field_base("personSite", "personSite", "Адрес сайта", "yandex.ru")
+            .field-row
+              +field_checkbox()
+                input#pp_modal(type="checkbox" name="pp" checked data-required)
+                label(for="pp_modal") «Я выражаю согласие на обработку ПДн в соответствии с 
+                  a(href="") Политикой конфиденциальности
+                  |»
+              +linkRect
+                button(id="submit" name="submit")
+                span Сообщить о магазине
+                +icon("link-white-arrow", "svg")

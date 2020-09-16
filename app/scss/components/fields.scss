@@ -1,5 +1,7 @@
 .field {
   &-checkbox {
+    font: normal normal 12px/18px $font-main;
+    color: $color-basic;
     input {
       position: absolute;
       visibility: hidden;
@@ -8,7 +10,6 @@
         background-color: $color-red;
       }
     }
-
     label {
       cursor: pointer;
       position: relative;
@@ -47,6 +48,8 @@
   }
 
   &-base {
+    padding-top: 33px;
+    width: 100%;
     label {
       position: relative;
       display: block;
@@ -60,43 +63,74 @@
         border: 1px solid $color-border-second;
         color: $color-basic;
         font: normal normal 15px/22px $font-main;
-
+        width: 100%;
+        padding: 18px 25px;
         &::placeholder {
           color: $color-placeholder;
         }
       }
-
       .field-inf {
         position: absolute;
         font: normal normal 14px/16px $font-main;
         color: $color-basic;
         white-space: nowrap;
-
-        .errorText {
-          opacity: 0;
-        }
+        top: -33px;
+        left: 0;
       }
     }
   }
 
   &-area {
+    margin-top: 30px;
+    padding-top: 33px;
     label {
       position: relative;
       display: block;
-
       textarea {
         display: block;
         border: 1px solid $color-border-second;
-      }
-
-      .field-inf {
-        position: absolute;
-
-        .errorText {
-          opacity: 0;
+        width: 100%;
+        height: 200px;
+        padding: 33px 25px;
+        resize: none;
+        font: normal normal 15px/22px $font-main;
+        color: $color-basic;
+        &::placeholder {
+          color: $color-placeholder;
         }
       }
+      .field-inf {
+        top: -33px;
+        left: 0;
+        font: normal normal 14px/16px $font-main;
+        color: $color-basic;
+        white-space: nowrap;
+        position: absolute;
+      }
     }
+  }
+
+  &-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+  }
+  &-select {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 33px;
+    .field-inf {
+      top: 0;
+      left: 0;
+      position: absolute;
+      font: normal normal 14px/16px $font-main;
+      color: $color-basic;
+    }
+  }
+  .errorText {
+    opacity: 0;
+    color: $color-red;
   }
 }
 
