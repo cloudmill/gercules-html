@@ -15,7 +15,7 @@ mixin slider_decorate(num)
             .swiper-slide
               -var _slide = (slide+num)%7 + (slide+num > 6 ? 1:0)
               img(src=`images/big-decorate-${_slide}.jpg`, alt="")
-      .fs-bigSlider_controls
+      +sliderControls
         button.fs-bigSlider_prev
         button.fs-bigSlider_next
     .swiper-container.fs-bigSlider_main

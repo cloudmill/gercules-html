@@ -771,6 +771,7 @@
     &_showcase {
       margin-top: 120px;
       position: relative;
+
       h2 {
         &.mar-bot {
           margin-bottom: 60px;
@@ -1293,6 +1294,7 @@
       max-width: 100%;
       max-height: 100%;
     }
+
     &.slider-decorate {
       .fs-bigSlider {
         &_preview {
@@ -1302,6 +1304,7 @@
           margin-left: 150px;
           margin-right: 40px;
         }
+
         &_name {
           position: absolute;
           z-index: 10;
@@ -1310,7 +1313,8 @@
           background-color: white;
           padding-top: 50px;
           padding-right: 50px;
-          &::before{
+
+          &::before {
             content: '';
             width: 100%;
             z-index: -1;
@@ -1323,26 +1327,30 @@
             transform: skewX(-25deg);
             background-color: white;
           }
+
           h2 {
             max-width: 360px;
             font-style: normal;
-            margin: 0 !important; 
+            margin: 0 !important;
             font-weight: bold;
             font-size: 20px;
             line-height: 160%;
             color: #262626;
           }
         }
-        &_num{
+
+        &_num {
           left: auto;
           position: relative;
         }
-        &_controls{
+
+        &_controls {
           position: relative;
         }
       }
     }
-    &_bottom{
+
+    &_bottom {
       display: flex;
       width: 100%;
       position: absolute;
@@ -1351,6 +1359,7 @@
       justify-content: flex-end;
       align-items: center;
     }
+
     &_preview {
       position: absolute;
       bottom: 0;
@@ -1417,58 +1426,6 @@
       font-size: 30px;
       line-height: 160%;
       color: #e5e5e5;
-    }
-
-    &_controls {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-
-      button {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 60px;
-        width: 60px;
-        border-top: 1px solid #e5e5e5;
-
-        &::before {
-          content: "";
-          display: block;
-          position: absolute;
-          width: 16px;
-          height: 16px;
-          border-top: 2px solid #000;
-          border-right: 2px solid #000;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%) rotate(45deg);
-          pointer-events: none;
-        }
-      }
-
-      &::before {
-        content: "";
-        display: block;
-        width: 1px;
-        height: 200%;
-        position: absolute;
-        background-color: #e5e5e5;
-        left: 50%;
-        top: 50%;
-        transform-origin: center;
-        transform: translate(-50%, -50%) rotate(18deg);
-      }
-    }
-
-    &_prev {
-      margin-right: 20px;
-      transform-origin: center;
-      transform: rotate(180deg);
     }
   }
 }
