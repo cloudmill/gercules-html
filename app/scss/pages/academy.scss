@@ -63,13 +63,11 @@
     }
   }
 
-  .trainers {
-    &-slider {
-      position: relative;
-      margin-top: 50px;
-    }
+  .trainers-slider {
+    position: relative;
+    margin-top: 50px;
 
-    &-control {
+    .sliderControls {
       position: absolute;
       right: 0;
       bottom: calc(100% + 40px);

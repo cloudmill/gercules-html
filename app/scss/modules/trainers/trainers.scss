@@ -32,45 +32,6 @@
     }
   }
 
-  &-control {
-    display: flex;
-    justify-content: space-between;
-    width: 166px;
-    height: 58px;
-    background-image: url(../images/academy-trainers-control-separator.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: white;
-
-    &::before,
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 11px;
-      height: 22px;
-      top: 18px;
-      right: 33px;
-      background-image: url(../images/trainers-control-arrow.svg);
-      background-size: contain;
-      background-position: center center;
-      background-repeat: no-repeat;
-      pointer-events: none;
-    }
-
-    &::before {
-      right: auto;
-      left: 33px;
-      transform: rotate(180deg);
-    }
-
-    &-prev,
-    &-next {
-      flex-basis: 45%;
-    }
-  }
-
   &-swiper {
     width: 100%;
     overflow: hidden;

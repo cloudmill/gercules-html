@@ -9,11 +9,13 @@
   align-items: center;
   padding-bottom: 10px;
   border-bottom: 1px solid #e41d2c;
+
   &:hover {
     &:after {
       transform: translateX(8px);
     }
   }
+
   &:after {
     content: "";
     display: block;
@@ -39,10 +41,12 @@
     height: 70px;
     overflow: hidden;
     padding: 0 ($skewPadding + $padding);
+
     * {
       position: relative;
       pointer-events: none;
     }
+
     a,
     button {
       position: absolute;
@@ -52,6 +56,7 @@
       transform: skewX(-$angle);
       background-color: $color-red;
       pointer-events: all;
+
       &::before,
       &:after {
         content: "";
@@ -64,21 +69,26 @@
         transition: transform $ease-main;
         @include performance();
       }
+
       &:after {
         left: 0;
       }
+
       &::before {
         right: 0;
       }
+
       &:hover {
         &:after {
           transform: translateX(-10px);
         }
+
         &::before {
           transform: translateX(10px);
         }
       }
     }
+
     span {
       display: block;
       white-space: nowrap;
@@ -87,6 +97,77 @@
       font-weight: bold;
       font-size: 18px;
       line-height: 21px;
+    }
+  }
+}
+
+.sliderControls {
+  width: 166px;
+  height: 58px;
+  background-color: white;
+
+  &::before,
+  &::after {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    content: "";
+    display: block;
+    width: calc((100% - 30px) / 2);
+    height: 100%;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    border-bottom: 1px solid $color-border-second;
+    border-right: 1px solid $color-border-second;
+    transform-origin: left bottom;
+    transform: skewX(-28deg);
+  }
+
+  &::after {
+    right: 0;
+    border-top: 1px solid $color-border-second;
+  }
+
+  button {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    display: block;
+    height: 100%;
+    width: calc((100% - 30px) / 2);
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      pointer-events: none;
+    }
+
+    &:first-child {
+      left: 0;
+
+      &::before {
+        border-bottom: 2px solid $color-basic;
+        border-left: 2px solid $color-basic;
+        transform: translate(0, -50%) rotate(45deg);
+      }
+    }
+
+    &:last-child {
+      right: 0;
+
+      &::before {
+        transform: translate(-100%, -50%) rotate(45deg);
+        border-top: 2px solid $color-basic;
+        border-right: 2px solid $color-basic;
+      }
     }
   }
 }
