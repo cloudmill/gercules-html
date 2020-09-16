@@ -778,17 +778,14 @@
         }
       }
 
-      .fs-objects {
-        &_control {
-          width: 80px;
-        }
-
-        &_prev,
-        &_next {
-          &::before {
-            right: 30px;
-          }
-        }
+      .sliderControls-vertical {
+        position: absolute;
+        z-index: 1000px;
+        right: -80px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 80px;
+        height: 200px;
       }
 
       .swiper {

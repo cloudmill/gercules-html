@@ -16,64 +16,6 @@
     width: 155px;
   }
 
-  &_control {
-    position: absolute;
-    z-index: 100;
-    top: 50%;
-    transform: translateY(-50%);
-    right: -80px;
-    width: 110px;
-    height: 200px;
-    background-color: white;
-  }
-
-  &_next,
-  &_prev {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 50%;
-
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 16.22px;
-      height: 33.25px;
-      right: 58px;
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      background-image: url(../images/trainers-control-arrow.svg);
-      background-position: center;
-      pointer-events: none;
-    }
-  }
-
-  &_next {
-    &::before {
-      bottom: 33.75px;
-    }
-
-    &::after {
-      content: "";
-      display: block;
-      height: 1px;
-      background-color: $color-border-second;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      pointer-events: none;
-    }
-  }
-
-  &_prev {
-    &::before {
-      top: 33.75px;
-      transform: rotate(180deg);
-    }
-  }
-
   &_objects {
     position: relative;
     margin-top: 60px;
@@ -81,6 +23,16 @@
     .swiper-container {
       width: 100%;
       overflow: hidden;
+    }
+
+    .sliderControls-vertical {
+      position: absolute;
+      z-index: 1000;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -80px;
+      width: 110px;
+      height: 200px;
     }
   }
 

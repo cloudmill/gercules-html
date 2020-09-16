@@ -172,4 +172,49 @@
       }
     }
   }
+
+  &-vertical {
+    width: 80px;
+    height: 200px;
+    background-color: white;
+    overflow: hidden;
+
+    button {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 50%;
+
+      &:first-child {
+        border-bottom: 1px solid $color-border-second;
+
+        &::before {
+          border: none;
+          border-top: 2px solid $color-basic;
+          border-right: 2px solid $color-basic;
+          margin: 0;
+          margin-bottom: 5px;
+          margin-left: -10px;
+          top: auto;
+          bottom: 34px;
+        }
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 24px;
+        height: 24px;
+        transform: rotate(45deg);
+        border-bottom: 2px solid $color-basic;
+        border-left: 2px solid $color-basic;
+        top: 34px;
+        left: 31.5px;
+        margin-left: 5px;
+        margin-top: 5px;
+        pointer-events: none;
+      }
+    }
+  }
 }

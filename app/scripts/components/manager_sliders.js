@@ -43,8 +43,8 @@ export default class Managers_sliders {
         speed: 500,
         autoHeight: true,
         navigation: {
-          nextEl: $(item).parent().find('.fs-objects_next'),
-          prevEl: $(item).parent().find('.fs-objects_prev'),
+          nextEl: $(item).parent().find('.fs-production_showcase-next'),
+          prevEl: $(item).parent().find('.fs-production_showcase-prev'),
         },
       });
     })

@@ -53,9 +53,9 @@ block content
               th 7
       .fs-production_showcase
         h2.mar-bot Оборудование для использования
-        .fs-objects_control
-          button.fs-objects_next
-          button.fs-objects_prev
+        +sliderVerticalControls
+            button.fs-production_showcase-next
+            button.fs-production_showcase-prev
         .swiper-container
           .swiper-wrapper
             each item,key in ['Штукатурная станция m-tec M280','Штукатурная станция PFT G4 Smart','Штукатурная станция m-tec M280']
