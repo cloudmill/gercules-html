@@ -6,28 +6,25 @@ export default class Manager_modals {
     this.init();
   }
   init() {
-    this.modals = [];
-    this.count = 0;
-    this.state = "close";
-    var that = this;
+    this.modals = {};
+    this.opened = null;
     $(document)
       .find(".modal-item")
       .each((key, item) => {
         let id = item.getAttribute("id");
         this.modals[id] = new Modal(item);
-        this.count++;
       });
 
-    $(document).on("click", ".js-modal", function (e) {
+    $(document).on("click", ".js-modal", (e) => {
       e.preventDefault();
-      let id = $(this).attr("href").replace("#", "");
-      that.openModal(id);
+      let id = $(e.target).attr("href").replace("#", "");
+      this.openModal(id);
     });
     $("[data-modal-close]").click(() => {
       this.close();
     });
     $("body").mousedown((e) => {
-      if (this.state == "open") {
+      if (this.opened) {
         var container = $(document).find(".modal-item, .select2-container");
         if (container.has(e.target).length === 0) {
           this.close();
@@ -35,46 +32,30 @@ export default class Manager_modals {
       }
     });
   }
-  openModal(id) {
+  async openModal(id) {
     $("html").addClass("closeScroll");
-    if (this.state == "close") {
-      $(".modal").addClass("active");
-      this.modals[id].open(() => {
-        this.state = "open";
-      });
-    } else {
-      for (let key in this.modals) {
-        let item = this.modals[key];
-        if (item.state == "open") {
-          item.close();
-        }
+    try {
+      if (this.opened) {
+        if (this.opened.id == id) return true;
+        await this.opened.close();
+      } else {
+        $(".modal").addClass("active");
       }
-      this.modals[id].open(() => {
-        this.state = "open";
-      });
+      await this.modals[id].open();
+      this.opened = this.modals[id];
+      if (window.CONFIG.gebug) write.good(`Модальное ${id} окно открыто`);
+    } catch (e) {
+      write.error(`${e}\nОшибка открытия модального окна: ${id}`);
     }
   }
-  close() {
-    let i = 0;
-    for (let key in this.modals) {
-      let item = this.modals[key];
-      if (item.state == "open")
-        item.close(() => {
-          i++;
-          if (i == this.count) {
-            this.state = "close";
-            $(".modal").removeClass("active");
-            $("html").removeClass("closeScroll");
-          }
-        });
-      else {
-        i++;
-        if (i == this.count) {
-          this.state = "close";
-          $(".modal").removeClass("active");
-          $("html").removeClass("closeScroll");
-        }
-      }
+  async close() {
+    try {
+      await this.opened.close();
+      this.opened = null;
+      $(".modal").removeClass("active");
+      $("html").removeClass("closeScroll");
+    } catch {
+      write.error(`${e}\nОшибка закрытия модального окна`);
     }
   }
 }
