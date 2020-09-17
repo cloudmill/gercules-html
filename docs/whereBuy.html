@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ошибка 404 - страница не найдена</title>
+    <title>Где купить</title>
     <link href="css/style.min.css" rel="stylesheet">
   </head>
   <body>
@@ -57,21 +57,89 @@
       </div>
       <div class="page">
         <div class="content">
-          <div class="breadcrumbs"><a href="#">Главная</a><span>404</span>
+          <div class="breadcrumbs"><a href="#">Главная</a><span>Где купить</span>
           </div>
-          <div class="page404">
-            <div class="page404-content">
-              <div class="page-title">Запрашиваемая <br>страница не найдена.</div>
-              <div class="page404-quest">Куда теперь?</div>
-              <div class="page404-links"><a class="main-link" href="./">Главная</a><a class="main-link" href="./catalog.html">Каталог</a><a class="main-link" href="./contacts.html">Контакты</a>
+          <div class="whereBuy">
+            <h1 class="page-title">Где купить</h1>
+            <div class="whereBuy-location">
+              <div class="field-row">
+                <div class="field field-select">
+                  <select name="region" id="region" data-select-placeholder="Выберите регион">
+                    <option></option>
+                    <option value="0">Хабаровская область</option>
+                    <option value="1">Воронежская область</option>
+                  </select>
+                </div>
+                <div class="field field-select">
+                  <select name="city" id="city" data-select-placeholder="Выберите город">
+                    <option></option>
+                    <option value="0">Хабаровск</option>
+                    <option value="1">Воронеж</option>
+                  </select>
+                </div>
+              </div>
+              <div class="buy-saler-card">
+                <h3>Бернгард Андрей Сергеевич</h3>
+                <p>региональный представитель</p><span class="saler-help-mark"></span>
+                <div class="buy-saler-help"><a href="tel: 8 383 338 31 32">+7 (383) 338-31-32 вн. 119</a><a href="tel: 8 913 789 01 14">+7 (913) 789-01-14</a><a href="#">berngard.as@gerkules.ru</a></div>
               </div>
             </div>
-            <div class="page404-img">
-              <div class="page404-img-lines">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-              </div><img src="images/404.svg" alt="">
+            <div class="buy-markets-type">
+              <button class="active" data-markets-type="all">Все</button>
+              <button data-markets-type="distributors">Дистрибьютеры</button>
+              <button data-markets-type="hypermarkets">Гипермаркеты</button>
+              <button data-markets-type="retail">Розничные магазины</button>
+            </div>
+            <div class="whereBuy-markets">
+              <div class="whereBuy-map">
+                <div class="map-data">
+                  <input type="hidden" data-cords="48.467315, 134.998649" data-name="Леруа Мерлен" data-content="">
+                  <input type="hidden" data-cords="48.497486, 134.937148" data-name="ТЦ Глобус" data-content="">
+                  <input type="hidden" data-cords="48.475724, 135.071204" data-name="Технониколь" data-content="">
+                  <input type="hidden" data-cords="48.448400, 135.098353" data-name="ТЦ Глобус" data-content="">
+                </div>
+                <div id="map"></div>
+              </div>
+              <div class="buy-markets-list">
+                <div class="markets-wrapper">
+                                <div class="markets-item" data-id="0">
+                                  <div class="market-front">
+                                    <div class="market-name">Леруа Мерлен</div>
+                                    <div class="market-link">technonikol.ru</div>
+                                  </div>
+                                  <div class="market-dropdown"></div>
+                                </div>
+                                <div class="markets-item" data-id="1">
+                                  <div class="market-front">
+                                    <div class="market-name">ТЦ Глобус</div>
+                                    <div class="market-link">technonikol.ru</div>
+                                  </div>
+                                  <div class="market-dropdown"></div>
+                                </div>
+                                <div class="markets-item" data-id="2">
+                                  <div class="market-front">
+                                    <div class="market-name">Технониколь</div>
+                                    <div class="market-link">technonikol.ru</div>
+                                  </div>
+                                  <div class="market-dropdown"></div>
+                                </div>
+                                <div class="markets-item" data-id="3">
+                                  <div class="market-front">
+                                    <div class="market-name">ТЦ Глобус</div>
+                                    <div class="market-link">technonikol.ru</div>
+                                  </div>
+                                  <div class="market-dropdown"></div>
+                                </div>
+                </div>
+              </div>
+            </div>
+            <div class="buy-market-not-found">
+              <h2>Не нашли свой магазин? Сообщите нам!</h2>
+              <div>
+                <p>Вы являетесь нашим официальным дистрибьютером, но не нашли свой магазин в нашем списке? Сообщите нам об этом и наши специалисты свяжутся с Вами для уточнения деталей</p>
+                <div class="main-link_rect"><a class="js-modal" href="#market"></a><span>Сообщить о магазине</span><i class="svg-icon svg-link-white-arrow"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>
