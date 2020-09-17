@@ -1360,6 +1360,100 @@
       bottom: 0;
     }
   }
+
+  &-advantages {
+    &_list {
+      ol {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(auto, 447px));
+        column-gap: 90px;
+        row-gap: 60px;
+        counter-reset: count;
+
+        li {
+          position: relative;
+          padding-top: 37px;
+          padding-left: 60px;
+          font-size: 15px;
+          line-height: 150%;
+          counter-increment: count;
+
+          &:last-child {
+            grid-column-start: 2;
+          }
+
+          &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "0"counter(count);
+            display: block;
+            font-family: $font-third;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 160%;
+            text-align: center;
+            color: #E5E5E5;
+          }
+        }
+      }
+    }
+
+    &_description {
+      &-1 {
+        margin-top: 120px;
+
+        .fs-discription {
+          margin-top: 77px;
+
+          &_box {
+            grid-template-columns: repeat(2, minmax(auto, 428px));
+            column-gap: 108px;
+            row-gap: 97px;
+
+            li {
+              padding-left: 60px;
+
+              &::before {
+                top: 11px;
+                width: 33px;
+                border: none;
+                border-bottom: 4px solid $color-red;
+                border-left: 3px solid transparent;
+              }
+            }
+          }
+        }
+      }
+
+      &-2 {
+        margin: 120px 0;
+
+        &::before {
+          content: "";
+          display: block;
+          border-top: 1px solid $color-border-second;
+          margin-left: -40px;
+          margin-right: -80px;
+        }
+
+        .fs-discription {
+          margin-top: 120px;
+
+          &_box {
+            grid-template-columns: minmax(auto, 456px) minmax(auto, 448px);
+            column-gap: 80px;
+            row-gap: 60px;
+
+            li:last-child {
+              grid-column-start: 2;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .page {
@@ -1375,10 +1469,18 @@
     }
 
     h2 {
+      margin-top: 120px;
+      ////
       font-family: $font-third;
       font-weight: bold;
       font-size: 28px;
       line-height: 144%;
+
+      &:first-of-type {
+        margin-top: 60px;
+      }
+
+      ////
     }
   }
 
