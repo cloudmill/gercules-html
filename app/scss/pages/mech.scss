@@ -1,0 +1,312 @@
+.mech {
+  &-contacts {
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &_col {
+      flex-grow: 1;
+
+      &:first-child {
+        display: flex;
+      }
+
+      &:last-child {
+        margin-left: 136px;
+        flex-basis: 576px;
+        max-width: 576px;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      min-width: 400px;
+    }
+
+    h2 {
+      margin-bottom: 60px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 15px;
+      line-height: 200%;
+    }
+
+    h3 {
+      margin-top: 70px;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 130%;
+    }
+  }
+
+  &-form {
+    margin-top: 120px;
+
+    &_row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      a {
+        margin-left: 60px;
+        display: block;
+        padding: 10px 26px;
+        padding-bottom: 4px;
+        font-family: $font-third;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 160%;
+        color: $color-red;
+        background-color: white;
+        border: 1px solid $color-border-second;
+        white-space: nowrap;
+      }
+    }
+
+    h3 {
+      max-width: 660px;
+      font-family: $font-third;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 160%;
+    }
+
+    .eventRegistration {
+      margin-top: 50px;
+
+      .field-row {
+        &:last-child {
+          margin-top: 60px;
+        }
+      }
+    }
+  }
+
+  &-partners {
+    margin-top: 120px;
+
+    &_grid {
+      margin-top: 60px;
+      position: relative;
+      left: -40px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(230px, 1fr));
+      grid-template-rows: repeat(3, minmax(146px, 1fr));
+      width: calc(100% + 40px);
+      min-height: 436px;
+    }
+
+    &_cell {
+      position: relative;
+
+      &:nth-child(-n + 4) {
+        &::after {
+          content: "";
+          display: block;
+          border-right: 1px solid $color-border-second;
+          height: 300%;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+
+    img {
+      display: block;
+    }
+
+    @media (max-width: 1600px) {
+      &_cell {
+        &:nth-child(1) {
+          img {
+            margin: 0 auto;
+            margin-top: 41px;
+          }
+        }
+
+        &:nth-child(2) {
+          img {
+            margin: 0 auto;
+            margin-top: 65px;
+          }
+        }
+
+        &:nth-child(3) {
+          img {
+            margin: 0 auto;
+            margin-top: 51px;
+          }
+        }
+
+        &:nth-child(4) {
+          img {
+            margin: 0 auto;
+            margin-top: 51px;
+          }
+        }
+
+        &:nth-child(5) {
+          img {
+            margin: 0 auto;
+            margin-top: 40px;
+          }
+        }
+
+        &:nth-child(6) {
+          img {
+            margin: 0 auto;
+            margin-top: 33px;
+          }
+        }
+
+        &:nth-child(7) {
+          img {
+            margin: 0 auto;
+            margin-top: 32px;
+          }
+        }
+
+        &:nth-child(8) {
+          img {
+            margin: 0 auto;
+            margin-top: 47px;
+          }
+        }
+
+        &:nth-child(9) {
+          img {
+            margin: 0 auto;
+            margin-top: 30px;
+          }
+        }
+
+        &:nth-child(10) {
+          img {
+            margin: 0 auto;
+            margin-top: 30px;
+          }
+        }
+
+        &:nth-child(11) {
+          img {
+            margin: 0 auto;
+            margin-top: 42px;
+          }
+        }
+
+        &:nth-child(12) {
+          img {
+            margin: 0 auto;
+            margin-top: 28px;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 1601px) {
+      img {
+        width: 100%;
+      }
+
+      &_cell {
+        display: flex;
+        align-items: center;
+
+        &:nth-child(1) {
+          padding: 0 91px;
+          padding-top: 14.2361111111%;
+          padding-bottom: 6.944444444444445%;
+        }
+
+        &:nth-child(2) {
+          padding: 0 76px;
+          padding-top: 22.569444444444443%;
+          padding-bottom: 5.729166666666666%;
+        }
+
+        &:nth-child(3) {
+          padding: 0 37px;
+          padding-top: 17.708333333333332%;
+          padding-bottom: 5.555555555555555%;
+        }
+
+        &:nth-child(4) {
+          padding: 0 66px;
+          padding-top: 17.708333333333332%;
+          padding-bottom: 8.159722222222221%;
+        }
+
+        &:nth-child(5) {
+          padding: 0 66px;
+          padding-top: 6.944444444444445%;
+          padding-bottom: 5.208333333333333%;
+        }
+
+        &:nth-child(6) {
+          padding: 0 37px;
+          padding-top: 5.729166666666666%;
+          padding-bottom: 5.208333333333333%;
+        }
+
+        &:nth-child(7) {
+          padding: 0 91px;
+          padding-top: 5.555555555555555%;
+          padding-bottom: 7.291666666666666%;
+        }
+
+        &:nth-child(8) {
+          padding: 0 76px;
+          padding-top: 8.159722222222221%;
+          padding-bottom: 4.861111111111111%;
+        }
+
+        &:nth-child(9) {
+          padding: 0 37px;
+          padding-top: 5.208333333333333%;
+        }
+
+        &:nth-child(10) {
+          padding: 0 66px;
+          padding-top: 5.208333333333333%;
+        }
+
+        &:nth-child(11) {
+          padding: 0 76px;
+          padding-top: 7.291666666666666%;
+        }
+
+        &:nth-child(12) {
+          padding: 0 91px;
+          padding-top: 4.861111111111111%;
+        }
+      }
+    }
+  }
+
+  &-objects {
+    position: relative;
+    margin-top: 120px;
+
+    .fs-objects_object {
+      margin-top: 60px;
+    }
+  }
+}
+
+.page .content-row .content.mech {
+  padding-left: 40px;
+  padding-right: 80px;
+
+  h2 {
+    font-family: $font-third;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 144%;
+  }
+}

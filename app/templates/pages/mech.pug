@@ -1,0 +1,106 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Механизация";
+
+block content
+  .content-row
+    include ./fs/sidebar.pug
+    .content.mech
+      +breadcrumbs(['Механизация'])
+      h1.page-title Механизация
+      .mech-objects
+        .fs-objects_all
+          +link("#", "Все объекты")
+        h2 Знаковые объекты
+        .fs-objects_object
+          .fs-objects_photo
+            .fs-objects_sticker
+              span Сдан в 2018 году
+            img(src="../images/object-2.png", alt="")
+          .fs-objects_info
+            +hashTags([["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"]])
+            h3 ТК Гранд Каньон
+            p г. Новосибирск, ул. Иванова, 8
+            h4 Выполенные работы
+            ul
+              li Выравнивание стен / оштукатуривание
+              li Заливка / выравнивание полов
+              li Монтаж СФТК
+            h4 Продукты «Геркулес»
+            .fs-objects_products
+              a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+              a(href="#") Штукатурная станция mono-mix FU (на 220В)
+              a(href="#") GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
+              a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+      .mech-partners
+        h2 Наши партнеры
+        .mech-partners_grid
+          .mech-partners_cell
+            img(src="../images/partner-1.png", alt="")
+          .mech-partners_cell
+            img(src="../images/partner-4.png", alt="")
+          .mech-partners_cell
+            img(src="../images/partner-3.png", alt="")
+          .mech-partners_cell
+            img(src="../images/partner-2.png", alt="")
+          .mech-partners_cell
+            img(src="../images/partner-2.png", alt="")
+          .mech-partners_cell
+            img(src="../images/partner-3.png", alt="")
+          .mech-partners_cell
+            img(src="../images/partner-1.png", alt="")
+          .mech-partners_cell
+            img(src="../images/partner-4.png", alt="")
+          .mech-partners_cell
+            img(src="../images/partner-3.png", alt="")
+          .mech-partners_cell
+            img(src="../images/partner-2.png", alt="")
+          .mech-partners_cell
+            img(src="../images/partner-4.png", alt="")
+          .mech-partners_cell
+            img(src="../images/partner-1.png", alt="")
+      .mech-form
+        .mech-form_row
+          h3 Вы можете описать свою проблему по телефону или оставить обращение через форму обратной связи
+          a(href="tel: 8 800 250 30 10") 8 800 250 30 10
+        .eventRegistration#mechForm
+          form(action="")
+            .field-row
+              .field-col
+                +field_base("name", "name", "Имя*", "Алексей")
+              .field-col
+                +field_base("email", "email", "Email", "ksh@loudmill.ru")
+            -
+              if (questionAreaTitle === undefined) { questionAreaTitle = "Ваш вопрос" }
+              if (questionAreaPlaceholder === undefined) { questionAreaPlaceholder = "Текст вопроса" }
+            +field_area("comment", "comment", questionAreaTitle, questionAreaPlaceholder, [30, 10])
+            .field-row
+              .field-col
+                +field_checkbox()
+                  input#pp_quest(type="checkbox" name="pp" checked data-required)
+                  label(for="pp_quest") «Я выражаю согласие на обработку ПДн в соответствии с 
+                    a(href="") Политикой конфиденциальности
+                    |»
+              .field-col
+                +linkRect
+                  button(id="submit" name="submit")
+                  span Отправить
+                  +icon("link-white-arrow", "svg")
+      .mech-contacts
+        .mech-contacts_col
+          img(src="../images/mech-contact-photo.png", alt="")
+        .mech-contacts_col
+          h2 Контакты
+          p По общим вопросам
+          .fs-contacts_phone
+            a(href="tel:8 913 985 30 49") +7 (913) 985-30-49
+          .fs-contacts_email
+            a(href="menshikov.nv@gerkules.ru") milosnov.aa@gerkules.ru
+          h3 Милоснов Алексей Анатольевич
+          p Директор направления механизированных технологий
+          .fs-contacts_phone
+            a(href="tel:8 913 985 30 49") +7 (913) 985-30-49
+          .fs-contacts_email
+            a(href="menshikov.nv@gerkules.ru") milosnov.aa@gerkules.ru
+
