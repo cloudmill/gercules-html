@@ -78,10 +78,9 @@ block content
               img(src="../images/detail-6.png", alt="")
             h3 Плиты утеплителя
             p Возможно, будет какое-то описание для комплектующего
-      .fs-production_getCalc
-        h2 Мы разработали для вас самый удобный калькулятор для расчет расхода СФТК
-        p Заполните поля и получите доступ к калькулятору
-        include fs/getCalc
+      - let getCalc_title = "Мы разработали для вас самый удобный<br>калькулятор для расчет расхода СФТК"
+      - let getCalc_subtitle = "Заполните поля и получите доступ к калькулятору"
+      include fs/getCalc
       include fs/objects
       include fs/contacts
         

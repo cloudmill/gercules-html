@@ -1454,6 +1454,89 @@
       }
     }
   }
+
+  &-calculation {
+    &_row {
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+
+      h3 {
+        font-family: $font-third;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 144%;
+      }
+
+      p {
+        margin-top: 40px;
+        padding: 50px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-list-market-hover;
+        border: 1px solid $color-border-second;
+        font-family: $font-third;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 144%;
+        color: #E41D2C;
+        text-align: center;
+
+        &::before {
+          margin-bottom: 15px;
+          content: "Результат";
+          display: block;
+          font-family: $font-main;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 21px;
+          color: $color-basic;
+        }
+      }
+
+      .field-row {
+        column-gap: 0;
+        grid-template-columns: repeat(2, minmax(auto, 50%));
+
+        &:not(:first-child) {
+          margin-top: 40px;
+        }
+      }
+
+      .field-base {
+        input {
+          height: 70px;
+        }
+
+        &:last-child {
+          margin-left: -1px;
+        }
+
+        label.error {
+          position: relative;
+          z-index: 1000;
+        }
+      }
+
+      .field-select {
+        .select2.select2-container {
+          min-width: 0;
+          width: 100%;
+        }
+      }
+
+      .select2-container .select2-selection .select2-selection__rendered {
+        padding: 0 20px;
+      }
+    }
+
+    &_col {
+      margin-left: 60px;
+      max-width: 576px;
+    }
+  }
 }
 
 .page {

@@ -1,17 +1,23 @@
 .fs-getCalc
-  .fs-getCalc_row
-    +field_base("name", "name", "Имя*", "Алексей")
-    +field_base("email", "email", "Email", "ksh@loudmill.ru")
-  .fs-getCalc_row
-    +field_base("surname", "surname", "Фамилия*", "Биланин")
-    +field_base("phone", "phone", "Номер телефона*", "+7 (___) ___-__-__")
-  .fs-getCalc_row
-    +field_checkbox
-      input#pp_getCalc(type="checkbox", name="pp" checked data-required)
-      label(for="pp_getCalc") «Я выражаю согласие на обработку ПДн в соответствии с 
-        a(href="") Политикой конфиденциальности
-        |»
-    +linkRect
-      button(id="submit", name="submit")
-      span Отправить
-      +icon("link-white-arrow", "svg")
+  h2 !{getCalc_title}
+  p !{getCalc_subtitle}
+  form(action="#")
+    .field-row
+      .field-col
+        +field_base("name", "name", "Имя*", "Алексей")
+        +field_base("surname", "surname", "Фамилия*", "Биланин")
+      .field-col
+        +field_base("email", "email", "Email", "ksh@loudmill.ru")
+        +field_base("phone", "phone", "Номер телефона*", "+7 (___) ___-__-__")
+    .field-row
+      .field-col
+        +field_checkbox
+          input#pp_getCalc(type="checkbox", name="pp" checked data-required)
+          label(for="pp_getCalc") «Я выражаю согласие на обработку ПДн в соответствии с 
+            a(href="") Политикой конфиденциальности
+              |»
+      .field-col
+        +linkRect
+          button(id="submit", name="submit")
+          span Отправить
+          +icon("link-white-arrow", "svg")

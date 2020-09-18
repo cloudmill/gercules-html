@@ -1,4 +1,4 @@
-.fs-getCalc {
+/*.fs-getCalc {
   &_row {
     display: flex;
     justify-content: space-between;
@@ -48,6 +48,54 @@
   .main-link_rect {
     max-width: calc(50% - 20px);
     width: 250px;
+
+    i {
+      margin-left: 20px;
+    }
+  }
+}
+*/
+
+.fs-getCalc {
+  margin-top: 120px;
+
+  p {
+    margin-top: 40px;
+    max-width: 551px;
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  form {
+    margin-top: 40px;
+  }
+
+  .field {
+    &-row {
+      &:last-child {
+        margin-top: 50px;
+
+        .field-col {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    
+    &-checkbox {
+      max-width: 355px;
+    }
+
+    &-base {
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .main-link_rect {
+    margin-left: auto;
+    max-width: 250px;
 
     i {
       margin-left: 20px;
