@@ -1508,32 +1508,62 @@
       .field-base {
         input {
           height: 70px;
-        }
-
-        &:last-child {
-          margin-left: -1px;
+          padding: 0 20px;
         }
 
         label.error {
           position: relative;
           z-index: 1000;
         }
-      }
 
-      .field-select {
-        .select2.select2-container {
-          min-width: 0;
-          width: 100%;
+        &:last-child {
+          margin-left: -1px;
+          width: calc(100% + 1px);
         }
       }
 
-      .select2-container .select2-selection .select2-selection__rendered {
-        padding: 0 20px;
+      .main-link_rect {
+        margin: 0 auto;
+        margin-top: 40px;
+        max-width: 256px;
+
+        i {
+          margin-left: 20px;
+        }
+      }
+
+      .field-select {
+        &:last-child {
+          margin-left: -1px;
+          width: calc(100% + 1px);
+        }
+      }
+
+      .select2-container {
+        min-width: 100%;
+        max-width: 100%;
+
+        .select2-selection__rendered {
+          padding-top: 26px;
+          padding-left: 20px;
+          padding-right: 50px;
+          height: 100%;
+          font-family: $font-third;
+          font-weight: bold;
+          font-size: 15px;
+          line-height: 144%;
+        }
+
+        .select2-selection__arrow {
+          width: 50px;
+          border: none;
+        }
       }
     }
 
     &_col {
       margin-left: 60px;
+      flex-grow: 1;
       max-width: 576px;
     }
   }
@@ -1556,12 +1586,13 @@
     .breadcrumbs {
       padding-bottom: 10px;
     }
-    h1+h2{
+
+    h1+h2 {
       margin-top: 60px;
     }
+
     h2 {
       margin-top: 120px;
-      ////
       font-family: $font-third;
       font-weight: bold;
       font-size: 28px;
@@ -1570,8 +1601,6 @@
       &:first-of-type {
         margin-top: 60px;
       }
-
-      ////
     }
   }
 
