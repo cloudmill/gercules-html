@@ -117,35 +117,25 @@ export default class Map {
     if (this.opts.geo) this.setGeo();
     if (this.opts.search) this.setSearch();
   }
-  setGeo() {
-    let geo = ymaps.geolocation;
-    geo
-      .get({
+  async setGeo() {
+    try {
+      let geo = ymaps.geolocation;
+      let result = await geo.get({
         provider: "yandex",
         mapStateAutoApply: true,
-      })
-      .then((result) => {
-        result.geoObjects.options.set("preset", "islands#geolocationIcon");
-        result.geoObjects.get(0).properties.set({
-          balloonContentBody: "Мое местоположение",
-        });
-        this.map.geoObjects.add(result.geoObjects);
       });
-
-    geo
-      .get({
-        provider: "browser",
-        mapStateAutoApply: true,
-      })
-      .then((result) => {
-        result.geoObjects.options.set("preset", "islands#geolocationIcon");
-        this.map.geoObjects.add(result.geoObjects);
+      result.geoObjects.options.set("preset", "islands#geolocationIcon");
+      result.geoObjects.get(0).properties.set({
+        balloonContentBody: "Мое местоположение",
       });
-
-    $(".whereBuy-geo").click(() => {
-      let btnGeo = $("[class*=-float-button-icon_icon_geolocation]");
-      if (btnGeo.length > 0) btnGeo.click();
-    });
+      this.map.geoObjects.add(result.geoObjects);
+      $(".whereBuy-geo").click(() => {
+        let btnGeo = $("[class*=-float-button-icon_icon_geolocation]");
+        if (btnGeo.length > 0) btnGeo.click();
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }
   setSearch() {
     this.searchControl = new ymaps.control.SearchControl({
