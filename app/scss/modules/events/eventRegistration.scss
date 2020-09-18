@@ -1,23 +1,41 @@
 .eventRegistration {
-  h2 {
-    font: normal bold 28px/40px $font-main;
-    color: $color-basic;
-  }
+  margin-top: 120px;
 
   form {
     margin-top: 40px;
   }
+
   .field {
     &-row {
-      &:not(:first-child) {
-        margin-top: 30px;
+      &:last-child {
+        margin-top: 40px;
+
+        .field-col {
+          display: flex;
+          align-items: center;
+        }
       }
+
       .main-link_rect {
-        justify-self: flex-end;
+        margin-left: auto;
       }
     }
+
     &-checkbox {
-      max-width: 353px;
+      max-width: 350px;
+    }
+
+    textarea {
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+
+    &-col {
+      .field {
+        &:not(:first-child) {
+          margin-top: 30px;
+        }
+      }
     }
   }
 

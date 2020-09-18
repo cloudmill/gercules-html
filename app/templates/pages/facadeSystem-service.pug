@@ -23,7 +23,7 @@ block content
             li Предварительный осмотр и диагностирование
             li Профессиональное консультирование при выборе и покупке технического оборудования
       include ./fs/guarantee.pug
-
-      - var questionTitle = 'Задать вопрос об услуге шеф-монтаж'
-      include fs/question
+      .fs-service_form
+        - var questionTitle = 'Задать вопрос об услуге шеф-монтаж'
+        include fs/question
       include fs/contacts

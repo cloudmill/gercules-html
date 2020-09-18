@@ -1,23 +1,28 @@
 .eventRegistration#questionBigForm
-  h2 #{questionTitle}
+  h2 !{questionTitle}
   form(action="")
     .field-row
-      +field_base("name", "name", "Имя*", "Алексей")
-      +field_base("surname", "surname", "Фамилия*", "Биланин")
+      .field-col
+        +field_base("name", "name", "Имя*", "Алексей")
+        +field_base("surname", "surname", "Фамилия*", "Биланин")
+        +field_base("phone", "phone", "Номер телефона*", "+7 (___) ___-__-__")
+      .field-col
+        +field_base("email", "email", "Email", "ksh@loudmill.ru")
+        +field_base("companyName", "companyName", "Название компании", "ООО ГК ПЛЮС")
+        +field_base("city", "city", "Город*", "Омск")
+    -
+      if (questionAreaTitle === undefined) { questionAreaTitle = "Ваш вопрос" }
+      if (questionAreaPlaceholder === undefined) { questionAreaPlaceholder = "Текст вопроса" }
+    +field_area("comment", "comment", questionAreaTitle, questionAreaPlaceholder, [30, 10])
     .field-row
-      +field_base("email", "email", "Email", "ksh@loudmill.ru")
-      +field_base("phone", "phone", "Номер телефона*", "+7 (___) ___-__-__")
-    .field-row
-      +field_base("companyName", "companyName", "Название компании", "ООО ГК ПЛЮС")
-      +field_base("city", "city", "Город*", "Омск")
-    +field_area("comment", "comment", "Комментарий", "Хочу записаться", [30, 10])
-    .field-row
-      +field_checkbox()
-        input#pp_quest(type="checkbox" name="pp" checked data-required)
-        label(for="pp_quest") «Я выражаю согласие на обработку ПДн в соответствии с 
-          a(href="") Политикой конфиденциальности
-          |»
-      +linkRect
-        button(id="submit" name="submit")
-        span Отправить
-        +icon("link-white-arrow", "svg")
+      .field-col
+        +field_checkbox()
+          input#pp_quest(type="checkbox" name="pp" checked data-required)
+          label(for="pp_quest") «Я выражаю согласие на обработку ПДн в соответствии с 
+            a(href="") Политикой конфиденциальности
+            |»
+      .field-col
+        +linkRect
+          button(id="submit" name="submit")
+          span Отправить
+          +icon("link-white-arrow", "svg")

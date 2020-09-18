@@ -1537,6 +1537,12 @@
       max-width: 576px;
     }
   }
+
+  &-service {
+    &_form {
+      margin-top: 156px;
+    }
+  }
 }
 
 .page {
@@ -1570,8 +1576,6 @@
   }
 
   .eventRegistration {
-    margin-top: 120px;
-
     .main-link_rect {
       max-width: 250px;
     }
