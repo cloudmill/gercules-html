@@ -1,7 +1,7 @@
 import $ from "jquery";
 import App from "./main.js";
 
-
-$(document).ready(function() {
+$(document).ready(function () {
   let app = new App();
+  window.app = app;
 });

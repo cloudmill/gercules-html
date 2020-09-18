@@ -25,10 +25,9 @@ export default class App {
 
     this.sliders = new Managers_sliders();
     this.forms = new Manager_forms();
-    this.modals = new Manager_modals();
+    window.modals = this.modals = new Manager_modals();
     this.styles = new Manager_styles();
     this.maps = new Manager_maps();
     this.tabs = new Manager_tabs();
   }
 }
-
