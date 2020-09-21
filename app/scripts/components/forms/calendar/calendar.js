@@ -36,14 +36,17 @@ class Calendar {
   }
 
   setDataEvents() {
-    document.querySelectorAll(".calendar-data-events input").forEach((item,key) => {
-      this.dataEvents.push({
-        year: item.getAttribute("data-year"),
-        month: item.getAttribute("data-month"),
-        day: item.getAttribute("data-day"),
-        count: item.getAttribute("data-count"),
+    document
+      .querySelectorAll(".calendar-data-events input")
+      .forEach((item, key) => {
+        this.dataEvents.push({
+          year: item.getAttribute("data-year"),
+          month: item.getAttribute("data-month"),
+          day: item.getAttribute("data-day"),
+          count: item.getAttribute("data-count"),
+          url: item.getAttribute("data-url"),
+        });
       });
-    });
   }
 }
 

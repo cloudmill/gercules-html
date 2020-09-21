@@ -18,6 +18,9 @@ export default class Modal {
       fn(resolve, reject);
     });
   }
+  html(content) {
+    $(this.el).find(".modal-item-content").html(content);
+  }
   open() {
     return this.update((resolve, reject) => {
       this.el.classList.add("active");
