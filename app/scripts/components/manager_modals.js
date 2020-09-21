@@ -17,8 +17,22 @@ export default class Manager_modals {
 
     $(document).on("click", ".js-modal", (e) => {
       e.preventDefault();
-      let id = $(e.target).attr("href").replace("#", "");
-      this.openModal(id);
+      let id = e.currentTarget.getAttribute("href").replace("#", "");
+      if ($(e.currentTarget).is("[await]")) {
+        const url = $(e.currentTarget).attr("await");
+        const request = async () => {
+          const responce = await fetch(url);
+          const content = `<div class="modal-title">Ошибка загрузки данных</div>`;
+          if (responce.ok) {
+            content = responce.body;
+          }
+          this.modals[id].html(content);
+          this.openModal(id);
+        };
+        request();
+      } else {
+        this.openModal(id);
+      }
     });
     $("[data-modal-close]").click(() => {
       this.close();

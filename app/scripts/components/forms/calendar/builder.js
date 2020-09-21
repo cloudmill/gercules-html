@@ -36,8 +36,8 @@ class Builder {
     if (this.currentDay % 7 == 0) {
       html += "<tr>";
     }
-    if (event > 0) {
-      html += `<td class="calendar-event js-modal" href="#events">${day}<span>События:</span><span>${event}</span></td>`;
+    if (event && event.count > 0) {
+      html += `<td class="calendar-event js-modal" href="#events" await="${event.url}">${day}<span>События:</span><span>${event.count}</span></td>`;
     } else if (event == -1) {
       html += `<td class="calendar-disabled">${day}</td>`;
     } else {
@@ -49,7 +49,7 @@ class Builder {
     this.currentDay++;
     return html;
   }
-  update(dataEvents){
+  update(dataEvents) {
     this.dataEvents = dataEvents;
   }
   getWeekDay(year, monthId, day) {
@@ -68,12 +68,14 @@ class Builder {
     let count = 0;
     let day = dayId + 1;
     let month = monthId + 1;
+    let res = {};
     this.dataEvents.forEach((el) => {
       if (el.day == day && el.year == year && el.month == month) {
-        count = el.count;
+        res.count = el.count;
+        res.url = el.url;
       }
     });
-    return count;
+    return { ...res };
   }
 }
 exports.Builder = Builder;
