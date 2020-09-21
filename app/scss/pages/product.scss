@@ -36,12 +36,45 @@
     padding-left: 40px;
     padding-top: 60px;
     border-left: 1px solid #e5e5e5;
+    &_row {
+      display: grid;
+      grid-template-columns: 1fr 270px;
+      grid-column-gap: 50px;
+      align-items: flex-end;
+      margin-bottom: 50px;
+    }
+    &_calc {
+      display: flex;
+      align-items: center;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: #262626;
+      i {
+        margin-right: 10px;
+      }
+    }
     h1 {
+      font-family: $font-third;
       font-style: normal;
       font-weight: bold;
       font-size: 28px;
       line-height: 144%;
       color: #262626;
+      position: relative;
+      max-width: 450px;
+    }
+    h3 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 130%;
+      color: #262626;
+      margin-bottom: 30px;
+    }
+    ul{
+
     }
   }
   &-states {
