@@ -9,12 +9,15 @@ block content
     .content.mech
       +breadcrumbs(['Механизация'])
       h1.page-title Механизация
+      .mech-map
+        img(src="../images/mech-map.svg", alt="")
+        h2 География продаж
       .mech-video
         h2 Мы гордимся, тем, что мы лучшие, в том, что мы делаем
         .mech-video_row
-          a.mech-video_col
+          a(href = "#").mech-video_col
             img(src="../images/video-instruction-preview.jpg", alt="")
-            .decorate-rect_trunc
+            +decorate_square_trunc
               .decorate-triangle
           .mech-video_col
             +link_tile

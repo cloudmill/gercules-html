@@ -31,24 +31,33 @@
     }
   }
 
-  &-rect {
+  &-square {
     &_trunc {
       position: relative;
       width: 94px;
       height: 94px;
-      overflow: hidden;
 
-      &::before {
+      &-bg {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        content: "";
-        display: block;
-        $square_size: 115%;
-        width: $square_size;
-        height: $square_size;
-        transform: translate(-50%, -50%) rotate(45deg);
-        background-color: white;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        overflow: hidden;
+
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          content: "";
+          display: block;
+          $square_size: 115%;
+          width: $square_size;
+          height: $square_size;
+          transform: translate(-50%, -50%) rotate(45deg);
+          background-color: white;
+        }
       }
     }
   }
