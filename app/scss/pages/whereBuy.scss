@@ -41,6 +41,16 @@
         right: 22px;
       }
     }
+
+    .field-row {
+      width: 100%;
+      padding-right: 30px;
+      column-gap: 30px;
+
+      .select2-container {
+        min-width: 100%;
+      }
+    }
   }
 
   .buy-markets-type {

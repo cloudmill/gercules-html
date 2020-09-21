@@ -9,6 +9,15 @@ block content
     .content.mech
       +breadcrumbs(['Механизация'])
       h1.page-title Механизация
+      .mech-questions
+        .mech-questions_col
+          h2 Появились вопросы?
+          p Можете задать через форму обратной связи или позвонить по телефону.
+          a(href="tel:8 383 338 31 32") +7 (383) 338-31-32 вн. 153
+        +linkRect
+          a(href="#")
+          span Задать вопрос
+          +icon("link-white-arrow", "svg")
       .mech-map
         img(src="../images/mech-map.svg", alt="")
         h2 География продаж
