@@ -461,7 +461,7 @@
       margin-top: 95px;
       display: grid;
       column-gap: 40px;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(165px, 1fr));
 
       &::before {
         position: absolute;
@@ -515,6 +515,124 @@
         margin-top: 20px;
         font-size: 13px;
         line-height: 150%;
+      }
+    }
+  }
+
+  &-why {
+    margin-top: 120px;
+
+    &_top {
+      p {
+        margin-top: 30px;
+        max-width: 560px;
+        font-size: 18px;
+        line-height: 150%;
+
+        span {
+          font-weight: bold;
+          color: $color-red;
+        }
+      }
+    }
+
+    &_grid {
+      margin-top: 80px;
+      margin-left: auto;
+      min-height: 432px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(250px, 1fr));
+      grid-template-rows: repeat(2, 1fr);
+
+      @media (max-width: 1599px) {
+        max-width: 870px;
+      }
+
+      @media (min-width: 1600px) {
+        width: calc(100% - (1112px - 870px));
+      }
+
+      &-item {
+        position: relative;
+        padding: 40px 30px;
+        border-left: 1px solid $color-border-second;
+
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 35px;
+          content: "";
+          display: block;
+          height: 33px;
+          border-left: 4px solid $color-red;
+          border-top: 3px solid transparent;
+        }
+
+        h3 {
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 130%;
+        }
+
+        p {
+          margin-top: 10px;
+          font-size: 13px;
+          line-height: 150%;
+
+          span {
+            font-size: 7px;
+            line-height: 150%;
+            vertical-align: super;
+          }
+        }
+
+        &:nth-child(-n + 3) {
+          padding-top: 60px;
+
+          &::before {
+            top: 55px;
+          }
+        }
+
+        &:nth-child(3),
+        &:nth-child(6) {
+          border-right: 1px solid $color-border-second;
+        }
+      }
+    }
+
+    &_row {
+      margin-top: 50px;
+      display: flex;
+    }
+
+    &_col {
+      padding-top: 260px;
+      width: 242px;
+      flex-shrink: 0;
+
+      h3 {
+        padding-top: 30px;
+        padding-right: 30px;
+        height: 105px;
+        border-top: 1px solid $color-red;
+        border-bottom: 1px solid $color-red;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 130%;
+        text-align: right;
+      }
+    }
+
+    &_list {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 411px;
+      column-gap: 6px;
+
+      &-item {
+        background-color: $color-list-market-hover;
       }
     }
   }
