@@ -9,6 +9,20 @@ block content
     .content.mech
       +breadcrumbs(['Механизация'])
       h1.page-title Механизация
+      .mech-video
+        h2 Мы гордимся, тем, что мы лучшие, в том, что мы делаем
+        .mech-video_row
+          a.mech-video_col
+            img(src="../images/video-instruction-preview.jpg", alt="")
+            .decorate-rect_trunc
+              .decorate-triangle
+          .mech-video_col
+            +link_tile
+              span Академия «‎Геркулес»‎
+              .decorate-arrow_main
+            +link_tile
+              span Видео-инструкции
+              .decorate-arrow_main
       .mech-objects
         .fs-objects_all
           +link("#", "Все объекты")
@@ -103,4 +117,3 @@ block content
             a(href="tel:8 913 985 30 49") +7 (913) 985-30-49
           .fs-contacts_email
             a(href="menshikov.nv@gerkules.ru") milosnov.aa@gerkules.ru
-

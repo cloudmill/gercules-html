@@ -1,0 +1,62 @@
+.decorate {
+  &-arrow {
+    &_main {
+      position: relative;
+      width: 23px;
+      height: 14px;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        right: 2px;
+        top: 50%;
+        transform: translateY(-50%);
+        content: "";
+        display: block;
+        border-top: 2px solid $color-basic;
+      }
+
+      &::after {
+        position: absolute;
+        right: 2px;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        content: "";
+        display: block;
+        width: 9px;
+        height: 9px;
+        border-top: 2px solid $color-basic;
+        border-right: 2px solid $color-basic;
+      }
+    }
+  }
+
+  &-rect {
+    &_trunc {
+      position: relative;
+      width: 94px;
+      height: 94px;
+      overflow: hidden;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "";
+        display: block;
+        $square_size: 115%;
+        width: $square_size;
+        height: $square_size;
+        transform: translate(-50%, -50%) rotate(45deg);
+        background-color: white;
+      }
+    }
+  }
+
+  &-triangle {
+    display: block;
+    border-left: 21px solid $color-red;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+  }
+}

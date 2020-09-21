@@ -99,6 +99,48 @@
       line-height: 21px;
     }
   }
+
+  &_tile {
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border: 1px solid $color-border-second;
+    transition: 0.25s;
+
+    span {
+      display: block;
+      font-family: $font-third;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 160%;
+    }
+
+    .decorate-arrow_main {
+      margin-left: 40px;
+      flex-shrink: 0;
+      transition: 0.25s;
+    }
+
+    &:hover {
+      background-color: $color-red;
+      border-color: $color-red;
+
+      span {
+        color: white;
+      }
+
+      .decorate-arrow_main {
+        transform: translateX(50%);
+
+        &::before,
+        &::after {
+          border-color: white;
+        }
+      }
+    }
+  }
 }
 
 .sliderControls {
