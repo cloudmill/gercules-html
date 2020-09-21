@@ -32,7 +32,30 @@ block content
         .product-states
           span Хит продаж
           span.red Акция
-        h1.page-title #{pageTitle}
+        .product-content_row
+          h1.page-title #{pageTitle}
+          a.product-content_calc(href="")
+            +icon('expand','svg')
+            | Калькулятор для ремонта
+        .product-content_row
+          div
+            h3 Преимущества
+            ul
+              li Универсальный наливной пол 2 в 1: стяжка и финишный ровнитель
+              li Можно ходить через 4 часа
+              li Влагостойкий. Подходит для тёплого пола
+              li Для ручного и машинного нанесения
+              li Толщина слоя от 2 до 100 мм.
+          div
+            h3 Цвет
+            .product-colors
+              .product-colors_item
+                .product-colors_info
+                  |Бирюзовый
+                  span №325
+
+
+
     .tabs-menu
       .tabs-menu_item.active Описание
       .tabs-menu_item Применение
