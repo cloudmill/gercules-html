@@ -8,7 +8,40 @@ block content
     include ./fs/sidebar.pug
     .content.mech
       +breadcrumbs(['Механизация'])
-      h1.page-title Механизация
+      .mech-top
+        .mech-top_row
+          h1 Механизация
+          .mech-top_phone
+            p Телефон единой справочной
+            a(href="tel:8 800 250 30 10 ") 8 800 250 30 10
+        .mech-top_layout
+          img(src="../images/mech-top-1.png", alt="")
+          .mech-top_info
+            h3 Комплексная механизация —
+              br
+              | это замена ручного труда
+              br
+              | на ВСЕХ основных операциях
+            h4 Оборудование
+            ul
+              li Силос
+              li Транспорт
+              li Пневмотранспортная система (ПТС)
+              li Штукатурная станция
+        .mech-top_layout
+          img(src="../images/mech-top-2.png", alt="")
+          .mech-top_info
+            h3 Частичная механизация - это замена
+              br
+              | отдельных производственных операций,
+              br
+              | но при этом сохраняется значительная
+              br
+              | часть ручного труда
+            h4 Оборудование
+            ul
+              li Пневмотранспортная система (ПТС)
+              li Штукатурная станция
       .mech-system
         h2 Что входит в механизированную систему?
         .mech-system_row
