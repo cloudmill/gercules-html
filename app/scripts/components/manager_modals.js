@@ -21,18 +21,22 @@ export default class Manager_modals {
       if ($(e.currentTarget).is("[await]")) {
         const url = $(e.currentTarget).attr("await");
         const request = async () => {
-          const responce = await fetch(url, {
-            headers: {
-              "Content-Type": "text/html",
-            },
-          });
           let content = `<div class="modal-title">Ошибка загрузки данных</div>`;
-          console.log(responce);
-          if (responce.ok) {
-            content = await responce.json();
+          try {
+            const responce = await fetch(url, {
+              headers: {
+                "Content-Type": "text/html",
+              },
+            });
+            if (responce.ok) {
+              content = responce.text();
+            }
+            this.modals[id].html(content);
+            this.openModal(id);
+          } catch (e) {
+            this.modals[id].html(content);
+            this.openModal(id);
           }
-          this.modals[id].html(content);
-          this.openModal(id);
         };
         request();
       } else {

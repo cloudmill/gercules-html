@@ -47,19 +47,26 @@ export default class Manager_forms {
     let calendar = new CalendarSlider();
     $(".events-control select").change((e) => {
       let select = e.currentTarget;
-      $.ajax({
-        type: "get",
-        url: "/ajax/getListEvents.php",
-        data: $(select).val(),
-        success: (res) => {
-          console.log(res)
-          $(".calendar-data-events").html(res);
-        },
-        error: (e) => {
-          write.error(e);
-        },
-      });
-      calendar.updateDate();
+      const request = async () => {
+        try {
+          const responce = await fetch("/ajax/getListEvents.php", {
+            method: "POST",
+            body: JSON.stringify({ data: $(select).val() }),
+            headers: {
+              "Content-Type": "text/html",
+            },
+          });
+
+          if (responce.ok) {
+            console.log(responce.text());
+            $(".calendar-data-events").html(responce.text());
+            calendar.updateDate();
+          }
+        } catch (e) {
+          console.log(e);
+        }
+      };
+      request();
     });
     $(".events-control input").change((e) => {
       let checkbox = e.target;
