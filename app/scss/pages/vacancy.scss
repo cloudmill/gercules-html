@@ -1,0 +1,86 @@
+.vacancy {
+  &-list {
+    margin-left: -40px;
+    margin-top: 60px;
+  }
+  &-item {
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 40px;
+    margin-top: -1px;
+    cursor: pointer;
+    &.active {
+    }
+    &:hover {
+      .vacancy-item_title,
+      .vacancy-item_salary {
+        color: #e41d2c;
+      }
+    }
+    &_title {
+      font-family: $font-third;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 160%;
+      transition: color $ease-main;
+    }
+    &_tags {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      span {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 150%;
+        color: #262626;
+        display: flex;
+        align-items: center;
+        &:not(:last-child) {
+          &:after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 20px;
+            background: #e5e5e5;
+            margin: 0 30px;
+          }
+        }
+      }
+    }
+    &_salary {
+      position: absolute;
+      right: 40px;
+      font-family: $font-third;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 160%;
+      text-align: right;
+      color: #262626;
+      margin-top: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: color $ease-main;
+    }
+    &_head {
+      position: relative;
+      &:after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        border-right: 2px solid #262626;
+        border-bottom: 2px solid #262626;
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
+    &_dropdown {
+      display: none;
+    }
+  }
+}

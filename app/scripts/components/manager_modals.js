@@ -29,10 +29,12 @@ export default class Manager_modals {
               },
             });
             if (responce.ok) {
-              content = responce.text();
+              content = await responce.text();
+              this.modals[id].html(content);
+              this.openModal(id);
+            } else {
+              throw new Error("Ничего не пришло");
             }
-            this.modals[id].html(content);
-            this.openModal(id);
           } catch (e) {
             this.modals[id].html(content);
             this.openModal(id);
