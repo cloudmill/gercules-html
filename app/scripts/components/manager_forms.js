@@ -46,7 +46,19 @@ export default class Manager_forms {
   init_form_calendar() {
     let calendar = new CalendarSlider();
     $(".events-control select").change((e) => {
-      let select = e.target;
+      let select = e.currentTarget;
+      $.ajax({
+        type: "get",
+        url: "/ajax/getListEvents.php",
+        data: $(select).val(),
+        success: (res) => {
+          console.log(res)
+          $(".calendar-data-events").html(res);
+        },
+        error: (e) => {
+          write.error(e);
+        },
+      });
       calendar.updateDate();
     });
     $(".events-control input").change((e) => {
