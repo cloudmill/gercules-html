@@ -1,0 +1,24 @@
+extends ../layouts/default.pug
+
+block variables
+  -var pageTitle='GP-21M Штукатурка цементная для машинного нанесения'
+
+block content
+  .content.card
+    .card-product_calculator
+      .card-product_calculator-col
+        h2 Калькулятор расхода
+        img(src="../images/card-calculator.jpg", alt="")
+      .card-product_calculator-col
+        .field-row
+          +field_base("productCalculator_area", "productCalculator_area", "Площадь поверхности, кв.м", "", "350")
+          +field_base("productCalculator_thick", "productCalculator_thick", "Толщина слоя, мм", "", "30")
+          +field_select('',[[0,'25'],[1,'35'],[2,'50']])
+            .field-select_caption Размер упаковки
+    .card-product_bottom Со временем связи с родоначальниками сухих строительных смесей только укреплялись. Сегодня
+      br
+      | технологический отдел компании «Геркулес-Сибирь» активно сотрудничает
+      br
+      | с лабораториями наших стратегических партнеров – мировыми лидерами в области строительной химии –
+      br
+      | компаниями BAYER, WACKER, Bang &amp; Bonsomer.

@@ -15,13 +15,14 @@ mixin field_checkbox()
   .field.field-checkbox
     block
 
-mixin field_base(id, name, label, placeholder)
+mixin field_base(id, name, label, placeholder, value)
   .field.field-base
     label(for=id)
-      input(type="text" name=name data-required id=id placeholder=placeholder)
+      input(type="text" name=name data-required id=id placeholder=placeholder value=value)
       .field-inf
         span.name #{label}
         span.errorText пожалуйста, заполните поле корректно
+      
 
 mixin field_area(id, name, label, placeholder, size = [30, 10])
   .field.field-area
