@@ -33,9 +33,11 @@
     &-row {
       display: flex;
       height: 100%;
-
       .content {
+        padding-left: 40px;
+        padding-right: 80px;
         width: calc(100% - 287px);
+        overflow: hidden;
       }
     }
   }

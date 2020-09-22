@@ -1,0 +1,81 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Вакансии";
+
+mixin vacancy_item_dropdown()
+  .vacancy-item_dropdown
+    h3 Обязанности
+    ul
+      li Перевод архива в электронный вид
+      li Организация бумажного и электронного архива
+      li Настройка процесса архивирования документов (сдача в архив, выдача из архива)
+    h3 Требования
+    ul
+      li Опыт работы от 1 до 3 лет
+      li Опыт ведения архивных документов согласно стандартам
+      li Опыт работы с инженерной документацией будет преимуществом
+    h3 Условия
+    ul
+      li График работы 5/2 (возможен график по договоренности)
+      li Срочный трудовой договор, официальное трудоустройство согласно ТК РФ
+    h3 Адрес
+    p Новосибирск, Электровозная улица, 1
+    .vacancy-item_contact
+      .vacancy-item_contact-text
+        h3 Менеджер по персоналу
+        p Ерехинская Анастасия
+        p
+          a(href="tel:+7 (913) 7890114") +7 (913) 7890114
+          a(href="mailto:erehinskaya.as@gerkules.ru") erehinskaya.as@gerkules.ru
+      +linkRect
+        a(href="")
+        span Отклинуться
+        +icon("link-white-arrow", "svg")
+
+block content
+  .content-row
+    .sidebar
+      .sidebar-menu
+        a(href="") О компании
+        a(href="") Новости
+        a(href="") Упаковка продукции
+        a(href="") Объекты
+        a(href="") Видеогалерея
+        a(href="") Сотрудники
+        a(href="").active Вакансии
+        a(href="") Социальная  ответственность
+        a(href="") Контакты
+    .content.vacancy
+      +breadcrumbs(['О компании',pageTitle])
+      h1.page-title #{pageTitle}
+      .vacancy-list
+        .vacancy-item
+          .vacancy-item_head
+            .vacancy-item_title Руководитель отдела объектных продаж
+            .vacancy-item_tags
+              span 22 октября 2019
+              span Полная занятость
+              span Новосибирск
+            .vacancy-item_salary 25 000 — 35 000 Р
+          +vacancy_item_dropdown
+        .vacancy-item
+          .vacancy-item_head
+            .vacancy-item_title Инженер по нормированию
+            .vacancy-item_tags
+              span 22 октября 2019
+              span Полная занятость
+              span Новосибирск
+            .vacancy-item_salary от 45 000 Р
+          +vacancy_item_dropdown
+        .vacancy-item
+          .vacancy-item_head
+            .vacancy-item_title Инженер-технолог
+            .vacancy-item_tags
+              span 22 октября 2019
+              span Полная занятость
+              span Новосибирск
+            .vacancy-item_salary Без указания з/п
+          +vacancy_item_dropdown
+
+
