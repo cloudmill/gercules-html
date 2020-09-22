@@ -627,12 +627,78 @@
     &_list {
       flex-grow: 1;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(250px, 1fr));
       grid-template-rows: 411px;
       column-gap: 6px;
 
       &-item {
+        padding-bottom: 46px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         background-color: $color-list-market-hover;
+
+        &_top {
+          padding: 40px 30px;
+          flex-grow: 1;
+          max-height: 260px;
+
+          h3 {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 130%;
+          }
+
+          p {
+            margin-top: 10px;
+            font-size: 13px;
+            line-height: 150%;
+          }
+        }
+
+        &_bottom {
+          position: relative;
+          padding-top: 30px;
+          padding-left: 30px;
+          height: 105px;
+          flex-shrink: 0;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 130%;
+          color: $color-red;
+
+          span {
+            font-weight: bold;
+            font-size: 10px;
+            line-height: 130%;
+            vertical-align: super;
+          }
+
+          &::before,
+          &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            display: block;
+            width: calc(100% + 6px);
+            border-top: 1px solid $color-red;
+          }
+
+          &::after {
+            top: auto;
+            bottom: 0;
+          }
+        }
+
+        &:last-child {
+          .mech-why_list-item_bottom {
+            &::before,
+            &::after {
+              width: calc(100% - 40px);
+            }
+          }
+        }
       }
     }
   }
