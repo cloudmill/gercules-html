@@ -18,6 +18,23 @@ export default class Managers_sliders {
     this.fs_steps();
     this.product_detail_list();
     this.fs_bigSlider();
+    this.product_passport();
+  }
+  product_passport() {
+    this.sliders["product_passport"] = new Swiper(
+      ".card-product_passport .swiper-container",
+      {
+        ...baseSettings,
+        slidesPerView: 1,
+        spaceBetween: 40,
+        slidesPerGroup: 1,
+        autoHeight: true,
+        navigation: {
+          nextEl: $(".passport-control-next"),
+          prevEl: $(".passport-control-prev"),
+        },
+      }
+    );
   }
   fs_steps() {
     this.sliders["fs_steps"] = [];

@@ -5,6 +5,38 @@ block variables
 
 block content
   .content.card
+    .card-product_passport
+      h2 Паспорт качества
+      p Для получения паспорта качества введите данные с упаковки.
+      .card-product_passport-row
+        .card-product_passport-col
+          form(action="#")
+            .field-row
+              +field_base("date", "date", "Введите дату", "день.месяц.год")
+              +field_base("time", "time", "Введите время", "00:00")
+            p Дата в паспорте качества может не совпадать с датой на упаковке (зависит от даты начала работы смены)
+            +linkRect
+              button(id="submit", name="submit")
+              span Сформировать паспорт
+              +icon("link-white-arrow", "svg")
+        .card-product_passport-col
+        .card-product_passport-col
+          +sliderControls
+            button.passport-control-prev
+            button.passport-control-next
+          .swiper-container
+            .swiper-wrapper
+              .swiper-slide
+                h3 Где найти дату производства 
+                  br
+                  | на упаковке?
+                .card-product_passport-help
+                  img(src="../images/product-passport.png", alt="")
+                  p Дата и время производства
+                    br
+                    | указаны на тыльной стороне
+                    br
+                    | упаковки
     .fs-objects
       .fs-objects_all
         +link("#", "Все объекты")
