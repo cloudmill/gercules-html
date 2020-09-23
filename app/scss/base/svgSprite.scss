@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("../images/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 11.2em 30.8em;
+    background-size: 11.2em 32.6em;
 }
 
 .no-svg .svg-icon:before {
@@ -125,8 +125,17 @@
 
 
 
-  .svg-icon.svg-plus-circle:before {
+  .svg-icon.svg-phone:before {
       background-position: 0em -21.4em;
+      width: 1.2em;
+      height: 1.8em;
+  }
+
+
+
+
+  .svg-icon.svg-plus-circle:before {
+      background-position: 0em -23.2em;
       width: 2.1em;
       height: 2.1em;
   }
@@ -135,7 +144,7 @@
 
 
   .svg-icon.svg-rating-red:before {
-      background-position: 0em -23.5em;
+      background-position: 0em -25.3em;
       width: 2.4em;
       height: 2.5em;
   }
@@ -144,15 +153,6 @@
 
 
   .svg-icon.svg-search:before {
-      background-position: 0em -26em;
-      width: 1.8em;
-      height: 1.8em;
-  }
-
-
-
-
-  .svg-icon.svg-time:before {
       background-position: 0em -27.8em;
       width: 1.8em;
       height: 1.8em;
@@ -161,8 +161,17 @@
 
 
 
-  .svg-icon.svg-vk:before {
+  .svg-icon.svg-time:before {
       background-position: 0em -29.6em;
+      width: 1.8em;
+      height: 1.8em;
+  }
+
+
+
+
+  .svg-icon.svg-vk:before {
+      background-position: 0em -31.4em;
       width: 2.2em;
       height: 1.2em;
   }

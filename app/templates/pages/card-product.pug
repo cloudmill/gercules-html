@@ -5,6 +5,37 @@ block variables
 
 block content
   .content.card
+    .fs-objects
+      .fs-objects_all
+        +link("#", "Все объекты")
+      h2 Данный продукт применялся на объектах
+      .fs-objects_objects
+        +sliderVerticalControls
+          button.fs-objects_next
+          button.fs-objects_prev
+        .swiper-container
+          .swiper-wrapper
+            .swiper-slide
+              .fs-objects_object
+                .fs-objects_photo
+                  .fs-objects_sticker
+                    span Сдан в 2018 году
+                  img(src="./images/objectCFTK.png", alt="")
+                .fs-objects_info
+                  +hashTags([["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"]])
+                  h3 ЖК VIVANOVA
+                  p г. Новосибирск, ул. Иванова, 8
+                  h4 Выполенные работы
+                  ul
+                    li Выравнивание стен / оштукатуривание
+                    li Заливка / выравнивание полов
+                    li Монтаж СФТК
+                  h4 Продукты «Геркулес»
+                  .fs-objects_products
+                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+                    a(href="#") Штукатурная станция mono-mix FU (на 220В)
+                    a(href="#") GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
+                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
     .card-product_calculator
       .card-product_calculator-col
         h2 Калькулятор расхода
