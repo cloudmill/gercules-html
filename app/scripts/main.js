@@ -1,8 +1,7 @@
 import $ from "jquery";
 window.$ = $;
 
-// bootstrap range slider test
-import "bootstrap-slider";
+
 
 //Tools
 import Listener from "./tools/listener";
@@ -33,10 +32,6 @@ export default class App {
     this.maps = new Manager_maps();
     this.tabs = new Manager_tabs();
 
-    // bootstrap range slider test
-    let myRangeSliders = $(".field-base .sliderRange").bootstrapSlider({
-      min: 0,
-      max: 500
-    });
+   
   }
 }

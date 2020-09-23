@@ -43,10 +43,10 @@ block content
       .card-product_calculator-col
         .field-row
           +field_base("productCalculator_area", "productCalculator_area", "Площадь поверхности, кв.м", "", "350")
-            input.sliderRange
+            input.sliderRange(data-slider-min='0' data-slider-max='500')
           +field_base("productCalculator_thick", "productCalculator_thick", "Толщина слоя, мм", "", "30")
-            input.sliderRange
-          +field_select('',[[0,'25'],[1,'35'],[2,'50']])
+            input.sliderRange(data-slider-min='0' data-slider-max='100')
+          +field_select('',[[25,'25'],[35,'35'],[50,'50']])
             .field-select_caption Размер упаковки
         h3 Вам потребуется
         .card-product_calculator-row
