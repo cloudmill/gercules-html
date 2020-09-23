@@ -59,6 +59,59 @@
       position: relative;
       display: block;
 
+      .sliderRange + input {
+        border-bottom-width: 4px;
+      }
+
+      .slider {
+        height: 16px;
+        position: absolute;
+        bottom: 0;
+        transform: translateY(50%) translateY(-2px);
+        max-width: calc(100% - 16px);
+
+        .slider-track {
+          top: 50%;
+          transform: translateY(-50%);
+          margin: 0;
+          height: 4px;
+          background: none;
+          box-shadow: none;
+
+          .slider-selection {
+            box-shadow: none;
+            background: $color-red;
+            border-radius: 0;
+          }
+        }
+
+        .tooltip {
+          display: none;
+        }
+
+        .slider-handle {
+          position: relative;
+          width: 16px;
+          height: 16px;
+          box-shadow: none;
+          background: $color-red;
+          border-radius: 50%;
+          margin-left: 0;
+
+          &::before {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            content: "";
+            display: block;
+            width: 8px;
+            height: 4px;
+            background-color: $color-red;
+          }
+        }
+      }
+
       &.error {
         input {
           border-color: $color-red;
@@ -232,7 +285,7 @@
   ////
   // min-width: 350px;
   border: none;
-  box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.75);
 
   .select2-results {
     &__option {

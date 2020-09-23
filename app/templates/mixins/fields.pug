@@ -18,6 +18,7 @@ mixin field_checkbox()
 mixin field_base(id, name, label, placeholder, value)
   .field.field-base
     label(for=id)
+      block
       input(type="text" name=name data-required id=id placeholder=placeholder value=value)
       .field-inf
         span.name #{label}

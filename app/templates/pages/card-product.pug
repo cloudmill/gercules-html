@@ -12,11 +12,22 @@ block content
       .card-product_calculator-col
         .field-row
           +field_base("productCalculator_area", "productCalculator_area", "Площадь поверхности, кв.м", "", "350")
+            input.sliderRange
           +field_base("productCalculator_thick", "productCalculator_thick", "Толщина слоя, мм", "", "30")
+            input.sliderRange
           +field_select('',[[0,'25'],[1,'35'],[2,'50']])
             .field-select_caption Размер упаковки
         h3 Вам потребуется
         .card-product_calculator-row
+          .card-product_calculator-result
+            span 44 кг
+            span 5 мешков
+          a(href="#")
+            +icon("down", "svg")
+            | Сохранить результат
+        p Этот калькулятор помогает сделать примерный расчет количества продукта.
+          br
+          | Калькулятор не учитывает потери материалов во время использования и квалификацию мастера.
     .card-product_bottom Со временем связи с родоначальниками сухих строительных смесей только укреплялись. Сегодня
       br
       | технологический отдел компании «Геркулес-Сибирь» активно сотрудничает
