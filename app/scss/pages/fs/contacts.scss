@@ -14,9 +14,6 @@
     grid-gap: 40px;
   }
 
-  &_item {
-  }
-
   &_photo {
     overflow: hidden;
 
@@ -45,25 +42,17 @@
     position: relative;
     padding: (($link-block-height - $link-height) / 2) 0;
 
+    i {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
     a {
       display: block;
       padding-left: 47px;
       word-break: break-all;
-    }
-
-    &::before {
-      pointer-events: none;
-      content: "";
-      display: block;
-      width: 18px;
-      height: 18px;
-      position: absolute;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
     }
   }
 
@@ -76,8 +65,8 @@
       color: $color-basic;
     }
 
-    &::before {
-      background-image: url(../images/phone-icon-red-12x18.svg);
+    i {
+      left: 3px;
     }
   }
 
@@ -86,10 +75,6 @@
       font: normal normal 15px $font-main;
       line-height: $link-height;
       color: $color-red;
-    }
-
-    &::before {
-      background-image: url(../images/email-icon-red-17x14.svg);
     }
   }
 }
