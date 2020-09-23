@@ -69,6 +69,7 @@
         bottom: 0;
         transform: translateY(50%) translateY(-2px);
         max-width: calc(100% - 16px);
+        left: 8px;
 
         .slider-track {
           top: 50%;
@@ -77,6 +78,8 @@
           height: 4px;
           background: none;
           box-shadow: none;
+          width: calc(100% + 16px);
+          left: -8px;
 
           .slider-selection {
             box-shadow: none;
@@ -96,7 +99,7 @@
           box-shadow: none;
           background: $color-red;
           border-radius: 50%;
-          margin-left: 0;
+          margin-left: -8px;
 
           &::before {
             position: absolute;
