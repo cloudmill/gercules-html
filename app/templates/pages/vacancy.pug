@@ -36,17 +36,7 @@ mixin vacancy_item_dropdown()
 
 block content
   .content-row
-    .sidebar
-      .sidebar-menu
-        a(href="") О компании
-        a(href="") Новости
-        a(href="") Упаковка продукции
-        a(href="") Объекты
-        a(href="") Видеогалерея
-        a(href="") Сотрудники
-        a(href="").active Вакансии
-        a(href="") Социальная  ответственность
-        a(href="") Контакты
+    include ./about/sidebar
     .content.vacancy
       +breadcrumbs(['О компании',pageTitle])
       h1.page-title #{pageTitle}
