@@ -45,14 +45,14 @@
   &_photo {
     position: relative;
     width: 460px;
-    flex-grow: 1;
+    // flex-grow: 1;
     min-width: 300px;
     align-self: stretch;
     overflow: hidden;
     margin-right: 60px;
 
     img {
-      min-width: 100%;
+      // min-width: 100%;
       position: relative;
       left: 50%;
       transform: translateX(-50%);

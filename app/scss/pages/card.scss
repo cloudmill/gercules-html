@@ -147,6 +147,19 @@
       }
     }
   }
+
+  .fs-objects {
+    &_objects {
+      margin-top: 112px;
+    }
+
+    &_photo {
+      img {
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }
 }
 
 .page .content.card {
