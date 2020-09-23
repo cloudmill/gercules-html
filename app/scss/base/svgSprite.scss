@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("../images/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 11.2em 32.6em;
+    background-size: 11.2em 40.1em;
 }
 
 .no-svg .svg-icon:before {
@@ -35,8 +35,17 @@
 
 
 
-  .svg-icon.svg-expand:before {
+  .svg-icon.svg-down-gray:before {
       background-position: 0em -4.2em;
+      width: 1.8em;
+      height: 1.8em;
+  }
+
+
+
+
+  .svg-icon.svg-expand:before {
+      background-position: 0em -6em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -45,7 +54,7 @@
 
 
   .svg-icon.svg-expand-white:before {
-      background-position: 0em -5.8em;
+      background-position: 0em -7.6em;
       width: 1.6em;
       height: 1.7em;
   }
@@ -54,7 +63,7 @@
 
 
   .svg-icon.svg-fb:before {
-      background-position: 0em -7.5em;
+      background-position: 0em -9.3em;
       width: 1em;
       height: 2em;
   }
@@ -63,7 +72,7 @@
 
 
   .svg-icon.svg-flag:before {
-      background-position: 0em -9.5em;
+      background-position: 0em -11.3em;
       width: 1.2em;
       height: 1.6em;
   }
@@ -72,7 +81,7 @@
 
 
   .svg-icon.svg-inst:before {
-      background-position: 0em -11.1em;
+      background-position: 0em -12.9em;
       width: 1.5em;
       height: 1.5em;
   }
@@ -81,7 +90,7 @@
 
 
   .svg-icon.svg-link-white-arrow:before {
-      background-position: 0em -12.6em;
+      background-position: 0em -14.4em;
       width: 2.5em;
       height: 1.4em;
   }
@@ -90,7 +99,7 @@
 
 
   .svg-icon.svg-mail:before {
-      background-position: 0em -14em;
+      background-position: 0em -15.8em;
       width: 1.8em;
       height: 1.4em;
   }
@@ -99,7 +108,7 @@
 
 
   .svg-icon.svg-map-pin:before {
-      background-position: 0em -15.4em;
+      background-position: 0em -17.2em;
       width: 2.2em;
       height: 2.3em;
   }
@@ -108,7 +117,7 @@
 
 
   .svg-icon.svg-map-pin-big:before {
-      background-position: 0em -17.7em;
+      background-position: 0em -19.5em;
       width: 1.7em;
       height: 2.1em;
   }
@@ -116,8 +125,17 @@
 
 
 
+  .svg-icon.svg-pdf:before {
+      background-position: 0em -21.6em;
+      width: 6.4em;
+      height: 5.7em;
+  }
+
+
+
+
   .svg-icon.svg-person:before {
-      background-position: 0em -19.8em;
+      background-position: 0em -27.3em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -126,7 +144,7 @@
 
 
   .svg-icon.svg-phone:before {
-      background-position: 0em -21.4em;
+      background-position: 0em -28.9em;
       width: 1.2em;
       height: 1.8em;
   }
@@ -135,7 +153,7 @@
 
 
   .svg-icon.svg-plus-circle:before {
-      background-position: 0em -23.2em;
+      background-position: 0em -30.7em;
       width: 2.1em;
       height: 2.1em;
   }
@@ -144,7 +162,7 @@
 
 
   .svg-icon.svg-rating-red:before {
-      background-position: 0em -25.3em;
+      background-position: 0em -32.8em;
       width: 2.4em;
       height: 2.5em;
   }
@@ -153,7 +171,7 @@
 
 
   .svg-icon.svg-search:before {
-      background-position: 0em -27.8em;
+      background-position: 0em -35.3em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -162,7 +180,7 @@
 
 
   .svg-icon.svg-time:before {
-      background-position: 0em -29.6em;
+      background-position: 0em -37.1em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -171,7 +189,7 @@
 
 
   .svg-icon.svg-vk:before {
-      background-position: 0em -31.4em;
+      background-position: 0em -38.9em;
       width: 2.2em;
       height: 1.2em;
   }
