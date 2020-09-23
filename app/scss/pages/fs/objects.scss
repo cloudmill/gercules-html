@@ -45,19 +45,17 @@
   &_photo {
     position: relative;
     width: 460px;
-    // flex-grow: 1;
     min-width: 300px;
-    align-self: stretch;
     overflow: hidden;
     margin-right: 60px;
+    flex-shrink: 0;
 
     img {
-      // min-width: 100%;
+      display: block;
       position: relative;
       left: 50%;
       transform: translateX(-50%);
       display: block;
-      min-height: 100%;
     }
 
     &::before {
