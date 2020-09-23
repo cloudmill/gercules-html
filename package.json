@@ -44,6 +44,7 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "bootstrap-slider": "^11.0.2",
     "fancybox": "^3.0.1",
     "gsap": "^3.3.1",
     "inputmask": "^5.0.5",

@@ -40,12 +40,13 @@
 
       .field {
         &-row {
-          grid-template-columns: repeat(3, 200px);
+          grid-template-columns: repeat(3, minmax(185px, 200px));
           column-gap: 60px;
         }
 
         &-base {
           input {
+            height: 60px;
             background-color: white;
           }
         }
@@ -80,6 +81,69 @@
             }
           }
         }
+      }
+
+      h3 {
+        margin-top: 66px;
+        font-family: $font-third;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 144%;
+      }
+
+      &-row {
+        margin-top: 20px;
+        max-width: 720px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+          display: block;
+          font-size: 15px;
+          line-height: 250%;
+
+          i {
+            position: relative;
+            top: -3px;
+            margin-right: 28px;
+          }
+        }
+      }
+
+      &-result {
+        span {
+          display: inline-block;
+          font-family: $font-third;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 144%;
+          color: $color-red;
+
+          &:last-child {
+            position: relative;
+            margin-left: 40px;
+
+            &::before {
+              position: absolute;
+              bottom: 0;
+              left: -25px;
+              content: "";
+              display: block;
+              width: 1px;
+              height: 37px;
+              background-color: $color-red;
+              transform-origin: left bottom;
+              transform: rotate(15deg);
+            }
+          }
+        }
+      }
+
+      p {
+        margin-top: 87px;
+        font-size: 15px;
+        line-height: 150%;
       }
     }
   }
