@@ -1,19 +1,11 @@
 .tabs {
   &-menu {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
     position: relative;
     margin: 60px 0;
-    &::before {
-      content: "";
-      display: block;
-      height: 1px;
-      background-color: $color-border-second;
-      position: absolute;
-      bottom: 0;
-      left: -200%;
-      width: 500%;
-    }
+    margin-top: 30px;
     &_item {
       transition: $ease-main color;
       position: relative;
@@ -21,7 +13,7 @@
       font-weight: bold;
       font-size: 15px;
       line-height: 140%;
-      padding-bottom: 21px;
+      padding: 30px 0 20px 0;
       cursor: pointer;
       &::before {
         transition: $ease-main opacity;
@@ -36,7 +28,16 @@
         border-top: 4px solid #e41d2c;
         border-right: 2px solid transparent;
       }
-
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        background-color: $color-border-second;
+        position: absolute;
+        bottom: 0;
+        left: -100vw;
+        width: 300vw;
+      }
       &:not(:last-child) {
         margin-right: 40px;
       }

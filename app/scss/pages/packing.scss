@@ -90,7 +90,7 @@
     }
     &_img {
       flex-basis: 50%;
-      &-box{
+      &-box {
         position: relative;
         display: inline-block;
         min-width: 400px;
@@ -161,7 +161,7 @@
           }
         }
       }
-      &.two{
+      &.two {
         span {
           &:nth-child(1) {
             top: 12%;
@@ -237,6 +237,105 @@
             font-family: $font-third;
           }
         }
+      }
+    }
+  }
+  &-example {
+    margin-top: 120px;
+    &_title {
+      display: flex;
+      align-items: center;
+      h2 {
+        margin-bottom: 30px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 144%;
+        color: #262626;
+        font-family: $font-third;
+      }
+      span {
+        margin-left: 50px;
+        font-size: 20px;
+        line-height: 160%;
+      }
+    }
+    &_box {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      padding: 60px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+
+      .code {
+        font-family: "MachineC";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 310px;
+        line-height: 86%;
+        color: #e41d2c;
+        border-bottom: 1px solid #e41d2c;
+      }
+      .name {
+        margin-top: 15px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 130%;
+        color: #262626;
+        white-space: nowrap;
+        margin-bottom: 5px;
+      }
+      .discription {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 130%;
+        color: #262626;
+        span {
+          margin-bottom: 5px;
+          display: block;
+        }
+      }
+    }
+    &_code {
+      margin: 0 15px;
+      &.empty {
+        .code {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+  &-charset {
+    h2 {
+      font-family: $font-third;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 160%;
+      color: #262626;
+    }
+    &_list {
+      margin-top: 40px;
+    }
+    &_item {
+      padding: 20px 0;
+      display: flex;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 150%;
+      color: #262626;
+      margin-top: -1px;
+      border-top: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e5e5e5;
+      span {
+        width: 250px;
+      }
+      p {
+        font-weight: bold;
       }
     }
   }

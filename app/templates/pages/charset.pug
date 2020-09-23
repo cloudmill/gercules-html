@@ -1,0 +1,104 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Кодировка";
+
+
+block content
+  .content-row
+    include ./about/sidebar
+    .content.packing
+      +breadcrumbs(['О компании',pageTitle])
+      h1.page-title #{pageTitle}
+      p На упаковках присутствует буквенно–цифровой код, который поможет потребителям ориентироваться в ширикой линейке продуктов.
+      .packing-example
+        .packing-example_title
+          h2 Пример
+            span Самовыравнивающийся пол GF–177 [Гэ Эф]
+        .packing-example_box
+          .packing-example_code
+            .code G
+            .name Бренд
+            .discription Gerkules
+          .packing-example_code
+            .code F
+            .name Группа товаров
+            .discription F (floor) — пол
+          .packing-example_code.empty
+            .code –
+          .packing-example_code
+            .code 177
+            .name Уровень модификации смеси
+            .discription 
+              span #{"<"}40 — низкомодифицированные составы
+              span 40–80 — среднемодицицированные составы
+              span #{">"}80 — высокомодицицированные составы
+        .packing-charset
+          .tabs-menu
+            .tabs-menu_item.active Клеи
+            .tabs-menu_item Полы
+            .tabs-menu_item Шпатлевки
+            .tabs-menu_item Штукатурки
+            .tabs-menu_item Декоративные
+            .tabs-menu_item Простые смеси
+            .tabs-menu_item Кладочные смеси
+            .tabs-menu_item Затирки
+            .tabs-menu_item Гидроизоляция
+            .tabs-menu_item Грунтовки и пропитки
+          .tabs-list
+            mixin packing_charset_list(name)
+              h2 #{name} (Mortar) — 5(последняя цифра)
+              .packing-charset_list
+                .packing-charset_item
+                  span GM–15
+                  p Для ячеистого бетона
+                .packing-charset_item
+                  span GM–15z
+                  p Для ячеистого бетона (зимний)
+                .packing-charset_item
+                  span GM–35
+                  p Универсальный для кафеля и керамической плитки
+                .packing-charset_item
+                  span GM–45
+                  p Суперполимер для керамической плитки и керамогранита
+                .packing-charset_item
+                  span GM–55
+                  p Для керамогранита и напольной плитки
+                .packing-charset_item
+                  span GM–125
+                  p Для облицовки теплого пола
+                .packing-charset_item
+                  span GM–145
+                  p Аква–стоп
+                .packing-charset_item
+                  span GM–165
+                  p Для мозаики
+                .packing-charset_item
+                  span GM–175
+                  p Монтажный гипсовый для ПГП и ГКЛ
+                .packing-charset_item
+                  span GM–185
+                  p Для систем наружной теплоизоляции
+                .packing-charset_item
+                  span GM–215
+                  p Термостойкий
+            .tabs-item.active
+              +packing_charset_list('Клеи')
+            .tabs-item
+              +packing_charset_list('Полы')
+            .tabs-item
+              +packing_charset_list('Шпатлевки')
+            .tabs-item
+              +packing_charset_list('Штукатурки')
+            .tabs-item
+              +packing_charset_list('Декоративные')
+            .tabs-item
+              +packing_charset_list('Простые смеси')
+            .tabs-item
+              +packing_charset_list('Кладочные смеси')
+            .tabs-item
+              +packing_charset_list('Затирки')
+            .tabs-item
+              +packing_charset_list('Гидроизоляция')
+            .tabs-item
+              +packing_charset_list('Грунтовки и пропитки')
