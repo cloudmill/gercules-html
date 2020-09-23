@@ -1,0 +1,83 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Упаковка 2017";
+
+
+block content
+  .content-row
+    include ./about/sidebar
+    .content.packing
+      +breadcrumbs(['О компании',pageTitle])
+      h1.page-title #{pageTitle}
+      p С 2017 года компания «Геркулес–Сибирь» производит смену упаковки своей продукции на более современную.
+      h2 Теперь каждая группа товаров имеет собственную цветовую гамму и орнамент:
+      .packing-types
+        .packing-types_item
+          .packing-types_img
+            img(src="images/packing-type-1.png" alt="")
+          .packing-types_name  Клеи 
+            span — оттенки серого
+        .packong-types_item
+          .packing-types_img
+            img(src="images/packing-type-2.png" alt="")
+          .packing-types_name  Штукатурки 
+            span — красного и белого
+        .packong-types_item
+          .packing-types_img
+            img(src="images/packing-type-3.png" alt="")
+          .packing-types_name  Ровнители 
+            span — синего 
+        .packong-types_item
+          .packing-types_img
+            img(src="images/packing-type-4.png" alt="")
+          .packing-types_name  Шпитлевки 
+            span — белого и синего
+      .packing-size
+        p.left
+          b 7 
+          | рядов
+          br
+          b 8
+          | штук в ряду
+        img(src="images/packing-size.png" alt="")
+        p.right Размеры упаковки изменены для увеличения веса паллеты 
+          b до 1400 кг
+          | , а, следовательно, сокращения площади складирования на строительных площадках 
+          b на 17%
+      .packing-observe
+        .packing-observe_img
+          .packing-observe_img-box
+            img(src="images/packing-observe-1.png", alt="")
+            .packing-observe_points.one
+              each item in [1,2,3,4,5,6]
+                span #{item}
+        .packing-observe_content
+          h3 На лицевой стороне упаковки вы можете видеть
+          ul
+            li Соответствие характеристик продукта требованиям ГОСТа
+            li Описание ключевых преимуществ
+            li Буквенно–цифровой код продукта, 
+              a(href="") подробнее здесь
+            li QR–код, при сканировании которого на смартфоне в браузере открывается главная страница сайта 
+              a(href="") gerkules.ru
+            li Калькулятор расхода — получаемую площадь нанесения продукции с одной упаковки, при минимально допустимой толщине
+            li Пиктограммы с обозначением области применния продукта и его свойствами
+      .packing-observe
+        .packing-observe_img
+          .packing-observe_img-box
+            img(src="images/packing-observe-2.png", alt="")
+            .packing-observe_points.two
+              each item in [1,2,3,4,5,6]
+                span #{item}
+        .packing-observe_content
+          h3 Тыльная сторона упаковки содержит
+          ul
+            li Назначение
+            li Пиктограммы с обозначением области применния продукта и его свойствами
+            li Техническое описание на русском и казахском языках
+            li QR–код, при сканировании которого на смартфоне в браузере открывается главная страница сайта 
+              a(href="") gerkules.ru
+              | или видеоинструкция о применении материала
+            li Контактные данные производителя
+            li Рекомендуемую систему — надежную и долговечную послойную конструкцию с применением материалов Геркулес
