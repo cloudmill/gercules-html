@@ -4,12 +4,95 @@ block variables
   -var pageTitle='GP-21M Штукатурка цементная для машинного нанесения'
 
 block content
-  .content.card
+  .content.card.product
+    .product-row
+      .product-imgs
+        .swiper-container.product-imgs_main
+          .swiper-wrapper
+            .swiper-slide
+              img(src="images/product-list-1.png" alt="")
+            .swiper-slide
+              img(src="images/product-list-2.png" alt="")
+            .swiper-slide
+              img(src="images/product-list-2.png" alt="")
+            .swiper-slide
+              img(src="images/product-list-2.png" alt="")
+        .swiper-container.product-imgs_thumbs
+          .swiper-wrapper
+            .swiper-slide
+              img(src="images/product-list-1.png" alt="")
+            .swiper-slide
+              img(src="images/product-list-2.png" alt="")
+            .swiper-slide
+              img(src="images/product-list-2.png" alt="")
+            .swiper-slide
+              img(src="images/product-list-2.png" alt="")
+      .product-content
+        +breadcrumbs(['Каталог','Грунтовки',pageTitle])
+        .product-states
+          span Хит продаж
+          span.red Акция
+        .product-content_row
+          h1.page-title #{pageTitle}
+          a.product-content_calc(href="")
+            +icon('expand','svg')
+            | Калькулятор для ремонта
+        .product-content_row
+          div
+            h3 Преимущества
+            ul
+              li Универсальный наливной пол 2 в 1: стяжка и финишный ровнитель
+              li Можно ходить через 4 часа
+              li Влагостойкий. Подходит для тёплого пола
+              li Для ручного и машинного нанесения
+              li Толщина слоя от 2 до 100 мм.
+          div
+            h3 Цвет
+            .product-colors
+              .product-colors_item
+                .product-colors_info
+                  |Бирюзовый
+                  span №325
+    .tabs-menu
+      .tabs-menu_item.active Описание
+      .tabs-menu_item Применение
+      .tabs-menu_item Технические характиристики
+      .tabs-menu_item Логистические параметры
+      .tabs-menu_item Часто задаваемые вопросы
+      .tabs-menu_item Видео
+    .tabs-list
+      .tabs-item.active
+      .tabs-item
+      .tabs-item
+      .tabs-item
+    .product-list
+      h2 Сопутствующие товары
+      +sliderVerticalControls
+        button.product-list-next
+        button.product-list-prev
+      .swiper-container.product-list_slider
+        .swiper-wrapper
+          each item,key in [1,2,2,2]
+            .swiper-slide
+              .fs-productCard
+                .fs-productCard_info
+                  .fs-productCard_status
+                    span хит продаж
+                    span.active акция
+                    span новинка
+                  .fs-productCard_photo
+                    img(src=`../images/product-list-${item}.png`, alt="")
+                  a(href="#").fs-productCard_title GP-31 Штукатурка известково-цементная Геркулес, 25 кг
+                .fs-productCard_buttons
+                  a(href="#").fs-productCard_buttons-loc
+                    +icon("map-pin", "svg")
+                  a(href="#").fs-productCard_buttons-rate
+                    +icon("rating-red", "svg")
     .card-product_files
       .card-product_files-title
         h2 Сертификаты
         a(href="#") Скачать сертификаты
-          +icon("down", "svg")z
+          +icon("down", "svg")
       .card-product_files-list
         .card-product_files-item
           +icon("pdf", "svg")
