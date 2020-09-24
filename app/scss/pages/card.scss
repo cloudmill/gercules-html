@@ -338,13 +338,6 @@
         flex-direction: column;
         justify-content: space-between;
 
-        a {
-          margin-top: 30px;
-          display: flex;
-          flex-direction: column;
-          flex-grow: 1;
-        }
-
         h3 {
           flex-grow: 1;
           font-size: 15px;
@@ -367,6 +360,13 @@
             transform: translateY(-50%);
           }
         }
+      }
+
+      &-info {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
       }
 
       i {

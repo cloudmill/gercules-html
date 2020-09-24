@@ -183,6 +183,12 @@
     height: 100%;
     width: calc((100% - 20px) / 2);
 
+    &.swiper-button-disabled {
+      &::before {
+        opacity: 0.25;
+      }
+    }
+
     &::before {
       position: absolute;
       top: 50%;
@@ -192,6 +198,7 @@
       width: 16px;
       height: 16px;
       pointer-events: none;
+      transition: $ease-main;
     }
 
     &:first-child {
@@ -227,6 +234,12 @@
       width: 100%;
       height: 50%;
 
+      &.swiper-button-disabled {
+        &::before {
+          opacity: 0.25;
+        }
+      }
+
       &:first-child {
         border-bottom: 1px solid $color-border-second;
 
@@ -256,6 +269,7 @@
         margin-left: 5px;
         margin-top: 5px;
         pointer-events: none;
+        transition: $ease-main;
       }
     }
   }
