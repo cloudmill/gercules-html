@@ -56,10 +56,7 @@
 
     &-card {
       flex-basis: 50%;
-
-      &:not(:last-child) {
-        border-right: none;
-      }
+      
     }
   }
 
