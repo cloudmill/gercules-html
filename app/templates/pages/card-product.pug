@@ -5,40 +5,34 @@ block variables
 
 block content
   .content.card.product
-    .product-row
-      .product-imgs
-        .swiper-container.product-imgs_main
-          .swiper-wrapper
-            .swiper-slide
-              img(src="images/product-list-1.png" alt="")
-            .swiper-slide
-              img(src="images/product-list-2.png" alt="")
-            .swiper-slide
-              img(src="images/product-list-2.png" alt="")
-            .swiper-slide
-              img(src="images/product-list-2.png" alt="")
-        .swiper-container.product-imgs_thumbs
-          .swiper-wrapper
-            .swiper-slide
-              img(src="images/product-list-1.png" alt="")
-            .swiper-slide
-              img(src="images/product-list-2.png" alt="")
-            .swiper-slide
-              img(src="images/product-list-2.png" alt="")
-            .swiper-slide
-              img(src="images/product-list-2.png" alt="")
-      .product-content
+    .card-top
+      .card-top_photos
+        .card-top_photos-thumbs
+          .swiper-container
+            .swiper-wrapper
+              each item in [1, 2, 1, 3, 1]
+                .swiper-slide
+                  img(src=`../images/product-thumb-${item}.png`, alt="")
+        .card-top_photos-main
+          .swiper-container
+            .swiper-wrapper
+              - for (let i = 0; i < 5; i++)
+                .swiper-slide
+                  img(src=`../images/product-main.png`, alt="")
+              .swiper-slide
+      .card-top_info
         +breadcrumbs(['Каталог','Грунтовки',pageTitle])
-        .product-states
-          span Хит продаж
-          span.red Акция
-        .product-content_row
-          h1.page-title #{pageTitle}
-          a.product-content_calc(href="")
-            +icon('expand','svg')
-            | Калькулятор для ремонта
-        .product-content_row
-          div
+        .fs-productCard_status
+          span хит продаж
+          span.active акция
+        .card-product_info-row1
+          .card-top_info-col
+            h1 GP-21M Штукатурка цементная для машинного нанесения
+          .card-top_info-col
+            a(href="#") Калькулятор для ремонта
+              +icon("expand", "svg")
+        .card-product_info-row2
+          .card-top_info-col
             h3 Преимущества
             ul
               li Универсальный наливной пол 2 в 1: стяжка и финишный ровнитель
@@ -46,13 +40,77 @@ block content
               li Влагостойкий. Подходит для тёплого пола
               li Для ручного и машинного нанесения
               li Толщина слоя от 2 до 100 мм.
-          div
+            h3 Фасовка
+            .card-product_info-list
+              .card-product_info-list_item
+                h4 Канистра
+                span 2 кг и 3 кг
+              .card-product_info-list_item
+                h4 Ведро
+                span 15 кг
+          .card-top_info-col
             h3 Цвет
-            .product-colors
-              .product-colors_item
-                .product-colors_info
-                  |Бирюзовый
+            .card-product_info-list
+              // доп. класс для выделения цвета на белом фоне
+              .card-product_info-list_item.border-for-item(style = "background-color: #FFFFFF")
+                p
+                  span Бирюзовый
+                  br
                   span №325
+              .card-product_info-list_item(style = "background-color: #D1E0DC")
+                p
+                  span Бирюзовый
+                  br
+                  span №325
+              .card-product_info-list_item(style = "background-color: #535B62")
+                p
+                  span Бирюзовый
+                  br
+                  span №325
+              .card-product_info-list_item(style = "background-color: #ADB6AC")
+                p
+                  span Бирюзовый
+                  br
+                  span №325
+              .card-product_info-list_item(style = "background-color: #7CB7B3")
+                p
+                  span Бирюзовый
+                  br
+                  span №325
+              .card-product_info-list_item(style = "background-color: #FDE8CE")
+                p
+                  span Бирюзовый
+                  br
+                  span №325
+              .card-product_info-list_item(style = "background-color: #ADB6AC")
+                p
+                  span Бирюзовый
+                  br
+                  span №325
+              .card-product_info-list_item(style = "background-color: #DABD96")
+                p
+                  span Бирюзовый
+                  br
+                  span №325
+              .card-product_info-list_item(style = "background-color: #EED4B4")
+                p
+                  span Бирюзовый
+                  br
+                  span №325
+              .card-product_info-list_item(style = "background-color: #FDE8CE")
+                p
+                  span Бирюзовый
+                  br
+                  span №325
+            h3 Фактура
+            .card-product_info-list
+              each item in [1, 2, 3, 1, 2]
+                .card-product_info-list_item
+                  img(src=`../images/product-texture-${item}.jpg`, alt="")
+                  p
+                    span Бирюзовый
+                    br
+                    span №325
     .tabs-menu
       .tabs-menu_item.active Описание
       .tabs-menu_item Применение

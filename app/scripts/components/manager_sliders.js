@@ -19,6 +19,30 @@ export default class Managers_sliders {
     this.product_detail_list();
     this.fs_bigSlider();
     this.product_passport();
+    this.product_photos();
+  }
+  product_photos() {
+    const photosCount = $(".card-top_photos-main .swiper-slide").length;
+    this.sliders["product_photos"] = new Swiper(
+      ".card-top_photos-main .swiper-container",
+      {
+        speed: 500,
+        spaceBetween: 60,
+        allowTouchMove: false,
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+
+        thumbs: {
+          swiper: {
+            el: $(".card-top_photos-thumbs .swiper-container"),
+            direction: "vertical",
+            spaceBetween: 20,
+            slidesPerView: photosCount,
+            allowTouchMove: false,
+          }
+        }
+      }
+    );
   }
   product_passport() {
     this.sliders["product_passport"] = new Swiper(
