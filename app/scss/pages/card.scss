@@ -377,7 +377,8 @@
     .tabs-item {
       display: none;
 
-      &:nth-child(1) {
+      &:nth-child(1),
+      &:nth-child(2) {
         justify-content: space-between;
 
         p,
@@ -398,21 +399,36 @@
           font-size: 15px;
           line-height: 150%;
 
-          &:not(:first-child) {
-            margin-top: 10px;
+          &+p {
+            margin-top: 40px;
+            font-size: 13px;
+            line-height: 150%;
+          }
+
+          span {
+            font-style: italic;
+            color: $color-red;
           }
         }
 
         h3 {
-          margin-top: 40px;
           font-weight: bold;
           font-size: 18px;
           line-height: 130%;
+
+          &:not(:first-child) {
+            margin-top: 40px;
+          }
+
+          &+p {
+            margin-top: 10px;
+          }
         }
       }
 
       &.active {
-        &:nth-child(1) {
+        &:nth-child(1),
+        &:nth-child(2) {
           display: flex;
         }
       }
