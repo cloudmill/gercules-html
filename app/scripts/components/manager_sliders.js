@@ -2,7 +2,7 @@ import $ from "jquery";
 import Swiper from "swiper";
 
 const baseSettings = {
-  loop: true,
+  // loop: true,
   allowTouchMove: false,
   speed: 500,
 };
@@ -99,7 +99,7 @@ export default class Managers_sliders {
         ...baseSettings,
         slidesPerView: 4,
         spaceBetween: 40,
-        slidesPerGroup: 3,
+        slidesPerGroup: 1,
         autoHeight: true,
         navigation: {
           nextEl: $(".product-list-next"),
