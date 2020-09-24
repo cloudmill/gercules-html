@@ -373,6 +373,59 @@
         display: block;
       }
     }
+
+    .tabs-item {
+      display: none;
+
+      &:nth-child(1) {
+        justify-content: space-between;
+
+        p,
+        h3 {
+          max-width: 700px;
+        }
+
+        h2 {
+          margin: 0;
+        }
+
+        .tabs-item_col {
+          margin-left: 60px;
+          width: 62%;
+        }
+
+        p {
+          font-size: 15px;
+          line-height: 150%;
+
+          &:not(:first-child) {
+            margin-top: 10px;
+          }
+        }
+
+        h3 {
+          margin-top: 40px;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 130%;
+        }
+      }
+
+      &.active {
+        &:nth-child(1) {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .tabs-menu {
+    margin-top: 120px;
+    margin-bottom: 80px;
+  }
+
+  .product-list {
+    margin-top: 120px;
   }
 
   .fs-objects {
