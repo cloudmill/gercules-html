@@ -1,0 +1,47 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Центральный офис";
+
+block content
+  .content-row
+    include ./contacts/sidebar
+    .content.contacts
+      +breadcrumbs(['Контакты',pageTitle])
+      h1.page-title #{pageTitle}
+      h2 Завод «Геркулес-Сибирь»
+      .contacts-block
+        .contacts-block_item.col-2
+          h3 Адрес
+          p 630025, г. Новосибирск, ул. Электровозная-1
+        .contacts-block_item
+          h3 Режим работы 
+            span ( по Новосибирскому времени )
+          p Понедельник — Пятница: с 08.30 до 17.30
+      .contacts-block
+        .contacts-block_item
+          h3 Позвонить нам
+          p Горячая линия
+          a(href="tel:8 (800) 250-30-10") 8 (800) 250-30-10
+        .contacts-block_item
+          p Многоканальный
+          a(href="tel:8 (383) 338-31-31") 8 (383) 338-31-31
+        .contacts-block_item
+          p Служба доверия
+          a(href="tel:+7 (913) 206-39-451") +7 (913) 206-39-451
+      .contacts-block
+        .contacts-block_item
+          h3 Написать нам
+          p По общим вопросам
+          a(href="mailto:info@gerkules.ru").color info@gerkules.ru
+        .contacts-block_item
+          p Служба доверия
+          a(href="mailto:sb@gerkules.ru").color sb@gerkules.ru
+        .contacts-block_item
+          p По вопросам юридического характера, а также замечания и предложения по деятельности ООО «Геркулес-Сибирь»
+          a(href="mailto:yurist@gerkules.ru").color yurist@gerkules.ru
+
+
+
+
+
