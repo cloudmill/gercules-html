@@ -4,113 +4,122 @@ block variables
   -var pageTitle='GP-21M Штукатурка цементная для машинного нанесения'
 
 block content
-  .content.card.product
+  .content.card
     .card-top
-      .card-top_photos
-        .card-top_photos-thumbs
+      .card-sliders
+        .card-sliders_thumbs
           .swiper-container
             .swiper-wrapper
               each item in [1, 2, 1, 3, 1]
                 .swiper-slide
                   img(src=`../images/product-thumb-${item}.png`, alt="")
-        .card-top_photos-main
+        .card-sliders_photos
           .swiper-container
             .swiper-wrapper
               - for (let i = 0; i < 5; i++)
                 .swiper-slide
                   img(src=`../images/product-main.png`, alt="")
-              .swiper-slide
-      .card-top_info
+      .card-info
         +breadcrumbs(['Каталог','Грунтовки',pageTitle])
         .fs-productCard_status
           span хит продаж
           span.active акция
-        .card-product_info-row1
-          .card-top_info-col
+        .card-top_row
+          .card-top_col
             h1 GP-21M Штукатурка цементная для машинного нанесения
-          .card-top_info-col
-            a(href="#") Калькулятор для ремонта
+          .card-top_col.content-bottom
+            a(href="#").calculator-link Калькулятор для ремонта
               +icon("expand", "svg")
-        .card-product_info-row2
-          .card-top_info-col
-            h3 Преимущества
+        .card-top_row
+          .card-top_col
+            h2 Преимущества
             ul
               li Универсальный наливной пол 2 в 1: стяжка и финишный ровнитель
               li Можно ходить через 4 часа
               li Влагостойкий. Подходит для тёплого пола
               li Для ручного и машинного нанесения
               li Толщина слоя от 2 до 100 мм.
-            h3 Фасовка
-            .card-product_info-list
-              .card-product_info-list_item
-                h4 Канистра
-                span 2 кг и 3 кг
-              .card-product_info-list_item
-                h4 Ведро
-                span 15 кг
-          .card-top_info-col
-            h3 Цвет
-            .card-product_info-list
-              // доп. класс для выделения цвета на белом фоне
-              .card-product_info-list_item.border-for-item(style = "background-color: #FFFFFF")
-                p
-                  span Бирюзовый
+            h2 Фасовка
+            .card-packing
+              .card-packing_item
+                h3 Канистра
+                p 2 кг и 3 кг
+              .card-packing_item
+                h3 Ведро
+                p 15 кг
+          .card-top_col.content-padding
+            h2 Цвет
+            .card-colors
+              .card-colors_item.content-border(style="background-color: #FFFFFF")
+                p Бирюзовый
                   br
                   span №325
-              .card-product_info-list_item(style = "background-color: #D1E0DC")
-                p
-                  span Бирюзовый
+              .card-colors_item(style="background-color: #D1E0DC")
+                p Бирюзовый
                   br
                   span №325
-              .card-product_info-list_item(style = "background-color: #535B62")
-                p
-                  span Бирюзовый
+              .card-colors_item(style="background-color: #535B62")
+                p Бирюзовый
                   br
                   span №325
-              .card-product_info-list_item(style = "background-color: #ADB6AC")
-                p
-                  span Бирюзовый
+              .card-colors_item(style="background-color: #ADB6AC")
+                p Бирюзовый
                   br
                   span №325
-              .card-product_info-list_item(style = "background-color: #7CB7B3")
-                p
-                  span Бирюзовый
+              .card-colors_item(style="background-color: #7CB7B3")
+                p Бирюзовый
                   br
                   span №325
-              .card-product_info-list_item(style = "background-color: #FDE8CE")
-                p
-                  span Бирюзовый
+              .card-colors_item(style="background-color: #FDE8CE")
+                p Бирюзовый
                   br
                   span №325
-              .card-product_info-list_item(style = "background-color: #ADB6AC")
-                p
-                  span Бирюзовый
+              .card-colors_item(style="background-color: #ADB6AC")
+                p Бирюзовый
                   br
                   span №325
-              .card-product_info-list_item(style = "background-color: #DABD96")
-                p
-                  span Бирюзовый
+              .card-colors_item(style="background-color: #DABD96")
+                p Бирюзовый
                   br
                   span №325
-              .card-product_info-list_item(style = "background-color: #EED4B4")
-                p
-                  span Бирюзовый
+              .card-colors_item(style="background-color: #EED4B4")
+                p Бирюзовый
                   br
                   span №325
-              .card-product_info-list_item(style = "background-color: #FDE8CE")
-                p
-                  span Бирюзовый
+              .card-colors_item(style="background-color: #FDE8CE")
+                p Бирюзовый
                   br
                   span №325
-            h3 Фактура
-            .card-product_info-list
+            h2 Фактура
+            .card-colors
               each item in [1, 2, 3, 1, 2]
-                .card-product_info-list_item
+                .card-colors_item
                   img(src=`../images/product-texture-${item}.jpg`, alt="")
-                  p
-                    span Бирюзовый
+                  p Бирюзовый
                     br
                     span №325
+        .card-links
+          .card-links_item.comparison-link
+            a(href="#")
+              +icon("rating-red", "svg")
+              span В сравнение
+          .card-links_item.buy-link
+            a(href="#")
+              +icon("map-pin", "svg")
+              span Где купить?
+          .card-links_item
+            a(href="#")
+              +icon("question", "svg")
+              span Задать вопрос
+          .card-links_item
+            a(href="#")
+              +icon("calculator", "svg")
+              span Калькулятор расхода
+        a(href="#").card-info_file.content-margin
+          +icon("pdf", "svg")
+          h3 Описание «Штукатурка цементная»
+          p pdf, 15 mb
+            +icon("down-gray", "svg")
     .tabs-menu
       .tabs-menu_item.active Описание
       .tabs-menu_item Применение
@@ -366,3 +375,4 @@ block content
       | с лабораториями наших стратегических партнеров – мировыми лидерами в области строительной химии –
       br
       | компаниями BAYER, WACKER, Bang &amp; Bonsomer.
+

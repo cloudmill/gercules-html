@@ -431,12 +431,12 @@
         h2 {
           margin: 0;
         }
-        
+
         .tabs-item_line {
           p {
             font-size: 15px;
             line-height: 150%;
-  
+
             &:nth-child(even) {
               font-weight: bold;
               text-align: right;
@@ -520,311 +520,386 @@
   &-top {
     position: relative;
     left: -60px;
+    width: calc(100% + 60px + 80px);
     display: flex;
     align-items: flex-start;
-    width: calc(100% + 60px + 80px);
     border-bottom: 1px solid $color-border-second;
 
-    &_photos {
-      padding: 70px 0;
-      width: 35%;
+    &_row {
+      margin-top: 45px;
       display: flex;
+      align-items: flex-start;
 
-      &-thumbs {
-        align-self: stretch;
-        display: flex;
-        align-items: center;
+      &+.card-top_row {
+        margin-top: 60px;
+      }
+    }
 
-        .swiper {
-          &-container {
-            margin-bottom: -20px; // для последнего swiper-slide с margin-bottom: 20px
-          }
-
-          &-slide {
-            position: relative;
-            padding-left: 20px;
-            width: 70px;
-            max-height: 55px;
-            min-height: 55px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-
-            img {
-              display: block;
-              max-width: 100%;
-              max-height: 100%;
-            }
-
-            &::before {
-              opacity: 0;
-              position: absolute;
-              top: 50%;
-              left: 0;
-              transform: translateY(-50%);
-              content: "";
-              display: block;
-              height: 45px;
-              border-left: 4px solid $color-red;
-              border-top: 1px solid transparent;
-              transition: $ease-main;
-            }
-
-            &-thumb-active::before {
-              opacity: 1;
-            }
-          }
-        }
+    &_col {
+      &:first-child {
+        flex-basis: 65%;
       }
 
-      &-main {
-        padding: 0 40px;
-        max-width: calc(100% - 70px); //чтобы не растягивал swiper
-        flex-grow: 1;
+      &:last-child {
+        flex-basis: 35%;
+        margin-left: 60px;
+      }
+
+      &.content-bottom {
         align-self: stretch;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
+      }
 
-        .swiper {
-          &-wrapper {
-            align-items: center;
+      &.content-padding {
+        padding-top: 80px;
+      }
+    }
+  }
+
+  &-sliders {
+    padding: 70px 0;
+    width: 35%;
+    display: flex;
+
+    &_thumbs {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+
+      .swiper {
+        &-container {
+          margin-bottom: -20px; // для last slide
+        }
+
+        &-slide {
+          position: relative;
+          padding-left: 20px;
+          width: 70px;
+          max-height: 55px;
+          min-height: 55px;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+
+          img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
           }
 
-          &-slide {
-            display: flex;
-            justify-content: center;
+          &::before {
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            content: "";
+            display: block;
+            height: 45px;
+            border-left: 4px solid $color-red;
+            border-top: 1px solid transparent;
+            transition: $ease-main;
+          }
 
-            img {
-              display: block;
-              max-width: 100%;
-              max-height: 100%;
-            }
+          &-thumb-active::before {
+            opacity: 1;
           }
         }
       }
     }
 
-    &_info {
-      padding: 60px 80px 40px 40px;
-      width: 65%;
+    &_photos {
+      padding: 0 40px;
+      flex-grow: 1;
+      max-width: calc(100% - 70px); // чтобы swiper самопроизвольно не растягивался
       align-self: stretch;
-      border-left: 1px solid $color-border-second;
+      display: flex;
+      align-items: center;
 
-      .fs-productCard_status {
-        margin-top: 50px;
-      }
-
-      h1 {
-        font-family: $font-third;
-        font-weight: bold;
-        font-size: 28px;
-        line-height: 144%;
-      }
-
-      &-col {
-        &:first-child {
-          flex-grow: 1;
+      .swiper {
+        &-wrapper {
+          align-items: center; // без autoHeight высота swiper slide по контенту - центрируем slide во wrapper'e
         }
 
-        &:last-child {
-          flex-basis: 35%;
-          flex-shrink: 0;
-          margin-left: 60px;
-        }
-      }
-
-      .card-product_info {
-        &-row1 {
-          margin-top: 30px;
+        &-slide {
           display: flex;
-          align-items: flex-end;
+          justify-content: center;
 
-          .card-top_info-col {
-            &:first-child {
-              align-self: stretch;
-            }
-
-            a {
-              position: relative;
-              padding-left: 26px;
-              display: block;
-              font-size: 14px;
-              line-height: 16px;
-
-              i {
-                position: absolute;
-                top: 0;
-                left: 0;
-              }
-            }
+          img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
           }
-        }
-
-        &-row2 {
-          margin-top: 66px;
-          display: flex;
-          align-items: flex-start;
-
-          h3 {
-            font-weight: bold;
-            font-size: 18px;
-            line-height: 130%;
-          }
-
-          ul {
-            margin-top: 25px;
-
-            li {
-              position: relative;
-              padding-left: 32px;
-              font-size: 15px;
-              line-height: 150%;
-
-              &:not(:first-child) {
-                margin-top: 20px;
-              }
-
-              &::before {
-                position: absolute;
-                top: 9px;
-                left: 0;
-                content: "";
-                display: block;
-                width: 20px;
-                border-top: 2px solid $color-red;
-                border-right: 1px solid transparent;
-              }
-            }
-          }
-
-          .card-top_info-col {
-            &:first-child {
-              h3:last-of-type {
-                margin-top: 55px;
-              }
-
-              .card-product_info-list {
-                margin: -10px -20px;
-                margin-top: 20px;
-
-                &_item {
-                  margin: 10px 20px;
-                }
-
-                h4 {
-                  font-size: 12px;
-                  line-height: 14px;
-                  color: #6C6C6C;
-                }
-
-                span {
-                  display: block;
-                  margin-top: 6px;
-                  font-size: 15px;
-                  line-height: 150%;
-                }
-              }
-            }
-
-            &:last-child {
-              padding-top: 80px;
-
-              h3:last-of-type {
-                margin-top: 60px;
-              }
-
-              .card-product_info-list {
-                margin: -5px;
-                margin-top: 25px;
-
-                &_item {
-                  position: relative;
-                  margin: 5px;
-                  width: 30px;
-                  height: 30px;
-
-                  img {
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                  }
-
-                  p {
-                    opacity: 0;
-                    position: absolute;
-                    top: 0;
-                    left: 50%;
-                    transform: translate(-50%, calc(-100% - 12px));
-                    opacity: 0;
-                    padding: 10px 15px;
-                    background-color: white;
-                    border: 1px solid $color-border-second;
-                    pointer-events: none;
-                    transition: $ease-main;
-
-                    span {
-                      font-size: 12px;
-                      line-height: 130%;
-
-                      &:last-child {
-                        color: $color-gray;
-                      }
-                    }
-
-                    &::before {
-                      position: absolute;
-                      bottom: -4px;
-                      left: 50%;
-                      transform: translateX(-50%) rotate(45deg);
-                      content: "";
-                      display: block;
-                      width: 8px;
-                      height: 8px;
-                      background-color: white;
-                      border: 1px solid $color-border-second;
-                      border-top-color: transparent;
-                      border-left-color: transparent;
-                    }
-                  }
-
-                  &::before {
-                    opacity: 0;
-                    position: absolute;
-                    content: "";
-                    display: block;
-                    width: 38px;
-                    height: 38px;
-                    border: 1px solid $color-border-second;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    transition: $ease-main;
-                  }
-
-                  &.border-for-item {
-                    border: 1px solid $color-border-second;
-                  }
-
-                  &:hover {
-                    p {
-                      opacity: 1;
-                    }
-
-                    &::before {
-                      opacity: 1;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        &-list {
-          display: flex;
-          flex-wrap: wrap;
         }
       }
+    }
+  }
+
+  &-info {
+    padding: 60px 80px 40px 40px;
+    width: 65%;
+    align-self: stretch; // чтобы height 100% всегда для border-left
+    border-left: 1px solid $color-border-second;
+
+    .fs-productCard_status {
+      margin-top: 50px;
+
+      &+.card-top_row {
+        margin-top: 30px;
+      }
+    }
+
+    h1 {
+      font-family: $font-third;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 144%;
+    }
+
+    .calculator-link {
+      position: relative;
+      padding-left: 26px;
+      display: block;
+      font-size: 14px;
+      line-height: 16px;
+
+      i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+      }
+    }
+
+    h2 {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 130%;
+
+      &:not(:first-child) {
+        margin-top: 60px;
+      }
+    }
+
+    ul {
+      margin-top: 25px;
+
+      li {
+        position: relative;
+        padding-left: 32px;
+        font-size: 15px;
+        line-height: 150%;
+
+        &:not(:first-child) {
+          margin-top: 20px;
+        }
+
+        &::before {
+          position: absolute;
+          top: 9px;
+          left: 0;
+          content: "";
+          display: block;
+          width: 20px;
+          border-top: 2px solid $color-red;
+          border-right: 1px solid transparent;
+        }
+      }
+    }
+
+    &_file {
+      margin-top: 60px;
+      position: relative;
+      padding-left: 75px;
+      display: inline-block;
+
+      &>i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        font-size: 8px;
+      }
+
+      h3 {
+        font-size: 15px;
+        line-height: 150%;
+      }
+
+      p {
+        position: relative;
+        padding-left: 28px;
+        font-size: 12px;
+        line-height: 200%;
+        color: $color-gray;
+
+        i {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          display: block;
+        }
+      }
+
+      &.content-margin {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &-packing {
+    margin: -10px -20px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &_item {
+      margin: 10px 20px;
+    }
+
+    h3 {
+      font-size: 12px;
+      line-height: 14px;
+      color: $color-gray;
+    }
+
+    p {
+      margin-top: 6px;
+      font-size: 15px;
+      line-height: 150%;
+    }
+  }
+
+  &-colors {
+    margin: -5px;
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &_item {
+      position: relative;
+      margin: 5px;
+      width: 30px;
+      height: 30px;
+
+      &.content-border {
+        border: 1px solid $color-border-second;
+      }
+
+      &::before {
+        opacity: 0;
+        position: absolute;
+        content: "";
+        display: block;
+        width: 38px;
+        height: 38px;
+        border: 1px solid $color-border-second;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        transition: $ease-main;
+      }
+
+      &:hover {
+
+        p,
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    p {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, calc(-100% + -12px));
+      padding: 10px 15px;
+      background-color: white;
+      border: 1px solid $color-border-second;
+      font-size: 12px;
+      line-height: 130%;
+      pointer-events: none;
+      transition: $ease-main;
+
+      span {
+        color: $color-gray;
+      }
+
+      &::before {
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        background-color: white;
+        border: 1px solid $color-border-second;
+        border-top-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+  }
+
+  &-links {
+    margin-top: 1px;
+    margin-left: 1px;
+    margin-top: 61px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &_item {
+      margin-top: -1px;
+      margin-left: -1px;
+      padding: 0 30px;
+      flex-grow: 1;
+      // flex-basis: 25%;
+      max-width: 275px;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $color-border-second;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    i {
+      display: block;
+    }
+
+    span {
+      display: block;
+      margin-left: 15px;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 150%;
+      white-space: nowrap;
+    }
+
+    &.comparison-link i {
+      position: relative;
+      bottom: 2px;
+      font-size: 7.5px;
+    }
+
+    &.buy-link i {
+      font-size: 9px;
     }
   }
 }

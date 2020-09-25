@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("../images/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 11.2em 40.1em;
+    background-size: 11.2em 44.8em;
 }
 
 .no-svg .svg-icon:before {
@@ -17,8 +17,17 @@
 
 
 
-  .svg-icon.svg-cm_logo:before {
+  .svg-icon.svg-calculator:before {
       background-position: 0em 0em;
+      width: 2.3em;
+      height: 2.5em;
+  }
+
+
+
+
+  .svg-icon.svg-cm_logo:before {
+      background-position: 0em -2.5em;
       width: 11.2em;
       height: 2.4em;
   }
@@ -27,7 +36,7 @@
 
 
   .svg-icon.svg-down:before {
-      background-position: 0em -2.4em;
+      background-position: 0em -4.9em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -36,7 +45,7 @@
 
 
   .svg-icon.svg-down-gray:before {
-      background-position: 0em -4.2em;
+      background-position: 0em -6.7em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -45,7 +54,7 @@
 
 
   .svg-icon.svg-expand:before {
-      background-position: 0em -6em;
+      background-position: 0em -8.5em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -54,7 +63,7 @@
 
 
   .svg-icon.svg-expand-white:before {
-      background-position: 0em -7.6em;
+      background-position: 0em -10.1em;
       width: 1.6em;
       height: 1.7em;
   }
@@ -63,7 +72,7 @@
 
 
   .svg-icon.svg-fb:before {
-      background-position: 0em -9.3em;
+      background-position: 0em -11.8em;
       width: 1em;
       height: 2em;
   }
@@ -72,7 +81,7 @@
 
 
   .svg-icon.svg-flag:before {
-      background-position: 0em -11.3em;
+      background-position: 0em -13.8em;
       width: 1.2em;
       height: 1.6em;
   }
@@ -81,7 +90,7 @@
 
 
   .svg-icon.svg-inst:before {
-      background-position: 0em -12.9em;
+      background-position: 0em -15.4em;
       width: 1.5em;
       height: 1.5em;
   }
@@ -90,7 +99,7 @@
 
 
   .svg-icon.svg-link-white-arrow:before {
-      background-position: 0em -14.4em;
+      background-position: 0em -16.9em;
       width: 2.5em;
       height: 1.4em;
   }
@@ -99,7 +108,7 @@
 
 
   .svg-icon.svg-mail:before {
-      background-position: 0em -15.8em;
+      background-position: 0em -18.3em;
       width: 1.8em;
       height: 1.4em;
   }
@@ -108,7 +117,7 @@
 
 
   .svg-icon.svg-map-pin:before {
-      background-position: 0em -17.2em;
+      background-position: 0em -19.7em;
       width: 2.2em;
       height: 2.3em;
   }
@@ -117,7 +126,7 @@
 
 
   .svg-icon.svg-map-pin-big:before {
-      background-position: 0em -19.5em;
+      background-position: 0em -22em;
       width: 1.7em;
       height: 2.1em;
   }
@@ -126,7 +135,7 @@
 
 
   .svg-icon.svg-pdf:before {
-      background-position: 0em -21.6em;
+      background-position: 0em -24.1em;
       width: 6.4em;
       height: 5.7em;
   }
@@ -135,7 +144,7 @@
 
 
   .svg-icon.svg-person:before {
-      background-position: 0em -27.3em;
+      background-position: 0em -29.8em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -144,7 +153,7 @@
 
 
   .svg-icon.svg-phone:before {
-      background-position: 0em -28.9em;
+      background-position: 0em -31.4em;
       width: 1.2em;
       height: 1.8em;
   }
@@ -153,7 +162,7 @@
 
 
   .svg-icon.svg-plus-circle:before {
-      background-position: 0em -30.7em;
+      background-position: 0em -33.2em;
       width: 2.1em;
       height: 2.1em;
   }
@@ -161,8 +170,17 @@
 
 
 
+  .svg-icon.svg-question:before {
+      background-position: 0em -35.3em;
+      width: 2.2em;
+      height: 2.2em;
+  }
+
+
+
+
   .svg-icon.svg-rating-red:before {
-      background-position: 0em -32.8em;
+      background-position: 0em -37.5em;
       width: 2.4em;
       height: 2.5em;
   }
@@ -171,7 +189,7 @@
 
 
   .svg-icon.svg-search:before {
-      background-position: 0em -35.3em;
+      background-position: 0em -40em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -180,7 +198,7 @@
 
 
   .svg-icon.svg-time:before {
-      background-position: 0em -37.1em;
+      background-position: 0em -41.8em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -189,7 +207,7 @@
 
 
   .svg-icon.svg-vk:before {
-      background-position: 0em -38.9em;
+      background-position: 0em -43.6em;
       width: 2.2em;
       height: 1.2em;
   }

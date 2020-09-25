@@ -19,27 +19,26 @@ export default class Managers_sliders {
     this.product_detail_list();
     this.fs_bigSlider();
     this.product_passport();
-    this.product_photos();
+    this.card_sliders();
     this.eventsSlider();
     this.speakerSlider();
   }
-  product_photos() {
-    const photosCount = $(".card-top_photos-main .swiper-slide").length;
-    this.sliders["product_photos"] = new Swiper(
-      ".card-top_photos-main .swiper-container",
+  card_sliders() {
+    const photos_count = $(".card-sliders_photos .swiper-slide").length;
+    this.sliders["card_sliders"] = new Swiper(
+      ".card-sliders_photos .swiper-container",
       {
+        loop: true,
         speed: 500,
         spaceBetween: 60,
-        allowTouchMove: false,
         slidesPerView: 1,
         slidesPerGroup: 1,
-
         thumbs: {
           swiper: {
-            el: $(".card-top_photos-thumbs .swiper-container"),
+            el: $(".card-sliders_thumbs .swiper-container"),
             direction: "vertical",
             spaceBetween: 20,
-            slidesPerView: photosCount,
+            slidesPerView: photos_count,
             allowTouchMove: false,
           }
         }
