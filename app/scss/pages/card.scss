@@ -374,6 +374,7 @@
       }
     }
 
+    /*
     .tabs-item {
       display: none;
 
@@ -495,16 +496,13 @@
 
         &:nth-child(1),
         &:nth-child(2),
-        &:nth-child(3) {
+        &:nth-child(3),
+        &:nth-child(4) {
           display: flex;
         }
       }
     }
-  }
-
-  .tabs-menu {
-    margin-top: 120px;
-    margin-bottom: 80px;
+    */
   }
 
   .product-list {
@@ -516,6 +514,8 @@
       margin-top: 112px;
     }
   }
+
+  // рефакторинг card-top
 
   &-top {
     position: relative;
@@ -900,6 +900,112 @@
 
     &.buy-link i {
       font-size: 9px;
+    }
+  }
+
+  // новый код вкладок
+
+  .tabs {
+    &-menu {
+      margin-top: 120px;
+    }
+
+    &-list {
+      margin-top: 80px;
+    }
+
+    &-item {
+      display: none;
+
+      &.text {
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .tabs-item_col {
+          margin-left: 60px;
+          flex-basis: 62%;
+        }
+
+        p,
+        h3 {
+          max-width: 700px;
+        }
+
+        h3 {
+          margin-top: 40px;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 130%;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          &+p {
+            margin-top: 10px;
+          }
+
+          &+.tabs-item_line {
+            margin-top: 40px;
+          }
+        }
+
+        p {
+          margin-top: 40px;
+          font-size: 15px;
+          line-height: 150%;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          .content-italic-red {
+            font-style: italic;
+            color: $color-red;
+          }
+
+          &.content-small {
+            font-size: 13px;
+          }
+
+          &.content-margin-small {
+            margin-top: 20px;
+          }
+        }
+
+        .tabs-item_line {
+          margin-top: 30px;
+          padding-bottom: 20px;
+          display: grid;
+          grid-template-columns: 1fr 25%;
+          row-gap: 20px;
+          column-gap: 60px;
+          border-bottom: 1px solid $color-border-second;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          p,
+          h3 {
+            margin: 0;
+          }
+
+          h3 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+          }
+
+          p:nth-of-type(even) {
+            font-weight: bold;
+            text-align: right;
+          }
+        }
+      }
+
+      &.active {
+        display: flex;
+      }
     }
   }
 }
