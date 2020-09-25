@@ -1,4 +1,10 @@
 .eventSpeaker {
+  position: relative;
+  .sliderControls{
+    position: absolute;
+    top: -10px;
+    right: 0;
+  }
   h2 {
     font: normal bold 28px/40px $font-main;
     color: $color-basic;
@@ -7,22 +13,18 @@
   &-row {
     position: relative;
     margin-top: 40px;
-    height: 406px;
     display: flex;
-
     &::before {
       content: "";
       display: block;
-      width: 1006px;
-      height: 366px;
+      width: calc(100% - 150px);
+      height: 100%;
       position: absolute;
       z-index: -1;
-      bottom: 0;
+      top: 40px;
       left: 106px;
-      background-image: url(../images/gray-rect-1006x366.svg);
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
+      background-color: #f8f8f8;
+      transform: skewX(-15deg);
     }
   }
 
@@ -46,8 +48,8 @@
     margin-left: 60px;
     flex-grow: 1;
     padding-top: 100px;
-    padding-bottom: 60px;
-
+    padding-bottom: 20px;
+    padding-right: 90px;
     h3 {
       font: normal bold 20px/32px $font-third;
       color: $color-basic;

@@ -27,10 +27,13 @@ mixin client_service_card
     span Клиентский сервис
     a(href="tel: 8 913 001 75 01") +7 913 001-75-01
 
-mixin hashTags(tags)
+mixin hashTags(tags,isLink = true)
   .hashTags
     each tag in tags
-      a(href=tag[1])="#" + tag[0]
+      if(isLink)
+        a(href=tag[1])="#" + tag[0]
+      else
+        span="#" + tag[0]
 
 mixin linkRect
   .main-link_rect

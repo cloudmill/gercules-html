@@ -18,8 +18,17 @@ block content
           +client_service_card
         include ../modules/events/control
         include ../modules/events/calendar
-        h2 События на этой неделе
         .events-week
-          include ../modules/events/items
+          h2 События на этой неделе
+          .events-week_slider
+            +sliderControls
+              button.events-week_slider-prev
+              button.events-week_slider-next
+            .swiper-wrapper
+              -var thisIsSlider = true
+              include ../modules/events/items
+              -var thisIsSlider = true
+              include ../modules/events/items
+              
         h2 Наши тренера
         include ../modules/trainers/slider

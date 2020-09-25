@@ -47,32 +47,34 @@ export default class Manager_forms {
 
   init_form_calendar() {
     let calendar = new CalendarSlider();
-    $(".events-control select").change((e) => {
-      let select = e.currentTarget;
-      const request = async () => {
-        try {
-          const responce = await fetch("/ajax/getListEvents.php", {
-            method: "POST",
-            body: JSON.stringify({ data: $(select).val() }),
-            headers: {
-              "Content-Type": "text/html",
-            },
-          });
+    const request = async () => {
+      try {
+        const data = {
+          sity: $(".events-control select").val(),
+          online: $(".events-control input").is(":checked"),
+        };
+        const responce = await fetch("/ajax/getListEvents.php", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "text/html",
+          },
+        });
 
-          if (responce.ok) {
-            console.log(responce.text());
-            $(".calendar-data-events").html(responce.text());
-            calendar.updateDate();
-          }
-        } catch (e) {
-          console.log(e);
+        if (responce.ok) {
+          console.log(responce.text());
+          $(".calendar-data-events").html(responce.text());
+          calendar.updateDate();
         }
-      };
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    $(".events-control select").change((e) => {
       request();
     });
     $(".events-control input").change((e) => {
-      let checkbox = e.target;
-      calendar.updateDate();
+      request();
     });
   }
 
@@ -118,8 +120,8 @@ export default class Manager_forms {
         })
         .data("slider");
     });
-    $(".card-product_calculator select").change(()=>{
+    $(".card-product_calculator select").change(() => {
       recalc();
-    })
+    });
   }
 }

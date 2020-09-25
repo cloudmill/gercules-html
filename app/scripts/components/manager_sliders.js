@@ -20,6 +20,8 @@ export default class Managers_sliders {
     this.fs_bigSlider();
     this.product_passport();
     this.product_photos();
+    this.eventsSlider();
+    this.speakerSlider();
   }
   product_photos() {
     const photosCount = $(".card-top_photos-main .swiper-slide").length;
@@ -150,14 +152,36 @@ export default class Managers_sliders {
       }
     );
   }
+  eventsSlider(){
+    this.sliders["events_week"] = new Swiper(".events-week_slider", {
+      ...baseSettings,
+      slidesPerView: 2,
+      spaceBetween: 0,
+      navigation: {
+        nextEl: ".events-week_slider-next",
+        prevEl: ".events-week_slider-prev",
+      },
+    });
+  }
+  speakerSlider(){
+    this.sliders["speaker_week"] = new Swiper(".eventSpeaker-slider", {
+      ...baseSettings,
+      slidesPerView: 1,
+      spaceBetween: 80,
+      navigation: {
+        nextEl: ".eventSpeaker-slider-next",
+        prevEl: ".eventSpeaker-slider-prev",
+      },
+    });
+  }
   trainerSlider() {
     this.sliders["trainers"] = new Swiper(".trainers-swiper", {
       ...baseSettings,
       slidesPerView: 3,
       spaceBetween: 50,
       navigation: {
-        nextEl: ".trainers-control-prev",
-        prevEl: ".trainers-control-next",
+        nextEl: ".trainers-control-next",
+        prevEl: ".trainers-control-prev",
       },
     });
   }

@@ -168,12 +168,17 @@
   }
 
   &-week {
-    display: flex;
-    flex-wrap: wrap;
-    & > * {
-      margin-top: -1px;
-      &:not(:nth-child(odd)) {
-        border-left: 0;
+    position: relative;
+
+    &_slider {
+      margin-top: 40px;
+      .sliderControls {
+        position: absolute;
+        right: 0;
+        top: -10px;
+      }
+      .swiper-slide:not(:last-child) > * {
+        border-right: 0;
       }
     }
   }
