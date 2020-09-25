@@ -1,5 +1,7 @@
 .fs-contacts
-  h2 Контакты
+  if(!withoutTitle)
+    h2 Контакты
+    -var withoutTitle = false
   .fs-contacts_list
     .fs-contacts_item
       .fs-contacts_photo
@@ -15,17 +17,6 @@
     .fs-contacts_item
       .fs-contacts_photo
         img(src="./images/photo-contact2-343x390.png", alt="")
-      h3 Меньшиков Николай Владимирович
-      p Руководитель направления СФТК
-      .fs-contacts_phone
-        +icon("phone", "svg")
-        a(href="tel:8 913 001 75 01") +7 (913) 001-75-01
-      .fs-contacts_email
-        +icon("mail", "svg")
-        a(href="menshikov.nv@gerkules.ru") menshikov.nv@gerkules.ru
-    .fs-contacts_item
-      .fs-contacts_photo
-        img(src="./images/photo-contact1-344x390.png", alt="")
       h3 Меньшиков Николай Владимирович
       p Руководитель направления СФТК
       .fs-contacts_phone

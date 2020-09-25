@@ -40,6 +40,32 @@ block content
         .contacts-block_item
           p По вопросам юридического характера, а также замечания и предложения по деятельности ООО «Геркулес-Сибирь»
           a(href="mailto:yurist@gerkules.ru").color yurist@gerkules.ru
+      -var withoutTitle = true;
+      include ./fs/contacts
+      .contacts-block.another
+        .contacts-block_item
+          h3 Наши реквизиты
+          p ООО «Геркулс-Сибирь»
+          p Почтовый адрес: 109451, Россия, Москва, 
+          p улица Братиславская, дом 16, корпус 1, помещение 3
+          p ИНН 7722753969
+          p КПП 772301001
+          p ОГРН 1117746646269
+        .contacts-block_item
+          a(download href="")  Скачать реквизиты
+          a(download href="")  Скачать свидетельство о постановке на учет в налоговой инспекции
+          a(download href="")  Скачать свидетельство о государственной регистрации
+      .footer-social
+        a(href="")
+          +icon('fb','svg')
+        a(href="")
+          +icon('vk','svg')
+        a(href="")
+          +icon('inst','svg')
+      .whereBuy-map
+        .map-data
+          input(type="hidden", data-cords="48.448400, 135.098353" data-name="ТЦ Глобус" data-content="")
+        #map
 
 
 
