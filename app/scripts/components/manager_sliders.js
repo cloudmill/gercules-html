@@ -47,7 +47,7 @@ export default class Managers_sliders {
   }
   product_passport() {
     this.sliders["product_passport"] = new Swiper(
-      ".card-product_passport .swiper-container",
+      ".card-passport .swiper-container",
       {
         ...baseSettings,
         slidesPerView: 1,

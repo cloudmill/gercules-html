@@ -92,15 +92,15 @@ export default class Manager_forms {
   }
   init_form_calc() {
     const Pl = 1000; //плотность материала кг/м3
-    var massEl = $(".card-product_calculator-result span:first-child");
-    var countEl = $(".card-product_calculator-result span:last-child");
+    var massEl = $(".card-calculator_result span:first-child");
+    var countEl = $(".card-calculator_result span:last-child");
     var squareEl = $("[name=productCalculator_area]");
     var thickEl = $("[name=productCalculator_thick]");
-    var countEl = $(".card-product_calculator-result span:last-child");
+    var countEl = $(".card-calculator_result span:last-child");
     let mass = 0;
     let count = 0;
     const recalc = () => {
-      const size = $(".card-product_calculator select").val();
+      const size = $(".card-calculator select").val();
       const square = squareEl.val();
       const thick = thickEl.val();
       mass = (thick / 1000) * square * Pl;
@@ -120,7 +120,7 @@ export default class Manager_forms {
         })
         .data("slider");
     });
-    $(".card-product_calculator select").change(() => {
+    $(".card-calculator select").change(() => {
       recalc();
     });
   }

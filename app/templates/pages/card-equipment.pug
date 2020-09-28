@@ -261,7 +261,7 @@ block content
                 a.fs-list_item-name(href="#") !{item[1]}
                 p !{item[2]}
     .card-products
-      h2 Сопутствующие товары
+      h2 Продукция для механизированного нанесения
       +sliderVerticalControls
         button.product-list-next
         button.product-list-prev
@@ -283,72 +283,6 @@ block content
                     +icon("map-pin", "svg")
                   a(href="#").fs-productCard_buttons-rate
                     +icon("rating-red", "svg")
-    .card-product_files
-      .card-product_files-title
-        h2 Сертификаты
-        a(href="#") Скачать сертификаты
-          +icon("down", "svg")
-      .card-product_files-list
-        .card-product_files-item
-          a(href="#")
-            +icon("pdf", "svg")
-            .card-product_files-info
-              h3 Сертификаты ГОСТ
-              p pdf, 15 mb
-                +icon("down-gray", "svg")
-        .card-product_files-item
-          a(href="#")
-            +icon("pdf", "svg")
-            .card-product_files-info
-              h3 Свидетельство о государственной регистрации (СГР)
-              p pdf, 15 mb
-                +icon("down-gray", "svg")
-        .card-product_files-item
-          a(href="#")
-            +icon("pdf", "svg")
-            .card-product_files-info
-              h3 Лицензии и сертификаты
-              p pdf, 15 mb
-                +icon("down-gray", "svg")
-        .card-product_files-item
-          a(href="#")
-            +icon("pdf", "svg")
-            .card-product_files-info
-              h3 Санитарное заключение на грунтовку
-              p pdf, 15 mb
-                +icon("down-gray", "svg")
-    .card-product_passport
-      h2 Паспорт качества
-      p Для получения паспорта качества введите данные с упаковки.
-      .card-product_passport-row
-        .card-product_passport-col
-          form(action="#")
-            .field-row
-              +field_base("date", "date", "Введите дату", "день.месяц.год")
-              +field_base("time", "time", "Введите время", "00:00")
-            p Дата в паспорте качества может не совпадать с датой на упаковке (зависит от даты начала работы смены)
-            +linkRect
-              button(id="submit", name="submit")
-              span Сформировать паспорт
-              +icon("link-white-arrow", "svg")
-        .card-product_passport-col
-        .card-product_passport-col
-          +sliderControls
-            button.passport-control-prev
-            button.passport-control-next
-          .swiper-container
-            .swiper-wrapper
-              .swiper-slide
-                h3 Где найти дату производства 
-                  br
-                  | на упаковке?
-                .card-product_passport-help
-                  img(src="../images/product-passport.png", alt="")
-                  p Дата и время производства
-                    br
-                    | указаны на тыльной стороне
-                    br
-                    | упаковки
     .fs-objects
       .fs-objects_all
         +link("#", "Все объекты")
@@ -380,33 +314,24 @@ block content
                     a(href="#") Штукатурная станция mono-mix FU (на 220В)
                     a(href="#") GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
                     a(href="#") GP-21M Штукатурка цементная для машинного нанесения
-    .card-product_calculator
-      .card-product_calculator-col
-        h2 Калькулятор расхода
-        img(src="../images/card-calculator.jpg", alt="")
-      .card-product_calculator-col
-        .field-row
-          +field_base("productCalculator_area", "productCalculator_area", "Площадь поверхности, кв.м", "", "350")
-            input.sliderRange(data-slider-min='0' data-slider-max='500')
-          +field_base("productCalculator_thick", "productCalculator_thick", "Толщина слоя, мм", "", "30")
-            input.sliderRange(data-slider-min='0' data-slider-max='100')
-          +field_select('',[[25,'25'],[35,'35'],[50,'50']])
-            .field-select_caption Размер упаковки
-        h3 Вам потребуется
-        .card-product_calculator-row
-          .card-product_calculator-result
-            span 44 кг
-            span 5 мешков
-          a(href="#")
-            +icon("down", "svg")
-            | Сохранить результат
-        p Этот калькулятор помогает сделать примерный расчет количества продукта.
-          br
-          | Калькулятор не учитывает потери материалов во время использования и квалификацию мастера.
-    .card-product_bottom Со временем связи с родоначальниками сухих строительных смесей только укреплялись. Сегодня
-      br
-      | технологический отдел компании «Геркулес-Сибирь» активно сотрудничает
-      br
-      | с лабораториями наших стратегических партнеров – мировыми лидерами в области строительной химии –
-      br
-      | компаниями BAYER, WACKER, Bang &amp; Bonsomer.
+            .swiper-slide
+              .fs-objects_object
+                .fs-objects_photo
+                  .fs-objects_sticker
+                    span Сдан в 2018 году
+                  img(src="../images/object-2.png", alt="")
+                .fs-objects_info
+                  +hashTags([["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"]])
+                  h3 ТК Гранд Каньон
+                  p г. Новосибирск, ул. Иванова, 8
+                  h4 Выполенные работы
+                  ul
+                    li Выравнивание стен / оштукатуривание
+                    li Заливка / выравнивание полов
+                    li Монтаж СФТК
+                  h4 Продукты «Геркулес»
+                  .fs-objects_products
+                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+                    a(href="#") Штукатурная станция mono-mix FU (на 220В)
+                    a(href="#") GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
+                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
