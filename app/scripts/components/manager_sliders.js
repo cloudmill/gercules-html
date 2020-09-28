@@ -95,7 +95,7 @@ export default class Managers_sliders {
   }
   product_detail_list() {
     this.sliders["product_list"] = new Swiper(
-      ".product-list_slider.swiper-container",
+      ".card-products_slider.swiper-container",
       {
         ...baseSettings,
         slidesPerView: 4,

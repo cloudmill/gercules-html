@@ -119,12 +119,7 @@ block content
           +icon("pdf", "svg")
           h3 Описание «Штукатурка цементная»
           p pdf, 15 mb
-            +icon("down-gray", "svg")
-    
-    
-    
-    
-    
+            +icon("down-gray", "svg") 
     .tabs-menu
       .tabs-menu_item.active Описание
       .tabs-menu_item Применение
@@ -299,21 +294,14 @@ block content
                   .play
                 a.fs-list_item-name(href="#") !{item[1]}
                 p !{item[2]}
-    
-    
-    
-    
-    
-    
-    
-    .product-list
+    .card-products
       h2 Сопутствующие товары
       +sliderVerticalControls
         button.product-list-next
         button.product-list-prev
-      .swiper-container.product-list_slider
+      .swiper-container.card-products_slider
         .swiper-wrapper
-          each item,key in [1,2,2,2]
+          each item,key in [1,2,2,2,1,2]
             .swiper-slide
               .fs-productCard
                 .fs-productCard_info

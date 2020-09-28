@@ -373,136 +373,6 @@
         display: block;
       }
     }
-
-    /*
-    .tabs-item {
-      display: none;
-
-      &:nth-child(1),
-      &:nth-child(2) {
-        justify-content: space-between;
-
-        p,
-        h3 {
-          max-width: 700px;
-        }
-
-        h2 {
-          margin: 0;
-        }
-
-        .tabs-item_col {
-          margin-left: 60px;
-          width: 62%;
-        }
-
-        p {
-          font-size: 15px;
-          line-height: 150%;
-
-          &+p {
-            margin-top: 40px;
-            font-size: 13px;
-            line-height: 150%;
-          }
-
-          span {
-            font-style: italic;
-            color: $color-red;
-          }
-        }
-
-        h3 {
-          font-weight: bold;
-          font-size: 18px;
-          line-height: 130%;
-
-          &:not(:first-child) {
-            margin-top: 40px;
-          }
-
-          &+p {
-            margin-top: 10px;
-          }
-        }
-      }
-
-      &:nth-child(3),
-      &:nth-child(4) {
-        h2 {
-          margin: 0;
-        }
-
-        .tabs-item_line {
-          p {
-            font-size: 15px;
-            line-height: 150%;
-
-            &:nth-child(even) {
-              font-weight: bold;
-              text-align: right;
-            }
-          }
-        }
-      }
-
-      &:nth-child(3) {
-        justify-content: space-between;
-
-        .tabs-item {
-          &_col {
-            margin-left: 60px;
-            width: 62%;
-          }
-
-          &_line {
-            padding-bottom: 20px;
-            display: grid;
-            grid-template-columns: 1fr 25%;
-            column-gap: 60px;
-            border-bottom: 1px solid $color-border-second;
-
-            &:not(:first-child) {
-              margin-top: 30px;
-            }
-
-            &+p {
-              margin-top: 40px;
-              margin-bottom: 20px;
-            }
-          }
-        }
-
-        p {
-          font-size: 15px;
-          line-height: 150%;
-        }
-
-        h3 {
-          margin-top: 30px;
-          font-weight: bold;
-          font-size: 18px;
-          line-height: 130%;
-
-          &+.tabs-item_line {
-            margin-top: 20px;
-            grid-template-rows: repeat(3, 1fr);
-            row-gap: 20px;
-          }
-        }
-      }
-
-      &.active {
-
-        &:nth-child(1),
-        &:nth-child(2),
-        &:nth-child(3),
-        &:nth-child(4) {
-          display: flex;
-        }
-      }
-    }
-    */
   }
 
   .product-list {
@@ -514,8 +384,6 @@
       margin-top: 112px;
     }
   }
-
-  // рефакторинг card-top
 
   &-top {
     position: relative;
@@ -903,8 +771,6 @@
     }
   }
 
-  // новый код вкладок
-
   .tabs {
     &-menu {
       margin-top: 120px;
@@ -1147,6 +1013,27 @@
       &.active {
         display: flex;
       }
+    }
+  }
+
+  &-products {
+    margin-top: 120px;
+    position: relative;
+
+    &_slider {
+      margin-top: 60px;
+    }
+
+    .sliderControls-vertical {
+      position: absolute;
+      z-index: 1000px;
+      right: -80px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      width: 80px;
+      height: 200px;
     }
   }
 }
