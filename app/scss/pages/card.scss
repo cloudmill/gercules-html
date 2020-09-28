@@ -1006,7 +1006,8 @@
 
       &.questions {
         h3 {
-          max-width: 700px;
+          padding-right: 30px;
+          max-width: 730px;
           font-family: $font-third;
           font-weight: bold;
           font-size: 18px;
@@ -1101,6 +1102,44 @@
             font-size: 15px;
             line-height: 150%;
             overflow: hidden;
+          }
+        }
+      }
+
+      &.videos {
+        .tabs-item_col {
+          margin-left: 60px;
+          flex-basis: 80%;
+        }
+
+        .fs-list {
+          margin: 0;
+          column-gap: 80px;
+          row-gap: 60px;
+          border: none;
+
+          &::before {
+            display: none;
+          }
+
+          &_item {
+            padding: 0;
+            border: none;
+          }
+
+          a {
+            margin: 0;
+
+            &:not(:first-child) {
+              margin-top: 40px;
+            }
+          }
+
+          p {
+            margin-top: 25px;
+            font-size: 15px;
+            line-height: 150%;
+            color: $color-gray;
           }
         }
       }
