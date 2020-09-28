@@ -224,7 +224,7 @@
         font-size: 8px;
       }
 
-      h3 {
+      h4 {
         font-size: 15px;
         line-height: 150%;
       }
@@ -606,6 +606,33 @@
           p:nth-of-type(even) {
             font-weight: bold;
             text-align: right;
+          }
+        }
+
+        a {
+          &.file-link {
+            position: relative;
+            margin-top: 40px;
+            padding-left: 55px;
+            display: inline-block;
+
+            i {
+              position: absolute;
+              top: 3px;
+              left: 0;
+            }
+
+            h4 {
+              font-size: 15px;
+              line-height: 24px;
+            }
+
+            p {
+              margin: 0;
+              font-size: 12px;
+              line-height: 24px;
+              color: $color-gray;
+            }
           }
         }
       }
