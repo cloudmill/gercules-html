@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("../images/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 11.2em 44.8em;
+    background-size: 11.2em 48.8em;
 }
 
 .no-svg .svg-icon:before {
@@ -197,8 +197,26 @@
 
 
 
-  .svg-icon.svg-time:before {
+  .svg-icon.svg-star:before {
       background-position: 0em -41.8em;
+      width: 2em;
+      height: 2em;
+  }
+
+
+
+
+  .svg-icon.svg-star-active:before {
+      background-position: 0em -43.8em;
+      width: 2em;
+      height: 2em;
+  }
+
+
+
+
+  .svg-icon.svg-time:before {
+      background-position: 0em -45.8em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -207,7 +225,7 @@
 
 
   .svg-icon.svg-vk:before {
-      background-position: 0em -43.6em;
+      background-position: 0em -47.6em;
       width: 2.2em;
       height: 1.2em;
   }

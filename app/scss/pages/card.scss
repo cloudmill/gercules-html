@@ -541,11 +541,7 @@
     }
 
     h2 {
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 130%;
-
-      &:not(:first-child) {
+      &:not(:first-of-type) {
         margin-top: 60px;
       }
     }
@@ -611,9 +607,85 @@
         }
       }
 
-      &.content-margin {
+      &.content-small-margin {
         margin-top: 40px;
       }
+    }
+
+    &_price {
+      margin-top: 40px;
+
+      span {
+        font-family: $font-third;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 160%;
+        white-space: nowrap;
+
+        &:last-child {
+          font-size: 12px;
+          color: $color-gray;
+        }
+      }
+
+      &+h2 {
+        margin-top: 40px;
+      }
+    }
+
+    &.content-large-bottom-padding {
+      padding-bottom: 60px;
+    }
+  }
+
+  &-rating {
+    &_top {
+      display: flex;
+    }
+
+    &_stars {
+      white-space: nowrap;
+
+      i:not(:first-child) {
+        margin-left: 5px;
+      }
+    }
+
+    &_result {
+      margin-left: 20px;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 150%;
+    }
+
+    &_parameters {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 50px;
+      row-gap: 20px;
+    }
+
+    &_parameter {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h3 {
+        font-size: 12px;
+        line-height: 130%;
+      }
+    }
+
+    &_track {
+      margin-top: 6px;
+      height: 3px;
+      background-color: $color-border-second;
+    }
+
+    &_progress {
+      height: 3px;
+      background-color: $color-red;
     }
   }
 
@@ -733,13 +805,53 @@
       margin-left: -1px;
       padding: 0 30px;
       flex-grow: 1;
-      // flex-basis: 25%;
       max-width: 275px;
       height: 70px;
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: white;
       border: 1px solid $color-border-second;
+
+      &.comparison-link i {
+        position: relative;
+        bottom: 2px;
+        font-size: 7.5px;
+      }
+
+      &.buy-link i {
+        font-size: 9px;
+      }
+
+      &.order-link a {
+        p {
+          position: relative;
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          border: 2px solid $color-red;
+          border-radius: 50%;
+
+          &::before,
+          &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            content: "";
+            display: block;
+            width: 9px;
+            height: 2px;
+            transform-origin: center center;
+            background-color: $color-red;
+            transform: translate(-50%, -50%);
+          }
+
+          &::after {
+            transform-origin: center center;
+            transform: translate(-50%, -50%) rotate(90deg);
+          }
+        }
+      }
     }
 
     a {
@@ -758,16 +870,6 @@
       font-size: 15px;
       line-height: 150%;
       white-space: nowrap;
-    }
-
-    &.comparison-link i {
-      position: relative;
-      bottom: 2px;
-      font-size: 7.5px;
-    }
-
-    &.buy-link i {
-      font-size: 9px;
     }
   }
 
@@ -1046,5 +1148,13 @@
     font-weight: bold;
     font-size: 28px;
     line-height: 144%;
+  }
+
+  .card-info {
+    h2 {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 130%;
+    }
   }
 }
