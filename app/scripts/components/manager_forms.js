@@ -62,8 +62,9 @@ export default class Manager_forms {
         });
 
         if (responce.ok) {
-          console.log(responce.text());
-          $(".calendar-data-events").html(responce.text());
+          const text = await responce.text()
+          console.log(text);
+          $(".calendar-data-events").html(text);
           calendar.updateDate();
         }
       } catch (e) {
