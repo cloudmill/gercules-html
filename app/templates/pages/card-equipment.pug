@@ -1,0 +1,323 @@
+extends ../layouts/default.pug
+
+block variables
+  -var pageTitle='Штукатурная станция mono-mix FU (на 220В)'
+
+block content
+  .content.card
+    .card-top
+      .card-sliders
+        .card-sliders_thumbs
+          .swiper-container
+            .swiper-wrapper
+              each item in [1, 2, 1, 2, 1]
+                .swiper-slide
+                  img(src=`../images/equipment-thumb-${item}.png`, alt="")
+        .card-sliders_photos
+          .swiper-container
+            .swiper-wrapper
+              - for (let i = 0; i < 5; i++)
+                .swiper-slide
+                  img(src=`../images/equipment-main.png`, alt="")
+      .card-info.content-large-bottom-padding
+        +breadcrumbs(['Каталог','Грунтовки',pageTitle])
+        .card-top_row
+          .card-top_col
+            h1 Штукатурная станция
+              br
+              | mono-mix FU (на 220В)
+            .card-info_price
+              span 571.600 руб. 
+              span (с НДС 20% )
+            h2 Преимущества
+            ul
+              li Небольшой вес и размер штукатурной станции
+              li Необходимое напряжение 220В
+              li Регулируемая производительность
+              li Обслуживаемая шнековая пара (увеличенный ресурс)
+                br
+                | Возможность использовать как растворонасос
+              li Регулярные поставки на склад
+          .card-top_col
+            .card-rating
+              .card-rating_top
+                .card-rating_stars
+                  - const stars = [1,1,1,1,0]
+                  each star in stars
+                    if (star)
+                      +icon("star-active", "svg")
+                    else
+                      +icon("star", "svg")
+                .card-rating_result 4,2
+              .card-rating_parameters
+                .card-rating_parameter
+                  h3 Качество
+                  .card-rating_track
+                    .card-rating_progress(style="width: 75%")
+                .card-rating_parameter
+                  h3 Эффективность
+                  .card-rating_track
+                    .card-rating_progress(style="width: 75%")
+                .card-rating_parameter
+                  h3 Внешний вид
+                  .card-rating_track
+                    .card-rating_progress(style="width: 75%")
+                .card-rating_parameter
+                  h3 Функциональность
+                  .card-rating_track
+                    .card-rating_progress(style="width: 75%")
+                .card-rating_parameter
+                  h3 Экономичность
+                  .card-rating_track
+                    .card-rating_progress(style="width: 75%")
+        .card-links
+          .card-links_item.order-link
+            a(href="#")
+              p
+              span Добавить в заказ
+          .card-links_item
+            a(href="#")
+              +icon("question", "svg")
+              span Задать вопрос
+        a(href="#").card-info_file
+          +icon("pdf", "svg")
+          h4 Описание «Штукатурка цементная»
+          p pdf, 15 mb
+            +icon("down-gray", "svg") 
+    .tabs-menu
+      .tabs-menu_item.active Описание
+      .tabs-menu_item Технические характиристики
+      .tabs-menu_item Часто задаваемые вопросы
+      .tabs-menu_item Видео
+    .tabs-list
+      .tabs-item.tab-text.active
+        h2 Описание
+        .tabs-item_col
+          p Штукатурная станция m-tec mono-mix FU единственная штукатурная станция на 220 В, что позволяет использовать ее на объектах, где отсутствует трехфазное напряжение или его получение затруднительно. Данная штукатурная станция отлично подходит для небольших строительных бригад, которые специализируются на отделке небольших помещений.
+            br
+            br
+            | Штукатурная станция mono-mix FU отлично подходит для выполнения штукатурных работ с использованием сухих смесей на основе гипса, цемента или извести, также данную штукатурную машину можно использовать для устройство полов, но используя данную штукатурную станцию для устройства полов, необходимо обратить внимание на удельный вес сухой смеси. Если сухая смесь для машинного нанесения тяжелая и не высокого качества, то рекомендуется использовать штукатурные станции других моделей, также если на объекте доступно трехфазное напряжение, то рекомендуется использовать другие штукатурные станции, например, штукатурную станцию m-tec M280.
+            br
+            br
+            | Одним из плюсов штукатурной станции mono-mix, который также имеет значение для небольших бригад, является то, что данную штукатурную машину можно использовать как растворонасос. Если необходимо нанести на поверхность, например, готовую (замешанную) шпаклевку, то можно уменьшить производительность штукатурной станции, выгрузить шпаклевку в приемную воронку штукатурной станции и распылить шпаклевку на поверхность.
+          a(href="#").file-link
+            +icon("pdf-2", "svg")
+            h4 Инструкция по применению
+            p pdf, 15 mb
+      .tabs-item.tab-text
+        h2 Технические
+          br
+          | характеристики
+        .tabs-item_col
+          .tabs-item_line
+            p Цвет
+            p Серый
+          .tabs-item_line
+            p Вяжущее
+            p Цемент
+          .tabs-item_line
+            p Наибольший размер частиц
+            p 1,2 мм
+          .tabs-item_line
+            p Прочность при сжатии, не менее
+            p 10 МПа
+          .tabs-item_line
+            p Средняя плотность, не более
+            p 1750 кг/м
+          .tabs-item_line
+            p Насыпная плотность, не более
+            p 1700 кг/м
+          .tabs-item_line
+            h3 Расход воды
+            p на 1 кг сухой смеси
+            p 0,18–0,23 л/кг сух. смеси
+            p на 1 мешок 25 кг
+            p 4,5–5,75 л/м сух. смеси
+            p на машине M-Tec М280 (шнековая пара D 6-3 оранжевая)
+            p 250–350 л/ч.
+          .tabs-item_line
+            p Выход готового раствора
+            p 0,62 л/кг сухой смеси
+          .tabs-item_line
+            p Средний расход смеси при толщине слоя 1 мм
+            p 1,61 кг/м
+          .tabs-item_line
+            p Рекомендуемая толщина слоя
+            p  5–30 мм
+          .tabs-item_line
+            p Жизнеспособность, не менее
+            p 3 ч.
+          .tabs-item_line
+            p Готовность для дальнейших работ, не ранее
+            p 3 сут.
+          p Все вышеперечисленные характеристики справедливы при температуре в помещении
+            br
+            | 20°С и нормальной влажности воздуха.
+          p.content-margin-small Смесь сухая штукатурная для наружных и внутренних работ, КП IV, F50
+            br
+            | механизированного нанесения ГОСТ 33083-2014
+            br
+            | ТУ 5745-008-49720964-05
+      .tabs-item.tab-questions
+        h2 Часто задаваемые
+          br
+          | вопросы
+        .tabs-item_col
+          .tabs-item_question.open
+            h3 Какая шпатлевка лучше – готовая или сухая?
+            p Рощиков Виталий
+            .tabs-item_dropdown Они предназначены для разных видов работ. Готовые шпатлёвки предназначены для окончательного выравнивания стен и заделки небольших дефектов. Есть много видов сухих шпатлёвок различного применения. В основной массе они подразделяются для грубого выравнивания и финишного выравнивания поверхности под последующую отделку. Преимущественно основу шпатлёвки составляет цемент (или белый или серый), или гипс. Гипсовыми шпатлёвками можно производить выравнивание любых поверхностей, имеющих глубокие и широкие трещины и выбоины.
+          .tabs-item_question
+            h3 Сейчас такой огромный выбор шпатлевок. Расскажите, какие шпатлевки лучше использовать для предварительной и финишной отделки полногабаритного помещения. При этом, чтобы стены и потолок стали идеально ровными?
+            p Елисеев С.А.
+            .tabs-item_dropdown Они предназначены для разных видов работ. Готовые шпатлёвки предназначены для окончательного выравнивания стен и заделки небольших дефектов. Есть много видов сухих шпатлёвок различного применения. В основной массе они подразделяются для грубого выравнивания и финишного выравнивания поверхности под последующую отделку. Преимущественно основу шпатлёвки составляет цемент (или белый или серый), или гипс. Гипсовыми шпатлёвками можно производить выравнивание любых поверхностей, имеющих глубокие и широкие трещины и выбоины.
+          .tabs-item_question
+            h3 Какая шпатлевка лучше – готовая или сухая?
+            p Рощиков Виталий
+            .tabs-item_dropdown Они предназначены для разных видов работ. Готовые шпатлёвки предназначены для окончательного выравнивания стен и заделки небольших дефектов. Есть много видов сухих шпатлёвок различного применения. В основной массе они подразделяются для грубого выравнивания и финишного выравнивания поверхности под последующую отделку. Преимущественно основу шпатлёвки составляет цемент (или белый или серый), или гипс. Гипсовыми шпатлёвками можно производить выравнивание любых поверхностей, имеющих глубокие и широкие трещины и выбоины.
+      .tabs-item.tab-videos
+        h2 Видео
+        .tabs-item_col
+          .fs-list
+            //- item[0] - номер картинки, item[1] - заголовок, item[2] - описание
+            -
+              let items = [
+                [
+                  3, 
+                  "Видеоинструкция по монтажу СФТК «GERKULES FACADE». Часть 1.",
+                  "Видеоинструкция по монтажу СФТК «GERKULES FACADE».<br>Часть 1."
+                ],
+                [
+                  4,
+                  "Видеоинструкция по использованию штукатурки машинного нанесения",
+                  "Какие инструменты Вам потребуются для выполнения работ по выравниванию пола, как пользоваться сухими смесями"
+                ],
+                [
+                  3, 
+                  "Видеоинструкция по монтажу СФТК «GERKULES FACADE». Часть 1.",
+                  "Видеоинструкция по монтажу СФТК «GERKULES FACADE».<br>Часть 1."
+                ],
+                [
+                  4,
+                  "Видеоинструкция по использованию штукатурки машинного нанесения",
+                  "Какие инструменты Вам потребуются для выполнения работ по выравниванию пола, как пользоваться сухими смесями"
+                ]
+              ]
+            each item in items
+              .fs-list_item
+                a.fs-list_item-video(href="#")
+                  img(src=`./images/video-preview-${item[0]}.jpg`, alt="")
+                  .play
+                a.fs-list_item-name(href="#") !{item[1]}
+                p !{item[2]}
+    .card-products
+      h2 Продукция для механизированного нанесения
+      +sliderVerticalControls
+        button.product-list-next
+        button.product-list-prev
+      .swiper-container.card-products_slider
+        .swiper-wrapper
+          each item,key in [1,2,2,2,1,2]
+            .swiper-slide
+              .fs-productCard
+                .fs-productCard_info
+                  .fs-productCard_status
+                    span хит продаж
+                    span.active акция
+                    span новинка
+                  .fs-productCard_photo
+                    img(src=`../images/product-list-${item}.png`, alt="")
+                  a(href="#").fs-productCard_title GP-31 Штукатурка известково-цементная Геркулес, 25 кг
+                .fs-productCard_buttons
+                  a(href="#").fs-productCard_buttons-loc
+                    +icon("map-pin", "svg")
+                  a(href="#").fs-productCard_buttons-rate
+                    +icon("rating-red", "svg")
+    .card-spares
+      h2 Сопутствующие расходные запчасти
+      .card-spares_list
+        .card-spares_item
+          .card-spares_info
+            .card-spares_photo
+              img(src="../images/spare-1.png", alt="")
+            h3 Статор uni-star 0,25, не треб.тех. обслуж.
+          a(href="#").card-spares_add
+            p
+            span Добавить в заказ
+        .card-spares_item
+          .card-spares_info
+            .card-spares_photo
+              img(src="../images/spare-2.png", alt="")
+            h3 Статор MAKITA HR 3540 C
+          a(href="#").card-spares_add
+            p
+            span Добавить в заказ
+        .card-spares_item
+          .card-spares_info
+            .card-spares_photo
+              img(src="../images/spare-3.png", alt="")
+            h3 Статор uni-star 0,25, не треб.тех. обслуж.
+          a(href="#").card-spares_add
+            p
+            span Добавить в заказ
+        .card-spares_item
+          .card-spares_info
+            .card-spares_photo
+              img(src="../images/spare-1.png", alt="")
+            h3 Статор uni-star 0,25, не треб.тех. обслуж.
+          a(href="#").card-spares_add
+            p
+            span Добавить в заказ
+    .fs-objects
+      .fs-objects_all
+        +link("#", "Все объекты")
+      h2 Данный продукт применялся на объектах
+      .fs-objects_objects
+        +sliderVerticalControls
+          button.fs-objects_next
+          button.fs-objects_prev
+        .swiper-container
+          .swiper-wrapper
+            .swiper-slide
+              .fs-objects_object
+                .fs-objects_photo
+                  .fs-objects_sticker
+                    span Сдан в 2018 году
+                  img(src="../images/object-2.png", alt="")
+                .fs-objects_info
+                  +hashTags([["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"]])
+                  h3 ТК Гранд Каньон
+                  p г. Новосибирск, ул. Иванова, 8
+                  h4 Выполенные работы
+                  ul
+                    li Выравнивание стен / оштукатуривание
+                    li Заливка / выравнивание полов
+                    li Монтаж СФТК
+                  h4 Продукты «Геркулес»
+                  .fs-objects_products
+                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+                    a(href="#") Штукатурная станция mono-mix FU (на 220В)
+                    a(href="#") GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
+                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+            .swiper-slide
+              .fs-objects_object
+                .fs-objects_photo
+                  .fs-objects_sticker
+                    span Сдан в 2018 году
+                  img(src="../images/object-2.png", alt="")
+                .fs-objects_info
+                  +hashTags([["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"]])
+                  h3 ТК Гранд Каньон
+                  p г. Новосибирск, ул. Иванова, 8
+                  h4 Выполенные работы
+                  ul
+                    li Выравнивание стен / оштукатуривание
+                    li Заливка / выравнивание полов
+                    li Монтаж СФТК
+                  h4 Продукты «Геркулес»
+                  .fs-objects_products
+                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+                    a(href="#") Штукатурная станция mono-mix FU (на 220В)
+                    a(href="#") GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
+                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+    

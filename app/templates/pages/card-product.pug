@@ -115,9 +115,9 @@ block content
             a(href="#")
               +icon("calculator", "svg")
               span Калькулятор расхода
-        a(href="#").card-info_file.content-margin
+        a(href="#").card-info_file.content-small-margin
           +icon("pdf", "svg")
-          h3 Описание «Штукатурка цементная»
+          h4 Описание «Штукатурка цементная»
           p pdf, 15 mb
             +icon("down-gray", "svg") 
     .tabs-menu
@@ -128,7 +128,7 @@ block content
       .tabs-menu_item Часто задаваемые вопросы
       .tabs-menu_item Видео
     .tabs-list
-      .tabs-item.text.active
+      .tabs-item.tab-text.active
         h2 Описание
         .tabs-item_col
           p Сухая цементная штукатурная смесь машинного нанесения предназначена для оштукатуривания бетонных, каменных, кирпичных стен внутри и снаружи зданий. Наносится механизированным способом (с помощью растворосмесительных насосов непрерывного действия, например, M-Tec, PFT) или вручную.
@@ -136,7 +136,7 @@ block content
           p Цементная штукатурка для машинного нанесения GP-21 представляет собой сухую смесь цемента, фракционированного кварцевого песка и полимерных добавок. Штукатурка легко наносится и не сползает с поверхности, обладает необходимой прочностью и сцеплением с основанием.
           h3 Состав
           p Цемент, фракционированный кварцевый песок и специальные добавки ведущих европейских производителей.
-      .tabs-item.text
+      .tabs-item.tab-text
         h2 Применение
         .tabs-item_col
           h3 А. Подготовка основания
@@ -170,7 +170,7 @@ block content
           h3 Очистка инструмента
           p Очистка рук тары, инструмента производится теплой мыльной водой сразу по завершении работ.
           p.content-small Производитель не несёт ответственности за неправильное использования материалов, а так же за его применения в целях и условиях, не предусмотренных техническим описанием. Работы необходимо выполнять в соответствии со строительными нормами и правилами. Техническое описание не заменяет профессиональной подготовки исполнителя. В каждом конкретном случае применения, имеющегося отклонения от технического описания, требуется провести работы по нанесению на небольшом участке с целью проверки т.к. производитель не может повлиять на ряд факторов(температура воздуха, влажность, количество воды, используемый инструмент и т.п.).Техническое описание производителя носит рекомендательный характер и не может является основанием для предъявления претензий имущественного характера.
-      .tabs-item.text
+      .tabs-item.tab-text
         h2 Технические
           br
           | характеристики
@@ -224,7 +224,7 @@ block content
             | механизированного нанесения ГОСТ 33083-2014
             br
             | ТУ 5745-008-49720964-05
-      .tabs-item.text
+      .tabs-item.tab-text
         h2 Логистические
           br
           | параметры
@@ -242,7 +242,7 @@ block content
           .tabs-item_line
             p Паллет в вагоне:
             p 46
-      .tabs-item.questions
+      .tabs-item.tab-questions
         h2 Часто задаваемые
           br
           | вопросы
@@ -259,7 +259,7 @@ block content
             h3 Какая шпатлевка лучше – готовая или сухая?
             p Рощиков Виталий
             .tabs-item_dropdown Они предназначены для разных видов работ. Готовые шпатлёвки предназначены для окончательного выравнивания стен и заделки небольших дефектов. Есть много видов сухих шпатлёвок различного применения. В основной массе они подразделяются для грубого выравнивания и финишного выравнивания поверхности под последующую отделку. Преимущественно основу шпатлёвки составляет цемент (или белый или серый), или гипс. Гипсовыми шпатлёвками можно производить выравнивание любых поверхностей, имеющих глубокие и широкие трещины и выбоины.
-      .tabs-item.videos
+      .tabs-item.tab-videos
         h2 Видео
         .tabs-item_col
           .fs-list
@@ -317,45 +317,45 @@ block content
                     +icon("map-pin", "svg")
                   a(href="#").fs-productCard_buttons-rate
                     +icon("rating-red", "svg")
-    .card-product_files
-      .card-product_files-title
+    .card-files
+      .card-files_title
         h2 Сертификаты
         a(href="#") Скачать сертификаты
           +icon("down", "svg")
-      .card-product_files-list
-        .card-product_files-item
+      .card-files_list
+        .card-files_item
           a(href="#")
             +icon("pdf", "svg")
-            .card-product_files-info
+            .card-files_info
               h3 Сертификаты ГОСТ
               p pdf, 15 mb
                 +icon("down-gray", "svg")
-        .card-product_files-item
+        .card-files_item
           a(href="#")
             +icon("pdf", "svg")
-            .card-product_files-info
+            .card-files_info
               h3 Свидетельство о государственной регистрации (СГР)
               p pdf, 15 mb
                 +icon("down-gray", "svg")
-        .card-product_files-item
+        .card-files_item
           a(href="#")
             +icon("pdf", "svg")
-            .card-product_files-info
+            .card-files_info
               h3 Лицензии и сертификаты
               p pdf, 15 mb
                 +icon("down-gray", "svg")
-        .card-product_files-item
+        .card-files_item
           a(href="#")
             +icon("pdf", "svg")
-            .card-product_files-info
+            .card-files_info
               h3 Санитарное заключение на грунтовку
               p pdf, 15 mb
                 +icon("down-gray", "svg")
-    .card-product_passport
+    .card-passport
       h2 Паспорт качества
       p Для получения паспорта качества введите данные с упаковки.
-      .card-product_passport-row
-        .card-product_passport-col
+      .card-passport_row
+        .card-passport_col
           form(action="#")
             .field-row
               +field_base("date", "date", "Введите дату", "день.месяц.год")
@@ -365,8 +365,8 @@ block content
               button(id="submit", name="submit")
               span Сформировать паспорт
               +icon("link-white-arrow", "svg")
-        .card-product_passport-col
-        .card-product_passport-col
+        .card-passport_col
+        .card-passport_col
           +sliderControls
             button.passport-control-prev
             button.passport-control-next
@@ -376,7 +376,18 @@ block content
                 h3 Где найти дату производства 
                   br
                   | на упаковке?
-                .card-product_passport-help
+                .card-passport_help
+                  img(src="../images/product-passport.png", alt="")
+                  p Дата и время производства
+                    br
+                    | указаны на тыльной стороне
+                    br
+                    | упаковки
+              .swiper-slide
+                h3 Где найти дату производства 
+                  br
+                  | на упаковке?
+                .card-passport_help
                   img(src="../images/product-passport.png", alt="")
                   p Дата и время производства
                     br
@@ -414,11 +425,32 @@ block content
                     a(href="#") Штукатурная станция mono-mix FU (на 220В)
                     a(href="#") GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
                     a(href="#") GP-21M Штукатурка цементная для машинного нанесения
-    .card-product_calculator
-      .card-product_calculator-col
+            .swiper-slide
+              .fs-objects_object
+                .fs-objects_photo
+                  .fs-objects_sticker
+                    span Сдан в 2018 году
+                  img(src="../images/object-2.png", alt="")
+                .fs-objects_info
+                  +hashTags([["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"]])
+                  h3 ТК Гранд Каньон
+                  p г. Новосибирск, ул. Иванова, 8
+                  h4 Выполенные работы
+                  ul
+                    li Выравнивание стен / оштукатуривание
+                    li Заливка / выравнивание полов
+                    li Монтаж СФТК
+                  h4 Продукты «Геркулес»
+                  .fs-objects_products
+                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+                    a(href="#") Штукатурная станция mono-mix FU (на 220В)
+                    a(href="#") GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
+                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+    .card-calculator
+      .card-calculator_col
         h2 Калькулятор расхода
         img(src="../images/card-calculator.jpg", alt="")
-      .card-product_calculator-col
+      .card-calculator_col
         .field-row
           +field_base("productCalculator_area", "productCalculator_area", "Площадь поверхности, кв.м", "", "350")
             input.sliderRange(data-slider-min='0' data-slider-max='500')
@@ -427,8 +459,8 @@ block content
           +field_select('',[[25,'25'],[35,'35'],[50,'50']])
             .field-select_caption Размер упаковки
         h3 Вам потребуется
-        .card-product_calculator-row
-          .card-product_calculator-result
+        .card-calculator_row
+          .card-calculator_result
             span 44 кг
             span 5 мешков
           a(href="#")
@@ -437,11 +469,10 @@ block content
         p Этот калькулятор помогает сделать примерный расчет количества продукта.
           br
           | Калькулятор не учитывает потери материалов во время использования и квалификацию мастера.
-    .card-product_bottom Со временем связи с родоначальниками сухих строительных смесей только укреплялись. Сегодня
+    .card-bottom Со временем связи с родоначальниками сухих строительных смесей только укреплялись. Сегодня
       br
       | технологический отдел компании «Геркулес-Сибирь» активно сотрудничает
       br
       | с лабораториями наших стратегических партнеров – мировыми лидерами в области строительной химии –
       br
       | компаниями BAYER, WACKER, Bang &amp; Bonsomer.
-
