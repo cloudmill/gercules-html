@@ -511,6 +511,12 @@
     }
   }
 
+  &-code {
+    margin-top: 25px;
+    font-size: 15px;
+    line-height: 150%;
+  }
+
   .tabs {
     &-menu {
       margin-top: 120px;
@@ -603,9 +609,17 @@
             grid-column-end: 3;
           }
 
-          p:nth-of-type(even) {
-            font-weight: bold;
-            text-align: right;
+          p {
+            &:nth-of-type(even) {
+              font-weight: bold;
+              text-align: right;
+            }
+
+            .content-sup {
+              font-size: 8px;
+              line-height: 12px;
+              vertical-align: super;
+            }
           }
         }
 

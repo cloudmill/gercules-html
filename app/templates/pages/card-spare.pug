@@ -1,0 +1,257 @@
+extends ../layouts/default.pug
+
+block variables
+  -var pageTitle='Статор uni-star 0,25, не треб.тех. обслуж.'
+
+block content
+  .content.card
+    .card-top
+      .card-sliders
+        .card-sliders_thumbs
+          .swiper-container
+            .swiper-wrapper
+              each item in [1, 2, 1, 2, 1]
+                .swiper-slide
+                  img(src=`../images/spare-thumb-${item}.png`, alt="")
+        .card-sliders_photos
+          .swiper-container
+            .swiper-wrapper
+              - for (let i = 0; i < 5; i++)
+                .swiper-slide
+                  img(src=`../images/spare-main.png`, alt="")
+      .card-info.content-large-bottom-padding
+        +breadcrumbs(['Каталог','Грунтовки',pageTitle])
+        .card-top_row
+          .card-top_col
+            h1 Статор uni-star 0,25,
+              br
+              | не треб.тех. обслуж.
+            .card-info_price
+              span 571.600 руб. 
+              span (с НДС 20% )
+            h2 Описание
+            ul
+              li Статор генератора Arctic Cat
+              li OEM: 3007-545, 3007-623, 3007-711,
+                br
+                | 3007-447, 3007-617, 3007-693, 3007-701;
+              li Производитель - SPI
+          .card-top_col
+            .card-rating
+              .card-rating_top
+                .card-rating_stars
+                  - const stars = [1,1,1,1,0]
+                  each star in stars
+                    if (star)
+                      +icon("star-active", "svg")
+                    else
+                      +icon("star", "svg")
+                .card-rating_result 4,2
+              .card-rating_parameters
+                .card-rating_parameter
+                  h3 Качество
+                  .card-rating_track
+                    .card-rating_progress(style="width: 75%")
+                .card-rating_parameter
+                  h3 Эффективность
+                  .card-rating_track
+                    .card-rating_progress(style="width: 75%")
+                .card-rating_parameter
+                  h3 Внешний вид
+                  .card-rating_track
+                    .card-rating_progress(style="width: 75%")
+                .card-rating_parameter
+                  h3 Функциональность
+                  .card-rating_track
+                    .card-rating_progress(style="width: 75%")
+                .card-rating_parameter
+                  h3 Экономичность
+                  .card-rating_track
+                    .card-rating_progress(style="width: 75%")
+            .card-code Артикул: 
+              strong 581857-00
+        .card-links
+          .card-links_item.order-link
+            a(href="#")
+              p
+              span Добавить в заказ
+          .card-links_item
+            a(href="#")
+              +icon("question", "svg")
+              span Задать вопрос
+        a(href="#").card-info_file
+          +icon("pdf", "svg")
+          h4 Описание «Штукатурка цементная»
+          p pdf, 15 mb
+            +icon("down-gray", "svg") 
+    .tabs-menu
+      .tabs-menu_item.active Технические характиристики
+      .tabs-menu_item Описание
+    .tabs-list
+      .tabs-item.tab-text.active
+        h2 Технические
+          br
+          | характеристики
+        .tabs-item_col
+          .tabs-item_line
+            p Тип
+            p Виброплита
+          .tabs-item_line
+            p Мощность
+            p 4800 Вт
+          .tabs-item_line
+            p Производитель двигателя
+            p FIRMAN
+          .tabs-item_line
+            p Производительность (м3/ч)
+            p 450
+          .tabs-item_line
+            p Глубина уплотнения
+            p 200 мм
+          .tabs-item_line
+            p Вес нетто
+            p Вес нетто
+          .tabs-item_line
+            p Тип двигателя
+            p Бензиновый
+          .tabs-item_line
+            p Мощность (л.с.)
+            p 6.5
+          .tabs-item_line
+            p Рабочий объем
+            p 153 см
+              span.content-sup 3
+          .tabs-item_line
+            p Бак
+            p 3.6 л
+          .tabs-item_line
+            p Вес брутто
+            p 71.2 кг
+          .tabs-item_line
+            p Коды товара производителя
+            p FPC60F
+      .tabs-item.tab-text
+        h2 Описание
+        .tabs-item_col
+          p Штукатурная станция m-tec mono-mix FU единственная штукатурная станция на 220 В, что позволяет использовать ее на объектах, где отсутствует трехфазное напряжение или его получение затруднительно. Данная штукатурная станция отлично подходит для небольших строительных бригад, которые специализируются на отделке небольших помещений.
+            br
+            br
+            | Штукатурная станция mono-mix FU отлично подходит для выполнения штукатурных работ с использованием сухих смесей на основе гипса, цемента или извести, также данную штукатурную машину можно использовать для устройство полов, но используя данную штукатурную станцию для устройства полов, необходимо обратить внимание на удельный вес сухой смеси. Если сухая смесь для машинного нанесения тяжелая и не высокого качества, то рекомендуется использовать штукатурные станции других моделей, также если на объекте доступно трехфазное напряжение, то рекомендуется использовать другие штукатурные станции, например, штукатурную станцию m-tec M280.
+            br
+            br
+            | Одним из плюсов штукатурной станции mono-mix, который также имеет значение для небольших бригад, является то, что данную штукатурную машину можно использовать как растворонасос. Если необходимо нанести на поверхность, например, готовую (замешанную) шпаклевку, то можно уменьшить производительность штукатурной станции, выгрузить шпаклевку в приемную воронку штукатурной станции и распылить шпаклевку на поверхность.
+          a(href="#").file-link
+            +icon("pdf-2", "svg")
+            h4 Инструкция по применению
+            p pdf, 15 mb
+    .card-products
+      h2 Продукция для механизированного нанесения
+      +sliderVerticalControls
+        button.product-list-next
+        button.product-list-prev
+      .swiper-container.card-products_slider
+        .swiper-wrapper
+          each item,key in [1,2,2,2,1,2]
+            .swiper-slide
+              .fs-productCard
+                .fs-productCard_info
+                  .fs-productCard_status
+                    span хит продаж
+                    span.active акция
+                    span новинка
+                  .fs-productCard_photo
+                    img(src=`../images/product-list-${item}.png`, alt="")
+                  a(href="#").fs-productCard_title GP-31 Штукатурка известково-цементная Геркулес, 25 кг
+                .fs-productCard_buttons
+                  a(href="#").fs-productCard_buttons-loc
+                    +icon("map-pin", "svg")
+                  a(href="#").fs-productCard_buttons-rate
+                    +icon("rating-red", "svg")
+    .card-spares
+      h2 Сопутствующие расходные запчасти
+      .card-spares_list
+        .card-spares_item
+          .card-spares_info
+            .card-spares_photo
+              img(src="../images/spare-1.png", alt="")
+            h3 Статор uni-star 0,25, не треб.тех. обслуж.
+          a(href="#").card-spares_add
+            p
+            span Добавить в заказ
+        .card-spares_item
+          .card-spares_info
+            .card-spares_photo
+              img(src="../images/spare-2.png", alt="")
+            h3 Статор MAKITA HR 3540 C
+          a(href="#").card-spares_add
+            p
+            span Добавить в заказ
+        .card-spares_item
+          .card-spares_info
+            .card-spares_photo
+              img(src="../images/spare-3.png", alt="")
+            h3 Статор uni-star 0,25, не треб.тех. обслуж.
+          a(href="#").card-spares_add
+            p
+            span Добавить в заказ
+        .card-spares_item
+          .card-spares_info
+            .card-spares_photo
+              img(src="../images/spare-1.png", alt="")
+            h3 Статор uni-star 0,25, не треб.тех. обслуж.
+          a(href="#").card-spares_add
+            p
+            span Добавить в заказ
+    .fs-objects
+      .fs-objects_all
+        +link("#", "Все объекты")
+      h2 Данный продукт применялся на объектах
+      .fs-objects_objects
+        +sliderVerticalControls
+          button.fs-objects_next
+          button.fs-objects_prev
+        .swiper-container
+          .swiper-wrapper
+            .swiper-slide
+              .fs-objects_object
+                .fs-objects_photo
+                  .fs-objects_sticker
+                    span Сдан в 2018 году
+                  img(src="../images/object-2.png", alt="")
+                .fs-objects_info
+                  +hashTags([["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"]])
+                  h3 ТК Гранд Каньон
+                  p г. Новосибирск, ул. Иванова, 8
+                  h4 Выполенные работы
+                  ul
+                    li Выравнивание стен / оштукатуривание
+                    li Заливка / выравнивание полов
+                    li Монтаж СФТК
+                  h4 Продукты «Геркулес»
+                  .fs-objects_products
+                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+                    a(href="#") Штукатурная станция mono-mix FU (на 220В)
+                    a(href="#") GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
+                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+            .swiper-slide
+              .fs-objects_object
+                .fs-objects_photo
+                  .fs-objects_sticker
+                    span Сдан в 2018 году
+                  img(src="../images/object-2.png", alt="")
+                .fs-objects_info
+                  +hashTags([["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"]])
+                  h3 ТК Гранд Каньон
+                  p г. Новосибирск, ул. Иванова, 8
+                  h4 Выполенные работы
+                  ul
+                    li Выравнивание стен / оштукатуривание
+                    li Заливка / выравнивание полов
+                    li Монтаж СФТК
+                  h4 Продукты «Геркулес»
+                  .fs-objects_products
+                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+                    a(href="#") Штукатурная станция mono-mix FU (на 220В)
+                    a(href="#") GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
+                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+    
