@@ -53,7 +53,7 @@ export default class Manager_forms {
           sity: $(".events-control select").val(),
           online: $(".events-control input").is(":checked")
         };
-        const dataStr = `sity=${$(".events-control select").val()}&online=${$(".events-control input").is(":checked")}`;
+        const dataStr = `sity=${$(".events-control select").val()}&online=${$(".events-control input").is(":checked")}&checkName=${$(".events-control input").attr("name")}`;
         console.log(JSON.stringify(data));
         const responce = await fetch(`/ajax/getListEvents.php?${dataStr}`, {
           headers: {
