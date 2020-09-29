@@ -75,4 +75,202 @@
       }
     }
   }
+
+  &-quote {
+    position: relative;
+    left: -60px;
+    margin-top: 120px;
+    padding: 100px 90px 110px 170px;
+    width: calc(100% + 60px + 80px);
+    background-color: #F9F9F9;
+
+    blockquote {
+      position: relative;
+      z-index: 1000;
+      font-family: $font-third;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 160%;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: 100;
+      content: "";
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &::before {
+      top: 60px;
+      left: 60px;
+      width: 62px;
+      height: 41px;
+      background-image: url(../images/quotes-red.svg);
+    }
+
+    &::after {
+      bottom: 47px;
+      right: 114px;
+      width: 170px;
+      height: 113px;
+      background-image: url(../images/quotes-transparent.svg);
+    }
+  }
+
+  &-list {
+    margin-top: 130px;
+    display: grid;
+    $col-count: 3;
+    $col-gap: 119px;
+    grid-template-columns: repeat($col-count, minmax(calc((100% - #{$col-gap} * (#{$col-count} - 1)) / #{$col-count}), 1fr));
+    column-gap: $col-gap;
+    row-gap: 70px;
+    counter-reset: index;
+
+    p {
+      position: relative;
+      padding-top: 60px;
+      padding-left: 30px;
+      font-size: 15px;
+      line-height: 150%;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        counter-increment: index;
+        content: '0'counter(index);
+        font-family: $font-third;
+        font-weight: bold;
+        font-size: 35px;
+        line-height: 160%;
+        color: $color-border-second;
+      }
+    }
+  }
+
+  &-keys {
+    position: relative;
+    left: -60px;
+    margin-top: 120px;
+    padding: 120px 80px 120px 60px;
+    width: calc(100% + 60px + 80px);
+    border-top: 1px solid $color-border-second;
+    background-color: #F9F9F9;
+
+    &_row {
+      display: grid;
+      $col-count: 3;
+      $col-gap: 0;
+      grid-template-columns: repeat($col-count, minmax(calc((100% - #{$col-gap} * (#{$col-count} - 1)) / #{$col-count}), 1fr));
+      column-gap: $col-gap;
+    }
+
+    &_col {
+      &:not(:last-child) {
+        margin-right: 60px;
+      }
+
+      p {
+        &:first-child {
+          font-family: $font-third;
+          font-weight: bold;
+          font-size: 35px;
+          line-height: 160%;
+          color: $color-red;
+
+          .content-sup {
+            font-size: 18px
+          }
+        }
+
+        &:last-child {
+          margin-top: 3px;
+          font-size: 15px;
+          line-height: 150%;
+
+          .content-sup {
+            font-size: 8px;
+          }
+        }
+      }
+
+      .content-sup {
+        line-height: 0px;
+        vertical-align: super;
+      }
+    }
+
+    h2 {
+      margin-top: 120px;
+      font-family: $font-third;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 144%;
+
+      &+.about-keys_row {
+        margin-top: 60px;
+      }
+    }
+
+    li {
+      position: relative;
+      padding-left: 32px;
+      font-size: 15px;
+      line-height: 150%;
+
+      &:not(:last-child) {
+        margin-right: 60px;
+      }
+
+      &::before {
+        position: absolute;
+        top: 11px;
+        left: 0;
+        content: "";
+        display: block;
+        width: 20px;
+        border-top: 2px solid $color-red;
+        border-right: 1px solid transparent;
+      }
+    }
+  }
+
+  &-geography {
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: 322px 1fr;
+
+    &_col {
+      padding-top: 50px;
+    }
+
+    h2 {
+      font-family: $font-third;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 144%;
+    }
+
+    p {
+      margin-top: 40px;
+      font-size: 15px;
+      line-height: 150%;
+    }
+
+    &_map {
+      max-width: 770px;
+      min-width: 520px;
+    }
+
+    img {
+      position: relative;
+      left: -5px;
+      display: block;
+      max-width: calc(100% + 134px);
+    }
+  }
 }
