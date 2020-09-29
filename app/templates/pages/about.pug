@@ -1,0 +1,30 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "О компании";
+
+block content
+  .content-row
+    .sidebar
+      .sidebar-menu
+        a(href="#").active О компании
+        a(href="#") Новости
+        .sidebar-menu_dropdown 
+          span Упаковка продукции
+          .sidebar-menu_dropdown-list
+            a(href="#") Упаковка продукции
+            a(href="#") Упаковка продукции
+            a(href="#") Упаковка продукции
+        a(href="#") Объекты
+        a(href="#") Видеогалерея
+        a(href="#") Сотрудники
+        a(href="#") Вакансии
+        a(href="#") Социальная  ответственность
+        a(href="#") Контакты  
+    .content.about
+      .about-top
+        h1 О компании
+        h2 20 лет успеха на рынке сухих строительных смесей!
+        p История компании началась в 1997, когда в логистическом и деловом центре Сибири был основан завод «Геркулес-Сибирь».
+      +breadcrumbs(["Фасадные системы‎"])
+      
