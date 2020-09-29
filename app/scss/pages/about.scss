@@ -119,4 +119,36 @@
       background-image: url(../images/quotes-transparent.svg);
     }
   }
+
+  &-list {
+    margin-top: 130px;
+    display: grid;
+    $col-count: 3;
+    $col-gap: 119px;
+    grid-template-columns: repeat($col-count, minmax(calc((100% - #{$col-gap} * (#{$col-count} - 1)) / #{$col-count}), 1fr));
+    column-gap: $col-gap;
+    row-gap: 70px;
+    counter-reset: index;
+
+    p {
+      position: relative;
+      padding-top: 60px;
+      padding-left: 30px;
+      font-size: 15px;
+      line-height: 150%;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        counter-increment: index;
+        content: '0'counter(index);
+        font-family: $font-third;
+        font-weight: bold;
+        font-size: 35px;
+        line-height: 160%;
+        color: $color-border-second;
+      }
+    }
+  }
 }
