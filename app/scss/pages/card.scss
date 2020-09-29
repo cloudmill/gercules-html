@@ -659,6 +659,7 @@
           font-weight: bold;
           font-size: 18px;
           line-height: 160%;
+          cursor: initial;
 
           &+p {
             margin-top: 10px;
@@ -666,6 +667,7 @@
             font-size: 15px;
             line-height: 150%;
             color: $color-gray;
+            cursor: initial;
           }
         }
 
@@ -675,6 +677,7 @@
             padding: 40px;
             padding-bottom: 0;
             border-bottom: 1px solid $color-border-second;
+            cursor: pointer;
 
             &:first-child {
               border-top: 1px solid $color-border-second;
@@ -717,6 +720,7 @@
             line-height: 150%;
             overflow: hidden;
             transition: $ease-main;
+            cursor: initial;
 
             &::before {
               position: absolute;
