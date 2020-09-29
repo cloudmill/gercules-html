@@ -1,20 +1,21 @@
 block variables
+
 include ../mixins/mixins
 
 doctype html
 html(lang="ru")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title=pageTitle
-        link(href='css/style.min.css' rel='stylesheet')
-    body
-        .wrapper
-            include ../modules/header
-            .page
-                block content
-            include ../modules/footer
-            include ../modules/modal
-        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8530f2db-7a56-4f14-96c4-d4300764ff6f" type="text/javascript"></script>
-        script(src='js/scripts.min.js')
-        block scripts
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title=pageTitle
+    link(href='css/style.min.css' rel='stylesheet')
+  body
+    .wrapper
+      include ../modules/header
+      .page
+        block content
+      include ../modules/footer
+      include ../modules/modal
+    script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8530f2db-7a56-4f14-96c4-d4300764ff6f" type="text/javascript' type='text/javascript')
+    script(src='js/scripts.min.js')
+    block scripts
