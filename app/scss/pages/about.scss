@@ -238,4 +238,39 @@
       }
     }
   }
+
+  &-geography {
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: 322px 1fr;
+
+    &_col {
+      padding-top: 50px;
+    }
+
+    h2 {
+      font-family: $font-third;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 144%;
+    }
+
+    p {
+      margin-top: 40px;
+      font-size: 15px;
+      line-height: 150%;
+    }
+
+    &_map {
+      max-width: 770px;
+      min-width: 520px;
+    }
+
+    img {
+      position: relative;
+      left: -5px;
+      display: block;
+      max-width: calc(100% + 134px);
+    }
+  }
 }
