@@ -75,4 +75,48 @@
       }
     }
   }
+
+  &-quote {
+    position: relative;
+    left: -60px;
+    margin-top: 120px;
+    padding: 100px 90px 110px 170px;
+    width: calc(100% + 60px + 80px);
+    background-color: #F9F9F9;
+
+    blockquote {
+      position: relative;
+      z-index: 1000;
+      font-family: $font-third;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 160%;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: 100;
+      content: "";
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &::before {
+      top: 60px;
+      left: 60px;
+      width: 62px;
+      height: 41px;
+      background-image: url(../images/quotes-red.svg);
+    }
+
+    &::after {
+      bottom: 47px;
+      right: 114px;
+      width: 170px;
+      height: 113px;
+      background-image: url(../images/quotes-transparent.svg);
+    }
+  }
 }
