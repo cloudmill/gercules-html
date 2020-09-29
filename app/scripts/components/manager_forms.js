@@ -35,11 +35,11 @@ export default class Manager_forms {
       if ($(select).attr("data-select-placeholder")) {
         $(select).select2({
           minimumResultsForSearch: -1,
-          placeholder: $(select).attr("data-select-placeholder"),
+          placeholder: $(select).attr("data-select-placeholder")
         });
       } else {
         $(select).select2({
-          minimumResultsForSearch: -1,
+          minimumResultsForSearch: -1
         });
       }
     });
@@ -51,18 +51,19 @@ export default class Manager_forms {
       try {
         const data = {
           sity: $(".events-control select").val(),
-          online: $(".events-control input").is(":checked"),
+          online: $(".events-control input").is(":checked")
         };
-        const responce = await fetch("/ajax/getListEvents.php", {
-          method: "POST",
-          body: JSON.stringify(data),
+        const dataStr = `sity=${$(".events-control select").val()}&online=${$(".events-control input").is(":checked")}`;
+        console.log(JSON.stringify(data));
+        const responce = await fetch(`/ajax/getListEvents.php?${dataStr}`, {
           headers: {
-            "Content-Type": "text/html",
-          },
+            "Content-Type": "text/html"
+          }
+          // body: JSON.stringify(data),
         });
 
         if (responce.ok) {
-          const text = await responce.text()
+          const text = await responce.text();
           console.log(text);
           $(".calendar-data-events").html(text);
           calendar.updateDate();
@@ -71,25 +72,25 @@ export default class Manager_forms {
         console.log(e);
       }
     };
-    $(".events-control select").change((e) => {
+    $(".events-control select").change(e => {
       request();
     });
-    $(".events-control input").change((e) => {
+    $(".events-control input").change(e => {
       request();
     });
   }
 
   init_form_questionBigForm() {
     let form = new Form($("#questionBigForm form"));
-    form.onsuccess = function () {};
+    form.onsuccess = function() {};
   }
   init_form_registrationEventForm() {
     let form = new Form($("#registrationEventForm form"));
-    form.onsuccess = function () {};
+    form.onsuccess = function() {};
   }
   init_form_market() {
     let form = new Form($("#market form"));
-    form.onsuccess = function () {};
+    form.onsuccess = function() {};
   }
   init_form_calc() {
     const Pl = 1000; //плотность материала кг/м3
