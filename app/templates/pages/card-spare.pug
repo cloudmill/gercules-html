@@ -145,113 +145,29 @@ block content
             h4 Инструкция по применению
             p pdf, 15 mb
     .card-products
-      h2 Продукция для механизированного нанесения
+      h2 Подходит для оборудования
       +sliderVerticalControls
         button.product-list-next
         button.product-list-prev
       .swiper-container.card-products_slider
         .swiper-wrapper
-          each item,key in [1,2,2,2,1,2]
+          -
+            items = [
+              ['product-for-use-2.png', 'Штукатурная станция PFT G4 Smart'],
+              ['product-for-use-1.png', 'Штукатурная станция m-tec M280']
+            ]
+          each item, key in [1, 1, 0, 0, 1, 0]
             .swiper-slide
-              .fs-productCard
-                .fs-productCard_info
-                  .fs-productCard_status
-                    span хит продаж
-                    span.active акция
-                    span новинка
-                  .fs-productCard_photo
-                    img(src=`../images/product-list-${item}.png`, alt="")
-                  a(href="#").fs-productCard_title GP-31 Штукатурка известково-цементная Геркулес, 25 кг
-                .fs-productCard_buttons
-                  a(href="#").fs-productCard_buttons-loc
-                    +icon("map-pin", "svg")
-                  a(href="#").fs-productCard_buttons-rate
-                    +icon("rating-red", "svg")
-    .card-spares
-      h2 Сопутствующие расходные запчасти
-      .card-spares_list
-        .card-spares_item
-          .card-spares_info
-            .card-spares_photo
-              img(src="../images/spare-1.png", alt="")
-            h3 Статор uni-star 0,25, не треб.тех. обслуж.
-          a(href="#").card-spares_add
-            p
-            span Добавить в заказ
-        .card-spares_item
-          .card-spares_info
-            .card-spares_photo
-              img(src="../images/spare-2.png", alt="")
-            h3 Статор MAKITA HR 3540 C
-          a(href="#").card-spares_add
-            p
-            span Добавить в заказ
-        .card-spares_item
-          .card-spares_info
-            .card-spares_photo
-              img(src="../images/spare-3.png", alt="")
-            h3 Статор uni-star 0,25, не треб.тех. обслуж.
-          a(href="#").card-spares_add
-            p
-            span Добавить в заказ
-        .card-spares_item
-          .card-spares_info
-            .card-spares_photo
-              img(src="../images/spare-1.png", alt="")
-            h3 Статор uni-star 0,25, не треб.тех. обслуж.
-          a(href="#").card-spares_add
-            p
-            span Добавить в заказ
-    .fs-objects
-      .fs-objects_all
-        +link("#", "Все объекты")
-      h2 Данный продукт применялся на объектах
-      .fs-objects_objects
-        +sliderVerticalControls
-          button.fs-objects_next
-          button.fs-objects_prev
-        .swiper-container
-          .swiper-wrapper
-            .swiper-slide
-              .fs-objects_object
-                .fs-objects_photo
-                  .fs-objects_sticker
-                    span Сдан в 2018 году
-                  img(src="../images/object-2.png", alt="")
-                .fs-objects_info
-                  +hashTags([["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"]])
-                  h3 ТК Гранд Каньон
-                  p г. Новосибирск, ул. Иванова, 8
-                  h4 Выполенные работы
-                  ul
-                    li Выравнивание стен / оштукатуривание
-                    li Заливка / выравнивание полов
-                    li Монтаж СФТК
-                  h4 Продукты «Геркулес»
-                  .fs-objects_products
-                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
-                    a(href="#") Штукатурная станция mono-mix FU (на 220В)
-                    a(href="#") GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
-                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
-            .swiper-slide
-              .fs-objects_object
-                .fs-objects_photo
-                  .fs-objects_sticker
-                    span Сдан в 2018 году
-                  img(src="../images/object-2.png", alt="")
-                .fs-objects_info
-                  +hashTags([["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"]])
-                  h3 ТК Гранд Каньон
-                  p г. Новосибирск, ул. Иванова, 8
-                  h4 Выполенные работы
-                  ul
-                    li Выравнивание стен / оштукатуривание
-                    li Заливка / выравнивание полов
-                    li Монтаж СФТК
-                  h4 Продукты «Геркулес»
-                  .fs-objects_products
-                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
-                    a(href="#") Штукатурная станция mono-mix FU (на 220В)
-                    a(href="#") GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
-                    a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+              .card-addon
+                .card-addon_content
+                  if (item)
+                    .fs-productCard_status
+                      span хит продаж
+                      span.active акция
+                  .card-addon_photo
+                    img(src='../images/' + items[key % 2][0], alt="")
+                  h3= items[key % 2][1]
+                a(href="#").card-addon_button
+                  p
+                  span Добавить в заказ
     
