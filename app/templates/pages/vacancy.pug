@@ -43,36 +43,44 @@ block content
       .vacancy-list
         .vacancy-item
           .vacancy-item_head
-            .vacancy-item_title Руководитель отдела объектных продаж
-            .vacancy-item_tags
-              span 22 октября 2019
-              span Полная занятость
-              span Новосибирск
-            .vacancy-item_salary 25 000 — 35 000 Р
+            .vacancy-item_info
+              .vacancy-item_title Руководитель отдела объектных продаж
+              .vacancy-item_tags
+                span 22 октября 2019
+                span Полная занятость
+                span Новосибирск
+            .vacancy-item_salary
+              span.content-nowrap 25 000
+              | #{' — '}
+              span.content-nowrap 35 000 Р
           +vacancy_item_dropdown
         .vacancy-item
           .vacancy-item_head
-            .vacancy-item_title Инженер по нормированию
-            .vacancy-item_tags
-              span 22 октября 2019
-              span Полная занятость
-              span Новосибирск
-            .vacancy-item_salary от 45 000 Р
+            .vacancy-item_info
+              .vacancy-item_title Инженер по нормированию
+              .vacancy-item_tags
+                span 22 октября 2019
+                span Полная занятость
+                span Новосибирск
+            .vacancy-item_salary.content-nowrap от 45 000 Р
           +vacancy_item_dropdown
         .vacancy-item
           .vacancy-item_head
-            .vacancy-item_title Инженер-технолог
-            .vacancy-item_tags
-              span 22 октября 2019
-              span Полная занятость
-              span Новосибирск
-            .vacancy-item_salary Без указания з/п
+            .vacancy-item_info
+              .vacancy-item_title Инженер-технолог
+              .vacancy-item_tags
+                span 22 октября 2019
+                span Полная занятость
+                span Новосибирск
+            .vacancy-item_salary.content-nowrap Без указания з/п
           +vacancy_item_dropdown
       .vacancy-info
         .vacancy-info_img
           img(src="images/vacancy.jpg" alt="")
         .vacancy-info_content
-          h2 Не нашли вакансию? Напишите нам!
+          h2 Не нашли вакансию?
+            br
+            | Напишите нам!
           h3 Ерехинская Анастасия Сергеевна 
             span менеджер по персоналу
           .vacancy-info_contacts
@@ -87,8 +95,3 @@ block content
             a(href="")
             span Отправить резюме
             +icon("link-white-arrow", "svg")
-
-
-
-
-
