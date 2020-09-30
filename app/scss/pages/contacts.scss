@@ -209,17 +209,109 @@
     }
   }
 
+  &-help {
+    margin-top: 60px;
+
+    p {
+      margin-top: 20px;
+      max-width: 600px;
+      font-size: 15px;
+      line-height: 150%;
+    }
+
+    &_list {
+      position: relative;
+      left: -40px;
+      margin-top: 40px;
+      width: calc(100% + 40px + 1px);
+      display: grid;
+      grid-template-columns: repeat(4, 25%);
+
+      li {
+        position: relative;
+        margin-left: -1px;
+        padding: 180px 30px 30px 40px;
+        min-height: 288px;
+        border: 1px solid $color-border-second;
+        font-size: 15px;
+        line-height: 150%;
+
+        img {
+          position: absolute;
+          max-width: calc(100% - 40px - 30px);
+          display: block;
+        }
+
+        &::before {
+          position: absolute;
+          top: 184px;
+          left: 0;
+          content: "";
+          display: block;
+          height: 60px;
+          border-left: 4px solid $color-red;
+          border-top: 3px solid transparent;
+        }
+
+        &:nth-child(1) img {
+          top: 45px;
+          left: 43px;
+        }
+
+        &:nth-child(2) img {
+          top: 48px;
+          left: 41px;
+        }
+
+        &:nth-child(3) img {
+          top: 46px;
+          left: 41px;
+        }
+
+        &:nth-child(4) img {
+          top: 46px;
+          left: 42px;
+        }
+      }
+    }
+  }
+
   &-form {
     margin-top: 120px;
 
     h2 {
+      margin: 0;
       max-width: 731px;
       font-size: 20px;
       line-height: 160%;
     }
 
+    &_title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      a {
+        margin-left: 60px;
+        padding: 10px 26px 4px 26px;
+        display: block;
+        background-color: white;
+        border: 1px solid $color-border-second;
+        font-family: $font-third;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 160%;
+        color: $color-red;
+        white-space: nowrap;
+      }
+    }
+
     .eventRegistration {
       margin-top: 60px;
+    }
+
+    &.content-small-margin {
+      margin-top: 90px;
     }
   }
 }
