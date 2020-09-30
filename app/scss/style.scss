@@ -16,6 +16,17 @@
   min-height: 300px; //потом убрать
   overflow: hidden;
 
+  @media (max-width: 1330px) {
+    margin-left: 40px;
+    width: calc(100% - 40px);
+  }
+
+  @media (max-width: 1024px) {
+    margin: 0;
+    width: auto;
+    border-left: none;
+  }
+
   &-title {
     margin-top: 35px;
     font-family: $font-third;
@@ -40,6 +51,14 @@
         padding-right: 80px;
         width: calc(100% - 287px);
         overflow: hidden;
+
+        @media (max-width: 1370px) {
+          width: calc(100% - 220px);
+        }
+
+        @media (max-width: 900px) {
+          width: 100%;
+        }
       }
     }
   }

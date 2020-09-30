@@ -4,6 +4,14 @@
     left: -40px;
     margin-top: 60px;
     width: calc(100% + 40px);
+
+    @media (max-width: 1440px) {
+      width: calc(100% + 40px + 80px);
+    }
+
+    @media (max-width: 700px) {
+      width: calc(100% + 40px + 40px);
+    }
   }
 
   &-item {
@@ -131,6 +139,21 @@
         border-left-color: transparent;
         transition: transform $ease-main, border $ease-main;
         transform: translateY(-50%) rotate(45deg);
+      }
+
+      @media (max-width: 1330px) {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+
+        .vacancy-item_salary {
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 700px) {
+        &::after {
+          right: -34px;
+        }
       }
     }
 
@@ -266,14 +289,46 @@
           margin-left: 20px;
         }
       }
+
+      @media (max-width: 1100px) {
+        display: block;
+
+        &-text {
+          margin: 0;
+        }
+
+        .main-link_rect {
+          margin-top: 40px;
+        }
+      }
+
+      @media (max-width: 700px) {
+        width: calc(100% + 40px + 80px);
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    @media (max-width: 700px) {
+      padding-right: 60px;
     }
   }
 
   &-info {
     display: grid;
-    grid-template-columns: minmax(400px, 600px) 1fr;
+    grid-template-columns: minmax(400px, 600px) minmax(max-content, 1fr);
     grid-column-gap: 120px;
     margin-top: 90px;
+
+    @media (max-width: 1370px) {
+      grid-template-columns: minmax(400px, 600px) 1fr;
+    }
+
+    &>h2 {
+      display: none;
+    }
 
     &_img {
       img {
@@ -347,5 +402,41 @@
         }
       }
     }
+
+    @media (max-width: 1190px) {
+      margin-top: 90px;
+      display: block;
+
+      &>h2 {
+        display: block;
+        font-family: $font-third;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 144%;
+      }
+
+      &_img {
+        margin-top: 30px;
+
+        img {
+          width: auto;
+          max-width: 100%;
+        }
+      }
+
+      &_content {
+        margin-top: 60px;
+
+        &>h2 {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.page .content-row .content.vacancy {
+  @media (max-width: 700px) {
+    padding-right: 40px;
   }
 }

@@ -4,6 +4,31 @@
   width: 287px;
   border-right: 1px solid $color-border-second;
 
+  @media (max-width: 1370px) {
+    min-width: auto;
+    width: 220px;
+
+    .sidebar-menu {
+      &>a {
+        padding-left: 30px;
+      }
+      
+      &_dropdown {
+        &>span {
+          padding-left: 30px;
+        }
+
+        &-list {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+
   &-menu {
     @mixin sidebar_link_wrapper {
       position: relative;
@@ -49,6 +74,8 @@
     & > a {
       @include sidebar_link_wrapper();
       @include sidebar_link();
+      padding-right: 30px;
+      line-height: 140%;
     }
     &_dropdown {
       @include sidebar_link_wrapper();
@@ -62,6 +89,7 @@
       span {
         @include sidebar_link();
         margin-bottom: 15px;
+        padding-right: 30px;
         &::after {
           content: "";
           display: block;
@@ -82,6 +110,7 @@
       &-list {
         display: none;
         padding-left: 55px;
+        padding-right: 30px;
         a {
           display: block;
           margin-bottom: 0;
