@@ -97,6 +97,10 @@
         }
       }
     }
+
+    &+.contacts-row {
+      margin-top: 30px;
+    }
   }
 
   .fs-contacts {
@@ -123,7 +127,7 @@
     .fs-contacts {
       &_item {
         display: grid;
-        grid-template-columns: minmax(320px, 40%) 1fr;
+        grid-template-columns: minmax(300px, 40%) 1fr;
         column-gap: 85px;
 
         h2 {
@@ -165,16 +169,17 @@
       &-menu {
         margin-top: 60px;
       }
-
-      &-list {
-        border-bottom: 1px solid $color-border-second;
-        padding-bottom: 40px;
-      }
     }
   }
 
   &-regions {
-    margin-top: 60px;
+    margin-top: 40px;
+    padding-top: 60px;
+    border-top: 1px solid $color-border-second;
+
+    h2 {
+      margin: 0;
+    }
 
     .contacts-row {
       margin-top: 40px;
@@ -230,7 +235,7 @@
       li {
         position: relative;
         margin-left: -1px;
-        padding: 180px 30px 30px 40px;
+        padding: 180px 25px 30px 40px;
         min-height: 288px;
         border: 1px solid $color-border-second;
         font-size: 15px;
