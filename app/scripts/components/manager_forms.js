@@ -35,11 +35,11 @@ export default class Manager_forms {
       if ($(select).attr("data-select-placeholder")) {
         $(select).select2({
           minimumResultsForSearch: -1,
-          placeholder: $(select).attr("data-select-placeholder")
+          placeholder: $(select).attr("data-select-placeholder"),
         });
       } else {
         $(select).select2({
-          minimumResultsForSearch: -1
+          minimumResultsForSearch: -1,
         });
       }
     });
@@ -51,14 +51,16 @@ export default class Manager_forms {
       try {
         const data = {
           sity: $(".events-control select").val(),
-          online: $(".events-control input").is(":checked")
+          online: $(".events-control input").is(":checked"),
         };
-        const dataStr = `sity=${$(".events-control select").val()}&online=${$(".events-control input").is(":checked")}`;
+        const dataStr = `sity=${$(".events-control select").val()}&online=${$(
+          ".events-control input"
+        ).is(":checked")}`;
         console.log(JSON.stringify(data));
         const responce = await fetch(`/ajax/getListEvents.php?${dataStr}`, {
           headers: {
-            "Content-Type": "text/html"
-          }
+            "Content-Type": "text/html",
+          },
           // body: JSON.stringify(data),
         });
 
@@ -72,25 +74,25 @@ export default class Manager_forms {
         console.log(e);
       }
     };
-    $(".events-control select").change(e => {
+    $(".events-control select").change((e) => {
       request();
     });
-    $(".events-control input").change(e => {
+    $(".events-control input").change((e) => {
       request();
     });
   }
 
   init_form_questionBigForm() {
     let form = new Form($("#questionBigForm form"));
-    form.onsuccess = function() {};
+    form.onsuccess = function () {};
   }
   init_form_registrationEventForm() {
     let form = new Form($("#registrationEventForm form"));
-    form.onsuccess = function() {};
+    form.onsuccess = function () {};
   }
   init_form_market() {
     let form = new Form($("#market form"));
-    form.onsuccess = function() {};
+    form.onsuccess = function () {};
   }
   init_form_calc() {
     const Pl = 1000; //плотность материала кг/м3
@@ -114,6 +116,8 @@ export default class Manager_forms {
       const inpt = $(item)
         .closest(".field-base")
         .find("input:not(.sliderRange)");
+      const max = parseInt($(item).attr("data-slider-max"));
+      const min = parseInt($(item).attr("data-slider-min"));
       const slider = $(item)
         .slider()
         .on("slide", () => {
@@ -121,6 +125,14 @@ export default class Manager_forms {
           recalc();
         })
         .data("slider");
+      inpt.keyup((e) => {
+        const val = e.target.value.replace(/[^0-9+.,]/g, "");
+        inpt.val(val)
+        if(val > max) inpt.val(max)
+        if(val < min) inpt.val(min)
+        slider.setValue(e.target.value);
+        recalc();
+      });
     });
     $(".card-calculator select").change(() => {
       recalc();
