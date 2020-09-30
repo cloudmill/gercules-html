@@ -1,0 +1,65 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Консультации и сервис";
+
+block content
+  .content-row
+    .sidebar
+      .sidebar-menu
+        a(href="") Центральный офис
+        a(href="").active Консультации и сервис
+        a(href="") Клиентский сервис
+        a(href="") Техническая поддержка 
+        a(href="") по продукции
+        a(href="") Отдел качества
+        a(href="") Механизированные технологии
+        a(href="") Коммерческая служба
+        a(href="") Логистика и закупка
+        a(href="") Отдел маркетинга
+        a(href="") Отдел персонала
+    .content.contacts
+      +breadcrumbs(['Контакты',pageTitle])
+      h1.page-title #{pageTitle}
+      .contacts-help
+        h2 Чем мы можем вам помочь
+        p Для нас важно, чтобы каждый наш клиент получил лучший сервис и сопровождение. Для этого мы создали сервис помощи «Геркулес».
+        ul.contacts-help_list
+          li Бесплатный выезд технических специалистов на объект
+            img(src="../images/worker.svg", alt="")
+          li Консультации экспертов
+            br
+            | по телефону
+            img(src="../images/phone-call.svg", alt="")
+          li Регулярные семинары
+            br
+            | и тренинги по обучению работе с продукцией «Геркулес»
+            img(src="../images/clock-calendar.svg", alt="")
+          li Онлайн-обучение в академии «Геркулес»
+            img(src="../images/education.svg", alt="")
+      .contacts-form.content-small-margin
+        .contacts-form_title
+          h2 Вы можете описать свою проблему по телефону
+            br
+            | или оставить обращение через форму обратной связи
+          a(href="tel: 8 800 250 30 10") 8 800 250 30 10
+        .eventRegistration#contactsForm
+          form(action="#")
+            .field-row
+              .field-col
+                +field_base("name", "name", "Имя*", "Алексей")
+              .field-col
+                +field_base("email", "email", "Email", "ksh@loudmill.ru")
+            +field_area("comment", "comment", 'Ваш вопрос', 'Текст вопроса', [30, 10])
+            .field-row
+              .field-col
+                +field_checkbox()
+                  input#pp_quest(type="checkbox" name="pp" checked data-required)
+                  label(for="pp_quest") «Я выражаю согласие на обработку ПДн в соответствии с 
+                    a(href="") Политикой конфиденциальности
+                    |»
+              .field-col
+                +linkRect
+                  button(id="submit" name="submit")
+                  span Отправить
+                  +icon("link-white-arrow", "svg")

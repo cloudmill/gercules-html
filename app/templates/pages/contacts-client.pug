@@ -1,0 +1,75 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Клиентский сервис";
+
+block content
+  .content-row
+    .sidebar
+      .sidebar-menu
+        a(href="") Центральный офис
+        a(href="") Консультации и сервис
+        a(href="").active Клиентский сервис
+        a(href="") Техническая поддержка 
+        a(href="") по продукции
+        a(href="") Отдел качества
+        a(href="") Механизированные технологии
+        a(href="") Коммерческая служба
+        a(href="") Логистика и закупка
+        a(href="") Отдел маркетинга
+        a(href="") Отдел персонала
+    .content.contacts
+      +breadcrumbs(['Контакты',pageTitle])
+      h1.page-title #{pageTitle}
+      h2 Консультация действующих дистрибьюторов 
+        br
+        | ООО «Геркулес-Сибирь» по вопросам отгрузок
+      .contacts-row
+        .fs-contacts
+          .fs-contacts_list
+            .fs-contacts_item
+              .fs-contacts_photo
+                img(src="./images/photo-contact1-344x390.png", alt="")
+              h3 Бернгард Андрей Сергеевич
+              p Региональный представитель по Новосибирской области
+              .fs-contacts_phone
+                +icon("phone", "svg")
+                a(href="tel:8 383 338 31 32") +7 (383) 338-31-32 вн. 119
+              .fs-contacts_phone
+                a(href="tel:8 913 789 01 14") +7 (913) 789-01-14
+              .fs-contacts_email
+                +icon("mail", "svg")
+                a(href="berngard.as@gerkules.ru") berngard.as@gerkules.ru
+            .fs-contacts_item
+              .fs-contacts_photo
+                img(src="./images/contact-1.jpg", alt="")
+              h3 Щербаченко Павел Владимирович
+              p Региональный представитель по Томской области
+              .fs-contacts_phone
+                +icon("phone", "svg")
+                a(href="tel:8 913 865 32 63") +7 (913) 865-32-63
+              .fs-contacts_email
+                +icon("mail", "svg")
+                a(href="sherbachenko.pv@gerkules.ru") sherbachenko.pv@gerkules.ru
+      .contacts-form
+        h2 Вы также можете задать любой вопрос через форму обратной связи и мы ответим вам на почту
+        .eventRegistration#contactsForm
+          form(action="#")
+            .field-row
+              .field-col
+                +field_base("name", "name", "Имя*", "Алексей")
+              .field-col
+                +field_base("email", "email", "Email", "ksh@loudmill.ru")
+            +field_area("comment", "comment", 'Ваш вопрос', 'Текст вопроса', [30, 10])
+            .field-row
+              .field-col
+                +field_checkbox()
+                  input#pp_quest(type="checkbox" name="pp" checked data-required)
+                  label(for="pp_quest") «Я выражаю согласие на обработку ПДн в соответствии с 
+                    a(href="") Политикой конфиденциальности
+                    |»
+              .field-col
+                +linkRect
+                  button(id="submit" name="submit")
+                  span Отправить
+                  +icon("link-white-arrow", "svg")

@@ -242,7 +242,7 @@
   &-geography {
     margin-top: 120px;
     display: grid;
-    grid-template-columns: 322px 1fr;
+    grid-template-columns: 322px minmax(520px, 770px);
 
     &_col {
       padding-top: 50px;
@@ -259,11 +259,6 @@
       margin-top: 40px;
       font-size: 15px;
       line-height: 150%;
-    }
-
-    &_map {
-      max-width: 770px;
-      min-width: 520px;
     }
 
     img {
