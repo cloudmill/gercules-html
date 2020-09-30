@@ -49,19 +49,14 @@ export default class Manager_forms {
     let calendar = new CalendarSlider();
     const request = async () => {
       try {
-        const data = {
-          sity: $(".events-control select").val(),
-          online: $(".events-control input").is(":checked"),
-        };
-        const dataStr = `sity=${$(".events-control select").val()}&online=${$(
-          ".events-control input"
-        ).is(":checked")}`;
-        console.log(JSON.stringify(data));
+        const sity = $(".events-control select").val();
+        const online = $(".events-control input").is(":checked");
+        const checkName = $(".events-control input").attr("name");
+        const dataStr = `sity=${sity}&${checkName}=${online}`;
         const responce = await fetch(`/ajax/getListEvents.php?${dataStr}`, {
           headers: {
             "Content-Type": "text/html",
           },
-          // body: JSON.stringify(data),
         });
 
         if (responce.ok) {
@@ -127,9 +122,9 @@ export default class Manager_forms {
         .data("slider");
       inpt.keyup((e) => {
         const val = e.target.value.replace(/[^0-9+.,]/g, "");
-        inpt.val(val)
-        if(val > max) inpt.val(max)
-        if(val < min) inpt.val(min)
+        inpt.val(val);
+        if (val > max) inpt.val(max);
+        if (val < min) inpt.val(min);
         slider.setValue(e.target.value);
         recalc();
       });
