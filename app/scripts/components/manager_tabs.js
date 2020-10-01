@@ -18,6 +18,7 @@ class SlideDown {
     this.item.find('>*:not([class$="dropdown"])').click((e) => {
       this.toggle();
     });
+    $(window).on("resize", this.update.bind(this));
   }
   get heightBox() {
     return this.boxContent.height();
@@ -50,7 +51,11 @@ class SlideDown {
     this.item.toggleClass("open");
     this.opened = !this.opened;
   }
-  update() {}
+  update() {
+    if (this.opened) {
+      this.height = this.heightBox;
+    }
+  }
 }
 
 export default class Manager_tabs {
