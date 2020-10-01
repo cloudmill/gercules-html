@@ -47,26 +47,37 @@ export default class Manager_forms {
 
   init_form_calendar() {
     let calendar = new CalendarSlider();
+    let proccess = false;
     const request = async () => {
+      if(proccess) return true;
+      proccess = true;
       try {
         const sity = $(".events-control select").val();
-        const online = $(".events-control input").is(":checked");
-        const checkName = $(".events-control input").attr("name");
-        const dataStr = `sity=${sity}&${checkName}=${online}`;
+        let params = "";
+        $(".events-control input[type=checkbox]").each((k, item) => {
+          const checkName = item.getAttribute("name");
+          const value = item.checked;
+          params += `&${checkName}=${value}`;
+        });
+        const dataStr = `sity=${sity}${params}`;
         const responce = await fetch(`/ajax/getListEvents.php?${dataStr}`, {
           headers: {
             "Content-Type": "text/html",
           },
         });
-
         if (responce.ok) {
           const text = await responce.text();
+          
           console.log(text);
           $(".calendar-data-events").html(text);
           calendar.updateDate();
+          setTimeout(()=>{
+            proccess = false;
+          },500)
         }
       } catch (e) {
         console.log(e);
+        proccess = false;
       }
     };
     $(".events-control select").change((e) => {
