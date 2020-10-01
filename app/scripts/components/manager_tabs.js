@@ -5,7 +5,6 @@ class SlideDown {
     this.minHeight = minHeight || "0";
     this.el = el;
     this.boxContent = boxContent;
-    this.animate = false;
     this.opened = false;
     this.init();
   }
@@ -27,20 +26,10 @@ class SlideDown {
     this.el.css("max-height", newHeight);
   }
   open() {
-    this.animate = true;
     this.height = this.heightBox;
-    clearTimeout(this.timeout);
-    this.timeout = setTimeout(() => {
-      this.animate = false;
-    }, this.time);
   }
   close() {
-    this.animate = true;
     this.height = this.minHeight;
-    clearTimeout(this.timeout);
-    this.timeout = setTimeout(() => {
-      this.animate = false;
-    }, this.time);
   }
   toggle() {
     if (this.opened) {
@@ -53,7 +42,7 @@ class SlideDown {
   }
   update() {
     if (this.opened) {
-      this.height = this.heightBox;
+      this.open();
     }
   }
 }
@@ -113,7 +102,6 @@ export default class Manager_tabs {
         el: $(element).find(".vacancy-item_dropdown"),
         boxContent: $(element).find(".vacancy-item_dropdown-content"),
         time: 500,
-        minHeight: 0,
       });
     });
   }
