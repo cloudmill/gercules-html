@@ -5,79 +5,77 @@
     margin-top: 60px;
     width: calc(100% + 40px);
 
-    @media (max-width: 1440px) {
-      width: calc(100% + 40px + 80px);
-    }
-
-    @media (max-width: 700px) {
-      width: calc(100% + 40px + 40px);
+    @media (max-width: 1024px) {
+      left: -30px;
+      width: calc(100% + 30px + 30px);
     }
   }
 
   &-item {
+    position: relative;
+    padding: 40px 80px 40px 40px;
     border-top: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
-    padding: 40px 80px 40px 40px;
-    position: relative;
-    cursor: pointer;
 
     &:not(:first-child) {
       margin-top: -1px;
     }
 
     &::before {
-      content: "";
-      display: block;
       opacity: 0;
+      position: absolute;
+      z-index: -1;
       top: 0;
       left: 0;
       bottom: 0;
       right: -80px;
-      transition: opacity $ease-main;
+      content: "";
+      display: block;
       background: #fafafa;
+      transition: opacity $ease-main;
+    }
+
+    &:after {
       position: absolute;
-      z-index: -1;
+      top: 45px;
+      right: 35px;
+      transform: translateY(-50%) rotate(45deg);
+      content: "";
+      display: block;
+      width: 8px;
+      height: 8px;
+      border: 2px solid $color-basic;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      transition: $ease-main;
     }
 
-    &.open {
-      &::before {
-        opacity: 1;
-      }
+    &_head {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(min-content, 60%) 1fr;
+      column-gap: 60px;
+      cursor: pointer;
 
-      .vacancy-item {
-        &_title {
+      &:hover {
+
+        .vacancy-item_title,
+        .vacancy-item_salary {
           color: $color-red;
         }
 
-        &_salary {
+        &~.vacancy-item_salary {
           color: $color-red;
         }
-
-        &_head {
-          &:after {
-            transform: rotate(225deg);
-            border-bottom-color: $color-red;
-            border-right-color: $color-red;
-          }
-        }
-      }
-    }
-
-    &:hover {
-
-      .vacancy-item_title,
-      .vacancy-item_salary {
-        color: #e41d2c;
       }
     }
 
     &_title {
       font-family: $font-third;
-      font-style: normal;
       font-weight: bold;
       font-size: 18px;
       line-height: 160%;
-      transition: color $ease-main;
+      transition: $ease-main;
     }
 
     &_tags {
@@ -86,22 +84,20 @@
       align-items: center;
 
       span {
-        font-style: normal;
-        font-weight: normal;
+        display: flex;
+        align-items: center;
         font-size: 15px;
         line-height: 150%;
         color: #262626;
-        display: flex;
-        align-items: center;
 
         &:not(:last-child) {
           &:after {
+            margin: 0 30px;
             content: "";
             display: block;
             width: 1px;
             height: 20px;
             background: #e5e5e5;
-            margin: 0 30px;
           }
         }
       }
@@ -113,76 +109,27 @@
       font-size: 18px;
       line-height: 160%;
       text-align: right;
-      transition: color $ease-main;
-    }
-
-    .content-nowrap {
-      white-space: nowrap;
-    }
-
-    &_head {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(min-content, 60%) 1fr;
-      column-gap: 60px;
-
-      &:after {
-        content: "";
-        display: block;
-        width: 8px;
-        height: 8px;
-        position: absolute;
-        top: 7px;
-        right: -44px;
-        border: 2px solid $color-basic;
-        border-top-color: transparent;
-        border-left-color: transparent;
-        transition: transform $ease-main, border $ease-main;
-        transform: translateY(-50%) rotate(45deg);
-      }
-
-      @media (max-width: 1330px) {
-        grid-template-columns: 1fr;
-        row-gap: 30px;
-
-        .vacancy-item_salary {
-          text-align: left;
-        }
-      }
-
-      @media (max-width: 700px) {
-        &::after {
-          right: -34px;
-        }
-      }
+      transition: $ease-main;
     }
 
     &_dropdown {
       &-content {
         display: none;
-        padding-top: 5px;
+        padding-top: 10px;
         padding-bottom: 20px;
       }
 
       h3 {
-        font-style: normal;
+        margin-top: 30px;
         font-weight: bold;
         font-size: 18px;
         line-height: 130%;
         color: #262626;
-        margin-top: 35px;
-        margin-bottom: 20px;
-      }
-
-      p {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 15px;
-        line-height: 150%;
-        color: #262626;
       }
 
       ul {
+        margin-top: 20px;
+
         li {
           position: relative;
           padding-left: 30px;
@@ -190,7 +137,7 @@
           line-height: 22px;
 
           &:not(:first-child) {
-            margin-top: 15px;
+            margin-top: 20px;
           }
 
           &::before {
@@ -206,58 +153,59 @@
           }
         }
       }
+
+      p {
+        margin-top: 20px;
+        font-size: 15px;
+        line-height: 150%;
+        color: #262626;
+      }
     }
 
     &_contact {
-      background-color: white;
-      padding: 60px 80px 60px 40px;
-      display: grid;
-      grid-template-columns: 1fr minmax(260px, 1fr);
-      align-items: center;
-      overflow: hidden;
-      margin-top: 40px;
       position: relative;
       left: -40px;
+      margin-top: 40px;
+      padding: 60px 80px 60px 40px;
+      width: calc(100% + 40px + 80px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      overflow: hidden;
 
       &::before {
-        content: "";
-        height: 200%;
-        width: 100%;
-        left: 100%;
         position: absolute;
+        z-index: -1;
         top: 0;
-        transform-origin: left top;
-        transform: rotate(15deg);
-        z-index: 1;
-        background: #fafafa;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        transform-origin: right top;
+        transform: skewX(-20deg);
+        content: '';
         display: block;
+        background: white;
       }
 
       &-text {
         margin-right: 60px;
 
         h3 {
-          font-style: normal;
+          margin: 0;
           font-weight: bold;
           font-size: 18px;
           line-height: 130%;
-          color: #262626;
-          margin-bottom: 20px;
-          margin-top: 0;
         }
 
         p {
-          display: block;
-          font-style: normal;
-          font-weight: normal;
+          margin-top: 20px;
           font-size: 15px;
           line-height: 150%;
-          color: #262626;
-          display: flex;
-          align-items: center;
 
-          &:not(:last-child) {
-            margin-bottom: 5px;
+          &+p {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
           }
 
           a {
@@ -266,16 +214,16 @@
 
             &:not(:last-child) {
               &:after {
+                margin: 0 20px;
                 content: "";
-                display: block;
                 width: 1px;
                 height: 20px;
-                background: #e5e5e5;
-                margin: 0 20px;
+                display: block;
+                background: $color-border-second;
               }
             }
 
-            &.color {
+            &.content-red {
               color: #e41d2c;
             }
           }
@@ -283,90 +231,126 @@
       }
 
       .main-link_rect {
-        max-width: 290px;
+        max-width: 280px;
 
         i {
           margin-left: 20px;
         }
       }
 
-      @media (max-width: 1100px) {
-        display: block;
+      @media (max-width: 1440px) {
+        grid-template-columns: 436px minmax(260px, 1fr);
+      }
 
-        &-text {
-          margin: 0;
-        }
+      @media (max-width: 1167px) {
+        display: block;
 
         .main-link_rect {
           margin-top: 40px;
         }
       }
 
-      @media (max-width: 700px) {
-        width: calc(100% + 40px + 80px);
+      @media (max-width: 1024px) {
+        width: calc(100% + 40px);
+      }
+    }
 
-        &::before {
-          display: none;
+    &>.vacancy-item_salary {
+      display: none;
+      text-align: left;
+    }
+
+    .content-nowrap {
+      white-space: nowrap;
+    }
+
+    &.open {
+      &:before {
+        opacity: 1;
+      }
+
+      &:after {
+        transform: rotate(225deg);
+        border-bottom-color: $color-red;
+        border-right-color: $color-red;
+      }
+
+      .vacancy-item {
+        &_title {
+          color: $color-red;
+        }
+
+        &_salary {
+          color: $color-red;
         }
       }
     }
 
-    @media (max-width: 700px) {
-      padding-right: 60px;
+    @media(max-width: 900px) {
+      &_head {
+        &>.vacancy-item_salary {
+          display: none;
+        }
+      }
+
+      &>.vacancy-item_salary {
+        margin-top: 30px;
+        display: block;
+      }
     }
   }
 
   &-info {
-    display: grid;
-    grid-template-columns: minmax(400px, 600px) minmax(max-content, 1fr);
-    grid-column-gap: 120px;
     margin-top: 90px;
-
-    @media (max-width: 1370px) {
-      grid-template-columns: minmax(400px, 600px) 1fr;
-    }
+    display: grid;
+    grid-template-columns: minmax(max-content, 400px) 1fr;
+    column-gap: 120px;
 
     &>h2 {
       display: none;
+      font-family: $font-third;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 144%;
     }
 
     &_img {
       img {
-        width: 100%;
+        max-width: 100%;
         display: block;
+      }
+
+      @media (max-width: 1024px) {
+        max-width: 320px;
       }
     }
 
     &_content {
       h2 {
         font-family: $font-third;
-        font-style: normal;
         font-weight: bold;
         font-size: 28px;
         line-height: 144%;
-        color: #262626;
-        margin-bottom: 60px;
       }
 
       h3 {
-        font-style: normal;
+        margin-top: 60px;
         font-weight: bold;
         font-size: 18px;
         line-height: 130%;
-        color: #262626;
-        margin-bottom: 20px;
 
         span {
-          display: block;
           margin-top: 5px;
+          display: block;
+          font-size: 15px;
           font-weight: normal;
         }
       }
 
       .main-link_rect {
         margin-top: 50px;
-        min-width: 300px;
-        max-width: 320px;
+        min-width: 310px;
+        max-width: 330px;
         margin-left: -10px;
 
         i {
@@ -376,12 +360,18 @@
     }
 
     &_contacts {
+      margin-top: 20px;
+
       span {
         padding-left: 50px;
         margin-bottom: 10px;
         display: block;
         position: relative;
         color: #262626;
+
+        &.phone {
+          left: 2px;
+        }
 
         &.email {
           color: $color-red;
@@ -390,7 +380,7 @@
         i {
           position: absolute;
           left: 0;
-          top: 12px;
+          top: 8px;
         }
 
         a {
@@ -400,34 +390,30 @@
           font-size: 18px;
           line-height: 200%;
         }
+
+
       }
     }
 
-    @media (max-width: 1190px) {
-      margin-top: 90px;
+    @media (max-width: 1440px) {
+      column-gap: 60px;
+    }
+
+    @media (max-width: 1330px) {
       display: block;
 
       &>h2 {
         display: block;
-        font-family: $font-third;
-        font-weight: bold;
-        font-size: 28px;
-        line-height: 144%;
       }
 
       &_img {
-        margin-top: 30px;
-
-        img {
-          width: auto;
-          max-width: 100%;
-        }
+        margin-top: 45px;
       }
 
       &_content {
         margin-top: 60px;
 
-        &>h2 {
+        h2 {
           display: none;
         }
       }
@@ -436,7 +422,14 @@
 }
 
 .page .content-row .content.vacancy {
-  @media (max-width: 700px) {
-    padding-right: 40px;
+  padding: 60px 80px 120px 40px;
+
+  @media (max-width: 1280px) {
+    padding-right: 60px;
+  }
+
+  @media (max-width: 1024px) {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }

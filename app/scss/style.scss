@@ -16,17 +16,6 @@
   min-height: 300px; //потом убрать
   overflow: hidden;
 
-  @media (max-width: 1330px) {
-    margin-left: 40px;
-    width: calc(100% - 40px);
-  }
-
-  @media (max-width: 1024px) {
-    margin: 0;
-    width: auto;
-    border-left: none;
-  }
-
   &-title {
     margin-top: 35px;
     font-family: $font-third;
@@ -52,25 +41,21 @@
         width: calc(100% - 287px);
         overflow: hidden;
 
-        @media (max-width: 1370px) {
-          width: calc(100% - 220px);
+        @media (max-width: 1280px) {
+          width: calc(100% - 250px);
         }
 
-        @media (max-width: 900px) {
-          width: 100%;
+        @media (max-width: 1024px) {
+          width: calc(100% - 210px);
         }
       }
     }
   }
 
-  // новая верстка "Фасадные Системы"
-
-  // page-row
   &-row {
     display: flex;
   }
 
-  // page-col
   &-col {
     align-self: stretch;
 
@@ -87,5 +72,16 @@
         margin-top: 35px;
       }
     }
+  }
+
+  @media (max-width: 1280px) {
+    margin-left: 40px;
+    width: calc(100% - 40px);
+  }
+
+  @media (max-width: 1024px) {
+    margin: 0;
+    width: auto;
+    border: none;
   }
 }

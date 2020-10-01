@@ -28,7 +28,7 @@ mixin vacancy_item_dropdown()
           p Ерехинская Анастасия
           p
             a(href="tel:+7 (913) 7890114") +7 (913) 7890114
-            a(href="mailto:erehinskaya.as@gerkules.ru").color erehinskaya.as@gerkules.ru
+            a(href="mailto:erehinskaya.as@gerkules.ru").content-red erehinskaya.as@gerkules.ru
         +linkRect
           a(href="")
           span Отклинуться
@@ -54,6 +54,10 @@ block content
               | #{' — '}
               span.content-nowrap 35 000 Р
           +vacancy_item_dropdown
+          .vacancy-item_salary
+            span.content-nowrap 25 000
+            | #{' — '}
+            span.content-nowrap 35 000 Р
         .vacancy-item
           .vacancy-item_head
             .vacancy-item_info
@@ -84,7 +88,7 @@ block content
           h2 Не нашли вакансию?
             br
             | Напишите нам!
-          h3 Ерехинская Анастасия Сергеевна 
+          h3 Ерехинская Анастасия Сергеевна
             span менеджер по персоналу
           .vacancy-info_contacts
             span.phones
