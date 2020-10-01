@@ -1,3 +1,58 @@
+class SlideDown {
+  constructor({ el, item, time, boxContent, minHeight }) {
+    this.item = item;
+    this.time = time || 400;
+    this.minHeight = minHeight || "0";
+    this.el = el;
+    this.boxContent = boxContent;
+    this.animate = false;
+    this.opened = false;
+    this.init();
+  }
+  init() {
+    this.el.css("transition-duration", `${this.time}ms`);
+    this.el.css("box-sizing", `content-box`);
+    this.item.click((e) => {
+      if (e.currentTarget === e.target) this.toggle();
+    });
+    this.item.find('>*:not([class$="dropdown"])').click((e) => {
+      this.toggle();
+    });
+  }
+  get heightBox() {
+    return this.boxContent.height();
+  }
+  set height(newHeight) {
+    this.el.css("max-height", newHeight);
+  }
+  open() {
+    this.animate = true;
+    this.height = this.heightBox;
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => {
+      this.animate = false;
+    }, this.time);
+  }
+  close() {
+    this.animate = true;
+    this.height = this.minHeight;
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => {
+      this.animate = false;
+    }, this.time);
+  }
+  toggle() {
+    if (this.opened) {
+      this.close();
+    } else {
+      this.open();
+    }
+    this.item.toggleClass("open");
+    this.opened = !this.opened;
+  }
+  update() {}
+}
+
 export default class Manager_tabs {
   constructor() {
     this.init();
@@ -47,61 +102,25 @@ export default class Manager_tabs {
     });
   }
   vacancyDropdowns() {
-    const dropdown = ".vacancy-item";
-    const duration = 500;
-    const list = ".vacancy-item_dropdown-content";
-    $(".vacancy-item_head").click((e) => {
-      let item = $(e.target).closest(dropdown);
-      if (item.is(".open")) {
-        item.removeClass("open");
-        item.find(list).slideUp({ duration: duration });
-      } else {
-        $(dropdown + ".open:not(.active) " + list).slideUp({
-          duration: duration,
-        });
-        $(dropdown + ".open").removeClass("open");
-        item.addClass("open");
-        item.find(list).slideDown({ duration: duration });
-      }
+    $(".vacancy-item").each((key, element) => {
+      new SlideDown({
+        item: $(element),
+        el: $(element).find(".vacancy-item_dropdown"),
+        boxContent: $(element).find(".vacancy-item_dropdown-content"),
+        time: 500,
+        minHeight: 0,
+      });
     });
   }
   cardQuestionsDropdowns() {
-    const questions = $('.card .tabs-item_question')
-
-    if (questions.length > 0) {
-      questions.click(function (event) {
-        if (event.currentTarget === event.target) {
-          const question = $(this)
-          const drop = question.find('[class$="dropdown"]')
-
-          if (question.hasClass('open')) {
-            drop.css('max-height', '')
-          } else {
-            const dropClone = drop.clone()
-            dropClone.css('max-height', 'none')
-            dropClone.appendTo(question)
-            const contentFitHeight = dropClone.css('height')
-            dropClone.remove()
-            drop.css('max-height', contentFitHeight)
-          }
-
-          question.toggleClass('open')
-        }
-      })
-
-      $(window).resize(function () {
-        const openQuestions = $('.tabs-item_question.open')
-
-        openQuestions.each(function (index, openQuestion) {
-          const openDrop = $(openQuestion).find('[class$="dropdown"]')
-          const openDropClone = openDrop.clone()
-          openDropClone.css('max-height', 'none')
-          openDropClone.appendTo(openQuestion)
-          const contentFitHeight = openDropClone.css('height')
-          openDropClone.remove()
-          openDrop.css('max-height', contentFitHeight)
-        })
-      })
-    }
+    $(".card .tabs-item_question").each((key, element) => {
+      new SlideDown({
+        item: $(element),
+        el: $(element).find(".tabs-item_dropdown"),
+        boxContent: $(element).find(".tabs-item_dropdown .box-content"),
+        time: 400,
+        minHeight: 65,
+      });
+    });
   }
 }
