@@ -13,19 +13,59 @@
   @media (max-width: 830px) {
     padding: 0 40px 120px 40px;
   }
+
+  @media (max-width: 600px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @media (max-width: 430px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .vacancy {
   &>a {
     display: none;
     position: relative;
+    left: -40px;
     padding: 0 40px;
     font-size: 12px;
     line-height: 40px;
     color: $color-gray;
 
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      content: '';
+      width: 20px;
+      height: 1px;
+      background-color: $color-border-second;
+    }
+
     @media (max-width: 830px) {
-      display: block;
+      display: inline-block;
+    }
+
+    @media (max-width: 600px) {
+      left: -30px;
+      padding: 0 30px;
+
+      &::before {
+        width: 15px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      left: -20px;
+      padding: 0 20px;
+
+      &::before {
+        width: 10px;
+      }
     }
   }
 
@@ -37,15 +77,37 @@
 
   .page-title {
     @media (max-width: 1280px) {
-      font-size: 38pxж
+      font-size: 38px;
     }
 
     @media (max-width: 1024px) {
       font-size: 31px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 830px) {
+      position: relative;
+      left: -40px;
+      margin: 0;
+      padding: 26px 80px 19px 40px;
+      width: calc(100% + 40px + 40px);
+      border-top: 1px solid $color-border-second;
+      border-bottom: 1px solid $color-border-second;
       font-size: 30px;
+
+      &:after {
+        position: absolute;
+        top: 50%;
+        right: 35px;
+        transform: translateY(-50%) rotate(45deg);
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        border: 2px solid $color-basic;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        transition: $ease-main;
+      }
     }
   }
 
@@ -268,20 +330,13 @@
         }
       }
 
+      // контент перестает сжиматься
       @media (max-width: 1470px) {
         grid-template-columns: 411px minmax(260px, 1fr);
       }
 
-      // контакт в вакансии в колонку
+      // контакт кнопка под контент
       @media (max-width: 1350px) {
-        display: block;
-
-        .main-link_rect {
-          margin-top: 40px;
-        }
-      }
-
-      @media (max-width: 1167px) {
         display: block;
 
         .main-link_rect {
@@ -556,31 +611,6 @@
 
     &-back {
       display: block;
-    }
-
-    .page-title {
-      position: relative;
-      left: -40px;
-      margin: 0;
-      padding: 35px 80px 20px 40px;
-      width: calc(100% + 40px + 40px);
-      border-top: 1px solid $color-border-second;
-      border-bottom: 1px solid $color-border-second;
-
-      &:after {
-        position: absolute;
-        top: 50%;
-        right: 35px;
-        transform: translateY(-50%) rotate(45deg);
-        content: "";
-        display: block;
-        width: 8px;
-        height: 8px;
-        border: 2px solid $color-basic;
-        border-top-color: transparent;
-        border-left-color: transparent;
-        transition: $ease-main;
-      }
     }
   }
 }
