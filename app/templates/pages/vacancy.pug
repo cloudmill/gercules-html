@@ -42,7 +42,7 @@ block content
       h1.page-title #{pageTitle}
       .vacancy-list
         .vacancy-item
-          .vacancy-item_head
+          .vacancy-item_content
             .vacancy-item_info
               .vacancy-item_title Руководитель отдела объектных продаж
               .vacancy-item_tags
@@ -53,13 +53,9 @@ block content
               span.content-nowrap 25 000
               | #{' — '}
               span.content-nowrap 35 000 Р
-          +vacancy_item_dropdown
-          .vacancy-item_salary
-            span.content-nowrap 25 000
-            | #{' — '}
-            span.content-nowrap 35 000 Р
+            +vacancy_item_dropdown
         .vacancy-item
-          .vacancy-item_head
+          .vacancy-item_content
             .vacancy-item_info
               .vacancy-item_title Инженер по нормированию
               .vacancy-item_tags
@@ -67,9 +63,9 @@ block content
                 span Полная занятость
                 span Новосибирск
             .vacancy-item_salary.content-nowrap от 45 000 Р
-          +vacancy_item_dropdown
+            +vacancy_item_dropdown
         .vacancy-item
-          .vacancy-item_head
+          .vacancy-item_content
             .vacancy-item_info
               .vacancy-item_title Инженер-технолог
               .vacancy-item_tags
@@ -77,28 +73,28 @@ block content
                 span Полная занятость
                 span Новосибирск
             .vacancy-item_salary.content-nowrap Без указания з/п
-          +vacancy_item_dropdown
-      .vacancy-info
-        h2 Не нашли вакансию?
+            +vacancy_item_dropdown
+      .vacancy-contact
+        h2.vacancy-contact_title Не нашли вакансию?
           br
           | Напишите нам!
-        .vacancy-info_img
+        .vacancy-contact_photo
           img(src="images/vacancy.jpg" alt="")
-        .vacancy-info_content
-          h2 Не нашли вакансию?
+        .vacancy-contact_info
+          h2.vacancy-contact_title Не нашли вакансию?
             br
             | Напишите нам!
           h3 Ерехинская Анастасия Сергеевна
-            span менеджер по персоналу
-          .vacancy-info_contacts
-            span.phones
-              +icon('phone','svg')
-              a(href="tel: +7 (383) 338-31-32") +7 (383) 338-31-32 вн. 119
-              a(href="tel: +7 (913) 789-01-14") +7 (913) 789-01-14
-            span.email 
-              +icon('mail','svg')
-              a(href="mailto:erehinskaya.as@gerkules.ru") erehinskaya.as@gerkules.ru
+          p менеджер по персоналу
+          .vacancy-contact_phone
+            +icon('phone','svg')
+            a(href="tel: 8 383 338 31 32") +7 (383) 338-31-32 вн. 119
+            br
+            a(href="tel: 8 913 789 01 14") +7 (913) 789-01-14
+          .vacancy-contact_email
+            +icon('mail','svg')
+            a(href="mailto:erehinskaya.as@gerkules.ru") erehinskaya.as@gerkules.ru
           +linkRect
-            a(href="")
+            a(href="#")
             span Отправить резюме
             +icon("link-white-arrow", "svg")

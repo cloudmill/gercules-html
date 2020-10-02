@@ -50,10 +50,11 @@
       transition: $ease-main;
     }
 
-    &_head {
-      position: relative;
+    // выше все понятно и хорошо
+
+    &_content {
       display: grid;
-      grid-template-columns: minmax(min-content, 60%) 1fr;
+      grid-template-columns: 60% 1fr;
       column-gap: 60px;
       cursor: pointer;
 
@@ -63,72 +64,36 @@
         .vacancy-item_salary {
           color: $color-red;
         }
-
-        &~.vacancy-item_salary {
-          color: $color-red;
-        }
       }
     }
 
-    &_title {
-      font-family: $font-third;
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 160%;
-      transition: $ease-main;
-    }
-
-    &_tags {
-      margin-top: 30px;
-      display: flex;
-      align-items: center;
-
-      span {
-        display: flex;
-        align-items: center;
-        font-size: 15px;
-        line-height: 150%;
-        color: #262626;
-
-        &:not(:last-child) {
-          &:after {
-            margin: 0 30px;
-            content: "";
-            display: block;
-            width: 1px;
-            height: 20px;
-            background: #e5e5e5;
-          }
-        }
-      }
-    }
-
-    &_salary {
-      font-family: $font-third;
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 160%;
-      text-align: right;
-      transition: $ease-main;
-    }
+    // выше у нас item_content
 
     &_dropdown {
+      position: relative;
+      left: -40px;
+      width: calc(100% + 40px + 80px);
       max-height: 0;
+      grid-column-start: 1;
+      grid-column-end: 3;
       overflow: hidden;
-      padding-left: 40px;
-      margin-left: -40px;
-      
-      &-content {
-        padding-top: 5px;
-        padding-bottom: 20px;
-      }
+      cursor: initial;
 
-      h3 {
-        margin-top: 30px;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 130%;
-        color: #262626;
+      &-content {
+        border-top: 1px solid transparent;
+        padding-left: 40px;
+        padding-right: 80px;
+
+        &>h3 {
+          margin-top: 30px;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 130%;
+
+          &:first-child {
+            margin-top: 40px;
+          }
+        }
       }
 
       ul {
@@ -162,16 +127,17 @@
         margin-top: 20px;
         font-size: 15px;
         line-height: 150%;
-        color: #262626;
       }
     }
+
+    // выше занимаемся dropdown
 
     &_contact {
       position: relative;
       left: -40px;
       margin-top: 40px;
       padding: 60px 80px 60px 40px;
-      width: calc(100% + 40px + 80px);
+      width: calc(100% + 40px);
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
@@ -259,6 +225,70 @@
       }
     }
 
+    // выше contact из dropdown
+
+    &_head {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(min-content, 60%) 1fr;
+      column-gap: 60px;
+      cursor: pointer;
+
+      &:hover {
+
+        .vacancy-item_title,
+        .vacancy-item_salary {
+          color: $color-red;
+        }
+
+        &~.vacancy-item_salary {
+          color: $color-red;
+        }
+      }
+    }
+
+    &_title {
+      font-family: $font-third;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 160%;
+      transition: $ease-main;
+    }
+
+    &_tags {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+
+      span {
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        line-height: 150%;
+        color: #262626;
+
+        &:not(:last-child) {
+          &:after {
+            margin: 0 30px;
+            content: "";
+            display: block;
+            width: 1px;
+            height: 20px;
+            background: #e5e5e5;
+          }
+        }
+      }
+    }
+
+    &_salary {
+      font-family: $font-third;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 160%;
+      text-align: right;
+      transition: $ease-main;
+    }
+
     &>.vacancy-item_salary {
       display: none;
       text-align: left;
@@ -279,46 +309,47 @@
         border-right-color: $color-red;
       }
 
-      .vacancy-item {
-        &_title {
-          color: $color-red;
-        }
-
-        &_salary {
-          color: $color-red;
-        }
+      .vacancy-item_title,
+      .vacancy-item_salary {
+        color: $color-red;
       }
     }
 
     @media(max-width: 900px) {
-      &_head {
-        &>.vacancy-item_salary {
-          display: none;
-        }
+      &_info {
+        grid-column-start: 1;
+        grid-column-end: 3;
       }
 
-      &>.vacancy-item_salary {
-        margin-top: 30px;
-        display: block;
+      &_salary {
+        margin-top: 40px;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        text-align: left;
       }
     }
   }
 
-  &-info {
+  &-contact {
     margin-top: 90px;
     display: grid;
     grid-template-columns: minmax(max-content, 400px) 1fr;
     column-gap: 120px;
 
-    &>h2 {
-      display: none;
+    .vacancy-contact_title {
       font-family: $font-third;
       font-weight: bold;
       font-size: 28px;
       line-height: 144%;
     }
 
-    &_img {
+    &>.vacancy-contact_title {
+      display: none;
+    }
+
+    &_photo {
       img {
         max-width: 100%;
         display: block;
@@ -329,73 +360,65 @@
       }
     }
 
-    &_content {
-      h2 {
-        font-family: $font-third;
-        font-weight: bold;
-        font-size: 28px;
-        line-height: 144%;
-      }
-
+    &_info {
       h3 {
         margin-top: 60px;
         font-weight: bold;
         font-size: 18px;
         line-height: 130%;
-
-        span {
-          margin-top: 5px;
-          display: block;
-          font-size: 15px;
-          font-weight: normal;
-        }
       }
 
-      .main-link_rect {
-        margin-top: 50px;
-        min-width: 310px;
-        max-width: 330px;
-        margin-left: -10px;
-
-        i {
-          margin-left: 20px;
-        }
+      p {
+        margin-top: 5px;
+        display: block;
+        font-size: 15px;
+        line-height: 30px;
       }
     }
 
-    &_contacts {
+    &_phone,
+    &_email {
+      position: relative;
+      padding-left: 50px;
+
+      i {
+        position: absolute;
+        top: 11px;
+        left: 0;
+      }
+
+      a {
+        display: inline-block;
+        font-size: 18px;
+        line-height: 200%;
+      }
+    }
+
+    &_phone {
       margin-top: 20px;
 
-      span {
-        padding-left: 50px;
-        margin-bottom: 10px;
-        display: block;
-        position: relative;
-        color: #262626;
+      i {
+        top: 8px;
+        left: 2px;
+      }
+    }
 
-        &.phone {
-          left: 2px;
-        }
+    &_email {
+      margin-top: 5px;
 
-        &.email {
-          color: $color-red;
-        }
+      a {
+        color: $color-red;
+      }
+    }
 
-        i {
-          position: absolute;
-          left: 0;
-          top: 8px;
-        }
+    .main-link_rect {
+      margin-top: 50px;
+      min-width: 310px;
+      max-width: 330px;
+      margin-left: -10px;
 
-        a {
-          display: block;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 18px;
-          line-height: 200%;
-        }
-
-
+      i {
+        margin-left: 20px;
       }
     }
 
@@ -406,18 +429,18 @@
     @media (max-width: 1330px) {
       display: block;
 
-      &>h2 {
+      &>.vacancy-contact_title {
         display: block;
       }
 
-      &_img {
+      &_photo {
         margin-top: 45px;
       }
 
-      &_content {
+      &_info {
         margin-top: 60px;
 
-        h2 {
+        .vacancy-contact_title {
           display: none;
         }
       }
