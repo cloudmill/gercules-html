@@ -1,32 +1,51 @@
+.page .content-row .content.vacancy {
+  padding: 60px 80px 120px 40px;
+
+  @media (max-width: 1280px) {
+    padding-right: 40px;
+  }
+
+  @media (max-width: 1024px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @media (max-width: 830px) {
+    padding: 0 40px 120px 40px;
+  }
+}
+
 .vacancy {
-  &-back {
-    position: relative;
-    left: -40px;
-    width: calc(100% + 40px + 40px);
-    height: 40px;
+  &>a {
     display: none;
+    position: relative;
+    padding: 0 40px;
+    font-size: 12px;
+    line-height: 40px;
+    color: $color-gray;
 
-    a {
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 0 40px;
-      height: 100%;
+    @media (max-width: 830px) {
       display: block;
-      font-size: 12px;
-      line-height: 40px;
-      color: $color-gray;
+    }
+  }
 
-      &::before {
-        position: absolute;
-        z-index: 100000;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 20px;
-        height: 20px;
-        background-color: black;
-      }
+  .breadcrumbs {
+    @media (max-width: 830px) {
+      display: none;
+    }
+  }
+
+  .page-title {
+    @media (max-width: 1280px) {
+      font-size: 38pxж
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 31px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 30px;
     }
   }
 
@@ -36,7 +55,12 @@
     margin-top: 60px;
     width: calc(100% + 40px);
 
+    @media (max-width: 1280px) {
+      margin-top: 40px;
+    }
+
     @media (max-width: 1024px) {
+      margin-top: 20px;
       left: -30px;
       width: calc(100% + 30px + 30px);
     }
@@ -85,6 +109,10 @@
       border-top-color: transparent;
       border-left-color: transparent;
       transition: $ease-main;
+
+      @media (max-width: 1280px) {
+        right: 27px;
+      }
     }
 
     &_content {
@@ -240,8 +268,17 @@
         }
       }
 
-      @media (max-width: 1440px) {
-        grid-template-columns: 436px minmax(260px, 1fr);
+      @media (max-width: 1470px) {
+        grid-template-columns: 411px minmax(260px, 1fr);
+      }
+
+      // контакт в вакансии в колонку
+      @media (max-width: 1350px) {
+        display: block;
+
+        .main-link_rect {
+          margin-top: 40px;
+        }
       }
 
       @media (max-width: 1167px) {
@@ -283,6 +320,10 @@
       font-size: 18px;
       line-height: 160%;
       transition: $ease-main;
+
+      @media (max-width: 1280px) {
+        font-size: 16px;
+      }
     }
 
     &_tags {
@@ -344,6 +385,10 @@
       .vacancy-item_salary {
         color: $color-red;
       }
+    }
+
+    @media (max-width: 1280px) {
+      padding-right: 60px;
     }
 
     @media(max-width: 900px) {
@@ -492,6 +537,18 @@
     }
   }
 
+  @media (max-width: 1280px) {
+    .page-title {
+      font-size: 38px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .page-title {
+      font-size: 32px;
+    }
+  }
+
   @media (max-width: 830px) {
     .breadcrumbs {
       display: none;
@@ -525,22 +582,5 @@
         transition: $ease-main;
       }
     }
-  }
-}
-
-.page .content-row .content.vacancy {
-  padding: 60px 80px 120px 40px;
-
-  @media (max-width: 1280px) {
-    padding-right: 60px;
-  }
-
-  @media (max-width: 1024px) {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  @media (max-width: 830px) {
-    padding: 0 40px 120px 40px;
   }
 }
