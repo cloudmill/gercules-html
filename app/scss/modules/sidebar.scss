@@ -173,4 +173,8 @@
     width: 210px;
     min-width: 210px;
   }
+
+  @media (max-width: 830px) {
+    display: none;
+  }
 }

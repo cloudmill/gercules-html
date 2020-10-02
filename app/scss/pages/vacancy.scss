@@ -1,4 +1,35 @@
 .vacancy {
+  &-back {
+    position: relative;
+    left: -40px;
+    width: calc(100% + 40px + 40px);
+    height: 40px;
+    display: none;
+
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0 40px;
+      height: 100%;
+      display: block;
+      font-size: 12px;
+      line-height: 40px;
+      color: $color-gray;
+
+      &::before {
+        position: absolute;
+        z-index: 100000;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        background-color: black;
+      }
+    }
+  }
+
   &-list {
     position: relative;
     left: -40px;
@@ -8,6 +39,12 @@
     @media (max-width: 1024px) {
       left: -30px;
       width: calc(100% + 30px + 30px);
+    }
+
+    @media (max-width: 830px) {
+      margin-top: -1px;
+      width: auto;
+      left: auto;
     }
   }
 
@@ -50,8 +87,6 @@
       transition: $ease-main;
     }
 
-    // выше все понятно и хорошо
-
     &_content {
       display: grid;
       grid-template-columns: 60% 1fr;
@@ -66,8 +101,6 @@
         }
       }
     }
-
-    // выше у нас item_content
 
     &_dropdown {
       position: relative;
@@ -129,8 +162,6 @@
         line-height: 150%;
       }
     }
-
-    // выше занимаемся dropdown
 
     &_contact {
       position: relative;
@@ -201,6 +232,7 @@
       }
 
       .main-link_rect {
+        margin-left: -10px;
         max-width: 280px;
 
         i {
@@ -224,8 +256,6 @@
         width: calc(100% + 40px);
       }
     }
-
-    // выше contact из dropdown
 
     &_head {
       position: relative;
@@ -258,6 +288,7 @@
     &_tags {
       margin-top: 30px;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
 
       span {
@@ -328,6 +359,20 @@
         grid-column-start: 1;
         grid-column-end: 3;
         text-align: left;
+      }
+    }
+
+    @media (max-width: 830px) {
+      padding-left: 0;
+      padding-right: 40px;
+
+      &::before {
+        left: -40px;
+        width: calc(100% + 40px + 40px);
+      }
+
+      &::after {
+        right: 2px;
       }
     }
   }
@@ -446,6 +491,41 @@
       }
     }
   }
+
+  @media (max-width: 830px) {
+    .breadcrumbs {
+      display: none;
+    }
+
+    &-back {
+      display: block;
+    }
+
+    .page-title {
+      position: relative;
+      left: -40px;
+      margin: 0;
+      padding: 35px 80px 20px 40px;
+      width: calc(100% + 40px + 40px);
+      border-top: 1px solid $color-border-second;
+      border-bottom: 1px solid $color-border-second;
+
+      &:after {
+        position: absolute;
+        top: 50%;
+        right: 35px;
+        transform: translateY(-50%) rotate(45deg);
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        border: 2px solid $color-basic;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        transition: $ease-main;
+      }
+    }
+  }
 }
 
 .page .content-row .content.vacancy {
@@ -458,5 +538,9 @@
   @media (max-width: 1024px) {
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  @media (max-width: 830px) {
+    padding: 0 40px 120px 40px;
   }
 }
