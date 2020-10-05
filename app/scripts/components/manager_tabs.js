@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 class SlideDown {
   constructor({ el, item, time, boxContent, minHeight }) {
     this.item = item;
@@ -20,7 +22,12 @@ class SlideDown {
     $(window).on("resize", this.update.bind(this));
   }
   get heightBox() {
-    return this.boxContent.height();
+    const boxContentElement = this.boxContent[0];
+    const boxContentStyle = getComputedStyle(boxContentElement);
+    const boxContentPaddingTop = +boxContentStyle.paddingTop.slice(0, boxContentStyle.paddingTop.length - 2);
+    const boxContentPaddingBottom = +boxContentStyle.paddingBottom.slice(0, boxContentStyle.paddingBottom.length - 2);
+
+    return this.boxContent.height() + boxContentPaddingTop + boxContentPaddingBottom;
   }
   set height(newHeight) {
     this.el.css("max-height", newHeight);

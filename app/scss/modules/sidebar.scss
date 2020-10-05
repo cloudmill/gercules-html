@@ -71,6 +71,7 @@
           position: absolute;
           top: 50%;
           right: 20px;
+          transform-origin: center;
           transform: translateY(-50%);
           content: "";
           display: block;
@@ -106,7 +107,7 @@
       &.open,
       &.active {
         span::after {
-          transform: rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
           filter: grayscale(0);
         }
       }
@@ -115,33 +116,38 @@
     @media (max-width: 1280px) {
       &>a {
         padding-left: 40px;
+        padding-right: 30px;
       }
 
       .sidebar-menu_dropdown {
         span {
           padding-left: 40px;
+          padding-right: 30px;
+
+          &::after {
+            right: 15px;
+          }
         }
 
         &-list {
           padding-left: 40px;
+          padding-right: 30px;
         }
       }
     }
 
     @media (max-width: 1024px) {
-      $padding: 30px;
-
       &>a {
-        padding: 0 $padding;
+        padding-left: 30px;
       }
 
       .sidebar-menu_dropdown {
         span {
-          padding: 0 $padding;
+          padding-left: 30px;
         }
 
         &-list {
-          padding: 0 $padding;
+          padding-left: 30px;
         }
       }
     }
@@ -156,13 +162,13 @@
   }
 
   @media (max-width: 1280px) {
-    width: 250px;
-    min-width: 250px;
+    width: 230px;
+    min-width: 230px; // зачем?
   }
 
   @media (max-width: 1024px) {
-    width: 210px;
-    min-width: 210px;
+    width: 200px;
+    min-width: 200px; // зачем?
   }
 
   @media (max-width: 830px) {
