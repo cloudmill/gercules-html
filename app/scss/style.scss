@@ -27,13 +27,12 @@
   }
 
   .content {
-    padding: 0 60px;
-    padding-top: 60px;
+    padding: 60px;
     padding-bottom: 120px;
 
     &-row {
+      height: 100%; // зачем?
       display: flex;
-      height: 100%;
 
       .content {
         padding-left: 40px;
@@ -52,28 +51,6 @@
         @media (max-width: 830px) {
           width: auto;
         }
-      }
-    }
-  }
-
-  &-row {
-    display: flex;
-  }
-
-  &-col {
-    align-self: stretch;
-
-    &:last-child {
-      flex-grow: 1;
-      min-width: 0;
-    }
-
-    .content {
-      padding: 60px 80px 120px 40px;
-      height: 100%;
-
-      .page-title {
-        margin-top: 35px;
       }
     }
   }

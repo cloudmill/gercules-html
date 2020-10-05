@@ -1,17 +1,19 @@
 .sidebar {
   padding: 35px 0;
   width: 287px;
-  min-width: 287px;
+  min-width: 287px; // зачем?
   border-right: 1px solid $color-border-second;
+  overflow: hidden;
 
   &-menu {
+    $padding-left: 55px;
+    $padding-right: 35px;
+
     @mixin sidebar_link_wrapper {
       position: relative;
-      font-style: normal;
-      font-weight: normal;
       font-size: 14px;
-      line-height: 100%;
-      color: #6c6c6c;
+      line-height: 140%;
+      color: $color-gray;
 
       &:not(:last-child) {
         margin-bottom: 30px;
@@ -19,19 +21,18 @@
 
       &::before {
         opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
         content: "";
-        width: 4px;
         height: 33px;
         display: block;
-        position: absolute;
         border-left: 4px solid red;
         border-top: 2px solid transparent;
-        left: 0;
-        top: 0;
       }
 
       &.active {
-        color: #262626;
+        color: $color-basic;
 
         &::before {
           opacity: 1;
@@ -39,84 +40,74 @@
       }
 
       &:hover {
-        color: #262626;
+        color: $color-basic;
       }
     }
 
     @mixin sidebar_link {
       position: relative;
+      padding-left: $padding-left;
+      padding-right: $padding-right;
+      height: 33px;
       display: flex;
       align-items: center;
-      padding-left: 55px;
-      cursor: pointer;
-      height: 33px;
       transition: color $ease-main;
     }
 
     &>a {
       @include sidebar_link_wrapper();
       @include sidebar_link();
-      line-height: 140%;
-      padding-left: 55px;
-      padding-right: 40px;
     }
 
     &_dropdown {
       @include sidebar_link_wrapper();
+
+      span {
+        @include sidebar_link();
+        margin-bottom: 15px;
+
+        &::after {
+          filter: grayscale(1);
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          transform: translateY(-50%);
+          content: "";
+          display: block;
+          width: 6px;
+          height: 3px;
+          background-image: url(../images/dropdown-str-red.svg);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          background-position: center;
+          transition: $ease-main;
+        }
+      }
+
+      &-list {
+        display: none;
+        padding-left: $padding-left;
+        padding-right: $padding-right;
+
+        a {
+          display: block;
+          font-size: 12px;
+          line-height: 250%;
+          color: $color-basic;
+          transition: color $ease-main;
+
+          &.active,
+          &:hover {
+            color: $color-red;
+          }
+        }
+      }
 
       &.open,
       &.active {
         span::after {
           transform: rotate(180deg);
           filter: grayscale(0);
-        }
-      }
-
-      span {
-        @include sidebar_link();
-        margin-bottom: 15px;
-        padding-right: 40px;
-
-        &::after {
-          content: "";
-          display: block;
-          width: 6px;
-          height: 3px;
-          position: absolute;
-          right: 20px;
-          top: 50%;
-          transform: translateY(-50%);
-          background-image: url(../images/dropdown-str-red.svg);
-          filter: grayscale(1);
-          background-repeat: no-repeat;
-          background-size: 100% 100%;
-          background-position: center;
-          transition: all $ease-main;
-        }
-      }
-
-      &-list {
-        display: none;
-        padding-left: 55px;
-        padding-right: 40px;
-
-        a {
-          display: block;
-          margin-bottom: 0;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 12px;
-          line-height: 250%;
-          color: #262626;
-          transition: color $ease-main;
-
-          &:hover {
-            color: #e41d2c;
-          }
-
-          &.active {
-            color: #e41d2c;
-          }
         }
       }
     }
