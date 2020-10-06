@@ -1,0 +1,33 @@
+extends ../layouts/default.pug
+
+block variables
+  - const pageTitle='Акции'
+
+block content
+  .content.shares
+    +breadcrumbs(['Акции'])
+    .page-title Акции
+      +link('#', 'Архив акций')
+    .shares-list
+      - for (let i = 0; i < 9; i++)
+        .shares-item
+          .shares-item_info
+            if (i % 2)
+              h2 «Лучшая цена» в Колорлоне
+                br
+                | на GERKULES
+              p Скидки до 25% на самые популярные смеси GERKULES в магазинах Колорлон.
+            else
+              h2 В магазинах «Стройся» снижены цены на смеси GERKULES
+              p Покупать сухие строительные смеси GERKULES
+                br
+                | в магазинах "СТРОЙСЯ" выгодно!
+          .shares-time
+            +icon('calendar', 'svg')
+            p Срок действия
+            p
+              span 22.10.
+              | 2018  —  
+              span 31.11.
+              | 2018
+    include fs/showmore

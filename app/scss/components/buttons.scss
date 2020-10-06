@@ -1,32 +1,31 @@
 .main-link {
-  font-style: normal;
+  padding-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 1px solid $color-red;
   font-weight: bold;
   font-size: 18px;
   line-height: 21px;
+  color: $color-red;
   text-align: right;
-  color: #e41d2c;
-  display: inline-flex;
-  align-items: center;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e41d2c;
 
-  &:hover {
-    &:after {
-      transform: translateX(8px);
-    }
-  }
-
-  &:after {
+  &::after {
+    margin-left: 14px;
     content: "";
     display: block;
-    margin-left: 14px;
+    width: 24px;
+    height: 13px;
     background-image: url(../images/str_long-right.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    transition: transform $ease-main;
-    width: 24px;
-    height: 13px;
+    transition: $ease-main;
+  }
+
+  &:hover {
+    &::after {
+      transform: translateX(8px);
+    }
   }
 
   &_rect {

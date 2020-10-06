@@ -1,0 +1,96 @@
+.page .content.shares {
+  padding-right: 80px;
+}
+
+.shares {
+  .page-title {
+    position: relative;
+
+    .main-link {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-list {
+    margin: 40.5px -79.5px 0.5px -60.5px;
+    display: grid;
+    grid-template-columns: repeat(3, calc(100% / 3));
+  }
+
+  &-item {
+    margin: -0.5px;
+    padding: 60px 45px 70px 60px;
+    padding-bottom: 70px;
+    min-height: 455px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid $color-border-second;
+
+    &_info {
+      p {
+        margin-top: 20px;
+        font-size: 15px;
+        line-height: 150%;
+      }
+    }
+
+    h2 {
+      font-family: $font-third;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 160%;
+    }
+
+    .shares-time {
+      margin-top: 60px;
+    }
+  }
+
+  &-time {
+    position: relative;
+    padding-left: 40px;
+
+    i {
+      position: absolute;
+      top: 4px;
+      left: 0;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 150%;
+      color: $color-gray;
+
+      &+p {
+        margin-top: 6px;
+        font-size: 15px;
+        line-height: 150%;
+        color: $color-basic;
+        white-space: pre;
+
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+
+    &::before {
+      position: absolute;
+      top: -6px;
+      left: -60px;
+      content: "";
+      display: block;
+      height: 60px;
+      border-left: 4px solid $color-red;
+      border-top: 3px solid transparent;
+    }
+  }
+
+  .fs-list_showmore {
+    margin: -1px -80px 0 -60px;
+  }
+}

@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("../images/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 11.2em 53.1em;
+    background-size: 11.2em 55.7em;
 }
 
 .no-svg .svg-icon:before {
@@ -26,8 +26,17 @@
 
 
 
-  .svg-icon.svg-cm_logo:before {
+  .svg-icon.svg-calendar:before {
       background-position: 0em -2.5em;
+      width: 2.6em;
+      height: 2.6em;
+  }
+
+
+
+
+  .svg-icon.svg-cm_logo:before {
+      background-position: 0em -5.1em;
       width: 11.2em;
       height: 2.4em;
   }
@@ -36,7 +45,7 @@
 
 
   .svg-icon.svg-down:before {
-      background-position: 0em -4.9em;
+      background-position: 0em -7.5em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -45,7 +54,7 @@
 
 
   .svg-icon.svg-down-gray:before {
-      background-position: 0em -6.7em;
+      background-position: 0em -9.3em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -54,7 +63,7 @@
 
 
   .svg-icon.svg-expand:before {
-      background-position: 0em -8.5em;
+      background-position: 0em -11.1em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -63,7 +72,7 @@
 
 
   .svg-icon.svg-expand-white:before {
-      background-position: 0em -10.1em;
+      background-position: 0em -12.7em;
       width: 1.6em;
       height: 1.7em;
   }
@@ -72,7 +81,7 @@
 
 
   .svg-icon.svg-fb:before {
-      background-position: 0em -11.8em;
+      background-position: 0em -14.4em;
       width: 1em;
       height: 2em;
   }
@@ -81,7 +90,7 @@
 
 
   .svg-icon.svg-flag:before {
-      background-position: 0em -13.8em;
+      background-position: 0em -16.4em;
       width: 1.2em;
       height: 1.6em;
   }
@@ -90,7 +99,7 @@
 
 
   .svg-icon.svg-inst:before {
-      background-position: 0em -15.4em;
+      background-position: 0em -18em;
       width: 1.5em;
       height: 1.5em;
   }
@@ -99,7 +108,7 @@
 
 
   .svg-icon.svg-link-white-arrow:before {
-      background-position: 0em -16.9em;
+      background-position: 0em -19.5em;
       width: 2.5em;
       height: 1.4em;
   }
@@ -108,7 +117,7 @@
 
 
   .svg-icon.svg-mail:before {
-      background-position: 0em -18.3em;
+      background-position: 0em -20.9em;
       width: 1.8em;
       height: 1.4em;
   }
@@ -117,7 +126,7 @@
 
 
   .svg-icon.svg-map-pin:before {
-      background-position: 0em -19.7em;
+      background-position: 0em -22.3em;
       width: 2.2em;
       height: 2.3em;
   }
@@ -126,7 +135,7 @@
 
 
   .svg-icon.svg-map-pin-big:before {
-      background-position: 0em -22em;
+      background-position: 0em -24.6em;
       width: 1.7em;
       height: 2.1em;
   }
@@ -135,7 +144,7 @@
 
 
   .svg-icon.svg-pdf:before {
-      background-position: 0em -24.1em;
+      background-position: 0em -26.7em;
       width: 6.4em;
       height: 5.7em;
   }
@@ -144,7 +153,7 @@
 
 
   .svg-icon.svg-pdf-2:before {
-      background-position: 0em -29.8em;
+      background-position: 0em -32.4em;
       width: 3.6em;
       height: 4.3em;
   }
@@ -153,7 +162,7 @@
 
 
   .svg-icon.svg-person:before {
-      background-position: 0em -34.1em;
+      background-position: 0em -36.7em;
       width: 1.6em;
       height: 1.6em;
   }
@@ -162,7 +171,7 @@
 
 
   .svg-icon.svg-phone:before {
-      background-position: 0em -35.7em;
+      background-position: 0em -38.3em;
       width: 1.2em;
       height: 1.8em;
   }
@@ -171,7 +180,7 @@
 
 
   .svg-icon.svg-plus-circle:before {
-      background-position: 0em -37.5em;
+      background-position: 0em -40.1em;
       width: 2.1em;
       height: 2.1em;
   }
@@ -180,7 +189,7 @@
 
 
   .svg-icon.svg-question:before {
-      background-position: 0em -39.6em;
+      background-position: 0em -42.2em;
       width: 2.2em;
       height: 2.2em;
   }
@@ -189,7 +198,7 @@
 
 
   .svg-icon.svg-rating-red:before {
-      background-position: 0em -41.8em;
+      background-position: 0em -44.4em;
       width: 2.4em;
       height: 2.5em;
   }
@@ -198,7 +207,7 @@
 
 
   .svg-icon.svg-search:before {
-      background-position: 0em -44.3em;
+      background-position: 0em -46.9em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -207,7 +216,7 @@
 
 
   .svg-icon.svg-star:before {
-      background-position: 0em -46.1em;
+      background-position: 0em -48.7em;
       width: 2em;
       height: 2em;
   }
@@ -216,7 +225,7 @@
 
 
   .svg-icon.svg-star-active:before {
-      background-position: 0em -48.1em;
+      background-position: 0em -50.7em;
       width: 2em;
       height: 2em;
   }
@@ -225,7 +234,7 @@
 
 
   .svg-icon.svg-time:before {
-      background-position: 0em -50.1em;
+      background-position: 0em -52.7em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -234,7 +243,7 @@
 
 
   .svg-icon.svg-vk:before {
-      background-position: 0em -51.9em;
+      background-position: 0em -54.5em;
       width: 2.2em;
       height: 1.2em;
   }
