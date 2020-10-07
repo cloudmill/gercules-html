@@ -1,29 +1,31 @@
 extends ../layouts/default.pug
 
 block variables
-  - const pageTitle = 'Архив акций'
+  - const pageTitle = "Архив акций"
 
 block content
   .content.shares
-    +breadcrumbs(['Архив акций'])
+    +nav_back
+    +breadcrumbs(["Архив акций"])
     .page-title Архив акций
-      +link('#', 'Список активных акций')
+      +link("#", "Список активных акций")
+    +nav_goto("Список активных акций")
     .shares-list
       - for (let i = 0; i < 9; i++)
         .shares-item
           .shares-item_info
             if (i % 2)
-              h2 «Лучшая цена» в Колорлоне
+              a(href="#") «Лучшая цена» в Колорлоне
                 br
                 | на GERKULES
               p Скидки до 25% на самые популярные смеси GERKULES в магазинах Колорлон.
             else
-              h2 В магазинах «Стройся» снижены цены на смеси GERKULES
+              a(href="#") В магазинах «Стройся» снижены цены на смеси GERKULES
               p Покупать сухие строительные смеси GERKULES
                 br
                 | в магазинах "СТРОЙСЯ" выгодно!
           .shares-time
-            +icon('calendar', 'svg')
+            +icon("calendar", "svg")
             p Срок действия
             p
               span 22.10.
