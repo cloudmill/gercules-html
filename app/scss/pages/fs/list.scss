@@ -153,8 +153,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid $color-border-second;
-    border-bottom: 1px solid $color-border-second;
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
 
     a {
       position: relative;
@@ -162,7 +162,7 @@
       font-weight: bold;
       font-size: 18px;
       line-height: 21px;
-      color: $color-basic;
+      color: $color-main;
 
       span {
         position: absolute;

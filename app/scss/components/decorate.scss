@@ -13,7 +13,7 @@
         transform: translateY(-50%);
         content: "";
         display: block;
-        border-top: 2px solid $color-basic;
+        border-top: 2px solid $color-main;
       }
 
       &::after {
@@ -25,8 +25,8 @@
         display: block;
         width: 9px;
         height: 9px;
-        border-top: 2px solid $color-basic;
-        border-right: 2px solid $color-basic;
+        border-top: 2px solid $color-main;
+        border-right: 2px solid $color-main;
       }
     }
   }

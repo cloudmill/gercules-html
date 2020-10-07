@@ -15,7 +15,7 @@ button::-moz-focus-inner {
 ########## */
 
 ::selection {
-  background: $color-main;
+  background: $color-selection;
   color: white;
 }
 
@@ -61,7 +61,7 @@ body {
 body {
   font-family: $font-main; // Задаем основной шрифт
   font-size: 16px; // Убираем проблему с отступами между inline-элементами
-  color: $color-basic;
+  color: $color-main;
   overflow: hidden;
   *,
   *::after,

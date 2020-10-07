@@ -4,7 +4,7 @@
       padding: 0 80px 120px 60px;
 
       h2 {
-        font-family: $font-third;
+        font-family: $font-second;
         font-weight: bold;
         font-size: 28px;
         line-height: 144%;
@@ -29,7 +29,7 @@
     width: calc(100% + 60px + 80px);
     display: flex;
     align-items: flex-start;
-    border-bottom: 1px solid $color-border-second;
+    border-bottom: 1px solid $color-border;
 
     &_row {
       margin-top: 45px;
@@ -146,7 +146,7 @@
     padding: 60px 80px 40px 40px;
     width: 65%;
     align-self: stretch; // чтобы height 100% всегда для border-left
-    border-left: 1px solid $color-border-second;
+    border-left: 1px solid $color-border;
 
     .fs-productCard_status {
       margin-top: 50px;
@@ -157,7 +157,7 @@
     }
 
     h1 {
-      font-family: $font-third;
+      font-family: $font-second;
       font-weight: bold;
       font-size: 28px;
       line-height: 144%;
@@ -254,7 +254,7 @@
       margin-top: 40px;
 
       span {
-        font-family: $font-third;
+        font-family: $font-second;
         font-weight: bold;
         font-size: 20px;
         line-height: 160%;
@@ -312,7 +312,7 @@
       height: 30px;
 
       &.content-border {
-        border: 1px solid $color-border-second;
+        border: 1px solid $color-border;
       }
 
       &::before {
@@ -322,7 +322,7 @@
         display: block;
         width: 38px;
         height: 38px;
-        border: 1px solid $color-border-second;
+        border: 1px solid $color-border;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -353,7 +353,7 @@
       transform: translate(-50%, calc(-100% + -12px));
       padding: 10px 15px;
       background-color: white;
-      border: 1px solid $color-border-second;
+      border: 1px solid $color-border;
       font-size: 12px;
       line-height: 130%;
       pointer-events: none;
@@ -373,7 +373,7 @@
         width: 8px;
         height: 8px;
         background-color: white;
-        border: 1px solid $color-border-second;
+        border: 1px solid $color-border;
         border-top-color: transparent;
         border-left-color: transparent;
       }
@@ -398,7 +398,7 @@
       justify-content: center;
       align-items: center;
       background-color: white;
-      border: 1px solid $color-border-second;
+      border: 1px solid $color-border;
 
       &.comparison-link i {
         position: relative;
@@ -502,7 +502,7 @@
     &_track {
       margin-top: 6px;
       height: 3px;
-      background-color: $color-border-second;
+      background-color: $color-border;
     }
 
     &_progress {
@@ -593,7 +593,7 @@
           grid-template-columns: 1fr 25%;
           row-gap: 20px;
           column-gap: 60px;
-          border-bottom: 1px solid $color-border-second;
+          border-bottom: 1px solid $color-border;
 
           &:first-child {
             margin-top: 0;
@@ -655,7 +655,7 @@
         h3 {
           padding-right: 30px;
           max-width: 730px;
-          font-family: $font-third;
+          font-family: $font-second;
           font-weight: bold;
           font-size: 18px;
           line-height: 160%;
@@ -676,11 +676,11 @@
             position: relative;
             padding: 40px;
             padding-bottom: 0;
-            border-bottom: 1px solid $color-border-second;
+            border-bottom: 1px solid $color-border;
             cursor: pointer;
 
             &:first-child {
-              border-top: 1px solid $color-border-second;
+              border-top: 1px solid $color-border;
             }
 
             &::before {
@@ -693,7 +693,7 @@
               display: block;
               width: 9px;
               height: 9px;
-              border: 2px solid $color-basic;
+              border: 2px solid $color-main;
               border-top-color: transparent;
               border-right-color: transparent;
               transition: $ease-main;
@@ -839,7 +839,7 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: white;
-    border: 1px solid $color-border-second;
+    border: 1px solid $color-border;
 
     &_content {
       flex-grow: 1;
@@ -856,7 +856,7 @@
         margin-top: 25px;
         padding-left: 30px;
         padding-right: 80px;
-        font-family: $font-third;
+        font-family: $font-second;
         font-weight: bold;
         font-size: 15px;
         line-height: 144%;
@@ -886,7 +886,7 @@
       justify-content: center;
       align-items: center;
       background-color: white;
-      border-top: 1px solid $color-border-second;
+      border-top: 1px solid $color-border;
 
       p {
         position: relative;
@@ -969,7 +969,7 @@
       min-height: 288px;
       align-self: stretch;
       flex-shrink: 0;
-      border: 1px solid $color-border-second;
+      border: 1px solid $color-border;
       background-color: white;
       padding: 73px 30px 35px 43px;
       display: flex;
@@ -1028,8 +1028,8 @@
       width: calc(100% + 60px + 80px);
       height: 541px;
       display: flex;
-      border-top: 1px solid $color-border-second;
-      border-bottom: 1px solid $color-border-second;
+      border-top: 1px solid $color-border;
+      border-bottom: 1px solid $color-border;
     }
 
     &_col {
@@ -1093,7 +1093,7 @@
           display: block;
           height: calc(100% + 60px);
           width: 100%;
-          border-left: 1px solid $color-border-second;
+          border-left: 1px solid $color-border;
           position: absolute;
           left: 0;
           top: 50%;
@@ -1123,7 +1123,7 @@
         }
 
         h3 {
-          font-family: $font-third;
+          font-family: $font-second;
           font-weight: bold;
           font-size: 20px;
           line-height: 144%;
@@ -1237,7 +1237,7 @@
 
     h3 {
       margin-top: 66px;
-      font-family: $font-third;
+      font-family: $font-second;
       font-weight: bold;
       font-size: 20px;
       line-height: 144%;
@@ -1266,7 +1266,7 @@
     &_result {
       span {
         display: inline-block;
-        font-family: $font-third;
+        font-family: $font-second;
         font-weight: bold;
         font-size: 20px;
         line-height: 144%;

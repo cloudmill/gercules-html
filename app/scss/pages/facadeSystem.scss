@@ -105,13 +105,13 @@
 
         &:first-child {
           a {
-            border-top: 1px solid $color-border-second;
+            border-top: 1px solid $color-border;
           }
         }
 
         &:last-child {
           a {
-            border-left: 1px solid $color-border-second;
+            border-left: 1px solid $color-border;
             flex-basis: calc(50% + 1px);
           }
         }
@@ -126,12 +126,12 @@
         flex-basis: 50%;
         transition: 0s;
         background-color: white;
-        font-family: $font-third;
+        font-family: $font-second;
         font-weight: bold;
         font-size: 18px;
         line-height: 29px;
-        border-bottom: 1px solid $color-border-second;
-        border-right: 1px solid $color-border-second;
+        border-bottom: 1px solid $color-border;
+        border-right: 1px solid $color-border;
         transition: background-color $ease-main, border-color $ease-main,
           color $ease-main;
 
@@ -153,7 +153,7 @@
         left: 13px;
         color: $color-red;
         font-weight: bold;
-        font-family: $font-third;
+        font-family: $font-second;
         font-size: 168px;
         line-height: 242px;
 
@@ -182,7 +182,7 @@
         position: absolute;
         top: 50px;
         right: -60px;
-        font-family: $font-fourth;
+        font-family: $font-third;
         font-size: 310px;
         line-height: 338px;
         color: #f4f4f4;
@@ -271,7 +271,7 @@
       margin-top: 60px;
 
       h2 {
-        font-family: $font-third;
+        font-family: $font-second;
         font-weight: bold;
         font-size: 20px;
         line-height: 32px;
@@ -305,11 +305,11 @@
           position: absolute;
           top: 0;
           left: 0;
-          font-family: $font-third;
+          font-family: $font-second;
           font-weight: bold;
           font-size: 30px;
           line-height: 48px;
-          color: $color-border-second;
+          color: $color-border;
         }
       }
     }
@@ -325,7 +325,7 @@
       max-width: 545px;
 
       h3 {
-        font-family: $font-third;
+        font-family: $font-second;
         font-weight: bold;
         font-size: 28px;
         line-height: 144%;
@@ -350,7 +350,7 @@
         position: absolute;
         left: 0;
         top: 3px;
-        font-family: $font-third;
+        font-family: $font-second;
         font-weight: bold;
         font-size: 15px;
         line-height: 144%;
@@ -382,7 +382,7 @@
           position: relative;
           top: 4px;
           color: white;
-          font-family: $font-third;
+          font-family: $font-second;
           font-weight: bold;
           font-size: 15px;
           line-height: 144%;
@@ -521,7 +521,7 @@
       margin-top: 55px;
 
       h2 {
-        font-family: $font-third;
+        font-family: $font-second;
         font-weight: bold;
         font-size: 28px;
         line-height: 144%;
@@ -529,7 +529,7 @@
 
       &-table {
         margin-top: 120px;
-        border: 1px solid $color-border-second;
+        border: 1px solid $color-border;
       }
 
       &-row {
@@ -542,21 +542,21 @@
         padding: 40px;
 
         &:first-child {
-          border-right: 1px solid $color-border-second;
+          border-right: 1px solid $color-border;
         }
       }
 
       h4 {
-        font-family: $font-third;
+        font-family: $font-second;
         font-weight: bold;
         font-size: 20px;
         line-height: 160%;
       }
 
       h3 {
-        background-color: $color-list-market-hover;
-        border-top: 1px solid $color-border-second;
-        border-bottom: 1px solid $color-border-second;
+        background-color: #F4F4F4;
+        border-top: 1px solid $color-border;
+        border-bottom: 1px solid $color-border;
         padding: 22px;
         display: flex;
         justify-content: center;
@@ -625,7 +625,7 @@
     min-height: 520px;
     display: flex;
     flex-direction: column;
-    border: 1px solid $color-border-second;
+    border: 1px solid $color-border;
 
     &_info {
       padding: 20px 30px 40px 30px;
@@ -672,7 +672,7 @@
     &_title {
       margin-top: 30px;
       display: block;
-      font-family: $font-third;
+      font-family: $font-second;
       font-weight: bold;
       font-size: 15px;
       line-height: 144%;
@@ -681,7 +681,7 @@
     &_buttons {
       display: flex;
       height: 50px;
-      border-top: 1px solid $color-border-second;
+      border-top: 1px solid $color-border;
 
       a {
         flex-basis: 50%;
@@ -693,7 +693,7 @@
       }
 
       &-rate {
-        border-left: 1px solid $color-border-second;
+        border-left: 1px solid $color-border;
 
         i {
           position: relative;
@@ -840,7 +840,7 @@
         padding: 30px;
         padding-bottom: 60px;
         background-color: white;
-        border: 1px solid $color-border-second;
+        border: 1px solid $color-border;
 
         img {
           display: block;
@@ -849,7 +849,7 @@
 
         h3 {
           margin-top: 30px;
-          font-family: $font-third;
+          font-family: $font-second;
           font-weight: bold;
           font-size: 15px;
           line-height: 144%;
@@ -992,7 +992,7 @@
 
       h3 {
         max-width: 885px;
-        font-family: $font-third;
+        font-family: $font-second;
         font-weight: bold;
         font-size: 20px;
         line-height: 160%;
@@ -1054,11 +1054,11 @@
         left: -40px;
         width: calc(100% + 40px + 80px);
         display: flex;
-        border-bottom: 1px solid $color-border-second;
+        border-bottom: 1px solid $color-border;
 
         &:first-of-type {
           margin-top: 60px;
-          border-top: 1px solid $color-border-second;
+          border-top: 1px solid $color-border;
         }
       }
 
@@ -1069,7 +1069,7 @@
         min-width: 0;
         align-self: stretch;
         display: flex;
-        border-right: 1px solid $color-border-second;
+        border-right: 1px solid $color-border;
 
         .swiper-container {
           position: relative;
@@ -1103,7 +1103,7 @@
           position: absolute;
           top: 0;
           left: 0;
-          font-family: $font-third;
+          font-family: $font-second;
           font-weight: bold;
           font-size: 15px;
           line-height: 160%;
@@ -1346,12 +1346,12 @@
       position: absolute;
       left: 0;
       bottom: -17px;
-      font-family: $font-third;
+      font-family: $font-second;
       font-style: normal;
       font-weight: bold;
       font-size: 30px;
       line-height: 160%;
-      color: $color-border-second;
+      color: $color-border;
     }
 
     .sliderControls {
@@ -1389,7 +1389,7 @@
             left: 0;
             content: "0"counter(count);
             display: block;
-            font-family: $font-third;
+            font-family: $font-second;
             font-weight: bold;
             font-size: 30px;
             line-height: 160%;
@@ -1433,7 +1433,7 @@
         &::before {
           content: "";
           display: block;
-          border-top: 1px solid $color-border-second;
+          border-top: 1px solid $color-border;
           margin-left: -40px;
           margin-right: -80px;
         }
@@ -1462,7 +1462,7 @@
       justify-content: space-between;
 
       h3 {
-        font-family: $font-third;
+        font-family: $font-second;
         font-weight: bold;
         font-size: 28px;
         line-height: 144%;
@@ -1475,9 +1475,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: $color-list-market-hover;
-        border: 1px solid $color-border-second;
-        font-family: $font-third;
+        background-color: #F4F4F4;
+        border: 1px solid $color-border;
+        font-family: $font-second;
         font-weight: bold;
         font-size: 28px;
         line-height: 144%;
@@ -1492,7 +1492,7 @@
           font-weight: bold;
           font-size: 18px;
           line-height: 21px;
-          color: $color-basic;
+          color: $color-main;
         }
       }
 
@@ -1548,7 +1548,7 @@
           padding-left: 20px;
           padding-right: 50px;
           height: 100%;
-          font-family: $font-third;
+          font-family: $font-second;
           font-weight: bold;
           font-size: 15px;
           line-height: 144%;
@@ -1593,7 +1593,7 @@
 
     h2 {
       margin-top: 120px;
-      font-family: $font-third;
+      font-family: $font-second;
       font-weight: bold;
       font-size: 28px;
       line-height: 144%;

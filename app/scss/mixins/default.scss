@@ -1,8 +1,9 @@
+// зачем?
 @mixin screen($width, $type: max) {
   @if map_has_key($breakpoints, $width) {
     $width: map_get($breakpoints, $width);
 
-    @if $type == max {
+    @if $type==max {
       $width: $width - 1px;
     }
 
@@ -12,26 +13,25 @@
   }
 }
 
-
 /*
 Миксин для адаптивных свойств
 Пример: @include rule(width, (xl: 100px, lg: 200px));
 */
 @mixin rule($name, $pointsAndValues) {
-  @each $breakpoint, $value in $pointsAndValues {
-    @if $breakpoint == xl {
+
+  @each $breakpoint,
+  $value in $pointsAndValues {
+    @if $breakpoint==xl {
       #{$name}: #{$value};
     }
 
-    @if $breakpoint != xl {
+    @if $breakpoint !=xl {
       @include screen("#{$breakpoint}") {
         #{$name}: #{$value};
       }
     }
   }
 }
-
-
 
 /*
 Быстренько подрубаем аппаратное ускорение для анимирующихся элементов.
@@ -41,15 +41,16 @@ div {
 }
 */
 @mixin performance($backface: true, $perspective: 1000) {
-    @if $backface {
-      backface-visibility: hidden;
-    }
-  
-    perspective: $perspective;
+  @if $backface {
+    backface-visibility: hidden;
   }
+
+  perspective: $perspective;
+}
+
 @mixin background-icon($url) {
-    background-image: url($url);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
-  }
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}

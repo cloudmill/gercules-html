@@ -3,8 +3,8 @@
 
 
   h2 {
-    font: normal bold 28px/40px $font-third;
-    color: $color-basic;
+    font: normal bold 28px/40px $font-second;
+    color: $color-main;
   }
 
   &_list {
@@ -26,12 +26,12 @@
   h3 {
     margin-top: 40px;
     font: normal bold 18px/29px $font-main;
-    color: $color-basic;
+    color: $color-main;
   }
 
   p {
     font: normal normal 16px/29px $font-main;
-    color: $color-basic;
+    color: $color-main;
   }
 
   $link-block-height: 38.5px;
@@ -62,7 +62,7 @@
     a {
       font: normal normal 18px $font-main;
       line-height: $link-height;
-      color: $color-basic;
+      color: $color-main;
     }
 
     i {

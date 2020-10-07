@@ -1,19 +1,19 @@
 .page .content-row .content.vacancy {
-  @media (max-width: 1280px) {
+  @media (max-width: $desktop-m) {
     padding-right: 40px;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: $desktop-s) {
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 90px;
   }
 
-  @media (max-width: 830px) {
+  @media (max-width: $desktop-to-mobile) {
     padding-top: 0;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: $mobile-xl) {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 60px;
@@ -21,69 +21,10 @@
 }
 
 .vacancy {
-  &>a {
-    display: none;
-    position: relative;
-    margin-left: -30px;
-    padding: 0 30px;
-    font-size: 12px;
-    line-height: 40px;
-    color: $color-gray;
-
-    &::before {
-      display: none;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      content: '';
-      display: inline-block;
-      width: 15px;
-      height: 1px;
-      background-color: $color-border-second;
-    }
-
-    @media (max-width: 830px) {
-      display: inline-block;
-    }
-
-    @media (max-width: 600px) {
-      margin-left: -20px;
-      padding: 0 20px;
-
-      &::before {
-        width: 10px;
-      }
-    }
-  }
-
-  .breadcrumbs {
-    @media (max-width: 830px) {
-      display: none;
-    }
-  }
-
   .page-title {
-    @media (max-width: 1280px) {
-      font-size: 40px;
-      line-height: 60px;
-    }
-
-    @media (max-width: 1024px) {
-      font-size: 32px;
-      line-height: 50px;
-    }
-
-    @media (max-width: 830px) {
-      font-size: 28px;
-      line-height: 40px;
+    @media (max-width: $desktop-to-mobile) {
       position: relative;
-      margin-top: 0;
-      margin-left: -30px;
-      padding: 26px 60px 19px 30px;
-      width: calc(100% + 30px + 30px);
-      border-top: 1px solid $color-border-second;
-      border-bottom: 1px solid $color-border-second;
+      padding-right: 60px;
 
       &:after {
         position: absolute;
@@ -95,20 +36,15 @@
         display: block;
         width: 8px;
         height: 8px;
-        border: 2px solid $color-basic;
+        border: 2px solid $color-main;
         border-top-color: transparent;
         border-left-color: transparent;
         transition: $ease-main;
       }
     }
 
-    @media (max-width: 600px) {
-      font-size: 24px;
-      line-height: 35px;
-      margin-left: -20px;
-      padding-left: 20px;
+    @media (max-width: $mobile-xl) {
       padding-right: 40px;
-      width: calc(100% + 20px + 20px);
 
       &:after {
         right: 22px;
@@ -121,21 +57,21 @@
     margin-left: -40px;
     width: calc(100% + 40px);
 
-    @media (max-width: 1280px) {
+    @media (max-width: $desktop-m) {
       margin-top: 40px;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: $desktop-s) {
       margin-top: 30px;
       margin-left: -30px;
       width: calc(100% + 30px + 30px);
     }
 
-    @media (max-width: 830px) {
+    @media (max-width: $desktop-to-mobile) {
       margin-top: 0;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: $mobile-xl) {
       margin-left: -20px;
       width: calc(100% + 20px + 20px);
     }
@@ -176,7 +112,7 @@
       display: block;
       width: 8px;
       height: 8px;
-      border: 2px solid $color-basic;
+      border: 2px solid $color-main;
       border-top-color: transparent;
       border-left-color: transparent;
       transition: $ease-main;
@@ -198,7 +134,7 @@
     }
 
     &_title {
-      font-family: $font-third;
+      font-family: $font-second;
       font-weight: bold;
       font-size: 18px;
       line-height: 160%;
@@ -224,7 +160,7 @@
             display: block;
             width: 1px;
             height: 20px;
-            background: $color-border-second;
+            background: $color-border;
           }
         }
       }
@@ -241,7 +177,7 @@
         position: relative;
         font-size: 15px;
         line-height: 150%;
-        color: $color-basic;
+        color: $color-main;
 
         &:nth-child(3n + 1),
         &:nth-child(3n + 2) {
@@ -268,7 +204,7 @@
     }
 
     &_salary {
-      font-family: $font-third;
+      font-family: $font-second;
       font-weight: bold;
       font-size: 18px;
       line-height: 160%;
@@ -332,7 +268,7 @@
         }
       }
 
-      @media (max-width: 1280px) {
+      @media (max-width: $desktop-m) {
         width: calc(100% + 40px + 60px);
 
         &-content {
@@ -340,7 +276,7 @@
         }
       }
 
-      @media (max-width: 1024px) {
+      @media (max-width: $desktop-s) {
         margin-left: -30px;
         width: calc(100% + 30px + 60px);
 
@@ -407,7 +343,7 @@
                 display: block;
                 width: 1px;
                 height: 20px;
-                background: $color-border-second;
+                background: $color-border;
               }
             }
 
@@ -428,7 +364,7 @@
         }
       }
 
-      @media (max-width: 1280px) {
+      @media (max-width: $desktop-m) {
         &::before {
           right: -60px;
         }
@@ -446,13 +382,13 @@
         }
       }
 
-      @media (max-width: 1024px) {
+      @media (max-width: $desktop-s) {
         &::before {
           right: 0;
         }
       }
 
-      @media (max-width: 600px) {
+      @media (max-width: $mobile-xl) {
         padding-top: 30px;
         padding-bottom: 40px;
 
@@ -505,7 +441,7 @@
       white-space: nowrap;
     }
 
-    @media (max-width: 1280px) {
+    @media (max-width: $desktop-m) {
       padding-right: 60px;
 
       &::after {
@@ -513,7 +449,7 @@
       }
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: $desktop-s) {
       padding: 30px;
       padding-right: 60px;
 
@@ -560,7 +496,7 @@
       }
     }
 
-    @media (max-width: 830px) {
+    @media (max-width: $desktop-to-mobile) {
       border: none;
 
       &:not(:first-child) {
@@ -578,7 +514,7 @@
           content: "";
           display: block;
           height: 1px;
-          background: $color-border-second;
+          background: $color-border;
           transition: $ease-main;
         }
       }
@@ -592,7 +528,7 @@
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: $mobile-xl) {
       padding-left: 20px;
       padding-right: 20px;
 
@@ -615,7 +551,7 @@
     column-gap: 120px;
 
     &_title {
-      font-family: $font-third;
+      font-family: $font-second;
       font-weight: bold;
       font-size: 28px;
       line-height: 144%;
@@ -631,7 +567,7 @@
         display: block;
       }
 
-      @media (max-width: 1024px) {
+      @media (max-width: $desktop-s) {
         max-width: 320px;
       }
     }
@@ -722,7 +658,7 @@
       }
     }
 
-    @media (max-width: 830px) {
+    @media (max-width: $desktop-to-mobile) {
       margin-top: 60px;
     }
 

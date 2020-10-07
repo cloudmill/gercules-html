@@ -1,6 +1,6 @@
 .contacts {
   h2 {
-    font-family: $font-third;
+    font-family: $font-second;
     font-style: normal;
     font-weight: bold;
     font-size: 28px;
@@ -175,7 +175,7 @@
   &-regions {
     margin-top: 40px;
     padding-top: 60px;
-    border-top: 1px solid $color-border-second;
+    border-top: 1px solid $color-border;
 
     h2 {
       margin: 0;
@@ -237,7 +237,7 @@
         margin-left: -1px;
         padding: 180px 25px 30px 40px;
         min-height: 288px;
-        border: 1px solid $color-border-second;
+        border: 1px solid $color-border;
         font-size: 15px;
         line-height: 150%;
 
@@ -301,8 +301,8 @@
         padding: 10px 26px 4px 26px;
         display: block;
         background-color: white;
-        border: 1px solid $color-border-second;
-        font-family: $font-third;
+        border: 1px solid $color-border;
+        font-family: $font-second;
         font-weight: bold;
         font-size: 20px;
         line-height: 160%;

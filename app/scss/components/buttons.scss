@@ -105,12 +105,12 @@
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    border: 1px solid $color-border-second;
+    border: 1px solid $color-border;
     transition: 0.25s;
 
     span {
       display: block;
-      font-family: $font-third;
+      font-family: $font-second;
       font-weight: bold;
       font-size: 18px;
       line-height: 160%;
@@ -163,15 +163,15 @@
 
   &::before {
     left: 0;
-    border-bottom: 1px solid $color-border-second;
-    border-right: 1px solid $color-border-second;
+    border-bottom: 1px solid $color-border;
+    border-right: 1px solid $color-border;
     transform-origin: left bottom;
     transform: skewX(-20deg);
   }
 
   &::after {
     right: 0;
-    border-top: 1px solid $color-border-second;
+    border-top: 1px solid $color-border;
   }
 
   button {
@@ -204,8 +204,8 @@
       left: 0;
 
       &::before {
-        border-bottom: 2px solid $color-basic;
-        border-left: 2px solid $color-basic;
+        border-bottom: 2px solid $color-main;
+        border-left: 2px solid $color-main;
         transform: translate(-25%, -50%) rotate(45deg);
       }
     }
@@ -215,8 +215,8 @@
 
       &::before {
         transform: translate(-75%, -50%) rotate(45deg);
-        border-top: 2px solid $color-basic;
-        border-right: 2px solid $color-basic;
+        border-top: 2px solid $color-main;
+        border-right: 2px solid $color-main;
       }
     }
   }
@@ -240,12 +240,12 @@
       }
 
       &:first-child {
-        border-bottom: 1px solid $color-border-second;
+        border-bottom: 1px solid $color-border;
 
         &::before {
           border: none;
-          border-top: 2px solid $color-basic;
-          border-right: 2px solid $color-basic;
+          border-top: 2px solid $color-main;
+          border-right: 2px solid $color-main;
           margin: 0;
           margin-bottom: 5px;
           margin-left: -10px;
@@ -261,8 +261,8 @@
         width: 24px;
         height: 24px;
         transform: rotate(45deg);
-        border-bottom: 2px solid $color-basic;
-        border-left: 2px solid $color-basic;
+        border-bottom: 2px solid $color-main;
+        border-left: 2px solid $color-main;
         top: 34px;
         left: 31.5px;
         margin-left: 5px;

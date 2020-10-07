@@ -3,8 +3,8 @@
   position: relative;
 
   h2 {
-    font: normal bold 28px/40px $font-third;
-    color: $color-basic;
+    font: normal bold 28px/40px $font-second;
+    color: $color-main;
   }
 
   &_all {
@@ -86,7 +86,7 @@
 
     span {
       font: normal normal 15px/22px $font-main;
-      color: $color-basic;
+      color: $color-main;
       white-space: nowrap;
     }
   }
@@ -107,8 +107,8 @@
 
     h3 {
       margin-top: 40px;
-      font: normal bold 28px/40px $font-third;
-      color: $color-basic;
+      font: normal bold 28px/40px $font-second;
+      color: $color-main;
     }
 
     p {
@@ -120,7 +120,7 @@
     h4 {
       margin-top: 40px;
       font: normal bold 18px/26px $font-main;
-      color: $color-basic;
+      color: $color-main;
     }
 
     ul {
@@ -129,7 +129,7 @@
       li {
         position: relative;
         font: normal normal 15px/19px $font-main;
-        color: $color-basic;
+        color: $color-main;
         padding-left: 32px;
 
         &:not(:first-child) {
@@ -158,7 +158,7 @@
     a {
       display: block;
       font: normal normal 15px/19px $font-main;
-      color: $color-basic;
+      color: $color-main;
       text-decoration: underline;
 
       &:not(:first-child) {

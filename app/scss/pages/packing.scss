@@ -10,7 +10,7 @@
   }
   > h2 {
     max-width: 650px;
-    font-family: $font-third;
+    font-family: $font-second;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -118,7 +118,7 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        font-family: $font-third;
+        font-family: $font-second;
       }
       $size: 55px;
       &.one {
@@ -210,7 +210,7 @@
         font-size: 28px;
         line-height: 144%;
         color: #262626;
-        font-family: $font-third;
+        font-family: $font-second;
         margin-bottom: 30px;
       }
       ul {
@@ -234,7 +234,7 @@
 
             line-height: 144%;
             color: #e41d2c;
-            font-family: $font-third;
+            font-family: $font-second;
           }
         }
       }
@@ -252,7 +252,7 @@
         font-size: 28px;
         line-height: 144%;
         color: #262626;
-        font-family: $font-third;
+        font-family: $font-second;
       }
       span {
         margin-left: 50px;
@@ -310,7 +310,7 @@
   }
   &-charset {
     h2 {
-      font-family: $font-third;
+      font-family: $font-second;
       font-style: normal;
       font-weight: bold;
       font-size: 20px;

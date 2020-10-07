@@ -18,8 +18,8 @@
     margin-top: 80px;
 
     h2 {
-      font: normal bold 28px/40px $font-third;
-      color: $color-basic;
+      font: normal bold 28px/40px $font-second;
+      color: $color-main;
       white-space: nowrap;
     }
 
@@ -32,7 +32,7 @@
       p {
         max-width: 641px;
         font: normal normal 15px/22px $font-main;
-        color: $color-basic;
+        color: $color-main;
       }
 
       .main-link_rect {

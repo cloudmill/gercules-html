@@ -12,56 +12,95 @@
 .page {
   margin-left: 80px;
   width: calc(100% - 80px);
-  border-left: 1px solid $color-border-second;
-  min-height: 300px; //потом убрать
-  overflow: hidden;
+  min-height: 300px; // тест
+  border-left: 1px solid $color-border;
 
   &-title {
     margin-top: 35px;
-    font-family: $font-third;
+    font-family: $font-second;
     font-weight: bold;
     font-size: 48px;
-    color: $color-basic;
     line-height: 69px;
+    color: $color-main;
   }
 
   .content {
-    padding: 60px;
-    padding-bottom: 120px;
+    padding: 60px 60px 120px 60px;
+    overflow: hidden;
 
     &-row {
-      height: 100%; // зачем?
       display: flex;
 
       .content {
-        padding-left: 40px;
-        padding-right: 80px;
-        width: calc(100% - 287px);
-        overflow: hidden;
+        padding: 60px 80px 120px 40px;
+        width: calc(100% - #{$sidemenu-l});
+      }
+    }
+  }
 
-        @media (max-width: 1280px) {
-          width: calc(100% - 230px);
+  @media (max-width: $desktop-m) {
+    margin-left: 40px;
+    width: calc(100% - 40px);
+
+    &-title {
+      font-size: 40px;
+      line-height: 60px;
+    }
+
+    .content {
+      &-row {
+        .content {
+          width: calc(100% - #{$sidemenu-m});
         }
+      }
+    }
+  }
 
-        @media (max-width: 1024px) {
-          width: calc(100% - 200px);
+  @media (max-width: $desktop-s) {
+    margin-left: 0;
+    width: 100%;
+    border-left: none;
+
+    &-title {
+      font-size: 32px;
+      line-height: 50px;
+    }
+
+    .content {
+      &-row {
+        .content {
+          width: calc(100% - #{$sidemenu-s});
         }
+      }
+    }
+  }
 
-        @media (max-width: 830px) {
+  @media (max-width: $desktop-to-mobile) {
+    &-title {
+      margin: 0 -30px;
+      padding: 26px 30px 19px 30px;
+      border-top: 1px solid $color-border;
+      border-bottom: 1px solid $color-border;
+      font-size: 28px;
+      line-height: 40px;
+    }
+
+    .content {
+      &-row {
+        .content {
           width: 100%;
         }
       }
     }
   }
 
-  @media (max-width: 1280px) {
-    margin-left: 40px;
-    width: calc(100% - 40px);
-  }
-
-  @media (max-width: 1024px) {
-    margin: 0;
-    width: 100%;
-    border-left: none;
+  @media (max-width: $mobile-xl) {
+    &-title {
+      margin: 0 -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 24px;
+      line-height: 35px;
+    }
   }
 }

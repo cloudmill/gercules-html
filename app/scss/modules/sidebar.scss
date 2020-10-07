@@ -1,8 +1,8 @@
 .sidebar {
   padding: 35px 0;
-  width: 287px;
-  min-width: 287px; // зачем?
-  border-right: 1px solid $color-border-second;
+  width: $sidemenu-l;
+  min-width: $sidemenu-l; // зачем?
+  border-right: 1px solid $color-border;
   overflow: hidden;
 
   &-menu {
@@ -32,7 +32,7 @@
       }
 
       &.active {
-        color: $color-basic;
+        color: $color-main;
 
         &::before {
           opacity: 1;
@@ -40,7 +40,7 @@
       }
 
       &:hover {
-        color: $color-basic;
+        color: $color-main;
       }
     }
 
@@ -94,7 +94,7 @@
           display: block;
           font-size: 12px;
           line-height: 250%;
-          color: $color-basic;
+          color: $color-main;
           transition: color $ease-main;
 
           &.active,
@@ -113,7 +113,7 @@
       }
     }
 
-    @media (max-width: 1280px) {
+    @media (max-width: $desktop-m) {
       &>a {
         padding-left: 40px;
         padding-right: 30px;
@@ -136,7 +136,7 @@
       }
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: $desktop-s) {
       &>a {
         padding-left: 30px;
       }
@@ -161,17 +161,17 @@
     border-right: none;
   }
 
-  @media (max-width: 1280px) {
-    width: 230px;
-    min-width: 230px; // зачем?
+  @media (max-width: $desktop-m) {
+    width: $sidemenu-m;
+    min-width: $sidemenu-m; // зачем?
   }
 
-  @media (max-width: 1024px) {
-    width: 200px;
-    min-width: 200px; // зачем?
+  @media (max-width: $desktop-s) {
+    width: $sidemenu-s;
+    min-width: $sidemenu-s; // зачем?
   }
 
-  @media (max-width: 830px) {
+  @media (max-width: $desktop-to-mobile) {
     display: none;
   }
 }

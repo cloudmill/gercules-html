@@ -38,7 +38,7 @@ block content
   .content-row
     include ./about/sidebar
     .content.vacancy
-      a(href="#") О компании
+      +nav_back('О компании')
       +breadcrumbs(['О компании',pageTitle])
       h1.page-title #{pageTitle}
       .vacancy-list

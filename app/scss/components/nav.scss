@@ -1,0 +1,38 @@
+.nav {
+  &-back {
+    display: none;
+    position: relative;
+    margin-left: -30px;
+    padding: 0 30px;
+    font-size: 12px;
+    line-height: 40px;
+    color: $color-gray;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      content: "";
+      display: block;
+      width: 15px;
+      height: 1px;
+      background-color: $color-border;
+    }
+
+    @media (max-width: $desktop-to-mobile) {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: $mobile-xl) {
+      margin-left: -20px;
+      padding: 0 20px;
+
+      &::before {
+        width: 10px;
+      }
+    }
+  }
+}

@@ -1,11 +1,11 @@
 .client-service-card {
-  border: 1px solid $color-border-second;
-  color: $color-basic;
+  border: 1px solid $color-border;
+  color: $color-main;
   background-color: white;
 
   span {
     display: block;
-    font-family: $font-third;
+    font-family: $font-second;
     font-weight: bold;
     font-size: 15px;
     line-height: 24px;

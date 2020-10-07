@@ -1,13 +1,3 @@
-// ##########
-// Базовые настройки сетки сайта
-// ##########
-$container-padding: 20px; // Отступы в топе и по бокам у контейнера
-$grid-container-width: 100%; // Ширина контейнера сетки
-$grid-cols: 12; // Количество колонок в сетке
-$grid-gap: 20px; // Расстояние между колонками
-$grid-gap-vertical: 20px; // Расстояние между строками в сетке
-
-$min-main-padding: 20px;
 $breakpoints: ('xl': 1920px,
   'lg': 1280px,
   'md': 1024px,
@@ -20,33 +10,25 @@ $breakpoints: ('xl': 1920px,
   'custom-660': 660px,
 );
 
-// ##########
-// Цвета
-// ##########
-$color-basic: #262626; // Основной черный цвет текста
-$color-basic-second:black; // Дополнительный черный цвет текста
-$background-additional: #f6f5f3;
-$color-placeholder: #777; // Основной цвет для placeholder
-$color-input: black; // Основной цвет input, select и textarea
-$color-main: #2252d8; // Основной фирменный цвет
-$color-border: #ccc; // Основной цвет границ таблиц, секций
-$color-border-second: #E5E5E5; // Дополнительный цвет границ
-$color-red: #E41D2C; // Основной красный цвет
-$color-list-market: white;
-$color-list-market-hover: #F4F4F4;
-$color-gray: #6C6C6C;
+$desktop-m: 1280px;
+$desktop-s: 1024px;
+$desktop-to-mobile: 830px;
+$mobile-xl: 600px;
+
+$sidemenu-l: 287px;
+$sidemenu-m: 230px;
+$sidemenu-s: 200px;
+
+$color-input: black;
 $color-placeholder: #B3B3B3;
+$color-selection: #2252d8;
+$color-main: #262626;
+$color-red: #E41D2C;
+$color-gray: #6C6C6C;
+$color-border: #E5E5E5;
 
-// ##########
-// Transitions
-// ##########
+$font-main: "Arimo";
+$font-second: "Nexa Replica Ru";
+$font-third: "MachineC";
+
 $ease-main: .5s ease;
-
-// ##########
-// Шрифты
-// ##########
-$font-main: 'Arimo'; // Основной шрифт сайта
-$font-second: Times New Roman,
-sans-serif; // Дополнительный шрифт
-$font-third: 'Nexa Replica Ru'; // Основной шрифт заголовков
-$font-fourth: "MachineC";
