@@ -4,8 +4,8 @@
     position: relative;
     margin-left: -30px;
     padding: 0 30px;
-    font-size: 12px;
-    line-height: 40px;
+    font-size: 14px;
+    line-height: 50px;
     color: $color-gray;
 
     &::before {
@@ -29,9 +29,45 @@
     @media (max-width: $mobile-xl) {
       margin-left: -20px;
       padding: 0 20px;
+      font-size: 12px;
+      line-height: 40px;
 
       &::before {
         width: 10px;
+      }
+    }
+  }
+
+  &-goto {
+    display: none;
+    margin: 0 -30px;
+    padding: 0 30px;
+    height: 60px;
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 23px;
+
+    i {
+      font-size: 8px;
+      filter: brightness(0);
+    }
+
+    @media (max-width: $desktop-to-mobile) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @media (max-width: $mobile-xl) {
+      margin: 0 -20px;
+      padding: 0 20px;
+      font-size: 14px;
+      line-height: 21px;
+
+      i {
+        font-size: 7px;
       }
     }
   }

@@ -58,3 +58,7 @@ mixin decorate_square_trunc
 
 mixin nav_back(title = 'Главная')
   a(href="#").nav-back #{title}
+
+mixin nav_goto(title = 'Главная')
+  a(href="#").nav-goto #{title}
+    +icon('arrow', 'svg')

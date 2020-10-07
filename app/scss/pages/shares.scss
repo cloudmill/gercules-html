@@ -8,12 +8,22 @@
   @media (max-width: $desktop-m) {
     padding-left: 40px;
     padding-right: 40px;
+
+    .fs-list_showmore {
+      margin-left: -40px;
+      margin-right: -40px;
+    }
   }
 
   @media (max-width: $desktop-s) {
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 90px;
+
+    .fs-list_showmore {
+      margin-left: -30px;
+      margin-right: -30px;
+    }
   }
 
   @media (max-width: $desktop-to-mobile) {
@@ -28,6 +38,11 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 60px;
+
+    .fs-list_showmore {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
   }
 }
 
@@ -45,6 +60,10 @@
       right: 0;
       transform: translateY(-50%);
     }
+  }
+
+  .nav-goto {
+    margin-top: -1px;
   }
 
   &>p {
@@ -88,14 +107,40 @@
         margin-top: 20px;
         font-size: 15px;
         line-height: 150%;
+
+        @media (max-width: $mobile-xl) {
+          font-size: 14px;
+          line-height: 21px;
+        }
       }
     }
 
-    h2 {
+    a {
+      display: block;
       font-family: $font-second;
       font-weight: bold;
       font-size: 20px;
       line-height: 160%;
+
+      @media (max-width: $desktop-m) {
+        font-size: 18px;
+        line-height: 30px;
+      }
+
+      @media (max-width: $desktop-s) {
+        font-size: 17px;
+        line-height: 28px;
+      }
+
+      @media (max-width: $desktop-to-mobile) {
+        font-size: 16px;
+        line-height: 25px;
+      }
+
+      @media (max-width: $mobile-xl) {
+        font-size: 14px;
+        line-height: 22px;
+      }
     }
 
     .shares-time {
@@ -197,6 +242,11 @@
       position: absolute;
       top: 4px;
       left: 0;
+
+      @media (max-width: $mobile-xl) {
+        top: 3px;
+        font-size: 7.5px;
+      }
     }
 
     p {
@@ -206,6 +256,11 @@
 
       span {
         font-weight: bold;
+      }
+
+      @media (max-width: $mobile-xl) {
+        font-size: 14px;
+        line-height: 21px;
       }
     }
 
@@ -217,6 +272,21 @@
         margin-top: 6px;
         font-size: 15px;
         color: $color-main;
+
+        @media (max-width: $mobile-xl) {
+          font-size: 14px;
+          line-height: 21px;
+        }
+      }
+
+      @media (max-width: $desktop-to-mobile) {
+        font-size: 12px;
+        line-height: 18px;
+      }
+
+      @media (max-width: $mobile-xl) {
+        font-size: 11px;
+        line-height: 16px;
       }
     }
 
@@ -269,6 +339,18 @@
     &-list {
       margin-left: -40.5px;
       margin-right: -40.5px;
+      grid-template-columns: repeat(2, 50%);
+    }
+
+    &-item {
+      padding: 60px 40px;
+      min-height: initial;
+
+      .shares-time {
+        &::before {
+          left: -40px;
+        }
+      }
     }
   }
 
@@ -276,7 +358,68 @@
     &-list {
       margin-left: -30.5px;
       margin-right: -30.5px;
-      grid-template-columns: repeat(2, 50%);
+    }
+
+    &-item {
+      padding-left: 30px;
+      padding-right: 30px;
+
+      .shares-time {
+        &::before {
+          left: -30px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $desktop-to-mobile) {
+    .page-title {
+      .main-link {
+        display: none;
+      }
+    }
+
+    &-list {
+      margin-top: -1px;
+      grid-template-columns: 100%;
+    }
+
+    &-item {
+      padding: 50px 30px;
+    }
+  }
+
+  @media (max-width: $mobile-xl) {
+    &-list {
+      margin-left: -20.5px;
+      margin-right: -20.5px;
+    }
+
+    &-item {
+      padding: 40px 20px;
+
+      &_info {
+        p {
+          margin-top: 15px;
+        }
+      }
+
+      .shares-time {
+        margin-top: 40px;
+
+        &>p+p,
+        &_row {
+          margin-top: 3px;
+        }
+
+        &::before {
+          top: -2px;
+          left: -20px;
+          height: 40px;
+          border-left-width: 2px;
+          border-top-width: 2px;
+        }
+      }
     }
   }
 }

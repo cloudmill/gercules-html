@@ -9,17 +9,18 @@ block content
     +breadcrumbs(['Акции'])
     .page-title Акции
       +link('#', 'Архив акций')
+    +nav_goto('Архив акций')
     .shares-list
       - for (let i = 0; i < 9; i++)
         .shares-item
           .shares-item_info
             if (i % 2)
-              h2 «Лучшая цена» в Колорлоне
+              a(href="#") «Лучшая цена» в Колорлоне
                 br
                 | на GERKULES
               p Скидки до 25% на самые популярные смеси GERKULES в магазинах Колорлон.
             else
-              h2 В магазинах «Стройся» снижены цены на смеси GERKULES
+              a(href="#") В магазинах «Стройся» снижены цены на смеси GERKULES
               p Покупать сухие строительные смеси GERKULES
                 br
                 | в магазинах "СТРОЙСЯ" выгодно!

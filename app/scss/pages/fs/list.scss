@@ -150,9 +150,7 @@
     margin-left: -40px;
     margin-right: -80px;
     height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include display-flex-center();
     border-top: 1px solid $color-border;
     border-bottom: 1px solid $color-border;
 
@@ -174,6 +172,48 @@
         line-height: 150%;
         color: $color-gray;
       }
+    }
+
+    @media (max-width: $desktop-m) {
+      a {
+        font-size: 17px;
+        line-height: 20px;
+      }
+    }
+
+    @media (max-width: $desktop-s) {
+      a {
+        font-size: 16px;
+        line-height: 18px;
+
+        span {
+          font-size: 11px;
+          line-height: 17px;
+        }
+      }
+    }
+
+    @media (max-width: $desktop-to-mobile) {
+      a {
+        font-size: 15px;
+        line-height: 17px;
+      }
+    }
+
+    @media (max-width: $mobile-xl) {
+      a {
+        font-size: 14px;
+        line-height: 16px;
+
+        span {
+          font-size: 10px;
+          line-height: 15px;
+        }
+      }
+    }
+
+    @media (max-width: $mobile-xl) {
+      height: 60px;
     }
   }
 
