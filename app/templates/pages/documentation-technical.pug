@@ -1,0 +1,170 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Технические документы СФТК";
+
+block content
+  .content-row
+    .sidebar
+      .sidebar-menu
+        a(href="#") Документация
+        a(href="#") Сертификаты
+        a(href="#").active Технические документы СФТК
+        a(href="#") POS-материалы
+        a(href="#") Документы по претензиям
+        a(href="#") Справочная информация по логистике
+    .content.documentation
+      +breadcrumbs(["Документация", pageTitle])
+      h1.page-title= pageTitle
+      .tabs-menu
+        .tabs-menu_item.active Альбом технических
+          br
+          | решений
+        .tabs-menu_item Руководство по технологии
+          br
+          | монтажа
+        .tabs-menu_item Рекомендации 
+          br
+          | по эксплуатации СФТК
+        .tabs-menu_item Технические характеристики
+          br
+          | линейки продукции СФТК
+      .tabs-list
+        .tabs-item.active
+          h2 Альбом технических решений
+            a(href="#")
+              +icon("down", "svg")
+              span Скачать всю группу
+          .card-files_list
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Сертификаты ГОСТ
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Свидетельство о государственной регистрации (СГР)
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Лицензии и сертификаты
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Санитарное заключение на грунтовку
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+        .tabs-item
+          h2 Руководство по технологии монтажа
+            a(href="#")
+              +icon("down", "svg")
+              span Скачать всю группу
+          .card-files_list
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Сертификаты ГОСТ
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Свидетельство о государственной регистрации (СГР)
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Лицензии и сертификаты
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Санитарное заключение на грунтовку
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+        .tabs-item
+          h2 Рекомендации по эксплуатации СФТК
+            a(href="#")
+              +icon("down", "svg")
+              span Скачать всю группу
+          .card-files_list
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Сертификаты ГОСТ
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Свидетельство о государственной регистрации (СГР)
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Лицензии и сертификаты
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Санитарное заключение на грунтовку
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+        .tabs-item
+          h2 Технические характеристики линейки продукции СФТК
+            a(href="#")
+              +icon("down", "svg")
+              span Скачать всю группу
+          .card-files_list
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Сертификаты ГОСТ
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Свидетельство о государственной регистрации (СГР)
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Лицензии и сертификаты
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+            .card-files_item
+              a(href="#" download)
+                +icon("pdf", "svg")
+                .card-files_info
+                  h3 Санитарное заключение на грунтовку
+                  p pdf, 15 mb
+                    +icon("down-gray", "svg")
+        
+
