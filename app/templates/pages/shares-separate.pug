@@ -4,10 +4,12 @@ block variables
   - const pageTitle = 'Распродажа продукции Gerkules в магазинах Технониколь!'
 
 block content
-  .content.shares.content-other-padding
+  .content.shares.content-without-breadcrumbs
+    +nav_back
     .page-title Распродажа продукции Gerkules
       br
       | в магазинах Технониколь!
+    +nav_goto("Архив акций")
     p Проектная деятельность дает ответ на существующий вызов стремительно меняющегося мира, вовлекая
       br
       | в систему обучения реальные практики, реальных экспертов и настоящие проблемные ситуации,
@@ -37,8 +39,11 @@ block content
             img(src=`../images/product-${photo}.png`, alt="")
           .shares-product_content
             .shares-product_info
-              h2 GE-29 Грунтовка укрепляющая глубокого проникновения, 5, 10 кг
+              a(href="#") GE-29 Грунтовка укрепляющая глубокого проникновения, 5, 10 кг
               +hashTags([["новинки", "#"], ["акция", "#"], ["хит продаж", "#"]])
+              .hashTags.content-without-hash
+                a(href="#") Хит продаж
+                a(href="#") Акция
             a(href="#") В магазин
               +icon("arrow", "svg")
     include fs/showmore
