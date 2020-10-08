@@ -1,0 +1,27 @@
+
+if(!imgObject)
+  -var imgObject = 'objectCFTK.png';
+if(!nameObject)
+  -var nameObject = 'ЖК VIVANOVA';
+.fs-objects_object
+  .fs-objects_photo
+    .fs-objects_sticker
+      span Сдан в 2018 году
+    img(src=`./images/${imgObject}` alt="")
+  .fs-objects_info
+    +hashTags([["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"]])
+    h3 #{nameObject}
+    p г. Новосибирск, ул. Иванова, 8
+    h4 Выполенные работы
+    ul
+      li Выравнивание стен / оштукатуривание
+      li Заливка / выравнивание полов
+      li Монтаж СФТК
+    h4 Продукты «Геркулес»
+    .fs-objects_products
+      a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+      a(href="#") Штукатурная станция mono-mix FU (на 220В)
+      a(href="#") GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
+      a(href="#") GP-21M Штукатурка цементная для машинного нанесения
+-var imgObject = false
+-var nameObject = false

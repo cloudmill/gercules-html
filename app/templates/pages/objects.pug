@@ -1,0 +1,47 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Объекты";
+
+block content
+  .content-row
+    include ./about/sidebar
+    .content.objects
+      +nav_back('О компании')
+      +breadcrumbs(['О компании',pageTitle])
+      h1.page-title #{pageTitle}
+        .objects-typeView
+          a.objects-typeView_item(href="").active Списком
+          a.objects-typeView_item(href="") На карте
+      .objects-filter
+        +field_select("regionObject", [[0, "Санкт-Петербург"], [1, "Санкт-Петербург"]] )
+          .field-select_caption Регион
+        +field_select("typeObject", [[0, "Все"], [1, "Тип объекта"]] )
+          .field-select_caption Тип объекта
+        +field_select("viewObject", [[0, "Все"], [1, "Вид работ"]] )
+          .field-select_caption Вид работ
+        +field_select("yearObject", [[0, "Все"], [1, "Год сдачи объекта"]])
+          .field-select_caption Год сдачи объекта
+        .objects-filter_reset Сбросить
+          +icon('reset','svg')
+      .objects-list
+        .objects-list_item
+          include ./fs/object
+        .objects-list_item
+          -var imgObject= 'object-2.png'
+          -var nameObject= 'ТК Гранд Каньон'
+          include ./fs/object
+        .objects-list_item
+          -var imgObject= 'object-3.jpg'
+          -var nameObject= 'ТК Берега Невы'
+          include ./fs/object
+        .objects-list_item
+          include ./fs/object
+        .objects-list_item
+          -var imgObject= 'object-2.png'
+          -var nameObject= 'ТК Гранд Каньон'
+          include ./fs/object
+      include fs/showmore
+
+
+
