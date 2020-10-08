@@ -1,0 +1,19 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Документация";
+
+block content
+  .content-row
+    .sidebar
+      .sidebar-menu
+        a(href="#").active Документация
+        a(href="#") Сертификаты
+        a(href="#") Технические документы СФТК
+        a(href="#") POS-материалы
+        a(href="#") Документы по претензиям
+        a(href="#") Справочная информация по логистике
+    .content.docs
+      +breadcrumbs([pageTitle])
+      h1.page-title= pageTitle
+

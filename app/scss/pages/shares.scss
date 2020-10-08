@@ -1,26 +1,6 @@
 .page .content.shares {
   padding: 60px 80px 120px 60px;
 
-  &.content-without-breadcrumbs {
-    padding-top: 106px;
-
-    .page-title {
-      margin-top: 0;
-    }
-
-    @media (max-width: $desktop-m) {
-      padding-top: 86px;
-    }
-
-    @media (max-width: $desktop-s) {
-      padding-top: 66px;
-    }
-
-    @media (max-width: $desktop-to-mobile) {
-      padding-top: 0;
-    }
-  }
-
   @media (max-width: $desktop-m) {
     padding-left: 40px;
     padding-right: 40px;
