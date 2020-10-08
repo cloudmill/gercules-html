@@ -1,0 +1,50 @@
+.page .content-row .content.documentation {}
+
+.documentation {
+  h3 {
+    margin-top: 60px;
+    font-family: $font-second;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 160%;
+  }
+
+  &-sections {
+    margin: 0.5px;
+    margin-top: 60.5px;
+    margin-left: -40.5px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+
+    .documentation-item {
+      padding: 30px 40px 45px 40px;
+      min-height: 263px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h4 {
+      font-family: $font-second;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 160%;
+    }
+
+    p {
+      margin-top: 5px;
+      flex-grow: 1;
+      font-size: 15px;
+      line-height: 150%;
+    }
+
+    .main-link {
+      margin-top: 24px;
+      width: fit-content;
+    }
+  }
+
+  &-item {
+    margin: -0.5px;
+    border: 1px solid $color-border;
+  }
+}
