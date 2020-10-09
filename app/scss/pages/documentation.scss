@@ -1,4 +1,22 @@
-.page .content-row .content.documentation {}
+.page .content-row .content.documentation {
+  @media (max-width: $desktop-l) {
+    padding-right: 40px;
+  }
+
+  @media (max-width: $desktop-s) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @media (max-width: $desktop-to-mobile) {
+    padding-top: 0;
+  }
+
+  @media (max-width: $mobile-xl) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 .documentation {
   h2 {
@@ -26,6 +44,27 @@
     &+.card-files_list {
       margin-top: 30px;
     }
+
+    @media (max-width: $desktop-m) {
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    @media (max-width: $desktop-s) {
+      font-size: 16px;
+      line-height: 27px;
+    }
+
+    @media (max-width: $desktop-to-mobile) {
+      margin-top: 40px;
+      font-size: 15px;
+      line-height: 25px;
+    }
+
+    @media (max-width: $mobile-xl) {
+      font-size: 14px;
+      line-height: 23px;
+    }
   }
 
   &-sections {
@@ -35,18 +74,48 @@
     display: grid;
     grid-template-columns: repeat(2, 50%);
 
-    .documentation-item {
-      padding: 30px 40px 45px 40px;
-      min-height: 263px;
-      display: flex;
-      flex-direction: column;
+    .main-link {
+      margin-top: 24px;
+      width: fit-content; // поскольку ссылка ратягивается, несмотря на inline-flex
+      // fit-content не поддерживается IE 11
     }
 
-    h4 {
-      font-family: $font-second;
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 160%;
+    @media (max-width: $desktop-to-mobile) {
+      margin-top: 40px;
+    }
+  }
+
+  &-section {
+    margin: -0.5px;
+    padding: 30px 40px 45px 40px;
+    min-height: 263px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $color-border;
+
+    a {
+      &:first-child {
+        display: block;
+        font-family: $font-second;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 160%;
+
+        @media (max-width: $desktop-m) {
+          font-size: 16px;
+          line-height: 27px;
+        }
+
+        @media (max-width: $desktop-to-mobile) {
+          font-size: 15px;
+          line-height: 25px;
+        }
+
+        @media (max-width: $mobile-xl) {
+          font-size: 14px;
+          line-height: 23px;
+        }
+      }
     }
 
     p {
@@ -54,18 +123,13 @@
       flex-grow: 1;
       font-size: 15px;
       line-height: 150%;
-    }
 
-    .main-link {
-      margin-top: 24px;
-      width: fit-content; // потому что ссылка ратягивается, несмотря на inline-flex
-      // fit-content не поддерживается IE 11
+      @media (max-width: $desktop-to-mobile) {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 21px;
+      }
     }
-  }
-
-  &-item {
-    margin: -0.5px;
-    border: 1px solid $color-border;
   }
 
   .tabs {
@@ -312,7 +376,7 @@
         margin-left: 20px;
       }
     }
-    
+
     // select2
     .field.field-select {
       .select2.select2-container {
@@ -333,7 +397,7 @@
               color: $color-placeholder;
             }
           }
-          
+
           .select2-selection__arrow {
             width: 60px;
             height: 60px;
@@ -361,5 +425,37 @@
     font-size: 12px;
     line-height: 144%;
     color: $color-gray;
+  }
+
+  @media (max-width: $desktop-m) {
+    &-sections {
+      width: calc(100% + 40px + 40px);
+    }
+  }
+
+  @media (max-width: $desktop-s) {
+    &-sections {
+      margin-left: -30.5px;
+      width: calc(100% + 30px + 30px);
+      grid-template-columns: 100%;
+    }
+
+    &-section {
+      padding-left: 30px;
+      padding-right: 30px;
+      min-height: 200px;
+    }
+  }
+
+  @media (max-width: $desktop-to-mobile) {
+    &-section {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      min-height: initial;
+
+      .main-link {
+        display: none;
+      }
+    }
   }
 }
