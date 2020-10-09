@@ -162,6 +162,77 @@
     border-right: none;
   }
 
+  &-dropdown {
+    margin-left: -30px;
+    width: calc(100% + 30px + 30px);
+    max-height: 0;
+    display: none;
+    overflow: hidden;
+
+    &_content {
+      padding: 26px 30px 7px;
+
+      a {
+        display: block;
+        font-family: $font-main;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 25px;
+        color: $color-gray;
+
+        &:not(:first-child) {
+          margin-top: 20px;
+        }
+
+        &.active {
+          position: relative;
+          color: $color-main;
+
+          &::before {
+            position: absolute;
+            top: 50%;
+            left: -30px;
+            transform: translateY(-50%);
+            content: "";
+            display: block;
+            height: 30px;
+            border-left: 4px solid $color-red;
+            border-top: 2px solid transparent;
+          }
+        }
+      }
+    }
+
+    @media (max-width: $desktop-to-mobile) {
+      display: block;
+    }
+
+    @media (max-width: $mobile-xl) {
+      margin-left: -20px;
+      width: calc(100% + 20px + 20px);
+
+      &_content {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        a {
+          font-size: 14px;
+
+          &:not(:first-child) {
+            margin-top: 17px;
+          }
+
+          &.active {
+            &::before {
+              left: -20px;
+              border-left-width: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
+
   @media (max-width: $desktop-m) {
     width: $sidemenu-m;
     min-width: $sidemenu-m; // зачем?

@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import "jquery";
 
 class SlideDown {
   constructor({ el, item, time, boxContent, minHeight }) {
@@ -14,10 +14,9 @@ class SlideDown {
     this.el.css("transition-duration", `${this.time}ms`);
     this.el.css("box-sizing", `content-box`);
     this.item.click((e) => {
-      if (e.currentTarget === e.target) this.toggle();
-    });
-    this.item.find('>*:not([class$="dropdown"])').click((e) => {
-      this.toggle();
+      if (e.currentTarget === e.target) {
+        this.toggle();
+      }
     });
     $(window).on("resize", this.update.bind(this));
   }
@@ -49,7 +48,11 @@ class SlideDown {
   }
   update() {
     if (this.opened) {
-      this.open();
+      if (this.el.css("display") === "none") {
+        this.toggle()
+      } else {
+        this.open();
+      }
     }
   }
 }
@@ -63,6 +66,7 @@ export default class Manager_tabs {
     this.sidebarInit();
     this.vacancyDropdowns();
     this.cardQuestionsDropdowns();
+    this.sidebarDropdown();
   }
   tabsInit() {
     $(".tabs-menu_item").click((e) => {
@@ -111,6 +115,14 @@ export default class Manager_tabs {
         time: 500,
       });
     });
+  }
+  sidebarDropdown() {
+    new SlideDown({
+      item: $(".page-title"),
+      el: $(".sidebar-dropdown"),
+      boxContent: $(".sidebar-dropdown_content"),
+      time: 500,
+    })
   }
   cardQuestionsDropdowns() {
     $(".card .tabs-item_question").each((key, element) => {
