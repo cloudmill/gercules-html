@@ -277,6 +277,84 @@
     line-height: 150%;
   }
 
+  &-form {
+    margin-top: 100px;
+
+    form {
+      margin-top: 40px;
+    }
+
+    .field {
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+
+      &-row {
+        &:last-child {
+          margin-top: 40px;
+          grid-template-columns: auto minmax(265px, 300px);
+          justify-content: space-between;
+          column-gap: 20px; // не 40, поскольку у кнопки лишние 10 padding по бокам
+        }
+      }
+
+      &-area {
+        textarea {
+          padding: 18px 25px;
+        }
+      }
+    }
+
+    .main-link_rect {
+      margin-left: 10px; // поскольку лишние 10 padding по бокам
+
+      i {
+        margin-left: 20px;
+      }
+    }
+    
+    // select2
+    .field.field-select {
+      .select2.select2-container {
+        min-width: 100%;
+
+        .select2-selection {
+          height: 60px;
+
+          .select2-selection__rendered {
+            padding-left: 25px;
+            padding-right: calc(25px + 60px);
+            height: 60px;
+            font-size: 15px;
+            line-height: 60px;
+            color: $color-main;
+
+            .select2-selection__placeholder {
+              color: $color-placeholder;
+            }
+          }
+          
+          .select2-selection__arrow {
+            width: 60px;
+            height: 60px;
+          }
+        }
+
+        &--open {
+          .select2-selection {
+            .select2-selection__rendered {
+              color: white;
+
+              .select2-selection__placeholder {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   .content-caption {
     font-family: $font-second;
     font-weight: bold;
