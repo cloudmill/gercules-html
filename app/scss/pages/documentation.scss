@@ -19,6 +19,36 @@
 }
 
 .documentation {
+  .page-title {
+    @media (max-width: $desktop-to-mobile) {
+      position: relative;
+      
+      &::before {
+        position: absolute;
+        top: 39px;
+        right: 27px;
+        transform-origin: center;
+        transform: translateY(-25%) rotate(45deg);
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        border: 2px solid $color-main;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        transition: $ease-main;
+      }
+
+      &.open {
+        &::before {
+          transform: translateY(25%) rotate(225deg);
+          border-bottom-color: $color-red;
+          border-right-color: $color-red;
+        }
+      }
+    }
+  }
+
   h2 {
     font-family: $font-second;
     font-weight: bold;
