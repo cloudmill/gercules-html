@@ -10,9 +10,11 @@
 
   @media (max-width: $desktop-to-mobile) {
     padding-top: 0;
+    padding-bottom: 90px;
   }
 
   @media (max-width: $mobile-xl) {
+    padding-bottom: 60px;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -22,11 +24,12 @@
   .page-title {
     @media (max-width: $desktop-to-mobile) {
       position: relative;
+      padding-right: calc(30px + 12px + 30px);
       
       &::before {
         position: absolute;
         top: 39px;
-        right: 27px;
+        right: 32px;
         transform-origin: center;
         transform: translateY(-25%) rotate(45deg);
         content: "";
@@ -45,6 +48,15 @@
           border-bottom-color: $color-red;
           border-right-color: $color-red;
         }
+      }
+    }
+
+    @media (max-width: $mobile-xl) {
+      padding-right: calc(20px + 12px + 20px);
+
+      &::before {
+        right: 20px;
+        border-left-width: 2px;
       }
     }
   }
