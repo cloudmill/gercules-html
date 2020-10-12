@@ -177,11 +177,16 @@
         font-family: $font-main;
         font-weight: normal;
         font-size: 15px;
-        line-height: 25px;
+        line-height: 20px;
         color: $color-gray;
+        transition: $ease-main;
 
         &:not(:first-child) {
           margin-top: 20px;
+        }
+
+        &:hover {
+          color: $color-main;
         }
 
         &.active {
