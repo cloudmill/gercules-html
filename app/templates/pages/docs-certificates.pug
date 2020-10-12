@@ -24,8 +24,9 @@ block content
             a(href="#") Технические документы СФТК
             a(href="#") POS-материалы
             a(href="#") Документы по претензиям
-            a(href="#") Справочная информация по логистике
-      .tabs-menu
+            a(href="#") Справочная информация по логистике 
+      //- tabs content
+      mixin tabs_menu
         .tabs-menu_item.active Клеи
         .tabs-menu_item Затирки
         .tabs-menu_item Шпаклевки
@@ -34,132 +35,132 @@ block content
         .tabs-menu_item Гидроизолиция
         .tabs-menu_item Грунтовки
         .tabs-menu_item Кладочные смеси
-      .tabs-list
+      mixin tabs_list
         .tabs-item.active
-          h2 Клеи
-            a(href="#")
-              +icon("down", "svg")
-              span Скачать всю группу
-          h3 GM-15 Клей для ячеистого бетона
-          .card-files_list
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Сертификаты ГОСТ
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Свидетельство о государственной регистрации (СГР)
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Лицензии и сертификаты
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Санитарное заключение на грунтовку
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-          h3 GM-15z Клей для ячеистого бетона зимний
-          .card-files_list
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Сертификаты ГОСТ
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Свидетельство о государственной регистрации (СГР)
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Лицензии и сертификаты
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Санитарное заключение на грунтовку
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-          h3 GM-15 Клей для ячеистого бетона универсальный
-          .card-files_list
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Сертификаты ГОСТ
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Свидетельство о государственной регистрации (СГР)
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Лицензии и сертификаты
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Санитарное заключение на грунтовку
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-          h3 GM-15 Клей для ячеистого бетона
-          .card-files_list
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Сертификаты ГОСТ
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Свидетельство о государственной регистрации (СГР)
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Лицензии и сертификаты
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
-            .card-files_item
-              a(href="#" download)
-                +icon("pdf", "svg")
-                .card-files_info
-                  h3 Санитарное заключение на грунтовку
-                  p pdf, 15 mb
-                    +icon("down-gray", "svg")
+            h2 Клеи
+              a(href="#")
+                +icon("down", "svg")
+                span Скачать всю группу
+            h3 GM-15 Клей для ячеистого бетона
+            .card-files_list
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Сертификаты ГОСТ
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Свидетельство о государственной регистрации (СГР)
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Лицензии и сертификаты
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Санитарное заключение на грунтовку
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+            h3 GM-15z Клей для ячеистого бетона зимний
+            .card-files_list
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Сертификаты ГОСТ
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Свидетельство о государственной регистрации (СГР)
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Лицензии и сертификаты
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Санитарное заключение на грунтовку
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+            h3 GM-15 Клей для ячеистого бетона универсальный
+            .card-files_list
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Сертификаты ГОСТ
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Свидетельство о государственной регистрации (СГР)
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Лицензии и сертификаты
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Санитарное заключение на грунтовку
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+            h3 GM-15 Клей для ячеистого бетона
+            .card-files_list
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Сертификаты ГОСТ
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Свидетельство о государственной регистрации (СГР)
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Лицензии и сертификаты
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
+              .card-files_item
+                a(href="#" download)
+                  +icon("pdf", "svg")
+                  .card-files_info
+                    h3 Санитарное заключение на грунтовку
+                    p pdf, 15 mb
+                      +icon("down-gray", "svg")
         .tabs-item
           h2 Затирки
             a(href="#")
@@ -1035,5 +1036,15 @@ block content
                   h3 Санитарное заключение на грунтовку
                   p pdf, 15 mb
                     +icon("down-gray", "svg")
-        
+      //- tabs structure
+      .tabs.content-mobile
+        .tabs-menu
+          +tabs_menu
+        .tabs-menu_mobile
+          .tabs-menu_title
+          .tabs-menu_dropdown
+            .tabs-menu_content
+              +tabs_menu
+        .tabs-list
+          +tabs_list
 

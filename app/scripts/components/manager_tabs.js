@@ -1,7 +1,13 @@
 import "jquery";
 
 class SlideDown {
-  constructor({ el, item, time, boxContent, minHeight }) {
+  constructor({
+    el,
+    item,
+    time,
+    boxContent,
+    minHeight
+  }) {
     this.item = item;
     this.time = time || 400;
     this.minHeight = minHeight || "0";
@@ -14,7 +20,10 @@ class SlideDown {
     this.el.css("transition-duration", `${this.time}ms`);
     this.el.css("box-sizing", `content-box`);
     this.item.click((e) => {
-      if (e.currentTarget === e.target) {
+      if (
+        e.target === e.currentTarget ||
+        $(e.target).hasClass("tabs-menu_title")
+      ) {
         this.toggle();
       }
     });
@@ -48,7 +57,10 @@ class SlideDown {
   }
   update() {
     if (this.opened) {
-      if (this.el.css("display") === "none") {
+      if (
+        this.el.css("display") === "none" ||
+        this.item.css("display") === "none"
+      ) {
         this.toggle()
       } else {
         this.open();
@@ -61,6 +73,7 @@ export default class Manager_tabs {
   constructor() {
     this.init();
   }
+
   init() {
     this.tabsInit();
     this.sidebarInit();
@@ -68,19 +81,58 @@ export default class Manager_tabs {
     this.cardQuestionsDropdowns();
     this.sidebarDropdown();
   }
+
   tabsInit() {
-    $(".tabs-menu_item").click((e) => {
-      let item = $(e.target);
-      if (!item.is(".active")) {
-        let menu = item.closest(".tabs-menu");
-        let tabs = menu.parent().find(".tabs-item");
-        menu.find(".tabs-menu_item").removeClass("active");
-        tabs.removeClass("active");
-        item.addClass("active");
-        tabs.eq(item.index()).addClass("active");
+    const tabsComponents = $(".tabs")
+
+    tabsComponents.each((index, tabsComponent) => {
+      const isMobileComponent = $(tabsComponent).hasClass("content-mobile")
+
+      // init mobile menu (title + dropdown)
+      if (isMobileComponent) {
+        updateTitle()
+
+        new SlideDown({
+          item: $(tabsComponent).find(".tabs-menu_mobile"),
+          el: $(tabsComponent).find(".tabs-menu_dropdown"),
+          boxContent: $(tabsComponent).find(".tabs-menu_content"),
+          speed: 500
+        })
       }
-    });
+
+      // desktop & mobile menu handler
+      const tabsMenuItemsAll = $(tabsComponent).find(".tabs-menu_item")
+      const tabsItems = $(tabsComponent).find(".tabs-item")
+
+      tabsMenuItemsAll.click(event => {
+        const clickedMenuItem = $(event.target)
+
+        if (!clickedMenuItem.hasClass("active")) {
+          tabsMenuItemsAll.removeClass("active")
+          tabsItems.removeClass("active")
+
+          const clickedMenuItemIndex = clickedMenuItem.index()
+          const tabsDesktopMenuItems = $(tabsComponent).find(".tabs-menu .tabs-menu_item")
+          const tabsMobileMenuItems = $(tabsComponent).find(".tabs-menu_mobile .tabs-menu_item")
+          tabsDesktopMenuItems.eq(clickedMenuItemIndex).addClass("active")
+          tabsMobileMenuItems.eq(clickedMenuItemIndex).addClass("active")
+          tabsItems.eq(clickedMenuItemIndex).addClass("active")
+
+          if (isMobileComponent) {
+            updateTitle()
+          }
+        }
+      })
+
+      // update mobile menu title
+      function updateTitle() {
+        const title = $(tabsComponent).find(".tabs-menu_mobile .tabs-menu_item.active").text()
+
+        $(tabsComponent).find(".tabs-menu_title").text(title)
+      }
+    })
   }
+
   sidebarInit() {
     const duration = 500;
     const list = ".sidebar-menu_dropdown-list";
@@ -94,14 +146,18 @@ export default class Manager_tabs {
       if (!item.is(".active")) {
         if (item.is(".open")) {
           item.removeClass("open");
-          item.find(list).slideUp({ duration: duration });
+          item.find(list).slideUp({
+            duration: duration
+          });
         } else {
           $(dropdown + ".open:not(.active) " + list).slideUp({
             duration: duration,
           });
           $(dropdown + ".open").removeClass("open");
           item.addClass("open");
-          item.find(list).slideDown({ duration: duration });
+          item.find(list).slideDown({
+            duration: duration
+          });
         }
       }
     });

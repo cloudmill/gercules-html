@@ -1,63 +1,207 @@
 .tabs {
   &-menu {
+    // menu desktop
+    margin: 30px 0 60px;
     display: flex;
-    flex-wrap: wrap;
     align-items: flex-end;
-    position: relative;
-    margin: 60px 0;
-    margin-top: 30px;
-    &_item {
-      transition: $ease-main color;
+    flex-wrap: wrap;
+
+    // menu-item desktop
+    .tabs-menu_item {
       position: relative;
-      font-style: normal;
+      padding: 30px 0 20px;
       font-weight: bold;
       font-size: 15px;
       line-height: 140%;
-      padding: 30px 0 20px 0;
+      transition: $ease-main;
       cursor: pointer;
-      &::before {
-        transition: $ease-main opacity;
-        opacity: 0;
-        content: "";
-        display: block;
-        width: 100%;
-        height: 4px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        border-top: 4px solid #e41d2c;
-        border-right: 2px solid transparent;
+
+      &:not(:last-child) {
+        margin-right: 40px;
       }
-      &::after {
-        content: "";
-        display: block;
-        height: 1px;
-        background-color: $color-border;
+
+      &::before {
         position: absolute;
         bottom: 0;
         left: -100vw;
+        content: "";
+        display: block;
         width: 300vw;
+        height: 1px;
+        background-color: $color-border;
       }
-      &:not(:last-child) {
-        margin-right: 40px;
+
+      &::after {
+        opacity: 0;
+        position: absolute;
+        z-index: 1000;
+        bottom: 0;
+        left: 0;
+        content: "";
+        display: block;
+        width: 100%;
+        border-top: 4px solid $color-red;
+        border-right: 3px solid transparent;
+        transition: $ease-main;
       }
 
       &.active {
         color: $color-red;
 
-        &::before {
+        &::after {
           opacity: 1;
         }
       }
     }
+
+    // menu mobile
+    &_mobile {
+      display: none;
+      margin-top: -1px;
+      margin-left: -30px;
+      width: calc(100% + 30px + 30px);
+      border-top: 1px solid $color-border;
+      border-bottom: 1px solid $color-border;
+
+      // menu-item mobile
+      .tabs-menu_item {
+        position: relative;
+        font-size: 14px;
+        line-height: 20px;
+        color: $color-gray;
+        transition: $ease-main;
+        cursor: pointer;
+
+        &:not(:first-child) {
+          margin-top: 15px;
+        }
+
+        &::before {
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          left: -30px;
+          transform: translateY(-50%);
+          content: "";
+          display: block;
+          width: 3px;
+          height: 20px;
+          border-left: 3px solid $color-red;
+          border-top: 3px solid transparent;
+          transition: $ease-main;
+          pointer-events: none;
+        }
+
+        &:hover {
+          color: $color-main;
+        }
+
+        &.active {
+          color: $color-main;
+
+          &::before {
+            opacity: 1;
+          }
+        }
+
+        @media (max-width: $mobile-xl) {
+          font-size: 13px;
+
+          &::before {
+            left: -20px;
+          }
+        }
+      }
+
+      &.open {
+        .tabs-menu_title {
+          &::before {
+            transform: translateY(-50%) rotate(-90deg);
+          }
+
+          &::after {
+            transform: translateY(-50%) rotate(0);
+          }
+        }
+      }
+
+      @media (max-width: $mobile-xl) {
+        margin-left: -20px;
+        width: calc(100% + 20px + 20px);
+      }
+    }
+
+    &_title {
+      position: relative;
+      padding: 22px calc(30px + 10px + 30px) 23px 30px;
+      height: 60px;
+      font-size: 18px;
+      line-height: 16px;
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        transform-origin: center;
+        transform: translateY(-50%);
+        content: "";
+        display: block;
+        width: 10px;
+        height: 2px;
+        background: $color-red;
+        transition: $ease-main;
+      }
+
+      &::after {
+        transform: translateY(-50%) rotate(90deg);
+      }
+
+      @media (max-width: $mobile-xl) {
+        padding: 22px calc(20px + 10px + 20px) 23px 20px;
+        font-size: 16px;
+
+        &::before,
+        &::after {
+          right: 20px;
+        }
+      }
+    }
+
+    &_dropdown {
+      padding: 0 30px;
+      max-height: 0;
+      overflow: hidden;
+
+      @media (max-width: $mobile-xl) {
+        padding: 0 20px;
+      }
+    }
+
+    &_content {
+      padding-bottom: 25px;
+    }
   }
+
+  // вкладка с контентом
   &-item {
     display: none;
-    h2 {
-      display: block;
-    }
+
     &.active {
       display: block;
+    }
+  }
+
+  // компонент для mobile
+  &.content-mobile {
+    @media (max-width: $desktop-to-mobile) {
+      .tabs-menu {
+        display: none;
+
+        &_mobile {
+          display: block;
+        }
+      }
     }
   }
 }
