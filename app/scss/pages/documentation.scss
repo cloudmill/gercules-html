@@ -25,7 +25,7 @@
     @media (max-width: $desktop-to-mobile) {
       position: relative;
       padding-right: calc(30px + 12px + 30px);
-      
+
       &::before {
         position: absolute;
         top: 39px;
@@ -83,9 +83,6 @@
     font-size: 20px;
     line-height: 160%;
 
-    &+.file-list {
-      margin-top: 30px;
-    }
 
     @media (max-width: $desktop-m) {
       font-size: 18px;
@@ -99,6 +96,7 @@
 
     @media (max-width: $desktop-to-mobile) {
       margin-top: 40px;
+      padding-top: 40px;
       font-size: 15px;
       line-height: 25px;
     }
@@ -106,6 +104,96 @@
     @media (max-width: $mobile-xl) {
       font-size: 14px;
       line-height: 23px;
+    }
+  }
+
+  .file-list {
+    margin-top: 60px;
+    width: calc(100% + 40px);
+
+    @media (max-width: $desktop-l) {
+      width: 100%;
+    }
+
+    @media (max-width: $desktop-to-mobile) {
+      margin-left: -30px;
+      width: calc(100% + 30px + 30px);
+    }
+
+    @media (max-width: $mobile-xl) {
+      margin-left: -20px;
+      width: calc(100% + 20px + 20px);
+    }
+  }
+
+  &-files {
+    &_block {
+      .file {
+        &-list {
+          margin-top: 30px;
+        }
+
+        &-card {
+          font-family: $font-main;
+          font-weight: normal;
+        }
+      }
+    }
+
+    @media (max-width: $desktop-to-mobile) {
+      &_block {
+        position: relative;
+        padding-bottom: 40px;
+        border-top: 1px solid $color-border;
+
+        &:not(:first-child) {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          padding-bottom: 40px;
+          border-bottom: 1px solid $color-border;
+        }
+
+        &::before {
+          position: absolute;
+          top: 47px;
+          right: 2px;
+          transform-origin: center;
+          transform: translateY(-25%) rotate(45deg);
+          content: "";
+          display: block;
+          width: 8px;
+          height: 8px;
+          border: 2px solid $color-main;
+          border-top-color: transparent;
+          border-left-color: transparent;
+          transition: $ease-main;
+        }
+
+        .file-list {
+          margin-top: 0;
+        }
+
+        &.open {
+          padding-bottom: 0;
+
+          &::before {
+            transform: translateY(25%) rotate(225deg);
+            border-bottom-color: $color-red;
+            border-right-color: $color-red;
+          }
+        }
+      }
+      
+      &_dropdown {
+        overflow: hidden;
+        max-height: 0;
+      }
+
+      &_content {
+        padding-top: 30px;
+      }
     }
   }
 
@@ -200,7 +288,7 @@
         i {
           line-height: initial;
         }
-        
+
         span {
           margin-left: 28px;
           font-family: $font-main;
@@ -216,7 +304,7 @@
         @media (max-width: $desktop-to-mobile) {
           align-items: flex-start;
 
-          a { 
+          a {
             span {
               display: none;
             }
@@ -247,25 +335,6 @@
       font-weight: normal;
       font-size: 15px;
       line-height: 150%;
-    }
-  }
-  
-  .file-list {
-    margin-top: 60px;
-    width: calc(100% + 40px);
-
-    @media (max-width: $desktop-l) {
-      width: 100%;
-    }
-
-    @media (max-width: $desktop-to-mobile) {
-      margin-left: -30px;
-      width: calc(100% + 30px + 30px);
-    }
-
-    @media (max-width: $mobile-xl) {
-      margin-left: -20px;
-      width: calc(100% + 20px + 20px);
     }
   }
 

@@ -34,20 +34,21 @@ block content
         .tabs-menu_item Гидроизолиция
         .tabs-menu_item Грунтовки
         .tabs-menu_item Кладочные смеси
+      mixin files_block(title)
+        h3.documentation-files_block=title
+          .documentation-files_dropdown
+            .documentation-files_content
+              +file_list(file_data_1)
       mixin tabs_item(title, isActive = false)
         div(class="tabs-item" + (isActive ? " active" : ""))
           h2=title
             a(href="#")
               +icon("down", "svg")
               span Скачать всю группу
-          h3 GM-15 Клей для ячеистого бетона
-          +file_list(file_data_1)
-          h3 GM-15z Клей для ячеистого бетона зимний
-          +file_list(file_data_1)
-          h3 GM-15 Клей для ячеистого бетона универсальный
-          +file_list(file_data_1)
-          h3 GM-15 Клей для ячеистого бетона
-          +file_list(file_data_1)
+          +files_block("GM-15 Клей для ячеистого бетона")
+          +files_block("GM-15z Клей для ячеистого бетона зимний")
+          +files_block("GM-15 Клей для ячеистого бетона универсальный")
+          +files_block("GM-15 Клей для ячеистого бетона")
       .tabs.content-mobile
         .tabs-menu
           +tabs_menu

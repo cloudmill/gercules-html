@@ -80,6 +80,7 @@ export default class Manager_tabs {
     this.vacancyDropdowns();
     this.cardQuestionsDropdowns();
     this.sidebarDropdown();
+    this.documentationFilesBlock();
   }
 
   tabsInit() {
@@ -190,5 +191,29 @@ export default class Manager_tabs {
         minHeight: 65,
       });
     });
+  }
+
+  documentationFilesBlock() {
+    const filesBlocks = $(".documentation-files_block")
+    let blockSlides
+
+    filesBlocks.each((index, filesBlock) => {
+      blockSlides.push(new SlideDown({
+        item: $(filesBlock),
+        el: $(filesBlock).find(".documentation-files_dropdown"),
+        boxContent: $(filesBlock).find(".documentation-files_content"),
+        time: 500
+      }))
+    })
+
+    $(window).resize(event => {
+      if (parseFloat($(window).width()) > 830) {
+        blockSlides.forEach(blockSlide => {
+          delete blockSlide
+        })
+
+        filesBlocks.removeClass("open")
+      }
+    })
   }
 }

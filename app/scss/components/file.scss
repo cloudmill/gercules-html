@@ -16,12 +16,18 @@
     @media (max-width: $desktop-to-mobile) {
       .file-card {
         width: 50%;
+        border-left: none;
+
+        &:nth-child(even) {
+          border-right: none;
+        }
       }
     }
 
     @media (max-width: $mobile-xl) {
       .file-card {
         width: 100%;
+        border-right: none;
       }
     }
 
