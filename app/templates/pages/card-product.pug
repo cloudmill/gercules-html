@@ -326,35 +326,7 @@ block content
         h2 Сертификаты
         a(href="#" download) Скачать сертификаты
           +icon("down", "svg")
-      .card-files_list
-        .card-files_item
-          a(href="#" download)
-            +icon("pdf", "svg")
-            .card-files_info
-              h3 Сертификаты ГОСТ
-              p pdf, 15 mb
-                +icon("down-gray", "svg")
-        .card-files_item
-          a(href="#" download)
-            +icon("pdf", "svg")
-            .card-files_info
-              h3 Свидетельство о государственной регистрации (СГР)
-              p pdf, 15 mb
-                +icon("down-gray", "svg")
-        .card-files_item
-          a(href="#" download)
-            +icon("pdf", "svg")
-            .card-files_info
-              h3 Лицензии и сертификаты
-              p pdf, 15 mb
-                +icon("down-gray", "svg")
-        .card-files_item
-          a(href="#" download)
-            +icon("pdf", "svg")
-            .card-files_info
-              h3 Санитарное заключение на грунтовку
-              p pdf, 15 mb
-                +icon("down-gray", "svg")
+      +file_list(file_data_1)
     .card-passport
       h2 Паспорт качества
       p Для получения паспорта качества введите данные с упаковки.

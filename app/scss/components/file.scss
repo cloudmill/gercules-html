@@ -1,0 +1,97 @@
+// группа компонентов: отображение документов для скачивания
+.file {
+
+  // контейнер для набора карточек
+  &-list {
+    padding-bottom: 1px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .file-card {
+      margin-right: -1px;
+      margin-bottom: -1px;
+      width: 288px;
+    }
+
+    @media (max-width: $desktop-to-mobile) {
+      .file-card {
+        width: 50%;
+      }
+    }
+
+    @media (max-width: $mobile-xl) {
+      .file-card {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: $mobile-xl) {}
+  }
+
+  // карточка документа
+  &-card {
+    padding: 70px 20px 35px 40px;
+    min-height: 288px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $color-border;
+
+    a {
+      margin-top: 30px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    p {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      line-height: 150%;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      line-height: 200%;
+      color: $color-gray;
+
+      i {
+        margin-right: 10px;
+        filter: contrast(0);
+      }
+    }
+
+    @media (max-width: $desktop-to-mobile) {
+      padding: 45px 30px 40px;
+      min-height: 220px;
+
+      &>i {
+        font-size: 8.5px;
+      }
+
+      span {
+        i {
+          display: none;
+        }
+      }
+    }
+
+    @media (max-width: $mobile-xl) {
+      &>i {
+        font-size: 7.1px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      span {
+        font-size: 11px;
+        line-height: 21px;
+      }
+    }
+  }
+}

@@ -83,7 +83,7 @@
     font-size: 20px;
     line-height: 160%;
 
-    &+.card-files_list {
+    &+.file-list {
       margin-top: 30px;
     }
 
@@ -195,17 +195,44 @@
           align-items: center;
           white-space: nowrap;
 
-          span {
-            margin-left: 28px;
-            font-family: $font-main;
-            font-weight: normal;
-            font-size: 15px;
-            line-height: 250%;
-          }
+        }
+
+        i {
+          line-height: initial;
+        }
+        
+        span {
+          margin-left: 28px;
+          font-family: $font-main;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 250%;
         }
 
         &+h3 {
           margin-top: 40px;
+        }
+
+        @media (max-width: $desktop-to-mobile) {
+          align-items: flex-start;
+
+          a { 
+            span {
+              display: none;
+            }
+          }
+        }
+
+        @media (max-width: $mobile-l) {
+          i {
+            font-size: 9.5px;
+          }
+        }
+
+        @media (max-width: $mobile-s) {
+          i {
+            font-size: 9px;
+          }
         }
       }
     }
@@ -220,6 +247,25 @@
       font-weight: normal;
       font-size: 15px;
       line-height: 150%;
+    }
+  }
+  
+  .file-list {
+    margin-top: 60px;
+    width: calc(100% + 40px);
+
+    @media (max-width: $desktop-l) {
+      width: 100%;
+    }
+
+    @media (max-width: $desktop-to-mobile) {
+      margin-left: -30px;
+      width: calc(100% + 30px + 30px);
+    }
+
+    @media (max-width: $mobile-xl) {
+      margin-left: -20px;
+      width: calc(100% + 20px + 20px);
     }
   }
 

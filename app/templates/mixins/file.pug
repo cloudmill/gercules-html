@@ -1,0 +1,26 @@
+-
+  const file_data_1 = [
+    "Сертификаты ГОСТ",
+    "Свидетельств о государственнойирегистрации (СГР)",
+    "Лицензии и сертификаты",
+    "Санитарное заключение на грунтовку"
+  ]
+
+  const file_data_2 = file_data_1
+    .concat(file_data_1)
+    .concat(file_data_1)
+    .concat(file_data_1)
+    
+mixin file_card(title)
+  .file-card
+    +icon("pdf", "svg")
+    a(href="#")
+      p=title
+      span
+        +icon("down", "svg")
+        | pdf, 15 mb
+
+mixin file_list(titles)
+  .file-list
+    each title in titles
+      +file_card(title)
