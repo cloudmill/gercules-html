@@ -20,35 +20,36 @@ block content
         img(src="./images/schema-2.png", alt="")
       .fs-production_showcase
         h2 Линейка продукции СФТК
-        .tabs-menu
-          .tabs-menu_item.active Грунтовки
-          .tabs-menu_item Шпаклевки
-          .tabs-menu_item Затирки
-        .tabs-list
-          .tabs-item.active
-            +sliderVerticalControls
-              button.fs-production_showcase-next
-              button.fs-production_showcase-prev
-            .swiper-container
-              .swiper-wrapper
-                each item,key in ['GE-29 Грунтовка укрепляющая глубокого проникновения, 5, 10 кг','GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг','GE-109 Грунтовка БЕТОН-КОНТАКТ Геркулес, 5, 14 и 21 кг']
-                  .swiper-slide
-                    .fs-productCard
-                      .fs-productCard_info
-                        .fs-productCard_status
-                          span хит продаж
-                          span.active акция
-                          span новинка
-                        .fs-productCard_photo
-                          img(src=`../images/product-${key+1}.png`, alt="")
-                        a(href="#").fs-productCard_title #{item}
-                      .fs-productCard_buttons
-                        a(href="#").fs-productCard_buttons-loc
-                          +icon("map-pin", "svg")
-                        a(href="#").fs-productCard_buttons-rate
-                          +icon("rating-red", "svg")
-          .tabs-item
-          .tabs-item
+        .tabs
+          .tabs-menu
+            .tabs-menu_item.active Грунтовки
+            .tabs-menu_item Шпаклевки
+            .tabs-menu_item Затирки
+          .tabs-list
+            .tabs-item.active
+              +sliderVerticalControls
+                button.fs-production_showcase-next
+                button.fs-production_showcase-prev
+              .swiper-container
+                .swiper-wrapper
+                  each item,key in ['GE-29 Грунтовка укрепляющая глубокого проникновения, 5, 10 кг','GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг','GE-109 Грунтовка БЕТОН-КОНТАКТ Геркулес, 5, 14 и 21 кг']
+                    .swiper-slide
+                      .fs-productCard
+                        .fs-productCard_info
+                          .fs-productCard_status
+                            span хит продаж
+                            span.active акция
+                            span новинка
+                          .fs-productCard_photo
+                            img(src=`../images/product-${key+1}.png`, alt="")
+                          a(href="#").fs-productCard_title #{item}
+                        .fs-productCard_buttons
+                          a(href="#").fs-productCard_buttons-loc
+                            +icon("map-pin", "svg")
+                          a(href="#").fs-productCard_buttons-rate
+                            +icon("rating-red", "svg")
+            .tabs-item
+            .tabs-item
       .fs-production_grid
         h2 Комплектующие для установки СФТК
         .fs-production_grid-items

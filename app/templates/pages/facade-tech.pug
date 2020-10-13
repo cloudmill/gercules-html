@@ -9,39 +9,40 @@ block content
     .content.facadeSystem
       +breadcrumbs(['Фасадные системы',"Техническая документация СФТК"])
       h1.page-title Техническая документация СФТК
-      .tabs-menu
-        .tabs-menu_item.active Альбом технических решений
-        .tabs-menu_item Руководство по технологии монтажа
-        .tabs-menu_item Рекомендации по эксплуатации СФТК
-        .tabs-menu_item Технические характеристики линейки продукции СФТК
-      .tabs-list
-        .tabs-item.active
-          .docs
-            h2 Альбом технических решений
-            a.docs-download_all(href="" download) Скачать всю группу
-            .docs-list
-              include ../modules/docs/items.pug
-              include ../modules/docs/items.pug
-        .tabs-item
-          .docs
-            h2 Руководство по технологии монтажа
-            a.docs-download_all(href="" download) Скачать всю группу
-            .docs-list
-              include ../modules/docs/items.pug
-              include ../modules/docs/items.pug
-        .tabs-item
-          .docs
-            h2 Рекомендации по эксплуатации СФТК
-            a.docs-download_all(href="" download) Скачать всю группу
-            .docs-list
-              include ../modules/docs/items.pug
-              include ../modules/docs/items.pug
-        .tabs-item
-          .docs
-            h2 Технические характеристики линейки продукции СФТК
-            a.docs-download_all(href="" download) Скачать всю группу
-            .docs-list
-              include ../modules/docs/items.pug
-              include ../modules/docs/items.pug
+      .tabs
+        .tabs-menu
+          .tabs-menu_item.active Альбом технических решений
+          .tabs-menu_item Руководство по технологии монтажа
+          .tabs-menu_item Рекомендации по эксплуатации СФТК
+          .tabs-menu_item Технические характеристики линейки продукции СФТК
+        .tabs-list
+          .tabs-item.active
+            .docs
+              h2 Альбом технических решений
+              a.docs-download_all(href="" download) Скачать всю группу
+              .docs-list
+                include ../modules/docs/items.pug
+                include ../modules/docs/items.pug
+          .tabs-item
+            .docs
+              h2 Руководство по технологии монтажа
+              a.docs-download_all(href="" download) Скачать всю группу
+              .docs-list
+                include ../modules/docs/items.pug
+                include ../modules/docs/items.pug
+          .tabs-item
+            .docs
+              h2 Рекомендации по эксплуатации СФТК
+              a.docs-download_all(href="" download) Скачать всю группу
+              .docs-list
+                include ../modules/docs/items.pug
+                include ../modules/docs/items.pug
+          .tabs-item
+            .docs
+              h2 Технические характеристики линейки продукции СФТК
+              a.docs-download_all(href="" download) Скачать всю группу
+              .docs-list
+                include ../modules/docs/items.pug
+                include ../modules/docs/items.pug
       include fs/showmore
       include fs/contacts

@@ -16,7 +16,7 @@ block content
     .content.documentation
       +breadcrumbs(["Документация", pageTitle])
       h1.page-title= pageTitle
-      .tabs-menu
+      mixin tabs_menu
         .tabs-menu_item.active Каталоги–буклеты
         .tabs-menu_item Каталоги-плакаты
         .tabs-menu_item Наклейки
@@ -24,256 +24,264 @@ block content
         .tabs-menu_item Шелфтолкеры
         .tabs-menu_item Буклеты
         .tabs-menu_item Любой тип POS-материала
-      .tabs-list
-        .tabs-item.active
-          h2 Каталоги–буклеты
-            a(href="#")
-              +icon("down", "svg")
-              span Скачать все
-          .card-files_list
-            - for (let i = 0; i < 4; i++)
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Сертификаты ГОСТ
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Свидетельство о государственной регистрации (СГР)
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Лицензии и сертификаты
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Санитарное заключение на грунтовку
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-          include fs/showmore
-        .tabs-item
-          h2 Каталоги-плакаты
-            a(href="#")
-              +icon("down", "svg")
-              span Скачать все
-          .card-files_list
-            - for (let i = 0; i < 4; i++)
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Сертификаты ГОСТ
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Свидетельство о государственной регистрации (СГР)
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Лицензии и сертификаты
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Санитарное заключение на грунтовку
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-          include fs/showmore
-        .tabs-item
-          h2 Наклейки
-            a(href="#")
-              +icon("down", "svg")
-              span Скачать все
-          .card-files_list
-            - for (let i = 0; i < 4; i++)
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Сертификаты ГОСТ
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Свидетельство о государственной регистрации (СГР)
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Лицензии и сертификаты
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Санитарное заключение на грунтовку
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-          include fs/showmore
-        .tabs-item
-          h2 Плакаты
-            a(href="#")
-              +icon("down", "svg")
-              span Скачать все
-          .card-files_list
-            - for (let i = 0; i < 4; i++)
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Сертификаты ГОСТ
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Свидетельство о государственной регистрации (СГР)
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Лицензии и сертификаты
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Санитарное заключение на грунтовку
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-          include fs/showmore
-        .tabs-item
-          h2 Шелфтолкеры
-            a(href="#")
-              +icon("down", "svg")
-              span Скачать все
-          .card-files_list
-            - for (let i = 0; i < 4; i++)
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Сертификаты ГОСТ
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Свидетельство о государственной регистрации (СГР)
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Лицензии и сертификаты
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Санитарное заключение на грунтовку
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-          include fs/showmore
-        .tabs-item
-          h2 Буклеты
-            a(href="#")
-              +icon("down", "svg")
-              span Скачать все
-          .card-files_list
-            - for (let i = 0; i < 4; i++)
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Сертификаты ГОСТ
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Свидетельство о государственной регистрации (СГР)
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Лицензии и сертификаты
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Санитарное заключение на грунтовку
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-          include fs/showmore
-        .tabs-item
-          h2 Любой тип POS-материала
-            a(href="#")
-              +icon("down", "svg")
-              span Скачать все
-          .card-files_list
-            - for (let i = 0; i < 4; i++)
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Сертификаты ГОСТ
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Свидетельство о государственной регистрации (СГР)
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Лицензии и сертификаты
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Санитарное заключение на грунтовку
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-          include fs/showmore
+      .tabs.content-mobile
+        .tabs-menu
+          +tabs_menu
+        .tabs-menu_mobile
+          .tabs-menu_title
+          .tabs-menu_dropdown
+            .tabs-menu_content
+              +tabs_menu
+        .tabs-list
+          .tabs-item.active
+            h2 Каталоги–буклеты
+              a(href="#")
+                +icon("down", "svg")
+                span Скачать все
+            .card-files_list
+              - for (let i = 0; i < 4; i++)
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Сертификаты ГОСТ
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Свидетельство о государственной регистрации (СГР)
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Лицензии и сертификаты
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Санитарное заключение на грунтовку
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+            include fs/showmore
+          .tabs-item
+            h2 Каталоги-плакаты
+              a(href="#")
+                +icon("down", "svg")
+                span Скачать все
+            .card-files_list
+              - for (let i = 0; i < 4; i++)
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Сертификаты ГОСТ
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Свидетельство о государственной регистрации (СГР)
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Лицензии и сертификаты
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Санитарное заключение на грунтовку
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+            include fs/showmore
+          .tabs-item
+            h2 Наклейки
+              a(href="#")
+                +icon("down", "svg")
+                span Скачать все
+            .card-files_list
+              - for (let i = 0; i < 4; i++)
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Сертификаты ГОСТ
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Свидетельство о государственной регистрации (СГР)
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Лицензии и сертификаты
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Санитарное заключение на грунтовку
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+            include fs/showmore
+          .tabs-item
+            h2 Плакаты
+              a(href="#")
+                +icon("down", "svg")
+                span Скачать все
+            .card-files_list
+              - for (let i = 0; i < 4; i++)
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Сертификаты ГОСТ
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Свидетельство о государственной регистрации (СГР)
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Лицензии и сертификаты
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Санитарное заключение на грунтовку
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+            include fs/showmore
+          .tabs-item
+            h2 Шелфтолкеры
+              a(href="#")
+                +icon("down", "svg")
+                span Скачать все
+            .card-files_list
+              - for (let i = 0; i < 4; i++)
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Сертификаты ГОСТ
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Свидетельство о государственной регистрации (СГР)
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Лицензии и сертификаты
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Санитарное заключение на грунтовку
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+            include fs/showmore
+          .tabs-item
+            h2 Буклеты
+              a(href="#")
+                +icon("down", "svg")
+                span Скачать все
+            .card-files_list
+              - for (let i = 0; i < 4; i++)
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Сертификаты ГОСТ
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Свидетельство о государственной регистрации (СГР)
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Лицензии и сертификаты
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Санитарное заключение на грунтовку
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+            include fs/showmore
+          .tabs-item
+            h2 Любой тип POS-материала
+              a(href="#")
+                +icon("down", "svg")
+                span Скачать все
+            .card-files_list
+              - for (let i = 0; i < 4; i++)
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Сертификаты ГОСТ
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Свидетельство о государственной регистрации (СГР)
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Лицензии и сертификаты
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+                .card-files_item
+                  a(href="#" download)
+                    +icon("pdf", "svg")
+                    .card-files_info
+                      h3 Санитарное заключение на грунтовку
+                      p pdf, 15 mb
+                        +icon("down-gray", "svg")
+            include fs/showmore
