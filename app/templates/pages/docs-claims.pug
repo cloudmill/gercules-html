@@ -5,17 +5,22 @@ block variables
 
 block content
   .content-row
+    mixin sidebar_menu
+      a(href="#") Документация
+      a(href="#") Сертификаты
+      a(href="#") Технические документы СФТК
+      a(href="#") POS-материалы
+      a(href="#").active Документы по претензиям
+      a(href="#") Справочная информация по логистике
     .sidebar
       .sidebar-menu
-        a(href="#") Документация
-        a(href="#") Сертификаты
-        a(href="#") Технические документы СФТК
-        a(href="#") POS-материалы
-        a(href="#").active Документы по претензиям
-        a(href="#") Справочная информация по логистике
+        +sidebar_menu
     .content.documentation
       +breadcrumbs(["Документация", pageTitle])
       h1.page-title= pageTitle
+        .sidebar-dropdown
+          .sidebar-dropdown_content
+            +sidebar_menu
       mixin tabs_menu
         .tabs-menu_item.active Порядок оформления претензии для физических лиц
         .tabs-menu_item Порядок оформления претензии для дилеров

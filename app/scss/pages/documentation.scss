@@ -170,13 +170,13 @@
     //            file-list
     //                file-card
     @media (max-width: $desktop-to-mobile) {
-      
+
       // для стрелочки open/close
       position: relative;
       // растягиваем block files на всю ширину страницы, чтобы касания отрабатывались по всей ширине
       margin-left: -30px;
       width: calc(100% + 30px + 30px);
-      
+
       // теперь отступы задают не h3, а блоки files
       // h3 симулирует боковые отступы страницы
       // и занимается верт. border'aми блока files
@@ -462,8 +462,16 @@
       }
 
       &:not(:first-of-type) {
-        margin-top: 18px;
+        margin-top: 20px;
       }
+    }
+
+    @media (max-width: $desktop-to-mobile) {
+      margin-top: 60px;
+    }
+
+    @media (max-width: $mobile-xl) {
+      margin-top: 40px;
     }
   }
 
@@ -481,6 +489,10 @@
       .documentation-link {
         margin-left: 30px;
         display: inline-block;
+
+        @media (max-width: $mobile-xl) {
+          display: none;
+        }
       }
 
       ul {
@@ -525,6 +537,11 @@
         font-size: 15px;
         line-height: 144%;
         color: $color-red;
+
+        @media (max-width: $mobile-xl) {
+          font-size: 14px;
+          line-height: 20px;
+        }
       }
 
       .content-color-red {
@@ -538,6 +555,23 @@
       &.content-other-width {
         max-width: calc(660px + 90px);
       }
+
+      @media (max-width: $desktop-to-mobile) {
+        padding-left: 60px;
+      }
+
+      @media (max-width: $mobile-xl) {
+        padding-left: 28px;
+        font-size: 14px;
+
+        &:not(:first-child) {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    @media (max-width: $mobile-xl) {
+      margin-top: 30px;
     }
   }
 
@@ -553,6 +587,12 @@
       &:not(:first-child) {
         margin-top: 40px;
       }
+
+      @media (max-width: $mobile-xl) {
+        &:not(:first-child) {
+          margin-top: 30px;
+        }
+      }
     }
 
     ul {
@@ -564,9 +604,8 @@
 
         &::before {
           position: absolute;
-          top: 50%;
+          top: 11px;
           left: 0;
-          transform: translateY(-50%);
           content: "";
           display: block;
           width: 20px;
@@ -578,6 +617,37 @@
           margin-top: 15px;
         }
       }
+
+      @media (max-width: $mobile-xl) {
+        li {
+          padding-left: 0;
+
+          &::before {
+            left: -12px;
+            transform: translateX(-100%);
+            width: 14px;
+          }
+
+          &:not(:first-child) {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: $desktop-to-mobile) {
+      margin-top: 60px;
+      padding-left: 59px;
+      padding-right: 60px;
+    }
+
+    @media (max-width: $mobile-xl) {
+      margin-top: 40px;
+      margin-left: -21px;
+      margin-right: -20px;
+      padding: 30px 48px;
+      font-size: 14px;
+      line-height: 21px;
     }
   }
 
@@ -588,6 +658,19 @@
     font-weight: bold;
     font-size: 15px;
     line-height: 150%;
+
+    @media (max-width: $desktop-to-mobile) {
+      margin-top: 60px;
+      padding-left: 60px;
+      max-width: calc(600px + 60px);
+    }
+
+    @media (max-width: $mobile-xl) {
+      margin-top: 40px;
+      padding-left: 0;
+      font-size: 14px;
+      line-height: 21px;
+    }
   }
 
   &-form {
@@ -609,6 +692,15 @@
           justify-content: space-between;
           column-gap: 20px; // не 40, поскольку у кнопки лишние 10 padding по бокам
         }
+
+        @media (max-width: $desktop-to-mobile) {
+          grid-template-columns: 1fr;
+          row-gap: 30px;
+
+          &:last-child {
+            grid-template-columns: 1fr;
+          }
+        }
       }
 
       &-area {
@@ -623,6 +715,10 @@
 
       i {
         margin-left: 20px;
+      }
+
+      @media (max-width: $desktop-to-mobile) {
+        margin-left: 0;
       }
     }
 
@@ -665,6 +761,14 @@
           }
         }
       }
+    }
+
+    @media (max-width: $desktop-to-mobile) {
+      margin-top: 80px;
+    }
+
+    @media (max-width: $mobile-xl) {
+      margin-top: 60px;
     }
   }
 
