@@ -6,7 +6,8 @@ class SlideDown {
     item,
     time,
     boxContent,
-    minHeight
+    minHeight,
+    breakpoint
   }) {
     this.item = item;
     this.time = time || 400;
@@ -14,17 +15,21 @@ class SlideDown {
     this.el = el;
     this.boxContent = boxContent;
     this.opened = false;
+    this.breakpoint = breakpoint
     this.init();
   }
   init() {
     this.el.css("transition-duration", `${this.time}ms`);
     this.el.css("box-sizing", `content-box`);
     this.item.click((e) => {
-      if (
-        e.target === e.currentTarget ||
-        $(e.target).hasClass("tabs-menu_title")
-      ) {
-        this.toggle();
+      if (!this.breakpoint || parseFloat($(window).width()) <= this.breakpoint) {
+        if (
+          e.target === e.currentTarget ||
+          $(e.target).hasClass("tabs-menu_title") ||
+          $(e.target).hasClass("documentation-files_title")
+        ) {
+          this.toggle();
+        }
       }
     });
     $(window).on("resize", this.update.bind(this));
@@ -34,6 +39,9 @@ class SlideDown {
     const boxContentStyle = getComputedStyle(boxContentElement);
     const boxContentPaddingTop = +boxContentStyle.paddingTop.slice(0, boxContentStyle.paddingTop.length - 2);
     const boxContentPaddingBottom = +boxContentStyle.paddingBottom.slice(0, boxContentStyle.paddingBottom.length - 2);
+
+    // test
+    console.log(this.boxContent.height() + boxContentPaddingTop + boxContentPaddingBottom)
 
     return this.boxContent.height() + boxContentPaddingTop + boxContentPaddingBottom;
   }
@@ -81,6 +89,20 @@ export default class Manager_tabs {
     this.cardQuestionsDropdowns();
     this.sidebarDropdown();
     this.documentationFilesBlock();
+
+    // тест
+    this.test()
+  }
+
+  // тест
+  test() {
+    const slide = new SlideDown({
+      item: $(".dev-test"),
+      el: $(".dev-drop"),
+      boxContent: $(".dev-content"),
+      speed: 300,
+      minHeight: 40
+    })
   }
 
   tabsInit() {
@@ -194,26 +216,17 @@ export default class Manager_tabs {
   }
 
   documentationFilesBlock() {
-    const filesBlocks = $(".documentation-files_block")
-    let blockSlides
+    const filesBlocks = $(".documentation-files")
+    let filesSlides = []
 
     filesBlocks.each((index, filesBlock) => {
-      blockSlides.push(new SlideDown({
+      filesSlides.push(new SlideDown({
         item: $(filesBlock),
         el: $(filesBlock).find(".documentation-files_dropdown"),
         boxContent: $(filesBlock).find(".documentation-files_content"),
-        time: 500
+        time: 500,
+        breakpoint: 830
       }))
-    })
-
-    $(window).resize(event => {
-      if (parseFloat($(window).width()) > 830) {
-        blockSlides.forEach(blockSlide => {
-          delete blockSlide
-        })
-
-        filesBlocks.removeClass("open")
-      }
     })
   }
 }

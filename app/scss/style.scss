@@ -104,3 +104,33 @@
     }
   }
 }
+
+.dev {
+  &-test {
+    padding-top: 40px;
+    border: 1px solid black;
+
+    &.open {
+      padding-bottom: 0;
+    }
+  }
+
+  &-drop {
+    margin-top: 40px;
+    overflow: hidden;
+    // border: 1px solid blue;
+  }
+
+  &-content {
+    // margin-top: 40px;
+    // border: 1px solid green;
+
+    p {
+      border: 1px solid red;
+
+      &:not(:first-child) {
+        margin-top: 40px;
+      }
+    }
+  }
+}
