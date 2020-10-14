@@ -5,23 +5,35 @@ block variables
 
 block content
   .content-row
+    mixin sidebar_menu
+      a(href="#") Документация
+      a(href="#") Сертификаты
+      a(href="#") Технические документы СФТК
+      a(href="#") POS-материалы
+      a(href="#") Документы по претензиям
+      a(href="#").acitive Справочная информация по логистике
     .sidebar
       .sidebar-menu
-        a(href="#") Документация
-        a(href="#") Сертификаты
-        a(href="#") Технические документы СФТК
-        a(href="#") POS-материалы
-        a(href="#") Документы по претензиям
-        a(href="#").active Справочная информация по логистике
+        +sidebar_menu
     .content.documentation
       +breadcrumbs(["Документация", pageTitle])
       h1.page-title= pageTitle
+        .sidebar-dropdown
+          .sidebar-dropdown_content
+            +sidebar_menu
       mixin tabs_menu
         .tabs-menu_item.active Документы для скачивания
         .tabs-menu_item Тэг №1
         .tabs-menu_item Тэг №2
         .tabs-menu_item Тэг №3
         .tabs-menu_item Тэг №4
+      mixin tabs_item(title, isActive = false)
+        div(class = "tabs-item" + (isActive ? " active" : ""))
+          h2=title
+            a(href="#")
+              +icon("down", "svg")
+              span Скачать все
+          +file_list(file_data_1)
       .tabs.content-mobile
         .tabs-menu
           +tabs_menu
@@ -31,174 +43,8 @@ block content
             .tabs-menu_content
               +tabs_menu
         .tabs-list
-          .tabs-item.active
-            h2 Документы для скачивания
-              a(href="#")
-                +icon("down", "svg")
-                span Скачать все
-            .card-files_list
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Сертификаты ГОСТ
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Свидетельство о государственной регистрации (СГР)
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Лицензии и сертификаты
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Санитарное заключение на грунтовку
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-          .tabs-item
-            h2 Тэг №1
-              a(href="#")
-                +icon("down", "svg")
-                span Скачать все
-            .card-files_list
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Сертификаты ГОСТ
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Свидетельство о государственной регистрации (СГР)
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Лицензии и сертификаты
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Санитарное заключение на грунтовку
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-          .tabs-item
-            h2 Тэг №2
-              a(href="#")
-                +icon("down", "svg")
-                span Скачать все
-            .card-files_list
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Сертификаты ГОСТ
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Свидетельство о государственной регистрации (СГР)
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Лицензии и сертификаты
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Санитарное заключение на грунтовку
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-          .tabs-item
-            h2 Тэг №3
-              a(href="#")
-                +icon("down", "svg")
-                span Скачать все
-            .card-files_list
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Сертификаты ГОСТ
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Свидетельство о государственной регистрации (СГР)
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Лицензии и сертификаты
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Санитарное заключение на грунтовку
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-          .tabs-item
-            h2 Тэг №4
-              a(href="#")
-                +icon("down", "svg")
-                span Скачать все
-            .card-files_list
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Сертификаты ГОСТ
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Свидетельство о государственной регистрации (СГР)
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Лицензии и сертификаты
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-              .card-files_item
-                a(href="#" download)
-                  +icon("pdf", "svg")
-                  .card-files_info
-                    h3 Санитарное заключение на грунтовку
-                    p pdf, 15 mb
-                      +icon("down-gray", "svg")
-          
+          +tabs_item("Документы для скачивания", true)
+          +tabs_item("Тэг №1")
+          +tabs_item("Тэг №2")
+          +tabs_item("Тэг №3")
+          +tabs_item("Тэг №4")
