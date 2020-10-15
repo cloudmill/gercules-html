@@ -1,7 +1,7 @@
 node_modules
-dist
+# dist
 cache
-dist/**
+# dist/**
 .DS_Store
 *.log
 .idea
@@ -9,3 +9,6 @@ app/**/dist
 app/.idea
 package-lock.json
 .publish
+# new
+docs
+docs/**
