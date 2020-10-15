@@ -1,10 +1,7 @@
-node_modules
-cache
 .DS_Store
-*.log
 .idea
-app/**/dist
-app/.idea
-package-lock.json
-.publish
 .vscode
+*.log
+cache
+node_modules
+package-lock.json

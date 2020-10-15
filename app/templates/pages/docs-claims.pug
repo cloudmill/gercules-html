@@ -36,12 +36,12 @@ block content
           .tabs-item.active
             h3 Порядок действий:
             ul.documentation-actions
-              li.content-other-width Сообщите о претензии (с указанием суммы ущерба, вида брака, наименованием продукции, датой и временем производства) на номер 
+              li.content-other-width.content-pre-wrap Сообщите о претензии (с указанием суммы ущерба, вида брака, наименованием продукции, датой и временем производства) на номер 
                 a(href="tel: 8 800 250 30 10").content-color-red 8-800-250-30-10
                 | #{" "}или направьте письменную претензию на электронный адрес 
                 a(href="claim@gerkules.ru.").content-color-red claim@gerkules.ru
-                | .
-                .documentation-link
+                span.content-margin-right .
+                .documentation-link.content-none-mobile
                   a(href="#")
                     +icon("down", "svg")
                     span Образец претензии_ФЛ
@@ -60,19 +60,21 @@ block content
                 a(href="claim@gerkules.ru").content-color-red claim@gerkules.ru
                 | #{" "}следующие документы:
                 ul
-                  li Претензия
+                  li
+                    span.content-margin-right Претензия
                     .documentation-link
                       a(href="#")
                         +icon("down", "svg")
                         span Скачать пример претензии
                   li Акт по форме ТОРГ-2 или Акт о скрытых недостатках
-                  li Фотоотчет согласно требований
+                  li
+                    span.content-margin-right Фотоотчет согласно требований
                     .documentation-link
                       a(href="#")
                         +icon("down", "svg")
                         span Скачать требовиня к фотоотчетам
                 .documentation-important Оригиналы документов отправить в компанию «Геркулес-Сибирь» почтой по адресу: 630025 г. Новосибирск а/я 312
-              li.content-other-width На следующий рабочий день вам будет направлено подтверждение принятия документов либо запрос дополнительных документов.
+              li.content-other-width.content-large-margin На следующий рабочий день вам будет направлено подтверждение принятия документов либо запрос дополнительных документов.
               li.content-other-width В течение 2 рабочих дней вам будет направлен ответ на претензию на адрес вашей электронной почты, включающий (скан решения, корректировочные отгрузочные документы). Оригиналы документов будут отправлены почтой.
             h2.content-large-margin Технологический брак товара
             p.content-caption Брак, выявленный при применении продукции
