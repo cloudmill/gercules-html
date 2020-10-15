@@ -1,3 +1,79 @@
+.form {
+  @include none_before($mobile-xl, block);
+}
+
+.form-mobile {
+  @include none_after($mobile-xl, block);
+
+  .form {
+
+    &-text,
+    &-select,
+    &-area {
+      &:not(:first-child) {
+        margin-top: -1px;
+      }
+    }
+
+    &-text {
+      label {
+        padding: 20px 20px 18px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid $color-border;
+        border-bottom: 1px solid $color-border;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 150%;
+        white-space: nowrap;
+        // user-select: none;
+      }
+
+      input {
+        margin-left: 20px;
+        flex-grow: 1;
+        font-size: 14px;
+        line-height: 150%;
+      }
+    }
+
+    &-select {
+      .select2.select2-container {
+        min-width: 100%;
+        max-width: 100%;
+
+        .select2-selection {
+          height: 60px;
+          border-left: none;
+          border-right: none;
+
+          .select2-selection__rendered {
+            padding: 20px 80px 19px 20px;
+            height: 100%;
+            font-size: 14px;
+            line-height: 150%;
+
+            .select2-selection__placeholder {
+              color: $color-main;
+            }
+          }
+
+          .select2-selection__arrow {
+            width: 60px;
+            height: 100%;
+            border-right: none;
+          }
+        }
+      }
+    }
+
+    &-area {}
+  }
+}
+
 .field {
   &-checkbox {
     font: normal normal 12px/18px $font-main;
@@ -59,7 +135,7 @@
       position: relative;
       display: block;
 
-      .sliderRange + input {
+      .sliderRange+input {
         border-bottom-width: 4px;
       }
 

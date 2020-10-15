@@ -36,7 +36,7 @@ block content
           .tabs-item.active
             h3 Порядок действий:
             ul.documentation-actions
-              li.content-other-width.content-pre-wrap Сообщите о претензии (с указанием суммы ущерба, вида брака, наименованием продукции, датой и временем производства) на номер 
+              li.content-other-width Сообщите о претензии (с указанием суммы ущерба, вида брака, наименованием продукции, датой и временем производства) на номер 
                 a(href="tel: 8 800 250 30 10").content-color-red 8-800-250-30-10
                 | #{" "}или направьте письменную претензию на электронный адрес 
                 a(href="claim@gerkules.ru.").content-color-red claim@gerkules.ru
@@ -124,7 +124,7 @@ block content
             span Образец претензии Дистрибьютор
       .documentation-form
         h2 Задать вопрос
-        form(action="#")
+        form(action="#").form
           .field-row
             .field-col
               +field_base("name", "name", "Имя*", "Алексей")
@@ -150,4 +150,40 @@ block content
                 button(id="submit" name="submit")
                 span Задать вопрос
                 +icon("link-white-arrow", "svg")
+        form(action="#").form-mobile
+          .form-text
+            label
+              p Имя
+              input#name(type="text" name="name" data-required)
+          .form-text
+            label
+              p Фамилия
+              input#surname(type="text" name="surname" data-required)
+          .form-text
+            label
+              p Номер телефона
+              input#phone(type="text" name="phone" data-required)
+          .form-text
+            label
+              p E-mail
+              input#email(type="text" name="email")
+          .form-select
+            select#topic(name="topic" data-select-placeholder="Тема вопроса")
+              option
+              option(value="0") Тема 1
+              option(value="1") Тема 2
+              option(value="2") Тема 3
+          .form-area
+            label
+              p Ваш вопрос
+              textarea#question(name="question" data-required)
+          .form-check
+            input#agreement(type="checkbox" name="agreement" data-required)
+            label(for="agreement") «Я выражаю согласие на обработку ПДн
+              br
+              | в соответствии с 
+              a(href="#").content-policy-link Политикой конфиденциальности
+              br
+              | »
+
 

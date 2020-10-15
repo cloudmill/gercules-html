@@ -825,6 +825,10 @@
     color: $color-gray;
   }
 
+  .form-mobile {
+    margin: 30px -20px 0 -20px;
+  }
+
   @media (max-width: $desktop-m) {
     &-sections {
       width: calc(100% + 40px + 40px);

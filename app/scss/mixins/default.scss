@@ -54,3 +54,19 @@ div {
   background-size: contain;
   background-position: center center;
 }
+
+@mixin none-before($breakpoint, $display) {
+  display: $display;
+
+  @media (max-width: $breakpoint) {
+    display: none;
+  }
+}
+
+@mixin none-after($breakpoint, $display) {
+  display: none;
+
+  @media (max-width: $breakpoint) {
+    display: $display;
+  }
+}

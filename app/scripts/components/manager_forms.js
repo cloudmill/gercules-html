@@ -30,8 +30,10 @@ export default class Manager_forms {
     var im = new Inputmask("+7 (999) 999-99-99");
     im.mask('input[name*="phone"],input[name*="Phone"]');
   }
+
   initSelect2() {
     $(".field-select select").each((key, select) => {
+      console.log(select)
       if ($(select).attr("data-select-placeholder")) {
         $(select).select2({
           minimumResultsForSearch: -1,
@@ -43,6 +45,18 @@ export default class Manager_forms {
         });
       }
     });
+
+    $(".form-select select").each((index, select) => {
+      const selectOptions = {}
+      selectOptions.minimumResultsForSearch = -1
+
+      const selectPlaceholder = $(select).data("select-placeholder")
+      if (selectPlaceholder) {
+        selectOptions.placeholder = selectPlaceholder
+      }
+      
+      $(select).select2(selectOptions)
+    })
   }
 
   init_form_calendar() {
