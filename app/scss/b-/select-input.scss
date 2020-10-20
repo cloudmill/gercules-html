@@ -1,0 +1,64 @@
+/* select-input */
+
+.select-input {
+  // drop добавляется в конец .select-input
+  // и абсолютно позиционируется относительно него
+  position: relative;
+
+  // специальная тема --select-input--default (задается из js)
+  .select2-container--select-input--default {
+    .select2-selection {
+      padding-left: 26px;
+      padding-right: calc(60px + 26px);
+      height: 60px;
+
+      .select2-selection__rendered {
+        padding: 0;
+        height: 100%;
+        font-size: 15px;
+        line-height: 60px;
+
+        .select2-selection__placeholder {
+          color: $color-placeholder;
+          font-size: 15px;
+        }
+      }
+
+      .select2-selection__arrow {
+        width: 60px;
+        height: 100%;
+
+        b {}
+
+        &::before {
+          transform: translate(-50%,-50%) rotate(-45deg);
+        }
+      }
+    }
+
+    // OPEN
+
+    &.select2-container--open {
+      .select2-selection {
+        background: $color-red;
+
+        .select2-selection__rendered {
+
+          .select2-selection__placeholder {
+            color: white;
+          }
+        }
+
+        .select2-selection__arrow {
+          b {}
+
+          &::before {
+            transform: translate(-50%,-25%) rotate(135deg);
+          }
+        }
+      }
+
+      .select2-dropdown {}
+    }
+  }
+}

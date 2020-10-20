@@ -1,0 +1,42 @@
+/* send-form__panel */
+
+.send-form__panel {
+  display: grid;
+  row-gap: 30px;
+}
+
+.send-form__panel--row-gap--40 {
+  row-gap: 40px;
+}
+
+.send-form__panel--2-cols {
+  column-gap: 40px;
+  grid-template-columns: repeat(2, calc((100% - 40px) / 2));
+  align-items: flex-start;
+}
+
+.send-form__panel--row {
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-between;
+  column-gap: 40px;
+  align-items: center;
+}
+
+/* send-form__item */
+
+.send-form__item {
+  display: block;
+}
+
+.send-form__item-title {
+  display: block;
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.send-form__item-input {
+  margin-top: 17px;
+}

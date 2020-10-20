@@ -152,110 +152,47 @@
             </div>
             <div class="documentation-form">
               <h2>Задать вопрос</h2>
-              <form class="form" action="#">
-                <div class="field-row">
-                  <div class="field-col">
-                    <div class="field field-base">
-                      <label for="name">
-                        <input type="text" name="name" data-required="data-required" id="name" placeholder="Алексей"/>
-                        <div class="field-inf"><span class="name">Имя*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+              <form class="send-form documentation-form__form" action="#">
+                <div class="send-form__panel send-form__panel--row-gap--40">
+                  <div class="send-form__panel send-form__panel--2-cols">
+                    <div class="send-form__panel">
+                      <label class="send-form__item"><span class="send-form__item-title">Имя*</span>
+                        <input class="text-input send-form__item-input" type="text" name="name" placeholder="Алексей" data-required>
+                      </label>
+                      <label class="send-form__item"><span class="send-form__item-title">Фамилия*</span>
+                        <input class="text-input send-form__item-input" type="text" name="surname" placeholder="Биланин" data-required>
+                      </label>
+                      <label class="send-form__item"><span class="send-form__item-title">Номер телефона*</span>
+                        <input class="text-input send-form__item-input" type="text" name="phone" placeholder="+7 (___) ___-__-__" data-required>
                       </label>
                     </div>
-                    <div class="field field-base">
-                      <label for="surname">
-                        <input type="text" name="surname" data-required="data-required" id="surname" placeholder="Биланин"/>
-                        <div class="field-inf"><span class="name">Фамилия*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                    <div class="send-form__panel">
+                      <label class="send-form__item"><span class="send-form__item-title">Email</span>
+                        <input class="text-input send-form__item-input" type="text" name="name" placeholder="ksh@loudmill.ru">
                       </label>
-                    </div>
-                    <div class="field field-base">
-                      <label for="phone">
-                        <input type="text" name="phone" data-required="data-required" id="phone" placeholder="+7 (___) ___-__-__"/>
-                        <div class="field-inf"><span class="name">Номер телефона*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      <label class="send-form__item"><span class="send-form__item-title">Вопрос на тему</span>
+                        <div class="select-input send-form__item-input">
+                          <select class="select-input__select" name="topic" data-no-search data-theme="select-input--default" data-placeholder="Дистрибьютер" data-width="100%">
+                            <option></option>
+                            <option value="0">Тема 1</option>
+                            <option value="1">Тема 2</option>
+                            <option value="2">Тема 3</option>
+                          </select>
+                        </div>
                       </label>
-                    </div>
-                  </div>
-                  <div class="field-col">
-                    <div class="field field-base">
-                      <label for="email">
-                        <input type="text" name="email" data-required="data-required" id="email" placeholder="ksh@loudmill.ru"/>
-                        <div class="field-inf"><span class="name">Email</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
-                      </label>
-                    </div>
-                    <div class="field field-select">
-                      <label class="select" for="topic">
-                        <div class="field-inf"><span class="name">Вопрос на тему</span><span class="errorText">пожалуйста, заполните поле корректно</span></div>
-                      </label>
-                      <select name="topic" id="topic" data-select-placeholder="Дистрибьютер">
-                        <option></option>
-                        <option value="0">Дистрибьютер</option>
-                        <option value="1">Имя</option>
-                        <option value="2">Фамилия</option>
-                      </select>
-                    </div>
-                    <div class="field field-area">
-                      <label for="question">
-                        <textarea name="question" id="question" placeholder="Текст вопроса" cols="30" rows="10"></textarea>
-                        <div class="field-inf"><span class="name">Ваш вопрос</span><span class="errorText">пожалуйста, заполните поле корректно</span></div>
+                      <label class="send-form__item"><span class="send-form__item-title">Ваш вопрос</span>
+                        <textarea class="area-input send-form__item-input" name="question" placeholder="Текст вопроса" data-required></textarea>
                       </label>
                     </div>
                   </div>
-                </div>
-                <div class="field-row">
-                  <div class="field-col">
-                    <div class="field field-checkbox">
-                      <input id="pp_quest" type="checkbox" name="pp" checked data-required>
-                      <label for="pp_quest">«Я выражаю согласие на обработку ПДн в соответствии с <a href="">Политикой конфиденциальности</a>»</label>
+                  <div class="send-form__panel send-form__panel--row">
+                    <label class="checkbox-input send-form__item">
+                      <input class="checkbox-input__input" type="checkbox" name="agreement" data-required><span class="checkbox-input__text">«Я выражаю согласие на обработку ПДн в соответствии с <a class="checkbox-input__link" href="#">Политикой конфиденциальности</a>»</span>
+                    </label>
+                    <div class="button-parallelogram send-form__item">
+                      <button class="button-parallelogram__button" name="submit"></button>
                     </div>
                   </div>
-                  <div class="field-col">
-                    <div class="main-link_rect">
-                      <button id="submit" name="submit"></button><span>Задать вопрос</span><i class="svg-icon svg-link-white-arrow"></i>
-                    </div>
-                  </div>
-                </div>
-              </form>
-              <form class="form-mobile" action="#">
-                <div class="form-text">
-                  <label>
-                    <p>Имя</p>
-                    <input id="name" type="text" name="name" data-required>
-                  </label>
-                </div>
-                <div class="form-text">
-                  <label>
-                    <p>Фамилия</p>
-                    <input id="surname" type="text" name="surname" data-required>
-                  </label>
-                </div>
-                <div class="form-text">
-                  <label>
-                    <p>Номер телефона</p>
-                    <input id="phone" type="text" name="phone" data-required>
-                  </label>
-                </div>
-                <div class="form-text">
-                  <label>
-                    <p>E-mail</p>
-                    <input id="email" type="text" name="email">
-                  </label>
-                </div>
-                <div class="form-select">
-                  <select id="topic" name="topic" data-select-placeholder="Тема вопроса">
-                    <option></option>
-                    <option value="0">Тема 1</option>
-                    <option value="1">Тема 2</option>
-                    <option value="2">Тема 3</option>
-                  </select>
-                </div>
-                <div class="form-area">
-                  <label>
-                    <p>Ваш вопрос</p>
-                    <textarea id="question" name="question" data-required></textarea>
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input id="agreement" type="checkbox" name="agreement" data-required>
-                  <label for="agreement">«Я выражаю согласие на обработку ПДн<br>в соответствии с <a class="content-policy-link" href="#">Политикой конфиденциальности</a><br>»</label>
                 </div>
               </form>
             </div>

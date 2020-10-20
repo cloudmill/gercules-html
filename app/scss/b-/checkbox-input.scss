@@ -1,0 +1,57 @@
+// label
+// padding для check mark'a
+.checkbox-input {
+  position: relative;
+  padding-left: 32px;
+  display: block;
+}
+
+// input
+// выключаем из основного потока и скрываем
+.checkbox-input__input {
+  opacity: 0;
+  position: absolute;
+
+  &:checked+.checkbox-input__text::after {
+    opacity: 1;
+  }
+}
+
+// text
+.checkbox-input__text {
+  position: relative;
+  display: block;
+  font-size: 12px;
+  line-height: 150%;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -32px;
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #EBEBEB;
+  }
+
+  &::after {
+    opacity: 0;
+    position: absolute;
+    top: 6px;
+    left: calc(-32px + 6px);
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: $color-red;
+    transition: $ease-main;
+  }
+}
+
+// ссылки в тексте чекбокса
+.checkbox-input__link {
+  &:hover {
+    text-decoration: underline;
+  }
+}

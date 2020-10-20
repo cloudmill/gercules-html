@@ -721,91 +721,8 @@
   &-form {
     margin-top: 100px;
 
-    form {
+    &__form {
       margin-top: 40px;
-    }
-
-    .field {
-      &:not(:first-child) {
-        margin-top: 30px;
-      }
-
-      &-row {
-        &:last-child {
-          margin-top: 40px;
-          grid-template-columns: auto minmax(265px, 300px);
-          justify-content: space-between;
-          column-gap: 20px; // не 40, поскольку у кнопки лишние 10 padding по бокам
-        }
-
-        @media (max-width: $desktop-to-mobile) {
-          grid-template-columns: 1fr;
-          row-gap: 30px;
-
-          &:last-child {
-            grid-template-columns: 1fr;
-          }
-        }
-      }
-
-      &-area {
-        textarea {
-          padding: 18px 25px;
-        }
-      }
-    }
-
-    .main-link_rect {
-      margin-left: 10px; // поскольку лишние 10 padding по бокам
-
-      i {
-        margin-left: 20px;
-      }
-
-      @media (max-width: $desktop-to-mobile) {
-        margin-left: 0;
-      }
-    }
-
-    // select2
-    .field.field-select {
-      .select2.select2-container {
-        min-width: 100%;
-
-        .select2-selection {
-          height: 60px;
-
-          .select2-selection__rendered {
-            padding-left: 25px;
-            padding-right: calc(25px + 60px);
-            height: 60px;
-            font-size: 15px;
-            line-height: 60px;
-            color: $color-main;
-
-            .select2-selection__placeholder {
-              color: $color-placeholder;
-            }
-          }
-
-          .select2-selection__arrow {
-            width: 60px;
-            height: 60px;
-          }
-        }
-
-        &--open {
-          .select2-selection {
-            .select2-selection__rendered {
-              color: white;
-
-              .select2-selection__placeholder {
-                color: white;
-              }
-            }
-          }
-        }
-      }
     }
 
     @media (max-width: $desktop-to-mobile) {
@@ -814,6 +731,10 @@
 
     @media (max-width: $mobile-xl) {
       margin-top: 60px;
+
+      &__form {
+        margin-top: 30px;
+      }
     }
   }
 
@@ -823,10 +744,6 @@
     font-size: 12px;
     line-height: 144%;
     color: $color-gray;
-  }
-
-  .form-mobile {
-    margin: 30px -20px 0 -20px;
   }
 
   @media (max-width: $desktop-m) {

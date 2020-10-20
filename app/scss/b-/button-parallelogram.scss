@@ -1,0 +1,12 @@
+.button-parallelogram {
+  width: 270px;
+}
+
+.button-parallelogram__button {
+  transform-origin: left bottom;
+  transform: skewX(-20deg);
+  width: 250px;
+  height: 70px;
+  display: block;
+  background: $color-red;
+}

@@ -124,66 +124,55 @@ block content
             span Образец претензии Дистрибьютор
       .documentation-form
         h2 Задать вопрос
-        form(action="#").form
-          .field-row
-            .field-col
-              +field_base("name", "name", "Имя*", "Алексей")
-              +field_base("surname", "surname", "Фамилия*", "Биланин")
-              +field_base("phone", "phone", "Номер телефона*", "+7 (___) ___-__-__")
-            .field-col
-              +field_base("email", "email", "Email", "ksh@loudmill.ru")
-              +field_select("topic", [[0, "Дистрибьютер"], [1, "Имя"], [2, "Фамилия"]], "Дистрибьютер", "topic")
-                label(for="topic").select
-                  .field-inf
-                    span.name Вопрос на тему
-                    span.errorText пожалуйста, заполните поле корректно
-              +field_area("question", "question", "Ваш вопрос", "Текст вопроса")
-          .field-row
-            .field-col
-              +field_checkbox()
-                input#pp_quest(type="checkbox" name="pp" checked data-required)
-                label(for="pp_quest") «Я выражаю согласие на обработку ПДн в соответствии с 
-                  a(href="") Политикой конфиденциальности
-                  |»
-            .field-col
-              +linkRect
-                button(id="submit" name="submit")
-                span Задать вопрос
-                +icon("link-white-arrow", "svg")
-        form(action="#").form-mobile
-          .form-text
-            label
-              p Имя
-              input#name(type="text" name="name" data-required)
-          .form-text
-            label
-              p Фамилия
-              input#surname(type="text" name="surname" data-required)
-          .form-text
-            label
-              p Номер телефона
-              input#phone(type="text" name="phone" data-required)
-          .form-text
-            label
-              p E-mail
-              input#email(type="text" name="email")
-          .form-select
-            select#topic(name="topic" data-select-placeholder="Тема вопроса")
-              option
-              option(value="0") Тема 1
-              option(value="1") Тема 2
-              option(value="2") Тема 3
-          .form-area
-            label
-              p Ваш вопрос
-              textarea#question(name="question" data-required)
-          .form-check
-            input#agreement(type="checkbox" name="agreement" data-required)
-            label(for="agreement") «Я выражаю согласие на обработку ПДн
-              br
-              | в соответствии с 
-              a(href="#").content-policy-link Политикой конфиденциальности
-              br
-              | »
+        form(action="#").send-form.documentation-form__form
+          .send-form__panel.send-form__panel--row-gap--40
+            .send-form__panel.send-form__panel--2-cols
+              .send-form__panel
+                label.send-form__item
+                  span.send-form__item-title Имя*
+                  input(type="text", name="name", placeholder="Алексей", data-required).text-input.send-form__item-input
+                label.send-form__item
+                  span.send-form__item-title Фамилия*
+                  input(type="text", name="surname", placeholder="Биланин", data-required).text-input.send-form__item-input
+                label.send-form__item
+                  span.send-form__item-title Номер телефона*
+                  input(type="text", name="phone", placeholder="+7 (___) ___-__-__", data-required).text-input.send-form__item-input
+              .send-form__panel
+                label.send-form__item
+                  span.send-form__item-title Email
+                  input(type="text", name="name", placeholder="ksh@loudmill.ru").text-input.send-form__item-input
+                label.send-form__item
+                  span.send-form__item-title Вопрос на тему
+                  //- блок .select-input - обертка для тэга select, а не сам select
+                  //- поскольку плагин select2 абсолютно позиционирует, изменяет узел select
+                  //- а нам необходим блок в основном потоке html
+                  .select-input.send-form__item-input
+                    select(
+                      name="topic", 
+                      data-no-search,
+                      data-theme="select-input--default",
+                      data-placeholder="Дистрибьютер", 
+                      data-width="100%"
+                    ).select-input__select
+                      //- первый пустой option для placeholder'a
+                      option
+                      option(value="0") Тема 1
+                      option(value="1") Тема 2
+                      option(value="2") Тема 3
+                label.send-form__item
+                  span.send-form__item-title Ваш вопрос
+                  textarea(name="question", placeholder="Текст вопроса", data-required).area-input.send-form__item-input
+            .send-form__panel.send-form__panel--row
+              label.checkbox-input.send-form__item
+                input(type="checkbox", name="agreement", data-required).checkbox-input__input
+                span.checkbox-input__text «Я выражаю согласие на обработку ПДн в соответствии с 
+                  a(href="#").checkbox-input__link Политикой конфиденциальности
+                  | »
+              .button-parallelogram.send-form__item
+                button(name="submit").button-parallelogram__button
+                
+
+              
+
 
 
