@@ -5,5 +5,13 @@ block variables
 
 block content
   .content
-    +file_list(file_data_1)
+    form(action="#")
+      .btn-p-gram
+        button(type="submit").btn-p-gram__btn
+        .btn-p-gram__view-wrap
+          .btn-p-gram__view
+        .btn-p-gram__content
+          span.btn-p-gram__text Задать вопрос
+          .btn-p-gram__icon
+            +icon("link-white-arrow", "svg")
     

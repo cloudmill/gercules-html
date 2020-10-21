@@ -28,6 +28,14 @@
   display: block;
 }
 
+.send-form__item--max-width--270 {
+  max-width: 270px;
+}
+
+.send-form__item--min-width--310 {
+  min-width: 310px
+}
+
 .send-form__item-title {
   display: block;
   font-family: $font-main;
