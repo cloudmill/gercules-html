@@ -1,0 +1,52 @@
+extends ../layouts/clean
+
+block variables
+  - pageTitle = "Главная"
+
+block content
+  .main
+    .main__wrapper
+      .main-header
+        .main-header__title-block
+          h1.main-header__title.main-header__title--max-width Лидер по производству сухих строительных смесей в Сибири
+          p.main-header__caption
+        .main-header__features-block
+          ul.main-header__features
+            li.main-header__feature
+              p.main-header__feature-title >350 000
+              p.main-header__feature-text тонн продукции в год
+            li.main-header__feature
+              p.main-header__feature-title >150 000 м
+              p.main-header__feature-text
+                | складских помещений 
+                br
+                | и отлаженная логистика
+            li.main-header__feature
+              p.main-header__feature-title Качество
+              p.main-header__feature-text
+                | тестируем в собственных 
+                br
+                | лабораториях
+            li.main-header__feature
+              p.main-header__feature-title ТОП-3
+              p.main-header__feature-text
+                | производителей 
+                br
+                | строительных клеёв в России
+            li.main-header__feature
+              p.main-header__feature-title ГОСТ
+              p.main-header__feature-text
+                | сертификаты на все 
+                br
+                | строительные смеси
+          a(href="").main-header__about
+            span.main-header__about-text
+            +icon("link-white-arrow", "svg")
+
+
+
+
+
+
+
+

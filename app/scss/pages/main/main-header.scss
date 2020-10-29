@@ -1,0 +1,33 @@
+// MAIN-HEADER
+
+.main-header {
+  padding-left: 80px;
+  min-height: 720px;
+  display: flex;
+  background: url(../images/main-header-bg.jpg);
+  background-size: cover;
+}
+
+// TITLE-BLOCK
+
+.main-header__title-block {
+  padding: 0 60px;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+// TITLE
+
+.main-header__title {
+  font-family: $font-second;
+  font-weight: bold;
+  font-size: 62px;
+  line-height: 140%;
+  color: white;
+}
+
+.main-header__title--max-width {
+  max-width: 900px;
+}
