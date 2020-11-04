@@ -1,0 +1,9 @@
+.for-partners {
+  padding-left: 80px;
+
+  &__wrapper {
+    min-height: 100vh; // test
+
+    display: flex;
+  }
+}

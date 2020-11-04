@@ -1,0 +1,52 @@
+/*
+  описание:
+    контентная часть страницы между header и footer
+  
+  структура:
+    .content
+      .content__wrapper (обертка для позиционирования, огарничения итд)
+        aside.content__side-bar (опционально (учитывается отсутствие), боковая панель, обычно содержит навигационное меню)
+        main.content__main (содержимое страницы)
+
+  свойства:
+    content
+      без ограничений
+      left padding резиновый (5%) максимум (80px для 1600+)
+    wrapper
+      без ограничений
+      flex
+      items stretch
+    side-bar
+      может отсутствовать
+      резиновый (19%) максимум (288px)
+      border-left
+    main
+      растянут
+      border-left
+*/
+
+.b-content {
+  padding-left: 80px;    
+  
+  @media (max-width: 1600px) {
+    padding-left: 5%;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: stretch;
+    
+    min-height: 100vh; // test
+  }
+
+  &__side-bar {
+    flex-basis: 19%;
+    max-width: 288px;
+    border-left: 1px solid $color-border;
+  }
+
+  &__main {
+    flex-grow: 1;
+    border-left: 1px solid $color-border;
+  }
+}
