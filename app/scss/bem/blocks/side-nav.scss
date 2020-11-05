@@ -1,0 +1,149 @@
+/*
+
+*/
+
+$duration: 0.5s;
+
+@mixin padding-left {
+  padding-left: 55px;
+
+  @media (max-width: 1600px) {
+    padding-left: 20.5%;
+  }
+}
+
+.side-nav {
+  &__list {
+    padding-right: 20px;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-gray;
+
+    @media (max-width: 1600px) {
+      padding-right: 7%;
+    }
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+
+    &:hover {
+
+      .side-nav__item-link,
+      .side-nav__item-title {
+        color: $color-black;
+      }
+    }
+
+    &--active {
+      color: $color-black;
+
+      .side-nav__item-link,
+      .side-nav__item-title {
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          content: "";
+          display: block;
+          height: 33px;
+          border-top: 3px solid transparent;
+          border-left: 4px solid $color-red;
+        }
+      }
+
+      .side-nav__item-title {
+        cursor: initial;
+
+        &::after {
+          transform: rotate(225deg);
+        }
+      }
+
+      .side-nav__item-wrapper {
+        max-height: none;
+      }
+    }
+
+    &--open {
+      .side-nav__item-title {
+        &::after {
+          transform: rotate(225deg);
+        }
+      }
+    }
+  }
+
+  &__item-link {
+    @include padding-left();
+    position: relative;
+    display: block;
+    transition: $duration;
+  }
+
+  &__item-title {
+    @include padding-left();
+    position: relative;
+    padding-right: 27px;
+    cursor: pointer;
+    transition: $duration;
+
+    &::after {
+      position: absolute;
+      top: calc(50% - 3px);
+      right: 2px;
+      $percentage: 67.5%;
+      transform-origin: $percentage $percentage;
+      transform: rotate(45deg);
+      content: "";
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-bottom: 1px solid $color-black;
+      border-right: 1px solid $color-black;
+      transition: $duration;
+    }
+
+    @media (max-width: 1600px) {
+      padding-right: calc(7.5% + 7px);
+    }
+  }
+
+  &__item-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: $duration;
+  }
+
+  &__sub-list {
+    padding-top: 20px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  &__sub-item {
+    &:not(:first-child) {
+      margin-top: 16px;
+    }
+
+    &:hover {
+      color: $color-black;
+    }
+
+    // тем самым hover не будет перекрывать active
+    &--active {
+      .side-nav__sub-link {
+        color: $color-red;
+      }
+    }
+  }
+
+  &__sub-link {
+    @include padding-left();
+    display: block;
+    transition: $duration;
+  }
+}

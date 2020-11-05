@@ -18,10 +18,15 @@
       items stretch
     side-bar
       может отсутствовать
+      влияет на соседний (+) main
+        main padding left 40px
       резиновый (19%) максимум (288px)
+      padding top 38px
       border-left
     main
       растянут
+      padding 60px 80px 120px 60px (в общем случае)
+        padding left 40px (если side-bar отсутствует)
       border-left
 */
 
@@ -40,12 +45,18 @@
   }
 
   &__side-bar {
+    padding-top: 38px;
     flex-basis: 19%;
     max-width: 288px;
     border-left: 1px solid $color-border;
+
+    &+.b-content__main {
+      padding-left: 40px;
+    }
   }
 
   &__main {
+    padding: 60px 80px 120px 60px;
     flex-grow: 1;
     border-left: 1px solid $color-border;
   }

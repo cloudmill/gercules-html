@@ -12,6 +12,8 @@ $(document).ready(function () {
   // NEW
   selectInputs();
   // END NEW
+
+  sideNav();
 });
 
 // NEW
@@ -47,3 +49,36 @@ function selectInputs() {
   });
 }
 // END NEW
+
+function sideNav() {
+  let
+    item,
+    itemWrapper,
+    itemContent;
+
+  $(".side-nav__item-title").on("click", function () {
+    item = $(this).closest(".side-nav__item");
+
+    if (!item.hasClass("side-nav__item--active")) {
+      itemWrapper = item.find(".side-nav__item-wrapper");
+      itemContent = itemWrapper.find(".side-nav__item-content");
+
+      if (item.hasClass("side-nav__item--open")) {
+        itemWrapper.css("max-height", "");
+      } else {
+        itemWrapper.css("max-height", itemContent.height() + "px");
+      }
+
+      item.toggleClass("side-nav__item--open");
+    }
+  });
+
+  $(window).on("resize", () => {
+    $(".side-nav__item--active, .side-nav__item--open").each(function () {
+      itemWrapper = $(this).find(".side-nav__item-wrapper");
+      itemContent = itemWrapper.find(".side-nav__item-content");
+
+      itemWrapper.css("max-height", itemContent.height() + "px");
+    });
+  });
+}
