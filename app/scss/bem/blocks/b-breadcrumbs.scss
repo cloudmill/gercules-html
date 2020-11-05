@@ -1,0 +1,34 @@
+/*
+  
+*/
+
+$row-gap: 3px;
+$col-gap: 6.5px;
+
+.b-breadcrumbs {
+  margin: -#{$row-gap / 2} -#{$col-gap / 2};
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  line-height: 14px;
+
+  &__item {
+    margin: #{$row-gap / 2} #{$col-gap / 2};
+    display: flex;
+    color: $color-gray;
+
+    &:not(:first-child) {
+      &::before {
+        content: "—  ";
+        white-space: pre;
+      }
+    }
+
+    &:last-child {
+      .b-breadcrumbs__link {
+        color: $color-black;
+        pointer-events: none;
+      }
+    }
+  }
+}
