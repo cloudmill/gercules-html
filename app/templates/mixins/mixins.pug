@@ -63,3 +63,13 @@ mixin nav_back(title = "Главная", href = "#")
 mixin nav_goto(title = "Главная", href = "#")
   a(href = href).nav-goto #{title}
     +icon("arrow", "svg")
+
+mixin btn-p-gram(text)
+  .btn-p-gram
+    button(type="submit").btn-p-gram__btn
+    .btn-p-gram__view-wrap
+      .btn-p-gram__view
+    .btn-p-gram__content
+      span.btn-p-gram__text #{text}
+      .btn-p-gram__icon
+        +icon("link-white-arrow", "svg")
