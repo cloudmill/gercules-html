@@ -1,0 +1,20 @@
+.number-card {
+  padding: 15px 20px;
+  background: white;
+  border: 1px solid $color-border;
+  font-family: $font-title;
+  font-weight: bold;
+  line-height: 1.6;
+
+  &__title {
+    font-size: 15px;
+  }
+
+  &__number {
+    margin-top: 5px;
+    display: inline-block;
+    font-size: 20px;
+    color: $color-red;
+    white-space: nowrap;
+  }
+}
