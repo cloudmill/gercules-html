@@ -69,7 +69,7 @@
           <main class="b-content__main for-partners">
             <div class="b-breadcrumbs">
               <div class="b-breadcrumbs__item"><a class="b-breadcrumbs__link" href="">Главная</a></div>
-              <div class="b-breadcrumbs__item"><a class="b-breadcrumbs__link" href="">Партнерам</a></div>
+              <div class="b-breadcrumbs__item"><a class="b-breadcrumbs__link" href="">Партнерам </a></div>
             </div>
             <h1 class="for-partners__page-title">Партнерам</h1>
             <section class="for-partners__features">
@@ -87,15 +87,52 @@
             </section>
             <section class="for-partners__become">
               <h2 class="for-partners__section-title">Стать партнером</h2>
-              <form class="for-partners__become-form" action="">
-                <input class="text-input" type="text" name="name" placeholder="ksh@loudmill.ru">
-                <div class="btn-p-gram">
-                  <button class="btn-p-gram__btn" type="submit"></button>
-                  <div class="btn-p-gram__view-wrap">
-                    <div class="btn-p-gram__view"></div>
+              <form class="b-form for-partners__become-form" action="">
+                <div class="b-form__row b-form__row--ai--stretch">
+                  <label class="b-form__item b-form__item--w--50p">
+                    <div class="b-form__item-title b-form__item-title--mb--17">Имя*</div>
+                    <div class="b-form__item-input">
+                      <input class="text-input" type="text" name="name" placeholder="Алексей" required>
+                    </div>
+                  </label>
+                  <label class="b-form__item b-form__item--w--50p b-form__item--ml--40">
+                    <div class="b-form__item-title b-form__item-title--mb--17">E-mail*</div>
+                    <div class="b-form__item-input">
+                      <input class="text-input" type="text" name="email" placeholder="ksh@clodumill.ru" required>
+                    </div>
+                  </label>
+                </div>
+                <div class="b-form__row b-form__row--ai--stretch b-form__row--mt--40">
+                  <label class="b-form__item b-form__item--w--50p">
+                    <div class="b-form__item-title b-form__item-title--mb--17">Город*</div>
+                    <div class="b-form__item-input">
+                      <input class="text-input" type="text" name="city" placeholder="Город" required>
+                    </div>
+                  </label>
+                  <div class="b-form__item b-form__item--w--50p b-form__item--ml--40">
+                    <div class="b-form__item-title b-form__item-title--mb--17"><br></div>
+                    <div class="b-form__item-input">
+                      <label class="checkbox-input">
+                        <input class="checkbox-input__input" type="checkbox" name="agreement" required>
+                        <p class="checkbox-input__text">«Я выражаю согласие на обработку ПДн в соответствии<br>с <a class="checkbox-input__link" href="#">Политикой конфиденциальности</a>»</p>
+                      </label>
+                    </div>
                   </div>
-                  <div class="btn-p-gram__content"><span class="btn-p-gram__text">Стать партнером</span>
-                    <div class="btn-p-gram__icon"><i class="svg-icon svg-link-white-arrow"></i>
+                </div>
+                <div class="b-form__row b-form__row--ai--stretch b-form__row--mt--20">
+                  <div class="b-form__item b-form__item--w--50p"></div>
+                  <div class="b-form__item b-form__item--w--50p b-form__item--ml--40">
+                    <div class="b-form__item-input b-form__item-input--max-w--340">
+                      <div class="btn-p-gram">
+                        <button class="btn-p-gram__btn" type="submit"></button>
+                        <div class="btn-p-gram__view-wrap">
+                          <div class="btn-p-gram__view"></div>
+                        </div>
+                        <div class="btn-p-gram__content"><span class="btn-p-gram__text">Стать партнером</span>
+                          <div class="btn-p-gram__icon"><i class="svg-icon svg-link-white-arrow"></i>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

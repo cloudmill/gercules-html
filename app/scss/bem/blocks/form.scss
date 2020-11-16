@@ -1,0 +1,47 @@
+.b-form {
+  &__row {
+    display: flex;
+    
+    &--ai--stretch {
+      align-items: stretch;
+    }
+
+    &--mt--40 {
+      margin-top: 40px;
+    }
+
+    &--mt--20 {
+      margin-top: 20px;
+    }
+  }
+
+  &__item {
+    &--w--50p {
+      width: 50%;
+    }
+
+    &--ml--40 {
+      margin-left: 40px;
+    }
+
+    &--ai--center {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__item-title {
+    font-size: 14px;
+    line-height: 16px;
+
+    &--mb--17 {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__item-input {
+    &--max-w--340 {
+      max-width: 340px
+    }
+  }
+}
