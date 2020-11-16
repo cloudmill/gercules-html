@@ -71,4 +71,29 @@
       margin-top: 60px;
     }
   }
+
+  &__offers {
+    margin-top: 120px;
+
+    &-list {
+      margin-top: -20px;
+      margin-left: -20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
+    &-item {
+      margin-top: 20px;
+      margin-left: 20px;
+
+      @media (min-width: 1601px) {
+        width: 536px;        
+      }
+
+      @media (max-width: 1600px) {
+        width: calc(50% - 20px);
+      }
+    }
+  }
 }

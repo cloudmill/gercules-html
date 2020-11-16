@@ -1,0 +1,29 @@
+.arrow-link {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $color-red;
+
+  &:hover {
+    
+    .arrow-link__icon {
+      transform: translateX(5px);
+    }
+  }
+
+  &__text {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: $color-red;
+  }
+
+  &__icon {
+    display: flex;
+    transition: $ease-main;
+
+    &--ml--15 {
+      margin-left: 15px;
+    }
+  }
+}

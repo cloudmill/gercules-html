@@ -47,6 +47,7 @@
   &__side-bar {
     padding-top: 38px;
     flex-basis: 19%;
+    flex-shrink: 0;
     max-width: 288px;
     border-left: 1px solid $color-border;
 
