@@ -1,0 +1,50 @@
+%--spaces {
+    display: flex;
+    align-items: center;
+
+    &::after {
+        white-space: pre;
+    }
+}
+
+.hash-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    &--spaces--5 {
+
+        .hash-list__item {
+            @extend %--spaces;
+
+            &::after {
+                content: "     ";
+            }
+        }
+    }
+
+    &--spaces--2 {
+        
+        .hash-list__item {
+            @extend %--spaces;
+
+            &::after {
+                content: "  ";
+            }
+        }
+    }
+
+    &--mg-r--15 {
+
+        .hash-list__item {
+            margin-right: 15px;
+        }
+
+        .hash-list__link {
+            display: block;
+        }
+    }
+
+    &__link {
+        // наследует св-ва от __item с классом .hash
+    }
+}

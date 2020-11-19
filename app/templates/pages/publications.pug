@@ -51,75 +51,56 @@ block content
 
                         .hash-panel__wrapper
 
-                            ul.hash-panel__container
-                                each val in [1,2,3,4,5]
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #жизнькомпании
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #новости
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #семинар
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #конференция
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #новинки
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #академиягеркулес
+                            ul.hash-list.hash-list--spaces--5.hash-panel__container
+                                each val in [1, 2]
+                                    li.hash.hash-list__item
+                                        a(href="").hash-list__link #жизнькомпании
+                                    li.hash.hash-list__item
+                                        a(href="").hash-list__link #новости
+                                    li.hash.hash-list__item
+                                        a(href="").hash-list__link #семинар
+                                    li.hash.hash-list__item
+                                        a(href="").hash-list__link #конференция
+                                    li.hash.hash-list__item
+                                        a(href="").hash-list__link #новинки
+                                    li.hash.hash-list__item
+                                        a(href="").hash-list__link #академиягеркулес
 
                         .hash-panel__button
 
                             .hash-panel__button-text Еще 6 тегов
                     
-                .b-content__main-item.b-content__main-item--mg-t--60
+                .b-content__main-item
 
-                    .hash-panel
+                    .publication
 
-                        .hash-panel__title Популярные темы:
+                        .publication__list.publication__list--mg-t--m1.publication__list--mg-l--m1
 
-                        .hash-panel__wrapper
+                            each i in [1, 2]
+                                each j in [1, 2, 3, 4]                            
+                                
+                                    .publication__item
 
-                            ul.hash-panel__container
-                                each val in [1,2,3,4,5]
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #жизнькомпании
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #новости
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #семинар
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #конференция
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #новинки
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #академиягеркулес
+                                        a(href="").publication__content
 
-                        .hash-panel__button
+                                            .publication__image
+                                                img.publication__img(src=`./images/publication-${j}.jpg`)
 
-                            .hash-panel__button-text Еще 6 тегов
+                                            p.publication__date
+                                                |22 октября 2019
 
-                .b-content__main-item.b-content__main-item--mg-t--60
+                                            h6.title.title--default.publication__title
+                                                |Новая формула GE-29: глубже, равномернее, крепче!
 
-                    .hash-panel
+                                            p.publication__text
+                                                |С 20 марта 2018 мы начали выпуск нового продукта: «Грунтовка укрепляющая глубокого проникновения GE-29». Мы улучшили формулу и обновили упаковку!
 
-                        .hash-panel__title Популярные темы:
+                                        ul.hash-list.hash-list--spaces--2.hash-panel__container.publication__hash-list
+                                            li.hash.hash-list__item
+                                                a(href="").hash-list__link #жизнькомпании
+                                            li.hash.hash-list__item
+                                                a(href="").hash-list__link #новости
 
-                        .hash-panel__wrapper
 
-                            ul.hash-panel__container
-                                each val in [1,2,3,4,5]
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #жизнькомпании
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #новости
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #семинар
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #конференция
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #новинки
-                                    li.hash-panel__item
-                                        a(href="").hash-panel__link #академиягеркулес
 
-                        .hash-panel__button
 
-                            .hash-panel__button-text Еще 6 тегов
