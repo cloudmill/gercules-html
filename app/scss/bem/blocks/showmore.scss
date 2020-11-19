@@ -1,0 +1,35 @@
+.showmore {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-top: 1px solid $color-gray-border;
+    border-bottom: 1px solid $color-gray-border;
+
+    &:hover {
+        .showmore__text {
+            text-decoration-line: underline;
+        }
+    }
+
+    &__wrapper {
+        height: 30px;
+        display: flex;
+    }
+
+    &__text {
+        align-self: flex-end;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    &__count {
+        margin-left: 5px;
+        align-self: flex-start;
+        font-size: 12px;
+        line-height: 150%;
+        color: $color-gray;
+    }
+}
