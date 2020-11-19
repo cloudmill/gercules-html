@@ -60,5 +60,9 @@
     padding: 60px 80px 120px 60px;
     flex-grow: 1;
     border-left: 1px solid $color-border;
+
+    &--overflow--hidden {
+      overflow: hidden;
+    }
   }
 }

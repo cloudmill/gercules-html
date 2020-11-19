@@ -10,6 +10,10 @@
       margin-top: 40px;
     }
 
+    &--mt--30 {
+      margin-top: 30px;
+    }
+
     &--mt--20 {
       margin-top: 20px;
     }
@@ -28,6 +32,11 @@
       display: flex;
       align-items: center;
     }
+
+    &--jc--end {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 
   &__item-title {
@@ -42,6 +51,10 @@
   &__item-input {
     &--max-w--340 {
       max-width: 340px
+    }
+
+    &--max-w--390 {
+      max-width: 390px
     }
   }
 }

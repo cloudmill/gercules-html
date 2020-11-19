@@ -1,7 +1,5 @@
 .for-partners {
 
-  // PAGE TITLE
-  
   &__page-title {
     margin-top: 35px;
     font-family: $font-title;
@@ -10,16 +8,56 @@
     line-height: 144%;
   }
 
-  // SECTION TITLE
-
   &__section-title {
     font-family: $font-title;
     font-weight: bold;
     font-size: 28px;
     line-height: 144%;
+
+    &--small {
+      font-family: $font-main;
+      font-size: 18px;
+      line-height: 21px;
+    }
   }
 
-  // FEATURES
+  &__bg {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      display: block;
+    }
+
+    &--full {
+
+      &::before {
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        right: -100%;
+      }
+    }
+
+    &--partial {
+
+      &::before {
+        top: 0;
+        left: -100%;
+        right: -100%;
+        height: 500px;
+      }
+    }
+
+    &--gray {
+
+      &::before {
+        background-color: $color-gray-background;
+      }
+    }
+  }
 
   &__features {
     margin-top: 60px;
@@ -62,8 +100,6 @@
     }
   }
 
-  // BECOME A PARTNER
-
   &__become {
     margin-top: 120px;
 
@@ -88,12 +124,123 @@
       margin-left: 20px;
 
       @media (min-width: 1601px) {
-        width: 536px;        
+        width: 536px;
       }
 
       @media (max-width: 1600px) {
         width: calc(50% - 20px);
       }
     }
+  }
+
+  &__map {
+    position: relative;
+    z-index: 0; // контекст наложения
+    margin-top: 100px;
+    padding-top: 80px;
+
+    &-wrapper {
+      margin-top: 60px;
+
+      &--mr--m40 {
+        margin-right: -40px;
+      }
+    }
+
+    &-panel {
+      position: relative;
+      z-index: 2; // панель над картой
+      padding: 25px 60px;
+      min-height: 90px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      box-shadow: 0px 25px 60px rgba(0, 0, 0, 0.13);
+
+      &--max-width--1151 {
+        max-width: 1151px;
+      }
+
+      &-item {
+        display: flex;
+        align-items: center;
+
+        &:not(:first-child) {
+          margin-left: 40px;
+        }
+      }
+
+      &-image {
+        display: flex; // для усечения inline-block иконки (если контейнер ее содержит)
+
+        &--box-shadow {
+
+          .icon {
+            filter: drop-shadow(0 20px 10px rgba(0, 0, 0, .15)); // тень с учетом прозрасности содержимого
+          }
+        }
+      }
+
+      &-text {
+        font-size: 15px;
+        line-height: 150%;
+
+        &--ml--14 {
+          margin-left: 14px;
+        }
+      }
+    }
+
+    &-map {
+      position: relative;
+      z-index: 1; // карта под панелью
+      max-width: 1146px; // максимальная ширина карты
+      display: flex;
+      justify-content: center; // карта по центру
+
+      &--mt {
+        margin-top: -120px;
+      }
+    }
+
+    &-image {
+      position: relative; // для map pin'a
+      min-width: 657px; // минимальная ширина карты
+    }
+
+    &-img {
+      display: block;
+      max-width: 100%;
+    }
+
+    &-pin {
+      position: absolute;
+      left: 40%;
+      bottom: 26%;
+
+      .icon {
+        filter: drop-shadow(0 20px 10px rgba(0, 0, 0, .15)); // тень с учетом прозрасности содержимого
+      }
+    }
+
+    &-msg {
+      margin-top: 40px;
+      font-family: $font-title;
+      font-size: 20px;
+      line-height: 160%;
+    }
+  }
+
+  &__request {
+    padding-top: 60px; // вместо margin, для __bg
+  
+    &-form {
+      margin-top: 40px;
+    }
+  }
+
+  &__contacts {
+    padding-top: 80px; // вместо margin, для __bg
   }
 }
