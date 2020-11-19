@@ -14,7 +14,35 @@ $(document).ready(function () {
   // END NEW
 
   sideNav();
+
+  hashPanel();
 });
+
+function hashPanel() {
+  $(".hash-panel").each(function () {
+    const
+      hashPanel = $(this),
+      hashPanelButton = hashPanel.find(".hash-panel__button"),
+      hashPanelWrapper = hashPanel.find(".hash-panel__wrapper"),
+      hashPanelContainer = hashPanel.find(".hash-panel__container")
+
+    hashPanelButton.on("click", () => {
+      hashPanel.toggleClass("hash-panel--active")
+
+      if (hashPanel.hasClass("hash-panel--active")) {
+        hashPanelWrapper.css("max-height", hashPanelContainer.height() + "px")
+      } else {
+        hashPanelWrapper.css("max-height", "")
+      }
+    })
+
+    $(window).on("resize", () => {
+      if (hashPanel.hasClass("hash-panel--active")) {
+        hashPanelWrapper.css("max-height", hashPanelContainer.height() + "px")
+      }
+    })
+  });
+}
 
 // NEW
 function selectInputs() {

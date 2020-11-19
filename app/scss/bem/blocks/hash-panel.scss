@@ -1,0 +1,86 @@
+$hash-height: 22px;
+
+.hash-panel {
+    padding: 20px 120px 20px 40px;
+    min-height: 70px;
+    display: flex;
+    align-items: baseline;
+    border-top: 1px solid $color-gray-border;
+    border-bottom: 1px solid $color-gray-border;
+
+    &--active {
+        
+        .hash-panel__button {
+            
+            &::before {
+                transform: translate(1px, -25%) rotate(225deg);
+            }
+        }
+    }
+
+    &__title {
+        white-space: nowrap;
+    }
+
+    &__wrapper {
+        margin-left: 20px;
+        flex-grow: 1;
+        max-height: $hash-height; // анимируемое свойство, dropdown
+        overflow: hidden;
+        transition: $ease-main;
+    }
+
+    &__container {
+        max-width: 700px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        line-height: $hash-height;
+        color: $color-red;
+        white-space: nowrap;
+
+        &::after {
+            content: "     ";
+            white-space: pre;
+        }
+    }
+
+    &__link {
+        // наследует св-ва __item
+    }
+
+    &__button {
+        position: relative;
+        padding-left: 18px;
+        margin-left: 20px;
+        cursor: pointer;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(1px, -75%) rotate(45deg);
+            $size: 6px;
+            width: $size;
+            height: $size;
+            content: "";
+            display: block;
+            border-right: 1px solid $color-red;
+            border-bottom: 1px solid $color-red;
+            transition: $ease-main;
+        }
+
+        &-text {
+            border-bottom: 1px dashed $color-red;
+            font-size: 15px;
+            line-height: 150%;
+            color: $color-gray;
+            white-space: nowrap;
+        }
+    }
+}

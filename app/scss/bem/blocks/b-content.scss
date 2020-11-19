@@ -30,6 +30,16 @@
       border-left
 */
 
+%--pd--vert {
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+
+%--pd--hor {
+  padding-left: 40px;
+  padding-right: 80px;
+}
+
 .b-content {
   padding-left: 80px;    
   
@@ -50,19 +60,38 @@
     flex-shrink: 0;
     max-width: 288px;
     border-left: 1px solid $color-border;
-
-    &+.b-content__main {
-      padding-left: 40px;
-    }
   }
 
   &__main {
-    padding: 60px 80px 120px 60px;
     flex-grow: 1;
     border-left: 1px solid $color-border;
 
+    &--pd--default {
+      @extend %--pd--vert;
+      @extend %--pd--hor;
+    }
+
+    &--pd--vert {
+      @extend %--pd--vert;
+    }
+
     &--overflow--hidden {
       overflow: hidden;
+    }
+
+    &-item {
+
+      &--mg-t--35 {
+        margin-top: 35px;
+      }
+
+      &--mg-t--60 {
+        margin-top: 60px;
+      }
+
+      &--pd--hor {
+        @extend %--pd--hor;
+      }
     }
   }
 }
