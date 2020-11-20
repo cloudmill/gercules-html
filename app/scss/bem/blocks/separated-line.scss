@@ -1,0 +1,23 @@
+.separated-line {
+    display: flex;
+    align-items: baseline;
+
+    &__item {
+        white-space: nowrap;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+            display: flex;
+            align-items: center;
+
+            &::after {
+                margin-left: 30px;
+                content: "";
+                display: block;
+                width: 1px;
+                height: 20px;
+                background-color: $color-gray-border;
+            }
+        }
+    }
+}
