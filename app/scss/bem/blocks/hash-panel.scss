@@ -55,12 +55,20 @@ $hash-height: 22px;
             transition: $ease-main;
         }
 
+        &:hover {
+
+            .hash-panel__button-text {
+                border-color: $color-red;
+            }
+        }
+
         &-text {
-            border-bottom: 1px dashed $color-red;
+            border-bottom: 1px dashed transparent;
             font-size: 15px;
             line-height: 150%;
             color: $color-gray;
             white-space: nowrap;
+            transition: $ease-main;
         }
     }
 }

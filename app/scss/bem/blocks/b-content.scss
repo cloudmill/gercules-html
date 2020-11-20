@@ -75,6 +75,10 @@
       @extend %--pd--vert;
     }
 
+    &--pd-t--60 {
+      padding-top: 60px;
+    }
+
     &--overflow--hidden {
       overflow: hidden;
     }
@@ -87,6 +91,10 @@
 
       &--mg-t--60 {
         margin-top: 60px;
+      }
+
+      &--mg-t--120 {
+        margin-top: 120px;
       }
 
       &--pd--hor {

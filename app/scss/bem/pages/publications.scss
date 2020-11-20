@@ -1,0 +1,121 @@
+.publications {
+
+    &-subscription {
+        padding: 80px 120px 80px 40px;
+        background-color: $color-light-gray-background;
+        overflow: hidden; // для разделителя
+
+        &__tilt {
+            transform-origin: 0 100%;
+            transform: skewX(-20deg);
+            display: flex;
+
+            &-part {
+                flex-grow: 1;
+
+                &:first-child {
+                    position: relative;
+                    padding-right: 40px;
+                    width: 45%;
+
+                    &::before {
+                        position: absolute;
+                        top: -1000%;
+                        bottom: -1000%;
+                        right: 0;
+                        width: 1px;
+                        content: "";
+                        display: block;
+                        background-color: $color-gray-border;
+                    }
+                }
+
+                &:last-child {
+                    padding-left: 40px;
+                    width: 55%;
+                }
+            }
+
+            &-item {
+                transform: skewX(20deg);
+
+                &--left {
+                    transform-origin: 0 100%;
+                }
+
+                &--right {
+                    transform-origin: 0 0;
+                }
+            }
+        }
+
+        &__title {
+            font-family: $font-title;
+            font-size: 28px;
+            line-height: 144%;
+        }
+
+        &__text {
+            margin-top: 30px;
+            font-size: 15px;
+            line-height: 150%;
+        }
+
+        &__checkbox {
+            margin-top: 30px;
+        }
+
+        &__bottom {
+            position: relative;
+            margin-top: 60px;
+            display: flex;
+        }
+
+        &__email {
+            position: relative;
+            flex-grow: 1;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                transform-origin: 0 100%;
+                transform: skewX(-20deg);
+                content: "";
+                display: block;
+                background: white;
+                border: 1px solid $color-gray-border;
+            }
+
+            &-input {
+                position: relative;
+                padding-right: 15px;
+                height: 70px;
+                border-right: none;
+
+                &::before {
+                    position: absolute;
+                    z-index: 1;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    transform-origin: 0 100%;
+                    transform: skewX(-20deg);
+                    content: "";
+                    display: block;
+                    background: lightblue;
+                    border: 1px solid $color-gray-border;
+                }
+            }
+        }
+
+        &__submit {
+            margin-left: 25px;
+            flex-grow: 1;
+            max-width: 260px;
+        }
+    }
+}
