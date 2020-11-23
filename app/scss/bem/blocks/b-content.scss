@@ -47,6 +47,10 @@
     padding-left: 5%;
   }
 
+  @media (max-width: 1200px) {
+    padding-left: 0;
+  }
+
   &__wrapper {
     display: flex;
     align-items: stretch;
@@ -60,11 +64,23 @@
     flex-shrink: 0;
     max-width: 288px;
     border-left: 1px solid $color-border;
+
+    @media (max-width: 1200px) {
+      border-left: none;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__main {
     flex-grow: 1;
     border-left: 1px solid $color-border;
+
+    @media (max-width: 768px) {
+      border-left: none;
+    }
 
     &--pd--default {
       @extend %--pd--vert;

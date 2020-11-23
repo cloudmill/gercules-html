@@ -5,18 +5,32 @@
         background-color: $color-light-gray-background;
         overflow: hidden; // для разделителя
 
+        @media (max-width: 1200px) {
+            padding-right: 40px;
+        }
+
         &__tilt {
             transform-origin: 0 100%;
             transform: skewX(-20deg);
             display: flex;
 
+            @media (max-width: 992px) {
+                transform: none;
+                display: block;
+            }
+
             &-part {
                 flex-grow: 1;
 
-                &:first-child {
+                &--first {
                     position: relative;
                     padding-right: 40px;
                     width: 45%;
+
+                    @media (max-width: 992px) {
+                        padding-right: 0;
+                        width: auto;
+                    }
 
                     &::before {
                         position: absolute;
@@ -27,23 +41,42 @@
                         content: "";
                         display: block;
                         background-color: $color-gray-border;
+
+                        @media (max-width: 992px) {
+                            display: none;
+                        }
                     }
                 }
 
-                &:last-child {
+                &--second {
                     padding-left: 40px;
                     width: 55%;
+
+                    @media (max-width: 1200px) {
+                        padding-right: 80px;
+                    }
+
+                    @media (max-width: 992px) {
+                        margin-top: 20px;
+                        padding-left: 0;
+                        padding-right: 0;
+                        width: auto;
+                    }
                 }
             }
 
             &-item {
                 transform: skewX(20deg);
 
-                &--left {
+                @media (max-width: 992px) {
+                    transform: none;
+                }
+
+                &--first {
                     transform-origin: 0 100%;
                 }
 
-                &--right {
+                &--second {
                     transform-origin: 0 0;
                 }
             }
