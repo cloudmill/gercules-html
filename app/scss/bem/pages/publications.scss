@@ -94,6 +94,10 @@
             line-height: 150%;
         }
 
+        &__radio-tabs {
+            margin-right: -40px;
+        }
+
         &__checkbox {
             margin-top: 30px;
         }
@@ -102,11 +106,20 @@
             position: relative;
             margin-top: 60px;
             display: flex;
+
+            @media (max-width: 992px) {
+                margin-top: 20px;
+                display: block;
+            }
         }
 
         &__email {
             position: relative;
             flex-grow: 1;
+
+            @media (max-width: 992px) {
+                margin: 0 -40px;
+            }
 
             &::before {
                 position: absolute;
@@ -120,6 +133,10 @@
                 display: block;
                 background: white;
                 border: 1px solid $color-gray-border;
+
+                @media (max-width: 992px) {
+                    display: none;
+                }
             }
 
             &-input {
@@ -128,19 +145,9 @@
                 height: 70px;
                 border-right: none;
 
-                &::before {
-                    position: absolute;
-                    z-index: 1;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    transform-origin: 0 100%;
-                    transform: skewX(-20deg);
-                    content: "";
-                    display: block;
-                    background: lightblue;
-                    border: 1px solid $color-gray-border;
+                @media (max-width: 992px) {
+                    height: 60px;
+                    border-left: none;
                 }
             }
         }
@@ -149,6 +156,11 @@
             margin-left: 25px;
             flex-grow: 1;
             max-width: 260px;
+
+            @media (max-width: 992px) {
+                margin-top: 40px;
+                margin-left: 0;
+            }
         }
     }
 

@@ -2,74 +2,80 @@ include fields
 include file
 
 mixin icon(iconName, type = 'png')
-  if(type == 'png')
-    i(class='icon '+'icon-'+iconName)
-  else
-    i(class='svg-icon '+'svg-'+iconName)
+    if(type == 'png')
+        i(class='icon '+'icon-'+iconName)
+    else
+        i(class='svg-icon '+'svg-'+iconName)
 
 mixin breadcrumbs(path = [])
-  .breadcrumbs
-    if path.length
-      a(href="#") Главная
-    else
-      i Главная
-    - const curPage = path.pop()
-    each page in path
-      .link
-        a(href="#")=page
-    if curPage
-      span=curPage
+    .breadcrumbs
+        if path.length
+            a(href="#") Главная
+        else
+            i Главная
+        - const curPage = path.pop()
+        each page in path
+            .link
+                a(href="#")=page
+        if curPage
+            span=curPage
 
 mixin link(href, text)
-  a.main-link(href = href) #{text}
+    a.main-link(href = href) #{text}
 
 mixin client_service_card
-  .client-service-card
-    span Клиентский сервис
-    a(href="tel: 8 913 001 75 01") +7 913 001-75-01
+    .client-service-card
+        span Клиентский сервис
+        a(href="tel: 8 913 001 75 01") +7 913 001-75-01
 
 mixin hashTags(tags,isLink = true)
-  .hashTags
-    each tag in tags
-      if(isLink)
-        a(href=tag[1])="#" + tag[0]
-      else
-        span="#" + tag[0]
+    .hashTags
+        each tag in tags
+            if(isLink)
+                a(href=tag[1])="#" + tag[0]
+            else
+                span="#" + tag[0]
 
 mixin linkRect
-  .main-link_rect
-    block
+    .main-link_rect
+        block
 
 mixin link_tile(href = "#")
-  a(href = href).main-link_tile
-    block
+    a(href = href).main-link_tile
+        block
 
 mixin sliderControls
-  .sliderControls
-    block
+    .sliderControls
+        block
 
 mixin sliderVerticalControls
-  .sliderControls-vertical
-    block
+    .sliderControls-vertical
+        block
 
 mixin decorate_square_trunc
-  .decorate-square_trunc
-    .decorate-square_trunc-bg
-    block
+    .decorate-square_trunc
+        .decorate-square_trunc-bg
+        block
 
 mixin nav_back(title = "Главная", href = "#")
-  a(href = href).nav-back #{title}
+    a(href = href).nav-back #{title}
 
 mixin nav_goto(title = "Главная", href = "#")
-  a(href = href).nav-goto #{title}
-    +icon("arrow", "svg")
+    a(href = href).nav-goto #{title}
+        +icon("arrow", "svg")
 
-mixin btn-p-gram(text)
-  .btn-p-gram
-    button(type="submit").btn-p-gram__btn
-    .btn-p-gram__view-wrap
-      .btn-p-gram__view
-    .btn-p-gram__content
-      span.btn-p-gram__text #{text}
-      .btn-p-gram__icon
-        +icon("link-white-arrow", "svg")
+mixin btn-p-gram(text, classes)
+
+    .btn-p-gram(class = classes ? classes : "")
+
+        button(type="submit").btn-p-gram__btn
+
+        .btn-p-gram__view-wrap
+        
+            .btn-p-gram__view
+
+        .btn-p-gram__content
+
+            span.btn-p-gram__text #{text}
+            .btn-p-gram__icon
+                +icon("link-white-arrow", "svg")
