@@ -33,6 +33,10 @@
             width: calc(100% + 1px);
             max-width: none;
         }
+
+        @media (max-width: 576px) {
+            padding: 40px 20px;
+        }
     }
 
     &__content {

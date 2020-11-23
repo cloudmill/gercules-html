@@ -4,6 +4,15 @@
   &--page {
     font-size: 48px;
     line-height: 144%;
+
+    @media (max-width: 576px) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-top: 1px solid $color-gray-border;
+      border-bottom: 1px solid $color-gray-border;
+      font-size: 20px;
+      line-height: 140%;
+    }
   }
 
   &--section {
