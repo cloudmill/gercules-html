@@ -8,6 +8,8 @@
   &__input {
     opacity: 0;
     position: absolute;
+    bottom: 0; // для позиционирования подсказки браузера у check mark'a
+    left: 0;
 
     &:checked+.checkbox-input__text::after {
       opacity: 1;

@@ -1,11 +1,15 @@
 .radio-tabs {
     display: flex;
+    overflow-x: auto;
+
+    &__line-wrap {
+        padding-right: 20px; // для отступа line от края экрана при прокрутке вправо до конца
+    }
 
     &__line {
         display: flex;
         align-items: flex-end;
         border-bottom: 1px solid $color-gray-border;
-        overflow-x: auto;
     }
 
     &__item {

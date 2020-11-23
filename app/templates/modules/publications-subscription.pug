@@ -16,19 +16,21 @@ form(action="").publications-subscription
 
                 .radio-tabs.publications-subscription__radio-tabs
 
-                    .radio-tabs__line
+                    .radio-tabs__line-wrap
+                    
+                        .radio-tabs__line
 
-                        label.radio-tabs__item
-                            input.radio-tabs__input(type="radio", name="subscription", value="all", checked)
-                            .radio-tabs__tab Все
+                            label.radio-tabs__item
+                                input.radio-tabs__input(type="radio", name="subscription", value="all", checked)
+                                .radio-tabs__tab Все
 
-                        label.radio-tabs__item
-                            input.radio-tabs__input(type="radio", name="subscription", value="only-news")
-                            .radio-tabs__tab Только новости
-                        
-                        label.radio-tabs__item
-                            input.radio-tabs__input(type="radio", name="subscription", value="only-publications")
-                            .radio-tabs__tab Только публикации
+                            label.radio-tabs__item
+                                input.radio-tabs__input(type="radio", name="subscription", value="only-news")
+                                .radio-tabs__tab Только новости
+                            
+                            label.radio-tabs__item
+                                input.radio-tabs__input(type="radio", name="subscription", value="only-publications")
+                                .radio-tabs__tab Только публикации
 
                 .publications-subscription__checkbox
                     
