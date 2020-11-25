@@ -1,0 +1,78 @@
+-
+    let tags = {
+        pool: [
+            { text: "#все", selected: true },
+            "#семинар",
+            "#конференция",
+            "#новинки",
+            "#академиягеркулес",
+            "#социальная ответсвенность",
+            { text: "#скидки", selected: true },
+            "#новые",
+            "#события",
+            "#мероприятия",
+            "#семинар",
+            "#конференция",
+            "#новинки",
+            "#академиягеркулес",
+            "#социальная ответсвенность",
+        ],
+        selection: [
+            "#семинар",
+            "#жизнькомпании",
+            "#о компании",
+        ];
+    };
+
+mixin select-tags(classes)
+
+    .select-tags(class = classes ? classes : "")
+
+        .select-tags__row
+
+            //- состояние select'a
+            .select-tags__state
+
+                //- описание пула тэгов
+                .select-tags__description
+                
+                    .select-tags__description-desktop Популярные темы:
+
+                    .select-tags__description-mobile Все
+
+                //- контейнер выборки тэгов
+                .select-tags__selection
+
+                    each tag in tags.selection
+
+                        .select-tags__tag.select-tags__tag--selected
+
+                            .select-tags__tag-text #{tag}
+
+        [UPDATE] add privacy page
+
+            //- ограничение высоты (для анимации сворачивания / разворачивания)
+            .select-tags__wrap
+
+                //- расчет высоты
+                .select-tags__wrap-container
+
+                    //- отступы + контейнер тэгов
+                    .select-tags__container
+
+                        //- пул тэгов
+                        each tag in tags.pool
+                         
+                            a(class = tag.selected ? "select-tags__tag--selected" : "", href="").select-tags__tag
+                        
+                                .select-tags__tag-text #{tag.text ? tag.text : tag}
+
+                        //- тэг-сброс в конце
+                        a(href="").select-tags__tag.select-tags__tag--reset
+
+                            .select-tags__tag-text Очистить все
+
+
+
+            .select-tags__right
+
