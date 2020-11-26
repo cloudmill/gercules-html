@@ -1,7 +1,7 @@
 .list {
   margin-top: 20px;
 
-  &-item {
+  &__item {
         position: relative;
         padding-left: 32px;
         line-height: 19px;
@@ -22,6 +22,27 @@
           background-size: contain;
           left: 0;
           top: 9px;
+        }
+        
+        &--link {
+          position: relative;
+          color: #6C6C6C;
+          padding-left: 26px;
+          
+          &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 18px;
+            height: 18px;
+            pointer-events: none;
+            background-image: url(../images/download-item-mark.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            left: 0;
+            top: -2px;
+          }
         }
   }
 }

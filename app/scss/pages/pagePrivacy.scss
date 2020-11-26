@@ -1,53 +1,70 @@
-.b-content__wraper {
-  margin-top: 35px;
-  padding-bottom: 120px;
-  color: #262626;
+.b-content__main {
 
-  .b-content__main {
-    padding-left: 228px;
-    font-size: 15px;
-    border-left: none;
-
-    &-text {
-      margin-top: 30px;
-      max-width: 860px;
-      line-height: 22px;
-    }
-
-    &-title {
-      margin-top: 60px;
-      margin-bottom: 40px;
-      max-width: 700px;
-    }
-
-    &__download {
-      margin-bottom: 40px;
-      line-height: 38px;
-    }
-
-    &-link {
-      position: relative;
-      color: #6C6C6C;
-      padding-left: 26px;
-
-      &::before {
-        position: absolute;
-        content: "";
-        display: block;
-        width: 18px;
-        height: 18px;
-        pointer-events: none;
-        background-image: url(../images/download-item-mark.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        left: 0;
-        top: -2px;
-      }
-    }
-
-    .browser-link {
-      text-decoration: underline;
-    }
+  .breadcrumbs {
+    margin: 60px 0 35px 60px;
   }
+
+
+
+  
 }
+
+
+
+
+
+
+
+// .b-content__wraper {
+//   margin-top: 35px;
+//   padding-bottom: 120px;
+//   color: #262626;
+
+//   .b-content__main {
+//     padding-left: 228px;
+//     font-size: 15px;
+//     border-left: none;
+
+//     &-text {
+//       margin-top: 30px;
+//       max-width: 860px;
+//       line-height: 22px;
+//     }
+
+//     &-title {
+//       margin-top: 60px;
+//       margin-bottom: 40px;
+//       max-width: 700px;
+//     }
+
+//     &__download {
+//       margin-bottom: 40px;
+//       line-height: 38px;
+//     }
+
+//     &-link {
+//       position: relative;
+//       color: #6C6C6C;
+//       padding-left: 26px;
+
+//       &::before {
+//         position: absolute;
+//         content: "";
+//         display: block;
+//         width: 18px;
+//         height: 18px;
+//         pointer-events: none;
+//         background-image: url(../images/download-item-mark.svg);
+//         background-repeat: no-repeat;
+//         background-position: center;
+//         background-size: contain;
+//         left: 0;
+//         top: -2px;
+//       }
+//     }
+
+//     .browser-link {
+//       text-decoration: underline;
+//     }
+//   }
+// }

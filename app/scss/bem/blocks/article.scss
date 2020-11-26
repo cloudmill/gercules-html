@@ -1,0 +1,44 @@
+.article {
+
+  &--mg-b--120 {
+    margin-bottom: 120px;
+  }
+
+  &-item {
+
+    &--mg-t--60 {
+      margin-top: 60px;
+    }
+    
+  }
+
+  &-wraper {
+    width: 900px;
+
+    &--privacy {
+      width: 850px;
+      margin-left: 288px;
+    }
+
+  }
+
+
+  &-text {
+    margin-top: 30px;
+    font-size: 15px;
+    line-height: 150%;
+
+    &--mg-t--20 {
+        margin-top: 20px;
+    }
+
+    &--mg-t--60 {
+        margin-top: 60px;
+    }
+
+    &--mg-b--40 {
+      margin-bottom: 40px;
+    }
+  }
+
+}
