@@ -87,7 +87,7 @@ let _ = {
 ///Работа со стилями
 gulp.task("scss", function () {
   return gulp
-    .src(_.style.dir + _.style.select.conv)
+    .src([_.style.dir + _.style.select.conv, _.style.dir + "*.sass"])
     .pipe(sass())
     .pipe(
       postcss([
@@ -204,7 +204,7 @@ gulp.task("pug", function () {
 
 gulp.task("watch", function () {
   //Стили и скрипты
-  gulp.watch(_.style.dir + _.style.select.all, gulp.parallel("scss"));
+  gulp.watch([_.style.dir + _.style.select.all, _.style.dir + "**/*.sass"], gulp.parallel("scss"));
   gulp.watch(_.js.dir + _.js.select, gulp.parallel("js"));
 
   //Сборка страниц из шаблонов

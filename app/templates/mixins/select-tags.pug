@@ -21,8 +21,10 @@
             "#семинар",
             "#жизнькомпании",
             "#о компании",
-        ];
+        ],
     };
+
+
 
 mixin select-tags(classes)
 
@@ -30,8 +32,9 @@ mixin select-tags(classes)
 
         .select-tags__row
 
-            //- состояние select'a
-            .select-tags__state
+
+
+            .select-tags__left
 
                 //- описание пула тэгов
                 .select-tags__description
@@ -49,7 +52,7 @@ mixin select-tags(classes)
 
                             .select-tags__tag-text #{tag}
 
-        [UPDATE] add privacy page
+
 
             //- ограничение высоты (для анимации сворачивания / разворачивания)
             .select-tags__wrap

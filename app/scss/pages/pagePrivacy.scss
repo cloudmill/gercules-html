@@ -1,48 +1,95 @@
-.b-content__wraper {
+.pagePrivacy {
   margin-top: 35px;
   padding-bottom: 120px;
   color: #262626;
 
-  .b-content__main {
+  .page-title {
+    color: #262626;
+    line-height: 69px;
+    font-family: $font-second;
+  }
+
+  &-content {
+    padding-top: 60px;
     padding-left: 228px;
     font-size: 15px;
-    border-left: none;
 
-    &-text {
+    h2 {
+      margin-top: 60px;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 32px;
+      font-family: $font-second;
+    }
+
+    p {
       margin-top: 30px;
       max-width: 860px;
       line-height: 22px;
     }
 
-    &-title {
-      margin-top: 60px;
+    .policy-title {
+      margin-top: 0;
       margin-bottom: 40px;
       max-width: 700px;
     }
 
-    &__download {
+    .policy-download {
       margin-bottom: 40px;
       line-height: 38px;
+
+      a {
+        position: relative;
+        color: #6C6C6C;
+        padding-left: 26px;
+
+        &::before {
+          position: absolute;
+          content: "";
+          display: block;
+          width: 18px;
+          height: 18px;
+          pointer-events: none;
+          background-image: url(../images/download-item-mark.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          left: 0;
+          top: -2px;
+        }
+      }
+
+      p {
+        margin-top: 0;
+        line-height: inherit;
+      }
     }
 
-    &-link {
-      position: relative;
-      color: #6C6C6C;
-      padding-left: 26px;
+    ul {
+      margin-top: 20px;
 
-      &::before {
-        position: absolute;
-        content: "";
-        display: block;
-        width: 18px;
-        height: 18px;
-        pointer-events: none;
-        background-image: url(../images/download-item-mark.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        left: 0;
-        top: -2px;
+      li {
+        position: relative;
+        padding-left: 32px;
+        line-height: 19px;
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+
+        &::before {
+          position: absolute;
+          content: "";
+          display: block;
+          width: 20px;
+          height: 2px;
+          background-image: url(../images/list-item-mark.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          left: 0;
+          top: 9px;
+        }
       }
     }
 

@@ -46,30 +46,34 @@ block content
 
                 .b-content__main-item.b-content__main-item--mg-t--60
 
-                    .hash-panel.hash-panel--mobile
+                    +select-tags
 
-                        .hash-panel__title Популярные темы:
+                    //- deprecated hash-panel
 
-                        .hash-panel__wrapper
+                        .hash-panel.hash-panel--mobile
 
-                            ul.hash-list.hash-list--spaces--5.hash-panel__container
-                                each val in [1, 2]
-                                    li.hash.hash-list__item
-                                        a(href="").hash-list__link #жизнькомпании
-                                    li.hash.hash-list__item
-                                        a(href="").hash-list__link #новости
-                                    li.hash.hash-list__item
-                                        a(href="").hash-list__link #семинар
-                                    li.hash.hash-list__item
-                                        a(href="").hash-list__link #конференция
-                                    li.hash.hash-list__item
-                                        a(href="").hash-list__link #новинки
-                                    li.hash.hash-list__item
-                                        a(href="").hash-list__link #академиягеркулес
+                            .hash-panel__title Популярные темы:
 
-                        .hash-panel__button
+                            .hash-panel__wrapper
 
-                            .hash-panel__button-text Еще 6 тегов
+                                ul.hash-list.hash-list--spaces--5.hash-panel__container
+                                    each val in [1, 2]
+                                        li.hash.hash-list__item
+                                            a(href="").hash-list__link #жизнькомпании
+                                        li.hash.hash-list__item
+                                            a(href="").hash-list__link #новости
+                                        li.hash.hash-list__item
+                                            a(href="").hash-list__link #семинар
+                                        li.hash.hash-list__item
+                                            a(href="").hash-list__link #конференция
+                                        li.hash.hash-list__item
+                                            a(href="").hash-list__link #новинки
+                                        li.hash.hash-list__item
+                                            a(href="").hash-list__link #академиягеркулес
+
+                            .hash-panel__button
+
+                                .hash-panel__button-text Еще 6 тегов
                     
                 .b-content__main-item
 
