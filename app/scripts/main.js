@@ -1,8 +1,6 @@
 import $ from "jquery";
 window.$ = $;
 
-
-
 //Tools
 import Listener from "./tools/listener";
 import Log from "./tools/log";

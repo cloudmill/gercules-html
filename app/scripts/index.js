@@ -1,17 +1,16 @@
 import $ from "jquery";
+import "select2";
+
 import App from "./main.js";
 
-// NEW
-import "select2";
-// END NEW
+// modules
+import "./components/SelectTags.js";
 
 $(document).ready(function () {
   let app = new App();
   window.app = app;
 
-  // NEW
   selectInputs();
-  // END NEW
 
   sideNav();
 
@@ -44,7 +43,6 @@ function hashPanel() {
   });
 }
 
-// NEW
 function selectInputs() {
   const selectInputs = $(".select-input__select");
 
@@ -76,7 +74,6 @@ function selectInputs() {
     selectInput.select2(selectInputOptions);
   });
 }
-// END NEW
 
 function sideNav() {
   let
@@ -110,3 +107,4 @@ function sideNav() {
     });
   });
 }
+

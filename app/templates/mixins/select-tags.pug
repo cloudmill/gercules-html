@@ -1,34 +1,39 @@
--
-    let tags = {
-        pool: [
-            { text: "#все", selected: true },
-            "#семинар",
-            "#конференция",
-            "#новинки",
-            "#академиягеркулес",
-            "#социальная ответсвенность",
-            { text: "#скидки", selected: true },
-            "#новые",
-            "#события",
-            "#мероприятия",
-            "#семинар",
-            "#конференция",
-            "#новинки",
-            "#академиягеркулес",
-            "#социальная ответсвенность",
-        ],
-        selection: [
-            "#семинар",
-            "#жизнькомпании",
-            "#о компании",
-        ],
-    };
+//- пример tags
+
+    -
+        let tags = {
+
+            pool: [
+                { text: "#все", selected: true },
+                "#семинар",
+                "#конференция",
+                "#новинки",
+                "#академиягеркулес",
+                "#социальная ответсвенность",
+                { text: "#скидки", selected: true },
+                "#новые",
+                "#события",
+                "#мероприятия",
+                "#семинар",
+                "#конференция",
+                "#новинки",
+                "#академиягеркулес",
+                "#социальная ответсвенность",
+            ],
+
+            selection: [
+                "#семинар",
+                "#жизнькомпании",
+                "#о компании",
+            ],
+
+        };
 
 
 
-mixin select-tags(classes)
+mixin select-tags(tags, classes)
 
-    .select-tags(class = classes ? classes : "")
+    .select-tags.js--select-tags(class = classes ? classes : "")
 
         .select-tags__row
 
@@ -36,15 +41,15 @@ mixin select-tags(classes)
 
             .select-tags__left
 
-                //- описание пула тэгов
+
                 .select-tags__title
                 
-                    .select-tags__title.select-tags__title--desktop Популярные темы:
+                    .select-tags__title.js--select-tags--title-desktop Популярные темы:
 
-                    .select-tags__title-mobile.select-tags__title--mobile Все
+                    .select-tags__title.js--select-tags--title-mobile Все
 
-                //- контейнер выборки тэгов
-                .select-tags__selection
+
+                .select-tags__selection.js--select-tags--selection
 
                     each tag in tags.selection
 
@@ -54,28 +59,33 @@ mixin select-tags(classes)
 
 
 
-            //- ограничение высоты (для анимации сворачивания / разворачивания)
+            //- ограничение высоты для анимации
             .select-tags__wrap
 
-                //- расчет высоты
+                //- контейнер для расчета высоты содержимого
                 .select-tags__wrap-container
 
-                    //- отступы + контейнер тэгов
-                    .select-tags__container
+                    //- содержимое с необходимыми отступами
+                    .select-tags__container.js--select-tags--pool
 
-                        //- пул тэгов
+
                         each tag in tags.pool
                          
-                            a(class = tag.selected ? "select-tags__tag--selected" : "", href="").select-tags__tag
+                            a.select-tags__tag(class = tag.selected ? "select-tags__tag--selected" : "", href="")
                         
                                 .select-tags__tag-text #{tag.text ? tag.text : tag}
 
-                        //- тэг-сброс в конце
-                        a(href="").select-tags__tag.select-tags__tag--reset
+
+
+                        a.select-tags__tag.select-tags__tag--reset.js--select-tags--button-reset(href="")
 
                             .select-tags__tag-text Очистить все
 
 
 
             .select-tags__right
+
+                .select-tags__button.js--select-tags--button-slide
+
+                    .select-tags__button-text Еще 6 тегов
 
