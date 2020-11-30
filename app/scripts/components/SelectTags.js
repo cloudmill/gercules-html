@@ -1,32 +1,59 @@
 $(() => {
 
-    $(".js--select-tags").each(function () {
+    $(".select-tags").each(function () {
 
         const
-            
+
             component = $(this),
 
-            // titles
-            title = {
-                desktop: component.find(".js--select-tags--title-desktop"),
-                mobile: component.find(".js--select-tags--title-mobile"),
-            },
+            title = component.find(".select-tags__title"),
 
-            // controls
             button = {
                 reset: component.find(".js--select-tags--button-reset"),
-                slide: component.find(".js--select-tags--button-slide"),
+                slide: component.find(".select-tags__wrap"),
             },
 
-            // containers
             container = {
-                pool: component.find(".js--select-tags--pool"),
+                pool: component.find(".select-tags__wrap"),
                 selection: component.find(".js--select-tags--selection"),
             };
 
+
+
+        function updateSlideButtonSize() {
+
+            const
+                paddingLeft = parseFloat(button.slide.css("padding-left"));
+            
+            let
+                size,
+                maxSize;
+
+            button.slide.find(".select-tags__button-text").each(function () {
+
+                size = $(this).width();
+                maxSize = maxSize ? (size > maxSize ? size : maxSize) : size;
+
+            });
+
+            button.slide.css("min-width", maxSize + paddingLeft + "px");
+
+        }
+
+        updateSlideButtonSize();
         
 
-        console.log(component[0], title.desktop[0], title.mobile[0], button.reset[0], button.slide[0], container.pool[0], container.selection[0]);
+
+        button.slide.on("click", () => {
+
+            button.slide.toggleClass("select-tags__button--active");
+            button.slide.find(".select-tags__button-text").toggleClass("select-tags__button-text--active");
+
+            
+
+            const wrapContainer = container.pool.find(".select-tags__wrap-container");
+
+        });
 
     });
 

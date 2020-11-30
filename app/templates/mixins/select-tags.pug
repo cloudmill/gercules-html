@@ -33,10 +33,9 @@
 
 mixin select-tags(tags, classes)
 
-    .select-tags.js--select-tags(class = classes ? classes : "")
+    .select-tags(class = classes ? classes : "")
 
         .select-tags__row
-
 
 
             .select-tags__left
@@ -44,12 +43,13 @@ mixin select-tags(tags, classes)
 
                 .select-tags__title
                 
-                    .select-tags__title.js--select-tags--title-desktop Популярные темы:
+                    .select-tags__title-text.select-tags__title-text--desktop Популярные темы:
 
-                    .select-tags__title.js--select-tags--title-mobile Все
+                    .select-tags__title-text.select-tags__title-text--mobile Все
 
 
-                .select-tags__selection.js--select-tags--selection
+
+                .select-tags__selection
 
                     each tag in tags.selection
 
@@ -59,14 +59,14 @@ mixin select-tags(tags, classes)
 
 
 
-            //- ограничение высоты для анимации
+            //- overflow: hidden + ограничение высоты для анимации
             .select-tags__wrap
 
-                //- контейнер для расчета высоты содержимого
+                //- контейнер, по которому производится расчет высоты содержимого
                 .select-tags__wrap-container
 
-                    //- содержимое с необходимыми отступами
-                    .select-tags__container.js--select-tags--pool
+                    //- содержимое с необходимыми внутренними отступами (padding)
+                    .select-tags__container
 
 
                         each tag in tags.pool
@@ -77,7 +77,7 @@ mixin select-tags(tags, classes)
 
 
 
-                        a.select-tags__tag.select-tags__tag--reset.js--select-tags--button-reset(href="")
+                        a.select-tags__tag.select-tags__tag--reset(href="")
 
                             .select-tags__tag-text Очистить все
 
@@ -85,7 +85,9 @@ mixin select-tags(tags, classes)
 
             .select-tags__right
 
-                .select-tags__button.js--select-tags--button-slide
+                button.select-tags__button
 
-                    .select-tags__button-text Еще 6 тегов
+                    span.select-tags__button-text.select-tags__button-text--active Еще 6 тегов
+
+                    span.select-tags__button-text Свернуть
 
