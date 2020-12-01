@@ -12,7 +12,10 @@ $(() => {
             },
 
             container = {
-                pool: component.find(".select-tags__wrap"),
+                pool: {
+                    wrap: component.find(".select-tags__wrap"),
+                    content: component.find(".select-tags__wrap-container"),
+                },
                 selection: component.find(".select-tags__selection"),
             };
 
@@ -25,7 +28,7 @@ $(() => {
                 paddingLeft = parseFloat(style.paddingLeft),
                 paddingRight = parseFloat(style.paddingRight),
                 paddingHorizontal = paddingLeft + paddingRight;
-                
+
             let
                 size,
                 maxSize;
@@ -45,12 +48,37 @@ $(() => {
         
 
 
+        let contentHeight;
+
         button.slide.on("click", () => {
 
             button.slide.toggleClass("select-tags__button--active");
             button.slide.find(".select-tags__button-text").toggleClass("select-tags__button-text--active");
 
+            
+
+            if (button.slide.hasClass("select-tags__button--active")) {
+
+                dropdownResize();
+
+                $(window).on("resize", dropdownResize);
+
+            } else {
+                
+                container.pool.wrap.css("height", "");
+
+                $(window).off("resize", dropdownResize);
+
+            }
+
         });
+
+        function dropdownResize() {
+    
+            contentHeight = container.pool.content.height();
+            container.pool.wrap.css("height", contentHeight + "px");
+        
+        }
 
     });
 
