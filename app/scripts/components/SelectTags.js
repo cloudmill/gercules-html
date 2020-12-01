@@ -6,16 +6,14 @@ $(() => {
 
             component = $(this),
 
-            title = component.find(".select-tags__title"),
-
             button = {
-                reset: component.find(".js--select-tags--button-reset"),
-                slide: component.find(".select-tags__wrap"),
+                reset: component.find(".select-tags__tag--reset"),
+                slide: component.find(".select-tags__button"),
             },
 
             container = {
                 pool: component.find(".select-tags__wrap"),
-                selection: component.find(".js--select-tags--selection"),
+                selection: component.find(".select-tags__selection"),
             };
 
 
@@ -23,8 +21,11 @@ $(() => {
         function updateSlideButtonSize() {
 
             const
-                paddingLeft = parseFloat(button.slide.css("padding-left"));
-            
+                style = getComputedStyle(button.slide[0]),
+                paddingLeft = parseFloat(style.paddingLeft),
+                paddingRight = parseFloat(style.paddingRight),
+                paddingHorizontal = paddingLeft + paddingRight;
+                
             let
                 size,
                 maxSize;
@@ -36,11 +37,11 @@ $(() => {
 
             });
 
-            button.slide.css("min-width", maxSize + paddingLeft + "px");
+            button.slide.css("min-width", maxSize + paddingHorizontal + "px");
 
         }
 
-        updateSlideButtonSize();
+        document.fonts.ready.then(() => updateSlideButtonSize());
         
 
 
@@ -48,10 +49,6 @@ $(() => {
 
             button.slide.toggleClass("select-tags__button--active");
             button.slide.find(".select-tags__button-text").toggleClass("select-tags__button-text--active");
-
-            
-
-            const wrapContainer = container.pool.find(".select-tags__wrap-container");
 
         });
 

@@ -10,6 +10,7 @@
     }
 
 
+
     &__row {
         display: flex;
         justify-content: space-between;
@@ -20,6 +21,7 @@
         }
     }
     
+
 
     &__title-text {
         font-size: 14px;
@@ -49,23 +51,36 @@
     }
 
 
+
     &__wrap {
         margin-left: 20px;
         margin-right: auto;
         flex-grow: 1;
         max-width: 680px;
-        max-height: 22px;
+        height: 22px;
+        display: flex;
         transition: $ease-main;
         overflow: hidden;
 
         @media (max-width: 768px) {
+            position: relative;
             margin-left: 0;
-            margin-right: none;
+            margin-right: 0;
             flex-grow: 0;
             width: 100%;
             max-width: none;
-            max-height: 0;
+            height: 0;
             order: 1;
+        }
+    }
+
+    &__wrap-container {
+
+        @media (max-width: 768px) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
         }
     }
 
@@ -91,6 +106,7 @@
     &__tag-text {
         font-size: 15px;
         line-height: 22px;
+        color: $color-red;
         white-space: nowrap;
 
         @media (max-width: 768px) {
@@ -98,6 +114,7 @@
             line-height: 21px;
         }
     }
+
 
 
     &__right {
@@ -109,6 +126,7 @@
         position: relative;
         padding-left: 18px;
         text-align: left;
+        user-select: none;
         cursor: pointer;
         transition: $ease-main;
 
@@ -131,7 +149,7 @@
 
             .select-tags__button-text {
 
-                &::after {
+                &::before {
                     opacity: 1;
                 }
             }
@@ -155,7 +173,7 @@
         white-space: nowrap;
         transition: inherit;
 
-        &::after {
+        &::before {
             opacity: 0;
             position: absolute;
             z-index: -1;
