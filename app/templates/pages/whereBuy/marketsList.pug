@@ -4,6 +4,19 @@ mixin markets-item(name,id, open = "", link = "technonikol.ru")
       .market-name=name
       .market-link=link
     .market-dropdown
+      .market-dropdown__item
+        a(href="").market-dropdown__location ул. Павла Леонтьевича Морозова, 86
+        p.market-dropdown__description розничные продажи
+        .market-dropdown__info
+          a(href="tel: 8 888 888 88 88").market-dropdown__phone 8 (4212) 41-07-10
+          p.market-dropdown__time 10:00 - 22:00
+      .market-dropdown__item
+        a(href="").market-dropdown__location ул. Павла Леонтьевича Морозова, 86
+        p.market-dropdown__description розничные продажи
+        .market-dropdown__info
+          a(href="tel: 8 888 888 88 88").market-dropdown__phone 8 (4212) 41-07-10
+          p.market-dropdown__time 10:00 - 22:00
+
 
 .buy-markets-list
   //- .markets-scroll

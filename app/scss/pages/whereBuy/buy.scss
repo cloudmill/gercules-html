@@ -265,8 +265,56 @@
           // дроп
           &-dropdown {
             display: none;
-            height: 100px;
-            border-top: 1px solid $color-border;
+            padding: 0 30px 35px 60px;
+            background-color: #f4f4f4;
+
+
+            &__item {
+
+              &:not(:first-child) {
+                margin-top: 25px;
+              }
+            }
+
+            &__location {
+              color: $color-red;
+              text-decoration-line: underline;
+              text-decoration-style: dashed;
+            }
+
+            &__description {
+              margin-top: 5px;
+              font-size: 12px;
+            }
+
+            &__info {
+              margin-top: 10px;
+              display: flex;
+              align-items: center;
+            }
+
+            &__time {
+              position: relative;
+              margin-left: 60px;
+              white-space: nowrap;
+
+              &::before {
+                position: absolute;
+                top: 50%;
+                left: -30px;
+                transform: translateY(-50%);
+                content: "";
+                display: block;
+                width: 1px;
+                height: 20px;
+                background-color: $color-border;
+              }
+            }
+
+            &__phone {
+              font-weight: bold;
+              white-space: nowrap;
+            }
           }
         }
 
@@ -280,10 +328,12 @@
         &.open {
           .market-dropdown {
             display: block;
+
           }
 
           .market-front {
             background-color: #F4F4F4;
+            border-bottom: none;
 
             &::before {
               transform: rotate(180deg);

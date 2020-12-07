@@ -27,6 +27,16 @@ export default class Map {
     this.clustererInit();
     this.placemarkInit();
     this.setOptions();
+    $(".market-front").on("click", function () {
+      const marketsItem = $(this).closest(".markets-item");
+
+      if (marketsItem.hasClass("open")) {
+        marketsItem.removeClass("open");
+      } else {
+        $(".markets-item").removeClass("open");
+        marketsItem.addClass("open");
+      }
+    });
   }
   clustererInit() {
     var clusterIcons = [

@@ -6,17 +6,16 @@ $(() => {
 
             component = $(this),
 
+            title = component.find(".select-tags__title"),
+
             button = {
-                reset: component.find(".select-tags__tag--reset"),
-                slide: component.find(".select-tags__button"),
+                reset: component.find(".js--select-tags--button-reset"),
+                slide: component.find(".select-tags__wrap"),
             },
 
             container = {
-                pool: {
-                    wrap: component.find(".select-tags__wrap"),
-                    content: component.find(".select-tags__wrap-container"),
-                },
-                selection: component.find(".select-tags__selection"),
+                pool: component.find(".select-tags__wrap"),
+                selection: component.find(".js--select-tags--selection"),
             };
 
 
@@ -24,11 +23,8 @@ $(() => {
         function updateSlideButtonSize() {
 
             const
-                style = getComputedStyle(button.slide[0]),
-                paddingLeft = parseFloat(style.paddingLeft),
-                paddingRight = parseFloat(style.paddingRight),
-                paddingHorizontal = paddingLeft + paddingRight;
-
+                paddingLeft = parseFloat(button.slide.css("padding-left"));
+            
             let
                 size,
                 maxSize;
@@ -40,15 +36,13 @@ $(() => {
 
             });
 
-            button.slide.css("min-width", maxSize + paddingHorizontal + "px");
+            button.slide.css("min-width", maxSize + paddingLeft + "px");
 
         }
 
-        document.fonts.ready.then(() => updateSlideButtonSize());
+        updateSlideButtonSize();
         
 
-
-        let contentHeight;
 
         button.slide.on("click", () => {
 
@@ -57,28 +51,9 @@ $(() => {
 
             
 
-            if (button.slide.hasClass("select-tags__button--active")) {
-
-                dropdownResize();
-
-                $(window).on("resize", dropdownResize);
-
-            } else {
-                
-                container.pool.wrap.css("height", "");
-
-                $(window).off("resize", dropdownResize);
-
-            }
+            const wrapContainer = container.pool.find(".select-tags__wrap-container");
 
         });
-
-        function dropdownResize() {
-    
-            contentHeight = container.pool.content.height();
-            container.pool.wrap.css("height", contentHeight + "px");
-        
-        }
 
     });
 
