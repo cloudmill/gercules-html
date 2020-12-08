@@ -69,7 +69,7 @@ block content
                                             each item in [1, 2, 3, 4]
                                                 .swiper-slide.b-object-slider__photo-slide
                                                     .b-object-slider__photo-image
-                                                        img.b-object-slider__photo-img(src="../images/b-object/photo-1.jpg", alt="")
+                                                        img.b-object-slider__photo-img(src="images/b-object/photo-1.jpg", alt="")
 
                                 .b-object-slider__row
 
@@ -80,7 +80,7 @@ block content
                                                 each item in [2, 2, 3, 4]
                                                     .swiper-slide.b-object-slider__thumb-slide
                                                         .b-object-slider__thumb-image
-                                                            img.b-object-slider__thumb-img(src=`../images/b-object/thumb-${item}.jpg`, alt="")
+                                                            img.b-object-slider__thumb-img(src=`images/b-object/thumb-${item}.jpg`, alt="")
 
                                     .b-object-slider__btn
 
@@ -168,9 +168,7 @@ block content
 
                         .tabs__content
 
-                            each item in [1, 2, 3]
-
-                                .tabs__content-item.tabs__content-item--active(data-tab=item)
+                                .tabs__content-item.tabs__content-item--active(data-tab="1")
                                     
                                     .b-object__tab-row
 
@@ -194,7 +192,7 @@ block content
 
                                                                     .product-card__image
                                                                         
-                                                                        img.product-card__img(src=`../images/b-object/product-${item}.jpg`)
+                                                                        img.product-card__img(src=`images/b-object/product-${item}.jpg`)
 
                                                                     .product-card__title GE-29 Грунтовка укрепляющая глубокого проникновения, 5, 10 кг
 
@@ -204,14 +202,94 @@ block content
                                                                         +icon("map-pin", "svg")
                                                                     .product-card__btn
                                                                         +icon("rating-red", "svg")
-
-                                                                    
-
-
+                                                        
                                         .b-object__tab-btns
 
                                             button.b-object__tab-btn.b-object__tab-btn--right
                                             button.b-object__tab-btn.b-object__tab-btn--left
+
+                                .tabs__content-item(data-tab="2")
+                                    
+                                    .b-object__tab-row
+
+                                        .b-object__tab-slider
+
+                                            .swiper-container
+                                                .swiper-wrapper
+
+                                                    each item in [1, 2, 3, 2]
+                                                        .swiper-slide
+                                                            
+                                                            .product-card
+
+                                                                .product-card__content
+
+                                                                    .product-card__tags
+                                                                    
+                                                                        .product-card__tag Хит продаж
+                                                                        .product-card__tag.product-card__tag--active Акция
+                                                                        .product-card__tag новинка
+
+                                                                    .product-card__image
+                                                                        
+                                                                        img.product-card__img(src=`images/b-object/product-${item}.jpg`)
+
+                                                                    .product-card__title GE-29 Грунтовка укрепляющая глубокого проникновения, 5, 10 кг
+
+                                                                .product-card__btns
+
+                                                                    .product-card__btn
+                                                                        +icon("map-pin", "svg")
+                                                                    .product-card__btn
+                                                                        +icon("rating-red", "svg")
+                                                        
+                                        .b-object__tab-btns
+
+                                            button.b-object__tab-btn.b-object__tab-btn--right
+                                            button.b-object__tab-btn.b-object__tab-btn--left
+
+                                .tabs__content-item(data-tab="3")
+                                    
+                                    .b-object__tab-row
+
+                                        .b-object__tab-slider
+
+                                            .swiper-container
+                                                .swiper-wrapper
+
+                                                    each item in [1, 2, 3, 2]
+                                                        .swiper-slide
+                                                            
+                                                            .product-card
+
+                                                                .product-card__content
+
+                                                                    .product-card__tags
+                                                                    
+                                                                        .product-card__tag Хит продаж
+                                                                        .product-card__tag.product-card__tag--active Акция
+                                                                        .product-card__tag новинка
+
+                                                                    .product-card__image
+                                                                        
+                                                                        img.product-card__img(src=`images/b-object/product-${item}.jpg`)
+
+                                                                    .product-card__title GE-29 Грунтовка укрепляющая глубокого проникновения, 5, 10 кг
+
+                                                                .product-card__btns
+
+                                                                    .product-card__btn
+                                                                        +icon("map-pin", "svg")
+                                                                    .product-card__btn
+                                                                        +icon("rating-red", "svg")
+                                                        
+                                        .b-object__tab-btns
+
+                                            button.b-object__tab-btn.b-object__tab-btn--right
+                                            button.b-object__tab-btn.b-object__tab-btn--left
+
+                                
+
 
 
 
