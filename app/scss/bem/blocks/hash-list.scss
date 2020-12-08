@@ -44,6 +44,17 @@
         }
     }
 
+    &--mg-r--20 {
+
+        .hash-list__item {
+            margin-right: 20px;
+        }
+
+        .hash-list__link {
+            display: block;
+        }
+    }
+
     &__link {
         // наследует св-ва от __item с классом .hash
     }

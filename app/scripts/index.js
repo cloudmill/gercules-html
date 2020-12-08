@@ -18,7 +18,9 @@ $(document).ready(function () {
   hashPanel();
 
   bObjectSlider();
+
 });
+
 
 function bObjectSlider() {
   $(".b-object-slider").each(function () {

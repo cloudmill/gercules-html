@@ -9,4 +9,134 @@
     &__slider {
         max-width: 50%;
     }
+
+
+    &__info {
+        margin-left: 80px;
+    }
+
+    &__tags {
+        margin-top: 30px;
+    }
+
+    &__address {
+        position: relative;
+        margin-top: 30px;
+        padding-left: 35px;
+        display: block;
+        font-size: 15px;
+        line-height: 130%;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            content: "";
+            display: block;
+            width: 14px;
+            height: 16px;
+            background-image: url("data:image/svg+xml,%3Csvg width='14' height='16' viewBox='0 0 14 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.66667 1.33333C5.25218 1.33333 3.89562 1.89524 2.89543 2.89543C1.89524 3.89562 1.33333 5.25218 1.33333 6.66667C1.33333 8.73204 2.67716 10.7362 4.15064 12.2915C4.87374 13.0548 5.59911 13.6796 6.14445 14.1139C6.34741 14.2755 6.52468 14.4101 6.66667 14.5151C6.80865 14.4101 6.98592 14.2755 7.18888 14.1139C7.73422 13.6796 8.45959 13.0548 9.1827 12.2915C10.6562 10.7362 12 8.73204 12 6.66667C12 5.25218 11.4381 3.89562 10.4379 2.89543C9.43771 1.89524 8.08115 1.33333 6.66667 1.33333ZM6.66667 15.3333C6.29687 15.888 6.2967 15.8879 6.29651 15.8878L6.2946 15.8865L6.29016 15.8835L6.27488 15.8732C6.2619 15.8644 6.24338 15.8517 6.21971 15.8353C6.17235 15.8025 6.10431 15.7547 6.01853 15.6928C5.84703 15.5689 5.60424 15.3881 5.31388 15.1569C4.73422 14.6954 3.95959 14.0286 3.1827 13.2085C1.65618 11.5972 0 9.26796 0 6.66667C3.97364e-08 4.89856 0.702379 3.20286 1.95262 1.95262C3.20286 0.702379 4.89856 0 6.66667 0C8.43478 0 10.1305 0.702379 11.3807 1.95262C12.631 3.20286 13.3333 4.89856 13.3333 6.66667C13.3333 9.26796 11.6772 11.5972 10.1506 13.2085C9.37374 14.0286 8.59911 14.6954 8.01945 15.1569C7.72909 15.3881 7.4863 15.5689 7.31481 15.6928C7.22902 15.7547 7.16098 15.8025 7.11363 15.8353C7.08995 15.8517 7.07144 15.8644 7.05845 15.8732L7.04318 15.8835L7.03873 15.8865L7.03733 15.8875C7.03713 15.8876 7.03647 15.888 6.66667 15.3333ZM6.66667 15.3333L7.03647 15.888C6.81253 16.0373 6.52044 16.0371 6.29651 15.8878L6.66667 15.3333Z' fill='%23E41D2C'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+    }
+
+    &__date {
+        margin-top: 30px;
+        font-size: 15px;
+        line-height: 130%;
+    }
+
+    &__show {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 37px;
+            height: 37px;
+            background-image: url("data:image/svg+xml,%3Csvg width='39' height='37' viewBox='0 0 39 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.1538 5.84619H1V30.6923H14.1538' stroke='%23E41D2C' stroke-width='2'/%3E%3Cpath d='M24.8462 30.6924L38 30.6924L38 5.84623L24.8462 5.84623' stroke='%23E41D2C' stroke-width='2' stroke-dasharray='2 2'/%3E%3Cline x1='19.5385' y1='4.37114e-08' x2='19.5385' y2='36.5385' stroke='%23E41D2C' stroke-width='2'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+    }
+
+    &__show-text {
+        margin-left: 20px;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 150%;
+    }
+
+    &__products {
+        margin-top: 60px;
+    }
+
+    &__products-title {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 144%;
+    }
+
+    &__products-wrapper {
+        margin-top: 15px;
+    }
+
+    &__products-item {
+
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+    }
+
+    &__products-link {
+        font-size: 15px;
+        line-height: 130%;
+        text-decoration: underline;
+    }
+
+    &__products-showmore {
+        position: relative;
+        margin-top: 20px;
+        padding-right: 20px;
+        display: block;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateX(-2px) translateY(-75%) rotate(45deg);
+            content: "";
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-right: 1px solid $color-red;
+            border-bottom: 1px solid $color-red;
+        }
+    }
+
+    &__products-showmore-text {
+        padding-bottom: 3px;
+        color: red;
+        border-bottom: 1px dashed $color-red;
+    }
+
+    &__article-wrapper {
+        max-width: 830px;
+    }
+
+    &__article-text {
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 160%;
+    }
+
+    &__article-item {
+        margin-top: 60px;
+    }
 }

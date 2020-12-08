@@ -69,10 +69,7 @@ block content
                                             each item in [1, 2, 3, 4]
                                                 .swiper-slide.b-object-slider__photo-slide
                                                     .b-object-slider__photo-image
-                                                        if (item === 2)
-                                                            img.b-object-slider__photo-img(src="https://cloudmill.github.io/gercules-static/b-object/thumb-2.jpg", alt="")
-                                                        else
-                                                            img.b-object-slider__photo-img(src="https://cloudmill.github.io/gercules-static/b-object/photo-1.jpg", alt="")
+                                                        img.b-object-slider__photo-img(src="../images/b-object/photo-1.jpg", alt="")
 
                                 .b-object-slider__row
 
@@ -83,7 +80,7 @@ block content
                                                 each item in [2, 2, 3, 4]
                                                     .swiper-slide.b-object-slider__thumb-slide
                                                         .b-object-slider__thumb-image
-                                                            img.b-object-slider__thumb-img(src=`https://cloudmill.github.io/gercules-static/b-object/thumb-${item}.jpg`, alt="")
+                                                            img.b-object-slider__thumb-img(src=`../images/b-object/thumb-${item}.jpg`, alt="")
 
                                     .b-object-slider__btn
 
@@ -92,6 +89,95 @@ block content
                                         .b-object-slider__btn-right
 
                         .b-object__info
+
+                            h1.title.title--section ТК Мега Дыбенко
+
+                            .b-object__tags
+                                
+                                ul.hash-list.hash-list--mg-r--20
+
+                                    li.hash.hash-list__item
+                                        a(href="").hash-list__link #жилое здание
+                                    li.hash.hash-list__item
+                                        a(href="").hash-list__link #торговый комплекс
+                                    li.hash.hash-list__item
+                                        a(href="").hash-list__link #жилое здание
+                                    li.hash.hash-list__item
+                                        a(href="").hash-list__link #торговый комплекс
+                                    li.hash.hash-list__item
+                                        a(href="").hash-list__link #жилое здание
+
+                            a(href="").b-object__address г. Томск, район Южные ворота, ул. Королёва 2а
+
+                            p.b-object__date Сдан в 2018 году
+
+                            button.b-object__show
+                                .b-object__show-text Режим до / после
+
+                            .b-object__products
+
+                                h2.b-object__products-title Продукты «Геркулес»
+
+                                .b-object__products-wrapper
+                                    .b-object__products-wrap
+                                        .b-object__products-container
+
+                                            ul.b-object__products-list
+                                                li.b-object__products-item
+                                                    a(href="").b-object__products-link GP-21M Штукатурка цементная для машинного нанесения
+                                                li.b-object__products-item
+                                                    a(href="").b-object__products-link Штукатурная станция mono-mix FU (на 220В)
+                                                li.b-object__products-item
+                                                    a(href="").b-object__products-link GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
+                                
+                                button.b-object__products-showmore
+                                    .b-object__products-showmore-text Посмотреть все
+
+                .b-content__main-item.b-content__main-item--pd--hor.b-content__main-item--mg-t--60
+
+                    .b-object__article
+
+                        .b-object__article-wrapper
+
+                            p.b-object__article-text Огромный торгово-развлекательный центр «МЕГА Дыбенко» является одним из ключевых торговых объектов Санкт-Петербурга. Открытие этого мегамолла произошло в 2006 году усилиями компании ИКЕА, которая впоследствии также основала торговый центр «МЕГА Парнас» в противоположной части города.
+
+                            .b-object__article-item
+
+                                h2.title.title--default Магазины в ТЦ «МЕГА Дыбенко»
+
+                                p.b-object__article-text
+                                    |На двух этажах торгового центра общей площадью более 140 тыс. кв. м. расположено огромное количество магазинов на любой вкус и кошелек. Крупнейшие арендаторы торговых мест «МЕГА Дыбенко» - мебельный магазин IKEA, мегамаркет бытовой, офисной и цифровой электроники MediaMarkt, гипермаркет товаров для ремонта OBI, магазин сети «Детский мир» и гипермаркет «Ашан».
+                                    br
+                                    br
+                                    |Огромный торгово-развлекательный центр «МЕГА Дыбенко» является одним из ключевых торговых объектов Санкт-Петербурга. Открытие этого мегамолла произошло в 2006 году усилиями компании ИКЕА, которая впоследствии также основала торговый центр «МЕГА Парнас» в противоположной части города.
+
+                .b-content__main-item.b-content__main-item--mg-t--100
+
+                    .tabs
+
+                        .tabs__panel
+                        
+                            .tabs__panel-item(data-tab="1")
+                                .tabs__panel-text Продукты «‎Геркулес»‎
+
+                            .tabs__panel-item(data-tab="2")
+                                .tabs__panel-text Выполенные работы
+
+                            .tabs__panel-item(data-tab="3")
+                                .tabs__panel-text Из технологий «‎GERKULES»‎ было применено
+
+                        .tabs__content
+
+                            .tabs__content-item(data-tab="1")
+                                |1
+
+                            .tabs__content-item(data-tab="2")
+                                |2
+
+                            .tabs__content-item(data-tab="3")
+                                |3
+
+
 
 
 
