@@ -1,5 +1,6 @@
 import $ from "jquery";
 import "select2";
+import Swiper from "swiper";
 
 import App from "./main.js";
 
@@ -15,7 +16,53 @@ $(document).ready(function () {
   sideNav();
 
   hashPanel();
+
+  bObjectSlider();
 });
+
+function bObjectSlider() {
+  $(".b-object-slider").each(function () {
+    const slider = new Swiper(
+      $(this).find(".b-object-slider__photo .swiper-container")[0],
+      {
+        loop: true,
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 20,
+        setWrapperSize: true,
+        autoHeight: true,
+        thumbs: {
+          swiper: {
+            el: $(this).find(".b-object-slider__thumb .swiper-container")[0],
+            spaceBetween: 10,
+            slidesPerView: $(this).find(".b-object-slider__thumb .swiper-slide").length,
+            allowTouchMove: false,
+          }
+        }
+      }
+    )
+  });
+  // const photos_count = $(".card-sliders_photos .swiper-slide").length;
+  // this.sliders["card_sliders"] = new Swiper(
+  //   ".card-sliders_photos .swiper-container",
+  //   {
+  //     loop: true,
+  //     speed: 500,  
+  //     spaceBetween: 60,
+  //     slidesPerView: 1,
+  //     slidesPerGroup: 1,
+  //     thumbs: {
+  //       swiper: {
+  //         el: $(".card-sliders_thumbs .swiper-container"),
+  //         direction: "vertical",
+  //         spaceBetween: 20,
+  //         slidesPerView: photos_count,
+  //         allowTouchMove: false,
+  //       }
+  //     }
+  //   }
+  // );
+}
 
 function hashPanel() {
   $(".hash-panel").each(function () {
