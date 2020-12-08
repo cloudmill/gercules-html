@@ -157,7 +157,7 @@ block content
 
                         .tabs__panel
                         
-                            .tabs__panel-item(data-tab="1")
+                            .tabs__panel-item.tabs__panel-item--active(data-tab="1")
                                 .tabs__panel-text Продукты «‎Геркулес»‎
 
                             .tabs__panel-item(data-tab="2")
@@ -168,14 +168,50 @@ block content
 
                         .tabs__content
 
-                            .tabs__content-item(data-tab="1")
-                                |1
+                            each item in [1, 2, 3]
 
-                            .tabs__content-item(data-tab="2")
-                                |2
+                                .tabs__content-item.tabs__content-item--active(data-tab=item)
+                                    
+                                    .b-object__tab-row
 
-                            .tabs__content-item(data-tab="3")
-                                |3
+                                        .b-object__tab-slider
+
+                                            .swiper-container
+                                                .swiper-wrapper
+
+                                                    each item in [1, 2, 3, 2]
+                                                        .swiper-slide
+                                                            
+                                                            .product-card
+
+                                                                .product-card__content
+
+                                                                    .product-card__tags
+                                                                    
+                                                                        .product-card__tag Хит продаж
+                                                                        .product-card__tag.product-card__tag--active Акция
+                                                                        .product-card__tag новинка
+
+                                                                    .product-card__image
+                                                                        
+                                                                        img.product-card__img(src=`../images/b-object/product-${item}.jpg`)
+
+                                                                    .product-card__title GE-29 Грунтовка укрепляющая глубокого проникновения, 5, 10 кг
+
+                                                                .product-card__btns
+
+                                                                    .product-card__btn
+                                                                        +icon("map-pin", "svg")
+                                                                    .product-card__btn
+                                                                        +icon("rating-red", "svg")
+
+                                                                    
+
+
+                                        .b-object__tab-btns
+
+                                            button.b-object__tab-btn.b-object__tab-btn--right
+                                            button.b-object__tab-btn.b-object__tab-btn--left
 
 
 

@@ -17,12 +17,44 @@ $(document).ready(function () {
 
   hashPanel();
 
-  bObjectSlider();
+  bObjectSliders();
 
+  tabs();
 });
 
+function tabs() {
+  $(".tabs").each(function () {
+    const
+      panel = $(this).find(".tabs__panel"),
+      content = $(this).find(".tabs__content");
 
-function bObjectSlider() {
+    panel.find(".tabs__panel-item").on("click", function () {
+      $(".tabs__panel-item").removeClass("tabs__panel-item--active");
+      $(this).addClass("tabs__panel-item--active");
+      $(".tabs__content-item").removeClass("tabs__content-item--active");
+      content.find(`[data-tab="${$(this).data("tab")}"]`).addClass("tabs__content-item--active");
+    });
+  });
+}
+
+function bObjectSliders() {
+  $(".tabs__content-item").each(function () {
+    const slider = new Swiper(
+      $(this).find(".swiper-container")[0],
+      {
+        loop: true,
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        spaceBetween: 40,
+        autoHeight: true,   
+        navigation: {
+          nextEl: $(this).find(".b-object__tab-btn--right")[0],
+          prevEl: $(this).find(".b-object__tab-btn--left")[0],
+        },
+      }
+    );
+  });
+
   $(".b-object-slider").each(function () {
     const slider = new Swiper(
       $(this).find(".b-object-slider__photo .swiper-container")[0],
