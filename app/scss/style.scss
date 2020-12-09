@@ -11,6 +11,10 @@
 @import "b-/import.scss";
 @import "bem/style.scss";
 
+.display--block {
+  display: block;
+}
+
 .page {
   margin-left: 80px;
   width: calc(100% - 80px);
