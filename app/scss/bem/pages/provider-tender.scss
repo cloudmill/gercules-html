@@ -1,0 +1,179 @@
+.provider-tender {
+
+
+    &__main {
+        padding-bottom: 120px;
+    }
+
+
+    &__row {
+        display: flex;
+    }
+
+    &__col {
+        max-width: 460px;
+
+        &:first-child {
+            width: 42%;
+        }
+
+        &:last-child {
+            margin-left: 80px;
+            width: 40%;
+        }
+    }
+
+
+    &__text {
+        font-size: 15px;
+        line-height: 150%;
+    }
+
+
+    &__link {
+        color: $color-red;
+    }
+
+
+    &__list {}
+
+    &__list-head {
+        margin-bottom: 30px;
+    }
+
+    &__list-body {
+        border-top: 2px solid $color-red;
+    }
+
+    &__list-inner {
+        padding: 0 20px;
+    }
+
+    &__list-row {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__list-col {
+        width: calc((100% - (20px * 5)) / 6);
+
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+
+        $row-size: 1100px;
+        $col-size: (
+            1: 70px,
+            2: 420px,
+            3: 120px,
+            4: 120px,
+            5: 120px,
+            6: 120px
+        );
+
+        @function percent($size) {
+            @return $size / $row-size * 100%;
+        }
+
+        @each $child,
+        $child-size in $col-size {
+
+            &:nth-child(#{$child}) {
+                width: percent($child-size);
+            }
+        }
+
+        &:nth-child(2) {
+            padding-left: percent(20px);
+            padding-right: percent(40px);
+        }
+    }
+
+    &__list-item {
+        padding: 30px 0;
+        border-bottom: 1px solid $color-border;
+    }
+
+    &__list-title {
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+
+    &__contact {
+        display: flex;
+    }
+
+    &__contact-photo {
+        min-width: 300px;
+        max-width: 400px;
+    }
+
+    &__contact-img {
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+    }
+
+    &__contact-info {
+        margin-left: 135px;
+    }
+
+    $line-height: 20px;
+
+    &__contact-name {
+        margin-top: 105px;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 130%;
+    }
+
+    &__contact-post {
+        margin-top: 10px;
+        font-size: 15px;
+        line-height: 130%;
+    }
+
+    &__contact-list {
+        margin-top: 35px;
+    }
+
+    &__contact-item {
+
+        &:not(:first-child) {
+            margin-top: 15px;
+        }
+    }
+
+    &__contact-link {
+        position: relative;
+        padding-left: 50px;
+        display: block;
+    }
+
+    &__contact-icon {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    @mixin contact-link {
+        line-height: 20px;
+        white-space: nowrap;
+    }
+
+    &__contact-phone {
+        @include contact-link();
+        font-size: 18px;
+    }
+
+    &__contact-email {
+        @include contact-link();
+        font-size: 15px;
+    }
+}
