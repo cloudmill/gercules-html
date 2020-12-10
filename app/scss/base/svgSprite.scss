@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("../images/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 11.2em 63.8em;
+    background-size: 11.2em 118.4em;
 }
 
 .no-svg .svg-icon:before {
@@ -215,8 +215,62 @@
 
 
 
-  .svg-icon.svg-question:before {
+  .svg-icon.svg-provider-case-1:before {
       background-position: 0em -47.4em;
+      width: 11.1em;
+      height: 9.3em;
+  }
+
+
+
+
+  .svg-icon.svg-provider-case-2:before {
+      background-position: 0em -56.7em;
+      width: 9.3em;
+      height: 9.2em;
+  }
+
+
+
+
+  .svg-icon.svg-provider-case-3:before {
+      background-position: 0em -65.9em;
+      width: 10.3em;
+      height: 8.8em;
+  }
+
+
+
+
+  .svg-icon.svg-provider-case-4:before {
+      background-position: 0em -74.7em;
+      width: 8.5em;
+      height: 9.4em;
+  }
+
+
+
+
+  .svg-icon.svg-provider-case-5:before {
+      background-position: 0em -84.1em;
+      width: 5.3em;
+      height: 9em;
+  }
+
+
+
+
+  .svg-icon.svg-provider-case-6:before {
+      background-position: 0em -93.1em;
+      width: 9em;
+      height: 8.9em;
+  }
+
+
+
+
+  .svg-icon.svg-question:before {
+      background-position: 0em -102em;
       width: 2.2em;
       height: 2.2em;
   }
@@ -225,7 +279,7 @@
 
 
   .svg-icon.svg-rating-red:before {
-      background-position: 0em -49.6em;
+      background-position: 0em -104.2em;
       width: 2.4em;
       height: 2.5em;
   }
@@ -234,7 +288,7 @@
 
 
   .svg-icon.svg-reset:before {
-      background-position: 0em -52.1em;
+      background-position: 0em -106.7em;
       width: 1.4em;
       height: 1.4em;
   }
@@ -243,7 +297,7 @@
 
 
   .svg-icon.svg-search:before {
-      background-position: 0em -53.5em;
+      background-position: 0em -108.1em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -252,7 +306,7 @@
 
 
   .svg-icon.svg-star:before {
-      background-position: 0em -55.3em;
+      background-position: 0em -109.9em;
       width: 2em;
       height: 2em;
   }
@@ -261,7 +315,7 @@
 
 
   .svg-icon.svg-star-active:before {
-      background-position: 0em -57.3em;
+      background-position: 0em -111.9em;
       width: 2em;
       height: 2em;
   }
@@ -270,7 +324,7 @@
 
 
   .svg-icon.svg-time:before {
-      background-position: 0em -59.3em;
+      background-position: 0em -113.9em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -279,7 +333,7 @@
 
 
   .svg-icon.svg-twitter:before {
-      background-position: 0em -61.1em;
+      background-position: 0em -115.7em;
       width: 1.9em;
       height: 1.5em;
   }
@@ -288,7 +342,7 @@
 
 
   .svg-icon.svg-vk:before {
-      background-position: 0em -62.6em;
+      background-position: 0em -117.2em;
       width: 2.2em;
       height: 1.2em;
   }
