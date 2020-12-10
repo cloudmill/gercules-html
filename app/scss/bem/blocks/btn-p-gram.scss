@@ -2,6 +2,65 @@
     position: relative;
     height: 70px;
 
+    &--theme--white {
+
+
+        .btn-p-gram__view {
+            background-color: white;
+            border: 1px solid $color-border;
+
+            &::before {
+                left: -1px;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+
+
+        .btn-p-gram__text {
+            color: $color-black;
+        }
+
+        .btn-p-gram__icon {
+            filter: brightness(0.15);
+        }
+    }
+
+    &--mobile {
+        $size: 18px;
+
+        @media (max-width: 992px) {
+            height: 50px;
+        }
+
+        .btn-p-gram__btn {
+
+            @media (max-width: 992px) {
+                transform: translateX(calc(-50% - (#{$size} / 2))) skewX(-20deg);
+                width: calc(100% - #{$size});
+            }
+        }
+
+        .btn-p-gram__view {
+
+            @media (max-width: 992px) {
+                transform: translateX(calc(-50% - (#{$size} / 2))) skewX(-20deg);
+                width: calc(100% - (10px * 2) - #{$size});
+            }
+        }
+
+        .btn-p-gram__text {
+
+            @media (max-width: 992px) {
+                font-size: 15px;
+                line-height: 17px;
+            }
+        }
+    }
+
+
     &__btn {
         position: absolute;
         top: 0;
@@ -99,38 +158,6 @@
 
         i {
             display: block;
-        }
-    }
-
-    &--mobile {
-        $size: 18px;
-
-        @media (max-width: 992px) {
-            height: 50px;
-        }
-
-        .btn-p-gram__btn {
-
-            @media (max-width: 992px) {
-                transform: translateX(calc(-50% - (#{$size} / 2))) skewX(-20deg);
-                width: calc(100% - #{$size});
-            }
-        }
-
-        .btn-p-gram__view {
-
-            @media (max-width: 992px) {
-                transform: translateX(calc(-50% - (#{$size} / 2))) skewX(-20deg);
-                width: calc(100% - (10px * 2) - #{$size});
-            }
-        }
-
-        .btn-p-gram__text {
-
-            @media (max-width: 992px) {
-                font-size: 15px;
-                line-height: 17px;
-            }
         }
     }
 }

@@ -65,11 +65,14 @@ mixin nav_goto(title = "Главная", href = "#")
     a(href = href).nav-goto #{title}
         +icon("arrow", "svg")
 
-mixin btn-p-gram(text, classes)
+mixin btn-p-gram(text, classes, href)
 
     .btn-p-gram(class = classes ? classes : "")
 
-        button(type="submit").btn-p-gram__btn
+        if (href)
+            a(href=href).btn-p-gram__btn
+        else
+            button(type="submit").btn-p-gram__btn
 
         .btn-p-gram__view-wrap
 

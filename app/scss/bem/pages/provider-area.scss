@@ -1,0 +1,89 @@
+.provider-area {
+
+
+    &__main {
+        padding-bottom: 120px;
+    }
+
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    &__col {
+        // border: 1px solid black; // test
+
+        &:first-child {
+            flex-grow: 1;
+        }
+
+        &:last-child {
+            margin-left: 30px;
+            width: 52%;
+
+            @media (max-width: 768px) {
+                margin-left: 0;
+                margin-top: 30px;
+                width: auto;
+            }
+        }
+    }
+
+
+    &__form {}
+
+    $max-width: 580px;
+
+    &__form-row {
+        margin-top: 30px;
+        max-width: $max-width;
+
+        @media (max-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__form-col {
+
+        &:first-child {
+
+            @media (max-width: 768px) {
+                flex-grow: 1;
+                max-width: calc((100% - 15px) / 2);
+                // max-width: 310px; // альтернатива, значение найдено экпериментально
+            }
+        }
+
+        &:last-child {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+
+            @media (max-width: 768px) {
+                margin-top: 0;
+                margin-left: 15px;
+                display: block;
+            }
+        }
+    }
+
+    &__form-bottom {
+        margin-top: 60px;
+        max-width: $max-width;
+    }
+
+
+    &__link {
+        font-size: 14px;
+        line-height: 16px;
+        text-decoration-line: underline;
+        white-space: nowrap;
+    }
+}

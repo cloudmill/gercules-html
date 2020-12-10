@@ -6,6 +6,10 @@
       align-items: stretch;
     }
 
+    &--ai--center {
+      align-items: center;
+    }
+
     &--mt--40 {
       margin-top: 40px;
     }
@@ -20,8 +24,14 @@
   }
 
   &__item {
+    display: block;
+
     &--w--50p {
       width: 50%;
+    }
+
+    &--mt--30 {
+      margin-top: 30px;
     }
 
     &--ml--40 {
@@ -55,6 +65,10 @@
 
     &--max-w--390 {
       max-width: 390px
+    }
+
+    &--max-w--580 {
+      max-width: 580px
     }
   }
 }
