@@ -6,4 +6,9 @@
   border: 1px solid $color-border;
   font-size: 15px;
   line-height: 150%;
+  resize: none;
+
+  &::placeholder {
+    color: $color-gray-placeholder;
+  }
 }

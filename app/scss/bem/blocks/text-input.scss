@@ -9,6 +9,6 @@
   line-height: 150%;
 
   &::placeholder {
-    color: $color-gray; // разные значения в макете ($color-placeholder)
+    color: $color-gray-placeholder;
   }
 }
