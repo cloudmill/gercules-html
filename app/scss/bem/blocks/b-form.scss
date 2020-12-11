@@ -1,7 +1,13 @@
 .b-form {
+
+
   &__row {
     display: flex;
     
+    &--jc--sb {
+      justify-content: space-between;
+    }
+
     &--ai--stretch {
       align-items: stretch;
     }
@@ -23,11 +29,24 @@
     }
   }
 
+
   &__item {
     display: block;
 
     &--w--50p {
       width: 50%;
+    }
+
+    &--fg--1 {
+      flex-grow: 1;
+    }
+
+    &--order--1 {
+      order: 1;
+    }
+
+    &--max-w--270 {
+      max-width: 270px;
     }
 
     &--mt--30 {
@@ -59,6 +78,7 @@
   }
 
   &__item-input {
+    
     &--max-w--340 {
       max-width: 340px
     }

@@ -80,6 +80,121 @@ block content
                                 br
                                 |по междугородним перевозкам на 2020 г.
                             .provider__info-container
-                                
-
-                            
+                                .provider__info-row
+                                    .provider__info-col 
+                                        h3.provider__info-title
+                                            |Регистрация участников
+                                        p.provider__info-text.provider__info-text--mt--15
+                                            |15.10.2020 — 25.10.2020
+                                        h3.provider__info-title.provider__info-title--mt--75
+                                            |Завершение тендера
+                                        p.provider__info-text.provider__info-text--mt--35
+                                            |15.10. — 25.10.
+                                        p.provider__info-text.provider__info-text--mt--15
+                                            |Информирование участников о результатах тендера
+                                    .provider__info-col
+                                        h3.provider__info-title
+                                            |Для участия необходимо:
+                                        ul.provider__info-list
+                                            li.provider__info-item.provider__info-text
+                                                |Заполнить анкету
+                                            li.provider__info-item.provider__info-text
+                                                |Ознакомится с обязательными условиями
+                                            li.provider__info-item.provider__info-text
+                                                |Предоставить Ваши тарифы действующие 
+                                                br
+                                                |с 01.12.19 г. по 30.11.2020 г.
+                                            li.provider__info-item.provider__info-text
+                                                |Отправить информацию на почту 
+                                                a(href="javascript:void(0)").provider__info-link
+                                                    |disp@gerkules.ru
+                                        p.provider__info-text.provider__info-text--mt--50
+                                            |В случае выбора компании вам будет направлен список необходимых документов и типовой договор для заключения. Действие договора с 01.12.19 г. по 30.11.2020 г.
+                                            br
+                                            br
+                                            |После заключения договора вам будет предоставлен доступ к тендерной площадке. При работе на площадке более 2-х месяцев, обсуждается возможность предоставления определенного количества заявок на конкретные направления. При этом дополнительно заключается сервисный контракт.
+                    .b-content__main-item.b-content__main-item--mg-t--120
+                        h2.provider__docs-title.title.title--section
+                            |Документы для скачивания
+                        ul.provider__docs
+                            -
+                                var docs = [
+                                    { title: "Иструкция по применению сухих смесей", info: "pdf, 15 mb" },
+                                    { title: "Технические характеристики грунтовки", info: "pdf, 15 mb" },
+                                    { title: "Лицензии и сертификаты", info: "pdf, 15 mb" },
+                                ];
+                            each doc in docs
+                                li.provider__doc
+                                    .provider__doc-image
+                                        +icon("pdf-3", "svg")
+                                    a(href="javascript:void(0)").provider__doc-content
+                                        h3.provider__doc-title
+                                            |#{doc.title}
+                                        p.provider__doc-bottom
+                                            +icon("down-gray", "svg")
+                                            span.provider__doc-info
+                                                |#{doc.info}
+                    .b-content__main-item.b-content__main-item--pd--hor.b-content__main-item--mg-t--120                      
+                        h2.title.title--section
+                            |Для предложений и вопросов
+                        form(action="").provider__form.b-form
+                            .b-form__row
+                                .b-form__item.b-form__item--w--50p
+                                    label.b-form__item
+                                        .b-form__item-title.b-form__item-title--mb--17
+                                            |Имя*
+                                        .b-form__item-input
+                                            input(type="text", name="name", placeholder="Алексей", required).text-input
+                                    label.b-form__item.b-form__item--mt--30
+                                        .b-form__item-title.b-form__item-title--mb--17
+                                            |Фамилия*
+                                        .b-form__item-input
+                                            input(type="text", name="surname", placeholder="Биланин", required).text-input
+                                    label.b-form__item.b-form__item--mt--30
+                                        .b-form__item-title.b-form__item-title--mb--17
+                                            |Номер телефона*
+                                        .b-form__item-input
+                                            input(type="text", name="phone", placeholder="+7 (___) ___-__-__", required).text-input
+                                .b-form__item.b-form__item--w--50p.b-form__item--ml--40
+                                    label.b-form__item
+                                        .b-form__item-title.b-form__item-title--mb--17
+                                            |Email
+                                        .b-form__item-input
+                                            input(type="text", name="email", placeholder="ksh@cloudmill.ru").text-input
+                                    label.b-form__item.b-form__item--mt--30
+                                        .b-form__item-title.b-form__item-title--mb--17
+                                            |Компания
+                                        .b-form__item-input
+                                            input(type="text", name="company", placeholder="ГК Плюс", required).text-input
+                                    label.b-form__item.b-form__item--mt--30
+                                        .b-form__item-title.b-form__item-title--mb--17
+                                            |Тема
+                                        .b-form__item-input
+                                            input(type="text", name="topic", placeholder="Оборудование", required).text-input
+                            .b-form__row.b-form__row--mt--30
+                                .b-form__item.b-form__item--w--50p.b-form__item--ml--40.b-form__item--order--1
+                                    label.b-form__item
+                                        .b-form__item-title.b-form__item-title--mb--17
+                                            |Ваш вопрос
+                                        .b-form__item-input
+                                            textarea(name="question", placeholder="Текст вопроса").text-input
+                                .b-form__item.b-form__item--w--50p
+                                    .b-form__item
+                                        .b-form__item-title.b-form__item-title--mb--17
+                                            br
+                                        label.b-form__item-input
+                                            input(type="text", name="file", placeholder="Добавить файл").text-input
+                            .b-form__row.b-form__row--mt--40.b-form__row--ai--center.b-form__row--jc--sb
+                                label.b-form__item
+                                    .b-form__item-input
+                                        label.checkbox-input
+                                            input.checkbox-input__input(type="checkbox", name="agreement", required)
+                                            p.checkbox-input__text
+                                                |«Я выражаю согласие на обработку ПДн в соответствии 
+                                                br
+                                                |с 
+                                                a(href="").checkbox-input__link
+                                                    |Политикой конфиденциальности
+                                                |»
+                                .b-form__item.b-form__item--ml--40.b-form__item--fg--1.b-form__item--max-w--270
+                                    +btn-p-gram("Отправить")
