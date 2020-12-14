@@ -182,8 +182,13 @@ block content
                                     .b-form__item
                                         .b-form__item-title.b-form__item-title--mb--17
                                             br
-                                        label.b-form__item-input
-                                            input(type="text", name="file", placeholder="Добавить файл").text-input
+                                        .b-form__item-input
+                                            label.file-input
+                                                input.file-input__input.js--file-input(type="file", name="file", placeholder="Добавить файл")
+                                                .file-input__view
+                                                    span.file-input__name.file-input__name--placeholder
+                                                    .file-input__icon
+                                                        +icon("file-1", "svg")
                             .b-form__row.b-form__row--mt--40.b-form__row--ai--center.b-form__row--jc--sb
                                 label.b-form__item
                                     .b-form__item-input

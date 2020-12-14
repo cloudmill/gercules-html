@@ -20,7 +20,36 @@ $(document).ready(function () {
   bObjectSliders();
 
   tabs();
+
+  fileInputs();
 });
+
+function fileInputs() {
+  if ($('.js--file-input').length) {
+    $('.js--file-input').each(function (index, input) {
+      addFileName($(input));
+    });
+
+    $('.js--file-input').on('change', function () {
+      addFileName($(this));
+    });
+  }
+
+  function addFileName($input) {
+    const box = $input.closest('.file-input');
+    const nameBox = box.find('.file-input__name');
+    const files = $input[0].files;
+    const placeholder = $input.attr('placeholder');
+
+    if (files.length) {
+      nameBox.html(files[0].name);
+      nameBox.removeClass('file-input__name--placeholder');
+    } else {
+      nameBox.html(placeholder);
+      nameBox.addClass('file-input__name--placeholder');
+    }
+  }
+}
 
 function tabs() {
   $(".tabs").each(function () {
@@ -46,7 +75,7 @@ function bObjectSliders() {
         slidesPerView: 3,
         slidesPerGroup: 1,
         spaceBetween: 40,
-        autoHeight: true,   
+        autoHeight: true,
         navigation: {
           nextEl: $(this).find(".b-object__tab-btn--right")[0],
           prevEl: $(this).find(".b-object__tab-btn--left")[0],
