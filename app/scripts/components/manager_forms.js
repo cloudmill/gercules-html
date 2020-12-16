@@ -74,7 +74,7 @@ export default class Manager_forms {
           params += `&${checkName}=${value}`;
         });
         const dataStr = `sity=${sity}${params}`;
-        const responce = await fetch(`/ajax/getListEvents.php?${dataStr}`, {
+        const responce = await fetch(`/local/templates/s1/include/ajax/academy/listEvents.php?${dataStr}`, {
           headers: {
             "Content-Type": "text/html",
           },
