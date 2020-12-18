@@ -1,75 +1,72 @@
 .publication {
-
     &__list {
         display: flex;
         flex-wrap: wrap;
-
         .publication__item {
             margin-bottom: -1px;
             margin-right: -1px;
         }
-
+        // >* {
+        //     @media (max-width: 1600px) {
+        //         max-width: calc((100% + 2px) / 2);
+        //     }
+        //     @media (max-width: 1200px) {
+        //         width: calc(100% + 1px);
+        //         max-width: none;
+        //     }
+        //     @media (max-width: 576px) {
+        //         padding: 40px 20px;
+        //     }
+        // }
         &--mg-t--m1 {
             margin-top: -1px;
         }
-
         &--mg-l--m1 {
             margin-left: -1px;
         }
     }
-
     &__item {
         padding: 60px 40px;
         width: 100%;
         max-width: 617px;
         background-color: white;
         border: 1px solid $color-gray-border;
-
         @media (max-width: 1600px) {
             max-width: calc((100% + 2px) / 2);
         }
-
         @media (max-width: 1200px) {
             width: calc(100% + 1px);
             max-width: none;
         }
-
         @media (max-width: 576px) {
             padding: 40px 20px;
         }
     }
-
     &__content {
         display: block;
     }
-
     &__image {
         display: flex;
         justify-content: center;
     }
-
     &__img {
         display: block;
         max-width: 100%;
         max-height: 100%;
     }
-
     &__date {
         margin-top: 20px;
         font-size: 15px;
         line-height: 150%;
     }
-
     &__title {
         margin-top: 20px;
     }
-
     &__text {
         margin-top: 20px;
         font-size: 15px;
         line-height: 150%;
     }
-
     &__hash-list {
         margin-top: 40px;
     }
