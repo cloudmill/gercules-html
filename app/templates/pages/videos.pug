@@ -43,6 +43,37 @@ block content
                                     a(href="").b-breadcrumbs__link #{item}
                     .b-content__main-item.b-content__main-item--mg-t--35.b-content__main-item--pd--hor
                         h1.title.title--page #{pageTitle}
+                    .b-content__main-item.b-content__main-item--mg-t--60.b-content__main-item--pd--hor
+                        
+                        form.videos__filter(action="")
+                            .videos__filter-container
+                                each item in [1, 2, 3]
+                                    .videos__filter-item
+                                        .videos__filter-label
+                                            .videos__filter-caption
+                                                |#{item}
+                                        .videos__filter-control
+                                            select.videos__filter-select
+                                                option.videos__filter-option #{item}
+                                                option.videos__filter-option #{item}
+                                                option.videos__filter-option #{item}
+                                .videos__filter-item
+                                    button.videos__filter-button(type="reset")
+
+
+                        
+                        //- form.videos__filter(action="")
+                        //-     .videos__filter-row
+                        //-         .videos__filter-col
+                        //-             .videos__filter-label
+                        //-             .videos__filter-control
+                            //- each item in [1, 2, 3]
+                            //-     .videos__filter-item
+                            //-         select
+                            //-             each option in [1, 2, 3]
+                            //-                 option #{item}
+                            //- .videos__filter-item
+                            //-     button(type="reset") reset
                     .b-content__main-item
                         .publication
                             .publication__list.publication__list--mg-t--m1.publication__list--mg-l--m1
