@@ -174,6 +174,45 @@
                 }
             }
         }
+
+
+        .select2-dropdown {
+            border: none;
+
+
+            .select2-results {
+
+
+                .select2-results__options {
+
+
+                    .select2-results__option {
+                        padding: 10px 15px;
+                        min-height: 40px;
+                        display: flex;
+                        align-items: center;
+                        $border: 1px solid $color-border;
+                        border-left: $border;
+                        border-right: $border;
+                        color: $color-gray;
+
+                        &:last-child {
+                            border-bottom: $border;
+                        }
+
+                        &--highlighted {
+                            background-color: $color-red;
+                            border-color: $color-red;
+                            color: white;
+
+                            &:last-child {
+                                border-color: $color-red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     &--open {

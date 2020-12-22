@@ -61,7 +61,7 @@ block content
                                             select.videos__filter-select
                                                 each option in [1, 2, 3]
                                                     option.videos__filter-select-option
-                                                        |#{item[1] + option}
+                                                        |#{item[1] + " - " + option}
                                 .videos__filter-item
                                     .videos__filter-control-box
                                         button(type="reset").videos__filter-button
