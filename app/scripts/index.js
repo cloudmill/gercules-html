@@ -22,7 +22,15 @@ $(document).ready(function () {
   tabs();
 
   fileInputs();
+
+  videosPage();
 });
+
+function videosPage() {
+  $('.videos__filter').find('select').select2({
+    theme: "qweqwe",
+  });
+}
 
 function fileInputs() {
   if ($('.js--file-input').length) {
