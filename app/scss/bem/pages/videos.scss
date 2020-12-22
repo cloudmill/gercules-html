@@ -64,14 +64,6 @@
     }
 
 
-    &__filter {
-        // border: 1px solid black; // test
-
-        * {
-            // border: 1px solid black; // test
-        }
-    }
-
     &__filter-container {
         display: flex;
         align-items: flex-end;
@@ -80,7 +72,11 @@
     $select-width: 27%;
 
     &__filter-item {
-        width: $select-width;
+        width: calc(#{$select-width} + 1px);
+
+        &:not(:first-child) {
+            margin-left: -1px;
+        }
 
         &:last-child {
             width: 100% - $select-width * 3;
@@ -118,6 +114,81 @@
     }
 
     &__filter-button-icon {
+        margin-left: 20px;
         display: flex;
+    }
+}
+
+
+.select2-container {
+
+    $angle: 360deg;
+
+    &--my-theme {
+
+
+        .selection {
+
+
+            .select2-selection {
+                padding: 24px 20px;
+                height: 70px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: 1px solid $color-border;
+
+
+                .select2-selection__rendered {
+                    padding: 0;
+                    max-height: 100%;
+                    font-family: $font-title;
+                    font-size: 15px;
+                    line-height: 144%;
+                    white-space: normal;
+                }
+
+                .select2-selection__arrow {
+                    position: relative;
+                    transform: rotate($angle);
+                    margin-left: 20px;
+                    width: 12px;
+                    height: 8px;
+                    flex-shrink: 0;
+                    transition: $ease-main;
+
+                    &::before {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -75%) rotate(45deg);
+                        content: "";
+                        display: block;
+                        $size: 8px;
+                        width: $size;
+                        height: $size;
+                        $border: 1px solid $color-red;
+                        border-bottom: $border;
+                        border-right: $border;
+                    }
+                }
+            }
+        }
+    }
+
+    &--open {
+
+
+        .selection {
+
+
+            .select2-selection {
+
+
+                .select2-selection__arrow {
+                    transform: rotate($angle + 180deg);
+                }
+            }
+        }
     }
 }

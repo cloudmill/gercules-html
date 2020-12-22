@@ -27,8 +27,21 @@ $(document).ready(function () {
 });
 
 function videosPage() {
-  $('.videos__filter').find('select').select2({
-    theme: "qweqwe",
+  const
+    FILTER_CLASS = 'videos__filter',
+    FILTER_RESET_CLASS = 'videos__filter-button',
+    FILTER_SELECT_CLASS = 'videos__filter-select';
+
+  $('.' + FILTER_CLASS).find('select').select2({
+    theme: 'my-theme',
+    width: '100%',
+    minimumResultsForSearch: Infinity,
+  });
+
+  $('.' + FILTER_RESET_CLASS).on('click', () => {
+    setTimeout(() => {
+      $('.' + FILTER_SELECT_CLASS).trigger('change');
+    }, 0);
   });
 }
 
