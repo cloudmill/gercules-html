@@ -27,16 +27,15 @@ $(document).ready(function () {
 });
 
 function videosPage() {
-  const
-    FILTER_CLASS = 'videos__filter',
-    FILTER_RESET_CLASS = 'videos__filter-button',
-    FILTER_SELECT_CLASS = 'videos__filter-select',
-    VIDEO_CLASS = 'videos__item-content';
-
-
+  
   // filter
 
-  $('.' + FILTER_CLASS).find('select').select2({
+  const
+    FILTER_WRAPPER_CLASS = 'videos__filter',
+    FILTER_RESET_CLASS = 'videos__filter-button',
+    FILTER_SELECT_CLASS = 'videos__filter-select';
+
+  $('.' + FILTER_WRAPPER_CLASS).find('select').select2({
     theme: 'my-theme',
     width: '100%',
     minimumResultsForSearch: Infinity,
@@ -51,21 +50,35 @@ function videosPage() {
 
   // modal
 
-  $('.' + VIDEO_CLASS).on('click', function (event) {
+  $('.videos__item-content').on('click', () => {
+    const scrollBarWidth = getScrollBarWidth($(document.documentElement));
+    if (scrollBarWidth) {
+      $(document.documentElement).css('overflow', 'hidden');
+      $('.wrapper').css('padding-right', scrollBarWidth + 'px');
+    }
+
+    $('.modal-video').removeClass('modal-video--hide');
     $('.b-modal').removeClass('b-modal--hide');
   });
 
-  $('.b-modal').on('click', function (event) {
-    if (event.target.classList.contains('b-modal__content')) {
-      $(this).addClass('b-modal--hide');
+  $('.modal-video').on('click', event => {
+    if (
+      event.target.classList.contains('modal-video')
+      || event.target.classList.contains('modal-video__close')
+    ) {
+      $(document.documentElement).css('overflow', '');
+      $('.wrapper').css('padding-right', '');
+      
+      $('.modal-video').addClass('modal-video--hide');
+      $('.b-modal').addClass('b-modal--hide');
     }
   });
 
-  function getScrollBarWidth() {
-    let scrollBarWidth = -$(window).width();
-    $(document.documentElement).css('overflow', 'hidden');
-    scrollBarWidth += $(window).width();
-    $(document.documentElement).css('overflow', '');
+  function getScrollBarWidth(element) {
+    let scrollBarWidth = -element.width();
+    element.css('overflow', 'hidden');
+    scrollBarWidth += element.width();
+    element.css('overflow', '');
     return scrollBarWidth;
   }
 }

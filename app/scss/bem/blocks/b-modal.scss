@@ -17,6 +17,7 @@ $bg-color: rgba(black, 0.2);
         pointer-events: none;
     }
 
+    
     &__bg {
         @include cover(absolute);
         background-color: $bg-color
