@@ -37,39 +37,39 @@ block content
                 | 3007-447, 3007-617, 3007-693, 3007-701;
               li Производитель - SPI
           .card-top_col
-            .card-rating
-              .card-rating_top
-                .card-rating_stars
-                  - const stars = [1,1,1,1,0]
-                  each star in stars
-                    if (star)
-                      +icon("star-active", "svg")
-                    else
-                      +icon("star", "svg")
-                .card-rating_result 4,2
-              .card-rating_parameters
-                .card-rating_parameter
-                  h3 Качество
-                  .card-rating_track
-                    .card-rating_progress(style="width: 75%")
-                .card-rating_parameter
-                  h3 Эффективность
-                  .card-rating_track
-                    .card-rating_progress(style="width: 75%")
-                .card-rating_parameter
-                  h3 Внешний вид
-                  .card-rating_track
-                    .card-rating_progress(style="width: 75%")
-                .card-rating_parameter
-                  h3 Функциональность
-                  .card-rating_track
-                    .card-rating_progress(style="width: 75%")
-                .card-rating_parameter
-                  h3 Экономичность
-                  .card-rating_track
-                    .card-rating_progress(style="width: 75%")
-            .card-code Артикул: 
-              strong 581857-00
+            //- .card-rating
+            //-   .card-rating_top
+            //-     .card-rating_stars
+            //-       - const stars = [1,1,1,1,0]
+            //-       each star in stars
+            //-         if (star)
+            //-           +icon("star-active", "svg")
+            //-         else
+            //-           +icon("star", "svg")
+            //-     .card-rating_result 4,2
+            //-   .card-rating_parameters
+            //-     .card-rating_parameter
+            //-       h3 Качество
+            //-       .card-rating_track
+            //-         .card-rating_progress(style="width: 75%")
+            //-     .card-rating_parameter
+            //-       h3 Эффективность
+            //-       .card-rating_track
+            //-         .card-rating_progress(style="width: 75%")
+            //-     .card-rating_parameter
+            //-       h3 Внешний вид
+            //-       .card-rating_track
+            //-         .card-rating_progress(style="width: 75%")
+            //-     .card-rating_parameter
+            //-       h3 Функциональность
+            //-       .card-rating_track
+            //-         .card-rating_progress(style="width: 75%")
+            //-     .card-rating_parameter
+            //-       h3 Экономичность
+            //-       .card-rating_track
+            //-         .card-rating_progress(style="width: 75%")
+            //- .card-code Артикул: 
+            //-   strong 581857-00
         .card-links
           .card-links_item.order-link
             a(href="#")
@@ -171,4 +171,5 @@ block content
                 a(href="#").card-addon_button
                   p
                   span Добавить в заказ
-    
+    .b-content__main-item.b-content__main-item--mg-t--120.card__button
+      +btn-p-gram("Назад в каталог")
