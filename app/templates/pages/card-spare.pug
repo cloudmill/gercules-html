@@ -12,13 +12,13 @@ block content
             .swiper-wrapper
               each item in [1, 2, 1, 2, 1]
                 .swiper-slide
-                  img(src=`../images/spare-thumb-${item}.png`, alt="")
+                  img(src=`./images/spare-thumb-${item}.png`, alt="")
         .card-sliders_photos
           .swiper-container
             .swiper-wrapper
               - for (let i = 0; i < 5; i++)
                 .swiper-slide
-                  img(src=`../images/spare-main.png`, alt="")
+                  img(src=`./images/spare-main.png`, alt="")
       .card-info.content-large-bottom-padding
         +breadcrumbs(['Каталог','Грунтовки',pageTitle])
         .card-top_row
@@ -166,7 +166,7 @@ block content
                       span хит продаж
                       span.active акция
                   .card-addon_photo
-                    img(src='../images/' + items[key % 2][0], alt="")
+                    img(src='./images/' + items[key % 2][0], alt="")
                   h3= items[key % 2][1]
                 a(href="#").card-addon_button
                   p
