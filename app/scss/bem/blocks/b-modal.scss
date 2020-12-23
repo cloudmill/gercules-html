@@ -1,0 +1,29 @@
+@mixin cover($position) {
+    position: $position;
+    @each $prop in (top, bottom, left, right) {
+        #{$prop}: 0;
+    }
+}
+
+
+$bg-color: rgba(black, 0.2);
+
+.b-modal {
+    @include cover(fixed);
+    transition: $ease-main;
+
+    &--hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &__bg {
+        @include cover(absolute);
+        background-color: $bg-color
+    }
+
+
+    &__content {
+        @include cover(absolute);
+    }
+}

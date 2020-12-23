@@ -75,7 +75,7 @@ block content
                                 each i in [1, 2]
                                     each j in [1, 2, 3, 4]
                                         .publication__item
-                                            a(href="").publication__content.videos__item-content
+                                            a(href="#video").publication__content.videos__item-content
                                                 .publication__image.videos__item-image
                                                     img.publication__img(src=`./images/video-preview-${j}.jpg`)
                                                     .videos__item-button
@@ -86,3 +86,10 @@ block content
                             .showmore__wrapper
                                 .showmore__text Показать еще
                                 .showmore__count 52
+
+block modal
+    .b-modal.b-modal--hide
+        .b-modal__bg
+        .b-modal__content
+            
+            

@@ -30,7 +30,11 @@ function videosPage() {
   const
     FILTER_CLASS = 'videos__filter',
     FILTER_RESET_CLASS = 'videos__filter-button',
-    FILTER_SELECT_CLASS = 'videos__filter-select';
+    FILTER_SELECT_CLASS = 'videos__filter-select',
+    VIDEO_CLASS = 'videos__item-content';
+
+
+  // filter
 
   $('.' + FILTER_CLASS).find('select').select2({
     theme: 'my-theme',
@@ -43,6 +47,27 @@ function videosPage() {
       $('.' + FILTER_SELECT_CLASS).trigger('change');
     }, 0);
   });
+
+
+  // modal
+
+  $('.' + VIDEO_CLASS).on('click', function (event) {
+    $('.b-modal').removeClass('b-modal--hide');
+  });
+
+  $('.b-modal').on('click', function (event) {
+    if (event.target.classList.contains('b-modal__content')) {
+      $(this).addClass('b-modal--hide');
+    }
+  });
+
+  function getScrollBarWidth() {
+    let scrollBarWidth = -$(window).width();
+    $(document.documentElement).css('overflow', 'hidden');
+    scrollBarWidth += $(window).width();
+    $(document.documentElement).css('overflow', '');
+    return scrollBarWidth;
+  }
 }
 
 function fileInputs() {
