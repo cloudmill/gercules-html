@@ -24,7 +24,26 @@ $(document).ready(function () {
   fileInputs();
 
   videosPage();
+
+  wherebuyPage();
 });
+
+function wherebuyPage() {
+  if ($('.wherebuy').length) {
+    const options = {
+      theme: 'wherebuy',
+      width: '100%',
+      minimumResultsForSearch: Infinity,
+    };
+    $('.wherebuy__filter-select').each(function () {
+      const placeholder = $(this).data('placeholder');
+      if (placeholder) {
+        options.placeholder = placeholder;
+      }
+      $(this).select2(options);
+    });
+  }
+}
 
 function videosPage() {
   

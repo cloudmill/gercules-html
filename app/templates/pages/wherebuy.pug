@@ -1,0 +1,65 @@
+extends ../layouts/clean
+
+block variables
+    - pageTitle = "Где купить";
+
+block content
+    .wherebuy
+        .b-content
+            .b-content__wrapper
+                main.wherebuy__main.b-content__main.b-content__main--pd-t--60.b-content__main--overflow--hidden
+                    .b-content__main-item.b-content__main-item--pd--hor
+                        .b-breadcrumbs
+                            .b-breadcrumbs__item
+                                a(href="").b-breadcrumbs__link Главная
+                            .b-breadcrumbs__item
+                                a(href="").b-breadcrumbs__link #{pageTitle}
+                    .b-content__main-item.b-content__main-item--pd--hor.b-content__main-item--mg-t--35
+                        h1.title.title--page #{pageTitle}
+                    .b-content__main-item.b-content__main-item--pd--hor.b-content__main-item--mg-t--60
+                        .wherebuy__filter
+                            form(action="").wherebuy__filter-form
+                                .wherebuy__filter-control
+                                    select.wherebuy__filter-select(name = 'region')
+                                        each option in [1, 2, 3]
+                                            option.wherebuy__filter-select-option
+                                                |#{'Хабаровская область' + ' - ' + option}
+                                .wherebuy__filter-control
+                                    select.wherebuy__filter-select(name = 'city', data-placeholder = 'Выберите город')
+                                        option
+                                        each option in [1, 2, 3]
+                                            option.wherebuy__filter-select-option
+                                                |#{'Выберите город' + ' - ' + option}
+                            .wherebuy__agent
+                                .wherebuy__agent-row
+                                    h6.wherebuy__agent-title
+                                        |Бернгард Андрей Сергеевич
+                                    span.wherebuy__agent-mark
+                                        +icon('question-circle', 'svg')
+                                p.wherebuy__agent-caption
+                                    |региональный представитель
+                    .b-content__main-item.b-content__main-item--pd--hor.b-content__main-item--mg-t--40
+                        .tabs
+                            .tabs__panel.wherebuy__panel
+                                -
+                                    let items = [
+                                        'Все',
+                                        'Дистрибьютеры',
+                                        'Гипермаркеты',
+                                        'Розничные магазины',
+                                    ];
+                                each item, index in items
+                                    div.tabs__panel-item(class = !index ? 'tabs__panel-item--active' : '')
+                                        .tabs__panel-text
+                                            |#{item}
+                    .b-content__main-item
+                        //- .wherebuy__map
+                        .whereBuy-markets
+                            include whereBuy/whereBuyMap
+                            include whereBuy/marketsList
+                    .b-content__main-item.b-content__main-item--mg-t--90
+                        include whereBuy/marketNotFound
+                
+                                
+
+

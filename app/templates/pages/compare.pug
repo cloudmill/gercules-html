@@ -1,0 +1,34 @@
+extends ../layouts/clean
+
+block variables
+    - pageTitle = "Сравнение";
+
+block content
+    .compare
+        .b-content
+            .b-content__wrapper
+                main.b-content__main.b-content__main--pd-t--60.b-content__main--pd-b--120
+                    .b-content__main-item.b-content__main-item--pd--hor
+                        .b-breadcrumbs
+                            -
+                                var items = [
+                                    "Главная",
+                                    pageTitle,
+                                ];
+                            each item in items
+                                .b-breadcrumbs__item
+                                    a(href="").b-breadcrumbs__link #{item}
+                    .b-content__main-item.b-content__main-item--mg-t--35.b-content__main-item--pd--hor
+                        h1.title.title--page #{pageTitle}
+                    .b-content__main-item.b-content__main-item--mg-t--60.b-content__main-item--pd--hor
+                        .compare__table
+                            - for (let i = 0; i < 10; i++)
+                                .compare__row
+                                    .compare__col
+                                        |Цвет
+                                    each item in [1, 2, 3, 4]
+                                        .compare__col
+                                            |Серый
+                    .b-content__main-item.b-content__main-item--mg-t--60.b-content__main-item--pd--hor
+                        .compare__button
+                            +btn-p-gram('Каталог')

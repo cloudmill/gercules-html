@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("../images/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 11.2em 122.8em;
+    background-size: 11.2em 124.4em;
 }
 
 .no-svg .svg-icon:before {
@@ -296,8 +296,17 @@
 
 
 
-  .svg-icon.svg-rating-red:before {
+  .svg-icon.svg-question-circle:before {
       background-position: 0em -108.6em;
+      width: 1.7em;
+      height: 1.6em;
+  }
+
+
+
+
+  .svg-icon.svg-rating-red:before {
+      background-position: 0em -110.2em;
       width: 2.4em;
       height: 2.5em;
   }
@@ -306,7 +315,7 @@
 
 
   .svg-icon.svg-reset:before {
-      background-position: 0em -111.1em;
+      background-position: 0em -112.7em;
       width: 1.4em;
       height: 1.4em;
   }
@@ -315,7 +324,7 @@
 
 
   .svg-icon.svg-search:before {
-      background-position: 0em -112.5em;
+      background-position: 0em -114.1em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -324,7 +333,7 @@
 
 
   .svg-icon.svg-star:before {
-      background-position: 0em -114.3em;
+      background-position: 0em -115.9em;
       width: 2em;
       height: 2em;
   }
@@ -333,7 +342,7 @@
 
 
   .svg-icon.svg-star-active:before {
-      background-position: 0em -116.3em;
+      background-position: 0em -117.9em;
       width: 2em;
       height: 2em;
   }
@@ -342,7 +351,7 @@
 
 
   .svg-icon.svg-time:before {
-      background-position: 0em -118.3em;
+      background-position: 0em -119.9em;
       width: 1.8em;
       height: 1.8em;
   }
@@ -351,7 +360,7 @@
 
 
   .svg-icon.svg-twitter:before {
-      background-position: 0em -120.1em;
+      background-position: 0em -121.7em;
       width: 1.9em;
       height: 1.5em;
   }
@@ -360,7 +369,7 @@
 
 
   .svg-icon.svg-vk:before {
-      background-position: 0em -121.6em;
+      background-position: 0em -123.2em;
       width: 2.2em;
       height: 1.2em;
   }

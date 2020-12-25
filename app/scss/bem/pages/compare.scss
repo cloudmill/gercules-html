@@ -1,0 +1,39 @@
+.compare {
+
+
+    &__table {
+
+    }
+
+    &__row {
+        display: flex;
+    }
+
+    &__col {
+        margin-bottom: -1px;
+        margin-right: -1px;
+        padding: 30px 25px;
+        width: calc(100% / 5);
+        flex-shrink: 0;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border: 1px solid $color-gray-border;
+        font-size: 15px;
+        line-height: 150%;
+        
+        &:first-child {
+            background-color: #f8f8f8;
+            justify-content: flex-end;
+            font-weight: bold;
+        }
+    }
+
+
+
+    &__button {
+        margin: 0 auto;
+        max-width: 205px;
+    }
+}
