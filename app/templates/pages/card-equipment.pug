@@ -12,13 +12,13 @@ block content
             .swiper-wrapper
               each item in [1, 2, 1, 2, 1]
                 .swiper-slide
-                  img(src=`../images/equipment-thumb-${item}.png`, alt="")
+                  img(src=`./images/equipment-thumb-${item}.png`, alt="")
         .card-sliders_photos
           .swiper-container
             .swiper-wrapper
               - for (let i = 0; i < 5; i++)
                 .swiper-slide
-                  img(src=`../images/equipment-main.png`, alt="")
+                  img(src=`./images/equipment-main.png`, alt="")
       .card-info.content-large-bottom-padding
         +breadcrumbs(['Каталог','Грунтовки',pageTitle])
         .card-top_row
@@ -192,7 +192,7 @@ block content
                     span.active акция
                     span новинка
                   .fs-productCard_photo
-                    img(src=`../images/product-list-${item}.png`, alt="")
+                    img(src=`./images/product-list-${item}.png`, alt="")
                   a(href="#").fs-productCard_title GP-31 Штукатурка известково-цементная Геркулес, 25 кг
                 .fs-productCard_buttons
                   a(href="#").fs-productCard_buttons-loc
@@ -205,7 +205,7 @@ block content
         .card-addon
           .card-addon_content
             .card-addon_photo
-              img(src="../images/spare-1.png", alt="")
+              img(src="./images/spare-1.png", alt="")
             h3 Статор uni-star 0,25, не треб.тех. обслуж.
           a(href="#").card-addon_button
             p
@@ -213,7 +213,7 @@ block content
         .card-addon
           .card-addon_content
             .card-addon_photo
-              img(src="../images/spare-2.png", alt="")
+              img(src="./images/spare-2.png", alt="")
             h3 Статор MAKITA HR 3540 C
           a(href="#").card-addon_button
             p
@@ -221,7 +221,7 @@ block content
         .card-addon
           .card-addon_content
             .card-addon_photo
-              img(src="../images/spare-3.png", alt="")
+              img(src="./images/spare-3.png", alt="")
             h3 Статор uni-star 0,25, не треб.тех. обслуж.
           a(href="#").card-addon_button
             p
@@ -229,7 +229,7 @@ block content
         .card-addon
           .card-addon_content
             .card-addon_photo
-              img(src="../images/spare-1.png", alt="")
+              img(src="./images/spare-1.png", alt="")
             h3 Статор uni-star 0,25, не треб.тех. обслуж.
           a(href="#").card-addon_button
             p
@@ -249,7 +249,7 @@ block content
                 .fs-objects_photo
                   .fs-objects_sticker
                     span Сдан в 2018 году
-                  img(src="../images/object-2.png", alt="")
+                  img(src="./images/object-2.png", alt="")
                 .fs-objects_info
                   +hashTags([["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"]])
                   h3 ТК Гранд Каньон
@@ -270,7 +270,7 @@ block content
                 .fs-objects_photo
                   .fs-objects_sticker
                     span Сдан в 2018 году
-                  img(src="../images/object-2.png", alt="")
+                  img(src="./images/object-2.png", alt="")
                 .fs-objects_info
                   +hashTags([["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"], ["торговый комплекс", "#"], ["жилое здание", "#"]])
                   h3 ТК Гранд Каньон
