@@ -204,15 +204,37 @@ export default class Manager_tabs {
     })
   }
   cardQuestionsDropdowns() {
-    $(".card .tabs-item_question").each((key, element) => {
-      new SlideDown({
-        item: $(element),
-        el: $(element).find(".tabs-item_dropdown"),
-        boxContent: $(element).find(".tabs-item_dropdown .box-content"),
-        time: 400,
-        minHeight: 65,
+    const ITEM_CLASS = 'tabs-item_question';
+  
+    $('.' + ITEM_CLASS).each(function () {
+      const drop = $(this).find('[class*="drop"]');
+
+      $(this).on('click', event => {
+        if (event.target.classList.contains(ITEM_CLASS)) {
+          if (this.classList.contains('open')) {
+            this.classList.remove('open');
+            drop.css('max-height', '');
+          } else {
+            this.classList.add('open');
+            drop.css('max-height', getContentHeight(drop));
+          }
+        }
+      });
+
+      $(window).on('resize', () => {
+        if (this.classList.contains('open')) {
+          drop.css('max-height', getContentHeight(drop));
+        }
       });
     });
+
+    function getContentHeight(element) {
+      element.css('max-height', 'none');
+      const contentHeight = getComputedStyle(element[0]).height;
+      element.css('max-height', '');
+      getComputedStyle(element[0]).height;
+      return contentHeight;
+    }
   }
 
   documentationFilesBlock() {

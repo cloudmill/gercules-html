@@ -26,9 +26,6 @@ block content
             h1 Штукатурная станция
               br
               | mono-mix FU (на 220В)
-            .card-info_price
-              span 571.600 руб. 
-              span (с НДС 20% )
             h2 Преимущества
             ul
               li Небольшой вес и размер штукатурной станции
@@ -38,38 +35,6 @@ block content
                 br
                 | Возможность использовать как растворонасос
               li Регулярные поставки на склад
-          .card-top_col
-            .card-rating
-              .card-rating_top
-                .card-rating_stars
-                  - const stars = [1,1,1,1,0]
-                  each star in stars
-                    if (star)
-                      +icon("star-active", "svg")
-                    else
-                      +icon("star", "svg")
-                .card-rating_result 4,2
-              .card-rating_parameters
-                .card-rating_parameter
-                  h3 Качество
-                  .card-rating_track
-                    .card-rating_progress(style="width: 75%")
-                .card-rating_parameter
-                  h3 Эффективность
-                  .card-rating_track
-                    .card-rating_progress(style="width: 75%")
-                .card-rating_parameter
-                  h3 Внешний вид
-                  .card-rating_track
-                    .card-rating_progress(style="width: 75%")
-                .card-rating_parameter
-                  h3 Функциональность
-                  .card-rating_track
-                    .card-rating_progress(style="width: 75%")
-                .card-rating_parameter
-                  h3 Экономичность
-                  .card-rating_track
-                    .card-rating_progress(style="width: 75%")
         .card-links
           .card-links_item.order-link
             a(href="#")
@@ -321,4 +286,5 @@ block content
                     a(href="#") Штукатурная станция mono-mix FU (на 220В)
                     a(href="#") GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
                     a(href="#") GP-21M Штукатурка цементная для машинного нанесения
-    
+    .b-content__main-item.b-content__main-item--mg-t--120.card__button
+      +btn-p-gram("Назад в каталог")
