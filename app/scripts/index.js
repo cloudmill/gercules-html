@@ -52,11 +52,12 @@ function videosPage() {
 
   $('.videos__item-content').on('click', () => {
     const scrollBarWidth = getScrollBarWidth($(document.documentElement));
+
     if (scrollBarWidth) {
-      $(document.documentElement).css('overflow', 'hidden');
       $('.wrapper').css('padding-right', scrollBarWidth + 'px');
     }
-
+    $(document.documentElement).css('overflow', 'hidden');
+    
     $('.modal-video').removeClass('modal-video--hide');
     $('.b-modal').removeClass('b-modal--hide');
   });
