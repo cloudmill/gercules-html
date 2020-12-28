@@ -26,7 +26,64 @@ $(document).ready(function () {
   videosPage();
 
   wherebuyPage();
+
+  comparePage();
 });
+
+function comparePage() {
+  const itemsHeight = [];
+
+  itemsHeightUpdate();
+  $(window).on('resize', () => {
+    itemsHeightUpdate();
+  });
+
+  $('.compare__delete').on('click', function () {
+    $(this).closest('.compare__slide').remove();
+  });
+
+  $('.compare__wrapper').each(function () {
+    const
+      slider = $(this).find('.swiper-container'),
+      nextBtn = $(this).find('.compare__control--next'),
+      prevBtn = $(this).find('.compare__control--prev');
+
+    const mySwiper = new Swiper(slider[0], {
+      slidesPerView: 4,
+      slidesPerGroup: 1,
+      navigation: {
+        nextEl: nextBtn[0],
+        prevEl: prevBtn[0],
+      },
+    });
+
+    nextBtn.on('click', () => {
+      console.log('123123');
+      mySwiper.slideNext();
+    });
+  });
+
+  function itemsHeightUpdate() {
+    $('.compare__item').parent().each(function () {
+      $(this).find('.compare__item').each((index, element) => {
+        if (itemsHeight[index]) {
+          const itemHeight = $(element).height();
+          if (itemHeight > itemsHeight[index]) {
+            itemsHeight[index] = itemHeight;
+          }
+        } else {
+          itemsHeight[index] = $(element).height();
+        }
+      });
+    });
+
+    $('.compare__item').parent().each(function () {
+      $(this).find('.compare__item').each((index, element) => {
+        $(element).height(itemsHeight[index]);
+      });
+    });
+  }
+}
 
 function wherebuyPage() {
   if ($('.wherebuy').length) {

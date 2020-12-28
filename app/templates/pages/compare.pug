@@ -1,7 +1,7 @@
 extends ../layouts/clean
 
 block variables
-    - pageTitle = "Сравнение";
+    - var pageTitle = "Сравнение";
 
 block content
     .compare
@@ -17,18 +17,73 @@ block content
                                 ];
                             each item in items
                                 .b-breadcrumbs__item
-                                    a(href="").b-breadcrumbs__link #{item}
+                                    a(href="").b-breadcrumbs__link
+                                        |#{item}
                     .b-content__main-item.b-content__main-item--mg-t--35.b-content__main-item--pd--hor
-                        h1.title.title--page #{pageTitle}
-                    .b-content__main-item.b-content__main-item--mg-t--60.b-content__main-item--pd--hor
-                        .compare__table
-                            - for (let i = 0; i < 10; i++)
-                                .compare__row
-                                    .compare__col
-                                        |Цвет
-                                    each item in [1, 2, 3, 4]
-                                        .compare__col
-                                            |Серый
+                        h1.title.title--page
+                            |#{pageTitle}
+                    .b-content__main-item.b-content__main-item--mg-t--60
+                        .compare__wrapper
+                            .compare__container
+                                .compare__head
+                                    .compare__item.compare__item--front
+                                    -
+                                        var items = [
+                                            'Категория',
+                                            'Цвет',
+                                            'Связующее',
+                                            'Наибольший размер частиц, мм',
+                                            'Марка по прочности',
+                                            'Адгезия к минеральному основанию, не менее',
+                                            'Насыпная плотность, не более',
+                                            'Расход воды',
+                                            'Выход готового клеевого раствора',
+                                            'Средний расход клея для плитки при толщине слоя 1 мм',
+                                            'Толщина рабочего слоя плиточного клея',
+                                            'Открытое время, не менее',
+                                            'Жизнеспособность после смешивания с водой, не менее', 
+                                        ];
+                                    each item in items
+                                        .compare__item.compare__item--in-head
+                                            |!{item}
+                                .compare__slider
+                                    .swiper-container
+                                        .swiper-wrapper
+                                            -
+                                                var items = [
+                                                    'Серый',
+                                                    'Цемент',
+                                                    '0,63',
+                                                    'М100',
+                                                    '1,1 МПа',
+                                                    '1750 кг/м',
+                                                    '0,22–0,27 л/кг сухой смеси <br>5,5–6,8 л/мешок',
+                                                    '0,69 л/кг сухой смеси',
+                                                    '1,45 кг/м',
+                                                    '2–4 мм',
+                                                    '20 мин.',
+                                                    '4 ч.',
+                                                ];
+                                            each i in [1, 2, 3]
+                                                each j in [1, 2]
+                                                    .compare__slide
+                                                        .compare__item.compare__item--front
+                                                            a.compare__product(href='javascript:void(0)')
+                                                                .compare__image
+                                                                    img.compare__img(src=`./images/compare-${j}.png`)
+                                                                h6.compare__title
+                                                                    |GP-31 Штукатурка известково-цементная Геркулес, 25 кг
+                                                            button.compare__delete
+                                                                +icon('delete', 'svg')
+                                                        .compare__item
+                                                            a.compare__link(href='javascript:void(0)')
+                                                                |Штукатурки
+                                                        each item in items
+                                                            .compare__item
+                                                                |!{item}
+                            .compare__controls
+                                button.compare__control.compare__control--next
+                                button.compare__control.compare__control--prev
                     .b-content__main-item.b-content__main-item--mg-t--60.b-content__main-item--pd--hor
                         .compare__button
                             +btn-p-gram('Каталог')
