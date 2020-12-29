@@ -31,54 +31,104 @@ $(document).ready(function () {
 });
 
 function comparePage() {
-  const itemsHeight = [];
+  
+  // ВЫРАВНИВАНИЕ ТАБЛИЦЫ
 
-  itemsHeightUpdate();
-  $(window).on('resize', () => {
-    itemsHeightUpdate();
-  });
-
-  $('.compare__delete').on('click', function () {
-    $(this).closest('.compare__slide').remove();
-  });
-
-  $('.compare__wrapper').each(function () {
+  function table_align() {
     const
-      slider = $(this).find('.swiper-container'),
-      prevBtn = $(this).find('.compare__control--prev'),
-      nextBtn = $(this).find('.compare__control--next');
+      TABLE_CLASS = 'compare__wrapper',
+      HEAD_CLASS = 'compare__head',
+      COLUMN_CLASS = 'swiper-slide',
+      ROW_CLASS = 'compare__item';
 
-    const mySwiper = new Swiper(slider[0], {
-      slidesPerView: 4,
-      slidesPerGroup: 1,
-      allowTouchMove: false,
-      navigation: {
-        prevEl: prevBtn[0],
-        nextEl: nextBtn[0],
-      },
-    });
-  });
+    // для каждой таблицы в отдельности
 
-  function itemsHeightUpdate() {
-    $('.compare__item').parent().each(function () {
-      $(this).find('.compare__item').each((index, element) => {
-        if (itemsHeight[index]) {
-          const itemHeight = $(element).height();
-          if (itemHeight > itemsHeight[index]) {
-            itemsHeight[index] = itemHeight;
-          }
-        } else {
-          itemsHeight[index] = $(element).height();
-        }
+    $('.' + TABLE_CLASS).each(function () {
+
+      // сброc предыдущего выравнивания
+
+      $('.' + ROW_CLASS).css('height', '');
+      
+      // вычисляем максимальные высоты строк
+      
+      const row_height = [];
+      
+      $(this).find('.' + HEAD_CLASS).find('.' + ROW_CLASS).each(function () {
+        row_height[$(this).index()] = $(this).height();
       });
-    });
 
-    $('.compare__item').parent().each(function () {
-      $(this).find('.compare__item').each((index, element) => {
-        $(element).height(itemsHeight[index]);
+      $(this).find('.' + COLUMN_CLASS).each(function () {
+        $(this).find('.' + ROW_CLASS).each(function () {
+          const
+            cur_row_index = $(this).index(),
+            cur_row_height = $(this).height();
+
+          if (cur_row_height > row_height[cur_row_index]) {
+            row_height[cur_row_index] = cur_row_height;
+          }
+        });
+      });
+
+      // задаем всем строкам их максимальную высоту (выравниваем таблицу)
+
+      $(this).find('.' + HEAD_CLASS).find('.' + ROW_CLASS).each(function () {
+        $(this).height(row_height[$(this).index()]);
+      });
+
+      $(this).find('.' + COLUMN_CLASS).each(function () {
+        $(this).find('.' + ROW_CLASS).each(function () {
+          $(this).height(row_height[$(this).index()]);
+        });
       });
     });
   }
+
+  // УДАЛЕНИЕ ИЗ ТАБЛИЦЫ
+
+  $('.compare__delete').on('click', function () {
+    const
+      table = $(this).closest('.compare__wrapper'),
+      tableIndex = $(this).closest('.compare__wrapper').index(),
+      slideIndex = $(this).closest('.swiper-slide').index(),
+      slideCount = sliders[tableIndex].slides.length;
+
+    if (slideCount > 1) {
+      sliders[tableIndex].removeSlide(slideIndex);
+
+      if ((slideCount - 1) < 4) {
+        sliders[tableIndex].params.slidesPerView = slideCount - 1;
+        sliders[tableIndex].update();
+      }
+
+      if (slideCount === 2) {
+        table.find('.compare__delete').addClass('compare__delete--disabled');
+      }
+    }
+  });
+
+  // ИНИЦИАЛИЗАЦИЯ ТАБЛИЦ
+
+  const sliders = [];
+
+  $('.compare__wrapper').each(function () {
+    const
+      slider = $(this).find('.swiper-container')[0],
+      prev_button = $(this).find('.compare__control--prev')[0],
+      next_button = $(this).find('.compare__control--next')[0];
+
+    sliders.push(new Swiper(slider, {
+      slidesPerView: 4,
+      allowTouchMove: false,
+      navigation: {
+        prevEl: prev_button,
+        nextEl: next_button,
+      },
+      on: {
+        init: table_align,
+        resize: table_align,
+      },
+    }));
+  });
 }
 
 function wherebuyPage() {

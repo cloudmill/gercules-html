@@ -7,7 +7,7 @@ block content
     .compare
         .b-content
             .b-content__wrapper
-                main.b-content__main.b-content__main--pd-t--60.b-content__main--pd-b--120
+                main.compare__main.b-content__main.b-content__main--pd-t--60.b-content__main--pd-b--120
                     .b-content__main-item.b-content__main-item--pd--hor
                         .b-breadcrumbs
                             -
@@ -66,7 +66,7 @@ block content
                                                 ];
                                             each i in [1, 2, 3]
                                                 each j in [1, 2]
-                                                    .compare__slide
+                                                    .swiper-slide
                                                         .compare__item.compare__item--front
                                                             a.compare__product(href='javascript:void(0)')
                                                                 .compare__image
@@ -74,7 +74,8 @@ block content
                                                                 h6.compare__title
                                                                     |GP-31 Штукатурка известково-цементная Геркулес, 25 кг
                                                             button.compare__delete
-                                                                +icon('delete', 'svg')
+                                                                .compare__delete-icon
+                                                                    +icon('delete', 'svg')
                                                         .compare__item
                                                             a.compare__link(href='javascript:void(0)')
                                                                 |Штукатурки
@@ -85,5 +86,5 @@ block content
                                 button.compare__control.compare__control--next
                                 button.compare__control.compare__control--prev
                     .b-content__main-item.b-content__main-item--mg-t--60.b-content__main-item--pd--hor
-                        .compare__button
+                        .compare__bottom
                             +btn-p-gram('Каталог')
