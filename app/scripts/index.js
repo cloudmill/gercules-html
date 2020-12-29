@@ -45,21 +45,17 @@ function comparePage() {
   $('.compare__wrapper').each(function () {
     const
       slider = $(this).find('.swiper-container'),
-      nextBtn = $(this).find('.compare__control--next'),
-      prevBtn = $(this).find('.compare__control--prev');
+      prevBtn = $(this).find('.compare__control--prev'),
+      nextBtn = $(this).find('.compare__control--next');
 
     const mySwiper = new Swiper(slider[0], {
       slidesPerView: 4,
       slidesPerGroup: 1,
+      allowTouchMove: false,
       navigation: {
-        nextEl: nextBtn[0],
         prevEl: prevBtn[0],
+        nextEl: nextBtn[0],
       },
-    });
-
-    nextBtn.on('click', () => {
-      console.log('123123');
-      mySwiper.slideNext();
     });
   });
 
@@ -126,7 +122,7 @@ function videosPage() {
 
   // modal
 
-  $('.videos_s_item-content').on('click', () => {
+  $(document).on("click", ".videos__item-content", function (e) {
     const scrollBarWidth = getScrollBarWidth($(document.documentElement));
 
     if (scrollBarWidth) {
