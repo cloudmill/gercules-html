@@ -1,0 +1,82 @@
+.modal-publication-msg {
+    padding: 15px;
+    @each $prop in (width, height) {
+        #{$prop}: 100%;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+
+    &--hide {
+        display: none;
+    }
+
+
+    $max-width: 865px;
+    $max-height: 300px;
+
+    &__container {
+        position: relative;
+        padding: 40px;
+        @each $prop in (width, height) {
+            #{$prop}: 100%;
+        }
+        max-width: $max-width;
+        max-height: $max-height;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+
+
+    &__close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        $size: 80px;
+        width: $size;
+        height: $size;
+        background-color: $color-gray-background;
+
+        $angle: 45deg;
+
+        @mixin pseudo-element-rotate($angle) {
+            transform: translate(-50%, -50%) rotate($angle);
+        }
+
+        @mixin pseudo-element($angle) {
+            @include pseudo-element-rotate($angle);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+            content: "";
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: $color-black;
+            transition: $ease-main;
+        }
+
+        &::before {
+            @include pseudo-element($angle);
+        }
+
+        &::after {
+            @include pseudo-element(-$angle);
+        }
+
+        &:hover {
+
+            &::before {
+                @include pseudo-element-rotate($angle + 90deg);
+            }
+
+            &::after {
+                @include pseudo-element-rotate(-$angle + 90deg);
+            }
+        }
+    }
+}

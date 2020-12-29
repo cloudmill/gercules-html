@@ -7,6 +7,7 @@
 
 
 $bg-color: rgba(black, 0.2);
+$bg-color-dark: rgba(black, 0.6);
 
 .b-modal {
     @include cover(fixed);
@@ -20,7 +21,11 @@ $bg-color: rgba(black, 0.2);
     
     &__bg {
         @include cover(absolute);
-        background-color: $bg-color
+        background-color: $bg-color;
+
+        &--dark {
+            background-color: $bg-color-dark;
+        }
     }
 
 

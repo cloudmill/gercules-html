@@ -1,146 +1,91 @@
 extends ../layouts/clean
 
-
-
 block variables
-
     - pageTitle = "Публикации";
 
-
-
 block content
-
-    .b-content
-
-        .b-content__wrapper
-
-            aside.b-content__side-bar
-
-                nav.side-nav
-                
-                    ul.side-nav__list
-                        li.side-nav__item
-                            a(href="").side-nav__item-link Покупателям
-                        li.side-nav__item.side-nav__item--active
-                            a(href="").side-nav__item-link Публикации
-                        li.side-nav__item
-                            a(href="").side-nav__item-link Консультации
-                        li.side-nav__item
-                            a(href="").side-nav__item-link Где купить?
-
-            main.b-content__main.b-content__main--pd-t--60.b-content__main--overflow--hidden
-
-                .b-content__main-item.b-content__main-item--pd--hor
-
-                    .b-breadcrumbs
-                        .b-breadcrumbs__item
-                            a(href="").b-breadcrumbs__link Главная
-                        .b-breadcrumbs__item
-                            a(href="").b-breadcrumbs__link Покупателям
-                        .b-breadcrumbs__item
-                            a(href="").b-breadcrumbs__link Публикации
-
-                .b-content__main-item.b-content__main-item--pd--hor.b-content__main-item--mg-t--35
-                
-                    h1.title.title--page #{pageTitle}
-
-                .b-content__main-item.b-content__main-item--mg-t--60
-
-                    -
-                        let tags = {
-
-                            pool: [
-                                { text: "#все", selected: true },
-                                "#семинар",
-                                "#конференция",
-                                "#новинки",
-                                "#академиягеркулес",
-                                "#социальная ответсвенность",
-                                { text: "#скидки", selected: true },
-                                "#новые",
-                                "#события",
-                                "#мероприятия",
-                                "#семинар",
-                                "#новинки",
-                                "#академиягеркулес",
-                            ],
-
-                            selection: [
-                                "#семинар",
-                                "#жизнькомпании",
-                                "#о компании",
-                            ],
-
-                        };
-
-                    +select-tags(tags)
-
-                    //- deprecated hash-panel
-
-                        .hash-panel.hash-panel--mobile
-
-                            .hash-panel__title Популярные темы:
-
-                            .hash-panel__wrapper
-
-                                ul.hash-list.hash-list--spaces--5.hash-panel__container
-                                    each val in [1, 2]
-                                        li.hash.hash-list__item
-                                            a(href="").hash-list__link #жизнькомпании
-                                        li.hash.hash-list__item
-                                            a(href="").hash-list__link #новости
-                                        li.hash.hash-list__item
-                                            a(href="").hash-list__link #семинар
-                                        li.hash.hash-list__item
-                                            a(href="").hash-list__link #конференция
-                                        li.hash.hash-list__item
-                                            a(href="").hash-list__link #новинки
-                                        li.hash.hash-list__item
-                                            a(href="").hash-list__link #академиягеркулес
-
-                            .hash-panel__button
-
-                                .hash-panel__button-text Еще 6 тегов
-                    
-                .b-content__main-item
-
-                    .publication
-
-                        .publication__list.publication__list--mg-t--m1.publication__list--mg-l--m1
-
-                            each i in [1, 2]
-                                each j in [1, 2, 3, 4]                            
-                                
-                                    .publication__item
-
-                                        a(href="").publication__content
-
-                                            .publication__image
-                                                img.publication__img(src=`./images/publication-${j}.jpg`)
-
-                                            p.publication__date
-                                                |22 октября 2019
-
-                                            h6.title.title--default.publication__title
-                                                |Новая формула GE-29: глубже, равномернее, крепче!
-
-                                            p.publication__text
-                                                |С 20 марта 2018 мы начали выпуск нового продукта: «Грунтовка укрепляющая глубокого проникновения GE-29». Мы улучшили формулу и обновили упаковку!
-
-                                        ul.hash-list.hash-list--spaces--2.hash-panel__container.publication__hash-list
-                                            li.hash.hash-list__item
-                                                a(href="").hash-list__link #жизнькомпании
-                                            li.hash.hash-list__item
-                                                a(href="").hash-list__link #новости
-
-                .b-content__main-item.b-content__main-item--mg-t--60
-                    
-                    a(href="").showmore
-
-                        .showmore__wrapper
-                            .showmore__text Показать еще
-                            .showmore__count 52
-
-                .b-content__main-item.b-content__main-item--mg-t--120
-
-                    include ../modules/publications-subscription
+    .publications
+        .b-content
+            .b-content__wrapper
+                aside.b-content__side-bar
+                    nav.side-nav
+                        ul.side-nav__list
+                            li.side-nav__item
+                                a(href="").side-nav__item-link
+                                    |Покупателям
+                            li.side-nav__item.side-nav__item--active
+                                a(href="").side-nav__item-link
+                                    |Публикации
+                            li.side-nav__item
+                                a(href="").side-nav__item-link
+                                    |Консультации
+                            li.side-nav__item
+                                a(href="").side-nav__item-link
+                                    |Где купить?
+                main.b-content__main.b-content__main--pd-t--60.b-content__main--overflow--hidden
+                    .b-content__main-item.b-content__main-item--pd--hor
+                        .b-breadcrumbs
+                            .b-breadcrumbs__item
+                                a(href="").b-breadcrumbs__link
+                                    |Главная
+                            .b-breadcrumbs__item
+                                a(href="").b-breadcrumbs__link
+                                    |Покупателям
+                            .b-breadcrumbs__item
+                                a(href="").b-breadcrumbs__link
+                                    |Публикации
+                    .b-content__main-item.b-content__main-item--pd--hor.b-content__main-item--mg-t--35
+                        h1.title.title--page
+                            |#{pageTitle}
+                    .b-content__main-item.b-content__main-item--mg-t--60
+                        -
+                            let tags = {
+                                pool: [
+                                    { text: "#все", selected: true },
+                                    "#семинар",
+                                    "#конференция",
+                                    "#новинки",
+                                    "#академиягеркулес",
+                                    "#социальная ответсвенность",
+                                    { text: "#скидки", selected: true },
+                                    "#новые",
+                                    "#события",
+                                    "#мероприятия",
+                                    "#семинар",
+                                    "#новинки",
+                                    "#академиягеркулес",
+                                ],
+                                selection: [
+                                    "#семинар",
+                                    "#жизнькомпании",
+                                    "#о компании",
+                                ],
+                            };
+                        +select-tags(tags)
+                    .b-content__main-item
+                        .publication
+                            .publication__list.publication__list--mg-t--m1.publication__list--mg-l--m1
+                                each i in [1, 2]
+                                    each j in [1, 2, 3, 4]                            
+                                        .publication__item
+                                            a(href="").publication__content
+                                                .publication__image
+                                                    img.publication__img(src=`./images/publication-${j}.jpg`)
+                                                p.publication__date
+                                                    |22 октября 2019
+                                                h6.title.title--default.publication__title
+                                                    |Новая формула GE-29: глубже, равномернее, крепче!
+                                                p.publication__text
+                                                    |С 20 марта 2018 мы начали выпуск нового продукта: «Грунтовка укрепляющая глубокого проникновения GE-29». Мы улучшили формулу и обновили упаковку!
+                                            ul.hash-list.hash-list--spaces--2.hash-panel__container.publication__hash-list
+                                                li.hash.hash-list__item
+                                                    a(href="").hash-list__link #жизнькомпании
+                                                li.hash.hash-list__item
+                                                    a(href="").hash-list__link #новости
+                    .b-content__main-item.b-content__main-item--mg-t--60
+                        a(href="").showmore
+                            .showmore__wrapper
+                                .showmore__text Показать еще
+                                .showmore__count 52
+                    .b-content__main-item.b-content__main-item--mg-t--120
+                        include ../modules/publications-subscription

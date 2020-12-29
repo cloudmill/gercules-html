@@ -28,7 +28,71 @@ $(document).ready(function () {
   wherebuyPage();
 
   comparePage();
+
+  publicationPage();
 });
+
+function publicationPage() {
+
+  // modal
+
+  // open modal
+
+  $('.publications-detail__save').on('click', event => {
+    const scrollBarWidth = getScrollBarWidth($(document.documentElement));
+
+    if (scrollBarWidth) {
+      $('.wrapper').css('padding-right', scrollBarWidth + 'px');
+    }
+    $(document.documentElement).css('overflow', 'hidden');
+    
+    $('.modal-subscription').removeClass('modal-subscription--hide');
+    $('.b-modal').removeClass('b-modal--hide');
+
+    if ($(window).width() > 992) {
+      $('.publications-subscription--modal-subscription').scrollTop(0);
+    }
+  });
+
+  // close modal
+
+  $('.modal-subscription').on('click', event => {
+    if (
+      event.target.classList.contains('modal-subscription')
+      || event.target.classList.contains('modal-subscription__close')
+    ) {
+      $(document.documentElement).css('overflow', '');
+      $('.wrapper').css('padding-right', '');
+      
+      $('.modal-subscription').addClass('modal-subscription--hide');
+      $('.b-modal').addClass('b-modal--hide');
+    }
+  });
+
+  $(window).on('resize', () => {
+    if ($(window).width() > 992) {
+      $('.publications-subscription--modal-subscription').scrollTop(0);
+    }
+  });
+
+  $('.modal-subscription [type="submit"]').on('click', () => {
+    $('.modal-subscription').addClass('modal-subscription--hide');
+    $('.modal-publication-msg').removeClass('modal-publication-msg--hide');
+  });
+
+  $('.modal-publication-msg').on('click', event => {
+    if (
+      event.target.classList.contains('modal-publication-msg')
+      || event.target.classList.contains('modal-publication-msg__close')
+    ) {
+      $(document.documentElement).css('overflow', '');
+      $('.wrapper').css('padding-right', '');
+      
+      $('.modal-publication-msg').addClass('modal-publication-msg--hide');
+      $('.b-modal').addClass('b-modal--hide');
+    }
+  });
+}
 
 function comparePage() {
   
@@ -196,14 +260,14 @@ function videosPage() {
       $('.b-modal').addClass('b-modal--hide');
     }
   });
+}
 
-  function getScrollBarWidth(element) {
-    let scrollBarWidth = -element.width();
-    element.css('overflow', 'hidden');
-    scrollBarWidth += element.width();
-    element.css('overflow', '');
-    return scrollBarWidth;
-  }
+function getScrollBarWidth(element) {
+  let scrollBarWidth = -element.width();
+  element.css('overflow', 'hidden');
+  scrollBarWidth += element.width();
+  element.css('overflow', '');
+  return scrollBarWidth;
 }
 
 function fileInputs() {
