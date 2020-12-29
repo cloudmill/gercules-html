@@ -126,7 +126,7 @@ function videosPage() {
 
   // modal
 
-  $('.videos_s_item-content').on('click', () => {
+  $(document).on("click", ".videos__item-content", function (e) {
     const scrollBarWidth = getScrollBarWidth($(document.documentElement));
 
     if (scrollBarWidth) {
