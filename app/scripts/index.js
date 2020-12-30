@@ -32,61 +32,170 @@ $(document).ready(function () {
   tags();
 
   sliderNew();
+  publicationPage();
 });
 
-function comparePage() {
-  const itemsHeight = [];
+function publicationPage() {
 
-  itemsHeightUpdate();
+  // modal
+
+  // open modal
+
+  $('.publications-detail__save').on('click', event => {
+    const scrollBarWidth = getScrollBarWidth($(document.documentElement));
+
+    if (scrollBarWidth) {
+      $('.wrapper').css('padding-right', scrollBarWidth + 'px');
+    }
+    $(document.documentElement).css('overflow', 'hidden');
+    
+    $('.modal-subscription').removeClass('modal-subscription--hide');
+    $('.b-modal').removeClass('b-modal--hide');
+
+    if ($(window).width() > 992) {
+      $('.publications-subscription--modal-subscription').scrollTop(0);
+    }
+  });
+
+  // close modal
+
+  $('.modal-subscription').on('click', event => {
+    if (
+      event.target.classList.contains('modal-subscription')
+      || event.target.classList.contains('modal-subscription__close')
+    ) {
+      $(document.documentElement).css('overflow', '');
+      $('.wrapper').css('padding-right', '');
+      
+      $('.modal-subscription').addClass('modal-subscription--hide');
+      $('.b-modal').addClass('b-modal--hide');
+    }
+  });
+
   $(window).on('resize', () => {
-    itemsHeightUpdate();
+    if ($(window).width() > 992) {
+      $('.publications-subscription--modal-subscription').scrollTop(0);
+    }
   });
 
-  $('.compare__delete').on('click', function () {
-    $(this).closest('.compare__slide').remove();
+  $('.modal-subscription [type="submit"]').on('click', () => {
+    $('.modal-subscription').addClass('modal-subscription--hide');
+    $('.modal-publication-msg').removeClass('modal-publication-msg--hide');
   });
 
-  $('.compare__wrapper').each(function () {
+  $('.modal-publication-msg').on('click', event => {
+    if (
+      event.target.classList.contains('modal-publication-msg')
+      || event.target.classList.contains('modal-publication-msg__close')
+    ) {
+      $(document.documentElement).css('overflow', '');
+      $('.wrapper').css('padding-right', '');
+      
+      $('.modal-publication-msg').addClass('modal-publication-msg--hide');
+      $('.b-modal').addClass('b-modal--hide');
+    }
+  });
+}
+
+function comparePage() {
+  
+  // ВЫРАВНИВАНИЕ ТАБЛИЦЫ
+
+  function table_align() {
     const
-      slider = $(this).find('.swiper-container'),
-      nextBtn = $(this).find('.compare__control--next'),
-      prevBtn = $(this).find('.compare__control--prev');
+      TABLE_CLASS = 'compare__wrapper',
+      HEAD_CLASS = 'compare__head',
+      COLUMN_CLASS = 'swiper-slide',
+      ROW_CLASS = 'compare__item';
 
-    const mySwiper = new Swiper(slider[0], {
-      slidesPerView: 4,
-      slidesPerGroup: 1,
-      navigation: {
-        nextEl: nextBtn[0],
-        prevEl: prevBtn[0],
-      },
-    });
+    // для каждой таблицы в отдельности
 
-    nextBtn.on('click', () => {
-      console.log('123123');
-      mySwiper.slideNext();
-    });
-  });
+    $('.' + TABLE_CLASS).each(function () {
 
-  function itemsHeightUpdate() {
-    $('.compare__item').parent().each(function () {
-      $(this).find('.compare__item').each((index, element) => {
-        if (itemsHeight[index]) {
-          const itemHeight = $(element).height();
-          if (itemHeight > itemsHeight[index]) {
-            itemsHeight[index] = itemHeight;
-          }
-        } else {
-          itemsHeight[index] = $(element).height();
-        }
+      // сброc предыдущего выравнивания
+
+      $('.' + ROW_CLASS).css('height', '');
+      
+      // вычисляем максимальные высоты строк
+      
+      const row_height = [];
+      
+      $(this).find('.' + HEAD_CLASS).find('.' + ROW_CLASS).each(function () {
+        row_height[$(this).index()] = $(this).height();
       });
-    });
 
-    $('.compare__item').parent().each(function () {
-      $(this).find('.compare__item').each((index, element) => {
-        $(element).height(itemsHeight[index]);
+      $(this).find('.' + COLUMN_CLASS).each(function () {
+        $(this).find('.' + ROW_CLASS).each(function () {
+          const
+            cur_row_index = $(this).index(),
+            cur_row_height = $(this).height();
+
+          if (cur_row_height > row_height[cur_row_index]) {
+            row_height[cur_row_index] = cur_row_height;
+          }
+        });
+      });
+
+      // задаем всем строкам их максимальную высоту (выравниваем таблицу)
+
+      $(this).find('.' + HEAD_CLASS).find('.' + ROW_CLASS).each(function () {
+        $(this).height(row_height[$(this).index()]);
+      });
+
+      $(this).find('.' + COLUMN_CLASS).each(function () {
+        $(this).find('.' + ROW_CLASS).each(function () {
+          $(this).height(row_height[$(this).index()]);
+        });
       });
     });
   }
+
+  // УДАЛЕНИЕ ИЗ ТАБЛИЦЫ
+
+  $('.compare__delete').on('click', function () {
+    const
+      table = $(this).closest('.compare__wrapper'),
+      tableIndex = $(this).closest('.compare__wrapper').index(),
+      slideIndex = $(this).closest('.swiper-slide').index(),
+      slideCount = sliders[tableIndex].slides.length;
+
+    if (slideCount > 1) {
+      sliders[tableIndex].removeSlide(slideIndex);
+
+      if ((slideCount - 1) < 4) {
+        sliders[tableIndex].params.slidesPerView = slideCount - 1;
+        sliders[tableIndex].update();
+      }
+
+      if (slideCount === 2) {
+        table.find('.compare__delete').addClass('compare__delete--disabled');
+      }
+    }
+  });
+
+  // ИНИЦИАЛИЗАЦИЯ ТАБЛИЦ
+
+  const sliders = [];
+
+  $('.compare__wrapper').each(function () {
+    const
+      slider = $(this).find('.swiper-container')[0],
+      prev_button = $(this).find('.compare__control--prev')[0],
+      next_button = $(this).find('.compare__control--next')[0];
+
+    sliders.push(new Swiper(slider, {
+      slidesPerView: 4,
+      allowTouchMove: false,
+      navigation: {
+        prevEl: prev_button,
+        nextEl: next_button,
+      },
+      on: {
+        init: table_align,
+        resize: table_align,
+      },
+    }));
+  });
 }
 
 function wherebuyPage() {
@@ -130,7 +239,7 @@ function videosPage() {
 
   // modal
 
-  $('.videos_s_item-content').on('click', () => {
+  $(document).on("click", ".videos__item-content", function (e) {
     const scrollBarWidth = getScrollBarWidth($(document.documentElement));
 
     if (scrollBarWidth) {
@@ -154,14 +263,14 @@ function videosPage() {
       $('.b-modal').addClass('b-modal--hide');
     }
   });
+}
 
-  function getScrollBarWidth(element) {
-    let scrollBarWidth = -element.width();
-    element.css('overflow', 'hidden');
-    scrollBarWidth += element.width();
-    element.css('overflow', '');
-    return scrollBarWidth;
-  }
+function getScrollBarWidth(element) {
+  let scrollBarWidth = -element.width();
+  element.css('overflow', 'hidden');
+  scrollBarWidth += element.width();
+  element.css('overflow', '');
+  return scrollBarWidth;
 }
 
 function fileInputs() {

@@ -94,7 +94,7 @@
                   <div class="separated-line__item">
                     <p class="publications-detail__reading-time">Время чтения: 15 минут</p>
                   </div>
-                  <div class="separated-line__item"><a class="publications-detail__save" href="">
+                  <div class="separated-line__item"><a class="publications-detail__save" href="#subscription">
                       <div class="publications-detail__save-image"><i class="svg-icon svg-paper-plane"></i>
                       </div>
                       <div class="publications-detail__save-text">Полезная статья! Сохранить.</div></a></div>
@@ -320,6 +320,61 @@
           </div>
         </div>
         <div class="footer-copyright"><span>© 2019 Gerkules. Все права защищены.</span><a href="cloudmill.ru">Сделано в<i class="svg-icon svg-cm_logo"></i></a></div>
+      </div>
+    </div>
+    <div class="b-modal b-modal--hide">
+      <div class="b-modal__bg b-modal__bg--dark"></div>
+      <div class="b-modal__content">
+        <div class="modal-publication-msg modal-publication-msg--hide">
+          <div class="modal-publication-msg__container">
+            <h6 class="title title--section">Ссылка на статью отправлена</h6>
+            <button class="modal-publication-msg__close"></button>
+          </div>
+        </div>
+        <div class="modal-subscription modal-subscription--hide">
+          <div class="modal-subscription__container">
+            <form class="publications-subscription publications-subscription--modal-subscription" action="">
+              <div class="modal-subscription__container-inner">
+                <div class="publications-subscription__tilt">
+                  <div class="publications-subscription__tilt-part publications-subscription__tilt-part--first">
+                    <div class="publications-subscription__tilt-item publications-subscription__tilt-item--first">
+                      <h3 class="publications-subscription__title">Сохранить статью</h3>
+                      <p class="publications-subscription__text">На эту почту мы отправим вам <br>ссылку на статью</p>
+                    </div>
+                  </div>
+                  <div class="publications-subscription__tilt-part publications-subscription__tilt-part--second">
+                    <div class="publications-subscription__tilt-item publications-subscription__tilt-item--second publications-subscription__tilt-item--modal-subscription">
+                      <div class="publications-subscription__checkbox publications-subscription__checkbox--mt--0">
+                        <label class="checkbox-input">
+                          <input class="checkbox-input__input" type="checkbox" name="agreement" required>
+                          <p class="checkbox-input__text">«Я выражаю согласие на обработку ПДн в соответствии с <br><a class="checkbox-input__link" href="#">Политикой конфиденциальности</a>»</p>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="publications-subscription__bottom">
+                  <div class="publications-subscription__email">
+                    <input class="text-input publications-subscription__email-input" type="text" name="email" placeholder="Ваш E-mail" required>
+                  </div>
+                  <div class="publications-subscription__submit publications-subscription__submit--modal-subscription">
+                    <div class="btn-p-gram btn-p-gram--mobile">
+                      <button class="btn-p-gram__btn" type="submit"></button>
+                      <div class="btn-p-gram__view-wrap">
+                        <div class="btn-p-gram__view"></div>
+                      </div>
+                      <div class="btn-p-gram__content"><span class="btn-p-gram__text">Отправить</span>
+                        <div class="btn-p-gram__icon"><i class="svg-icon svg-link-white-arrow"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <button class="modal-subscription__close"></button>
+          </div>
+        </div>
       </div>
     </div>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;amp;apikey=8530f2db-7a56-4f14-96c4-d4300764ff6f&quot; type=&quot;text/javascript" type="text/javascript"></script>
