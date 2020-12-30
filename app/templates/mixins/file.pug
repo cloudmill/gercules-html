@@ -10,6 +10,15 @@
     .concat(file_data_1)
     .concat(file_data_1)
     .concat(file_data_1)
+
+  const file_data_3 = [
+    "Иструкция по применению сухих смесей",
+    "Технические характеристики грунтовки",
+    "Лицензии и сертификаты",
+    "Санитарное заключение на грунтовку",
+    "Лицензии и сертификаты",
+    "Санитарное заключение на грунтовку"
+  ]
     
 mixin file_card(title)
   .file-card
@@ -20,7 +29,21 @@ mixin file_card(title)
         +icon("down", "svg")
         | pdf, 15 mb
 
+mixin file_card-2(title)
+  .file-card
+    +icon("pdf-2", "svg")
+    a(href="#")
+      p=title
+      span
+        +icon("down", "svg")
+        | pdf, 15 mb
+
 mixin file_list(titles)
   .file-list
     each title in titles
       +file_card(title)
+
+mixin file_list-2(titles)
+  .file-list
+    each title in titles
+      +file_card-2(title)

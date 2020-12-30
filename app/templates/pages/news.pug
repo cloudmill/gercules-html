@@ -1,0 +1,186 @@
+extends ../layouts/clean
+
+
+
+block variables
+
+    - pageTitle = "Новости";
+
+
+
+block content
+
+    .b-content
+
+        .b-content__wrapper
+
+            include ./about/sidebar
+
+            main.b-content__main.b-content__main--pd-t--60.b-content__main--overflow--hidden
+
+                .b-content__main-item.b-content__main-item--pd--hor
+
+                    .b-breadcrumbs
+                        .b-breadcrumbs__item
+                            a(href="").b-breadcrumbs__link Главная
+                        .b-breadcrumbs__item
+                            a(href="").b-breadcrumbs__link О компании
+                        .b-breadcrumbs__item
+                            a(href="").b-breadcrumbs__link Новости
+
+                .b-content__main-item.b-content__main-item--pd--hor.b-content__main-item--mg-t--35
+                
+                    h1.title.title--page #{pageTitle}
+
+                .b-content__main-item.b-content__main-item--mg-t--60
+
+                .b-content__main-item.b-content__main-item--pd--hor.b-content__main-item--mg-t--35
+
+                    //- -
+                    //-     let tags = {
+
+                    //-         pool: [
+                    //-             { text: "#все", selected: true },
+                    //-             "#семинар",
+                    //-             "#конференция",
+                    //-             "#новинки",
+                    //-             "#академиягеркулес",
+                    //-             "#социальная ответсвенность",
+                    //-             { text: "#скидки", selected: true },
+                    //-             "#новые",
+                    //-             "#события",
+                    //-             "#мероприятия",
+                    //-             "#семинар",
+                    //-             "#новинки",
+                    //-             "#академиягеркулес",
+                    //-         ],
+
+                    //-         selection: [
+                    //-             "#семинар",
+                    //-             "#жизнькомпании",
+                    //-             "#о компании",
+                    //-         ],
+
+                    //-     };
+
+                    .teg
+                        .teg__row
+                            .teg__col.teg__col--topics 
+                                p Популярные темы:
+                            .teg__col.teg__col--tegs
+                                span.teg__hashtag #все
+                                span.teg__hashtag #жизнькомпании
+                                span.teg__hashtag #новости
+                                span.teg__hashtag #семинар
+                                span.teg__hashtag #конференция
+                                span.teg__hashtag #новинки
+                                span.teg__hashtag #академиягеркулес
+                                span.teg__hashtag.teg__hashtag-additional #все
+                                span.teg__hashtag.teg__hashtag-additional #жизнькомпании
+                                span.teg__hashtag.teg__hashtag-additional #новости
+                                span.teg__hashtag.teg__hashtag-additional #семинар
+                                span.teg__hashtag.teg__hashtag-additional #конференция
+                                span.teg__hashtag.teg__hashtag-additional #новинки
+                                span.teg__hashtag.teg__hashtag-additional #академиягеркулес
+                                span.teg__hashtag-remove Очистить всё
+                        .teg__row
+
+                            .teg__col.teg__col--still
+                                p.teg__deploy.teg-active Еще 6 тегов
+                                p.teg__up Свернуть
+                    .teg-mob
+                        .teg-mob__row
+                            .teg-mob__col.teg-mob__col--topics 
+                                p Все
+                            .teg-mob__col.teg-mob__col--tegs
+                                span.teg-mob__hashtag #все
+                                span.teg-mob__hashtag #жизнькомпании
+                                span.teg-mob__hashtag #новости
+                                span.teg-mob__hashtag #семинар
+                                span.teg-mob__hashtag #конференция
+                                span.teg-mob__hashtag #новинки
+                                span.teg-mob__hashtag #академиягеркулес
+                                span.teg-mob__hashtag.teg-mob__hashtag #все
+                                span.teg-mob__hashtag.teg-mob__hashtag #жизнькомпании
+                                span.teg-mob__hashtag #новости
+                                span.teg-mob__hashtag #семинар
+                                span.teg-mob__hashtag #конференция
+                                span.teg-mob__hashtag #новинки
+                                span.teg-mob__hashtag #академиягеркулес
+                                span.teg-mob__hashtag-remove Очистить всё
+                        .teg-mob__row
+
+                            .teg-mob__col.teg-mob__col--still
+                                p.teg-mob__deploy.teg-mob-active Еще 6 тегов
+                                p.teg-mob__up Свернуть
+                
+
+                    //- deprecated hash-panel
+
+                        .hash-panel.hash-panel--mobile
+
+                            .hash-panel__title Популярные темы:
+
+                            .hash-panel__wrapper
+
+                                ul.hash-list.hash-list--spaces--5.hash-panel__container
+                                    each val in [1, 2]
+                                        li.hash.hash-list__item
+                                            a(href="").hash-list__link #жизнькомпании
+                                        li.hash.hash-list__item
+                                            a(href="").hash-list__link #новости
+                                        li.hash.hash-list__item
+                                            a(href="").hash-list__link #семинар
+                                        li.hash.hash-list__item
+                                            a(href="").hash-list__link #конференция
+                                        li.hash.hash-list__item
+                                            a(href="").hash-list__link #новинки
+                                        li.hash.hash-list__item
+                                            a(href="").hash-list__link #академиягеркулес
+
+                            .hash-panel__button
+
+                                .hash-panel__button-text Еще 6 тегов
+                    
+                .b-content__main-item
+
+                    .publication
+
+                        .publication__list.publication__list--mg-t--m1.publication__list--mg-l--m1
+
+                            each i in [1, 2]
+                                each j in [1, 2, 3, 4]                            
+                                
+                                    .publication__item
+
+                                        a(href="").publication__content
+
+                                            .publication__image
+                                                img.publication__img(src=`./images/publication-${j}.jpg`)
+
+                                            p.publication__date
+                                                |22 октября 2019
+
+                                            h6.title.title--default.publication__title
+                                                |Новая формула GE-29: глубже, равномернее, крепче!
+
+                                            p.publication__text
+                                                |С 20 марта 2018 мы начали выпуск нового продукта: «Грунтовка укрепляющая глубокого проникновения GE-29». Мы улучшили формулу и обновили упаковку!
+
+                                        ul.hash-list.hash-list--spaces--2.hash-panel__container.publication__hash-list
+                                            li.hash.hash-list__item
+                                                a(href="").hash-list__link #жизнькомпании
+                                            li.hash.hash-list__item
+                                                a(href="").hash-list__link #новости
+
+                .b-content__main-item.b-content__main-item--mg-t--60
+                    
+                    a(href="").showmore
+
+                        .showmore__wrapper
+                            .showmore__text Показать еще
+                            .showmore__count 52
+
+                .b-content__main-item.b-content__main-item--mg-t--120
+
+                    include ../modules/publications-subscription
