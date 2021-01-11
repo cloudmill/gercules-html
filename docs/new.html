@@ -57,16 +57,13 @@
       </div>
       <div class="b-content">
         <div class="b-content__wrapper">
-          <aside class="b-content__side-bar">
-            <nav class="side-nav">
-              <ul class="side-nav__list">
-                <li class="side-nav__item"><a class="side-nav__item-link" href="">Покупателям</a></li>
-                <li class="side-nav__item side-nav__item--active"><a class="side-nav__item-link" href="">Публикации</a></li>
-                <li class="side-nav__item"><a class="side-nav__item-link" href="">Консультации</a></li>
-                <li class="side-nav__item"><a class="side-nav__item-link" href="">Где купить?</a></li>
-              </ul>
-            </nav>
-          </aside>
+          <div class="sidebar">
+            <div class="sidebar-menu"><a href="">О компании</a><a href="">Новости</a>
+              <div class="sidebar-menu_dropdown active open"><span>Упаковка продукции</span>
+                <div class="sidebar-menu_dropdown-list"><a href="#">Упаковка 2015</a><a class="active" href="#">Упаковка 2017</a><a href="#">Кодировка</a></div>
+              </div><a href="">Видеогалерея</a><a href="">Сотрудники</a><a href="">Вакансии</a><a href="">Социальная  ответственность</a><a href="">Контакты</a>
+            </div>
+          </div>
           <main class="publications-detail b-content__main b-content__main--pd-t--60 b-content__main--overflow--hidden">
             <div class="b-content__main-item b-content__main-item--pd--hor">
               <div class="b-breadcrumbs">
@@ -118,6 +115,10 @@
                   </div>
                 </div>
                 <div class="swiper-container new__gallery-top">
+                  <div class="sliderControls">
+                    <button class="fs-steps_control-prev"></button>
+                    <button class="fs-steps_control-next"></button>
+                  </div>
                   <div class="swiper-wrapper">
                     <div class="swiper-slide new__top-slide"><img src="./images/video-preview-3.jpg" alt=""></div>
                     <div class="swiper-slide new__top-slide"><img src="./images/fs-steps-3.jpg" alt=""></div>
