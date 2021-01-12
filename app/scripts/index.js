@@ -39,6 +39,7 @@ $(document).ready(function () {
 
 function selectTag() {
   $('.select-tag').each(function () {
+    const component = $(this);
     const openBtn = $(this).find('.select-tag__open');
     const tags = [];
 
@@ -71,6 +72,8 @@ function selectTag() {
           }
         }
       });
+
+      openUpdate();
     });
 
     $(this).find('.select-tag__item').on('click', function () {
@@ -81,6 +84,8 @@ function selectTag() {
 
         tag.toggleClass('select-tag__tag--active');
       }
+
+      resetUpdate();
     });
 
     $(this).find('.select-tag__reset').on('click', () => {
@@ -90,6 +95,49 @@ function selectTag() {
         tags[i] = false;
       }
     });
+
+    resetUpdate();
+
+    openUpdate();
+
+    $(window).on('resize', () => {
+      openUpdate();
+    });
+    
+    function resetUpdate() {
+      if (component.find('.select-tag__list--active').find('.select-tag__tag--active').length) {
+        component.find('.select-tag__reset').closest('.select-tag__item').removeClass('select-tag__item--removed');
+      } else {
+        component.find('.select-tag__reset').closest('.select-tag__item').addClass('select-tag__item--removed');
+      }
+    }
+
+    function openUpdate() {
+      const activeList = component.find('.select-tag__list--active');
+      const firstItem = activeList.find('.select-tag__item').filter(':first');
+      const firstItemTop = firstItem.position().top;
+
+      let countInvisibleItems = 0;
+      activeList.find('.select-tag__item').each(function () {
+        const currentItemTop = $(this).position().top;
+
+        if (currentItemTop > firstItemTop + 5) {
+          countInvisibleItems++;
+        }
+      });
+
+      if (!component.find('.select-tag__item--removed').length) {
+        countInvisibleItems--;
+      }
+
+      if (countInvisibleItems > 0) {
+        component.find('.select-tag__open').removeClass('select-tag__open--disabled');
+
+        component.find('.select-tag__open-count').text(countInvisibleItems);
+      } else {
+        component.find('.select-tag__open').addClass('select-tag__open--disabled');
+      }
+    }
   });
 }
 

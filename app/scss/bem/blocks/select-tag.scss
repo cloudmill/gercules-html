@@ -1,22 +1,20 @@
 .select-tag {
-    padding: 25px 80px 25px 40px;
+    padding: 23px 80px 25px 40px;
     border-top: 1px solid $color-gray-border;
     border-bottom: 1px solid $color-gray-border;
-    // border: 1px solid black;
 
 
     // row
 
     &__row {
         display: flex;
-        // border: 1px solid black;
     }
 
 
     // left
 
     &__left {
-        // border: 1px solid black;
+        padding-top: 2px;
     }
 
     &__label {
@@ -28,20 +26,22 @@
 
     // mid
 
-    &__mid {
-        margin-left: 20px;
-        flex-grow: 1;
-        // border: 1px solid black;
-    }
-    
     $height: 21px;
+    $gap: 10px;
+    $offset-y: 4px;
+    $offset-x: 8px;
+
+    &__mid {
+        margin-left: 20px - $offset-x;
+        flex-grow: 1;
+    }
 
     &__wrapper {
+        padding-top: 2px;
+        padding-left: $offset-x;
         overflow: hidden;
-        min-height: $height;
+        min-height: 25px;
     }
-    
-    $gap: 10px;
 
     &__list {
         margin-top: -$gap;
@@ -61,6 +61,10 @@
     &__item {
         margin: $gap;
         cursor: pointer;
+
+        &--removed {
+            display: none;
+        }
     }
 
     &__tag {
@@ -76,8 +80,6 @@
             &::before {
                 position: absolute;
                 z-index: -1;
-                $offset-y: 2px;
-                $offset-x: 9px;
                 top: -$offset-y;
                 bottom: -$offset-y;
                 left: -$offset-x;
@@ -131,6 +133,7 @@
         margin-left: 7px;
         font-size: 15px;
         line-height: $height;
+        white-space: nowrap;
     }
 
 
@@ -138,7 +141,7 @@
 
     &__right {
         margin-left: 20px;
-        // border: 1px solid black;
+        padding-top: 2px;
     }
 
     &__open {
@@ -167,6 +170,11 @@
                     border-right-color: $color-black;
                 }
             }
+        }
+
+        &--disabled {
+            opacity: 0;
+            pointer-events: none;
         }
     }
 
