@@ -75,17 +75,28 @@
                   <button class="date-next"></button>
                 </div>
                 <div class="control-loc">
-                  <div class="loc-caption">События в:</div>
-                  <div class="field field-select">
-                    <select name="location" id="location">
-                      <option value="0">Санкт-Петербург</option>
-                      <option value="1">Москва</option>
-                    </select>
+                  <div class="control-loc__row">
+                    <div class="control-loc__col">
+                      <div class="select-input">
+                        <select class="select-input__select" name="city" data-no-search data-theme="default select2-container--main" data-placeholder="Город" data-width="100%">
+                          <option></option>
+                          <option value="1">Город 1</option>
+                          <option value="2">Город 2</option>
+                          <option value="3">Город 3</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="control-loc__col">
+                      <div class="select-input">
+                        <select class="select-input__select" name="type" data-no-search data-theme="default select2-container--main" data-placeholder="Тип события" data-width="100%">
+                          <option></option>
+                          <option value="1">Тип события 1</option>
+                          <option value="2">Тип события 2</option>
+                          <option value="3">Тип события 3</option>
+                        </select>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="field field-checkbox">
-                  <input id="learning" type="checkbox" name="learning" checked>
-                  <label for="learning">Онлайн обучение и вебинары</label>
                 </div>
               </div>
               <div class="calendar-data-events">

@@ -3,6 +3,9 @@
     border-top: 1px solid $color-gray-border;
     border-bottom: 1px solid $color-gray-border;
 
+    @media (max-width: 768px) {
+        padding-right: 40px;
+    }
 
     // row
 

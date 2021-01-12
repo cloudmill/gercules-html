@@ -3,6 +3,7 @@
     font-size: 15px;
     line-height: 17px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 
     .control-date {
@@ -52,13 +53,28 @@
     }
 
     .control-loc {
-      margin-right: 50px;
-      display: flex;
-      align-items: center;
+      flex-grow: 1;
 
       .loc-caption {
         white-space: nowrap;
         margin-right: 20px;
+      }
+
+      
+      &__row {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+
+      &__col {
+        width: calc((100% - 40px) / 2);
+        max-width: 290px;
+
+        &:last-child {
+          margin-left: 40px;
+        }
       }
     }
 

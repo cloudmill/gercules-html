@@ -17,12 +17,9 @@
       top: 25px;
       content: "";
       display: block;
-      width: 4px;
       height: 60px;
-      background-image: url(../images/events-card-mark.svg);
-      background-size: contain;
-      background-position: center center;
-      background-repeat: no-repeat;
+      border-top: 3px solid transparent;
+      border-left: 4px solid $color-red;
     }
 
     &:not(:first-child) {
@@ -78,6 +75,125 @@
       max-width: 454px;
       font: normal normal 18px/23px $font-main;
       color: $color-main;
+    }
+  }
+}
+
+.select2-container {
+
+  &--main {
+
+
+    .selection {
+
+
+        .select2-selection {
+          padding: 26px 37px;
+          padding-right: 80px + 37px;
+          height: 70px;
+          display: flex;
+          align-items: center;
+          border-color: $color-border;
+          border-radius: 0;
+          
+
+          .select2-selection__rendered {
+            // переопределение
+            padding: 0 !important;
+            font-size: 15px;
+            line-height: 17px;
+            
+            .select2-selection__placeholder {
+              // font-size & line-height inherit
+              color: $color-placeholder;
+            }
+          }
+
+
+          .select2-selection__arrow {
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 100%;
+            border: 1px solid $color-border;
+
+            b {
+              margin: 0;
+              border: none;
+              transition: $ease-main;
+
+              &::before {
+                position: absolute;
+                transform: translate(-50%, -75%) rotate(45deg);
+                content: "";
+                display: block;
+                $size: 7px;
+                width: $size;
+                height: $size;
+                border: 2px solid transparent;
+                border-bottom-color: $color-red;
+                border-right-color: $color-red;
+                transition: inherit;
+              }
+            }
+          }
+        }
+    }
+  
+
+    .select2-dropdown {
+      border-color: $color-border;
+      border-radius: 0;
+
+
+      .select2-results {
+
+
+        .select2-results__options {
+
+
+          [aria-selected=true] {
+            background-color: scale-color($color: $color-border, $lightness: 50%);
+          }
+
+
+          .select2-results__option {
+            padding: 10px;
+            font-size: 15px;
+            line-height: 17px;
+
+            &--highlighted {
+              background-color: $color-red;
+            }
+          }
+        }
+      }
+    }
+
+
+    &.select2-container--open {
+
+
+      .selection {
+        
+
+        .select2-selection {
+
+
+          .select2-selection__arrow {
+
+
+            b {
+              transform: rotate(180deg);
+
+              &::before {
+                border-bottom-color: $color-main;
+                border-right-color: $color-main;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
