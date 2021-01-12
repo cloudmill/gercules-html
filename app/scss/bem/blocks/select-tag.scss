@@ -1,0 +1,218 @@
+.select-tag {
+    padding: 25px 80px 25px 40px;
+    border-top: 1px solid $color-gray-border;
+    border-bottom: 1px solid $color-gray-border;
+    // border: 1px solid black;
+
+
+    // row
+
+    &__row {
+        display: flex;
+        // border: 1px solid black;
+    }
+
+
+    // left
+
+    &__left {
+        // border: 1px solid black;
+    }
+
+    &__label {
+        font-size: 14px;
+        line-height: 16px;
+        white-space: nowrap;
+    }
+
+
+    // mid
+
+    &__mid {
+        margin-left: 20px;
+        flex-grow: 1;
+        // border: 1px solid black;
+    }
+    
+    $height: 21px;
+
+    &__wrapper {
+        overflow: hidden;
+        min-height: $height;
+    }
+    
+    $gap: 10px;
+
+    &__list {
+        margin-top: -$gap;
+        margin-left: -$gap;
+        display: none;
+        flex-wrap: wrap;
+
+        &--preview {
+            max-height: $height;
+        }
+
+        &--active {
+            display: flex;
+        }
+    }
+
+    &__item {
+        margin: $gap;
+        cursor: pointer;
+    }
+
+    &__tag {
+        font-size: 15px;
+        line-height: $height;
+        color: $color-red;
+        white-space: nowrap;
+
+        &--active {
+            position: relative;
+            color: white;
+
+            &::before {
+                position: absolute;
+                z-index: -1;
+                $offset-y: 2px;
+                $offset-x: 9px;
+                top: -$offset-y;
+                bottom: -$offset-y;
+                left: -$offset-x;
+                right: -$offset-x;
+                content: "";
+                display: block;
+                background-color: $color-red;
+            }
+        }
+    }
+
+    &__reset {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+
+
+            .select-tag__reset-mark {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &__reset-mark {
+        position: relative;
+        width: 8px;
+        transition: $ease-main;
+
+        &::before,
+        &::after {
+            position: absolute;
+            left: 50%;
+            content: "";
+            display: block;
+            width: 1px;
+            height: 10px;
+            background-color: $color-black;
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+
+    &__reset-text {
+        margin-left: 7px;
+        font-size: 15px;
+        line-height: $height;
+    }
+
+
+    // right
+
+    &__right {
+        margin-left: 20px;
+        // border: 1px solid black;
+    }
+
+    &__open {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+
+
+            .select-tag__open-text {
+                
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &--active {
+
+
+            .select-tag__open-mark {
+                transform: rotate(-180deg);
+
+                &::before {
+                    border-bottom-color: $color-black;
+                    border-right-color: $color-black;
+                }
+            }
+        }
+    }
+
+    &__open-mark {
+        position: relative;
+        width: 8px;
+        transition: $ease-main;
+
+        &::before {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -75%) rotate(45deg);
+            content: "";
+            display: block;
+            $size: 6px;
+            width: $size;
+            height: $size;
+            border: 1px solid transparent;
+            border-bottom-color: $color-red;
+            border-right-color: $color-red;
+            transition: inherit;
+        }
+    }
+
+    &__open-text {
+        position: relative;
+        margin-left: 10px;
+        display: none;
+        font-size: 15px;
+        line-height: 21px;
+        white-space: nowrap;
+
+        &::before {
+            opacity: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: "";
+            display: block;
+            border-top: 1px dashed $color-red;
+            transition: $ease-main;
+        }
+
+        &--active {
+            display: block;
+        }
+    }
+}

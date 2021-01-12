@@ -33,7 +33,65 @@ $(document).ready(function () {
 
   sliderNew();
   publicationPage();
+
+  selectTag();
 });
+
+function selectTag() {
+  $('.select-tag').each(function () {
+    const openBtn = $(this).find('.select-tag__open');
+    const tags = [];
+
+    $(this).find('.select-tag__list--active').find('.select-tag__tag').each(function () {
+      if ($(this).hasClass('select-tag__tag--active')) {
+        tags.push(true);
+      } else {
+        tags.push(false);
+      }
+    });
+
+    openBtn.on('click', (event) => {
+      $(event.currentTarget).toggleClass('select-tag__open--active');
+      
+      const activeBtnText = $(event.currentTarget).find('.select-tag__open-text--active');
+      $(event.currentTarget).find('.select-tag__open-text').addClass('select-tag__open-text--active')
+      activeBtnText.removeClass('select-tag__open-text--active');
+
+      const activeList = $(this).find('.select-tag__list--active');
+
+      $(this).find('.select-tag__list').addClass('select-tag__list--active');
+      activeList.removeClass('select-tag__list--active');
+
+      $(this).find('.select-tag__list--active').find('.select-tag__item').each(function () {
+        if ($(this).find('.select-tag__tag')) {
+          if (tags[$(this).index()]) {
+            $(this).find('.select-tag__tag').addClass('select-tag__tag--active');
+          } else {
+            $(this).find('.select-tag__tag').removeClass('select-tag__tag--active');
+          }
+        }
+      });
+    });
+
+    $(this).find('.select-tag__item').on('click', function () {
+      const tag = $(this).find('.select-tag__tag');
+
+      if (tag) {
+        tags[$(this).index()] = !tags[$(this).index()];
+
+        tag.toggleClass('select-tag__tag--active');
+      }
+    });
+
+    $(this).find('.select-tag__reset').on('click', () => {
+      $(this).find('.select-tag__tag').removeClass('select-tag__tag--active');
+      
+      for (let i = 0; i < tags.length; i++) {
+        tags[i] = false;
+      }
+    });
+  });
+}
 
 function publicationPage() {
 

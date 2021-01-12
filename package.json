@@ -14,7 +14,7 @@
     "babel-preset-latest": "^6.24.1",
     "bemto.pug": "^2.1.0",
     "browser-sync": "^2.26.13",
-    "core-js": "^3.8.1",
+    "core-js": "^3.8.2",
     "filter": "^0.1.1",
     "gulp": "^4.0.2",
     "gulp-cache-files": "0.0.2",
