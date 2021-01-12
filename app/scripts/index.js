@@ -35,7 +35,23 @@ $(document).ready(function () {
   publicationPage();
 
   selectTag();
+
+  academyPage();
 });
+
+function academyPage() {
+  $('#submit').on('click', event => {
+    const scrollBarWidth = getScrollBarWidth($(document.documentElement));
+
+    if (scrollBarWidth) {
+      $('.wrapper').css('padding-right', scrollBarWidth + 'px');
+    }
+    $(document.documentElement).css('overflow', 'hidden');
+    
+    $('.modal-publication-msg').removeClass('modal-publication-msg--hide');
+    $('.b-modal').removeClass('b-modal--hide');
+  });
+}
 
 function selectTag() {
   $('.select-tag').each(function () {

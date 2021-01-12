@@ -2,6 +2,54 @@
   margin-top: 35px;
   padding-bottom: 120px;
 
+
+  &__modal {
+
+    @media (max-width: 576px) {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  &__modal-container {
+
+    @media (max-width: 576px) {
+      max-height: 160px !important;
+    }
+  }
+
+  &__modal-text {
+    text-align: center;
+
+    @media (max-width: 576px) {
+      font-size: 13px !important;
+      line-height: 160% !important;
+    }
+  }
+
+  &__modal-close {
+
+    @media (max-width: 576px) {
+      $size: 40px;
+      width: $size !important;
+      height: $size !important;
+
+      @mixin pseudo-element {
+        width: 10px !important;
+        height: 1px !important;
+      }
+
+      &::before {
+        @include pseudo-element();
+      }
+
+      &::after {
+        @include pseudo-element();
+      }
+    }
+  }
+
+
   h2 {
     margin-top: 100px;
     font-family: $font-second;
@@ -56,7 +104,7 @@
 
     &-card {
       flex-basis: 50%;
-      
+
     }
   }
 

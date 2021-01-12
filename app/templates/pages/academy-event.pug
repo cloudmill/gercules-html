@@ -43,3 +43,17 @@ block content
         include ../modules/events/plan
         include ../modules/events/speaker
         include ../modules/events/registration
+
+block modal
+
+    .b-modal.b-modal--hide
+        .b-modal__bg.b-modal__bg--dark
+        .b-modal__content
+
+            .academy__modal.modal-publication-msg.modal-publication-msg--hide
+                .academy__modal-container.modal-publication-msg__container
+                    h6.academy__modal-text.title.title--section
+                        |Заявка на участие отправлена!
+                        br
+                        |В ближайшее время мы с вами свяжемся для подтверждения участия
+                    button.academy__modal-close.modal-publication-msg__close
