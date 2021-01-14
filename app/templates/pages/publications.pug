@@ -38,30 +38,83 @@ block content
                         h1.title.title--page
                             |#{pageTitle}
                     .b-content__main-item.b-content__main-item--mg-t--60
-                        -
-                            let tags = {
-                                pool: [
-                                    { text: "#все", selected: true },
-                                    "#семинар",
-                                    "#конференция",
-                                    "#новинки",
-                                    "#академиягеркулес",
-                                    "#социальная ответсвенность",
-                                    { text: "#скидки", selected: true },
-                                    "#новые",
-                                    "#события",
-                                    "#мероприятия",
-                                    "#семинар",
-                                    "#новинки",
-                                    "#академиягеркулес",
-                                ],
-                                selection: [
-                                    "#семинар",
-                                    "#жизнькомпании",
-                                    "#о компании",
-                                ],
-                            };
-                        +select-tags(tags)
+                        .select-tag
+                            .select-tag__row
+                                .select-tag__left
+                                    span.select-tag__label
+                                        |Популярные темы:
+                                .select-tag__mid
+                                    .select-tag__wrapper
+                                        mixin list
+                                            -
+                                                var tags = [
+                                                    '#все',
+                                                    '#семинар',
+                                                    '#конференция',
+                                                    '#новинки',
+                                                    '#академиягеркулес',
+                                                    '#социальная ответсвенность',
+                                                    '#скидки',
+                                                    '#новые',
+                                                    '#события',
+                                                    '#мероприятия',
+                                                    '#семинар',
+                                                    '#новинки',
+                                                    '#академиягеркулес',
+                                                ];
+                                            each tag, index in tags
+                                                li.select-tag__item
+                                                    if (index === 0 || index === 6)
+                                                        span.select-tag__tag.select-tag__tag--active
+                                                            |#{tag}
+                                                    else
+                                                        span.select-tag__tag
+                                                            |#{tag}
+                                            li.select-tag__item
+                                                button.select-tag__reset
+                                                    span.select-tag__reset-mark
+                                                    span.select-tag__reset-text
+                                                        |Очистить все
+                                        ul.select-tag__list.select-tag__list--preview.select-tag__list--active
+                                            +list
+                                        ul.select-tag__list
+                                            +list
+                                .select-tag__right
+                                    button.select-tag__open
+                                        span.select-tag__open-mark
+                                        span.select-tag__open-text.select-tag__open-text--active
+                                            |#{'Еще '}
+                                            span.select-tag__open-count
+                                                |6
+                                            |#{' тегов'}
+                                        span.select-tag__open-text
+                                            |Свернуть
+                        .teg-mob
+                            .teg-mob__row
+                                .teg-mob__col.teg-mob__col--topics 
+                                    p Все
+                                .teg-mob__col.teg-mob__col--tegs
+                                    span.teg-mob__hashtag #все
+                                    span.teg-mob__hashtag #семинар
+                                    span.teg-mob__hashtag #конференция
+                                    span.teg-mob__hashtag #новинки
+                                    span.teg-mob__hashtag #академиягеркулес
+                                    span.teg-mob__hashtag #скидки
+                                    span.teg-mob__hashtag #академиягеркулес
+                                    span.teg-mob__hashtag #социальная ответсвенность
+                                    span.teg-mob__hashtag #скидки
+                                    span.teg-mob__hashtag #новые
+                                    span.teg-mob__hashtag #события
+                                    span.teg-mob__hashtag #мероприятия
+                                    span.teg-mob__hashtag #семинар
+                                    span.teg-mob__hashtag #новинки
+                                    span.teg-mob__hashtag #академиягеркулес
+                                    span.teg-mob__hashtag-remove Очистить всё
+                            .teg-mob__row
+
+                                .teg-mob__col.teg-mob__col--still
+                                    p.teg-mob__deploy.teg-mob-active Еще 6 тегов
+                                    p.teg-mob__up Свернуть
                     .b-content__main-item
                         .publication
                             .publication__list.publication__list--mg-t--m1.publication__list--mg-l--m1

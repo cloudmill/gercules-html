@@ -57,13 +57,21 @@
       </div>
       <div class="b-content">
         <div class="b-content__wrapper">
-          <div class="sidebar">
-            <div class="sidebar-menu"><a href="">О компании</a><a href="">Новости</a>
-              <div class="sidebar-menu_dropdown active open"><span>Упаковка продукции</span>
-                <div class="sidebar-menu_dropdown-list"><a href="#">Упаковка 2015</a><a class="active" href="#">Упаковка 2017</a><a href="#">Кодировка</a></div>
-              </div><a href="">Видеогалерея</a><a href="">Сотрудники</a><a href="">Вакансии</a><a href="">Социальная  ответственность</a><a href="">Контакты</a>
-            </div>
-          </div>
+          <aside class="b-content__side-bar">
+            <nav class="side-nav">
+              <ul class="side-nav__list">
+                <li class="side-nav__item"><a class="side-nav__item-link" href="">О компании </a></li>
+                <li class="side-nav__item side-nav__item--active"><a class="side-nav__item-link" href="">Новости</a></li>
+                <li class="side-nav__item"><a class="side-nav__item-link" href="">Упаковка продукции</a></li>
+                <li class="side-nav__item"><a class="side-nav__item-link" href="">Объекты</a></li>
+                <li class="side-nav__item"><a class="side-nav__item-link" href="">Видеогалерея</a></li>
+                <li class="side-nav__item"><a class="side-nav__item-link" href="">Сотрудники</a></li>
+                <li class="side-nav__item"><a class="side-nav__item-link" href="">Вакансии</a></li>
+                <li class="side-nav__item"><a class="side-nav__item-link" href="">Социальная ответственность</a></li>
+                <li class="side-nav__item"><a class="side-nav__item-link" href="">Контакты</a></li>
+              </ul>
+            </nav>
+          </aside>
           <main class="b-content__main b-content__main--pd-t--60 b-content__main--overflow--hidden">
             <div class="b-content__main-item b-content__main-item--pd--hor">
               <div class="b-breadcrumbs">
@@ -75,19 +83,78 @@
             <div class="b-content__main-item b-content__main-item--pd--hor b-content__main-item--mg-t--35">
               <h1 class="title title--page">Новости</h1>
             </div>
-            <div class="b-content__main-item b-content__main-item--mg-t--60"></div>
-            <div class="b-content__main-item b-content__main-item--pd--hor b-content__main-item--mg-t--35">
-              <div class="teg">
-                <div class="teg__row">
-                  <div class="teg__col teg__col--topics"> 
-                    <p>Популярные темы:</p>
+            <div class="b-content__main-item b-content__main-item--mg-t--60">
+              <div class="select-tag">
+                <div class="select-tag__row">
+                  <div class="select-tag__left"><span class="select-tag__label">Популярные темы:</span></div>
+                  <div class="select-tag__mid">
+                    <div class="select-tag__wrapper">
+                      <ul class="select-tag__list select-tag__list--preview select-tag__list--active">
+                                              <li class="select-tag__item"><span class="select-tag__tag select-tag__tag--active">#все</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#семинар</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#конференция</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#новинки</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#академиягеркулес</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#социальная ответсвенность</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag select-tag__tag--active">#скидки</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#новые</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#события</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#мероприятия</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#семинар</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#новинки</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#академиягеркулес</span>
+                                              </li>
+                                              <li class="select-tag__item">
+                                                <button class="select-tag__reset"><span class="select-tag__reset-mark"></span><span class="select-tag__reset-text">Очистить все</span></button>
+                                              </li>
+                      </ul>
+                      <ul class="select-tag__list">
+                                              <li class="select-tag__item"><span class="select-tag__tag select-tag__tag--active">#все</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#семинар</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#конференция</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#новинки</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#академиягеркулес</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#социальная ответсвенность</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag select-tag__tag--active">#скидки</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#новые</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#события</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#мероприятия</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#семинар</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#новинки</span>
+                                              </li>
+                                              <li class="select-tag__item"><span class="select-tag__tag">#академиягеркулес</span>
+                                              </li>
+                                              <li class="select-tag__item">
+                                                <button class="select-tag__reset"><span class="select-tag__reset-mark"></span><span class="select-tag__reset-text">Очистить все</span></button>
+                                              </li>
+                      </ul>
+                    </div>
                   </div>
-                  <div class="teg__col teg__col--tegs"><span class="teg__hashtag">#все</span><span class="teg__hashtag">#жизнькомпании</span><span class="teg__hashtag">#новости</span><span class="teg__hashtag">#семинар</span><span class="teg__hashtag">#конференция</span><span class="teg__hashtag">#новинки</span><span class="teg__hashtag">#академиягеркулес</span><span class="teg__hashtag teg__hashtag-additional">#все</span><span class="teg__hashtag teg__hashtag-additional">#жизнькомпании</span><span class="teg__hashtag teg__hashtag-additional">#новости</span><span class="teg__hashtag teg__hashtag-additional">#семинар</span><span class="teg__hashtag teg__hashtag-additional">#конференция</span><span class="teg__hashtag teg__hashtag-additional">#новинки</span><span class="teg__hashtag teg__hashtag-additional">#академиягеркулес</span><span class="teg__hashtag-remove">Очистить всё</span></div>
-                </div>
-                <div class="teg__row">
-                  <div class="teg__col teg__col--still">
-                    <p class="teg__deploy teg-active">Еще 6 тегов</p>
-                    <p class="teg__up">Свернуть</p>
+                  <div class="select-tag__right">
+                    <button class="select-tag__open"><span class="select-tag__open-mark"></span><span class="select-tag__open-text select-tag__open-text--active">Еще <span class="select-tag__open-count">6</span> тегов</span><span class="select-tag__open-text">Свернуть</span></button>
                   </div>
                 </div>
               </div>
@@ -96,7 +163,7 @@
                   <div class="teg-mob__col teg-mob__col--topics"> 
                     <p>Все</p>
                   </div>
-                  <div class="teg-mob__col teg-mob__col--tegs"><span class="teg-mob__hashtag">#все</span><span class="teg-mob__hashtag">#жизнькомпании</span><span class="teg-mob__hashtag">#новости</span><span class="teg-mob__hashtag">#семинар</span><span class="teg-mob__hashtag">#конференция</span><span class="teg-mob__hashtag">#новинки</span><span class="teg-mob__hashtag">#академиягеркулес</span><span class="teg-mob__hashtag teg-mob__hashtag">#все</span><span class="teg-mob__hashtag teg-mob__hashtag">#жизнькомпании</span><span class="teg-mob__hashtag">#новости</span><span class="teg-mob__hashtag">#семинар</span><span class="teg-mob__hashtag">#конференция</span><span class="teg-mob__hashtag">#новинки</span><span class="teg-mob__hashtag">#академиягеркулес</span><span class="teg-mob__hashtag-remove">Очистить всё</span></div>
+                  <div class="teg-mob__col teg-mob__col--tegs"><span class="teg-mob__hashtag">#все</span><span class="teg-mob__hashtag">#семинар</span><span class="teg-mob__hashtag">#конференция</span><span class="teg-mob__hashtag">#новинки</span><span class="teg-mob__hashtag">#академиягеркулес</span><span class="teg-mob__hashtag">#скидки</span><span class="teg-mob__hashtag">#академиягеркулес</span><span class="teg-mob__hashtag">#социальная ответсвенность</span><span class="teg-mob__hashtag">#скидки</span><span class="teg-mob__hashtag">#новые</span><span class="teg-mob__hashtag">#события</span><span class="teg-mob__hashtag">#мероприятия</span><span class="teg-mob__hashtag">#семинар</span><span class="teg-mob__hashtag">#новинки</span><span class="teg-mob__hashtag">#академиягеркулес</span><span class="teg-mob__hashtag-remove">Очистить всё</span></div>
                 </div>
                 <div class="teg-mob__row">
                   <div class="teg-mob__col teg-mob__col--still">

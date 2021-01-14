@@ -33,7 +33,159 @@ $(document).ready(function () {
 
   sliderNew();
   publicationPage();
+
+  selectTag();
+
+  academyPage();
 });
+
+function academyPage() {
+  $('#submit').on('click', event => {
+    const scrollBarWidth = getScrollBarWidth($(document.documentElement));
+
+    if (scrollBarWidth) {
+      $('.wrapper').css('padding-right', scrollBarWidth + 'px');
+    }
+    $(document.documentElement).css('overflow', 'hidden');
+    
+    $('.modal-publication-msg').removeClass('modal-publication-msg--hide');
+    $('.b-modal').removeClass('b-modal--hide');
+  });
+}
+
+function selectTag() {
+  $('.select-tag').each(function () {
+    const component = $(this);
+    const openBtn = $(this).find('.select-tag__open');
+    const tags = [];
+
+    $(this).find('.select-tag__list--active').find('.select-tag__tag').each(function () {
+      if ($(this).hasClass('select-tag__tag--active')) {
+        tags.push(true);
+      } else {
+        tags.push(false);
+      }
+    });
+
+    openBtn.on('click', (event) => {
+      $(event.currentTarget).toggleClass('select-tag__open--active');
+      
+      const activeBtnText = $(event.currentTarget).find('.select-tag__open-text--active');
+      $(event.currentTarget).find('.select-tag__open-text').addClass('select-tag__open-text--active')
+      activeBtnText.removeClass('select-tag__open-text--active');
+
+      const activeList = $(this).find('.select-tag__list--active');
+
+      $(this).find('.select-tag__list').addClass('select-tag__list--active');
+      activeList.removeClass('select-tag__list--active');
+
+      $(this).find('.select-tag__list--active').find('.select-tag__item').each(function () {
+        if ($(this).find('.select-tag__tag')) {
+          if (tags[$(this).index()]) {
+            $(this).find('.select-tag__tag').addClass('select-tag__tag--active');
+          } else {
+            $(this).find('.select-tag__tag').removeClass('select-tag__tag--active');
+          }
+        }
+      });
+
+      openUpdate();
+    });
+
+    $(this).find('.select-tag__item').on('click', function () {
+      const tag = $(this).find('.select-tag__tag');
+
+      if (tag) {
+        tags[$(this).index()] = !tags[$(this).index()];
+
+        tag.toggleClass('select-tag__tag--active');
+      }
+
+      resetUpdate();
+    });
+
+    $(this).find('.select-tag__reset').on('click', () => {
+      $(this).find('.select-tag__tag').removeClass('select-tag__tag--active');
+      
+      for (let i = 0; i < tags.length; i++) {
+        tags[i] = false;
+      }
+    });
+
+    resetUpdate();
+
+    openUpdate();
+
+    $(window).on('resize', () => {
+      openUpdate();
+    });
+    
+    function resetUpdate() {
+      if (component.find('.select-tag__list--active').find('.select-tag__tag--active').length) {
+        component.find('.select-tag__reset').closest('.select-tag__item').removeClass('select-tag__item--removed');
+      } else {
+        component.find('.select-tag__reset').closest('.select-tag__item').addClass('select-tag__item--removed');
+      }
+    }
+
+    function openUpdate() {
+      const activeList = component.find('.select-tag__list--active');
+      const firstItem = activeList.find('.select-tag__item').filter(':first');
+      const firstItemTop = firstItem.position().top;
+
+      let countInvisibleItems = 0;
+      activeList.find('.select-tag__item').each(function () {
+        const currentItemTop = $(this).position().top;
+
+        if (currentItemTop > firstItemTop + 5) {
+          countInvisibleItems++;
+        }
+      });
+
+      if (!component.find('.select-tag__item--removed').length) {
+        countInvisibleItems--;
+      }
+
+      if (countInvisibleItems > 0) {
+        component.find('.select-tag__open').removeClass('select-tag__open--disabled');
+
+        component.find('.select-tag__open-count').text(countInvisibleItems);
+      } else {
+        component.find('.select-tag__open').addClass('select-tag__open--disabled');
+      }
+    }
+  });
+
+  var tegActive = [];
+
+  $('.select-tag__item').on('click', function(){
+
+    $('.select-tag__list--active').find('.select-tag__tag').each(function (){
+      if ($(this).hasClass('select-tag__tag--active')){
+        tegActive.push(true);
+      }
+      else{
+        tegActive.push(false);
+      }
+    });
+
+    let i = 0;
+
+    $('.teg-mob').find('.teg-mob__hashtag').each(function() {
+      
+      if (tegActive[i] == true){
+        $(this).addClass('teg-mob__hashtag--active-red');
+      }else{
+        $(this).removeClass('teg-mob__hashtag--active-red');
+      }
+      i++;
+    });
+
+    tegActive =[];
+    i = 0;
+
+  });
+}
 
 function publicationPage() {
 

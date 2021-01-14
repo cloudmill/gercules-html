@@ -1,17 +1,41 @@
-extends ../layouts/default.pug
+extends ../layouts/clean
 
 block variables
-  -var pageTitle='TEST'
+    - pageTitle = "Публикации";
 
 block content
-  .content
-    form(action="#")
-      .btn-p-gram
-        button(type="submit").btn-p-gram__btn
-        .btn-p-gram__view-wrap
-          .btn-p-gram__view
-        .btn-p-gram__content
-          span.btn-p-gram__text Задать вопрос
-          .btn-p-gram__icon
-            +icon("link-white-arrow", "svg")
-    
+    .publications
+        .b-content
+            .b-content__wrapper
+                aside.b-content__side-bar
+                    nav.side-nav
+                        ul.side-nav__list
+                            li.side-nav__item
+                                a(href="").side-nav__item-link
+                                    |Покупателям
+                            li.side-nav__item.side-nav__item--active
+                                a(href="").side-nav__item-link
+                                    |Публикации
+                            li.side-nav__item
+                                a(href="").side-nav__item-link
+                                    |Консультации
+                            li.side-nav__item
+                                a(href="").side-nav__item-link
+                                    |Где купить?
+                main.b-content__main.b-content__main--pd-t--60.b-content__main--overflow--hidden
+                    .b-content__main-item.b-content__main-item--pd--hor
+                        .b-breadcrumbs
+                            .b-breadcrumbs__item
+                                a(href="").b-breadcrumbs__link
+                                    |Главная
+                            .b-breadcrumbs__item
+                                a(href="").b-breadcrumbs__link
+                                    |Покупателям
+                            .b-breadcrumbs__item
+                                a(href="").b-breadcrumbs__link
+                                    |Публикации
+                    .b-content__main-item.b-content__main-item--pd--hor.b-content__main-item--mg-t--35
+                        h1.title.title--page
+                            |#{pageTitle}
+                    .b-content__main-item.b-content__main-item--mg-t--60
+                        .select-tag

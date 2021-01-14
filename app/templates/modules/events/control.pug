@@ -4,8 +4,30 @@
     span Сентябрь 2020
     button.date-next
   .control-loc
-    .loc-caption События в:
-    +field_select('location',[[0,'Санкт-Петербург'],[1,'Москва']])
-  +field_checkbox()
-      input#learning(type="checkbox", name="learning" checked )
-      label(for="learning") Онлайн обучение и вебинары
+    .control-loc__row
+      .control-loc__col
+        .select-input
+          select(
+            name="city", 
+            data-no-search,
+            data-theme="default select2-container--main",
+            data-placeholder="Город", 
+            data-width="100%"
+          ).select-input__select
+            option
+            each option in [1, 2, 3]
+              option(value = option)
+                |#{'Город ' + option}
+      .control-loc__col
+        .select-input
+          select(
+            name="type", 
+            data-no-search,
+            data-theme="default select2-container--main",
+            data-placeholder="Тип события",
+            data-width="100%"
+          ).select-input__select
+            option
+            each option in [1, 2, 3]
+              option(value = option)
+                |#{'Тип события ' + option}

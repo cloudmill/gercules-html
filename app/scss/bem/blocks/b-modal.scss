@@ -11,6 +11,7 @@ $bg-color-dark: rgba(black, 0.6);
 
 .b-modal {
     @include cover(fixed);
+    z-index: 100000;
     transition: $ease-main;
 
     &--hide {
