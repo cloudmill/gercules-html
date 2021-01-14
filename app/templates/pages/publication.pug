@@ -72,7 +72,10 @@ block content
 
                             .separated-line__item
 
-                                p.publications-detail__reading-time Время чтения: 15 минут
+                                p.publications-detail__reading-time 
+                                    span.time--active Время чтения 
+                                    span.time--mobile Читать
+                                    |: 15 минут
 
                             .separated-line__item
 
@@ -82,7 +85,8 @@ block content
                                         +icon("paper-plane", "svg")
 
                                     .publications-detail__save-text
-                                        |Полезная статья! Сохранить.
+                                        span Полезная статья!
+                                        |Сохранить.
 
 
 
@@ -182,7 +186,7 @@ block content
 
                         .separated-line__item
 
-                            a(href="").repost-link.repost-link--facebook
+                            a(href="").repost-link.repost-link--social
                                 .repost-link__image
                                     +icon("facebook", "svg")
                                 .repost-link__count
@@ -190,7 +194,7 @@ block content
                                              
                         .separated-line__item
 
-                            a(href="").repost-link.repost-link--vk
+                            a(href="").repost-link.repost-link--social
                                 .repost-link__image
                                     +icon("vk", "svg")
                                 .repost-link__count

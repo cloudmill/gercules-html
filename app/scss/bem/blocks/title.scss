@@ -14,16 +14,43 @@
       line-height: 140%;
     }
 
+    @media (max-width: 406px) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-top: 1px solid $color-gray-border;
+      border-bottom: 0;
+      font-size: 15px;
+      line-height: 21px;
+    }
+
   }
 
   &--section {
     font-size: 28px;
     line-height: 144%;
+
+    @media (max-width: 1026px) {
+      font-size: 21px;
+    }
+
+    @media (max-width: 406px) {
+      font-size: 15px;
+      line-height: 21px;
+    }
   }
 
   &--default {
     font-size: 20px;
     line-height: 160%;
+
+    @media (max-width: 1026px) {
+      font-size: 21px;
+    }
+
+    @media (max-width: 406px) {
+      font-size: 15px;
+      line-height: 21px;
+    }
   }
 
   &--l-h--144p {
