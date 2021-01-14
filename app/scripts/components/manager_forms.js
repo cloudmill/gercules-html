@@ -66,14 +66,9 @@ export default class Manager_forms {
       if(proccess) return true;
       proccess = true;
       try {
-        const sity = $(".events-control select").val();
-        let params = "";
-        $(".events-control input[type=checkbox]").each((k, item) => {
-          const checkName = item.getAttribute("name");
-          const value = item.checked;
-          params += `&${checkName}=${value}`;
-        });
-        const dataStr = `sity=${sity}${params}`;
+        const sity = $("[data-attr=location]").val();
+        let params = $("[data-attr=type]").val();
+        const dataStr = `sity=${sity}&type=${params}`;
         const responce = await fetch(`/local/templates/s1/include/ajax/academy/listEvents.php?${dataStr}`, {
           headers: {
             "Content-Type": "text/html",
