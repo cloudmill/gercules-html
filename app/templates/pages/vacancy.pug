@@ -99,3 +99,16 @@ block content
             a(href="#")
             span Отправить резюме
             +icon("link-white-arrow", "svg")
+
+
+block modal
+
+    .b-modal.b-modal--hide
+        .b-modal__bg.b-modal__bg--dark
+        .b-modal__content
+
+          .modal-publication-msg.modal-publication-msg--hide
+                .modal-publication-msg__container
+                    h6.title.title--section-textal
+                        |Спасибо, мы получили ваше резюме. Если оно нам покажется интересным, мы обязательно с вами свяжемся
+                    button.modal-publication-msg__close
