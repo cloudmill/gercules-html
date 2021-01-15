@@ -101,14 +101,53 @@ block content
             +icon("link-white-arrow", "svg")
 
 
+  .b-content
+    main.b-content__main
+
+      .modal.active
+        .modal-bg(data-modal-close)
+        .modal-content
+          .modal-item.active.modal-item-fill#market
+            .modal-item-wrapper
+              .modal-close(data-modal-close)
+              .modal-item-content
+                h1 Отправить резюме
+                form(action="")
+                  .field-row
+                    +field_base("personName", "personName", "Имя Фамилия*", "Алексей")
+                    +field_base("personEmail", "personEmail", "Email", "ksh@loudmill.ru")
+                    
+                  .field-row
+                    +field_base("personPhone", "personPhone", "Номер телефона*", "+7 (___) ___-__-__")
+                    +field_select("personStatus", [[0, "Дистрибьютер"], [1, "Дистрибьютер"]], "Дистрибьютер", "personStatus")
+                      label(for="personStatus").select
+                        .field-inf
+                          span.name Статус
+                          span.errorText пожалуйста, заполните поле корректно
+                  .field-row.field-row--onecol
+                    +field_area("comment", "comment", "Сопроводительный текст", "Ваш текстя", [30, 20])
+                  .field-row
+                    +field_checkbox()
+                      input#pp_modal(type="checkbox" name="pp" checked data-required)
+                      label(for="pp_modal") «Я выражаю согласие на обработку ПДн в соответствии с 
+                        a(href="") Политикой конфиденциальности
+                        |»
+                    +linkRect
+                      button(id="submit" name="submit")
+                      span Отправить
+                      +icon("link-white-arrow", "svg")
+
+
 block modal
 
     .b-modal.b-modal--hide
-        .b-modal__bg.b-modal__bg--dark
-        .b-modal__content
+      .b-modal__bg.b-modal__bg--dark
+      .b-modal__content
 
-          .modal-publication-msg.modal-publication-msg--hide
-                .modal-publication-msg__container
-                    h6.title.title--section-textal
-                        |Спасибо, мы получили ваше резюме. Если оно нам покажется интересным, мы обязательно с вами свяжемся
-                    button.modal-publication-msg__close
+        .modal-publication-msg.modal-publication-msg--hide
+              .modal-publication-msg__container
+                  h6.title.title--section-textal
+                      |Спасибо, мы получили ваше резюме. Если оно нам покажется интересным, мы обязательно с вами свяжемся
+                  button.modal-publication-msg__close
+
+

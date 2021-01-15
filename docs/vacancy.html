@@ -211,6 +211,74 @@
             </div>
           </div>
         </div>
+        <div class="b-content">
+          <main class="b-content__main">
+            <div class="modal active">
+              <div class="modal-bg" data-modal-close></div>
+              <div class="modal-content">
+                <div class="modal-item active modal-item-fill" id="market">
+                  <div class="modal-item-wrapper">
+                    <div class="modal-close" data-modal-close></div>
+                    <div class="modal-item-content">
+                      <h1>Отправить резюме</h1>
+                      <form action="">
+                        <div class="field-row">
+                          <div class="field field-base">
+                            <label for="personName">
+                              <input type="text" name="personName" data-required="data-required" id="personName" placeholder="Алексей"/>
+                              <div class="field-inf"><span class="name">Имя Фамилия*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                            </label>
+                          </div>
+                          <div class="field field-base">
+                            <label for="personEmail">
+                              <input type="text" name="personEmail" data-required="data-required" id="personEmail" placeholder="ksh@loudmill.ru"/>
+                              <div class="field-inf"><span class="name">Email</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="field-row">
+                          <div class="field field-base">
+                            <label for="personPhone">
+                              <input type="text" name="personPhone" data-required="data-required" id="personPhone" placeholder="+7 (___) ___-__-__"/>
+                              <div class="field-inf"><span class="name">Номер телефона*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                            </label>
+                          </div>
+                          <div class="field field-select">
+                            <label class="select" for="personStatus">
+                              <div class="field-inf"><span class="name">Статус</span><span class="errorText">пожалуйста, заполните поле корректно</span></div>
+                            </label>
+                            <select name="personStatus" id="personStatus" data-select-placeholder="Дистрибьютер">
+                              <option></option>
+                              <option value="0">Дистрибьютер</option>
+                              <option value="1">Дистрибьютер</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="field-row field-row--onecol">
+                          <div class="field field-area">
+                            <label for="comment">
+                              <textarea name="comment" id="comment" placeholder="Ваш текстя" cols="30" rows="20"></textarea>
+                              <div class="field-inf"><span class="name">Сопроводительный текст</span><span class="errorText">пожалуйста, заполните поле корректно</span></div>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="field-row">
+                          <div class="field field-checkbox">
+                            <input id="pp_modal" type="checkbox" name="pp" checked data-required>
+                            <label for="pp_modal">«Я выражаю согласие на обработку ПДн в соответствии с <a href="">Политикой конфиденциальности</a>»</label>
+                          </div>
+                          <div class="main-link_rect">
+                            <button id="submit" name="submit"></button><span>Отправить</span><i class="svg-icon svg-link-white-arrow"></i>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
       </div>
       <div class="footer">
         <div class="footer-menu">

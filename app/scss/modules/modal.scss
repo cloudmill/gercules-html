@@ -167,6 +167,10 @@
                 &:not(:first-child) {
                   margin-top: 30px;
                 }
+
+                &--onecol {
+                  grid-template-columns: 1fr;
+                }
               }
               &-select {
                 .select2-container {
