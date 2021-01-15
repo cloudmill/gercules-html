@@ -5,6 +5,10 @@
   border-bottom: 1px solid $color-red;
   white-space: nowrap;
 
+  @media (max-width: 540px){
+    display: inline-flex;
+  }
+
   &:hover {
     
     .arrow-link__icon {

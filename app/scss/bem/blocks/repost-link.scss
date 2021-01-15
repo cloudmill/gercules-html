@@ -13,4 +13,21 @@
         line-height: 150%;
         color: $color-gray;
     }
+
+    &--social {
+        position: relative;
+        &::before {
+            content: '';
+            width: 1px;
+            height: 20px;
+            position: absolute;
+            right: -15px;
+            top: 0;
+            background: #E5E5E5;
+
+            @media (min-width: 1070px){
+                display: none;
+            }
+        }
+    }
 }

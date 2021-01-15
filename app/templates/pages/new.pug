@@ -197,7 +197,7 @@ block content
 
                     .tabs-list
                         .tabs-item.tabs-item--new.active
-                            h3.title.title--section Альбом технических решений
+                            h3.title.title--section Материалы для загрузки
                                 a(href="#")
                                     +icon("down", "svg")
                                     span Скачать все
@@ -252,3 +252,16 @@ block content
                 section.b-content__main-item.b-content__main-item--mg-t--120
 
                     include ../modules/publications-subscription
+
+
+block modal
+
+    .b-modal.b-modal--hide
+        .b-modal__bg.b-modal__bg--dark
+        .b-modal__content
+
+            .modal-publication-msg.modal-publication-msg--hide
+                .modal-publication-msg__container
+                    h6.title.title--section
+                        |Вы подписались на рассылку Геркулес. Спасибо!
+                    button.modal-publication-msg__close

@@ -155,6 +155,36 @@ function selectTag() {
       }
     }
   });
+
+  var tegActive = [];
+
+  $('.select-tag__item').on('click', function(){
+
+    $('.select-tag__list--active').find('.select-tag__tag').each(function (){
+      if ($(this).hasClass('select-tag__tag--active')){
+        tegActive.push(true);
+      }
+      else{
+        tegActive.push(false);
+      }
+    });
+
+    let i = 0;
+
+    $('.teg-mob').find('.teg-mob__hashtag').each(function() {
+      
+      if (tegActive[i] == true){
+        $(this).addClass('teg-mob__hashtag--active-red');
+      }else{
+        $(this).removeClass('teg-mob__hashtag--active-red');
+      }
+      i++;
+    });
+
+    tegActive =[];
+    i = 0;
+
+  });
 }
 
 function publicationPage() {

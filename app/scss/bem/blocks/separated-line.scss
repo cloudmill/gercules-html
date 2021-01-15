@@ -2,13 +2,27 @@
     display: flex;
     align-items: baseline;
 
+     @media (max-width: 1070px){
+        padding-top: 15px;
+        margin-top: 30px;
+        border-top: 1px solid #E5E5E5;
+    }
+
     &__item {
         white-space: nowrap;
+
+        // @media (max-width: 640px){
+        //     display: none;
+        // }
 
         &:not(:last-child) {
             margin-right: 30px;
             display: flex;
             align-items: center;
+
+            // @media (max-width: 1070px){
+            //     display: none;
+            // }
 
             &::after {
                 margin-left: 30px;
@@ -17,6 +31,10 @@
                 width: 1px;
                 height: 20px;
                 background-color: $color-gray-border;
+
+                @media (max-width: 1070px){
+                    display: none;
+                }
             }
         }
     }

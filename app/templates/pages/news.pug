@@ -14,7 +14,36 @@ block content
 
         .b-content__wrapper
 
-            include ./about/sidebar
+            aside.b-content__side-bar
+                    nav.side-nav
+                        ul.side-nav__list
+                            li.side-nav__item
+                                a(href="").side-nav__item-link
+                                    |О компании 
+                            li.side-nav__item.side-nav__item--active
+                                a(href="").side-nav__item-link
+                                    |Новости
+                            li.side-nav__item
+                                a(href="").side-nav__item-link
+                                    |Упаковка продукции
+                            li.side-nav__item
+                                a(href="").side-nav__item-link
+                                    |Объекты
+                            li.side-nav__item
+                                a(href="").side-nav__item-link
+                                    |Видеогалерея
+                            li.side-nav__item
+                                a(href="").side-nav__item-link
+                                    |Сотрудники
+                            li.side-nav__item
+                                a(href="").side-nav__item-link
+                                    |Вакансии
+                            li.side-nav__item
+                                a(href="").side-nav__item-link
+                                    |Социальная ответственность
+                            li.side-nav__item
+                                a(href="").side-nav__item-link
+                                    |Контакты
 
             main.b-content__main.b-content__main--pd-t--60.b-content__main--overflow--hidden
 
@@ -33,8 +62,83 @@ block content
                     h1.title.title--page #{pageTitle}
 
                 .b-content__main-item.b-content__main-item--mg-t--60
+                    .select-tag
+                        .select-tag__row
+                            .select-tag__left
+                                span.select-tag__label
+                                    |Популярные темы:
+                            .select-tag__mid
+                                .select-tag__wrapper
+                                    mixin list
+                                        -
+                                            var tags = [
+                                                '#все',
+                                                '#семинар',
+                                                '#конференция',
+                                                '#новинки',
+                                                '#академиягеркулес',
+                                                '#социальная ответсвенность',
+                                                '#скидки',
+                                                '#новые',
+                                                '#события',
+                                                '#мероприятия',
+                                                '#семинар',
+                                                '#новинки',
+                                                '#академиягеркулес',
+                                            ];
+                                        each tag, index in tags
+                                            li.select-tag__item
+                                                if (index === 0 || index === 6)
+                                                    span.select-tag__tag.select-tag__tag--active
+                                                        |#{tag}
+                                                else
+                                                    span.select-tag__tag
+                                                        |#{tag}
+                                        li.select-tag__item
+                                            button.select-tag__reset
+                                                span.select-tag__reset-mark
+                                                span.select-tag__reset-text
+                                                    |Очистить все
+                                    ul.select-tag__list.select-tag__list--preview.select-tag__list--active
+                                        +list
+                                    ul.select-tag__list
+                                        +list
+                            .select-tag__right
+                                button.select-tag__open
+                                    span.select-tag__open-mark
+                                    span.select-tag__open-text.select-tag__open-text--active
+                                        |#{'Еще '}
+                                        span.select-tag__open-count
+                                            |6
+                                        |#{' тегов'}
+                                    span.select-tag__open-text
+                                        |Свернуть
+                    .teg-mob
+                        .teg-mob__row
+                            .teg-mob__col.teg-mob__col--topics 
+                                p Все
+                            .teg-mob__col.teg-mob__col--tegs
+                                span.teg-mob__hashtag #все
+                                span.teg-mob__hashtag #семинар
+                                span.teg-mob__hashtag #конференция
+                                span.teg-mob__hashtag #новинки
+                                span.teg-mob__hashtag #академиягеркулес
+                                span.teg-mob__hashtag #скидки
+                                span.teg-mob__hashtag #академиягеркулес
+                                span.teg-mob__hashtag #социальная ответсвенность
+                                span.teg-mob__hashtag #скидки
+                                span.teg-mob__hashtag #новые
+                                span.teg-mob__hashtag #события
+                                span.teg-mob__hashtag #мероприятия
+                                span.teg-mob__hashtag #семинар
+                                span.teg-mob__hashtag #новинки
+                                span.teg-mob__hashtag #академиягеркулес
+                                span.teg-mob__hashtag-remove Очистить всё
+                        .teg-mob__row
 
-                .b-content__main-item.b-content__main-item--pd--hor.b-content__main-item--mg-t--35
+                            .teg-mob__col.teg-mob__col--still
+                                p.teg-mob__deploy.teg-mob-active Еще 6 тегов
+                                p.teg-mob__up Свернуть
 
                     //- -
                     //-     let tags = {
@@ -63,56 +167,6 @@ block content
 
                     //-     };
 
-                    .teg
-                        .teg__row
-                            .teg__col.teg__col--topics 
-                                p Популярные темы:
-                            .teg__col.teg__col--tegs
-                                span.teg__hashtag #все
-                                span.teg__hashtag #жизнькомпании
-                                span.teg__hashtag #новости
-                                span.teg__hashtag #семинар
-                                span.teg__hashtag #конференция
-                                span.teg__hashtag #новинки
-                                span.teg__hashtag #академиягеркулес
-                                span.teg__hashtag.teg__hashtag-additional #все
-                                span.teg__hashtag.teg__hashtag-additional #жизнькомпании
-                                span.teg__hashtag.teg__hashtag-additional #новости
-                                span.teg__hashtag.teg__hashtag-additional #семинар
-                                span.teg__hashtag.teg__hashtag-additional #конференция
-                                span.teg__hashtag.teg__hashtag-additional #новинки
-                                span.teg__hashtag.teg__hashtag-additional #академиягеркулес
-                                span.teg__hashtag-remove Очистить всё
-                        .teg__row
-
-                            .teg__col.teg__col--still
-                                p.teg__deploy.teg-active Еще 6 тегов
-                                p.teg__up Свернуть
-                    .teg-mob
-                        .teg-mob__row
-                            .teg-mob__col.teg-mob__col--topics 
-                                p Все
-                            .teg-mob__col.teg-mob__col--tegs
-                                span.teg-mob__hashtag #все
-                                span.teg-mob__hashtag #жизнькомпании
-                                span.teg-mob__hashtag #новости
-                                span.teg-mob__hashtag #семинар
-                                span.teg-mob__hashtag #конференция
-                                span.teg-mob__hashtag #новинки
-                                span.teg-mob__hashtag #академиягеркулес
-                                span.teg-mob__hashtag.teg-mob__hashtag #все
-                                span.teg-mob__hashtag.teg-mob__hashtag #жизнькомпании
-                                span.teg-mob__hashtag #новости
-                                span.teg-mob__hashtag #семинар
-                                span.teg-mob__hashtag #конференция
-                                span.teg-mob__hashtag #новинки
-                                span.teg-mob__hashtag #академиягеркулес
-                                span.teg-mob__hashtag-remove Очистить всё
-                        .teg-mob__row
-
-                            .teg-mob__col.teg-mob__col--still
-                                p.teg-mob__deploy.teg-mob-active Еще 6 тегов
-                                p.teg-mob__up Свернуть
                 
 
                     //- deprecated hash-panel

@@ -106,6 +106,15 @@
             font-family: $font-title;
             font-size: 28px;
             line-height: 144%;
+
+            @media (max-width: 1026px) {
+                font-size: 20px;
+            }
+          
+            @media (max-width: 406px) {
+            font-size: 15px;
+            line-height: 21px;
+            }
         }
 
         &__text {
@@ -215,6 +224,12 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
+
+                @media (max-width: 540px){
+                    flex-direction: column;
+                    min-height: 69px;
+                    justify-content: space-between;
+                }
             }
         }
 
@@ -224,6 +239,11 @@
             justify-content: space-between;
             align-items: baseline;
 
+            @media (max-width: 1070px){
+                margin-top: 0;
+                flex-direction: column;
+            }
+
             &-part {
 
                 &--first {
@@ -232,6 +252,10 @@
                     min-height: 60px;
                     display: flex;
                     align-items: baseline;
+
+                    @media (max-width: 1070px){
+                        padding: 15px 20px 10px 20px;
+                    }
 
                     &::before {
                         position: absolute;
@@ -265,6 +289,19 @@
         &__reading-time {
             font-size: 15px;
             line-height: 150%;
+
+            .time--active {
+                @media (max-width: 490px){
+                    display: none;
+                }
+            }
+
+            .time--mobile {
+                display: none;
+                @media (max-width: 490px){
+                    display: inline-block;
+                }
+            }
         }
 
         &__save {
@@ -281,6 +318,12 @@
                 font-weight: bold;
                 font-size: 15px;
                 line-height: 150%;
+
+                span {
+                    @media (max-width: 490px){
+                        display: none;
+                    }
+                }
             }
         }
 
