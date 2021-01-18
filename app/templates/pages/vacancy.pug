@@ -30,7 +30,7 @@ mixin vacancy_item_dropdown()
             a(href="tel:+7 (913) 7890114") +7 (913) 7890114
             a(href="mailto:erehinskaya.as@gerkules.ru").content-red erehinskaya.as@gerkules.ru
         +linkRect
-          a(href="")
+          a.js--modal
           span Отклинуться
           +icon("link-white-arrow", "svg")
 
@@ -96,7 +96,7 @@ block content
             +icon('mail','svg')
             a(href="mailto:erehinskaya.as@gerkules.ru") erehinskaya.as@gerkules.ru
           +linkRect
-            a(href="#")
+            a(href="#").js--modal
             span Отправить резюме
             +icon("link-white-arrow", "svg")
 
@@ -104,14 +104,14 @@ block content
   .b-content
     main.b-content__main
 
-      .modal.active
-        .modal-bg(data-modal-close)
+      .modal.modal-vacancy
+        .modal-bg
         .modal-content
-          .modal-item.active.modal-item-fill#market
+          .modal-item.modal-item-fill.modal-vacancy
             .modal-item-wrapper
-              .modal-close(data-modal-close)
+              .modal-close.js--modal-close
               .modal-item-content
-                h1 Отправить резюме
+                h1.title.title--section Отправить резюме
                 form(action="")
                   .field-row
                     +field_base("personName", "personName", "Имя Фамилия*", "Алексей")
@@ -119,11 +119,14 @@ block content
                     
                   .field-row
                     +field_base("personPhone", "personPhone", "Номер телефона*", "+7 (___) ___-__-__")
-                    +field_select("personStatus", [[0, "Дистрибьютер"], [1, "Дистрибьютер"]], "Дистрибьютер", "personStatus")
-                      label(for="personStatus").select
-                        .field-inf
-                          span.name Статус
-                          span.errorText пожалуйста, заполните поле корректно
+                    .add-docs
+                      .add-docs_title
+                        |Прикерпить файл
+                        a(href="#")
+                          img(src="./images/question.svg", alt="")
+                      .add-docs_block
+                        |Добавить файл
+                        img(src="./images/clip.svg", alt="")
                   .field-row.field-row--onecol
                     +field_area("comment", "comment", "Сопроводительный текст", "Ваш текстя", [30, 20])
                   .field-row

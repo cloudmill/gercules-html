@@ -48,6 +48,9 @@ export default class Manager_modals {
     $("[data-modal-close]").click(() => {
       this.close();
     });
+    // $("[vacancy-modal-close").click(() => {
+    //   this.close();
+    // });
     $("body").mousedown((e) => {
       if (this.opened) {
         var container = $(document).find(".modal-item, .select2-container");

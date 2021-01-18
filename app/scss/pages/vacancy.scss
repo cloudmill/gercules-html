@@ -666,4 +666,51 @@
       margin-top: 40px;
     }
   }
+
+  .field-checkbox {
+    @media (max-width: 500px){
+      margin-bottom: 20px;
+    }
+  }
+
+  .main-link_rect {
+    @media (max-width: 500px){
+      width: 170px;
+      height: 50px;
+    }
+  }
+}
+
+.add-docs {
+    
+  &_title {
+    display: flex;
+    margin-bottom: 13px;
+    font-size: 14px;
+    line-height: 16px;
+
+    img {
+      margin-left: 10px;
+    }
+  }
+
+  &_block {
+    width: 100%;
+    // margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    padding: 21px 26px;
+    border: 1px dashed $color-border;
+    font-size: 14px;
+    line-height: 16px;
+
+    img {
+      height: 14px;
+    }
+  }
+
+  img {
+    cursor: pointer;
+  }
 }

@@ -131,6 +131,10 @@
     padding-top: 33px;
     width: 100%;
 
+    @media (max-width: 500px){
+      margin-bottom: 30px;
+    }
+
     label {
       position: relative;
       display: block;
@@ -251,6 +255,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 40px;
+
+    @media (max-width: 500px){
+      display: block;
+    }
 
     &:not(:first-child) {
       margin-top: 30px;

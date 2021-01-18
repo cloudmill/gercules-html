@@ -104,7 +104,7 @@
                           <p>Ерехинская Анастасия</p>
                           <p><a href="tel:+7 (913) 7890114">+7 (913) 7890114</a><a class="content-red" href="mailto:erehinskaya.as@gerkules.ru">erehinskaya.as@gerkules.ru</a></p>
                         </div>
-                        <div class="main-link_rect"><a href=""></a><span>Отклинуться</span><i class="svg-icon svg-link-white-arrow"></i>
+                        <div class="main-link_rect"><a class="js--modal"></a><span>Отклинуться</span><i class="svg-icon svg-link-white-arrow"></i>
                         </div>
                       </div>
                     </div>
@@ -145,7 +145,7 @@
                           <p>Ерехинская Анастасия</p>
                           <p><a href="tel:+7 (913) 7890114">+7 (913) 7890114</a><a class="content-red" href="mailto:erehinskaya.as@gerkules.ru">erehinskaya.as@gerkules.ru</a></p>
                         </div>
-                        <div class="main-link_rect"><a href=""></a><span>Отклинуться</span><i class="svg-icon svg-link-white-arrow"></i>
+                        <div class="main-link_rect"><a class="js--modal"></a><span>Отклинуться</span><i class="svg-icon svg-link-white-arrow"></i>
                         </div>
                       </div>
                     </div>
@@ -186,7 +186,7 @@
                           <p>Ерехинская Анастасия</p>
                           <p><a href="tel:+7 (913) 7890114">+7 (913) 7890114</a><a class="content-red" href="mailto:erehinskaya.as@gerkules.ru">erehinskaya.as@gerkules.ru</a></p>
                         </div>
-                        <div class="main-link_rect"><a href=""></a><span>Отклинуться</span><i class="svg-icon svg-link-white-arrow"></i>
+                        <div class="main-link_rect"><a class="js--modal"></a><span>Отклинуться</span><i class="svg-icon svg-link-white-arrow"></i>
                         </div>
                       </div>
                     </div>
@@ -205,7 +205,7 @@
                 </div>
                 <div class="vacancy-contact_email"><i class="svg-icon svg-mail"></i><a href="mailto:erehinskaya.as@gerkules.ru">erehinskaya.as@gerkules.ru</a>
                 </div>
-                <div class="main-link_rect"><a href="#"></a><span>Отправить резюме</span><i class="svg-icon svg-link-white-arrow"></i>
+                <div class="main-link_rect"><a class="js--modal" href="#"></a><span>Отправить резюме</span><i class="svg-icon svg-link-white-arrow"></i>
                 </div>
               </div>
             </div>
@@ -213,14 +213,14 @@
         </div>
         <div class="b-content">
           <main class="b-content__main">
-            <div class="modal active">
-              <div class="modal-bg" data-modal-close></div>
+            <div class="modal modal-vacancy">
+              <div class="modal-bg"></div>
               <div class="modal-content">
-                <div class="modal-item active modal-item-fill" id="market">
+                <div class="modal-item modal-item-fill modal-vacancy">
                   <div class="modal-item-wrapper">
-                    <div class="modal-close" data-modal-close></div>
+                    <div class="modal-close js--modal-close"></div>
                     <div class="modal-item-content">
-                      <h1>Отправить резюме</h1>
+                      <h1 class="title title--section">Отправить резюме</h1>
                       <form action="">
                         <div class="field-row">
                           <div class="field field-base">
@@ -243,15 +243,9 @@
                               <div class="field-inf"><span class="name">Номер телефона*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
                             </label>
                           </div>
-                          <div class="field field-select">
-                            <label class="select" for="personStatus">
-                              <div class="field-inf"><span class="name">Статус</span><span class="errorText">пожалуйста, заполните поле корректно</span></div>
-                            </label>
-                            <select name="personStatus" id="personStatus" data-select-placeholder="Дистрибьютер">
-                              <option></option>
-                              <option value="0">Дистрибьютер</option>
-                              <option value="1">Дистрибьютер</option>
-                            </select>
+                          <div class="add-docs">
+                            <div class="add-docs_title">Прикерпить файл<a href="#"><img src="./images/question.svg" alt=""></a></div>
+                            <div class="add-docs_block">Добавить файл<img src="./images/clip.svg" alt=""></div>
                           </div>
                         </div>
                         <div class="field-row field-row--onecol">
