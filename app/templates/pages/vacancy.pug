@@ -30,7 +30,7 @@ mixin vacancy_item_dropdown()
             a(href="tel:+7 (913) 7890114") +7 (913) 7890114
             a(href="mailto:erehinskaya.as@gerkules.ru").content-red erehinskaya.as@gerkules.ru
         +linkRect
-          a(href="")
+          a.js--modal
           span Отклинуться
           +icon("link-white-arrow", "svg")
 
@@ -96,6 +96,61 @@ block content
             +icon('mail','svg')
             a(href="mailto:erehinskaya.as@gerkules.ru") erehinskaya.as@gerkules.ru
           +linkRect
-            a(href="#")
+            a(href="#").js--modal
             span Отправить резюме
             +icon("link-white-arrow", "svg")
+
+
+  .b-content
+    main.b-content__main
+
+      .modal.modal-vacancy
+        .modal-bg
+        .modal-content
+          .modal-item.modal-item-fill.modal-vacancy
+            .modal-item-wrapper
+              .modal-close.js--modal-close
+              .modal-item-content
+                h1.title.title--section Отправить резюме
+                form(action="")
+                  .field-row
+                    +field_base("personName", "personName", "Имя Фамилия*", "Алексей")
+                    +field_base("personEmail", "personEmail", "Email", "ksh@loudmill.ru")
+                    
+                  .field-row
+                    +field_base("personPhone", "personPhone", "Номер телефона*", "+7 (___) ___-__-__")
+                    .add-docs
+                      .add-docs_title
+                        |Прикерпить файл
+                        a(href="#")
+                          img(src="./images/question.svg", alt="")
+                      .add-docs_block
+                        |Добавить файл
+                        img(src="./images/clip.svg", alt="")
+                  .field-row.field-row--onecol
+                    +field_area("comment", "comment", "Сопроводительный текст", "Ваш текстя", [30, 20])
+                  .field-row
+                    +field_checkbox()
+                      input#pp_modal(type="checkbox" name="pp" checked data-required)
+                      label(for="pp_modal") «Я выражаю согласие на обработку ПДн в соответствии с 
+                        a(href="") Политикой конфиденциальности
+                        |»
+                    +linkRect
+                      button(id="submit" name="submit")
+                      span Отправить
+                      +icon("link-white-arrow", "svg")
+
+
+block modal
+
+    .b-modal.b-modal--hide
+      .b-modal__bg.b-modal__bg--dark
+      .b-modal__content
+
+        .modal-publication-msg.modal-publication-msg--hide
+              .modal-publication-msg__container
+                  h6.title.title--section-textal
+                      |Спасибо, мы получили ваше резюме. Если оно нам покажется интересным, мы обязательно с вами свяжемся
+                  button.modal-publication-msg__close
+
+

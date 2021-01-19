@@ -24,6 +24,17 @@ mixin field_base(id, name, label, placeholder, value)
         span.name #{label}
         span.errorText пожалуйста, заполните поле корректно    
 
+mixin field_add(id, name, label, placeholder, imgLabel, imgName, value)
+  .field.field-add
+    img(src=imgLabel, alt="")
+    label(for=id)
+      block
+      input(type="text" name=name data-required id=id placeholder=placeholder value=value)
+      .field-inf
+        span.name #{label}
+          img(src=imgName, alt="")
+        span.errorText пожалуйста, заполните поле корректно    
+
 mixin field_area(id, name, label, placeholder, size = [30, 10])
   .field.field-area
     label(for=id)

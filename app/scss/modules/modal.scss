@@ -60,11 +60,14 @@
       position: absolute;
       width: 23px;
       background-color: black;
-      height: 1px;
+      height: 2px;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%) rotate(45deg);
       transition: all $ease-main;
+      @media (max-width: 720px){
+        width: 17px;
+      }
     }
 
     &:after {
@@ -131,14 +134,22 @@
             background-color: white;
             padding-right: 0;
             padding-left: 80px;
+
+            @media (max-width: 720px){
+              padding-left: 0;
+            }
           }
           &-content {
             border-left: 1px solid $color-border;
             padding: 80px 80px 135px 60px;
 
-            h1 {
-              font: normal bold 28px/40px $font-second;
+            @media (max-width: 720px){
+              padding: 60px 20px 70px;
             }
+
+            // h1 {
+            //   font: normal bold 28px/40px $font-second;
+            // }
 
             h2 {
               font: normal bold 20px/32px $font-second;
@@ -151,6 +162,14 @@
             form {
               margin-top: 80px;
               padding-left: 270px;
+
+              @media (max-width: 1024px){
+                padding-left: 0;
+              }
+
+              @media (max-width: 500px){
+                margin-top: 40px;
+              }
             }
 
             .field {
@@ -166,6 +185,10 @@
                 }
                 &:not(:first-child) {
                   margin-top: 30px;
+                }
+
+                &--onecol {
+                  grid-template-columns: 1fr;
                 }
               }
               &-select {
@@ -190,6 +213,10 @@
 
               &-checkbox {
                 max-width: 353px;
+
+                @media (max-width: 500px){
+                  margin-bottom: 20px;
+                }
               }
             }
           }
@@ -200,8 +227,16 @@
           right: 80px;
           width: 64px;
           height: 64px;
-          background-color: white;
-          border: 1px solid $color-border;
+          background-color:#F4F4F4;
+          @media (max-width: 1024px){
+            width: 41px;
+            height: 41px;
+          }
+
+          @media (max-width: 720px){
+            top: 0;
+            right: 0;
+          }
         }
       }
     }

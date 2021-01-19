@@ -131,6 +131,10 @@
     padding-top: 33px;
     width: 100%;
 
+    @media (max-width: 500px){
+      margin-bottom: 30px;
+    }
+
     label {
       position: relative;
       display: block;
@@ -234,6 +238,10 @@
         resize: none;
         font: normal normal 15px/22px $font-main;
         color: $color-main;
+
+        @media (max-width: 720px){
+          height: 120px;
+        }
       }
 
       .field-inf {
@@ -251,6 +259,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 40px;
+
+    @media (max-width: 720px){
+      grid-gap: 20px;
+    }
+
+    @media (max-width: 500px){
+      display: block;
+    }
 
     &:not(:first-child) {
       margin-top: 30px;

@@ -36,6 +36,8 @@ $(document).ready(function () {
 
   selectTag();
 
+  modal();
+
   academyPage();
 });
 
@@ -708,5 +710,30 @@ function sliderNew() {
     thumbs: {
       swiper: galleryThumbs
     }
+  });
+}
+
+function modal() {
+
+  $(".js--modal").on("click", function () {
+
+    event.preventDefault();
+
+    $(".modal-vacancy").addClass("active");
+    
+  });
+
+  $(document).on('keydown',function(event){
+    if ( event.keyCode == 27 ) { 
+      $(".modal-vacancy").removeClass("active");
+    };
+  });
+
+  $(".js--modal-close").on("click", function () {
+
+    event.preventDefault();
+
+    $(".modal-vacancy").removeClass("active");
+
   });
 }

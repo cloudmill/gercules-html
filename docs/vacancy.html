@@ -104,7 +104,7 @@
                           <p>Ерехинская Анастасия</p>
                           <p><a href="tel:+7 (913) 7890114">+7 (913) 7890114</a><a class="content-red" href="mailto:erehinskaya.as@gerkules.ru">erehinskaya.as@gerkules.ru</a></p>
                         </div>
-                        <div class="main-link_rect"><a href=""></a><span>Отклинуться</span><i class="svg-icon svg-link-white-arrow"></i>
+                        <div class="main-link_rect"><a class="js--modal"></a><span>Отклинуться</span><i class="svg-icon svg-link-white-arrow"></i>
                         </div>
                       </div>
                     </div>
@@ -145,7 +145,7 @@
                           <p>Ерехинская Анастасия</p>
                           <p><a href="tel:+7 (913) 7890114">+7 (913) 7890114</a><a class="content-red" href="mailto:erehinskaya.as@gerkules.ru">erehinskaya.as@gerkules.ru</a></p>
                         </div>
-                        <div class="main-link_rect"><a href=""></a><span>Отклинуться</span><i class="svg-icon svg-link-white-arrow"></i>
+                        <div class="main-link_rect"><a class="js--modal"></a><span>Отклинуться</span><i class="svg-icon svg-link-white-arrow"></i>
                         </div>
                       </div>
                     </div>
@@ -186,7 +186,7 @@
                           <p>Ерехинская Анастасия</p>
                           <p><a href="tel:+7 (913) 7890114">+7 (913) 7890114</a><a class="content-red" href="mailto:erehinskaya.as@gerkules.ru">erehinskaya.as@gerkules.ru</a></p>
                         </div>
-                        <div class="main-link_rect"><a href=""></a><span>Отклинуться</span><i class="svg-icon svg-link-white-arrow"></i>
+                        <div class="main-link_rect"><a class="js--modal"></a><span>Отклинуться</span><i class="svg-icon svg-link-white-arrow"></i>
                         </div>
                       </div>
                     </div>
@@ -205,11 +205,73 @@
                 </div>
                 <div class="vacancy-contact_email"><i class="svg-icon svg-mail"></i><a href="mailto:erehinskaya.as@gerkules.ru">erehinskaya.as@gerkules.ru</a>
                 </div>
-                <div class="main-link_rect"><a href="#"></a><span>Отправить резюме</span><i class="svg-icon svg-link-white-arrow"></i>
+                <div class="main-link_rect"><a class="js--modal" href="#"></a><span>Отправить резюме</span><i class="svg-icon svg-link-white-arrow"></i>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="b-content">
+          <main class="b-content__main">
+            <div class="modal modal-vacancy">
+              <div class="modal-bg"></div>
+              <div class="modal-content">
+                <div class="modal-item modal-item-fill modal-vacancy">
+                  <div class="modal-item-wrapper">
+                    <div class="modal-close js--modal-close"></div>
+                    <div class="modal-item-content">
+                      <h1 class="title title--section">Отправить резюме</h1>
+                      <form action="">
+                        <div class="field-row">
+                          <div class="field field-base">
+                            <label for="personName">
+                              <input type="text" name="personName" data-required="data-required" id="personName" placeholder="Алексей"/>
+                              <div class="field-inf"><span class="name">Имя Фамилия*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                            </label>
+                          </div>
+                          <div class="field field-base">
+                            <label for="personEmail">
+                              <input type="text" name="personEmail" data-required="data-required" id="personEmail" placeholder="ksh@loudmill.ru"/>
+                              <div class="field-inf"><span class="name">Email</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="field-row">
+                          <div class="field field-base">
+                            <label for="personPhone">
+                              <input type="text" name="personPhone" data-required="data-required" id="personPhone" placeholder="+7 (___) ___-__-__"/>
+                              <div class="field-inf"><span class="name">Номер телефона*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                            </label>
+                          </div>
+                          <div class="add-docs">
+                            <div class="add-docs_title">Прикерпить файл<a href="#"><img src="./images/question.svg" alt=""></a></div>
+                            <div class="add-docs_block">Добавить файл<img src="./images/clip.svg" alt=""></div>
+                          </div>
+                        </div>
+                        <div class="field-row field-row--onecol">
+                          <div class="field field-area">
+                            <label for="comment">
+                              <textarea name="comment" id="comment" placeholder="Ваш текстя" cols="30" rows="20"></textarea>
+                              <div class="field-inf"><span class="name">Сопроводительный текст</span><span class="errorText">пожалуйста, заполните поле корректно</span></div>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="field-row">
+                          <div class="field field-checkbox">
+                            <input id="pp_modal" type="checkbox" name="pp" checked data-required>
+                            <label for="pp_modal">«Я выражаю согласие на обработку ПДн в соответствии с <a href="">Политикой конфиденциальности</a>»</label>
+                          </div>
+                          <div class="main-link_rect">
+                            <button id="submit" name="submit"></button><span>Отправить</span><i class="svg-icon svg-link-white-arrow"></i>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
         </div>
       </div>
       <div class="footer">
@@ -443,6 +505,17 @@
                 </form>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="b-modal b-modal--hide">
+      <div class="b-modal__bg b-modal__bg--dark"></div>
+      <div class="b-modal__content">
+        <div class="modal-publication-msg modal-publication-msg--hide">
+          <div class="modal-publication-msg__container">
+            <h6 class="title title--section-textal">Спасибо, мы получили ваше резюме. Если оно нам покажется интересным, мы обязательно с вами свяжемся</h6>
+            <button class="modal-publication-msg__close"></button>
           </div>
         </div>
       </div>
