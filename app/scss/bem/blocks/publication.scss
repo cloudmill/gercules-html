@@ -41,6 +41,10 @@
         @media (max-width: 576px) {
             padding: 40px 20px;
         }
+
+        &--video {
+            max-width: 50%;
+        }
     }
     &__content {
         display: block;
