@@ -57,6 +57,14 @@
       .content {
         padding: 60px 80px 120px 40px;
         width: calc(100% - #{$sidemenu-l});
+
+        @media (max-width: 1300px){
+          padding: 40px;
+        }
+      
+        @media (max-width: 768px){
+          padding: 20px;
+        }
       }
     }
   }
