@@ -32,7 +32,7 @@
     img {
       display: block;
       width: 100%;
-      min-width: 400px;
+      // min-width: 400px;
     }
 
     h2 {
@@ -102,6 +102,12 @@
         &:last-child {
           margin-top: 60px;
         }
+      }
+    }
+
+    .main-link_rect {
+      @media (max-width: 500px){
+        margin: 30px auto 0 0;
       }
     }
   }
@@ -349,7 +355,7 @@
     }
 
     .fs-objects_photo {
-      min-width: 320px;
+      // min-width: 320px;
       max-width: 480px;
       width: 100%;
 
@@ -738,6 +744,9 @@
       grid-template-rows: repeat(2, 1fr);
 
       @media (max-width: 1599px) {
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+      }
+      @media (max-width: 1200px) {
         max-width: 870px;
       }
 
@@ -863,6 +872,9 @@
           padding: 40px 30px;
           flex-grow: 1;
           max-height: 260px;
+          @media (max-width: 1140px){
+            padding: 30px 20px;
+          }
 
           h3 {
             font-weight: bold;

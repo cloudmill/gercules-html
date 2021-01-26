@@ -1,7 +1,7 @@
 export default class Map {
   constructor(opts) {
     this.opts = {
-      center: [55.751574, 37.573856],
+      center: [48.467315, 134.998649],
       balloon: false,
       placemarkBut: false,
       geo: false,
@@ -62,6 +62,7 @@ export default class Map {
   placemarkInit() {
     $(".map-data input").each((key, item) => {
       let dataCords = $(item).attr("data-cords");
+      // console.log('yes');
       let coords = dataCords.replace(" ", "").split(",");
       let dataName = $(item).attr("data-name");
       let dataContent = $(item).attr("data-content");
@@ -82,7 +83,7 @@ export default class Map {
       }
       let placeMark = new ymaps.Placemark(coords, ballonContent, {
         iconLayout: "default#image",
-        iconImageHref: `${CONFIG.path}images/map-pin.svg`,
+        iconImageHref: `${CONFIG.path}images/map-cont.svg`,
         ...iconSettings,
       });
       placeMark.id = key;
