@@ -39,6 +39,8 @@ $(document).ready(function () {
   modal();
 
   academyPage();
+
+  videoBtn();
 });
 
 function academyPage() {
@@ -710,6 +712,15 @@ function sliderNew() {
     thumbs: {
       swiper: galleryThumbs
     }
+  });
+}
+
+function videoBtn() {
+  $('.modal-video__video-button').on('click', function(event){
+    $(this).find('modal-video__video-button').toggleClass('modal-video__video-button--hide');
+    console.log($(event.target));
+    $(this).parent('.videos').find('iframe').trigger('click');
+    console.log($(this).parent('.videos').find('iframe'));
   });
 }
 
