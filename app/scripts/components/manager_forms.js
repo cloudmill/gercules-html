@@ -33,7 +33,7 @@ export default class Manager_forms {
 
   initSelect2() {
     $(".field-select select").each((key, select) => {
-      console.log(select)
+      // console.log(select)
       if ($(select).attr("data-select-placeholder")) {
         $(select).select2({
           minimumResultsForSearch: -1,
@@ -54,7 +54,7 @@ export default class Manager_forms {
       if (selectPlaceholder) {
         selectOptions.placeholder = selectPlaceholder
       }
-      
+
       $(select).select2(selectOptions)
     })
   }
@@ -76,7 +76,7 @@ export default class Manager_forms {
         });
         if (responce.ok) {
           const text = await responce.text();
-          
+
           console.log(text);
           $(".calendar-data-events").html(text);
           calendar.updateDate();

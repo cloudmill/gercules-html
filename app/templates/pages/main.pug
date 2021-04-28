@@ -9,7 +9,7 @@ block content
       .main-header
         .main-header__title-block
           h1.main-header__title.main-header__title--max-width Лидер по производству сухих строительных смесей в Сибири
-          p.main-header__caption
+          p.main-header__caption Вдохновляет строить
         .main-header__features-block
           ul.main-header__features
             li.main-header__feature
@@ -18,35 +18,273 @@ block content
             li.main-header__feature
               p.main-header__feature-title >150 000 м
               p.main-header__feature-text
-                | складских помещений 
+                | складских помещений
                 br
                 | и отлаженная логистика
             li.main-header__feature
               p.main-header__feature-title Качество
               p.main-header__feature-text
-                | тестируем в собственных 
+                | тестируем в собственных
                 br
                 | лабораториях
             li.main-header__feature
               p.main-header__feature-title ТОП-3
               p.main-header__feature-text
-                | производителей 
+                | производителей
                 br
                 | строительных клеёв в России
             li.main-header__feature
               p.main-header__feature-title ГОСТ
               p.main-header__feature-text
-                | сертификаты на все 
+                | сертификаты на все
                 br
                 | строительные смеси
           a(href="").main-header__about
-            span.main-header__about-text
+            span.main-header__about-text Подробнее о компании
             +icon("link-white-arrow", "svg")
+    .page
+      .main-list
+        .main-list__item.main-list__item--title
+          h2 Профессиональное решение для Вашего ремонта
+          a(href="").arrow-link
+            .arrow-link__text Каталог
+            .arrow-link__icon.arrow-link__icon--ml--15
+              +icon("arrow", "svg")
+        a.main-list__item(href='#')
+          .main-list__item-img
+            img(src="images/index-list-1.svg", alt="")
+          .main-list__item-text Сухие строительные смеси
+        a.main-list__item(href='#')
+          .main-list__item-img
+            img(src="images/index-list-2.svg", alt="")
+          .main-list__item-text Смеси для машинного нанесения
+        a.main-list__item(href='#')
+          .main-list__item-img
+            img(src="images/index-list-3.svg", alt="")
+          .main-list__item-text Продукция для фасадных систем
+        a.main-list__item(href='#')
+          .main-list__item-img
+            img(src="images/index-list-4.svg", alt="")
+          .main-list__item-text Лакокрасочные материалы
+        a.main-list__item(href='#')
+          .main-list__item-img
+            img(src="images/index-list-5.svg", alt="")
+          .main-list__item-text Готовые составы
+        a.main-list__item(href='#')
+          .main-list__item-img
+            img(src="images/index-list-6.svg", alt="")
+          .main-list__item-text Смеси для профессионалов
+      .tabs.main-tabs
+        .tabs-menu
+          .tabs-menu_item.active Акции
+          .tabs-menu_item Новости
+          .tabs-menu_item Новинки
+        .tabs-list
+          .tabs-item.tab-text.active
+            a(href="").arrow-link
+              .arrow-link__text Все акции
+              .arrow-link__icon.arrow-link__icon--ml--15
+                +icon("arrow", "svg")
+            .shares-list
+              - for (let i = 0; i < 2; i++)
+                a.shares-item(href='#')
+                  .shares-item_info
+                    if (i % 2)
+                      .title «Лучшая цена» в Колорлоне
+                        br
+                        | на GERKULES
+                      p Скидки до 25% на самые популярные смеси GERKULES в магазинах Колорлон.
+                    else
+                      .title В магазинах «Стройся» снижены цены на смеси GERKULES
+                      p Покупать сухие строительные смеси GERKULES
+                        br
+                        | в магазинах "СТРОЙСЯ" выгодно!
+                  .shares-time
+                    +icon("calendar", "svg")
+                    p Срок действия
+                    p
+                      span 22.10.
+                      | 2018  —&nbsp;
+                      span 31.11.
+                      | 2018
+            .shares-img
+          .tabs-item.tab-text
+            a(href="").arrow-link
+              .arrow-link__text Все новости
+              .arrow-link__icon.arrow-link__icon--ml--15
+                +icon("arrow", "svg")
 
+            .publication__list.publication__list--mg-t--m1.publication__list--mg-l--m1
+              .publication__item
+                a(href="").publication__item--inner
+                  .publication__content
+                    .publication__image
+                      img.publication__img(src=`./images/publication-5.jpg`)
+                    p.publication__date
+                      | 22 октября 2019
+                    h6.title.title--default.publication__title
+                      | Новая формула GE-29: глубже, равномернее, крепче!
+                    p.publication__text
+                      | С 20 марта 2018 мы начали выпуск нового продукта: «Грунтовка укрепляющая глубокого проникновения GE-29». Мы улучшили формулу и обновили упаковку!
+                  ul.hash-list.hash-list--spaces--2.hash-panel__container.publication__hash-list
+                    li.hash.hash-list__item
+                      .hash-list__link #жизнькомпании
+                    li.hash.hash-list__item
+                      .hash-list__link #новости
+              .publication__item.publication__item--sm
+                a(href="").publication__item--inner
+                  .publication__content
+                    p.publication__date
+                      | 22 октября 2019
+                    h6.title.title--default.publication__title
+                      | Новая формула GE-29: глубже, равномернее, крепче!
+                    p.publication__text
+                      | С 20 марта 2018 мы начали выпуск нового продукта: «Грунтовка укрепляющая глубокого проникновения GE-29». Мы улучшили формулу и обновили упаковку!
+                  ul.hash-list.hash-list--spaces--2.hash-panel__container.publication__hash-list
+                    li.hash.hash-list__item
+                      .hash-list__link #жизнькомпании
+                    li.hash.hash-list__item
+                      .hash-list__link #новости
+                a(href="").publication__item--inner
+                  .publication__content
+                    p.publication__date
+                      | 22 октября 2019
+                    h6.title.title--default.publication__title
+                      | Новая формула GE-29: глубже, равномернее, крепче!
+                    p.publication__text
+                      | С 20 марта 2018 мы начали выпуск нового продукта: «Грунтовка укрепляющая глубокого проникновения GE-29». Мы улучшили формулу и обновили упаковку!
+                  ul.hash-list.hash-list--spaces--2.hash-panel__container.publication__hash-list
+                    li.hash.hash-list__item
+                      .hash-list__link #жизнькомпании
+                    li.hash.hash-list__item
+                      .hash-list__link #новости
+          .tabs-item.tab-text
+            .fs-bigSlider-main
+              .swiper-container.fs-bigSlider_main
+                .swiper-wrapper
+                  each slide in [0,1,2]
+                    .swiper-slide
+                      .slide-left
+                        h2 GP-21M Штукатурка цементная для машинного нанесения
+                        +btn-p-gram("Подробнее", "btn-p-gram--mobile")
+                      .slide-center
+                        img(src=`./images/main-slide.png`, alt='')
+                      .slide-right
+                        ul.for-partners__features-list
+                          li.for-partners__features-item Обеспечивает прочность и долговечность обработанной поверхности
+                          li.for-partners__features-item Уменьшает расход краски
+                          li.for-partners__features-item Имеет высокую проникающую способность
+                          li.for-partners__features-item Морозостойкая
+                          li.for-partners__features-item Для внутренних и наружных работ
+                +sliderControls
+                  button.fs-bigSlider_prev
+                  button.fs-bigSlider_next
+                .fs-bigSlider-pagination
 
+      .main-service
+        .main-service-row
+          .main-service-col-l
+            h2 Комплексная механизация строительных работ
+            .main-service-col-in
+              h3 Полный сервис по организации отделочных работ:
+              ul.for-partners__features-list
+                li.for-partners__features-item Пуско-наладка оборудования на объекте
+                li.for-partners__features-item Поставка смесей на объект напрямую с завода
+                li.for-partners__features-item Обучение и сервисное обслуживание
+                li.for-partners__features-item Персональный менеджер
+              h4 GERKULES – ваш надёжный партнёр на объекте
+              +btn-p-gram("Подробнее о механизации", "btn-p-gram--mobile")
+          .main-service-col-r
+            img(src='images/main-list-img.png' alt='')
 
+      .main-prod
+        .main-prod-row
+          .main-prod-col-l
+            img(src='images/main-prod-img.svg', alt='')
+          .main-prod-col-r
+            img.logo(src='images/main-prod-logo.svg', alt='')
+            h2 Фасадная система Gerkules Facade
+            p Широкая область применения:
+            .main-prod-list
+              .main-prod-list__item
+                img(src='images/main-prod-1.png', alt='')
+                p Реконструкция и капитальный ремонт муниципальных, общественных и жилых зданий
+              .main-prod-list__item
+                img(src='images/main-prod-2.png', alt='')
+                p Коттеджное и малоэтажное строительство
+              .main-prod-list__item
+                img(src='images/main-prod-3.png', alt='')
+                p Строительство новых жилых и общественных зданий
+            +btn-p-gram("Подробнее", "btn-p-gram--mobile")
 
-
-
-
+      .main-events
+        .main-events-academy
+          .main-events-academy-inner
+            h2 Академия «Геркулес»
+            ul.for-partners__features-list
+              li.for-partners__features-item Присоединяйтесь к сообществу профессионалов «Академии Геркулес»! Мы регулярно проводим обучения по применению нашей продукции и отвечаем на вопросы.
+            +btn-p-gram("Присоединиться", "btn-p-gram--mobile")
+            .main-events-academy-img
+              img(src='images/main-events-academy-m.png' alt='')
+        .main-events-slider
+          .main-events-slider-l
+            h3 Ближайшие события
+            a(href="").arrow-link
+              .arrow-link__text Все события
+              .arrow-link__icon.arrow-link__icon--ml--15
+                +icon("arrow", "svg")
+          .main-events-slider-r
+            .events-week_slider(data-slide=1)
+              +sliderControls
+                button.events-week_slider-prev
+                button.events-week_slider-next
+              .swiper-wrapper
+                .swiper-slide
+                  .events-card
+                    a(href="#")
+                      h3 Сезонность на спрос СФТК. Как продавать небольшому магазину
+                      p Проектная деятельность дает ответ на существующий вызов стремительно меняющегося мира, вовлекая в систему обучения реальные практики, реальных экспертов и настоящие проблемные ситуации, с которыми студенческие команды разбираются в ходе проектирования и формируя пул метапредметных компетенций.
+                    +hashTags([["семинар", "#"], ["конференция", "#"]])
+                    .events-card-date
+                      span 5
+                      span сен
+                .swiper-slide
+                  .events-card
+                    a(href="#")
+                      h3 Сезонность на спрос СФТК. Как продавать небольшому магазину
+                      p Проектная деятельность дает ответ на существующий вызов стремительно меняющегося мира, вовлекая в систему обучения реальные практики, реальных экспертов и настоящие проблемные ситуации, с которыми студенческие команды разбираются в ходе проектирования и формируя пул метапредметных компетенций.
+                    +hashTags([["семинар", "#"], ["конференция", "#"]])
+                    .events-card-date
+                      span 27
+                      span сен
+                .swiper-slide
+                  .events-card
+                    a(href="#")
+                      h3 Сезонность на спрос СФТК. Как продавать небольшому магазину
+                      p Проектная деятельность дает ответ на существующий вызов стремительно меняющегося мира, вовлекая в систему обучения реальные практики, реальных экспертов и настоящие проблемные ситуации, с которыми студенческие команды разбираются в ходе проектирования и формируя пул метапредметных компетенций.
+                    +hashTags([["семинар", "#"], ["конференция", "#"]])
+                    .events-card-date
+                      span 5
+                      span сен
+                .swiper-slide
+                  .events-card
+                    a(href="#")
+                      h3 Сезонность на спрос СФТК. Как продавать небольшому магазину
+                      p Проектная деятельность дает ответ на существующий вызов стремительно меняющегося мира, вовлекая в систему обучения реальные практики, реальных экспертов и настоящие проблемные ситуации, с которыми студенческие команды разбираются в ходе проектирования и формируя пул метапредметных компетенций.
+                    +hashTags([["семинар", "#"], ["конференция", "#"]])
+                    .events-card-date
+                      span 27
+                      span сен
+        .main-events-cabinet
+          .main-events-cabinet-l
+            img(src='images/main-events-cabinet.png', alt='')
+          .main-events-cabinet-r
+            h2 Личный кабинет партнера
+            p Для наших партнёров мы разработали удобный личный кабинет:
+            ul.for-partners__features-list
+              li.for-partners__features-item Автоматизированная работа с заказами
+              li.for-partners__features-item Планы продаж и аналитика их выполнения
+              li.for-partners__features-item Актуальная информация по промо-активности
+              li.for-partners__features-item Онлайн поддержка клиентов
+            +btn-p-gram("Войти", "btn-p-gram--mobile")
 

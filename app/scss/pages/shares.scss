@@ -152,7 +152,6 @@
   &-item {
     margin: -0.5px;
     padding: 60px 45px 70px 60px;
-    padding-bottom: 70px;
     min-height: 455px;
     display: flex;
     flex-direction: column;
@@ -171,7 +170,7 @@
         }
       }
     }
-
+    .title,
     a {
       display: block;
       font-family: $font-second;

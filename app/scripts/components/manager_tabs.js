@@ -1,4 +1,5 @@
 import "jquery";
+import Managers_sliders from "./manager_sliders";
 
 class SlideDown {
   constructor({
@@ -89,6 +90,8 @@ export default class Manager_tabs {
     this.cardQuestionsDropdowns();
     this.sidebarDropdown();
     this.documentationFilesBlock();
+    this.showMenuFooter();
+    this.showMenuHeader();
 
     // тест
     this.test()
@@ -107,6 +110,7 @@ export default class Manager_tabs {
 
   tabsInit() {
     const tabsComponents = $(".tabs")
+    this.sliders = new Managers_sliders();
 
     tabsComponents.each((index, tabsComponent) => {
       const isMobileComponent = $(tabsComponent).hasClass("content-mobile")
@@ -122,14 +126,12 @@ export default class Manager_tabs {
           speed: 500
         })
       }
-
       // desktop & mobile menu handler
       const tabsMenuItemsAll = $(tabsComponent).find(".tabs-menu_item")
       const tabsItems = $(tabsComponent).find(".tabs-item")
 
       tabsMenuItemsAll.click(event => {
         const clickedMenuItem = $(event.target)
-
         if (!clickedMenuItem.hasClass("active")) {
           tabsMenuItemsAll.removeClass("active")
           tabsItems.removeClass("active")
@@ -145,6 +147,11 @@ export default class Manager_tabs {
             updateTitle()
           }
         }
+
+        setTimeout(() => {
+          // reinit slider
+          this.sliders.main_sl();
+        }, 300)
       })
 
       // update mobile menu title
@@ -185,6 +192,27 @@ export default class Manager_tabs {
       }
     });
   }
+  showMenuFooter() {
+    $('div.footer-menu_item').click(function () {
+      $(this).toggleClass('active');
+      return false;
+    });
+  }
+  showMenuHeader() {
+    $('.header-menu').click(function () {
+      $(this).closest('.header-col').find('.header-row:nth-child(2)').toggleClass('active');
+      return false;
+    });
+    $('.header-menu_item').click(function () {
+      if($(this).hasClass('active')) {
+        $(this).removeClass('active');
+      } else {
+        $('.header-menu_item').removeClass('active');
+        $(this).addClass('active');
+      }
+      return false;
+    });
+  }
   vacancyDropdowns() {
     $(".vacancy-item").each((key, element) => {
       new SlideDown({
@@ -205,7 +233,7 @@ export default class Manager_tabs {
   }
   cardQuestionsDropdowns() {
     const ITEM_CLASS = 'tabs-item_question';
-  
+
     $('.' + ITEM_CLASS).each(function () {
       const drop = $(this).find('[class*="drop"]');
 

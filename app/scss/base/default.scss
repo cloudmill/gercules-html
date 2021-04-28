@@ -161,6 +161,12 @@ button {
   display: inline-block;
 }
 @include sprites($spritesheet-sprites);
+.wrapper {
+  padding-top: 130px;
+  @media (max-width: $mobile-xl) {
+    padding-top: 50px;
+  }
+}
 
 html {
   &.closeScroll {

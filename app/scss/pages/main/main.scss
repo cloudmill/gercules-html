@@ -1,11 +1,757 @@
 // MAIN
 
+$font-title: "Nexa Replica Ru";
 // HEADER
 
-.main__header {
-  padding-left: 80px;
-  height: 50vh;
-  display: flex;
-  background: url(../images/main-header-bg.jpg);
-  background-size: cover;
+.main {
+  &-list {
+    display: grid;
+    $col-count: 4;
+    $col-gap: 119px;
+    grid-template-columns: repeat(4, 1fr);
+    counter-reset: index;
+    border-bottom: 1px solid #E5E5E5;
+    @media (max-width: $desktop-m) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: $desktop-to-mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $mobile-xl) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &__item {
+      padding: 40px 40px 40px 0;
+      display: flex;
+      flex-direction: column;
+
+      align-items: flex-start;
+      border-top: 1px solid #E5E5E5;
+      border-right: 1px solid #E5E5E5;
+      @media (max-width: $mobile-xl) {
+        padding: 20px 20px 20px 0;
+      }
+      &--title {
+        grid-column: span 2;
+        padding: 50px;
+        @media (max-width: $mobile-xl) {
+          grid-column: span 1;
+          padding: 60px 20px 20px;
+        }
+        h2 {
+          font-family: $font-title;
+          font-weight: bold;
+          font-size: 48px;
+          line-height: 140%;
+          margin-bottom: 30px;
+          @media (max-width: $desktop-m) {
+            font-size: 35px;
+          }
+          @media (max-width: $mobile-xl) {
+            font-size: 20px;
+          }
+        }
+      }
+      &-img {
+        padding-left: 40px;
+        padding-bottom: 20px;
+        text-align: center;
+        margin: auto;
+        @media (max-width: $mobile-xl) {
+          padding-left: 20px;
+        }
+      }
+      &-text {
+        height: 60px;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 130%;
+        position: relative;
+        padding-left: 40px;
+        display: flex;
+        align-items: center;
+        max-width: 240px;
+        &:after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: "";
+          display: block;
+          height: 60px;
+          border-left: 4px solid #e41d2c;
+          border-top: 3px solid transparent;
+        }
+      }
+    }
+  }
+
+  &-service {
+    background:
+      url('../images/main-list-img.png') no-repeat top 40px right -30px / auto 820px,
+      url("../images/main-list-back.jpg") no-repeat center top / 100% 303px;
+    padding: 120px 56px 0 56px;
+    position: relative;
+    @media (max-width: $desktop-m) {
+      background:
+        url('../images/main-list-img.png') no-repeat center right -90px / auto 720px,
+        url("../images/main-list-back.jpg") no-repeat center top / 100% 303px;
+    }
+    @media (max-width: $desktop-to-mobile) {
+      padding: 70px 56px 0 56px;
+      background:
+        url('../images/main-list-img.png') no-repeat bottom right -90px / auto 520px,
+        url("../images/main-list-back.jpg") no-repeat center top / 100% 220px;
+    }
+    @media (max-width: $mobile-xl) {
+      padding: 60px 20px 0 20px;
+      background: url("../images/main-list-back.jpg") no-repeat center top / 100% 160px;
+
+    }
+
+    &-row {
+      display: flex;
+      @media (max-width: $mobile-xl) {
+        display: block;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+    &-col {
+      &-in {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 160px;
+        @media (max-width: $mobile-xl) {
+          padding-right: 0;
+        }
+      }
+      &-l {
+        width: 65%;
+        padding-bottom: 120px;
+        @media (max-width: $desktop-to-mobile) {
+          width: 100%;
+        }
+        @media (max-width: $mobile-xl) {
+          padding-bottom: 30px;
+        }
+        h2 {
+          font-family: $font-title;
+          font-weight: bold;
+          font-size: 48px;
+          line-height: 140%;
+          margin-bottom: 110px;
+          @media (max-width: $desktop-m) {
+            font-size: 35px;
+          }
+          @media (max-width: $mobile-xl) {
+            font-size: 20px;
+            margin-bottom: 60px;
+          }
+        }
+        h3 {
+          font-family: $font-title;
+          font-weight: bold;
+          font-size: 28px;
+          line-height: 144%;
+          margin-bottom: 30px;
+          @media (max-width: $desktop-m) {
+            font-size: 24px;
+          }
+          @media (max-width: $mobile-xl) {
+            font-size: 15px;
+          }
+        }
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 0;
+          margin-bottom: 40px;
+          .for-partners__features-item {
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-right: 50px;
+            &:before {
+              top: 30%;
+            }
+          }
+          > * {
+            width: 50%;
+            @media (max-width: $mobile-xl) {
+              width: 100%;
+            }
+          }
+        }
+        h4 {
+          margin-left: 35px;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 144%;
+          margin-bottom: 80px;
+          @media (max-width: $mobile-xl) {
+            margin-bottom: 40px;
+            margin-left: 0;
+            font-size: 15px;
+          }
+        }
+      }
+      &-r {
+        display: none;
+        @media (max-width: $mobile-xl) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &-prod {
+    color: white;
+    position: relative;
+    padding: 70px 56px 70px 200px;
+    margin-left: -81px;
+    background: url("../images/main-prod-back.jpg") no-repeat center / cover;
+    @media (max-width: $desktop-m) {
+      padding: 40px;
+      margin-left: 0;
+      background: url("../images/main-prod-back.jpg") no-repeat right bottom / cover;
+    }
+    @media (max-width: $mobile-xl) {
+      padding: 20px;
+      background: url("../images/main-prod-back-m.jpg") no-repeat right bottom / cover;
+    }
+
+    &-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+    &-col {
+      &-l {
+        width: 40%;
+        @media (max-width: $desktop-m) {
+          width: 30%;
+        }
+        @media (max-width: $desktop-to-mobile) {
+          display: none;
+        }
+        img {
+          max-width: 100%;
+        }
+      }
+      &-r {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @media (max-width: $desktop-m) {
+          width: 70%;
+          padding-left: 40px;
+        }
+        @media (max-width: $desktop-to-mobile) {
+          width: 100%;
+          padding-left: 0;
+        }
+        .logo {
+          position: absolute;
+          top: 0;
+          right: 0;
+          @media (max-width: $desktop-to-mobile) {
+            width: 120px;
+          }
+          @media (max-width: $mobile-xl) {
+            display: none;
+          }
+        }
+        h2 {
+          font-family: $font-title;
+          font-weight: bold;
+          font-size: 48px;
+          line-height: 144%;
+          margin-bottom: 60px;
+          margin-top: 60px;
+          max-width: 545px;
+          @media (max-width: $desktop-m) {
+            font-size: 35px;
+          }
+          @media (max-width: $desktop-to-mobile) {
+            margin-top: 0;
+          }
+          @media (max-width: $mobile-xl) {
+            font-size: 20px;
+            margin-bottom: 20px;
+          }
+        }
+        p {
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 144%;
+          margin-bottom: 40px;
+          @media (max-width: $mobile-xl) {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    &-list {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      @media (max-width: $mobile-xl) {
+        flex-wrap: wrap;
+      }
+      > * {
+        width: calc(100% / 3 - 50px);
+        @media (max-width: $desktop-m) {
+          width: calc(100% / 3 - 15px);
+        }
+        @media (max-width: $mobile-xl) {
+          width: 100%;
+        }
+        img {
+          margin-left: -20px;
+          max-width: 100%;
+          height: 173px;
+          @media (max-width: $desktop-m) {
+            margin-left: -10px;
+            height: 120px;
+          }
+          @media (max-width: $mobile-xl) {
+            height: 155px;
+          }
+        }
+        p {
+          font-size: 15px;
+          line-height: 144%;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+  &-events {
+    &-academy {
+      padding: 270px 90px 110px 170px;
+      background: url("../images/main-events-academy.png") no-repeat right 20% bottom / auto 90%;
+      @media (max-width: $desktop-l) {
+        background: url(../images/main-events-academy.png) no-repeat right 20% bottom 10% / auto 69%;
+      }
+      @media (max-width: $desktop-m) {
+        padding: 60px;
+      }
+      @media (max-width: $desktop-to-mobile) {
+        background: url(../images/main-events-academy.png) no-repeat right 20% bottom / auto 50%;
+      }
+      @media (max-width: $mobile-xl) {
+        padding: 60px 20px 20px;
+        background: none;
+      }
+      &-inner {
+        max-width: 465px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        ul {
+          margin-top: 50px;
+          margin-bottom: 60px;
+          li {
+            font-size: 18px;
+            line-height: 170%;
+            &:before {
+              top: 20px;
+            }
+          }
+        }
+        h2 {
+          font-family: $font-title;
+          font-weight: bold;
+          font-size: 48px;
+          line-height: 144%;
+          @media (max-width: $desktop-m) {
+            font-size: 35px;
+          }
+          @media (max-width: $mobile-xl) {
+            font-size: 20px;
+          }
+        }
+      }
+      &-img {
+        display: none;
+        @media (max-width: $mobile-xl) {
+          display: block;
+          text-align: center;
+          margin-top: 40px;
+          img {
+            max-width: 80%;
+            margin: auto;
+          }
+        }
+      }
+    }
+    &-cabinet {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 110px 20px 20px 20px;
+      @media (max-width: $desktop-m) {
+        padding: 40px;
+      }
+      img {
+        max-width: 100%;
+      }
+      > * {
+        width: 50%;
+        @media (max-width: $desktop-to-mobile) {
+          width: 100%;
+        }
+      }
+      &-l {
+        @media (max-width: $desktop-to-mobile) {
+          order: 1;
+        }
+        @media (max-width: $mobile-xl) {
+          display: none;
+        }
+      }
+      &-r {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 630px;
+        padding-left: 58px;
+        @media (max-width: $desktop-m) {
+          width: 50%;
+          padding-left: 0;
+        }
+        @media (max-width: $desktop-to-mobile) {
+          width: 100%;
+        }
+        h2 {
+          font-family: $font-title;
+          font-weight: bold;
+          font-size: 48px;
+          line-height: 144%;
+          margin-bottom: 40px;
+          @media (max-width: $desktop-m) {
+            font-size: 35px;
+          }
+          @media (max-width: $mobile-xl) {
+            font-size: 20px;
+          }
+        }
+        p {
+          margin-bottom: 25px;
+          font-size: 18px;
+          line-height: 170%;
+          max-width: 380px;
+        }
+        ul {
+          margin-top: 0;
+          margin-bottom: 40px;
+        }
+      }
+    }
+    &-slider {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 80px 160px;
+      position: relative;
+      overflow: hidden;
+      @media (max-width: $desktop-m) {
+        padding: 60px;
+      }
+      @media (max-width: $mobile-xl) {
+        padding: 60px 20px 20px;
+      }
+      .events-card {
+        height: 370px;
+        @media (max-width: $mobile-xl) {
+          padding: 20px 20px 100px 20px;
+          height: auto;
+          &:before {
+            bottom: 20px;
+          }
+          &:after {
+            bottom: 43px;
+          }
+          .events-card-date {
+            position: static;
+            order: -1;
+          }
+        }
+        p {
+          margin: 30px 0;
+          font-size: 15px;
+          line-height: 150%;
+        }
+      }
+      .events-week_slider {
+        margin-top: 0;
+        overflow: hidden;
+        .sliderControls {
+          bottom: 80px;
+          top: auto;
+          right: auto;
+          left: 160px;
+          @media (max-width: $desktop-m) {
+            bottom: 60px;
+            left: 60px;
+          }
+          @media (max-width: $desktop-to-mobile) {
+            position: relative;
+            top: 1px;
+            bottom: auto;
+            left: 0;
+          }
+        }
+      }
+      > * {
+        width: 50%;
+        @media (max-width: $desktop-to-mobile) {
+          width: 100%;
+        }
+      }
+      &-l {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          right: 100%;
+          width: 500%;
+          height: 1px;
+          background: #E5E5E5;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 57px;
+          left: 100px;
+          width: 150%;
+          height: 1px;
+          background: #E5E5E5;
+          z-index: 1;
+          @media (max-width: $desktop-to-mobile) {
+            bottom: -42px;
+          }
+        }
+        h3 {
+          font-family: $font-title;
+          font-weight: bold;
+          font-size: 28px;
+          line-height: 144%;
+          margin-bottom: 50px;
+          @media (max-width: $desktop-m) {
+            font-size: 24px;
+          }
+        }
+      }
+      &-r {
+        @media (max-width: $desktop-to-mobile) {
+          margin-top: 40px;
+        }
+        .events-card {
+          position: relative;
+          z-index: 9;
+          background: white;
+          border-right: 1px solid #e5e5e5 !important;
+          width: calc(100% - 1px);
+          @media (max-width: $desktop-m) {
+            width: 100%;
+          }
+          h3 {
+            @media (max-width: $mobile-xl) {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.fs-bigSlider-main {
+  .sliderControls {
+    bottom: 86px;
+    height: 86px;
+    overflow: visible;
+    //z-index: 1;
+    background: none;
+
+    @media (max-width: $desktop-to-mobile) {
+      bottom: auto;
+      top: 0;
+      left: 120px;
+      position: absolute;
+    }
+    &:after {
+      width: 1000%;
+      right: auto;
+      left: 104px;
+      border-top: 1px solid #CDCDCD;
+    }
+    &:before {
+      border-bottom: none;
+      border-right: 1px solid #CDCDCD;
+      @media (max-width: $desktop-to-mobile) {
+        border-bottom: 1px solid #cdcdcd;
+      }
+    }
+    &-buttons:before {
+      width: 21px;
+      height: 21px;
+    }
+  }
+  .fs-bigSlider-pagination {
+    position: absolute;
+    bottom: 108px;
+    left: 70%;
+    z-index: 9;
+    font-size: 15px;
+    line-height: 150%;
+    @media (max-width: $desktop-to-mobile) {
+      bottom: auto;
+      top: 25px;
+      left: 20px;
+    }
+    .swiper-pagination-current {
+      font-family: $font-title;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 144%;
+      margin-right: 8px;
+      top: -5px;
+      position: relative;
+      &:before{
+        content: "0"
+      }
+    }
+    .swiper-pagination-total {
+      margin-left: 8px;
+      &:before{
+        content: "0"
+      }
+    }
+  }
+  .swiper-container {
+    position: relative;
+    &:after {
+      content: '';
+      height: 600px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      background: url("../images/main-slide-bg.jpg") no-repeat center / cover;
+      @media (max-width: $desktop-m) {
+        height: 500px;
+      }
+      @media (max-width: $desktop-to-mobile) {
+        height: 100%;
+      }
+    }
+  }
+  .swiper-slide {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 115px 60px 145px;
+    position: relative;
+    z-index: 10;
+    height: 600px;
+    @media (max-width: $desktop-m) {
+      padding: 50px 50px 100px;
+      height: 500px;
+    }
+    @media (max-width: $desktop-to-mobile) {
+      height: auto;
+      padding: 100px 30px 30px;
+      flex-wrap: wrap;
+    }
+    > * {
+      width: 33%;
+      @media (max-width: $desktop-to-mobile) {
+        width: 50%;
+      }
+    }
+    h2 {
+      font-family: $font-title;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 144%;
+      @media (max-width: $desktop-m) {
+        font-size: 24px;
+      }
+      @media (max-width: $mobile-xl) {
+        font-size: 15px;
+        margin-bottom: 40px;
+      }
+    }
+    .slide-left {
+      width: 30%;
+      max-width: 400px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      @media (max-width: $desktop-to-mobile) {
+        width: 50%;
+      }
+      @media (max-width: $mobile-xl) {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .slide-right {
+      width: 29%;
+      @media (max-width: $desktop-to-mobile) {
+        width: 50%;
+      }
+      @media (max-width: $mobile-xl) {
+        width: 100%;
+      }
+    }
+    .slide-center {
+      @media (max-width: $desktop-to-mobile) {
+        order: -1;
+        width: 51%;
+        margin: auto;
+      }
+      @media (max-width: $mobile-xl) {
+        width: 100%;
+      }
+      img {
+        max-width: 550px;
+        position: absolute;
+        top: 40px;
+        z-index: 19;
+
+        @media (max-width: $desktop-l) {
+          top: auto;
+          bottom: -30px;
+          left: 0;
+          right: 0;
+          margin: auto;
+          max-width: 450px;
+        }
+        @media (max-width: $desktop-m) {
+          bottom: auto;
+          max-width: 350px;
+        }
+        @media (max-width: $desktop-to-mobile) {
+          position: static;
+          max-width: 100%;
+        }
+        @media (max-width: $mobile-xl) {
+          height: 280px;
+          margin: 0 auto 30px;
+        }
+      }
+    }
+  }
 }

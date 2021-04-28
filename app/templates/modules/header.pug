@@ -1,13 +1,13 @@
 mixin headerMenu(json)
   each item in json
     if(item.list)
-      .header-menu_item 
+      .header-menu_item
         | #{item.name}
         .header-menu_item_dropdown
           each link in item.list
             a(href="") #{link.name}
     else
-      a.header-menu_item 
+      a.header-menu_item
         | #{item.name}
 
 .header
@@ -16,7 +16,6 @@ mixin headerMenu(json)
   .header-col
     .header-row
       .header-col
-        a.header-phone(href="tel:8 800 250 30 10") 8 800 250 30 10
         .header-loc
           select(name='location')
             option(value="0") Санкт-Петербург
@@ -24,22 +23,33 @@ mixin headerMenu(json)
         a.header-link(href="./whereBuy.html")
           +icon('map-pin','svg')
           |Где купить
-        a.header-link 
+        a.header-link
           +icon('flag','svg')
           |Акции
       .header-col
-        a.header-link 
+        a.header-link
           +icon('expand','svg')
           |Калькулятор для ремонта
-        a.header-link 
+        a.header-link
           +icon('mail','svg')
           |Консультация и сервис
+        .header-phone
+          a(href="tel:8 800 250 30 10") 8 800 250 30 10
+          span Горячая линия
     .header-row
       .header-menu
         +headerMenu(getData('menu-items'))
       a.header-search
         +icon('search','svg')
       a.header-lk
-        +icon('person','svg')
+        +icon('person-r','svg')
+        span Вход
+    .header-row
+      a.header-link(href="./whereBuy.html")
+        +icon('map-pin','svg')
+      a.header-search
+        +icon('search-r','svg')
+      a.header-menu
+        +icon('menubar','svg')
 
 

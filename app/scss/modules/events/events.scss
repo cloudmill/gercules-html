@@ -60,7 +60,7 @@
         margin-right: 20px;
       }
 
-      
+
       &__row {
         display: flex;
         justify-content: flex-end;
@@ -253,16 +253,14 @@
 
     &::before {
       content: "";
-      display: block;
-      width: 4px;
-      height: 60px;
       position: absolute;
-      left: -1px;
       bottom: 34px;
-      background-image: url(../images/events-card-mark.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center center;
+      left: -1px;
+      content: "";
+      display: block;
+      height: 60px;
+      border-left: 4px solid #e41d2c;
+      border-top: 3px solid transparent;
     }
 
     &::after {

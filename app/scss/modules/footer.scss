@@ -1,16 +1,28 @@
 .footer {
   background-color: #f4f4f4;
-  padding: 0 80px;
-  padding-top: 113px;
+  padding: 113px 80px 0;
   background-image: url(../images/footer.svg);
   background-position: center 60px;
   background-size: 820px 700px;
   background-repeat: no-repeat;
+  @media (max-width: $desktop-m) {
+    padding: 100px 60px 0;
+  }
+  @media (max-width: $desktop-to-mobile) {
+    padding: 40px 40px 0;
+  }
+  @media (max-width: $mobile-xl) {
+    padding: 20px 20px 0;
+  }
   &-menu {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: 493px;
+    @media (max-width: $desktop-to-mobile) {
+      flex-direction: row;
+      height: auto;
+    }
     &_title {
       font-family: $font-second;
       font-style: normal;
@@ -19,14 +31,61 @@
       line-height: 144%;
       color: #262626;
       margin-bottom: 18px;
+      position: relative;
+      @media (max-width: $mobile-xl) {
+        border-bottom: 1px solid #E5E5E5;
+        margin-bottom: 0;
+        padding: 8px 0;
+      }
     }
     &_item {
       width: 20%;
+      @media (max-width: $desktop-to-mobile) {
+        width: 25%;
+      }
+      @media (max-width: $mobile-xl) {
+        width: 100%;
+      }
+      &:not(a) {
+        .footer-menu_title {
+          @media (max-width: $mobile-xl) {
+            &:after {
+              content: '';
+              position: absolute;
+              right: 5px;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+              height: 4px;
+              width: 8px;
+              background: url("../images/svgSprite/arr.svg") no-repeat center;
+              transition: transform .5s;
+            }
+          }
+        }
+        &.active {
+          .footer-menu_title:after {
+            transform: rotate(180deg);
+          }
+        }
+      }
     }
     &_links {
       margin-top: 4px;
       margin-bottom: 60px;
       max-width: 207px;
+      @media (max-width: $mobile-xl) {
+        max-width: inherit;
+        margin-bottom: 0;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .5s, padding-bottom 0s .2s;
+        .active > & {
+          max-height: 500px;
+          padding-bottom: 10px;
+          transition: max-height .5s, padding-bottom .2s;
+        }
+      }
       a {
         display: block;
         font-style: normal;
@@ -45,11 +104,18 @@
     border: 1px solid #262626;
     border-left: 0;
     border-right: 0;
-    padding: 60px 0;
-    padding-right: 80px;
+    padding: 60px 80px 60px 0;
     width: calc(100% + 80px);
     display: flex;
     justify-content: space-between;
+    @media (max-width: $desktop-to-mobile) {
+      width: 100%;
+      padding-right: 0;
+    }
+    @media (max-width: $mobile-xl) {
+      flex-wrap: wrap;
+      padding: 20px 20px 20px 0;
+    }
     &_col {
       width: 20%;
       display: flex;
@@ -58,6 +124,26 @@
       align-items: flex-start;
       &:first-child {
         width: 40%;
+        @media (max-width: $desktop-to-mobile) {
+          width: 25%;
+        }
+        @media (max-width: $mobile-xl) {
+          width: 100%;
+          order: 2;
+        }
+      }
+      &:nth-child(2) {
+        @media (max-width: $mobile-xl) {
+          order: 1;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+      }
+      @media (max-width: $desktop-to-mobile) {
+        width: 25%;
+      }
+      @media (max-width: $mobile-xl) {
+        width: 100%;
       }
       span {
         font-style: normal;
@@ -76,6 +162,9 @@
     }
   }
   &-phone {
+    @media (max-width: $mobile-xl) {
+      margin-bottom: 25px;
+    }
     &_title {
       font-style: normal;
       font-weight: normal;
@@ -91,6 +180,9 @@
       color: #262626;
       margin-top: 12px;
       margin-bottom: 8px;
+      @media (max-width: $mobile-xl) {
+        font-family: "Nexa Replica Ru";
+      }
     }
     &_type {
       font-style: normal;
@@ -103,6 +195,10 @@
   }
   &-social {
     display: flex;
+    @media (max-width: $mobile-xl) {
+      order: -1;
+      margin-bottom: 40px;
+    }
     a {
       @include display-flex-center();
       background: #ffffff;
@@ -116,6 +212,15 @@
     align-items: center;
     justify-content: space-between;
     padding: 40px 0;
+
+    @media (max-width: $mobile-xl) {
+      flex-wrap: wrap;
+      padding: 10px 0;
+      > * {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
     span,
     a {
       font-style: normal;

@@ -1,21 +1,151 @@
 // MAIN-HEADER
 
+$font-title: "Nexa Replica Ru";
 .main-header {
   padding-left: 80px;
   min-height: 720px;
   display: flex;
-  background: url(../images/main-header-bg.jpg);
-  background-size: cover;
+  background: url(../images/main-header-bg.jpg) no-repeat center / cover;
+  position: relative;
+  @media (max-width: $mobile-xl) {
+    padding-left: 0;
+    display: block;
+    background: url(../images/main-header-bg.jpg) no-repeat top center / auto 360px;
+  }
+  &:after {
+    content: '';
+    left: 0;
+    bottom: 100px;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.5);
+    @media (max-width: $mobile-xl) {
+      display: none;
+    }
+  }
+
+  &__features {
+    &-block {
+      width: 368px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+      background: rgba(#262626, 0.9);
+      @media (max-width: $desktop-to-mobile) {
+        width: 300px;
+      }
+      @media (max-width: $mobile-xl) {
+        width: 100%;
+        position: static;
+      }
+      ul {
+        margin: 0;
+        padding: 60px 40px;
+        @media (max-width: $desktop-to-mobile) {
+          padding: 20px;
+        }
+      }
+    }
+  }
+  &__feature {
+    color: white;
+    & + & {
+      margin-top: 40px;
+      @media (max-width: $mobile-xl) {
+        margin-top: 20px;
+      }
+    }
+    &-title {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 27px;
+      font-family: $font-title;
+      @media (max-width: $mobile-xl) {
+        font-size: 15px;
+      }
+    }
+    &-text {
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 21px;
+      @media (max-width: $mobile-xl) {
+        font-size: 12px;
+      }
+    }
+  }
+  &__about {
+    width: 100%;
+    padding: 40px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 21px;
+    background: #E41D2C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: $desktop-to-mobile) {
+      padding: 40px 20px;
+    }
+    @media (max-width: $mobile-xl) {
+      font-size: 15px;
+      padding: 15px;
+    }
+  }
+  &__caption {
+    color: white;
+    font-size: 18px;
+    line-height: 137.9%;
+    display: inline-block;
+    position: relative;
+    z-index: 3;
+    padding: 5px 8px;
+    @media (max-width: $mobile-xl) {
+      font-size: 12px;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: -200%;
+      right: -15px;
+      top: 0;
+      bottom: 0;
+      background: #262626;
+      display: block;
+      transform: skewX(145deg);
+    }
+  }
 }
 
 // TITLE-BLOCK
 
 .main-header__title-block {
-  padding: 0 60px;
-  padding-top: 120px;
+  padding: 120px 60px 85px;
+  max-width: calc(100% - 368px);
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
+  justify-content: space-between;
   border-left: 1px solid rgba(255, 255, 255, 0.5);
+  @media (max-width: $desktop-to-mobile) {
+    max-width: calc(100% - 300px);
+    padding: 120px 40px 40px;
+  }
+  @media (max-width: $mobile-xl) {
+    max-width: 100%;
+    padding: 20px;
+    height: 360px;
+    display: block;
+  }
 }
 
 // TITLE
@@ -26,6 +156,17 @@
   font-size: 62px;
   line-height: 140%;
   color: white;
+  font-family: $font-title;
+  @media (max-width: $desktop-m) {
+    font-size: 41px;
+  }
+  @media (max-width: $desktop-to-mobile) {
+    font-size: 35px;
+  }
+  @media (max-width: $mobile-xl) {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 .main-header__title--max-width {

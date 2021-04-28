@@ -22,6 +22,7 @@ export default class Managers_sliders {
     this.card_sliders();
     this.eventsSlider();
     this.speakerSlider();
+    this.main_sl();
   }
   card_sliders() {
     const photos_count = $(".card-sliders_photos .swiper-slide").length;
@@ -151,10 +152,30 @@ export default class Managers_sliders {
       }
     );
   }
+  main_sl() {
+    this.sliders["fs-bigSlider-main"] = new Swiper(
+      ".fs-bigSlider-main .swiper-container",
+      {
+        ...baseSettings,
+        slidesPerView: 1,
+        spaceBetween: 40,
+        slidesPerGroup: 1,
+        navigation: {
+          nextEl: $(".fs-bigSlider_next"),
+          prevEl: $(".fs-bigSlider_prev"),
+        },
+        pagination: {
+          el: $('.fs-bigSlider-pagination'),
+          type: 'fraction',
+        },
+      }
+    );
+  }
   eventsSlider(){
+    const slides = $(".events-week_slider").data('slide');
     this.sliders["events_week"] = new Swiper(".events-week_slider", {
       ...baseSettings,
-      slidesPerView: 2,
+      slidesPerView: slides || 2,
       spaceBetween: 0,
       navigation: {
         nextEl: ".events-week_slider-next",
