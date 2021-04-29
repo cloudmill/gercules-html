@@ -1,5 +1,8 @@
 .page .content-row .content.about {
-  padding: 0 80px 120px 60px;
+  padding: 0 80px 40px 60px;
+  @media (max-width: $mobile-xl) {
+    padding: 0 20px 40px 20px;
+  }
 }
 
 .about {
@@ -15,6 +18,11 @@
     background-position: right top;
     background-size: cover;
     color: white;
+    @media (max-width: $mobile-xl) {
+      left: -20px;
+      padding: 80px 20px 20px;
+      width: calc(100% + 40px);
+    }
 
     h1,
     h2 {
@@ -26,17 +34,26 @@
     h1 {
       font-size: 48px;
       white-space: nowrap;
+      @media (max-width: $mobile-xl) {
+        font-size: 30px;
+      }
     }
 
     h2,
     p {
       margin-left: 230px;
+      @media (max-width: $mobile-xl) {
+        margin-left: 0;
+      }
     }
 
     h2 {
       margin-top: 60px;
       max-width: 515px;
       font-size: 28px;
+      @media (max-width: $mobile-xl) {
+        font-size: 24px;
+      }
     }
 
     p {
@@ -56,6 +73,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 60px;
+    @media (max-width: $mobile-xl) {
+      grid-template-columns: repeat(1, 1fr);
+      column-gap: 0;
+    }
 
     p {
       font-size: 15px;
@@ -83,10 +104,16 @@
     padding: 100px 90px 110px 170px;
     width: calc(100% + 60px + 80px);
     background-color: #F9F9F9;
+    @media (max-width: $mobile-xl) {
+      left: -20px;
+      margin-top: 40px;
+      padding: 80px 20px 20px;
+      width: calc(100% + 40px);
+    }
 
     blockquote {
       position: relative;
-      z-index: 1000;
+      z-index: 99;
       font-family: $font-second;
       font-weight: bold;
       font-size: 20px;
@@ -109,6 +136,10 @@
       width: 62px;
       height: 41px;
       background-image: url(../images/quotes-red.svg);
+      @media (max-width: $mobile-xl) {
+        top: 20px;
+        left: 20px;
+      }
     }
 
     &::after {
@@ -117,6 +148,12 @@
       width: 170px;
       height: 113px;
       background-image: url(../images/quotes-transparent.svg);
+      @media (max-width: $mobile-xl) {
+        right: 20px;
+        bottom: 20px;
+        width: 80px;
+        height: 60px;
+      }
     }
   }
 
@@ -129,6 +166,14 @@
     column-gap: $col-gap;
     row-gap: 70px;
     counter-reset: index;
+    @media (max-width: $desktop-m) {
+      column-gap: 60px;
+    }
+    @media (max-width: $mobile-xl) {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 0;
+      margin-top: 60px;
+    }
 
     p {
       position: relative;
@@ -136,6 +181,11 @@
       padding-left: 30px;
       font-size: 15px;
       line-height: 150%;
+      @media (max-width: $mobile-xl) {
+        padding-top: 35px;
+        padding-left: 25px;
+        margin-bottom: 30px;
+      }
 
       &::before {
         position: absolute;
@@ -148,6 +198,9 @@
         font-size: 35px;
         line-height: 160%;
         color: $color-border;
+        @media (max-width: $mobile-xl) {
+          font-size: 25px;
+        }
       }
     }
   }
@@ -156,10 +209,16 @@
     position: relative;
     left: -60px;
     margin-top: 120px;
-    padding: 120px 80px 120px 60px;
+    padding: 120px 40px 75px 50px;
     width: calc(100% + 60px + 80px);
     border-top: 1px solid $color-border;
     background-color: #F9F9F9;
+    @media (max-width: $mobile-xl) {
+      left: -20px;
+      margin-top: 40px;
+      padding: 60px 20px 20px;
+      width: calc(100% + 40px);
+    }
 
     &_row {
       display: grid;
@@ -167,11 +226,21 @@
       $col-gap: 0;
       grid-template-columns: repeat($col-count, minmax(calc((100% - #{$col-gap} * (#{$col-count} - 1)) / #{$col-count}), 1fr));
       column-gap: $col-gap;
+      @media (max-width: $mobile-xl) {
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
 
     &_col {
       &:not(:last-child) {
         margin-right: 60px;
+        @media (max-width: $desktop-l) {
+          margin-right: 40px;
+        }
+        @media (max-width: $mobile-xl) {
+          margin-right: 0;
+          margin-bottom: 30px;
+        }
       }
 
       p {
@@ -181,6 +250,9 @@
           font-size: 35px;
           line-height: 160%;
           color: $color-red;
+          @media (max-width: $desktop-l) {
+            font-size: 29px;
+          }
 
           .content-sup {
             font-size: 18px
@@ -210,6 +282,7 @@
       font-weight: bold;
       font-size: 28px;
       line-height: 144%;
+      margin-bottom: 50px;
 
       &+.about-keys_row {
         margin-top: 60px;
@@ -217,35 +290,75 @@
     }
 
     li {
-      position: relative;
-      padding-left: 32px;
-      font-size: 15px;
+      width: 100%;
+      height: 290px;
+      padding: 60px 40px;
+      font-weight: bold;
+      font-size: 30px;
       line-height: 150%;
-
-      &:not(:last-child) {
-        margin-right: 60px;
+      &:first-child {
+        background: url("../images/about-list-1.jpg") no-repeat center / cover;
+      }
+      &:nth-child(2) {
+        background: url("../images/about-list-2.jpg") no-repeat center / cover;
+      }
+      &:last-child {
+        background: url("../images/about-list-3.jpg") no-repeat center / cover;
+      }
+      @media (max-width: $mobile-xl) {
+        padding: 20px;
+        font-size: 20px;
+        height: 200px;
       }
 
-      &::before {
-        position: absolute;
-        top: 11px;
-        left: 0;
-        content: "";
-        display: block;
-        width: 20px;
-        border-top: 2px solid $color-red;
-        border-right: 1px solid transparent;
+      span {
+        position: relative;
+        padding-left: 42px;
+        &::before {
+          position: absolute;
+          top: 11px;
+          left: 0;
+          content: "";
+          display: block;
+          width: 20px;
+          border-top: 2px solid $color-red;
+          border-right: 1px solid transparent;
+        }
       }
     }
   }
 
   &-geography {
     margin-top: 120px;
+    padding-top: 50px;
     display: grid;
     grid-template-columns: 322px minmax(520px, 770px);
+    background: url("../images/about-map.svg") no-repeat top right / auto 100%;
+    width: calc(100% + 80px);
+    height: 600px;
+    @media (max-width: $desktop-l) {
+      height: 500px;
+      background: url("../images/about-map.svg") no-repeat top 10% right / auto 90%;
+    }
+    @media (max-width: $desktop-m) {
+      padding-top: 0;
+      background: url("../images/about-map.svg") no-repeat bottom right / auto 80%;
+    }
+    @media (max-width: $mobile-xl) {
+      height: auto;
+      display: block;
+      margin-top: 40px;
+      width: calc(100% + 40px);
+      padding-bottom: 280px;
+      background: url("../images/about-map.svg") no-repeat bottom right / 100% auto;
+    }
 
     &_col {
       padding-top: 50px;
+      @media (max-width: $mobile-xl) {
+        padding-right: 20px;
+        padding-top: 0;
+      }
     }
 
     h2 {
@@ -266,6 +379,48 @@
       left: -5px;
       display: block;
       max-width: calc(100% + 134px);
+    }
+  }
+
+  &-contacts {
+    margin-top: 120px;
+    h5 {
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 130%;
+    }
+    p {
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 150%;
+      font-family: Arimo;
+      max-width: 400px;
+      &.wide {
+        line-height: 200%;
+      }
+    }
+    a {
+      color: #6C6C6C;
+      font-size: 15px;
+      line-height: 150%;
+      i {
+        margin-right: 30px;
+      }
+    }
+    &-row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &-col {
+      width: 50%;
+      margin-bottom: 80px;
+      @media (max-width: $mobile-xl) {
+        width: 100%;
+      }
+      @media (max-width: $mobile-xl) {
+        margin-bottom: 30px;
+      }
     }
   }
 }

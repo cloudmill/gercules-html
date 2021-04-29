@@ -27,6 +27,8 @@ block content
                             .compare__container
                                 .compare__head
                                     .compare__item.compare__item--front
+                                    .compare__item.compare__item--thin
+                                    .compare__item
                                     -
                                         var items = [
                                             'Категория',
@@ -41,12 +43,21 @@ block content
                                             'Средний расход клея для плитки при толщине слоя 1 мм',
                                             'Толщина рабочего слоя плиточного клея',
                                             'Открытое время, не менее',
-                                            'Жизнеспособность после смешивания с водой, не менее', 
+                                            'Жизнеспособность после смешивания с водой, не менее',
                                         ];
                                     each item in items
                                         .compare__item.compare__item--in-head
                                             |!{item}
                                 .compare__slider
+                                    .compare__slider-header
+                                        .compare__slider-header__item
+                                            h6.compare__title GP-31 Штукатурка известково-цементная Геркулес, 25 кг
+                                        .compare__slider-header__item
+                                            h6.compare__title GP-31 Штукатурка известково-цементная Геркулес, 25 кг
+                                        .compare__slider-header__item
+                                            h6.compare__title GP-31 Штукатурка известково-цементная Геркулес, 25 кг
+                                        .compare__slider-header__item
+                                            h6.compare__title GP-31 Штукатурка известково-цементная Геркулес, 25 кг
                                     .swiper-container
                                         .swiper-wrapper
                                             -
@@ -76,11 +87,22 @@ block content
                                                             button.compare__delete
                                                                 .compare__delete-icon
                                                                     +icon('delete', 'svg')
+                                                        .compare__item.compare__item--thin
+                                                            a.header-link(href="./whereBuy.html")
+                                                                +icon('map-pin','svg')
+                                                                | Где купить?
+                                                        .compare__item.compare__item--union
+                                                            - if(i === 1 && j === 1)
+                                                                +field_checkbox()
+                                                                    input#pp_dif(type="checkbox" name="dif")
+                                                                    label(for="pp_dif") Показать только различия
                                                         .compare__item
                                                             a.compare__link(href='javascript:void(0)')
                                                                 |Штукатурки
-                                                        each item in items
-                                                            .compare__item
+                                                        each item, index in items
+                                                            - let parent = ''
+                                                            - if(index === 5) parent = 'red'
+                                                            .compare__item(class=parent)
                                                                 |!{item}
                             .compare__controls
                                 button.compare__control.compare__control--next
