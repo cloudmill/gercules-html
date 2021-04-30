@@ -1,0 +1,191 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Работа в компании";
+
+mixin vacancy_item_dropdown()
+  .vacancy-item_dropdown
+    .vacancy-item_dropdown-content
+      h3 Обязанности
+      ul
+        li Перевод архива в электронный вид
+        li Организация бумажного и электронного архива
+        li Настройка процесса архивирования документов (сдача в архив, выдача из архива)
+      h3 Требования
+      ul
+        li Опыт работы от 1 до 3 лет
+        li Опыт ведения архивных документов согласно стандартам
+        li Опыт работы с инженерной документацией будет преимуществом
+      h3 Условия
+      ul
+        li График работы 5/2 (возможен график по договоренности)
+        li Срочный трудовой договор, официальное трудоустройство согласно ТК РФ
+      h3 Адрес
+      p Новосибирск, Электровозная улица, 1
+      .vacancy-item_contact
+        .vacancy-item_contact-text
+          h3 Менеджер по персоналу
+          p Ерехинская Анастасия
+          p
+            a(href="tel:+7 (913) 7890114") +7 (913) 7890114
+            a(href="mailto:erehinskaya.as@gerkules.ru").content-red erehinskaya.as@gerkules.ru
+        +linkRect
+          a.js--modal
+          span Отклинуться
+          +icon("link-white-arrow", "svg")
+
+block content
+  .content-row
+    include ./about/sidebar
+    mixin sidebar_menu
+      a(href="#") Документация
+      a(href="#") Сертификаты
+      a(href="#") Технические документы СФТК
+      a(href="#").active POS-материалы
+      a(href="#") Документы по претензиям
+      a(href="#") Справочная информация по логистике
+    .content.vacancy.company-work
+      +nav_back('О компании')
+      +breadcrumbs(['О компании',pageTitle])
+      h1.page-title= pageTitle
+        .sidebar-dropdown
+          .sidebar-dropdown_content
+            +sidebar_menu
+      p Коллектив «Геркулес-Сибирь» — это команда профессионалов своего дела и молодых амбициозных сотрудников, готовых к профессиональному развитию. Мы стремимся сотрудничать с работниками, которые разделяют ценности компании и соответствуют корпоративным компетенциям.
+      .company-work-list
+        h2 В наших сотрудниках мы ценим:
+        ul.for-partners__features-list
+          li.for-partners__features-item Стремление к профессиональному и личностному развитию
+          li.for-partners__features-item Вовлеченность и стремление к результату, превосходящему ожидания
+          li.for-partners__features-item Высокую степень ответственности за результат
+          li.for-partners__features-item Инициативность и активный проектный подход к работе
+          li.for-partners__features-item Уважительное и честное отношение к компании, коллегам и партнерам
+          li.for-partners__features-item Умение работать в команде
+      .company-work-quote
+        blockquote Компания «Геркулес-Сибирь» — это привлекательный и ответственный работодатель.
+      .about-info
+        .about-info_col
+          p Мы выполняем в полном объеме возложенные трудовым законодательством обязательства перед нашими сотрудниками. Вместе с тем, мы предъявляем #[span.content-bold-red высокие требования] к уровню знаний, навыков и степени ответственности наших сотрудников.
+        .about-info_col
+          p Мы заботимся о том, чтобы обеспечить #[span.content-bold-red наилучшие условия работы], позволяющие сотрудникам в полной мере реализовывать свой профессиональный потенциал.
+      h2 Сотрудники «Геркулес-Сибирь»:
+      .about-list
+        p Имеют опыт работы в крупной производственной компании, развивают профессиональные компетенции, имеют возможность проявлять инициативу и внедрять новое
+        p Постоянно обучаются и совершенствуют свои навыки
+        p Имеют возможность карьерного роста, как вертикального, так и горизонтального
+        p Уверены в завтрашнем дне за счет стабильности компании, честности и прозрачности трудовых отношений
+        p Получают достойное вознаграждение по результатам работы, поощрение и признание профессиональных побед и сверхрезультатов.
+        p Получают поддержку в период адаптации (испытательного срока)
+      .vacancy-list
+        .vacancy-item
+          .vacancy-item_content
+            .vacancy-item_info
+              .vacancy-item_title Руководитель отдела объектных продаж
+              .vacancy-item_tags
+                span 22 октября 2019
+                span Полная занятость
+                span Новосибирск
+            .vacancy-item_salary
+              span.content-nowrap 25 000
+              | !{' — '}
+              span.content-nowrap 35 000 Р
+            +vacancy_item_dropdown
+        .vacancy-item
+          .vacancy-item_content
+            .vacancy-item_info
+              .vacancy-item_title Инженер по нормированию
+              .vacancy-item_tags
+                span 22 октября 2019
+                span Полная занятость
+                span Новосибирск
+            .vacancy-item_salary.content-nowrap от 45 000 Р
+            +vacancy_item_dropdown
+        .vacancy-item
+          .vacancy-item_content
+            .vacancy-item_info
+              .vacancy-item_title Инженер-технолог
+              .vacancy-item_tags
+                span 22 октября 2019
+                span Полная занятость
+                span Новосибирск
+            .vacancy-item_salary.content-nowrap Без указания з/п
+            +vacancy_item_dropdown
+      .vacancy-contact
+        h2.vacancy-contact_title Не нашли вакансию?
+          br
+          | Напишите нам!
+        .vacancy-contact_photo
+          img(src="images/vacancy.jpg" alt="")
+        .vacancy-contact_info
+          h2.vacancy-contact_title Не нашли вакансию?
+            br
+            | Напишите нам!
+          h3 Ерехинская Анастасия Сергеевна
+          p менеджер по персоналу
+          .vacancy-contact_phone
+            +icon('phone','svg')
+            a(href="tel: 8 383 338 31 32") +7 (383) 338-31-32 вн. 119
+            br
+            a(href="tel: 8 913 789 01 14") +7 (913) 789-01-14
+          .vacancy-contact_email
+            +icon('mail','svg')
+            a(href="mailto:erehinskaya.as@gerkules.ru") erehinskaya.as@gerkules.ru
+          +linkRect
+            a(href="#").js--modal
+            span Отправить резюме
+            +icon("link-white-arrow", "svg")
+
+
+  .b-content
+    main.b-content__main
+
+      .modal.modal-vacancy
+        .modal-bg
+        .modal-content
+          .modal-item.modal-item-fill.modal-vacancy
+            .modal-item-wrapper
+              .modal-close.js--modal-close
+              .modal-item-content
+                h1.title.title--section Отправить резюме
+                form(action="")
+                  .field-row
+                    +field_base("personName", "personName", "Имя Фамилия*", "Алексей")
+                    +field_base("personEmail", "personEmail", "Email", "ksh@loudmill.ru")
+
+                  .field-row
+                    +field_base("personPhone", "personPhone", "Номер телефона*", "+7 (___) ___-__-__")
+                    .add-docs
+                      .add-docs_title
+                        |Прикерпить файл
+                        a(href="#")
+                          img(src="./images/question.svg", alt="")
+                      .add-docs_block
+                        |Добавить файл
+                        img(src="./images/clip.svg", alt="")
+                  .field-row.field-row--onecol
+                    +field_area("comment", "comment", "Сопроводительный текст", "Ваш текстя", [30, 20])
+                  .field-row
+                    +field_checkbox()
+                      input#pp_modal(type="checkbox" name="pp" checked data-required)
+                      label(for="pp_modal") «Я выражаю согласие на обработку ПДн в соответствии с
+                        a(href="") Политикой конфиденциальности
+                        |»
+                    +linkRect
+                      button(id="submit" name="submit")
+                      span Отправить
+                      +icon("link-white-arrow", "svg")
+
+
+block modal
+
+    .b-modal.b-modal--hide
+      .b-modal__bg.b-modal__bg--dark
+      .b-modal__content
+
+        .modal-publication-msg.modal-publication-msg--hide
+              .modal-publication-msg__container
+                  h6.title.title--section-textal
+                      |Спасибо, мы получили ваше резюме. Если оно нам покажется интересным, мы обязательно с вами свяжемся
+                  button.modal-publication-msg__close
+
+
