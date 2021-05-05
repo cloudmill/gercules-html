@@ -1576,6 +1576,23 @@
 }
 
 .page {
+  .fs-list_item-tags {
+    justify-content: space-between;
+  }
+  .social {
+    padding-bottom: 0 !important;
+    .publications-subscription {
+      margin-left: -40px;
+      margin-right: -80px;
+      @media (max-width: $mobile-xl) {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+    }
+    .fs-list_item-img {
+      padding-top: 61%;
+    }
+  }
   .facadeSystem {
     &.content {
       padding-left: 40px;

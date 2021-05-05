@@ -6,6 +6,13 @@
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
   position: relative;
+  @media (max-width: $desktop-m) {
+    margin-right: -40px;
+  }
+  @media (max-width: $mobile-xl) {
+    grid-template-columns: 1fr;
+    margin: 40px -20px;
+  }
 
   &::before {
     content: "";
@@ -16,6 +23,9 @@
     top: 0;
     display: block;
     background-color: #e5e5e5;
+    @media (max-width: $mobile-xl) {
+      display: none;
+    }
   }
 
   &_item {
@@ -24,6 +34,9 @@
     border-top: 1px solid #e5e5e5;
     display: flex;
     flex-direction: column;
+    @media (max-width: $mobile-xl) {
+      padding: 40px 10px;
+    }
 
     @mixin picture_item_style() {
       display: block;
@@ -153,6 +166,10 @@
     @include display-flex-center();
     border-top: 1px solid $color-border;
     border-bottom: 1px solid $color-border;
+    @media (max-width: $mobile-xl) {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
 
     a {
       position: relative;

@@ -1,0 +1,61 @@
+extends ../layouts/default.pug
+
+block variables
+  -var pageTitle='Результаты поиска'
+
+block content
+  .search.content
+    +breadcrumbs([pageTitle])
+    h1.page-title= pageTitle
+    main
+      .search-res
+        .search-res__input
+          .field.field-base
+            label(for='search')
+              input(type='text', id='search', value='Геркулес')
+          button(type='submit')
+            +icon('search-r','svg')
+        .search-res__results
+          | Найдено: #[b 137]
+      h2.title.title--default Каталог продукции
+      .search-products
+        each item,key in [1,2,2,2]
+          .fs-productCard
+            .fs-productCard_info
+              .fs-productCard_status
+                span хит продаж
+                span.active акция
+                span новинка
+              .fs-productCard_photo
+                img(src=`./images/product-list-${item}.png`, alt="")
+              a(href="#").fs-productCard_title GP-31 Штукатурка известково-цементная Геркулес, 25 кг
+            .fs-productCard_buttons
+              a(href="#").fs-productCard_buttons-loc
+                +icon("map-pin", "svg")
+              a(href="#").fs-productCard_buttons-rate
+                +icon("rating-red", "svg")
+      .b-content__main-item.b-content__main-item--mg-t--80
+        a(href="").showmore
+          .showmore__wrapper
+            .showmore__text Показать еще
+            .showmore__count 52
+      .search-publications
+        h2.title.title--default Публикации
+        .publication
+          .publication__list.publication__list--mg-t--m1.publication__list--mg-l--m1
+            each i in [1, 2, 3]
+              .publication__item
+                a(href="").publication__content
+                  .publication__image
+                    img.publication__img(src=`./images/publication-${i}.jpg`)
+                  p.publication__date
+                    | 22 октября 2019
+                  h6.title.title--default.publication__title
+                    | Новая формула GE-29: глубже, равномернее, крепче!
+                  p.publication__text
+                    | С 20 марта 2018 мы начали выпуск нового продукта: «Грунтовка укрепляющая глубокого проникновения GE-29». Мы улучшили формулу и обновили упаковку!
+        .b-content__main-item.b-content__main-item--mg-t--80
+          a(href="").showmore
+            .showmore__wrapper
+              .showmore__text Показать еще
+              .showmore__count 52

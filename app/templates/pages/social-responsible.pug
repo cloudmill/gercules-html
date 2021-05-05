@@ -1,0 +1,35 @@
+extends ../layouts/default
+
+block variables
+  - const pageTitle = "Социальная ответсвенность";
+
+block content
+  .content-row
+    include ./fs/sidebar.pug
+    .content.facadeSystem.social
+      +breadcrumbs(['О компании',pageTitle])
+      h1.page-title= pageTitle
+      .fs-list
+        each item in [1,2,3,4,1,2]
+          if(item % 2 == 1)
+            .fs-list_item
+              a.fs-list_item-img(href="")
+                img(src=`./images/social-${item}.jpg`, alt="")
+              .fs-list_item-date 22 октября 2019
+              a.fs-list_item-name(href="") Турнир по боулингу для партнера Сатурн Новосибирск
+              .fs-list_item-text 8 сентября компания "Геркулес-Сибирь" организовала и провела турнир по боулингу среди сотрудников партнёра Сатурн Новосибирск.
+              .fs-list_item-tags
+                +hashTags([["жизнькомпании", "#"],["новости", "#"]])
+          else
+            .fs-list_item
+              a.fs-list_item-img(href="")
+                img(src=`./images/social-${item}.jpg`, alt="")
+              .fs-list_item-date 22 октября 2019
+              a.fs-list_item-name(href="") GERKULES FACADE: новая продукция для систем утепления фасадов!
+              .fs-list_item-text С 15.07.2018 г. начато производство продуктов, применяемых в системе утепления фасадов (СФТК) в новой упаковке.
+              .fs-list_item-tags
+                +hashTags([["жизнькомпании", "#"],["новости", "#"]])
+                +icon("link", "svg")
+      include fs/showmore
+      .b-content__main-item.b-content__main-item--mg-t--120
+        include ../modules/publications-subscription

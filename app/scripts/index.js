@@ -494,14 +494,20 @@ function bObjectSliders() {
       $(this).find(".swiper-container")[0],
       {
         loop: true,
-        slidesPerView: 3,
+        slidesPerView: 1,
         slidesPerGroup: 1,
-        spaceBetween: 40,
+        spaceBetween: 20,
         autoHeight: true,
         navigation: {
           nextEl: $(this).find(".b-object__tab-btn--right")[0],
           prevEl: $(this).find(".b-object__tab-btn--left")[0],
         },
+        breakpoints: {
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+        }
       }
     );
   });
@@ -513,15 +519,24 @@ function bObjectSliders() {
         loop: true,
         slidesPerView: 1,
         slidesPerGroup: 1,
-        spaceBetween: 20,
+        spaceBetween: 0,
         setWrapperSize: true,
         autoHeight: true,
+        navigation: {
+          nextEl: $(".fs-steps_control-next"),
+          prevEl: $(".fs-steps_control-prev"),
+        },
         thumbs: {
           swiper: {
             el: $(this).find(".b-object-slider__thumb .swiper-container")[0],
             spaceBetween: 10,
-            slidesPerView: $(this).find(".b-object-slider__thumb .swiper-slide").length,
+            slidesPerView: 3,
             allowTouchMove: false,
+            breakpoints: {
+              768: {
+                slidesPerView: 4,
+              },
+            }
           }
         }
       }

@@ -1,0 +1,126 @@
+$font-second: "Nexa Replica Ru";
+.search {
+  padding-bottom: 90px;
+  @media (max-width: 1300px){
+    padding-bottom: 40px;
+  }
+  @media (max-width: 450px){
+    padding-bottom: 20px;
+  }
+  &-none {
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    h3 {
+      max-width: 550px;
+    }
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 160%;
+    color: #BCBCBC;
+    font-family: $font-second;
+    margin-bottom: 30px;
+  }
+  &-res {
+    &__input {
+      position: relative;
+      margin-top: 60px;
+      margin-bottom: 60px;
+      @media (max-width: $mobile-xl) {
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
+      .field {
+        padding-top: 0;
+      }
+      button {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 40px;
+        height: 18px;
+        margin: auto;
+        @media (max-width: $mobile-xl) {
+          right: 20px;
+        }
+      }
+    }
+    &__results {
+      margin-bottom: 60px;
+      font-size: 15px;
+      line-height: 17px;
+      @media (max-width: $mobile-xl) {
+        margin-bottom: 30px;
+      }
+      b {
+        font-weight: 700;
+      }
+    }
+  }
+  h2 {
+    margin-bottom: 60px;
+    font-size: 28px;
+    line-height: 144%;
+    @media (max-width: $mobile-xl) {
+      margin-bottom: 30px;
+      font-size: 15px;
+    }
+  }
+  &-products {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(4, auto);
+    @media (max-width: $desktop-m) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: $desktop-to-mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $mobile-xl) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  &-publications {
+    margin-top: 120px;
+    @media (max-width: $mobile-xl) {
+      margin-top: 60px;
+    }
+    .publication__list {
+      display: grid;
+      column-gap: 122px;
+      row-gap: 40px;
+      grid-template-columns: repeat(3, auto);
+      @media (max-width: $desktop-m) {
+        column-gap: 60px;
+      }
+      @media (max-width: $desktop-to-mobile) {
+        column-gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: $mobile-xl) {
+        column-gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+    .publication__item {
+      padding: 0;
+      border: none;
+    }
+  }
+  .showmore {
+    margin-left: -60px;
+    margin-right: -60px;
+    @media (max-width: 1300px){
+      margin-left: -40px;
+      margin-right: -40px;
+    }
+
+    @media (max-width: 450px){
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
+}

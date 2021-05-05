@@ -1,0 +1,24 @@
+extends ../layouts/default.pug
+
+block variables
+  -var pageTitle='Результаты поиска'
+
+block content
+  .search.content
+    +breadcrumbs([pageTitle])
+    h1.page-title= pageTitle
+    main
+      .search-res
+        .search-res__input
+          .field.field-base
+            label(for='search')
+              input(type='text', id='search', value='dgfvzgzesdfhtfgh')
+          button(type='submit')
+            +icon('search-r','svg')
+      .search-none
+        h2.title.title--default По вашему запросу ничего не найдено
+        h3 Попробуйте изменить формулировку запроса или воспользуйтесь нашим каталогом
+        a(href="").arrow-link
+          .arrow-link__text Каталог
+          .arrow-link__icon.arrow-link__icon--ml--15
+            +icon("arrow", "svg")

@@ -92,6 +92,7 @@ export default class Manager_tabs {
     this.documentationFilesBlock();
     this.showMenuFooter();
     this.showMenuHeader();
+    this.showMoreFunction();
 
     // тест
     this.test()
@@ -195,6 +196,18 @@ export default class Manager_tabs {
   showMenuFooter() {
     $('div.footer-menu_item').click(function () {
       $(this).toggleClass('active');
+      return false;
+    });
+  }
+  showMoreFunction() {
+    $('.b-object__products-showmore').click(function () {
+      if($(this).prev().hasClass('active')) {
+        $(this).find('.b-object__products-showmore-text').text('Посмотреть все');
+      } else {
+        $(this).find('.b-object__products-showmore-text').text('Свернуть');
+      }
+      $(this).toggleClass('active');
+      $(this).prev().toggleClass('active');
       return false;
     });
   }

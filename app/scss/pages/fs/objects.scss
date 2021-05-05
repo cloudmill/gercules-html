@@ -19,7 +19,7 @@
   &_objects {
     position: relative;
     margin-top: 60px;
-    
+
     .swiper-container {
       width: 100%;
       overflow: hidden;
@@ -125,7 +125,7 @@
 
     ul {
       margin-top: 15px;
-      
+
       li {
         position: relative;
         font: normal normal 15px/19px $font-main;
@@ -154,7 +154,12 @@
 
   &_products {
     margin-top: 15px;
-
+    max-height: 80px;
+    overflow: hidden;
+    transition: max-height .5s;
+    &.active {
+      max-height: 500px;
+    }
     a {
       display: block;
       font: normal normal 15px/19px $font-main;

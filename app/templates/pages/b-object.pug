@@ -48,14 +48,14 @@ block content
                                 "Объекты",
                                 pageTitle
                             ];
-                        each item in items    
+                        each item in items
                             .b-breadcrumbs__item
                                 a(href="").b-breadcrumbs__link #{item}
 
 
 
                 .b-content__main-item.b-content__main-item--pd--hor.b-content__main-item--mg-t--35
-                
+
                     .b-object__row
 
                         .b-object__slider
@@ -82,18 +82,16 @@ block content
                                                         .b-object-slider__thumb-image
                                                             img.b-object-slider__thumb-img(src=`images/b-object/thumb-${item}.jpg`, alt="")
 
-                                    .b-object-slider__btn
-
-                                        .b-object-slider__btn-left
-                                        
-                                        .b-object-slider__btn-right
+                                    +sliderControls
+                                        button.fs-steps_control-prev
+                                        button.fs-steps_control-next
 
                         .b-object__info
 
                             h1.title.title--section ТК Мега Дыбенко
 
                             .b-object__tags
-                                
+
                                 ul.hash-list.hash-list--mg-r--20
 
                                     li.hash.hash-list__item
@@ -129,7 +127,13 @@ block content
                                                     a(href="").b-object__products-link Штукатурная станция mono-mix FU (на 220В)
                                                 li.b-object__products-item
                                                     a(href="").b-object__products-link GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
-                                
+                                                li.b-object__products-item
+                                                    a(href="").b-object__products-link GP-21M Штукатурка цементная для машинного нанесения
+                                                li.b-object__products-item
+                                                    a(href="").b-object__products-link Штукатурная станция mono-mix FU (на 220В)
+                                                li.b-object__products-item
+                                                    a(href="").b-object__products-link GE-129 Грунтовка-концентрат ГИПСОГРУНТ Геркулес, 10 и 30 кг
+
                                 button.b-object__products-showmore
                                     .b-object__products-showmore-text Посмотреть все
 
@@ -156,7 +160,7 @@ block content
                     .tabs
 
                         .tabs__panel
-                        
+
                             .tabs__panel-item.tabs__panel-item--active(data-tab="1")
                                 .tabs__panel-text Продукты «‎Геркулес»‎
 
@@ -169,7 +173,7 @@ block content
                         .tabs__content
 
                                 .tabs__content-item.tabs__content-item--active(data-tab="1")
-                                    
+
                                     .b-object__tab-row
 
                                         .b-object__tab-slider
@@ -179,19 +183,19 @@ block content
 
                                                     each item in [1, 2, 3, 2]
                                                         .swiper-slide
-                                                            
+
                                                             .product-card
 
                                                                 .product-card__content
 
                                                                     .product-card__tags
-                                                                    
+
                                                                         .product-card__tag Хит продаж
                                                                         .product-card__tag.product-card__tag--active Акция
                                                                         .product-card__tag новинка
 
                                                                     .product-card__image
-                                                                        
+
                                                                         img.product-card__img(src=`images/b-object/product-${item}.jpg`)
 
                                                                     .product-card__title GE-29 Грунтовка укрепляющая глубокого проникновения, 5, 10 кг
@@ -202,14 +206,14 @@ block content
                                                                         +icon("map-pin", "svg")
                                                                     .product-card__btn
                                                                         +icon("rating-red", "svg")
-                                                        
+
                                         .b-object__tab-btns
 
                                             button.b-object__tab-btn.b-object__tab-btn--right
                                             button.b-object__tab-btn.b-object__tab-btn--left
 
                                 .tabs__content-item(data-tab="2")
-                                    
+
                                     .b-object__tab-row
 
                                         .b-object__tab-slider
@@ -219,19 +223,19 @@ block content
 
                                                     each item in [1, 2, 3, 2]
                                                         .swiper-slide
-                                                            
+
                                                             .product-card
 
                                                                 .product-card__content
 
                                                                     .product-card__tags
-                                                                    
+
                                                                         .product-card__tag Хит продаж
                                                                         .product-card__tag.product-card__tag--active Акция
                                                                         .product-card__tag новинка
 
                                                                     .product-card__image
-                                                                        
+
                                                                         img.product-card__img(src=`images/b-object/product-${item}.jpg`)
 
                                                                     .product-card__title GE-29 Грунтовка укрепляющая глубокого проникновения, 5, 10 кг
@@ -242,14 +246,14 @@ block content
                                                                         +icon("map-pin", "svg")
                                                                     .product-card__btn
                                                                         +icon("rating-red", "svg")
-                                                        
+
                                         .b-object__tab-btns
 
                                             button.b-object__tab-btn.b-object__tab-btn--right
                                             button.b-object__tab-btn.b-object__tab-btn--left
 
                                 .tabs__content-item(data-tab="3")
-                                    
+
                                     .b-object__tab-row
 
                                         .b-object__tab-slider
@@ -259,19 +263,19 @@ block content
 
                                                     each item in [1, 2, 3, 2]
                                                         .swiper-slide
-                                                            
+
                                                             .product-card
 
                                                                 .product-card__content
 
                                                                     .product-card__tags
-                                                                    
+
                                                                         .product-card__tag Хит продаж
                                                                         .product-card__tag.product-card__tag--active Акция
                                                                         .product-card__tag новинка
 
                                                                     .product-card__image
-                                                                        
+
                                                                         img.product-card__img(src=`images/b-object/product-${item}.jpg`)
 
                                                                     .product-card__title GE-29 Грунтовка укрепляющая глубокого проникновения, 5, 10 кг
@@ -282,19 +286,19 @@ block content
                                                                         +icon("map-pin", "svg")
                                                                     .product-card__btn
                                                                         +icon("rating-red", "svg")
-                                                        
+
                                         .b-object__tab-btns
 
                                             button.b-object__tab-btn.b-object__tab-btn--right
                                             button.b-object__tab-btn.b-object__tab-btn--left
 
-                                
 
 
 
 
 
 
-                        
+
+
 
 

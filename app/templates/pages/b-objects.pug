@@ -47,20 +47,20 @@ block content
                                 "О компании",
                                 pageTitle
                             ];
-                        each item in items    
+                        each item in items
                             .b-breadcrumbs__item
                                 a(href="").b-breadcrumbs__link #{item}
 
 
 
                 .b-content__main-item.b-content__main-item--pd--hor.b-content__main-item--mg-t--35
-                
+
                     h1.title.title--page #{pageTitle}
 
 
 
                 //- section.b-content__main-item.b-content__main-item--pd--hor.b-content__main-item--mg-t--60
-                    
+
                 //-     form.b-object-filter
 
                 //-         .b-object-filter__row
@@ -73,7 +73,7 @@ block content
                 //-             .b-object-filter__reset
 
                 //-                 button(type="reset").b-object-filter__reset-btn
-                                    
+
                 //-                     span.b-object-filter__reset-text
                 //-                         |Сбросить
 
@@ -85,15 +85,15 @@ block content
 
                     .objects-filter
                         +field_select("regionObject", [[0, "Санкт-Петербург"], [1, "Санкт-Петербург"]] )
-                        .field-select_caption Регион
+                            .field-select_caption Регион
                         +field_select("typeObject", [[0, "Все"], [1, "Тип объекта"]] )
-                        .field-select_caption Тип объекта
+                            .field-select_caption Тип объекта
                         +field_select("viewObject", [[0, "Все"], [1, "Вид работ"]] )
-                        .field-select_caption Вид работ
+                            .field-select_caption Вид работ
                         +field_select("yearObject", [[0, "Все"], [1, "Год сдачи объекта"]])
-                        .field-select_caption Год сдачи объекта
+                            .field-select_caption Год сдачи объекта
                         .objects-filter_reset Сбросить
-                        +icon('reset','svg')
+                            +icon('reset','svg')
                     .objects-list
                         .objects-list_item
                         include ./fs/object
@@ -113,7 +113,7 @@ block content
                         include ./fs/object
 
                 .b-content__main-item.b-content__main-item--mg-t--60
-                    
+
                     a(href="").showmore
 
                         .showmore__wrapper
