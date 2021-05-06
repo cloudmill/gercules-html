@@ -1,0 +1,52 @@
+extends ../layouts/default.pug
+
+block variables
+  -var pageTitle='Ваш заказ'
+
+block content
+  .cart.content
+    +breadcrumbs([pageTitle])
+    h1.page-title= pageTitle
+    main
+      p Сформируйте и оформите Ваш заказ и наши специалисты свяжутся с Вами, чтобы уточнить все детали, наличие товаров в Вашем регионе и актуальные цены.
+      .cart-table
+        table
+          thead
+            tr
+              th Продукт
+              th Количество
+              th
+          tbody
+            - for (let i = 0; i < 2; i++)
+              tr
+                td
+                  img(src='./images/cart-img-1.png')
+                  .cart-name Пневмотранспортная установка PFT SILOMAT
+                td
+                  .cart-counter
+                    .cart-counter-dec: +icon('minus', 'svg')
+                    .cart-counter-value 10
+                    .cart-counter-inc: +icon('plus', 'svg')
+                td
+                  .cart__delete-icon
+                    +icon('delete', 'svg')
+              tr
+                td
+                  img(src='./images/cart-img-2.png')
+                  .cart-name Статор uni-star 0,25
+                td
+                  .cart-counter
+                    .cart-counter-dec: +icon('minus', 'svg')
+                    .cart-counter-value 10
+                    .cart-counter-inc: +icon('plus', 'svg')
+                td
+                  .cart__delete-icon
+                    +icon('delete', 'svg')
+      .cart-bottom
+        .cart-bottom-name Всего 4 товара
+        .cart-bottom-desc
+          ul
+            li Аренда: #[b 3 товара]
+            li Покупка: #[b 1 товар]
+        .cart-bottom-btn
+          +btn-p-gram("Перейти к оформлению", "btn-p-gram--mobile")

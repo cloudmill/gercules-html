@@ -1,0 +1,47 @@
+extends ../layouts/default.pug
+
+block variables
+  -var pageTitle='Оформление заказа'
+
+block content
+  .cart.content
+    +breadcrumbs([pageTitle])
+    h1.page-title= pageTitle
+    main
+      form.cart-order(action="")
+        .cart-order__left
+          .cart-order__item
+            h2.title.title--section Контактные данные
+            +field_base("name", "name", "Имя*", "ФИО")
+            +field_base("email", "email", "E-mail", "@почта")
+            +field_base("phone", "phone", "Телефон*", "+7 (___) ___-__-__")
+          .cart-order__item
+            h2.title.title--section Адрес доставки
+            +field_select("cityObject", [[0, "Новосибирск"], [1, "Санкт-Петербург"]] )
+              .field-select_caption Город
+            +field_base("city", "city", "Адрес*", "Улица, дом, корпус, № квартиры/офиса")
+            +field_area("comment", "comment", "Комментарий к заказу", "Ваш комментарий", [30, 10])
+        .cart-order__right
+          a(href='#').nav-prev
+            +icon("arrow-p", "svg")
+            | Редактировать
+          h2.title.title--section Ваш заказ
+          ul.cart-order__list
+            li
+              | Шпатлевка гипсовая БЕЗУСАДОЧНАЯ Геркулес GT-33, 5 кг
+              span 2 шт
+            li
+              | Статор uni-star 0,25, не треб.тех. обслуж.
+              span 2 шт
+            li
+              | Шпатлевка гипсовая БЕЗУСАДОЧНАЯ Геркулес GT-33, 5 кг
+              span 2 шт
+            li
+              | Статор uni-star 0,25, не треб.тех. обслуж.
+              span 2 шт
+          +field_checkbox()
+            input#pp_questr(type="checkbox" name="ppr" checked data-required)
+            label(for="pp_questr") «Я выражаю согласие на обработку ПДн в соответствии с&nbsp;
+              a(href="") Политикой конфиденциальности
+              | »
+          +btn-p-gram("Оформить заказ", "btn-p-gram--mobile")
