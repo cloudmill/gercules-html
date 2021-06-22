@@ -34,7 +34,7 @@ block content
             .tabs-menu_content
               +tabs_menu
         .tabs-list
-          .tabs-item
+          .tabs-item.active
             form(action="")
               .field-row
                 +field_base("name", "name", "Имя", "Алексей")
@@ -59,7 +59,7 @@ block content
                     span.btn-p-gram__text Задать вопрос
                     .btn-p-gram__icon
                       +icon("link-white-arrow", "svg")
-          .tabs-item.active
+          .tabs-item
             h3 Порядок действий:
             ul.documentation-actions
               li.content-other-width
