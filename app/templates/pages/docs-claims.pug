@@ -22,7 +22,8 @@ block content
           .sidebar-dropdown_content
             +sidebar_menu
       mixin tabs_menu
-        .tabs-menu_item.active Порядок оформления претензии для физических лиц
+        .tabs-menu_item.active Получить консультацию
+        .tabs-menu_item Порядок оформления претензии для физических лиц
         .tabs-menu_item Порядок оформления претензии для дилеров
       .tabs.content-mobile
         .tabs-menu
@@ -33,18 +34,44 @@ block content
             .tabs-menu_content
               +tabs_menu
         .tabs-list
+          .tabs-item
+            form(action="")
+              .field-row
+                +field_base("name", "name", "Имя", "Алексей")
+                +field_base("email", "email", "Email", "ksh@loudmill.ru")
+              .field-row
+                .field-col
+                  +field_base("surname", "surname", "Фамилия", "Биланин")
+                  .b-form__item--mt--30: +field_base("phone", "phone", "Номер телефона*", "+7 (___) ___-__-__")
+                .field-col
+                  +field_area("comment", "comment", 'Ваш вопрос', 'Текст вопроса', 8)
+              .send-form__panel.send-form__panel--row
+                +field_checkbox()
+                  input#pp_register(type="checkbox" name="pp" checked data-required)
+                  label(for="pp_register") «Я выражаю согласие на обработку ПДн в соответствии с
+                    a(href="") Политикой конфиденциальности
+                    | »
+                .btn-p-gram.send-form__item.send-form__item--max-width--270.field-row
+                  button(type="submit").btn-p-gram__btn
+                  .btn-p-gram__view-wrap
+                    .btn-p-gram__view
+                  .btn-p-gram__content
+                    span.btn-p-gram__text Задать вопрос
+                    .btn-p-gram__icon
+                      +icon("link-white-arrow", "svg")
           .tabs-item.active
             h3 Порядок действий:
             ul.documentation-actions
-              li.content-other-width Сообщите о претензии (с указанием суммы ущерба, вида брака, наименованием продукции, датой и временем производства) на номер 
-                a(href="tel: 8 800 250 30 10").content-color-red 8-800-250-30-10
-                | #{" "}или направьте письменную претензию на электронный адрес 
-                a(href="claim@gerkules.ru.").content-color-red claim@gerkules.ru
-                span.content-margin-right .
-                .documentation-link.content-none-mobile
-                  a(href="#")
-                    +icon("down", "svg")
-                    span Образец претензии_ФЛ
+              li.content-other-width
+                | Сообщите о претензии через форму обращения.
+                .btn-p-gram.send-form__item.send-form__item--max-width--310
+                  a.btn-p-gram__btn(href="#claim").js-modal
+                  .btn-p-gram__view-wrap
+                    .btn-p-gram__view
+                  .btn-p-gram__content
+                    span.btn-p-gram__text Составить претензию
+                    .btn-p-gram__icon
+                      +icon("link-white-arrow", "svg")
               li.content-other-width На следующий рабочий день вам будет направлено подтверждение принятия документов либо запрос  дополнительных документов, согласование времени приезда технического специалиста (регионального представителя);
               li.content-other-width Согласуйте время приезда технического специалиста (регионального представителя)
                 br
@@ -52,11 +79,44 @@ block content
                 br
                 | в компанию «Геркулес-Сибирь».
               li.content-other-width В течение 2 рабочих дней после получения образцов, акта осмотра помещения вам будет направлено предварительное заключение по технологическим свойствам продукта.
+            .documentation-frame
+              p В случае несоответствия продукта ТУ – окончательное заключение вам будет направлено совместно с предварительным и решение по претензии будет вам направлено
+                br
+                | на следующий рабочий день.
+              p В случае соответствия продукта ТУ – окончательное заключение вам будет направлено через:
+              ul
+                li 17 календарных дней (если претензия по гипсовым продуктам)
+                li 30 календарных дней (если претензия по цементно-песчаным смесям)
+            .documentation-important Решение по претензии вам будет направлено на следующий рабочий день после выдачи окончательного заключения.
+            .documentation-links
+              h2 Документы для оформления претензий
+                br
+                | для скачивания
+              .documentation-link
+                a(href="#")
+                  +icon("down", "svg")
+                  span Требования к фотоотчетам по претензиям
+              .documentation-link
+                a(href="#")
+                  +icon("down", "svg")
+                  span Порядок действий
+              .documentation-link
+                a(href="#")
+                  +icon("down", "svg")
+                  span Образец претензии ФЛ
+              .documentation-link
+                a(href="#")
+                  +icon("down", "svg")
+                  span Образец претензии Дистрибьютор количество
+              .documentation-link
+                a(href="#")
+                  +icon("down", "svg")
+                  span Образец претензии Дистрибьютор
           .tabs-item
             h2 Брак, выявленный при приемке товара
             h3 Порядок действий:
-            ul.documentation-actions 
-              li.content-other-width Направьте на электронный адрес 
+            ul.documentation-actions
+              li.content-other-width Направьте на электронный адрес
                 a(href="claim@gerkules.ru").content-color-red claim@gerkules.ru
                 | #{" "}следующие документы:
                 ul
@@ -80,7 +140,7 @@ block content
             p.content-caption Брак, выявленный при применении продукции
             h3 Порядок действий:
             ul.documentation-actions
-              li Направьте на электронный адрес 
+              li Направьте на электронный адрес
                 a(href="claim@gerkules.ru").content-color-red claim@gerkules.ru
                 | #{" "}следующие документы:
                 ul
@@ -89,96 +149,96 @@ block content
               li На следующий рабочий день вам будет направлено подтверждение принятия документов либо запрос  дополнительных документов, согласование времени приезда технического специалиста (регионального представителя)
               li Составьте совместно с техническим специалистом (региональным представителем) акт осмотра помещения, отправьте образцы (не менее 2 кг) продукции в компанию  «Геркулес-Сибирь».
               li В течение 2 рабочих дней после получения образцов, акта осмотра помещения вам будет направлено предварительное заключение по технологическим свойствам продукта.
-      .documentation-frame
-        p В случае несоответствия продукта ТУ – окончательное заключение вам будет направлено совместно с предварительным и решение по претензии будет вам направлено
-          br
-          | на следующий рабочий день.
-        p В случае соответствия продукта ТУ – окончательное заключение вам будет направлено через:
-        ul
-          li 17 календарных дней (если претензия по гипсовым продуктам)
-          li 30 календарных дней (если претензия по цементно-песчаным смесям)
-      .documentation-important Решение по претензии вам будет направлено на следующий рабочий день после выдачи окончательного заключения.
-      .documentation-links
-        h2 Документы для оформления претензий
-          br
-          | для скачивания
-        .documentation-link
-          a(href="#")
-            +icon("down", "svg")
-            span Требования к фотоотчетам по претензиям
-        .documentation-link
-          a(href="#")
-            +icon("down", "svg")
-            span Порядок действий
-        .documentation-link
-          a(href="#")
-            +icon("down", "svg")
-            span Образец претензии ФЛ
-        .documentation-link
-          a(href="#")
-            +icon("down", "svg")
-            span Образец претензии Дистрибьютор количество
-        .documentation-link
-          a(href="#")
-            +icon("down", "svg")
-            span Образец претензии Дистрибьютор
-      .documentation-form
-        h2 Задать вопрос
-        form(action="#").send-form.documentation-form__form
-          .send-form__panel.send-form__panel--row-gap--40
-            .send-form__panel.send-form__panel--2-cols
-              .send-form__panel
-                label.send-form__item
-                  span.send-form__item-title Имя*
-                  input(type="text", name="name", placeholder="Алексей", data-required).text-input.send-form__item-input
-                label.send-form__item
-                  span.send-form__item-title Фамилия*
-                  input(type="text", name="surname", placeholder="Биланин", data-required).text-input.send-form__item-input
-                label.send-form__item
-                  span.send-form__item-title Номер телефона*
-                  input(type="text", name="phone", placeholder="+7 (___) ___-__-__", data-required).text-input.send-form__item-input
-              .send-form__panel
-                label.send-form__item
-                  span.send-form__item-title Email
-                  input(type="text", name="name", placeholder="ksh@loudmill.ru").text-input.send-form__item-input
-                label.send-form__item
-                  span.send-form__item-title Вопрос на тему
-                  //- блок .select-input - обертка для тэга select, а не сам select
-                  //- поскольку плагин select2 абсолютно позиционирует, изменяет узел select
-                  //- а нам необходим блок в основном потоке html
-                  .select-input.send-form__item-input
-                    select(
-                      name="topic", 
-                      data-no-search,
-                      data-theme="select-input--default",
-                      data-placeholder="Дистрибьютер", 
-                      data-width="100%"
-                    ).select-input__select
-                      //- первый пустой option для placeholder'a
-                      option
-                      option(value="0") Тема 1
-                      option(value="1") Тема 2
-                      option(value="2") Тема 3
-                label.send-form__item
-                  span.send-form__item-title Ваш вопрос
-                  textarea(name="question", placeholder="Текст вопроса", data-required).area-input.send-form__item-input
-            .send-form__panel.send-form__panel--row
-              label.checkbox-input.send-form__item
-                input(type="checkbox", name="agreement", data-required).checkbox-input__input
-                span.checkbox-input__text «Я выражаю согласие на обработку ПДн в соответствии с 
-                  a(href="#").checkbox-input__link Политикой конфиденциальности
-                  | »
-              .btn-p-gram.send-form__item.send-form__item--max-width--270
-                button(type="submit").btn-p-gram__btn
-                .btn-p-gram__view-wrap
-                  .btn-p-gram__view
-                .btn-p-gram__content
-                  span.btn-p-gram__text Задать вопрос
-                  .btn-p-gram__icon
-                    +icon("link-white-arrow", "svg")
-                
+            .documentation-frame
+              p В случае несоответствия продукта ТУ – окончательное заключение вам будет направлено совместно с предварительным и решение по претензии будет вам направлено
+                br
+                | на следующий рабочий день.
+              p В случае соответствия продукта ТУ – окончательное заключение вам будет направлено через:
+              ul
+                li 17 календарных дней (если претензия по гипсовым продуктам)
+                li 30 календарных дней (если претензия по цементно-песчаным смесям)
+            .documentation-important Решение по претензии вам будет направлено на следующий рабочий день после выдачи окончательного заключения.
+            .documentation-links
+              h2 Документы для оформления претензий
+                br
+                | для скачивания
+              .documentation-link
+                a(href="#")
+                  +icon("down", "svg")
+                  span Требования к фотоотчетам по претензиям
+              .documentation-link
+                a(href="#")
+                  +icon("down", "svg")
+                  span Порядок действий
+              .documentation-link
+                a(href="#")
+                  +icon("down", "svg")
+                  span Образец претензии ФЛ
+              .documentation-link
+                a(href="#")
+                  +icon("down", "svg")
+                  span Образец претензии Дистрибьютор количество
+              .documentation-link
+                a(href="#")
+                  +icon("down", "svg")
+                  span Образец претензии Дистрибьютор
+      //.documentation-form
+      //  h2 Задать вопрос
+      //  form(action="#").send-form.documentation-form__form
+      //    .send-form__panel.send-form__panel--row-gap--40
+      //      .send-form__panel.send-form__panel--2-cols
+      //        .send-form__panel
+      //          label.send-form__item
+      //            span.send-form__item-title Имя*
+      //            input(type="text", name="name", placeholder="Алексей", data-required).text-input.send-form__item-input
+      //          label.send-form__item
+      //            span.send-form__item-title Фамилия*
+      //            input(type="text", name="surname", placeholder="Биланин", data-required).text-input.send-form__item-input
+      //          label.send-form__item
+      //            span.send-form__item-title Номер телефона*
+      //            input(type="text", name="phone", placeholder="+7 (___) ___-__-__", data-required).text-input.send-form__item-input
+      //        .send-form__panel
+      //          label.send-form__item
+      //            span.send-form__item-title Email
+      //            input(type="text", name="name", placeholder="ksh@loudmill.ru").text-input.send-form__item-input
+      //          label.send-form__item
+      //            span.send-form__item-title Вопрос на тему
+      //            //- блок .select-input - обертка для тэга select, а не сам select
+      //            //- поскольку плагин select2 абсолютно позиционирует, изменяет узел select
+      //            //- а нам необходим блок в основном потоке html
+      //            .select-input.send-form__item-input
+      //              select(
+      //                name="topic",
+      //                data-no-search,
+      //                data-theme="select-input--default",
+      //                data-placeholder="Дистрибьютер",
+      //                data-width="100%"
+      //              ).select-input__select
+      //                //- первый пустой option для placeholder'a
+      //                option
+      //                option(value="0") Тема 1
+      //                option(value="1") Тема 2
+      //                option(value="2") Тема 3
+      //          label.send-form__item
+      //            span.send-form__item-title Ваш вопрос
+      //            textarea(name="question", placeholder="Текст вопроса", data-required).area-input.send-form__item-input
+      //      .send-form__panel.send-form__panel--row
+      //        label.checkbox-input.send-form__item
+      //          input(type="checkbox", name="agreement", data-required).checkbox-input__input
+      //          span.checkbox-input__text «Я выражаю согласие на обработку ПДн в соответствии с
+      //            a(href="#").checkbox-input__link Политикой конфиденциальности
+      //            | »
+      //        .btn-p-gram.send-form__item.send-form__item--max-width--270
+      //          button(type="submit").btn-p-gram__btn
+      //          .btn-p-gram__view-wrap
+      //            .btn-p-gram__view
+      //          .btn-p-gram__content
+      //            span.btn-p-gram__text Задать вопрос
+      //            .btn-p-gram__icon
+      //              +icon("link-white-arrow", "svg")
 
-              
+
+
 
 
 

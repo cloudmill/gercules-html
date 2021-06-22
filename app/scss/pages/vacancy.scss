@@ -682,15 +682,64 @@
 }
 
 .add-docs {
-    
+
   &_title {
     display: flex;
     margin-bottom: 13px;
     font-size: 14px;
     line-height: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: overflow 0s .5s;
 
     img {
       margin-left: 10px;
+    }
+
+    .toggle-content {
+      position: absolute;
+      bottom: calc(100% + 26px);
+      left: 0;
+      font-size: 14px;
+      line-height: 150%;
+      background: #FFFFFF;
+      padding: 25px;
+      border: 1px solid #E5E5E5;
+      opacity: 0;
+      transition: opacity .5s;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 15px 24px 0 0;
+        border-color: #fff transparent transparent transparent;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: -17px;
+        left: 49px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 17px 26px 0 0;
+        border-color: #E5E5E5 transparent transparent transparent;
+      }
+    }
+
+    &:hover {
+      overflow: visible;
+      transition: overflow 0s;
+      .toggle-content {
+        opacity: 1;
+        transition: opacity .5s 0.5s;
+      }
     }
   }
 

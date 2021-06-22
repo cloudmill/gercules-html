@@ -222,31 +222,47 @@
             <div class="modal-item-wrapper">
               <div class="modal-close" data-modal-close></div>
               <div class="modal-item-content">
-                <div class="modal-title">События 17 сентября 2020 <br>в Санкт-Петербурге</div>
+                <div class="modal-title">События 17 сентября 2020<br>в Санкт-Петербурге</div>
                 <div class="modal-eventsList">
                   <div class="events-card"><a href="#">
-                      <h3>Семинары по работе с сухими смесями «Геркулес»</h3></a>
+                      <h3>Семинары по работе с смесями «Геркулес»</h3></a>
+                    <ul class="events-list">
+                      <li>Количество участиников: 20</li>
+                      <li>Свободных мест: 2</li>
+                    </ul>
                     <div class="hashTags"><a href="#">#семинар</a>
                     </div>
                     <div class="events-card-date"><span>5</span><span>сен</span></div>
                     <div class="events-card-time"><span>14:00</span></div>
                   </div>
                   <div class="events-card"><a href="#">
-                      <h3>Семинары по работе с сухими смесями «Геркулес»</h3></a>
+                      <h3>Семинары по работе с смесями «Геркулес»</h3></a>
+                    <ul class="events-list">
+                      <li>Количество участиников: 20</li>
+                      <li>Свободных мест: 2</li>
+                    </ul>
                     <div class="hashTags"><a href="#">#семинар</a>
                     </div>
                     <div class="events-card-date"><span>27</span><span>сен</span></div>
                     <div class="events-card-time"><span>14:00</span></div>
                   </div>
                   <div class="events-card"><a href="#">
-                      <h3>Семинары по работе с сухими смесями «Геркулес»</h3></a>
+                      <h3>Семинары по работе с смесями «Геркулес»</h3></a>
+                    <ul class="events-list">
+                      <li>Количество участиников: 20</li>
+                      <li>Свободных мест: 2</li>
+                    </ul>
                     <div class="hashTags"><a href="#">#семинар</a>
                     </div>
                     <div class="events-card-date"><span>5</span><span>сен</span></div>
                     <div class="events-card-time"><span>14:00</span></div>
                   </div>
                   <div class="events-card"><a href="#">
-                      <h3>Семинары по работе с сухими смесями «Геркулес»</h3></a>
+                      <h3>Семинары по работе с смесями «Геркулес»</h3></a>
+                    <ul class="events-list">
+                      <li>Количество участиников: 20</li>
+                      <li>Свободных мест: 2</li>
+                    </ul>
                     <div class="hashTags"><a href="#">#семинар</a>
                     </div>
                     <div class="events-card-date"><span>27</span><span>сен</span></div>
@@ -363,10 +379,209 @@
                   <div class="field-row">
                     <div class="field field-checkbox">
                       <input id="pp_modal" type="checkbox" name="pp" checked data-required>
-                      <label for="pp_modal">«Я выражаю согласие на обработку ПДн в соответствии с <a href="">Политикой конфиденциальности</a>»</label>
+                      <label for="pp_modal">«Я выражаю согласие на обработку ПДн в соответствии с<a href="">Политикой конфиденциальности</a>»</label>
                     </div>
                     <div class="main-link_rect">
                       <button id="submit" name="submit"></button><span>Сообщить о магазине</span><i class="svg-icon svg-link-white-arrow"></i>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal-item modal-item-center" id="review">
+            <div class="modal-item-wrapper">
+              <div class="modal-close" data-modal-close></div>
+              <div class="modal-item-content">
+                <h1>Оставить отзыв о мероприятии</h1>
+                <form action="">
+                  <div class="field-row">
+                    <div class="field field-base">
+                      <label for="personName">
+                        <input type="text" name="personName" data-required="data-required" id="personName" placeholder="Алексей"/>
+                        <div class="field-inf"><span class="name">Имя</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                    <div class="field field-base">
+                      <label for="personCity">
+                        <input type="text" name="personCity" data-required="data-required" id="personCity" placeholder="Омск"/>
+                        <div class="field-inf"><span class="name">Город*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="field-row">
+                    <div class="field field-base">
+                      <label for="personSurname">
+                        <input type="text" name="personSurname" data-required="data-required" id="personSurname" placeholder="Биланин"/>
+                        <div class="field-inf"><span class="name">Фамилия</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                    <div class="field field-base">
+                      <label for="personCompany">
+                        <input type="text" name="personCompany" data-required="data-required" id="personCompany" placeholder="ООО ГК ПЛЮС"/>
+                        <div class="field-inf"><span class="name">Название компании</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="field-row">
+                    <div class="field field-base">
+                      <label for="personPhone">
+                        <input type="text" name="personPhone" data-required="data-required" id="personPhone" placeholder="+7 (___) ___-__-__"/>
+                        <div class="field-inf"><span class="name">Номер телефона*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                    <div class="field field-base">
+                      <label for="personEmail">
+                        <input type="text" name="personEmail" data-required="data-required" id="personEmail" placeholder="ksh@loudmill.ru"/>
+                        <div class="field-inf"><span class="name">Email</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="field field-area">
+                    <label for="personReview">
+                      <textarea name="personReview" id="personReview" placeholder="Мне очень понравилось..."></textarea>
+                      <div class="field-inf"><span class="name">Отзыв</span><span class="errorText">пожалуйста, заполните поле корректно</span></div>
+                    </label>
+                  </div>
+                  <div class="field-row">
+                    <div class="field field-checkbox">
+                      <input id="pp_modal1" type="checkbox" name="pp" checked data-required>
+                      <label for="pp_modal1">«Я выражаю согласие на обработку ПДн в соответствии с<a href="">Политикой конфиденциальности</a>»</label>
+                    </div>
+                    <div class="main-link_rect">
+                      <button id="submit1" name="submit"></button><span>Сообщить о магазине</span><i class="svg-icon svg-link-white-arrow"></i>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal-item modal-item-fill" id="claim">
+            <div class="modal-item-wrapper">
+              <div class="modal-close" data-modal-close></div>
+              <div class="modal-item-content">
+                <h1>Составить претензию</h1>
+                <form action="">
+                  <h2>Данные магазина</h2>
+                  <div class="field-row">
+                    <div class="field field-base">
+                      <label for="marketFullName">
+                        <input type="text" name="marketFullName" data-required="data-required" id="marketFullName" placeholder="Смеси+"/>
+                        <div class="field-inf"><span class="name">Название магазина*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                    <div class="field field-base">
+                      <label for="marketCity">
+                        <input type="text" name="marketCity" data-required="data-required" id="marketCity" placeholder="Омск"/>
+                        <div class="field-inf"><span class="name">Город*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="field-row">
+                    <div class="field field-base">
+                      <label for="marketStreet">
+                        <input type="text" name="marketStreet" data-required="data-required" id="marketStreet" placeholder="пр. Луначарского"/>
+                        <div class="field-inf"><span class="name">Улица</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                    <div class="field field-base">
+                      <label for="marketBuilding">
+                        <input type="text" name="marketBuilding" data-required="data-required" id="marketBuilding" placeholder="19"/>
+                        <div class="field-inf"><span class="name">Дом</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                  </div>
+                  <h2 class="b-form__item--mt--30">Описание претензии</h2>
+                  <div class="field-row">
+                    <div class="field field-base">
+                      <label for="productFullName">
+                        <input type="text" name="productFullName" data-required="data-required" id="productFullName" placeholder="Грунтовка"/>
+                        <div class="field-inf"><span class="name">Название товара*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                    <div class="field field-base">
+                      <label for="quantity">
+                        <input type="text" name="quantity" data-required="data-required" id="quantity" placeholder="2 мешка по 25 кг"/>
+                        <div class="field-inf"><span class="name">Количество*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="field-row">
+                    <div class="field field-base">
+                      <label for="summ">
+                        <input type="text" name="summ" data-required="data-required" id="summ" placeholder="25 000"/>
+                        <div class="field-inf"><span class="name">Стоимость, Р*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                    <div class="add-docs">
+                      <div class="add-docs_title">Прикерпить файл<a href="#"><img src="./images/question.svg" alt=""></a>
+                        <div class="toggle-content">Платежный документ (квитанция, кассовый/товарный чек, иной документ, подтверждающий внесение или перечисление денежных средств заявителем), фото или видео брака, результаты экспертизы (не обязательно), документы, подтверждающие факт доп. затрат (договор на оказание услуг, смета, акт выполненных работ, транспортная накладная и т.п.)</div>
+                      </div>
+                      <div class="add-docs_block">Добавить файл<img src="./images/clip.svg" alt=""></div>
+                    </div>
+                  </div>
+                  <div class="field field-area">
+                    <label for="review">
+                      <textarea name="review" id="review" placeholder="Описание"></textarea>
+                      <div class="field-inf"><span class="name">Подробное описание брака, выполненных работ и условий хранения</span><span class="errorText">пожалуйста, заполните поле корректно</span></div>
+                    </label>
+                  </div>
+                  <div class="b-form__item--mt--30">
+                    <div class="field field-checkbox">
+                      <input id="pp_modal5" type="checkbox" name="pp" checked data-required>
+                      <label for="pp_modal5">Требуется вызов представителя</label>
+                    </div>
+                  </div>
+                  <h2 class="b-form__item--mt--30">Ваши контактные данные</h2>
+                  <div class="field-row">
+                    <div class="field field-base">
+                      <label for="personSurname">
+                        <input type="text" name="personSurname" data-required="data-required" id="personSurname" placeholder="Биланин"/>
+                        <div class="field-inf"><span class="name">Фамилия*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                    <div class="field field-base">
+                      <label for="personPhone">
+                        <input type="text" name="personPhone" data-required="data-required" id="personPhone" placeholder="+7 (___) ___-__-__"/>
+                        <div class="field-inf"><span class="name">Номер телефона*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="field-row">
+                    <div class="field field-base">
+                      <label for="personName">
+                        <input type="text" name="personName" data-required="data-required" id="personName" placeholder="Алексей"/>
+                        <div class="field-inf"><span class="name">Имя*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                    <div class="field field-base">
+                      <label for="personEmail">
+                        <input type="text" name="personEmail" data-required="data-required" id="personEmail" placeholder="ksh@loudmill.ru"/>
+                        <div class="field-inf"><span class="name">Email</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="field-row">
+                    <div class="field field-base">
+                      <label for="personPosition">
+                        <input type="text" name="personPosition" data-required="data-required" id="personPosition" placeholder="Сергеевич"/>
+                        <div class="field-inf"><span class="name">Отчество*</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                    <div class="field field-base">
+                      <label for="personAdr">
+                        <input type="text" name="personAdr" data-required="data-required" id="personAdr" placeholder="Индекс, город, улица, дом, номер квартиры или офиса"/>
+                        <div class="field-inf"><span class="name">Почтовый адрес</span><span class="errorText">пожалуйста, заполните поле корректно    </span></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="field-row">
+                    <div class="field field-checkbox">
+                      <input id="pp_modal3" type="checkbox" name="pp" checked data-required>
+                      <label for="pp_modal3">«Я выражаю согласие на обработку ПДн в соответствии с<a href="">Политикой конфиденциальности</a>»</label>
+                    </div>
+                    <div class="main-link_rect">
+                      <button id="submit3" name="submit"></button><span>Сообщить о магазине</span><i class="svg-icon svg-link-white-arrow"></i>
                     </div>
                   </div>
                 </form>

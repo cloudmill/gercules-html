@@ -5,7 +5,7 @@
       .modal-item-wrapper
         .modal-close(data-modal-close)
         .modal-item-content
-          .modal-title События 17 сентября 2020 
+          .modal-title События 17 сентября 2020
             br
             |в Санкт-Петербурге
           .modal-eventsList
@@ -41,16 +41,95 @@
                   .field-inf
                     span.name Статус
                     span.errorText пожалуйста, заполните поле корректно
-                
+
             .field-row
               +field_base("personSite", "personSite", "Адрес сайта", "yandex.ru")
             .field-row
               +field_checkbox()
                 input#pp_modal(type="checkbox" name="pp" checked data-required)
-                label(for="pp_modal") «Я выражаю согласие на обработку ПДн в соответствии с 
+                label(for="pp_modal") «Я выражаю согласие на обработку ПДн в соответствии с
                   a(href="") Политикой конфиденциальности
                   |»
               +linkRect
                 button(id="submit" name="submit")
+                span Сообщить о магазине
+                +icon("link-white-arrow", "svg")
+    .modal-item.modal-item-center#review
+      .modal-item-wrapper
+        .modal-close(data-modal-close)
+        .modal-item-content
+          h1 Оставить отзыв о мероприятии
+          form(action="")
+            .field-row
+              +field_base("personName", "personName", "Имя", "Алексей")
+              +field_base("personCity", "personCity", "Город*", "Омск")
+            .field-row
+              +field_base("personSurname", "personSurname", "Фамилия", "Биланин")
+              +field_base("personCompany", "personCompany", "Название компании", "ООО ГК ПЛЮС")
+            .field-row
+              +field_base("personPhone", "personPhone", "Номер телефона*", "+7 (___) ___-__-__")
+              +field_base("personEmail", "personEmail", "Email", "ksh@loudmill.ru")
+            +field_area("personReview", "personReview", "Отзыв", "Мне очень понравилось...", 10)
+            .field-row
+              +field_checkbox()
+                input#pp_modal1(type="checkbox" name="pp" checked data-required)
+                label(for="pp_modal1") «Я выражаю согласие на обработку ПДн в соответствии с
+                  a(href="") Политикой конфиденциальности
+                  |»
+              +linkRect
+                button(id="submit1" name="submit")
+                span Сообщить о магазине
+                +icon("link-white-arrow", "svg")
+    .modal-item.modal-item-fill#claim
+      .modal-item-wrapper
+        .modal-close(data-modal-close)
+        .modal-item-content
+          h1 Составить претензию
+          form(action="")
+            h2 Данные магазина
+            .field-row
+              +field_base("marketFullName", "marketFullName", "Название магазина*", "Смеси+")
+              +field_base("marketCity", "marketCity", "Город*", "Омск")
+            .field-row
+              +field_base("marketStreet", "marketStreet", "Улица", "пр. Луначарского")
+              +field_base("marketBuilding", "marketBuilding", "Дом", "19")
+            h2.b-form__item--mt--30 Описание претензии
+            .field-row
+              +field_base("productFullName", "productFullName", "Название товара*", "Грунтовка")
+              +field_base("quantity", "quantity", "Количество*", "2 мешка по 25 кг")
+            .field-row
+              +field_base("summ", "summ", "Стоимость, Р*", "25 000")
+              .add-docs
+                .add-docs_title
+                  | Прикерпить файл
+                  a(href="#")
+                    img(src="./images/question.svg", alt="")
+                  .toggle-content Платежный документ (квитанция, кассовый/товарный чек, иной документ, подтверждающий внесение или перечисление денежных средств заявителем), фото или видео брака, результаты экспертизы (не обязательно), документы, подтверждающие факт доп. затрат (договор на оказание услуг, смета, акт выполненных работ, транспортная накладная и т.п.)
+                .add-docs_block
+                  | Добавить файл
+                  img(src="./images/clip.svg", alt="")
+            +field_area("review", "review", "Подробное описание брака, выполненных работ и условий хранения", "Описание", 10)
+            .b-form__item--mt--30
+              +field_checkbox()
+                input#pp_modal5(type="checkbox" name="pp" checked data-required)
+                label(for="pp_modal5") Требуется вызов представителя
+            h2.b-form__item--mt--30 Ваши контактные данные
+            .field-row
+              +field_base("personSurname", "personSurname", "Фамилия*", "Биланин")
+              +field_base("personPhone", "personPhone", "Номер телефона*", "+7 (___) ___-__-__")
+            .field-row
+              +field_base("personName", "personName", "Имя*", "Алексей")
+              +field_base("personEmail", "personEmail", "Email", "ksh@loudmill.ru")
+            .field-row
+              +field_base("personPosition", "personPosition", "Отчество*", "Сергеевич")
+              +field_base("personAdr", "personAdr", "Почтовый адрес", "Индекс, город, улица, дом, номер квартиры или офиса")
+            .field-row
+              +field_checkbox()
+                input#pp_modal3(type="checkbox" name="pp" checked data-required)
+                label(for="pp_modal3") «Я выражаю согласие на обработку ПДн в соответствии с
+                  a(href="") Политикой конфиденциальности
+                  | »
+              +linkRect
+                button(id="submit3" name="submit")
                 span Сообщить о магазине
                 +icon("link-white-arrow", "svg")

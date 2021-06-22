@@ -20,10 +20,16 @@
     top: 0;
   }
 
+  h1 {
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
   &-bg {
     position: absolute;
     z-index: -1;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 100%;
     left: 0;
@@ -123,6 +129,18 @@
             @include customScrollBar(7px, 3px, #e41d2c, #ffffff);
           }
         }
+      }
+    }
+
+    &-center {
+      max-width: 1250px;
+      width: 90%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .modal-item-content {
+        min-height: inherit;
       }
     }
 

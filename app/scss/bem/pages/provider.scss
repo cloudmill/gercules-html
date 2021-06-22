@@ -14,7 +14,8 @@
     }
 
     @mixin block-list($block-width, $block-count) {
-        max-width: $block-width * $block-count - 1px * $block-count;
+        max-width: 100%;
+        padding-right: 80px;
         display: flex;
         flex-wrap: wrap;
     }
@@ -26,7 +27,7 @@
     }
 
     &__case {
-        @include block($block-width);
+        @include block(33.33333%);
         padding: 45px 0;
         min-height: 290px;
     }
@@ -143,7 +144,7 @@
             display: block;
             width: 100%;
             min-width: 1235px;
-            background-image: url(../images/provider-transport.jpg);
+            background-image: url(../images/provider-transport-1.jpg);
             background-repeat: no-repeat;
             background-position: left bottom;
             background-size: cover;

@@ -16,6 +16,7 @@ block content
         .academy-top
           h1.page-title Академия «‎Геркулес»‎
           +client_service_card
+        .calendar-event.js-modal(href="#events") click
         include ../modules/events/control
         include ../modules/events/calendar
         .events-week
@@ -29,6 +30,6 @@ block content
               include ../modules/events/items
               -var thisIsSlider = true
               include ../modules/events/items
-              
+
         h2 Наши тренера
         include ../modules/trainers/slider

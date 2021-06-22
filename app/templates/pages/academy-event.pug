@@ -12,15 +12,20 @@ block content
         a(href="") Программа лояльности
         a(href="").active Академия «‎Геркулес»‎
       +client_service_card
+      +client_review
     .content
       +breadcrumbs(["Партнерам", "Академия «‎Геркулес»", "Семинары по работе с сухими смесями «Геркулес»"])
       .academyEvent
         h1.page-title
           | Семинары по работе с сухими смесями «‎Геркулес»
-        +hashTags([
-          ["вебинар", "#"],
-          ["обучение", "#"],
-        ],false)
+        .academyEvent-sub
+          +hashTags([
+            ["вебинар", "#"],
+            ["обучение", "#"],
+          ],false)
+          ul.academyEvent-sub--list
+            li Количество участиников: 20
+            li Свободных мест: 2
         include ../modules/events/infoPanel
         .academyEvent-aboutEvent
           h2 О мероприятии

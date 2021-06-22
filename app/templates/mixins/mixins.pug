@@ -29,6 +29,11 @@ mixin client_service_card
         span Клиентский сервис
         a(href="tel: 8 913 001 75 01") +7 913 001-75-01
 
+mixin client_review
+    a.client-review(href="#review").js-modal
+        +icon("review", "svg")
+        span Оставить отзыв
+
 mixin hashTags(tags,isLink = true)
     .hashTags
         each tag in tags
@@ -81,6 +86,6 @@ mixin btn-p-gram(text, classes, href)
         .btn-p-gram__content
 
             span.btn-p-gram__text #{text}
-            
+
             .btn-p-gram__icon
                 +icon("link-white-arrow", "svg")

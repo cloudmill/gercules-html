@@ -14,6 +14,18 @@
     margin-top: 18px;
   }
 
+  &-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &--list {
+      display: flex;
+      li {
+        margin-left: 40px;
+      }
+    }
+  }
+
   &-aboutEvent {
     margin-top: 80px;
 

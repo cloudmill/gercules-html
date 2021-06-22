@@ -89,6 +89,15 @@
     }
   }
 
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    margin-top: 40px;
+    font-size: 12px;
+    line-height: 150%;
+  }
+
   &-calendar {
     @mixin calendar_table_style {
       border: 1px solid $color-border;
@@ -201,12 +210,18 @@
 
   &-card {
     border: 1px solid $color-border;
-    height: 282px;
+    //height: 282px;
     position: relative;
     padding: 56px 48px 60px 160px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    .hashTags {
+      top: 7px;
+      position: relative;
+    }
+
     h3 {
       font-family: $font-second;
       font-style: normal;
