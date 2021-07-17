@@ -7,6 +7,9 @@ block content
   .content-row
     include ./about/sidebar
     .content.about
+      .about-mob
+        +breadcrumbs([pageTitle])
+        h1.page-title= pageTitle
       .about-top
         h1 О компании
         h2 20 лет успеха на рынке сухих строительных смесей!

@@ -6,14 +6,21 @@
     right: 0;
   }
   h2 {
-    font: normal bold 28px/40px $font-main;
+    font: normal bold 28px/40px $font-second;
     color: $color-main;
+    @media (max-width: $mobile-xl) {
+      font: normal bold 15px/140% $font-second;
+    }
   }
 
   &-row {
     position: relative;
     margin-top: 40px;
     display: flex;
+
+    @media (max-width: $mobile-xl) {
+      display: block;
+    }
     &::before {
       content: "";
       display: block;
@@ -25,6 +32,11 @@
       left: 106px;
       background-color: #f8f8f8;
       transform: skewX(-15deg);
+      @media (max-width: $mobile-xl) {
+        left: auto;
+        right: 80px;
+        width: 100%;
+      }
     }
   }
 
@@ -50,15 +62,25 @@
     padding-top: 100px;
     padding-bottom: 20px;
     padding-right: 90px;
+    @media (max-width: $mobile-xl) {
+      margin: 0;
+      padding: 20px 0 0;
+    }
     h3 {
       font: normal bold 20px/32px $font-second;
       color: $color-main;
+      @media (max-width: $mobile-xl) {
+        font: normal bold 15px/132% $font-main;
+      }
     }
 
     h4 {
       margin-top: 5px;
       font: normal normal 15px/30px $font-main;
       color: $color-main;
+      @media (max-width: $mobile-xl) {
+        font: normal normal 12px/200% $font-main;
+      }
     }
   }
 
@@ -83,6 +105,10 @@
         padding-top: 10px;
         font: normal normal 15px/19px $font-main;
         color: $color-main;
+
+        @media (max-width: $mobile-xl) {
+          font: normal normal 15px/150% $font-main;
+        }
       }
     }
   }

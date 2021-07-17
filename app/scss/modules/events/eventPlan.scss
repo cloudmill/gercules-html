@@ -1,7 +1,12 @@
 .eventPlan {
   h2 {
-    font: normal bold 28px/40px $font-main;
+    font: normal bold 28px/40px $font-second;
     color: $color-main;
+
+    @media (max-width: $mobile-xl) {
+      font: normal bold 15px/140% $font-second;
+      margin-bottom: 20px;
+    }
   }
 
   &-day {
@@ -9,20 +14,39 @@
     border-top: 1px solid $color-border;
 
     h3 {
-      font: normal bold 20px/32px $font-main;
+      font: normal bold 20px/32px $font-second;
       color: $color-main;
+
+      @media (max-width: $mobile-xl) {
+        font: normal bold 13px/140% $font-second;
+      }
     }
   }
 
   &-points {
     padding-top: 27px;
     padding-left: 248px;
+
+    @media (max-width: $mobile-xl) {
+      padding-left: 0;
+      padding-top: 5px;
+    }
   }
 
   &-point {
     display: flex;
     align-items: flex-start;
     padding-bottom: 25px;
+
+    @media (max-width: $mobile-xl) {
+      flex-wrap: wrap;
+
+      &:not(:first-child) {
+        .pointDate {
+          display: none;
+        }
+      }
+    }
 
     &:not(:last-child) {
       border-bottom: 1px solid $color-border;
@@ -31,6 +55,13 @@
 
     .pointDate {
       flex-basis: 288px;
+
+      @media (max-width: $mobile-xl) {
+        margin-bottom: 25px;
+        flex-basis: 100%;
+        order: -1;
+        font-size: 12px;
+      }
     }
 
     .pointDate,
@@ -43,6 +74,10 @@
     .pointTitle {
       flex-basis: 528px;
       flex-grow: 1;
+
+      @media (max-width: $mobile-xl) {
+        flex-basis: calc(100% - 70px);
+      }
     }
 
     .pointTime {
@@ -52,6 +87,13 @@
       font: normal bold 15px/22px $font-second;
       color: $color-main;
       text-align: right;
+
+      @media (max-width: $mobile-xl) {
+        text-align: left;
+        order: -1;
+        flex-basis: 70px;
+        font: normal bold 14px/22px $font-second;
+      }
     }
   }
 }

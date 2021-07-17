@@ -3,6 +3,12 @@
   min-height: 110px;
   border: 1px solid $color-border;
 
+  @media (max-width: $mobile-xl) {
+    flex-wrap: wrap;
+    border: none;
+    margin-left: -20px;
+  }
+
   .eventDate,
   .eventTime,
   .eventAddress {
@@ -10,6 +16,10 @@
     align-self: stretch;
     padding: 32px 25px;
     overflow: hidden;
+
+    @media (max-width: $mobile-xl) {
+      padding: 10px 25px;
+    }
 
     &::before {
       position: absolute;
@@ -20,21 +30,36 @@
       height: 60px;
       border-top: 3px solid transparent;
       border-left: 4px solid $color-red;
+
+      @media (max-width: $mobile-xl) {
+        top: auto;
+        bottom: 0;
+      }
     }
 
     &:not(:first-child) {
       border-left: 1px solid $color-border;
+
+      @media (max-width: $mobile-xl) {
+        border-left: none;
+      }
     }
   }
 
   .eventDate {
     flex-basis: 248px;
+    @media (max-width: $mobile-xl) {
+      flex-basis: 50%;
+    }
 
     div {
       position: absolute;
       left: 25px;
       top: 32px;
       white-space: nowrap;
+      @media (max-width: $mobile-xl) {
+        position: static;
+      }
 
       p {
         display: inline-block;
@@ -43,6 +68,10 @@
         &:first-child {
           font: normal bold 48px/69px $font-second;
           color: $color-red;
+
+          @media (max-width: $mobile-xl) {
+            font: normal bold 28px/140% $font-second;
+          }
         }
 
         &:last-child {
@@ -52,6 +81,10 @@
             display: block;
             font: normal normal 18px/23px $font-main;
             color: $color-main;
+
+            @media (max-width: $mobile-xl) {
+              font: normal normal 12px/120% $font-main;
+            }
           }
         }
       }
@@ -60,6 +93,9 @@
 
   .eventTime {
     flex-basis: 288px;
+    @media (max-width: $mobile-xl) {
+      flex-basis: 50%;
+    }
 
     p {
       position: absolute;
@@ -67,14 +103,26 @@
       left: 25px;
       font: normal bold 48px/69px $font-second;
       color: $color-red;
+
+      @media (max-width: $mobile-xl) {
+        font: normal bold 28px/140% $font-second;
+        position: static;
+      }
     }
   }
 
   .eventAddress {
+    @media (max-width: $mobile-xl) {
+      margin-top: 20px;
+    }
     p {
       max-width: 454px;
       font: normal normal 18px/23px $font-main;
       color: $color-main;
+
+      @media (max-width: $mobile-xl) {
+        font: normal normal 15px/120% $font-main;
+      }
     }
   }
 }
@@ -95,14 +143,14 @@
           align-items: center;
           border-color: $color-border;
           border-radius: 0;
-          
+
 
           .select2-selection__rendered {
             // переопределение
             padding: 0 !important;
             font-size: 15px;
             line-height: 17px;
-            
+
             .select2-selection__placeholder {
               // font-size & line-height inherit
               color: $color-placeholder;
@@ -139,7 +187,7 @@
           }
         }
     }
-  
+
 
     .select2-dropdown {
       border-color: $color-border;
@@ -175,7 +223,7 @@
 
 
       .selection {
-        
+
 
         .select2-selection {
 

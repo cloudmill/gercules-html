@@ -47,6 +47,34 @@ block content
               +icon("link-white-arrow", "svg")
         include ../modules/events/plan
         include ../modules/events/speaker
+        .b-content__main-item.b-content__main-item--mg-t--60.b-content__main-item--pd--hor
+
+          .separated-line
+
+            .separated-line__item
+
+              a(href="").repost-link.repost-link--social
+                .repost-link__image
+                  +icon("facebook", "svg")
+                .repost-link__count
+                  | 25
+
+            .separated-line__item
+
+              a(href="").repost-link.repost-link--social
+                .repost-link__image
+                  +icon("vk", "svg")
+                .repost-link__count
+                  | 0
+
+            .separated-line__item
+
+              a(href="").repost-link.repost-link--twitter
+                .repost-link__image
+                  +icon("twitter", "svg")
+                .repost-link__count
+                  | 12
+
         include ../modules/events/registration
 
 block modal

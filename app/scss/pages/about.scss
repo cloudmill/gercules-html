@@ -6,6 +6,15 @@
 }
 
 .about {
+  &-mob {
+    display: none;
+    @media (max-width: $mobile-xl) {
+      display: block;
+    }
+    .page-title {
+      background: url("../images/arr-down.svg") no-repeat right 20px center;
+    }
+  }
   &-top {
     position: relative;
     left: -60px;
@@ -20,8 +29,15 @@
     color: white;
     @media (max-width: $mobile-xl) {
       left: -20px;
-      padding: 80px 20px 20px;
+      padding: 40px 20px;
       width: calc(100% + 40px);
+      min-height: 320px;
+    }
+
+    + .breadcrumbs {
+      @media (max-width: $mobile-xl) {
+        display: none;
+      }
     }
 
     h1,
@@ -36,6 +52,7 @@
       white-space: nowrap;
       @media (max-width: $mobile-xl) {
         font-size: 30px;
+        display: none;
       }
     }
 
@@ -53,6 +70,7 @@
       font-size: 28px;
       @media (max-width: $mobile-xl) {
         font-size: 24px;
+        margin-top: 0;
       }
     }
 
@@ -66,6 +84,9 @@
 
   .breadcrumbs {
     margin-top: 60px;
+    @media (max-width: $mobile-xl) {
+      margin-top: 30px;
+    }
   }
 
   &-info {

@@ -1,6 +1,14 @@
 .eventRegistration {
   margin-top: 120px;
 
+  h2 {
+    font: normal bold 28px/40px $font-second;
+    color: $color-main;
+    @media (max-width: $mobile-xl) {
+      font: normal bold 15px/140% $font-second;
+    }
+  }
+
   form {
     margin-top: 40px;
   }
@@ -18,6 +26,10 @@
 
       .main-link_rect {
         margin-left: auto;
+        @media (max-width: $mobile-xl) {
+          margin-top: 20px;
+          margin-left: 0;
+        }
       }
     }
 

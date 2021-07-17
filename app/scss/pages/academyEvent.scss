@@ -18,10 +18,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: $mobile-xl) {
+      display: block;
+    }
     &--list {
       display: flex;
+
+      @media (max-width: $mobile-xl) {
+        display: block;
+      }
       li {
         margin-left: 40px;
+
+        @media (max-width: $mobile-xl) {
+          margin-left: 0;
+          margin-top: 20px;
+        }
       }
     }
   }
@@ -33,6 +46,10 @@
       font: normal bold 28px/40px $font-second;
       color: $color-main;
       white-space: nowrap;
+
+      @media (max-width: $mobile-xl) {
+        font: normal bold 15px/140% $font-second;
+      }
     }
 
     .aboutRow {
@@ -40,6 +57,10 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+
+      @media (max-width: $mobile-xl) {
+        display: block;
+      }
 
       p {
         max-width: 641px;
@@ -50,6 +71,14 @@
       .main-link_rect {
         max-width: 339px;
         margin-left: 60px;
+
+        @media (max-width: $mobile-xl) {
+          margin-left: 0;
+          max-width: 230px;
+          margin-top: 40px;
+          height: 50px;
+          font-size: 15px;
+        }
 
         i {
           margin-left: 20px;
@@ -64,6 +93,7 @@
 
   .eventSpeaker {
     margin-top: 80px;
+    padding-bottom: 40px;
   }
 
   .eventRegistration {
