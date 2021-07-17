@@ -2,7 +2,21 @@
 
 
     &__photo {
+        .swiper-container {
+            position: relative;
+            overflow: hidden;
 
+            &::before {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                content: "";
+                display: block;
+                border-bottom: 80px solid $color-red;
+                border-left: 25px solid transparent;
+                z-index: 9;
+            }
+        }
     }
 
     &__photo-slide {
@@ -13,18 +27,6 @@
     }
 
     &__photo-image {
-        position: relative;
-        overflow: hidden;
-
-        &::before {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            content: "";
-            display: block;
-            border-bottom: 80px solid $color-red;
-            border-left: 25px solid transparent;
-        }
     }
 
     &__photo-img {
@@ -43,7 +45,7 @@
     &__thumb-slide {
 
         &.swiper-slide-thumb-active {
-            
+
 
             .b-object-slider__thumb-image {
 

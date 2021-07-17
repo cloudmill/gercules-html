@@ -1,5 +1,5 @@
 /*
-  
+
 */
 
 $row-gap: 3px;
@@ -12,10 +12,23 @@ $col-gap: 6.5px;
   font-size: 12px;
   line-height: 14px;
 
+  @media (max-width: $mobile-xl) {
+    margin-right: -20px;
+    margin-left: -20px;
+    padding-left: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E5E5E5;
+  }
+
   &__item {
     margin: #{$row-gap / 2} #{$col-gap / 2};
     display: flex;
     color: $color-gray;
+    @media (max-width: $mobile-xl) {
+      white-space: nowrap;
+    }
 
     &:not(:first-child) {
       &::before {

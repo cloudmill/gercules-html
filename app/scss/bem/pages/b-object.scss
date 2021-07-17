@@ -87,6 +87,15 @@
             background-size: contain;
             background-position: center;
         }
+
+        &--mecha {
+
+            &::before {
+                width: 30px;
+                height: 25px;
+                background-image: url("../images/svgSprite/mecha.svg");
+            }
+        }
     }
 
     &__show-text {

@@ -1,7 +1,7 @@
 /*
   описание:
     контентная часть страницы между header и footer
-  
+
   структура:
     .content
       .content__wrapper (обертка для позиционирования, огарничения итд)
@@ -51,8 +51,8 @@
 }
 
 .b-content {
-  padding-left: 80px;    
-  
+  padding-left: 80px;
+
   @media (max-width: 1600px) {
     padding-left: 5%;
   }
@@ -64,7 +64,7 @@
   &__wrapper {
     display: flex;
     align-items: stretch;
-    
+
     // min-height: 100vh; // test
   }
 
@@ -103,6 +103,10 @@
 
     &--pd-t--60 {
       padding-top: 60px;
+
+      @media (max-width: $mobile-xl) {
+        padding-top: 30px;
+      }
     }
 
     &--pd-b--120 {
