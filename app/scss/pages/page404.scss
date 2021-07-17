@@ -4,10 +4,14 @@
 
   @media (max-width: 450px){
     padding-bottom: 280px;
+
+    .page-title {
+      font-size: 20px;
+    }
   }
 
   @media (max-width: 360px){
-    padding-bottom: 205px;
+    padding-bottom: 280px;
   }
 
   &-content {
@@ -36,6 +40,7 @@
       margin-right: 40px;
       @media (max-width: 450px){
         font-size: 15px;
+        margin-bottom: 20px;
       }
     }
   }

@@ -7,8 +7,6 @@ mixin footerMenu(json)
           each link in item.list
             a(href=`${link.link}`) #{link.name}
     else
-      a.footer-menu_item
-        .footer-menu_title Контакты
       a.footer-menu_item(href=`${item.link}`)
         .footer-menu_title #{item.name}
       a.footer-menu_item
@@ -21,7 +19,7 @@ mixin footerMenu(json)
     .footer-block_col
       span Завод «Геркулес-Сибирь» - производство сухих строительных
         br
-        | клеёв и затирок, штукатурок и шпатлевок, смесей 
+        | клеёв и затирок, штукатурок и шпатлевок, смесей
         br
         |для выравнивания полов, а также пропиток и грунтовок.
       .footer-social

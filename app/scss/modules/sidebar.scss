@@ -73,7 +73,7 @@
           top: 50%;
           right: 20px;
           transform-origin: center;
-          transform: translateY(-50%);
+          transform: translateY(-50%) rotate(180deg);
           content: "";
           display: block;
           width: 6px;
@@ -108,7 +108,7 @@
       &.open,
       &.active {
         span::after {
-          transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%);
           filter: grayscale(0);
         }
       }
