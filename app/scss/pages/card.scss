@@ -50,7 +50,7 @@
     }
 
     &_col {
-      
+
       &.content-bottom {
         align-self: stretch;
         display: flex;
@@ -215,12 +215,12 @@
     &_file {
       margin-top: 60px;
       position: relative;
-      padding-left: 75px;
+      padding-left: 58px;
       display: inline-block;
 
       &>i {
         position: absolute;
-        top: 0;
+        top: 4px;
         left: 0;
         display: block;
         font-size: 8px;
@@ -659,6 +659,10 @@
             padding-bottom: 0;
             border-bottom: 1px solid $color-border;
             cursor: pointer;
+
+            > * {
+              cursor: pointer;
+            }
 
             &:first-child {
               border-top: 1px solid $color-border;

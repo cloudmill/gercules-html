@@ -250,15 +250,13 @@ export default class Manager_tabs {
     $('.' + ITEM_CLASS).each(function () {
       const drop = $(this).find('[class*="drop"]');
 
-      $(this).on('click', event => {
-        if (event.target.classList.contains(ITEM_CLASS)) {
-          if (this.classList.contains('open')) {
-            this.classList.remove('open');
-            drop.css('max-height', '');
-          } else {
-            this.classList.add('open');
-            drop.css('max-height', getContentHeight(drop));
-          }
+      $(this).on('click', () => {
+        if (this.classList.contains('open')) {
+          this.classList.remove('open');
+          drop.css('max-height', '');
+        } else {
+          this.classList.add('open');
+          drop.css('max-height', getContentHeight(drop));
         }
       });
 
